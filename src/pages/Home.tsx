@@ -244,39 +244,6 @@ export default function Home() {
           <DepartmentsCarousel className="mt-10 md:mt-12" />
         </Section>
 
-        {/* Industries We Help */}
-        <Section background="muted">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-display text-hf-ink mb-4">
-              Industries We Help
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              AI automation solutions tailored to your industry
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {industryUseCases.map(useCase => <div key={useCase.industry} className="bg-card rounded-xl p-6 hf-shadow">
-                <h3 className="text-lg font-bold font-display text-hf-ink mb-4">
-                  {useCase.industry}
-                </h3>
-                <div className="space-y-3">
-                  {useCase.automations.map((automation, index) => <div key={index} className="border-l-2 border-hf-teal/30 pl-4">
-                      <h4 className="text-sm font-semibold text-hf-navy">
-                        {automation.name}
-                      </h4>
-                      <p className="text-xs text-muted-foreground mb-1">
-                        {automation.description}
-                      </p>
-                      <p className="text-xs text-hf-teal font-medium">
-                        {automation.expectedOutcome}
-                      </p>
-                    </div>)}
-                </div>
-              </div>)}
-          </div>
-        </Section>
-
 
         {/* Process */}
         <Section background="muted">
