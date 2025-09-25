@@ -92,11 +92,44 @@ export default function Home() {
       
       <main className="pt-16"> {/* Back to normal header spacing */}
         {/* Hero Section */}
-        <Section background="glow" padding="large">
+        <section className="relative py-20 md:py-28 text-center overflow-visible">
+          {/* SOFT GLOW (blurred blob, no hard edges) */}
+          <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+            <div
+              className="
+                absolute left-1/2 -translate-x-1/2 -top-24 md:-top-28
+                h-[34rem] w-[34rem] md:h-[40rem] md:w-[40rem]
+                rounded-full blur-3xl opacity-25
+              "
+              style={{
+                background:
+                  "linear-gradient(135deg, hsl(var(--hf-teal)) 0%, hsl(var(--hf-purple)) 100%)",
+                filter: "saturate(120%)",
+              }}
+            />
+            {/* feather the bottom so no 'line' is visible */}
+            <div
+              className="absolute inset-0"
+              style={{
+                WebkitMaskImage:
+                  "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,.6) 40%, rgba(0,0,0,0) 85%)",
+                maskImage:
+                  "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,.6) 40%, rgba(0,0,0,0) 85%)",
+                background:
+                  "radial-gradient(120% 70% at 50% 0%, hsl(var(--hf-purple)/0.10) 0%, transparent 70%)",
+              }}
+            />
+            {/* micro-noise to avoid color banding on some displays */}
+            <div
+              className="absolute inset-0 opacity-[0.05] mix-blend-overlay"
+              style={{
+                backgroundImage:
+                  "url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22 viewBox=%220 0 40 40%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%222%22 stitchTiles=%22stitch%22/></filter><rect width=%2240%22 height=%22440%22 filter=%22url(%23n)%22 opacity=%220.35%22/></svg>')",
+              }}
+            />
+          </div>
+          
           <div className="text-center max-w-4xl mx-auto relative">
-            {/* Subtle glow background */}
-            <div className="pointer-events-none absolute inset-0 -z-10 hf-glow" />
-            
             <div className="relative z-10">
               <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-hf-ink">
                 HeyFlou: AI Consulting
@@ -130,7 +163,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </Section>
+        </section>
 
 
         {/* Why AI Now - Stats Grid */}
