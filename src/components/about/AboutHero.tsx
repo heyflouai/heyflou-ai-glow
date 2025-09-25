@@ -1,4 +1,4 @@
-import logoSvg from '@/assets/heyflou-logo.svg';
+import logoSvg from '@/assets/logo_heyflou.png';
 
 export function AboutHero() {
   return (

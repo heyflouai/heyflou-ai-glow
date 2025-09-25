@@ -1,40 +1,46 @@
 export function IntegrationsWall() {
   const integrations = {
-    'CRM': ['HubSpot', 'Salesforce'],
+    'AI Tools': ['ChatGPT', 'Gemini', 'Claude'],
+    'CRM': ['HubSpot', 'Salesforce', 'Pipedrive', 'Zoho'],
     'Support': ['Zendesk', 'Intercom'],
     'Finance': ['QuickBooks', 'Xero', 'NetSuite'],
     'Productivity': ['Google Workspace', 'Microsoft 365'],
-    'Ops': ['Asana', 'Notion', 'Odoo'],
-    'Data/BI': ['Sheets', 'BigQuery', 'Looker', 'Power BI']
+    'Data/BI': ['Sheets', 'BigQuery', 'Looker']
   };
 
   return (
     <section className="py-20 md:py-28">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold font-display text-hf-ink mb-4">
             Tools & Integrations We Work With
           </h2>
         </div>
         
-        <div className="space-y-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-8">
           {Object.entries(integrations).map(([category, tools]) => (
             <div key={category} className="text-center">
-              <h3 className="text-lg font-bold font-display text-hf-navy mb-4">
+              <h3 className="text-sm font-bold font-display text-hf-navy mb-3">
                 {category}
               </h3>
-              <div className="flex flex-wrap justify-center gap-3">
+              <div className="space-y-2">
                 {tools.map((tool) => (
-                  <span 
+                  <div 
                     key={tool}
-                    className="px-4 py-2 bg-muted text-muted-foreground rounded-lg text-sm font-medium"
+                    className="px-3 py-1 bg-muted text-muted-foreground rounded text-xs"
                   >
                     {tool}
-                  </span>
+                  </div>
                 ))}
               </div>
             </div>
           ))}
+        </div>
+        
+        <div className="text-center">
+          <span className="px-6 py-2 bg-hf-teal/10 text-hf-teal rounded-full text-sm font-medium">
+            Much More
+          </span>
         </div>
       </div>
     </section>
