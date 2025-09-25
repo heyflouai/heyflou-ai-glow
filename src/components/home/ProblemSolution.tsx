@@ -1,33 +1,14 @@
 import React from 'react';
-import { 
-  ClipboardList, 
-  Mail, 
-  GitBranch, 
-  AlarmClock, 
-  BarChart, 
-  UsersRound,
-  Bot,
-  Workflow,
-  Shield,
-  Gauge
-} from 'lucide-react';
+import { ClipboardList, Mail, GitBranch, AlarmClock, BarChart, UsersRound, Bot, Workflow, Shield, Gauge } from 'lucide-react';
 import { GradientButton } from '@/components/ui/gradient-button';
 import { Link } from 'react-router-dom';
-
 const NeuralPathSvg: React.FC = () => {
-  return (
-    <div className="relative w-full h-80 flex items-center justify-center">
+  return <div className="relative w-full h-80 flex items-center justify-center">
       {/* Glow background */}
       <div className="absolute inset-0 hf-glow rounded-full opacity-10"></div>
       
       {/* Neural path SVG */}
-      <svg 
-        width="300" 
-        height="200" 
-        viewBox="0 0 300 200" 
-        className="relative z-10"
-        aria-label="Abstract neural path graphic"
-      >
+      <svg width="300" height="200" viewBox="0 0 300 200" className="relative z-10" aria-label="Abstract neural path graphic">
         <defs>
           <linearGradient id="neuralGradient" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="hsl(var(--hf-teal))" />
@@ -48,29 +29,11 @@ const NeuralPathSvg: React.FC = () => {
         </defs>
         
         {/* Main neural path */}
-        <path
-          d="M50 100 Q100 50 150 100 T250 100"
-          stroke="url(#neuralGradient)"
-          strokeWidth="3"
-          fill="none"
-          className="opacity-60"
-        />
+        <path d="M50 100 Q100 50 150 100 T250 100" stroke="url(#neuralGradient)" strokeWidth="3" fill="none" className="opacity-60" />
         
         {/* Animated path overlay */}
-        <path
-          d="M50 100 Q100 50 150 100 T250 100"
-          stroke="url(#neuralGradientAnimated)"
-          strokeWidth="2"
-          fill="none"
-          strokeDasharray="10,5"
-          className="opacity-80"
-        >
-          <animate
-            attributeName="stroke-dashoffset"
-            values="0;-100"
-            dur="8s"
-            repeatCount="indefinite"
-          />
+        <path d="M50 100 Q100 50 150 100 T250 100" stroke="url(#neuralGradientAnimated)" strokeWidth="2" fill="none" strokeDasharray="10,5" className="opacity-80">
+          <animate attributeName="stroke-dashoffset" values="0;-100" dur="8s" repeatCount="indefinite" />
         </path>
         
         {/* Neural nodes */}
@@ -89,83 +52,56 @@ const NeuralPathSvg: React.FC = () => {
         <path d="M150 120 L170 140" stroke="url(#neuralGradient)" strokeWidth="2" opacity="0.4" />
         <path d="M200 80 L220 60" stroke="url(#neuralGradient)" strokeWidth="2" opacity="0.4" />
       </svg>
-    </div>
-  );
+    </div>;
 };
-
 export const ProblemSolution: React.FC = () => {
-  const symptoms = [
-    {
-      icon: ClipboardList,
-      text: "Manual copy-paste between CRM, email, sheets, and ERP"
-    },
-    {
-      icon: Mail,
-      text: "Repetitive customer questions clogging support channels"
-    },
-    {
-      icon: GitBranch,
-      text: "Inconsistent SOPs and 'tribal knowledge'"
-    },
-    {
-      icon: AlarmClock,
-      text: "Delayed reporting and slow decision-making"
-    },
-    {
-      icon: BarChart,
-      text: "Leads go cold; follow-ups are inconsistent"
-    },
-    {
-      icon: UsersRound,
-      text: "Scaling ops requires headcount instead of smarter systems"
-    }
-  ];
-
-  const benefits = [
-    {
-      icon: Bot,
-      text: "Automate repetitive tasks across tools (email, CRM, tickets, docs)"
-    },
-    {
-      icon: Workflow,
-      text: "Human-in-the-loop approvals for accuracy and control"
-    },
-    {
-      icon: Shield,
-      text: "Measurable time savings and fewer errors"
-    },
-    {
-      icon: Gauge,
-      text: "Works with your systems via APIs and secure access"
-    }
-  ];
-
-  const services = [
-    {
-      title: "Workflow Automation",
-      description: "Email triage, invoice handling, reporting, routing.",
-      outcome: "Cut busywork and cycle times."
-    },
-    {
-      title: "AI Training for Teams",
-      description: "Role-based playbooks, prompt ops, governance.",
-      outcome: "Confident, safe day-to-day AI use."
-    },
-    {
-      title: "AI Agents for Your Business",
-      description: "Agents that follow SOPs, execute tasks, and log everything.",
-      outcome: "Reliable execution without adding headcount."
-    }
-  ];
-
-  const stats = [
-    "20+ hrs saved / employee / month",
-    "~40% average productivity lift",
-    "Support costs down ~50% with AI deflection"
-  ];
-
-  return (
-    <div className="space-y-16">
+  const symptoms = [{
+    icon: ClipboardList,
+    text: "Manual copy-paste between CRM, email, sheets, and ERP"
+  }, {
+    icon: Mail,
+    text: "Repetitive customer questions clogging support channels"
+  }, {
+    icon: GitBranch,
+    text: "Inconsistent SOPs and 'tribal knowledge'"
+  }, {
+    icon: AlarmClock,
+    text: "Delayed reporting and slow decision-making"
+  }, {
+    icon: BarChart,
+    text: "Leads go cold; follow-ups are inconsistent"
+  }, {
+    icon: UsersRound,
+    text: "Scaling ops requires headcount instead of smarter systems"
+  }];
+  const benefits = [{
+    icon: Bot,
+    text: "Automate repetitive tasks across tools (email, CRM, tickets, docs)"
+  }, {
+    icon: Workflow,
+    text: "Human-in-the-loop approvals for accuracy and control"
+  }, {
+    icon: Shield,
+    text: "Measurable time savings and fewer errors"
+  }, {
+    icon: Gauge,
+    text: "Works with your systems via APIs and secure access"
+  }];
+  const services = [{
+    title: "Workflow Automation",
+    description: "Email triage, invoice handling, reporting, routing.",
+    outcome: "Cut busywork and cycle times."
+  }, {
+    title: "AI Training for Teams",
+    description: "Role-based playbooks, prompt ops, governance.",
+    outcome: "Confident, safe day-to-day AI use."
+  }, {
+    title: "AI Agents for Your Business",
+    description: "Agents that follow SOPs, execute tasks, and log everything.",
+    outcome: "Reliable execution without adding headcount."
+  }];
+  const stats = ["20+ hrs saved / employee / month", "~40% average productivity lift", "Support costs down ~50% with AI deflection"];
+  return <div className="space-y-16">
       {/* Problem Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="space-y-6">
@@ -183,20 +119,16 @@ export const ProblemSolution: React.FC = () => {
 
           <div className="space-y-4">
             {symptoms.map((symptom, index) => {
-              const Icon = symptom.icon;
-              return (
-                <div 
-                  key={index}
-                  className="flex items-start gap-3 animate-fade-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
+            const Icon = symptom.icon;
+            return <div key={index} className="flex items-start gap-3 animate-fade-in" style={{
+              animationDelay: `${index * 0.1}s`
+            }}>
                   <div className="w-5 h-5 mt-0.5 text-hf-teal flex-shrink-0">
                     <Icon size={20} />
                   </div>
                   <p className="text-muted-foreground">{symptom.text}</p>
-                </div>
-              );
-            })}
+                </div>;
+          })}
           </div>
         </div>
 
@@ -224,34 +156,26 @@ export const ProblemSolution: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {benefits.map((benefit, index) => {
-            const Icon = benefit.icon;
-            return (
-              <div 
-                key={index}
-                className="flex items-start gap-3 animate-fade-in"
-                style={{ animationDelay: `${(index + 6) * 0.1}s` }}
-              >
+          const Icon = benefit.icon;
+          return <div key={index} className="flex items-start gap-3 animate-fade-in" style={{
+            animationDelay: `${(index + 6) * 0.1}s`
+          }}>
                 <div className="w-6 h-6 mt-0.5 text-hf-teal flex-shrink-0">
                   <Icon size={24} />
                 </div>
                 <p className="text-muted-foreground">{benefit.text}</p>
-              </div>
-            );
-          })}
+              </div>;
+        })}
         </div>
 
         {/* Outcome Stats */}
         <div className="text-center space-y-4">
           <div className="flex flex-wrap justify-center gap-3">
-            {stats.map((stat, index) => (
-              <div 
-                key={index}
-                className="px-4 py-2 bg-hf-teal/10 rounded-full text-sm font-medium text-hf-navy animate-fade-in"
-                style={{ animationDelay: `${(index + 10) * 0.1}s` }}
-              >
+            {stats.map((stat, index) => <div key={index} className="px-4 py-2 bg-hf-teal/10 rounded-full text-sm font-medium text-hf-navy animate-fade-in" style={{
+            animationDelay: `${(index + 10) * 0.1}s`
+          }}>
                 {stat}
-              </div>
-            ))}
+              </div>)}
           </div>
           <p className="text-xs text-muted-foreground">
             Benchmarks from the HeyFlou SMB AI Analysis ('24–'25)—results vary.
@@ -263,61 +187,6 @@ export const ProblemSolution: React.FC = () => {
       <div className="border-t border-hf-ink/8"></div>
 
       {/* What We Do Section */}
-      <div className="space-y-8">
-        <div className="text-center">
-          <h3 className="text-2xl md:text-3xl font-bold font-display text-hf-ink mb-4">
-            What We Do
-          </h3>
-          <p className="text-lg text-muted-foreground">
-            Three core services to transform your business with AI
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {services.map((service, index) => (
-            <div 
-              key={index}
-              className="bg-card rounded-2xl p-6 hf-shadow hover:hf-shadow-lg transition-all duration-300 animate-fade-in"
-              style={{ animationDelay: `${(index + 13) * 0.1}s` }}
-            >
-              <h4 className="text-lg font-bold font-display text-hf-ink mb-3">
-                {service.title}
-              </h4>
-              <p className="text-sm text-muted-foreground mb-4">
-                {service.description}
-              </p>
-              <p className="text-sm font-medium text-hf-teal">
-                {service.outcome}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-          <GradientButton 
-            variant="hero" 
-            size="lg" 
-            asChild
-            className="animate-fade-in"
-            style={{ animationDelay: '1.6s' }}
-          >
-            <a href="https://calendly.com/salo-zayat/new-meeting" target="_blank" rel="noopener noreferrer">
-              Book a Strategy Call
-            </a>
-          </GradientButton>
-          
-          <GradientButton 
-            variant="ghost" 
-            size="lg" 
-            asChild
-            className="animate-fade-in"
-            style={{ animationDelay: '1.7s' }}
-          >
-            <Link to="/contact">Get an AI Audit</Link>
-          </GradientButton>
-        </div>
-      </div>
-    </div>
-  );
+      
+    </div>;
 };
