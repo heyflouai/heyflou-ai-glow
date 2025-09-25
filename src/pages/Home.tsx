@@ -52,9 +52,6 @@ const faqJsonLd = {
   ]
 };
 
-const trustLogos = [
-  "Client Logo 1", "Client Logo 2", "Client Logo 3", "Client Logo 4", "Client Logo 5"
-];
 
 const beforeAfterComparisons = [
   { category: "Response Time", traditional: "Hours", withAI: "Seconds" },
@@ -179,21 +176,6 @@ export default function Home() {
           </div>
         </Section>
 
-        {/* Trust Bar */}
-        <Section background="muted" padding="small">
-          <div className="text-center">
-            <p className="text-sm text-muted-foreground mb-6">
-              Selected findings from our 2024–2025 SMB AI analysis
-            </p>
-            <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-              {trustLogos.map((logo, index) => (
-                <div key={index} className="text-sm font-medium text-muted-foreground">
-                  {logo}
-                </div>
-              ))}
-            </div>
-          </div>
-        </Section>
 
         {/* Why AI Now - Stats Grid */}
         <Section>
@@ -401,72 +383,6 @@ export default function Home() {
           </div>
         </Section>
 
-        {/* Mini Case Snapshots */}
-        <Section>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-display text-hf-ink mb-4">
-              Success Stories
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Real results from SMBs using AI automation
-            </p>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {featuredCases.map((caseStudy) => (
-              <div key={caseStudy.id} className="bg-card rounded-xl p-6 hf-shadow hover:hf-shadow-lg transition-all duration-300 group">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="text-sm text-hf-teal font-medium">
-                    {caseStudy.industry}
-                  </div>
-                  <div className="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">
-                    {caseStudy.useCase}
-                  </div>
-                </div>
-                <h3 className="text-lg font-bold font-display text-hf-ink mb-3">
-                  {caseStudy.title}
-                </h3>
-                
-                {/* Challenge → Solution → Outcome format */}
-                <div className="space-y-3 text-sm">
-                  <div>
-                    <span className="font-semibold text-destructive">Challenge:</span>
-                    <p className="text-muted-foreground mt-1">{caseStudy.challenge}</p>
-                  </div>
-                  
-                  <div>
-                    <span className="font-semibold text-hf-purple">Solution:</span>
-                    <p className="text-muted-foreground mt-1">{caseStudy.solution}</p>
-                  </div>
-                  
-                  <div>
-                    <span className="font-semibold text-hf-teal">Outcome:</span>
-                    <div className="flex items-center justify-between mt-1">
-                      <div className="text-lg font-bold text-hf-teal">
-                        {caseStudy.metrics.primary}
-                      </div>
-                      {caseStudy.metrics.secondary && (
-                        <div className="text-sm text-muted-foreground">
-                          {caseStudy.metrics.secondary}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="mt-4 pt-4 border-t border-border">
-                  <GradientButton variant="ghost" size="sm" asChild>
-                    <Link to="/case-studies">See the full story</Link>
-                  </GradientButton>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <GradientButton variant="secondary" asChild>
-              <Link to="/case-studies">View All Case Studies</Link>
-            </GradientButton>
-          </div>
-        </Section>
 
         {/* Process */}
         <Section background="muted">
@@ -495,40 +411,6 @@ export default function Home() {
           </div>
         </Section>
 
-        {/* ROI Calculator Teaser */}
-        <Section>
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold font-display text-hf-ink mb-4">
-              Calculate Your AI ROI
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              See potential savings and payback period for your business
-            </p>
-            <div className="bg-card rounded-xl p-8 hf-shadow">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-6">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-hf-teal">20+</div>
-                  <div className="text-sm text-muted-foreground">Hours Saved/Month</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-hf-teal">$2K</div>
-                  <div className="text-sm text-muted-foreground">Monthly Savings</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-hf-teal">3-6</div>
-                  <div className="text-sm text-muted-foreground">Months to ROI</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-hf-teal">3%</div>
-                  <div className="text-sm text-muted-foreground">Revenue Lift</div>
-                </div>
-              </div>
-              <GradientButton variant="primary" size="lg" asChild>
-                <Link to="/roi">Calculate Your ROI</Link>
-              </GradientButton>
-            </div>
-          </div>
-        </Section>
 
         {/* FAQ */}
         <Section background="muted">

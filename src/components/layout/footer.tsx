@@ -25,15 +25,6 @@ export const Footer = () => {
               AI Consulting for SMB workflow automation.
             </p>
             
-            {/* Logo Cloud Placeholder */}
-            <div className="mb-6">
-              <p className="text-xs text-gray-400 mb-3">Trusted by businesses worldwide</p>
-              <div className="flex space-x-4 opacity-50">
-                <div className="w-16 h-8 bg-gray-600 rounded text-xs flex items-center justify-center">Logo</div>
-                <div className="w-16 h-8 bg-gray-600 rounded text-xs flex items-center justify-center">Logo</div>
-                <div className="w-16 h-8 bg-gray-600 rounded text-xs flex items-center justify-center">Logo</div>
-              </div>
-            </div>
             
             {/* Email Capture */}
             <div className="max-w-sm">
