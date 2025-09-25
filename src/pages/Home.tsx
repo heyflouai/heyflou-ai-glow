@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { CompactForm } from '@/components/forms/CompactForm';
 import { ProblemSolution } from '@/components/home/ProblemSolution';
+import { DepartmentsCarousel } from '@/components/home/DepartmentsCarousel';
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -229,6 +230,15 @@ export default function Home() {
               </GradientButton>
             </div>
           </div>
+        </Section>
+
+        {/* We Help Every Department */}
+        <Section id="departments" className="py-20 md:py-28">
+          <div className="max-w-6xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--hf-ink))]">We Help Every Department</h2>
+            <p className="mt-3 text-[hsl(var(--hf-navy)/0.9)]">Plug AI where it saves the most time and reduces errors.</p>
+          </div>
+          <DepartmentsCarousel className="mt-10 md:mt-12" />
         </Section>
 
         {/* Industries We Help */}
