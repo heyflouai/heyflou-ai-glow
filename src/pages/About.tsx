@@ -16,11 +16,7 @@ export default function About() {
             <div className="flex flex-col md:flex-row md:items-center md:gap-12">
               {/* Logo - Small on mobile, left side on desktop */}
               <div className="flex justify-center md:justify-start mb-6 md:mb-0">
-                <img 
-                  src={logoSvg} 
-                  alt="HeyFlou logo" 
-                  className="h-16 w-auto"
-                />
+                
               </div>
               
               {/* Text content */}
