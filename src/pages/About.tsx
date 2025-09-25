@@ -5,15 +5,9 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import { Target, Users, Shield, Search, Zap, TestTube, TrendingUp } from 'lucide-react';
 import logoSvg from '@/assets/heyflou-logo.svg';
-
 export default function About() {
-  return (
-    <>
-      <SEOHead 
-        title="About HeyFlou | AI Automation for SMBs"
-        description="HeyFlou helps SMBs achieve ROI with business-first, human-in-the-loop AI automations—secure, measurable, and fast to deploy."
-        canonical="https://heyflou.com/about"
-      />
+  return <>
+      <SEOHead title="About HeyFlou | AI Automation for SMBs" description="HeyFlou helps SMBs achieve ROI with business-first, human-in-the-loop AI automations—secure, measurable, and fast to deploy." canonical="https://heyflou.com/about" />
       
       <main className="pt-16">
         {/* Hero Section */}
@@ -22,11 +16,7 @@ export default function About() {
             <div className="flex flex-col md:flex-row md:items-center md:gap-12">
               {/* Logo - Small on mobile, left side on desktop */}
               <div className="flex justify-center md:justify-start mb-6 md:mb-0">
-                <img 
-                  src={logoSvg} 
-                  alt="HeyFlou logo" 
-                  className="h-12 w-12 md:h-16 md:w-16"
-                />
+                
               </div>
               
               {/* Text content */}
@@ -260,6 +250,5 @@ export default function About() {
           </div>
         </Section>
       </main>
-    </>
-  );
+    </>;
 }
