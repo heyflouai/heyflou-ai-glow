@@ -9,6 +9,6 @@ export const integrationGroups = [
   { title: "Projects & Knowledge", items: ["Asana","Notion","Trello"] },
 ];
 
-export const integrationsLead = "We automate using 1,200+ tools and apps via n8n. Below are the platforms we're asked for most often.";
+export const integrationsLead = "We automate using 1,200+ tools and apps. Below are the platforms we're asked for most often.";
 
 export const integrationsDirectoryUrl = "https://n8n.io/integrations";
