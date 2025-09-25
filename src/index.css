@@ -139,6 +139,18 @@
     background: var(--hf-glow);
   }
   
+  .hero-logo {
+    background: var(--hf-glow);
+  }
+  
+  .logo-wordmark {
+    background: var(--hf-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+  
   .hf-shadow {
     box-shadow: var(--hf-shadow);
   }

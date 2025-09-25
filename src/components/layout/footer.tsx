@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { BrandLockup } from '@/components/BrandLockup';
 import { GradientButton } from '@/components/ui/gradient-button';
+import wordmarkLogo from '@/assets/heyflou_wordmark_transparent.png';
 
 const navigationItems = [
   { name: 'Home', href: '/' },
@@ -14,10 +15,14 @@ export const Footer = () => {
     <footer className="bg-hf-navy text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Brand Section with Lockup */}
+          {/* Brand Section with Wordmark */}
           <div className="col-span-1 md:col-span-2">
             <div className="mb-4">
-              <BrandLockup className="text-white [&_span]:text-white" />
+              <img 
+                src={wordmarkLogo} 
+                alt="HeyFlou logo" 
+                className="h-8 object-contain"
+              />
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
               AI Consulting for SMB workflow automation.

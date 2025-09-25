@@ -1,43 +1,52 @@
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import logoImage from '@/assets/heyflou-logo-new.png';
+import horizontalLogo from '@/assets/heyflou_logo_lockup_horizontal.png';
+import stackedLogo from '@/assets/heyflou_logo_lockup_stacked.png';
 
 interface BrandLockupProps {
   className?: string;
-  size?: 'sm' | 'md' | 'lg';
-  showText?: boolean;
+  variant?: 'horizontal' | 'stacked' | 'auto';
+  height?: string;
 }
-
-const sizeConfig = {
-  sm: { logo: 'h-5 w-5', text: 'text-base' },
-  md: { logo: 'h-6 w-6 md:h-7 md:w-7', text: 'text-lg md:text-xl' },
-  lg: { logo: 'h-8 w-8', text: 'text-xl' }
-};
 
 export const BrandLockup = ({ 
   className, 
-  size = 'md',
-  showText = true 
+  variant = 'auto',
+  height = 'h-12'
 }: BrandLockupProps) => {
-  const config = sizeConfig[size];
+  const logoSrc = variant === 'stacked' ? stackedLogo : 
+                  variant === 'horizontal' ? horizontalLogo : 
+                  horizontalLogo; // Default to horizontal for auto
   
   return (
     <Link 
       to="/" 
       className={cn(
-        "flex items-center space-x-2 font-display font-bold transition-opacity hover:opacity-75",
+        "block transition-opacity hover:opacity-75",
         className
       )}
     >
-      <img 
-        src={logoImage} 
-        alt="HeyFlou AI consulting logo" 
-        className={cn("object-contain", config.logo)}
-      />
-      {showText && (
-        <span className={cn("text-hf-ink", config.text)}>
-          HeyFlou
-        </span>
+      {variant === 'auto' ? (
+        <>
+          {/* Show horizontal on larger screens */}
+          <img 
+            src={horizontalLogo} 
+            alt="HeyFlou logo" 
+            className={cn("object-contain hidden sm:block", height)}
+          />
+          {/* Show stacked on mobile */}
+          <img 
+            src={stackedLogo} 
+            alt="HeyFlou logo" 
+            className={cn("object-contain block sm:hidden", height)}
+          />
+        </>
+      ) : (
+        <img 
+          src={logoSrc} 
+          alt="HeyFlou logo" 
+          className={cn("object-contain", height)}
+        />
       )}
     </Link>
   );

@@ -1,4 +1,4 @@
-import logoSvg from '@/assets/logo_heyflou.png';
+import stackedLogo from '@/assets/heyflou_logo_lockup_stacked.png';
 import { GradientButton } from '@/components/ui/gradient-button';
 import { Button } from '@/components/ui/button';
 import { ExternalLink } from 'lucide-react';
@@ -6,11 +6,10 @@ import { ExternalLink } from 'lucide-react';
 export function AboutHero() {
   return (
     <section className="pt-16 pb-20 md:py-28">
-      <div className="hf-glow absolute inset-0 -z-10" />
       {/* Faint watermark logo behind content */}
       <div className="absolute inset-0 flex items-center justify-center -z-5">
         <img 
-          src={logoSvg} 
+          src={stackedLogo} 
           alt="" 
           className="w-96 h-96 opacity-5 object-contain"
           aria-hidden="true"
@@ -19,9 +18,9 @@ export function AboutHero() {
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
         {/* Logo-first layout */}
-        <div className="mb-8">
+        <div className="hero-logo mb-8 inline-block rounded-2xl p-4">
           <img 
-            src={logoSvg} 
+            src={stackedLogo} 
             alt="HeyFlou logo" 
             className="h-18 md:h-28 mx-auto"
           />

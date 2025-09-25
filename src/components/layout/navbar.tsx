@@ -42,9 +42,9 @@ export const Navbar = () => {
           : "bg-transparent"
       )}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-14">
             {/* Brand Lockup */}
-            <BrandLockup />
+            <BrandLockup variant="auto" height="h-10" />
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
@@ -89,7 +89,7 @@ export const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-16 left-0 right-0 bg-background/95 backdrop-blur-md border-b border-border">
+          <div className="md:hidden absolute top-14 left-0 right-0 bg-background/95 backdrop-blur-md border-b border-border">
             <div className="px-4 py-6 space-y-4">
               {navigationItems.map((item) => (
                 <Link
