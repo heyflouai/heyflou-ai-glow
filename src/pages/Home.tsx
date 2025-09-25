@@ -104,10 +104,8 @@ const faqItems = [{
   answer: "AI agents handle multi-step tasks with built-in guardrails—like following up on leads, monitoring operations, or processing customer requests—while keeping humans in control."
 }];
 export default function Home() {
-  const [selectedIndustry, setSelectedIndustry] = useState<string | null>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const featuredCases = getFeaturedCases();
-  const filteredUseCases = selectedIndustry ? industryUseCases.filter(uc => uc.industry === selectedIndustry) : industryUseCases;
   return <>
         <SEOHead title="HeyFlou | AI Consulting for SMB Workflow Automation" description="Automate workflows, train teams, and deploy AI agents. Proven ROI for SMBs." canonical="https://heyflou.com" jsonLd={[organizationJsonLd, faqJsonLd]} />
       
@@ -290,18 +288,9 @@ export default function Home() {
               AI automation solutions tailored to your industry
             </p>
           </div>
-          
-          <div className="flex flex-wrap justify-center gap-3 mb-8">
-            <button onClick={() => setSelectedIndustry(null)} className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedIndustry === null ? 'hf-gradient text-white' : 'bg-white text-hf-ink hover:bg-muted'}`}>
-              All Industries
-            </button>
-            {industryUseCases.map(useCase => <button key={useCase.industry} onClick={() => setSelectedIndustry(useCase.industry)} className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedIndustry === useCase.industry ? 'hf-gradient text-white' : 'bg-white text-hf-ink hover:bg-muted'}`}>
-                {useCase.industry}
-              </button>)}
-          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredUseCases.map(useCase => <div key={useCase.industry} className="bg-card rounded-xl p-6 hf-shadow">
+            {industryUseCases.map(useCase => <div key={useCase.industry} className="bg-card rounded-xl p-6 hf-shadow">
                 <h3 className="text-lg font-bold font-display text-hf-ink mb-4">
                   {useCase.industry}
                 </h3>
