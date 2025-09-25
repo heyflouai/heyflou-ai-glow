@@ -14,7 +14,150 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      contacts: {
+        Row: {
+          company: string
+          consent: boolean
+          created_at: string
+          email: string
+          first_name: string
+          id: string
+          industry: string
+          last_name: string
+          message: string | null
+          referrer: string | null
+          source_page: string
+          team_size: string
+          utm_campaign: string | null
+          utm_medium: string | null
+          utm_source: string | null
+          website: string | null
+        }
+        Insert: {
+          company: string
+          consent?: boolean
+          created_at?: string
+          email: string
+          first_name: string
+          id?: string
+          industry: string
+          last_name: string
+          message?: string | null
+          referrer?: string | null
+          source_page: string
+          team_size: string
+          utm_campaign?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          website?: string | null
+        }
+        Update: {
+          company?: string
+          consent?: boolean
+          created_at?: string
+          email?: string
+          first_name?: string
+          id?: string
+          industry?: string
+          last_name?: string
+          message?: string | null
+          referrer?: string | null
+          source_page?: string
+          team_size?: string
+          utm_campaign?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          website?: string | null
+        }
+        Relationships: []
+      }
+      intakes: {
+        Row: {
+          areas_of_interest: string[] | null
+          biggest_pain: string | null
+          budget_range: string | null
+          company: string
+          consent: boolean
+          country: string | null
+          created_at: string
+          current_ai_usage: string | null
+          email: string
+          first_name: string
+          goals: string[] | null
+          id: string
+          industry: string
+          last_name: string
+          message: string | null
+          preferred_contact: string | null
+          referrer: string | null
+          role: string | null
+          source_page: string
+          team_size: string
+          timeline: string | null
+          tools_in_use: string[] | null
+          utm_campaign: string | null
+          utm_medium: string | null
+          utm_source: string | null
+          website: string | null
+        }
+        Insert: {
+          areas_of_interest?: string[] | null
+          biggest_pain?: string | null
+          budget_range?: string | null
+          company: string
+          consent?: boolean
+          country?: string | null
+          created_at?: string
+          current_ai_usage?: string | null
+          email: string
+          first_name: string
+          goals?: string[] | null
+          id?: string
+          industry: string
+          last_name: string
+          message?: string | null
+          preferred_contact?: string | null
+          referrer?: string | null
+          role?: string | null
+          source_page: string
+          team_size: string
+          timeline?: string | null
+          tools_in_use?: string[] | null
+          utm_campaign?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          website?: string | null
+        }
+        Update: {
+          areas_of_interest?: string[] | null
+          biggest_pain?: string | null
+          budget_range?: string | null
+          company?: string
+          consent?: boolean
+          country?: string | null
+          created_at?: string
+          current_ai_usage?: string | null
+          email?: string
+          first_name?: string
+          goals?: string[] | null
+          id?: string
+          industry?: string
+          last_name?: string
+          message?: string | null
+          preferred_contact?: string | null
+          referrer?: string | null
+          role?: string | null
+          source_page?: string
+          team_size?: string
+          timeline?: string | null
+          tools_in_use?: string[] | null
+          utm_campaign?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          website?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

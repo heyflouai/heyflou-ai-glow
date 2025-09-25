@@ -7,6 +7,8 @@ import { keyMetrics, industryUseCases } from '@/data/metrics';
 import { getFeaturedCases } from '@/data/cases';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { QuestionnaireForm } from '@/components/forms/QuestionnaireForm';
+import { CompactForm } from '@/components/forms/CompactForm';
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -338,6 +340,11 @@ export default function Home() {
         </Section>
 
 
+        {/* AI Readiness Questionnaire */}
+        <Section id="questionnaire" background="glow">
+          <QuestionnaireForm />
+        </Section>
+
         {/* FAQ */}
         <Section background="muted">
           <div className="text-center mb-12">
@@ -361,6 +368,11 @@ export default function Home() {
                   </div>}
               </div>)}
           </div>
+        </Section>
+
+        {/* Compact Form */}
+        <Section id="get-started">
+          <CompactForm sourcePage="home" />
         </Section>
 
         {/* Final CTA */}
