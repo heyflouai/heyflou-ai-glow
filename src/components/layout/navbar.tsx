@@ -9,7 +9,6 @@ const navigationItems = [
   { name: 'Home', href: '/' },
   { name: 'Services', href: '/services' },
   { name: 'Case Studies', href: '/case-studies' },
-  { name: 'ROI Calculator', href: '/roi' },
   { name: 'About', href: '/about' }
 ];
 

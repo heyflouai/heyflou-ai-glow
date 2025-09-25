@@ -6,8 +6,7 @@ const navigationItems = [
   { name: 'Home', href: '/' },
   { name: 'Services', href: '/services' },
   { name: 'Case Studies', href: '/case-studies' },
-  { name: 'About', href: '/about' },
-  { name: 'ROI Calculator', href: '/roi' }
+  { name: 'About', href: '/about' }
 ];
 
 export const Footer = () => {
@@ -82,14 +81,6 @@ export const Footer = () => {
                 >
                   Book Strategy Call
                 </a>
-              </li>
-              <li>
-                <Link 
-                  to="/roi"
-                  className="text-gray-300 hover:text-white transition-colors text-sm"
-                >
-                  ROI Calculator
-                </Link>
               </li>
             </ul>
           </div>
