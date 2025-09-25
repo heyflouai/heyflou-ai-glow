@@ -133,7 +133,7 @@ export default function Home() {
         jsonLd={[organizationJsonLd, faqJsonLd]}
       />
       
-      <main className="pt-16"> {/* Back to normal header spacing */}
+      <main className="pt-25"> {/* Adjusted for preheader */}
         {/* Hero Section */}
         <Section background="glow" padding="large">
           <div className="text-center max-w-4xl mx-auto relative">

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import logoImage from '@/assets/heyflou-logo-new.png';
+import logoSvg from '@/assets/heyflou-logo.svg';
 
 interface BrandLockupProps {
   className?: string;
@@ -30,7 +30,7 @@ export const BrandLockup = ({
       )}
     >
       <img 
-        src={logoImage} 
+        src={logoSvg} 
         alt="HeyFlou AI consulting logo" 
         className={cn("object-contain", config.logo)}
       />
