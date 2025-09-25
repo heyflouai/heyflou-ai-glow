@@ -8,7 +8,7 @@ import { Footer } from "@/components/layout/footer";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import CaseStudies from "./pages/CaseStudies";
-import Resources from "./pages/Resources";
+
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import ROICalculator from "./pages/ROICalculator";
@@ -29,7 +29,7 @@ const App = () => (
               <Route path="/" element={<Home />} />
               <Route path="/services" element={<Services />} />
               <Route path="/case-studies" element={<CaseStudies />} />
-              <Route path="/resources" element={<Resources />} />
+              
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/roi" element={<ROICalculator />} />
