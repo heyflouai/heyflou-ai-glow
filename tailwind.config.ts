@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'display': ['Plus Jakarta Sans', 'sans-serif'],
+        'ui': ['Inter', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -47,6 +51,12 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // HeyFlou brand colors
+        'hf-navy': "hsl(var(--hf-navy))",
+        'hf-ink': "hsl(var(--hf-ink))",
+        'hf-teal': "hsl(var(--hf-teal))",
+        'hf-purple': "hsl(var(--hf-purple))",
+        'hf-sky': "hsl(var(--hf-sky))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

@@ -1,42 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* HeyFlou Design System - All colors, gradients, fonts, etc defined here */
 
 @layer base {
   :root {
+    /* HeyFlou Brand Colors (HSL only) */
+    --hf-navy: 221 53% 16%;
+    --hf-ink: 222 28% 24%;
+    --hf-teal: 190 72% 44%;
+    --hf-purple: 268 84% 65%;
+    --hf-sky: 206 83% 60%;
+    
+    /* Background system */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --foreground: 222 28% 24%;
+    
+    /* Card system */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 222 28% 24%;
+    
+    /* Primary system (HeyFlou brand) */
+    --primary: 190 72% 44%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary system */
+    --secondary: 221 53% 16%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Muted system */
+    --muted: 220 13% 96%;
+    --muted-foreground: 215 20% 65%;
+    
+    /* Accent system */
+    --accent: 206 83% 60%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Standard system colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 190 72% 44%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --popover-foreground: 222 28% 24%;
+    
+    /* HeyFlou Gradients */
+    --hf-gradient: linear-gradient(135deg, hsl(var(--hf-teal)), hsl(var(--hf-purple)));
+    --hf-glow: radial-gradient(80% 80% at 50% 0%, hsl(var(--hf-purple)/0.18) 0%, transparent 60%);
+    
+    /* HeyFlou Shadows */
+    --hf-shadow: 0 12px 32px hsl(var(--hf-navy)/0.2);
+    --hf-shadow-lg: 0 20px 40px hsl(var(--hf-navy)/0.15);
+    
+    /* Design tokens */
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +121,76 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-ui;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  /* HeyFlou Component Classes */
+  .hf-gradient {
+    background: var(--hf-gradient);
+  }
+  
+  .hf-glow {
+    background: var(--hf-glow);
+  }
+  
+  .hf-shadow {
+    box-shadow: var(--hf-shadow);
+  }
+  
+  .hf-shadow-lg {
+    box-shadow: var(--hf-shadow-lg);
+  }
+
+  /* Animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.8s ease-out;
+  }
+
+  .animate-counter {
+    animation: counter 2s ease-out;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  
+  .font-ui {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes counter {
+  from { transform: scale(1.1); }
+  to { transform: scale(1); }
 }
