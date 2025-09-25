@@ -105,7 +105,7 @@ export default function Home() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
                 <GradientButton variant="hero" size="xl" asChild>
-                  <a href="https://calendly.com/heyflou/30min" target="_blank" rel="noopener noreferrer">
+                  <a href="https://calendly.com/salo-zayat/new-meeting" target="_blank" rel="noopener noreferrer">
                     Book a Strategy Call
                   </a>
                 </GradientButton>

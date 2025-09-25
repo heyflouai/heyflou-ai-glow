@@ -153,7 +153,7 @@ export default function ROICalculator() {
                 Book a strategy call to discuss your specific automation opportunities.
               </p>
               <GradientButton variant="primary" size="lg" asChild>
-                <a href="https://calendly.com/heyflou/30min" target="_blank" rel="noopener noreferrer">
+                <a href="https://calendly.com/salo-zayat/new-meeting" target="_blank" rel="noopener noreferrer">
                   Book Strategy Call
                 </a>
               </GradientButton>

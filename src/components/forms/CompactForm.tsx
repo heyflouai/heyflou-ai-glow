@@ -162,7 +162,7 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage }) => {
         <p className="text-muted-foreground mb-6">
           Want to move faster?{' '}
           <GradientButton variant="ghost" size="sm" asChild>
-            <a href="https://calendly.com/heyflou/30min" target="_blank" rel="noopener noreferrer">
+            <a href="https://calendly.com/salo-zayat/new-meeting" target="_blank" rel="noopener noreferrer">
               Book a strategy call
             </a>
           </GradientButton>
@@ -347,7 +347,7 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage }) => {
               asChild
               className="flex-1"
             >
-              <a href="https://calendly.com/heyflou/30min" target="_blank" rel="noopener noreferrer">
+              <a href="https://calendly.com/salo-zayat/new-meeting" target="_blank" rel="noopener noreferrer">
                 Book a Strategy Call
               </a>
             </GradientButton>

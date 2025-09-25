@@ -302,7 +302,7 @@ export const ProblemSolution: React.FC = () => {
             className="animate-fade-in"
             style={{ animationDelay: '1.6s' }}
           >
-            <a href="https://calendly.com/heyflou/30min" target="_blank" rel="noopener noreferrer">
+            <a href="https://calendly.com/salo-zayat/new-meeting" target="_blank" rel="noopener noreferrer">
               Book a Strategy Call
             </a>
           </GradientButton>
