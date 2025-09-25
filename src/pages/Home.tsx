@@ -7,7 +7,6 @@ import { keyMetrics, industryUseCases } from '@/data/metrics';
 import { getFeaturedCases } from '@/data/cases';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -15,120 +14,102 @@ const organizationJsonLd = {
   "description": "AI Consulting for SMB Workflow Automation",
   "url": "https://heyflou.com",
   "logo": "https://heyflou.com/logo.png",
-  "sameAs": [
-    "https://linkedin.com/company/heyflou",
-    "https://twitter.com/heyflou"
-  ]
+  "sameAs": ["https://linkedin.com/company/heyflou", "https://twitter.com/heyflou"]
 };
-
 const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Will AI replace my team?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No—AI augments your team with human-in-the-loop processes. Our approach focuses on automating repetitive tasks so your team can focus on higher-value work."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do you handle data security?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We follow vendor best practices with least-privilege access and opt-out of training data usage to ensure your business data remains secure and private."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How fast can we see ROI?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Often within months, depending on the use case. Most clients see measurable improvements in efficiency and cost savings within 90 days of implementation."
-      }
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "Will AI replace my team?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No—AI augments your team with human-in-the-loop processes. Our approach focuses on automating repetitive tasks so your team can focus on higher-value work."
     }
-  ]
+  }, {
+    "@type": "Question",
+    "name": "How do you handle data security?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "We follow vendor best practices with least-privilege access and opt-out of training data usage to ensure your business data remains secure and private."
+    }
+  }, {
+    "@type": "Question",
+    "name": "How fast can we see ROI?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Often within months, depending on the use case. Most clients see measurable improvements in efficiency and cost savings within 90 days of implementation."
+    }
+  }]
 };
-
-
-const beforeAfterComparisons = [
-  { category: "Response Time", traditional: "Hours", withAI: "Seconds" },
-  { category: "Data & Reporting", traditional: "40 hours", withAI: "5-10 hours" },
-  { category: "Support Cost", traditional: "High", withAI: "~50% reduction" },
-  { category: "Error Rate", traditional: "Frequent", withAI: "Near-zero" },
-  { category: "Content Throughput", traditional: "4 pieces/week", withAI: "10+ pieces/week" },
-  { category: "Lead Handling", traditional: "Manual process", withAI: "AI scoring" }
-];
-
-const processSteps = [
-  {
-    step: "01",
-    title: "Discover",
-    description: "Audit your current workflows and identify automation opportunities"
-  },
-  {
-    step: "02", 
-    title: "Design",
-    description: "Create custom AI solutions tailored to your business processes"
-  },
-  {
-    step: "03",
-    title: "Deploy",
-    description: "Implement and integrate AI systems with your existing tools"
-  },
-  {
-    step: "04",
-    title: "Train & Improve",
-    description: "Upskill your team and continuously optimize performance"
-  }
-];
-
-const faqItems = [
-  {
-    question: "Will AI replace my team?",
-    answer: "No—AI augments your team with human-in-the-loop processes. Our approach focuses on automating repetitive tasks so your team can focus on higher-value work."
-  },
-  {
-    question: "How do you handle data security?",
-    answer: "We follow vendor best practices with least-privilege access and opt-out of training data usage to ensure your business data remains secure and private."
-  },
-  {
-    question: "How fast can we see ROI?",
-    answer: "Often within months, depending on the use case. Most clients see measurable improvements in efficiency and cost savings within 90 days of implementation."
-  },
-  {
-    question: "Do I need clean data to get started?",
-    answer: "Clean data helps, but it's not required. We include data readiness assessment and cleanup as part of our implementation process."
-  },
-  {
-    question: "Can you integrate with our existing software stack?",
-    answer: "Yes: We work with CRM systems, spreadsheets, ERPs, and other business tools via APIs to ensure seamless integration with your current workflow."
-  },
-  {
-    question: "What does an AI agent actually do?",
-    answer: "AI agents handle multi-step tasks with built-in guardrails—like following up on leads, monitoring operations, or processing customer requests—while keeping humans in control."
-  }
-];
-
+const beforeAfterComparisons = [{
+  category: "Response Time",
+  traditional: "Hours",
+  withAI: "Seconds"
+}, {
+  category: "Data & Reporting",
+  traditional: "40 hours",
+  withAI: "5-10 hours"
+}, {
+  category: "Support Cost",
+  traditional: "High",
+  withAI: "~50% reduction"
+}, {
+  category: "Error Rate",
+  traditional: "Frequent",
+  withAI: "Near-zero"
+}, {
+  category: "Content Throughput",
+  traditional: "4 pieces/week",
+  withAI: "10+ pieces/week"
+}, {
+  category: "Lead Handling",
+  traditional: "Manual process",
+  withAI: "AI scoring"
+}];
+const processSteps = [{
+  step: "01",
+  title: "Discover",
+  description: "Audit your current workflows and identify automation opportunities"
+}, {
+  step: "02",
+  title: "Design",
+  description: "Create custom AI solutions tailored to your business processes"
+}, {
+  step: "03",
+  title: "Deploy",
+  description: "Implement and integrate AI systems with your existing tools"
+}, {
+  step: "04",
+  title: "Train & Improve",
+  description: "Upskill your team and continuously optimize performance"
+}];
+const faqItems = [{
+  question: "Will AI replace my team?",
+  answer: "No—AI augments your team with human-in-the-loop processes. Our approach focuses on automating repetitive tasks so your team can focus on higher-value work."
+}, {
+  question: "How do you handle data security?",
+  answer: "We follow vendor best practices with least-privilege access and opt-out of training data usage to ensure your business data remains secure and private."
+}, {
+  question: "How fast can we see ROI?",
+  answer: "Often within months, depending on the use case. Most clients see measurable improvements in efficiency and cost savings within 90 days of implementation."
+}, {
+  question: "Do I need clean data to get started?",
+  answer: "Clean data helps, but it's not required. We include data readiness assessment and cleanup as part of our implementation process."
+}, {
+  question: "Can you integrate with our existing software stack?",
+  answer: "Yes: We work with CRM systems, spreadsheets, ERPs, and other business tools via APIs to ensure seamless integration with your current workflow."
+}, {
+  question: "What does an AI agent actually do?",
+  answer: "AI agents handle multi-step tasks with built-in guardrails—like following up on leads, monitoring operations, or processing customer requests—while keeping humans in control."
+}];
 export default function Home() {
   const [selectedIndustry, setSelectedIndustry] = useState<string | null>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const featuredCases = getFeaturedCases();
-
-  const filteredUseCases = selectedIndustry 
-    ? industryUseCases.filter(uc => uc.industry === selectedIndustry)
-    : industryUseCases;
-
-  return (
-    <>
-        <SEOHead 
-        title="HeyFlou | AI Consulting for SMB Workflow Automation"
-        description="Automate workflows, train teams, and deploy AI agents. Proven ROI for SMBs."
-        canonical="https://heyflou.com"
-        jsonLd={[organizationJsonLd, faqJsonLd]}
-      />
+  const filteredUseCases = selectedIndustry ? industryUseCases.filter(uc => uc.industry === selectedIndustry) : industryUseCases;
+  return <>
+        <SEOHead title="HeyFlou | AI Consulting for SMB Workflow Automation" description="Automate workflows, train teams, and deploy AI agents. Proven ROI for SMBs." canonical="https://heyflou.com" jsonLd={[organizationJsonLd, faqJsonLd]} />
       
       <main className="pt-16"> {/* Back to normal header spacing */}
         {/* Hero Section */}
@@ -140,9 +121,7 @@ export default function Home() {
             </div>
             
             <div className="relative z-10">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 text-hf-purple text-sm font-medium mb-6 backdrop-blur-sm">
-                From audit to ROI in 90 days.
-              </div>
+              
               <h1 className="text-4xl md:text-6xl font-bold font-display text-hf-ink mb-6 leading-tight">
                 HeyFlou: AI Consulting that Automates Work — and Grows Your Business
               </h1>
@@ -180,9 +159,7 @@ export default function Home() {
         {/* Why AI Now - Stats Grid */}
         <Section>
           <div className="text-center mb-12">
-            <p className="text-lg text-muted-foreground mb-4">
-              Based on the HeyFlou SMB AI Analysis (2024–2025):
-            </p>
+            
             <h2 className="text-3xl md:text-4xl font-bold font-display text-hf-ink mb-4">
               Why AI Now?
             </h2>
@@ -191,22 +168,7 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {keyMetrics.map((metric, index) => (
-              <KpiStat
-                key={metric.id}
-                value={metric.value}
-                label={metric.label}
-                description={metric.description}
-                icon={
-                  index === 0 ? <TrendingUp size={24} /> :
-                  index === 1 ? <ChartBar size={24} /> :
-                  index === 2 ? <Users size={24} /> :
-                  index === 3 ? <Bot size={24} /> :
-                  index === 4 ? <Zap size={24} /> :
-                  <Shield size={24} />
-                }
-              />
-            ))}
+            {keyMetrics.map((metric, index) => <KpiStat key={metric.id} value={metric.value} label={metric.label} description={metric.description} icon={index === 0 ? <TrendingUp size={24} /> : index === 1 ? <ChartBar size={24} /> : index === 2 ? <Users size={24} /> : index === 3 ? <Bot size={24} /> : index === 4 ? <Zap size={24} /> : <Shield size={24} />} />)}
           </div>
           <p className="text-xs text-muted-foreground text-center mt-8">
             Benchmarks reflect aggregated SMB research; results vary.
@@ -230,13 +192,11 @@ export default function Home() {
                 <div className="p-4 font-semibold border-x border-gray-600">Traditional</div>
                 <div className="p-4 font-semibold">With AI Automation</div>
               </div>
-              {beforeAfterComparisons.map((comparison, index) => (
-                <div key={index} className={`grid grid-cols-3 ${index % 2 === 0 ? 'bg-muted/50' : 'bg-card'}`}>
+              {beforeAfterComparisons.map((comparison, index) => <div key={index} className={`grid grid-cols-3 ${index % 2 === 0 ? 'bg-muted/50' : 'bg-card'}`}>
                   <div className="p-4 font-medium text-hf-ink">{comparison.category}</div>
                   <div className="p-4 text-muted-foreground border-x border-border">{comparison.traditional}</div>
                   <div className="p-4 text-hf-teal font-medium">{comparison.withAI}</div>
-                </div>
-              ))}
+                </div>)}
             </div>
             <p className="text-sm text-muted-foreground text-center mt-4">
               * Outcomes vary by company.
@@ -332,40 +292,21 @@ export default function Home() {
           </div>
           
           <div className="flex flex-wrap justify-center gap-3 mb-8">
-            <button
-              onClick={() => setSelectedIndustry(null)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                selectedIndustry === null 
-                  ? 'hf-gradient text-white' 
-                  : 'bg-white text-hf-ink hover:bg-muted'
-              }`}
-            >
+            <button onClick={() => setSelectedIndustry(null)} className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedIndustry === null ? 'hf-gradient text-white' : 'bg-white text-hf-ink hover:bg-muted'}`}>
               All Industries
             </button>
-            {industryUseCases.map((useCase) => (
-              <button
-                key={useCase.industry}
-                onClick={() => setSelectedIndustry(useCase.industry)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                  selectedIndustry === useCase.industry 
-                    ? 'hf-gradient text-white' 
-                    : 'bg-white text-hf-ink hover:bg-muted'
-                }`}
-              >
+            {industryUseCases.map(useCase => <button key={useCase.industry} onClick={() => setSelectedIndustry(useCase.industry)} className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedIndustry === useCase.industry ? 'hf-gradient text-white' : 'bg-white text-hf-ink hover:bg-muted'}`}>
                 {useCase.industry}
-              </button>
-            ))}
+              </button>)}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredUseCases.map((useCase) => (
-              <div key={useCase.industry} className="bg-card rounded-xl p-6 hf-shadow">
+            {filteredUseCases.map(useCase => <div key={useCase.industry} className="bg-card rounded-xl p-6 hf-shadow">
                 <h3 className="text-lg font-bold font-display text-hf-ink mb-4">
                   {useCase.industry}
                 </h3>
                 <div className="space-y-3">
-                  {useCase.automations.map((automation, index) => (
-                    <div key={index} className="border-l-2 border-hf-teal/30 pl-4">
+                  {useCase.automations.map((automation, index) => <div key={index} className="border-l-2 border-hf-teal/30 pl-4">
                       <h4 className="text-sm font-semibold text-hf-navy">
                         {automation.name}
                       </h4>
@@ -375,11 +316,9 @@ export default function Home() {
                       <p className="text-xs text-hf-teal font-medium">
                         {automation.expectedOutcome}
                       </p>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </Section>
 
@@ -395,8 +334,7 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {processSteps.map((step, index) => (
-              <div key={index} className="text-center group">
+            {processSteps.map((step, index) => <div key={index} className="text-center group">
                 <div className="w-16 h-16 rounded-full hf-gradient flex items-center justify-center text-white font-bold text-lg mb-4 mx-auto group-hover:scale-110 transition-transform">
                   {step.step}
                 </div>
@@ -406,8 +344,7 @@ export default function Home() {
                 <p className="text-sm text-muted-foreground">
                   {step.description}
                 </p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </Section>
 
@@ -423,24 +360,17 @@ export default function Home() {
             </p>
           </div>
           <div className="max-w-3xl mx-auto space-y-4">
-            {faqItems.map((faq, index) => (
-              <div key={index} className="bg-card rounded-lg hf-shadow">
-                <button
-                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                  className="w-full text-left p-6 flex items-center justify-between hover:bg-muted/50 transition-colors"
-                >
+            {faqItems.map((faq, index) => <div key={index} className="bg-card rounded-lg hf-shadow">
+                <button onClick={() => setOpenFaq(openFaq === index ? null : index)} className="w-full text-left p-6 flex items-center justify-between hover:bg-muted/50 transition-colors">
                   <span className="font-semibold text-hf-ink">{faq.question}</span>
                   <span className="text-hf-teal text-xl">
                     {openFaq === index ? '−' : '+'}
                   </span>
                 </button>
-                {openFaq === index && (
-                  <div className="px-6 pb-6 text-muted-foreground">
+                {openFaq === index && <div className="px-6 pb-6 text-muted-foreground">
                     {faq.answer}
-                  </div>
-                )}
-              </div>
-            ))}
+                  </div>}
+              </div>)}
           </div>
         </Section>
 
@@ -459,6 +389,5 @@ export default function Home() {
           </div>
         </Section>
       </main>
-    </>
-  );
+    </>;
 }
