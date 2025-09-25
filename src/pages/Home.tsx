@@ -88,26 +88,24 @@ export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const featuredCases = getFeaturedCases();
   return <>
-        <SEOHead title="HeyFlou | AI Consulting for SMB Workflow Automation" description="Automate workflows, train teams, and deploy AI agents. Proven ROI for SMBs." canonical="https://heyflou.com" jsonLd={[organizationJsonLd, faqJsonLd]} />
+        <SEOHead title="HeyFlou — AI Consulting | Automate Your Work, Grow Your Business" description="Automate workflows, train teams, and deploy AI agents. Proven ROI for SMBs." canonical="https://heyflou.com" jsonLd={[organizationJsonLd, faqJsonLd]} />
       
       <main className="pt-16"> {/* Back to normal header spacing */}
         {/* Hero Section */}
         <Section background="glow" padding="large">
           <div className="text-center max-w-4xl mx-auto relative">
-            {/* Watermark logo behind text */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
-              <div className="w-96 h-96 hf-glow rounded-full"></div>
-            </div>
+            {/* Subtle glow background */}
+            <div className="pointer-events-none absolute inset-0 -z-10 hf-glow" />
             
             <div className="relative z-10">
-              
-              <h1 className="text-4xl md:text-6xl font-bold font-display text-hf-ink mb-6 leading-tight">
-                HeyFlou: AI Consulting that Automates Work — and Grows Your Business
+              <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-hf-ink">
+                HeyFlou: AI Consulting
               </h1>
-              <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                We design workflows, train teams, and deploy AI agents so SMBs operate faster, leaner, and smarter.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+              <h2 className="mt-2 text-2xl md:text-3xl font-semibold text-hf-navy/90">
+                Automate Your Work — Grow Your Business
+              </h2>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6 mt-8">
                 <GradientButton variant="hero" size="xl" asChild>
                   <a href="https://calendly.com/salo-zayat/new-meeting" target="_blank" rel="noopener noreferrer">
                     Book a Strategy Call
