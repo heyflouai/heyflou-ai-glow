@@ -7,8 +7,8 @@ import { keyMetrics, industryUseCases } from '@/data/metrics';
 import { getFeaturedCases } from '@/data/cases';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { QuestionnaireForm } from '@/components/forms/QuestionnaireForm';
 import { CompactForm } from '@/components/forms/CompactForm';
+import { ProblemSolution } from '@/components/home/ProblemSolution';
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -44,31 +44,6 @@ const faqJsonLd = {
     }
   }]
 };
-const beforeAfterComparisons = [{
-  category: "Response Time",
-  traditional: "Hours",
-  withAI: "Seconds"
-}, {
-  category: "Data & Reporting",
-  traditional: "40 hours",
-  withAI: "5-10 hours"
-}, {
-  category: "Support Cost",
-  traditional: "High",
-  withAI: "~50% reduction"
-}, {
-  category: "Error Rate",
-  traditional: "Frequent",
-  withAI: "Near-zero"
-}, {
-  category: "Content Throughput",
-  traditional: "4 pieces/week",
-  withAI: "10+ pieces/week"
-}, {
-  category: "Lead Handling",
-  traditional: "Manual process",
-  withAI: "AI scoring"
-}];
 const processSteps = [{
   step: "01",
   title: "Discover",
@@ -175,33 +150,9 @@ export default function Home() {
           </p>
         </Section>
 
-        {/* Before vs After Comparison */}
-        <Section background="muted">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-display text-hf-ink mb-4">
-              Before vs After AI Automation
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              See the transformation AI brings to business operations
-            </p>
-          </div>
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-card rounded-xl hf-shadow overflow-hidden">
-              <div className="grid grid-cols-3 bg-hf-navy text-white">
-                <div className="p-4 font-semibold">Process</div>
-                <div className="p-4 font-semibold border-x border-gray-600">Traditional</div>
-                <div className="p-4 font-semibold">With AI Automation</div>
-              </div>
-              {beforeAfterComparisons.map((comparison, index) => <div key={index} className={`grid grid-cols-3 ${index % 2 === 0 ? 'bg-muted/50' : 'bg-card'}`}>
-                  <div className="p-4 font-medium text-hf-ink">{comparison.category}</div>
-                  <div className="p-4 text-muted-foreground border-x border-border">{comparison.traditional}</div>
-                  <div className="p-4 text-hf-teal font-medium">{comparison.withAI}</div>
-                </div>)}
-            </div>
-            <p className="text-sm text-muted-foreground text-center mt-4">
-              * Outcomes vary by company.
-            </p>
-          </div>
+        {/* Problem → Solution → What We Do */}
+        <Section id="problem-solution" background="muted">
+          <ProblemSolution />
         </Section>
 
         {/* What We Do - Services */}
