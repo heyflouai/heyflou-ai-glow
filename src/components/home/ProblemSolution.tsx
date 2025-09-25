@@ -2,57 +2,21 @@ import React from 'react';
 import { ClipboardList, Mail, GitBranch, AlarmClock, BarChart, UsersRound, Bot, Workflow, Shield, Gauge } from 'lucide-react';
 import { GradientButton } from '@/components/ui/gradient-button';
 import { Link } from 'react-router-dom';
-const NeuralPathSvg: React.FC = () => {
-  return <div className="relative w-full h-80 flex items-center justify-center">
+import workflowDiagram from '@/assets/workflow-diagram.png';
+const WorkflowDiagram: React.FC = () => {
+  return (
+    <div className="relative w-full h-80 flex items-center justify-center">
       {/* Glow background */}
       <div className="absolute inset-0 hf-glow rounded-full opacity-10"></div>
       
-      {/* Neural path SVG */}
-      <svg width="300" height="200" viewBox="0 0 300 200" className="relative z-10" aria-label="Abstract neural path graphic">
-        <defs>
-          <linearGradient id="neuralGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="hsl(var(--hf-teal))" />
-            <stop offset="50%" stopColor="hsl(var(--hf-purple))" />
-            <stop offset="100%" stopColor="hsl(var(--hf-blue))" />
-          </linearGradient>
-          <linearGradient id="neuralGradientAnimated" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="hsl(var(--hf-teal))" stopOpacity="0.8">
-              <animate attributeName="stopOpacity" values="0.2;0.8;0.2" dur="8s" repeatCount="indefinite" />
-            </stop>
-            <stop offset="50%" stopColor="hsl(var(--hf-purple))" stopOpacity="0.6">
-              <animate attributeName="stopOpacity" values="0.1;0.6;0.1" dur="8s" repeatCount="indefinite" begin="2s" />
-            </stop>
-            <stop offset="100%" stopColor="hsl(var(--hf-blue))" stopOpacity="0.4">
-              <animate attributeName="stopOpacity" values="0.1;0.4;0.1" dur="8s" repeatCount="indefinite" begin="4s" />
-            </stop>
-          </linearGradient>
-        </defs>
-        
-        {/* Main neural path */}
-        <path d="M50 100 Q100 50 150 100 T250 100" stroke="url(#neuralGradient)" strokeWidth="3" fill="none" className="opacity-60" />
-        
-        {/* Animated path overlay */}
-        <path d="M50 100 Q100 50 150 100 T250 100" stroke="url(#neuralGradientAnimated)" strokeWidth="2" fill="none" strokeDasharray="10,5" className="opacity-80">
-          <animate attributeName="stroke-dashoffset" values="0;-100" dur="8s" repeatCount="indefinite" />
-        </path>
-        
-        {/* Neural nodes */}
-        <circle cx="50" cy="100" r="4" fill="url(#neuralGradient)" className="opacity-80">
-          <animate attributeName="r" values="3;5;3" dur="4s" repeatCount="indefinite" />
-        </circle>
-        <circle cx="150" cy="100" r="4" fill="url(#neuralGradient)" className="opacity-80">
-          <animate attributeName="r" values="3;5;3" dur="4s" repeatCount="indefinite" begin="2s" />
-        </circle>
-        <circle cx="250" cy="100" r="4" fill="url(#neuralGradient)" className="opacity-80">
-          <animate attributeName="r" values="3;5;3" dur="4s" repeatCount="indefinite" begin="1s" />
-        </circle>
-        
-        {/* Branch connections */}
-        <path d="M100 80 L120 60" stroke="url(#neuralGradient)" strokeWidth="2" opacity="0.4" />
-        <path d="M150 120 L170 140" stroke="url(#neuralGradient)" strokeWidth="2" opacity="0.4" />
-        <path d="M200 80 L220 60" stroke="url(#neuralGradient)" strokeWidth="2" opacity="0.4" />
-      </svg>
-    </div>;
+      {/* Workflow diagram */}
+      <img 
+        src={workflowDiagram} 
+        alt="Workflow automation diagram showing connected processes" 
+        className="relative z-10 max-w-full max-h-full object-contain"
+      />
+    </div>
+  );
 };
 export const ProblemSolution: React.FC = () => {
   const symptoms = [{
@@ -133,7 +97,7 @@ export const ProblemSolution: React.FC = () => {
         </div>
 
         <div className="order-first md:order-last">
-          <NeuralPathSvg />
+          <WorkflowDiagram />
         </div>
       </div>
 
