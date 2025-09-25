@@ -3,28 +3,14 @@ import { Linkedin } from 'lucide-react';
 export function TeamSnapshot() {
   const team = [
     {
-      name: 'Sarah Chen',
-      role: 'AI Strategy Lead',
-      superpower: 'Turns business chaos into automation gold.',
-      linkedin: '#'
+      name: 'Samuel Nakach',
+      role: 'Co-Founder',
+      linkedin: 'https://www.linkedin.com/in/samuel-nakach/'
     },
     {
-      name: 'Marcus Rodriguez',
-      role: 'Technical Architect',
-      superpower: 'Builds systems that actually work.',
-      linkedin: '#'
-    },
-    {
-      name: 'Alex Kim',
-      role: 'Implementation Manager',
-      superpower: 'Makes complex tech feel simple.',
-      linkedin: '#'
-    },
-    {
-      name: 'Jordan Taylor',
-      role: 'Success Partner',
-      superpower: 'Ensures your team loves the automation.',
-      linkedin: '#'
+      name: 'Salomon Zayat',
+      role: 'Co-Founder', 
+      linkedin: 'https://www.linkedin.com/in/salomon-zayat-32284b189'
     }
   ];
 
@@ -37,7 +23,7 @@ export function TeamSnapshot() {
           </h2>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
           {team.map((member, index) => (
             <div key={index} className="bg-white rounded-2xl p-6 hf-shadow text-center">
               <div className="w-20 h-20 bg-muted rounded-full mx-auto mb-4 flex items-center justify-center">
@@ -48,14 +34,14 @@ export function TeamSnapshot() {
               <h3 className="text-lg font-bold font-display text-hf-ink mb-1">
                 {member.name}
               </h3>
-              <p className="text-sm text-hf-navy font-medium mb-2">
+              <p className="text-sm text-hf-navy font-medium mb-4">
                 {member.role}
-              </p>
-              <p className="text-sm text-muted-foreground mb-4">
-                {member.superpower}
               </p>
               <a 
                 href={member.linkedin}
+                target="_blank"
+                rel="noopener"
+                aria-label={`Open ${member.name.split(' ')[0]}'s LinkedIn`}
                 className="inline-flex items-center gap-2 text-hf-teal hover:text-hf-navy transition-colors"
               >
                 <Linkedin className="h-4 w-4" />
