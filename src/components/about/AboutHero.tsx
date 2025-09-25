@@ -16,11 +16,14 @@ export function AboutHero() {
         </h1>
         
         {/* Large logo below H1 */}
-        <img 
-          src={logoSvg} 
-          alt="HeyFlou AI Consulting logo" 
-          className="mx-auto mt-4 md:mt-6 h-[96px] md:h-[128px] lg:h-[160px] w-auto drop-shadow-sm"
-        />
+        <div className="flex justify-center mt-4 md:mt-6">
+          <img 
+            src={logoSvg} 
+            alt="HeyFlou AI Consulting logo" 
+            className="h-[96px] md:h-[128px] lg:h-[160px] w-auto drop-shadow-sm"
+            loading="eager"
+          />
+        </div>
         
         {/* Subline */}
         <p className="mt-6 text-xl text-hf-navy/90 max-w-2xl mx-auto mb-8">
