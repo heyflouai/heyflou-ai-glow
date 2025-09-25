@@ -340,11 +340,6 @@ export default function Home() {
         </Section>
 
 
-        {/* AI Readiness Questionnaire */}
-        <Section id="questionnaire" background="glow">
-          <QuestionnaireForm />
-        </Section>
-
         {/* FAQ */}
         <Section background="muted">
           <div className="text-center mb-12">
