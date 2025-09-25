@@ -64,22 +64,25 @@ const processSteps = [{
 }];
 const faqItems = [{
   question: "Will AI replace my team?",
-  answer: "No—AI augments your team with human-in-the-loop processes. Our approach focuses on automating repetitive tasks so your team can focus on higher-value work."
+  answer: "No. AI automates repetitive tasks so your team can focus on strategy and growth."
 }, {
   question: "How do you handle data security?",
-  answer: "We follow vendor best practices with least-privilege access and opt-out of training data usage to ensure your business data remains secure and private."
+  answer: "We use encryption and industry best practices to keep your data safe at all times."
 }, {
   question: "How fast can we see ROI?",
-  answer: "Often within months, depending on the use case. Most clients see measurable improvements in efficiency and cost savings within 90 days of implementation."
+  answer: "Most SMBs notice time savings and measurable ROI within 90 days."
 }, {
-  question: "Do I need clean data to get started?",
-  answer: "Clean data helps, but it's not required. We include data readiness assessment and cleanup as part of our implementation process."
+  question: "Do I need technical skills to use it?",
+  answer: "No. We handle setup, integration, and support so you can focus on your business."
 }, {
-  question: "Can you integrate with our existing software stack?",
-  answer: "Yes: We work with CRM systems, spreadsheets, ERPs, and other business tools via APIs to ensure seamless integration with your current workflow."
+  question: "Is it expensive?",
+  answer: "Our plans are designed to save more money than they cost by reducing manual work."
 }, {
-  question: "What does an AI agent actually do?",
-  answer: "AI agents handle multi-step tasks with built-in guardrails—like following up on leads, monitoring operations, or processing customer requests—while keeping humans in control."
+  question: "Do I have to change my whole system?",
+  answer: "No. We connect with your existing tools and add automations to make them more efficient."
+}, {
+  question: "Does it work with my existing tools?",
+  answer: "Yes. We integrate with CRMs, email, and other apps you already use."
 }];
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
