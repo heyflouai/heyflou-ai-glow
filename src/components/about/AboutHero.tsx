@@ -1,37 +1,29 @@
-import logoSvg from '@/assets/logo_heyflou.png';
+import logoSvg from '@/assets/heyflou-logo.svg';
 import { GradientButton } from '@/components/ui/gradient-button';
 import { Button } from '@/components/ui/button';
 import { ExternalLink } from 'lucide-react';
 
 export function AboutHero() {
   return (
-    <section className="pt-16 pb-20 md:py-28">
-      <div className="hf-glow absolute inset-0 -z-10" />
-      {/* Faint watermark logo behind content */}
-      <div className="absolute inset-0 flex items-center justify-center -z-5">
-        <img 
-          src={logoSvg} 
-          alt="" 
-          className="w-96 h-96 opacity-5 object-contain"
-          aria-hidden="true"
-        />
-      </div>
+    <section className="relative py-20 md:py-28 text-center overflow-visible">
+      {/* Subtle glow background, not a watermark */}
+      <div className="pointer-events-none absolute inset-0 -z-10 hf-glow" />
       
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-        {/* Logo-first layout */}
-        <div className="mb-8">
-          <img 
-            src={logoSvg} 
-            alt="HeyFlou logo" 
-            className="h-18 md:h-28 mx-auto"
-          />
-        </div>
-        
-        <h1 className="text-4xl md:text-5xl font-bold font-display text-hf-ink mb-6">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* H1 first */}
+        <h1 className="text-4xl md:text-5xl font-bold font-display text-hf-ink mb-4 md:mb-6">
           About HeyFlou
         </h1>
         
-        <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+        {/* Large logo below H1 */}
+        <img 
+          src={logoSvg} 
+          alt="HeyFlou AI Consulting logo" 
+          className="mx-auto mt-4 md:mt-6 h-[96px] md:h-[128px] lg:h-[160px] w-auto drop-shadow-sm"
+        />
+        
+        {/* Subline */}
+        <p className="mt-6 text-xl text-hf-navy/90 max-w-2xl mx-auto mb-8">
           We help SMBs automate work with AI—safely, measurably, and fast.
         </p>
         
