@@ -126,35 +126,55 @@ export default function Home() {
 
   return (
     <>
-      <SEOHead 
-        title="HeyFlou — AI Consulting for SMB Workflow Automation"
+        <SEOHead 
+        title="HeyFlou | AI Consulting for SMB Workflow Automation"
         description="Automate workflows, train teams, and deploy AI agents. Proven ROI for SMBs."
         canonical="https://heyflou.com"
         jsonLd={[organizationJsonLd, faqJsonLd]}
       />
       
-      <main className="pt-16">
+      <main className="pt-25"> {/* Adjusted for preheader */}
         {/* Hero Section */}
         <Section background="glow" padding="large">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 text-hf-purple text-sm font-medium mb-6 backdrop-blur-sm">
-              From audit to ROI in 90 days.
+          <div className="text-center max-w-4xl mx-auto relative">
+            {/* Watermark logo behind text */}
+            <div className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
+              <div className="w-96 h-96 hf-glow rounded-full"></div>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold font-display text-hf-ink mb-6 leading-tight">
-              AI Consulting that Automates Work — and Grows Your Business
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              We design workflows, train teams, and deploy AI agents so SMBs operate faster, leaner, and smarter.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <GradientButton variant="hero" size="xl" asChild>
-                <a href="https://calendly.com/heyflou/30min" target="_blank" rel="noopener noreferrer">
-                  Book a Strategy Call
-                </a>
-              </GradientButton>
-              <GradientButton variant="secondary" size="xl" asChild>
-                <Link to="/contact">Get an AI Audit</Link>
-              </GradientButton>
+            
+            <div className="relative z-10">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 text-hf-purple text-sm font-medium mb-6 backdrop-blur-sm">
+                From audit to ROI in 90 days.
+              </div>
+              <h1 className="text-4xl md:text-6xl font-bold font-display text-hf-ink mb-6 leading-tight">
+                HeyFlou: AI Consulting that Automates Work — and Grows Your Business
+              </h1>
+              <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+                We design workflows, train teams, and deploy AI agents so SMBs operate faster, leaner, and smarter.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+                <GradientButton variant="hero" size="xl" asChild>
+                  <a href="https://calendly.com/heyflou/30min" target="_blank" rel="noopener noreferrer">
+                    Book a Strategy Call
+                  </a>
+                </GradientButton>
+                <GradientButton variant="secondary" size="xl" asChild>
+                  <Link to="/contact">Get an AI Audit</Link>
+                </GradientButton>
+              </div>
+              
+              {/* Hero badges */}
+              <div className="flex flex-wrap justify-center gap-4 text-sm">
+                <div className="flex items-center px-3 py-1 bg-white/20 rounded-full backdrop-blur-sm">
+                  <span className="text-hf-ink font-medium">Human-in-the-loop</span>
+                </div>
+                <div className="flex items-center px-3 py-1 bg-white/20 rounded-full backdrop-blur-sm">
+                  <span className="text-hf-ink font-medium">Secure-by-design</span>
+                </div>
+                <div className="flex items-center px-3 py-1 bg-white/20 rounded-full backdrop-blur-sm">
+                  <span className="text-hf-ink font-medium">From audit to ROI in 90 days</span>
+                </div>
+              </div>
             </div>
           </div>
         </Section>
@@ -178,6 +198,9 @@ export default function Home() {
         {/* Why AI Now - Stats Grid */}
         <Section>
           <div className="text-center mb-12">
+            <p className="text-lg text-muted-foreground mb-4">
+              Based on the HeyFlou SMB AI Analysis (2024–2025):
+            </p>
             <h2 className="text-3xl md:text-4xl font-bold font-display text-hf-ink mb-4">
               Why AI Now?
             </h2>
@@ -391,18 +414,33 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {featuredCases.map((caseStudy) => (
               <div key={caseStudy.id} className="bg-card rounded-xl p-6 hf-shadow hover:hf-shadow-lg transition-all duration-300 group">
-                <div className="text-sm text-hf-teal font-medium mb-2">
-                  {caseStudy.industry} • {caseStudy.useCase}
+                <div className="flex items-center justify-between mb-4">
+                  <div className="text-sm text-hf-teal font-medium">
+                    {caseStudy.industry}
+                  </div>
+                  <div className="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">
+                    {caseStudy.useCase}
+                  </div>
                 </div>
                 <h3 className="text-lg font-bold font-display text-hf-ink mb-3">
                   {caseStudy.title}
                 </h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  {caseStudy.challenge}
-                </p>
-                <div className="border-t border-border pt-4">
-                  <div className="flex items-center justify-between">
-                    <div>
+                
+                {/* Challenge → Solution → Outcome format */}
+                <div className="space-y-3 text-sm">
+                  <div>
+                    <span className="font-semibold text-destructive">Challenge:</span>
+                    <p className="text-muted-foreground mt-1">{caseStudy.challenge}</p>
+                  </div>
+                  
+                  <div>
+                    <span className="font-semibold text-hf-purple">Solution:</span>
+                    <p className="text-muted-foreground mt-1">{caseStudy.solution}</p>
+                  </div>
+                  
+                  <div>
+                    <span className="font-semibold text-hf-teal">Outcome:</span>
+                    <div className="flex items-center justify-between mt-1">
                       <div className="text-lg font-bold text-hf-teal">
                         {caseStudy.metrics.primary}
                       </div>
@@ -412,12 +450,13 @@ export default function Home() {
                         </div>
                       )}
                     </div>
-                    <GradientButton variant="ghost" size="sm" asChild>
-                      <Link to={`/case-studies#${caseStudy.id}`}>
-                        View Details
-                      </Link>
-                    </GradientButton>
                   </div>
+                </div>
+                
+                <div className="mt-4 pt-4 border-t border-border">
+                  <GradientButton variant="ghost" size="sm" asChild>
+                    <Link to="/case-studies">See the full story</Link>
+                  </GradientButton>
                 </div>
               </div>
             ))}

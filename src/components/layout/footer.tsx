@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { BrandLockup } from '@/components/BrandLockup';
+import { GradientButton } from '@/components/ui/gradient-button';
 
 const navigationItems = [
+  { name: 'Home', href: '/' },
   { name: 'Services', href: '/services' },
   { name: 'Case Studies', href: '/case-studies' },
   { name: 'Resources', href: '/resources' },
@@ -14,22 +16,41 @@ export const Footer = () => {
     <footer className="bg-hf-navy text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Brand */}
+          {/* Brand Section with Lockup */}
           <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center space-x-2 font-display font-bold text-xl mb-4">
-              <div className="w-8 h-8 rounded-lg hf-gradient flex items-center justify-center text-white text-sm">
-                HF
-              </div>
-              <span>HeyFlou</span>
+            <div className="mb-4">
+              <BrandLockup className="text-white [&_span]:text-white" />
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
-              AI Consulting that automates work and grows your business. We design workflows, train teams, and deploy AI agents for SMBs.
+              AI Consulting for SMB workflow automation.
             </p>
-            <div className="flex space-x-4">
-              <div className="flex items-center space-x-2 text-sm text-gray-300">
-                <Mail size={16} />
-                <span>hello@heyflou.com</span>
+            
+            {/* Logo Cloud Placeholder */}
+            <div className="mb-6">
+              <p className="text-xs text-gray-400 mb-3">Trusted by businesses worldwide</p>
+              <div className="flex space-x-4 opacity-50">
+                <div className="w-16 h-8 bg-gray-600 rounded text-xs flex items-center justify-center">Logo</div>
+                <div className="w-16 h-8 bg-gray-600 rounded text-xs flex items-center justify-center">Logo</div>
+                <div className="w-16 h-8 bg-gray-600 rounded text-xs flex items-center justify-center">Logo</div>
               </div>
+            </div>
+            
+            {/* Email Capture */}
+            <div className="max-w-sm">
+              <p className="text-sm font-medium mb-2">Get AI insights</p>
+              <div className="flex gap-2">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-1 px-3 py-2 text-sm bg-white/10 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-hf-teal"
+                />
+                <GradientButton variant="primary" size="sm">
+                  Subscribe
+                </GradientButton>
+              </div>
+              <p className="text-xs text-gray-400 mt-2">
+                We respect your privacy. Unsubscribe anytime.
+              </p>
             </div>
           </div>
 
