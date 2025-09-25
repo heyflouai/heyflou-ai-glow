@@ -1,4 +1,4 @@
-import logoSvg from '@/assets/heyflou-logo.svg';
+import logoNew from '@/assets/heyflou-logo-new.png';
 import { GradientButton } from '@/components/ui/gradient-button';
 import { Button } from '@/components/ui/button';
 import { ExternalLink } from 'lucide-react';
@@ -18,9 +18,9 @@ export function AboutHero() {
         {/* Large logo below H1 */}
         <div className="flex justify-center mt-4 md:mt-6">
           <img 
-            src={logoSvg} 
+            src={logoNew} 
             alt="HeyFlou AI Consulting logo" 
-            className="h-[96px] md:h-[128px] lg:h-[160px] w-auto drop-shadow-sm"
+            className="h-[128px] md:h-[176px] lg:h-[224px] w-auto drop-shadow-sm"
             loading="eager"
           />
         </div>
