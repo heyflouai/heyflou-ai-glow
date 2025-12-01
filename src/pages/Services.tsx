@@ -32,21 +32,21 @@ export default function Services() {
                 <Zap className="text-white" size={32} />
               </div>
               <h2 className="text-3xl font-bold font-display text-hf-ink mb-6">
-                Workflow Automation
+                AI Chatbot for Client Communication & Appointments
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Remove manual busywork across operations, finance, and customer experience with intelligent automation.
+                An intelligent virtual assistant that talks to your new clients 24/7, answers their first questions, qualifies them, and automatically books, reschedules, or cancels appointments. Built especially for therapists and service professionals who want to save time and never miss a client again. Fully connected to your calendar and CRM.
               </p>
             </div>
             <div className="bg-card rounded-xl p-8 hf-shadow">
-              <h3 className="font-bold text-hf-ink mb-4">What We Automate:</h3>
+              <h3 className="font-bold text-hf-ink mb-4">Key Features:</h3>
               <ul className="space-y-3 text-muted-foreground">
-                <li>• Email triage and intelligent routing</li>
-                <li>• Invoice processing and approvals</li>
-                <li>• Automated reporting and analytics</li>
-                <li>• Data synchronization between systems</li>
-                <li>• Customer onboarding workflows</li>
-                <li>• Inventory management alerts</li>
+                <li>• 24/7 client communication</li>
+                <li>• Automatic appointment booking</li>
+                <li>• Client qualification and screening</li>
+                <li>• Calendar and CRM integration</li>
+                <li>• Appointment reminders and confirmations</li>
+                <li>• Seamless rescheduling and cancellations</li>
               </ul>
             </div>
           </div>
@@ -55,14 +55,14 @@ export default function Services() {
         <Section background="muted" id="training">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 bg-card rounded-xl p-8 hf-shadow">
-              <h3 className="font-bold text-hf-ink mb-4">Training Includes:</h3>
+              <h3 className="font-bold text-hf-ink mb-4">Core Features:</h3>
               <ul className="space-y-3 text-muted-foreground">
-                <li>• Role-based AI playbooks</li>
-                <li>• Prompt engineering workshops</li>
-                <li>• AI governance frameworks</li>
-                <li>• Best practices documentation</li>
-                <li>• Hands-on implementation</li>
-                <li>• Ongoing support and updates</li>
+                <li>• Lead and opportunity tracking</li>
+                <li>• Automated task and reminder triggers</li>
+                <li>• Sales pipeline visualization</li>
+                <li>• Client journey mapping</li>
+                <li>• Real-time business insights</li>
+                <li>• Seamless tool integration</li>
               </ul>
             </div>
             <div className="order-1 lg:order-2">
@@ -70,10 +70,10 @@ export default function Services() {
                 <Users className="text-white" size={32} />
               </div>
               <h2 className="text-3xl font-bold font-display text-hf-ink mb-6">
-                AI Training for Teams
+                CRM Management & Automation
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Upskill your staff to safely and effectively use AI tools daily with comprehensive training programs.
+                A complete system to organize your leads, follow-ups, sales pipeline, and client journeys — all in one place. We automate your entire CRM so every opportunity is tracked, every task is triggered on time, and you always know exactly what's happening in your business.
               </p>
             </div>
           </div>
@@ -86,21 +86,21 @@ export default function Services() {
                 <Bot className="text-white" size={32} />
               </div>
               <h2 className="text-3xl font-bold font-display text-hf-ink mb-6">
-                AI Agents for Your Business
+                Lead Generation & Nurturing Automation
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Deploy autonomous assistants that handle multi-step tasks with built-in oversight and guardrails.
+                We turn your website visitors and ad traffic into real paying clients. Our automated lead systems capture, qualify, and nurture prospects with smart follow-ups until they are ready to book or buy — without manual work from your team.
               </p>
             </div>
             <div className="bg-card rounded-xl p-8 hf-shadow">
-              <h3 className="font-bold text-hf-ink mb-4">Agent Capabilities:</h3>
+              <h3 className="font-bold text-hf-ink mb-4">What's Included:</h3>
               <ul className="space-y-3 text-muted-foreground">
-                <li>• Lead follow-up and nurturing</li>
-                <li>• Operations monitoring and alerts</li>
-                <li>• Intelligent appointment scheduling</li>
-                <li>• Quality assurance checks</li>
-                <li>• Customer support escalation</li>
-                <li>• Performance reporting</li>
+                <li>• Automated lead capture and qualification</li>
+                <li>• Smart follow-up sequences</li>
+                <li>• Lead scoring and prioritization</li>
+                <li>• Personalized content delivery</li>
+                <li>• Conversion tracking and analytics</li>
+                <li>• Pipeline management automation</li>
               </ul>
             </div>
           </div>
