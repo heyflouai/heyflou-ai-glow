@@ -16,94 +16,49 @@ export interface CaseStudy {
 
 export const caseStudies: CaseStudy[] = [
   {
-    id: "ecommerce-chatbot",
-    title: "E-commerce Support Automation",
-    industry: "Retail",
-    useCase: "Customer Support",
-    challenge: "High support ticket volume overwhelming small team, slow response times affecting customer satisfaction",
-    solution: "Deployed AI chatbot for FAQ handling, order tracking, and tier-1 support with seamless human handoff",
-    outcome: "70% of tickets deflected to chatbot, support costs reduced ~50%, customer satisfaction increased",
+    id: "therapy-practice",
+    title: "Private Therapy Practice",
+    industry: "Healthcare",
+    useCase: "Client Communication",
+    challenge: "The therapist was spending hours each day replying to messages and manually scheduling appointments, often missing new inquiries.",
+    solution: "HeyFlou implemented an AI chatbot that handled all first conversations, filtered new clients, and synced appointments directly with the calendar and CRM.",
+    outcome: "65% reduction in administrative workload, 40% faster response time, and 30% increase in booked sessions within 60 days.",
     metrics: {
-      primary: "70% ticket deflection",
-      secondary: "50% cost reduction"
+      primary: "65% less admin work",
+      secondary: "30% more sessions"
     },
-    tags: ["Customer Support", "Cost Reduction", "Automation"],
+    tags: ["AI Chatbot", "Therapy", "Automation"],
     featured: true
   },
   {
-    id: "services-pipeline",
-    title: "Professional Services Pipeline Boost",
+    id: "coaching-business",
+    title: "Online Coaching Business",
     industry: "Services",
     useCase: "Lead Generation",
-    challenge: "Manual lead qualification process, inconsistent follow-up, low conversion rates from marketing efforts",
-    solution: "AI-powered lead scoring, automated nurturing sequences, and personalized content recommendations",
-    outcome: "Pipeline lift achieved, +30% conversion rate improvement, faster lead-to-customer cycle",
+    challenge: "Many leads were arriving from ads, but most were never followed up at the right time.",
+    solution: "We built a full CRM automation system with lead scoring, instant follow-ups, and real-time pipeline tracking.",
+    outcome: "2.3× growth in qualified leads, 50% increase in lead-to-client conversion, and zero missed follow-ups after automation.",
     metrics: {
-      primary: "+30% conversion",
-      secondary: "40% faster pipeline"
+      primary: "2.3× qualified leads",
+      secondary: "50% conversion boost"
     },
-    tags: ["Lead Generation", "Marketing", "Sales Automation"],
+    tags: ["CRM", "Lead Generation", "Automation"],
     featured: true
   },
   {
-    id: "manufacturing-maintenance",
-    title: "Manufacturing Predictive Maintenance",
-    industry: "Manufacturing",
-    useCase: "Operations",
-    challenge: "Unexpected equipment failures causing production delays, high maintenance costs, poor delivery reliability",
-    solution: "IoT sensors + AI for predictive maintenance alerts, automated work order generation, vendor coordination",
-    outcome: "−30% equipment downtime, 95% on-time delivery rate, significant maintenance cost savings",
-    metrics: {
-      primary: "95% on-time delivery",
-      secondary: "30% less downtime"
-    },
-    tags: ["Predictive Maintenance", "Operations", "IoT"],
-    featured: true
-  },
-  {
-    id: "hospitality-guest",
-    title: "Hotel Guest Experience Automation",
-    industry: "Hospitality",
-    useCase: "Customer Experience",
-    challenge: "Manual guest communications, inconsistent service delivery, difficulty managing guest requests at scale",
-    solution: "AI concierge for guest requests, automated check-in/out processes, personalized service recommendations",
-    outcome: "Enhanced guest experience, +25% satisfaction scores, reduced front desk workload by 60%",
-    metrics: {
-      primary: "+25% guest satisfaction",
-      secondary: "60% workload reduction"
-    },
-    tags: ["Guest Experience", "Automation", "Personalization"],
-    featured: false
-  },
-  {
-    id: "logistics-routing",
-    title: "Logistics Route Optimization",
-    industry: "Logistics",
-    useCase: "Operations",
-    challenge: "Inefficient delivery routes, high fuel costs, inconsistent delivery times affecting customer satisfaction",
-    solution: "AI-powered route optimization, real-time traffic integration, automated dispatch and tracking systems",
-    outcome: "25% fuel cost reduction, 90% on-time deliveries, improved driver productivity and customer satisfaction",
-    metrics: {
-      primary: "90% on-time delivery",
-      secondary: "25% fuel savings"
-    },
-    tags: ["Route Optimization", "Cost Reduction", "Efficiency"],
-    featured: false
-  },
-  {
-    id: "healthcare-scheduling",
-    title: "Medical Practice Scheduling System",
+    id: "wellness-startup",
+    title: "Wellness & Mental Health Startup",
     industry: "Healthcare",
-    useCase: "Operations",
-    challenge: "High no-show rates, manual appointment management, staff spending too much time on scheduling calls",
-    solution: "AI-powered appointment booking, automated reminders, intelligent scheduling based on patient patterns",
-    outcome: "40% reduction in no-shows, 75% faster appointment processing, improved patient satisfaction",
+    useCase: "Lead Conversion",
+    challenge: "High website traffic, but very low conversion into consultations.",
+    solution: "We created a complete lead capture, chatbot qualification, and automated nurturing system connected to the CRM.",
+    outcome: "3× increase in consultation requests, consistent weekly growth in new clients, and fully automated client onboarding.",
     metrics: {
-      primary: "40% fewer no-shows",
-      secondary: "75% faster processing"
+      primary: "3× consultations",
+      secondary: "Fully automated"
     },
-    tags: ["Healthcare", "Scheduling", "Patient Experience"],
-    featured: false
+    tags: ["Lead Nurturing", "Chatbot", "CRM"],
+    featured: true
   }
 ];
 
