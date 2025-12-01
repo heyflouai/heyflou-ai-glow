@@ -72,7 +72,7 @@ export const Navbar = () => {
                 asChild
               >
                 <a href="https://calendly.com/salo-zayat/new-meeting" target="_blank" rel="noopener noreferrer">
-                  Book a Strategy Call
+                  Book Free Call
                 </a>
               </GradientButton>
             </div>
@@ -119,7 +119,7 @@ export const Navbar = () => {
                     rel="noopener noreferrer"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    Book a Strategy Call
+                    Book Free Call
                   </a>
                 </GradientButton>
               </div>

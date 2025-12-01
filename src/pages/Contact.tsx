@@ -67,8 +67,8 @@ export default function Contact() {
   return (
     <>
       <SEOHead 
-        title="Contact HeyFlou - AI Consulting & Automation"
-        description="Get in touch with HeyFlou for AI consulting, workflow automation, and team training. Book a strategy call or send us a message."
+        title="Contact HeyFlou - AI Automation for Therapists & Service Professionals"
+        description="Book a free strategy call to learn how AI automation can save you time and help you get more clients. No tech skills required."
         canonical="https://heyflou.com/contact"
       />
       
@@ -76,10 +76,10 @@ export default function Contact() {
         <Section background="glow" padding="large">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h1 className="text-4xl md:text-5xl font-bold font-display text-hf-ink mb-6">
-              Let's Discuss Your AI Strategy
+              Let's Transform Your Practice Together
             </h1>
             <p className="text-xl text-muted-foreground">
-              Ready to automate workflows and grow your business? Get in touch to start your 90-day AI transformation.
+              Book a free strategy call to discover how AI automation can save you time and help you get more clients.
             </p>
           </div>
 
@@ -197,10 +197,10 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-lg font-bold font-display text-hf-ink">
-                      Book a Strategy Call
+                      Free Strategy Call
                     </h3>
                     <p className="text-muted-foreground">
-                      30-minute consultation to discuss your needs
+                      30-minute consultation to explore your automation opportunities
                     </p>
                   </div>
                 </div>

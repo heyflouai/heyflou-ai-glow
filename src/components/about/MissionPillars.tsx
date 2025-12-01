@@ -5,26 +5,26 @@ export function MissionPillars() {
   const pillars = [
     {
       icon: Users,
-      title: 'Human-in-the-loop',
-      description: 'AI handles the busywork; people handle judgment.',
+      title: 'Built for Your Practice',
+      description: 'Designed specifically for therapists and service professionals who value their time.',
       color: 'text-hf-teal'
     },
     {
       icon: Shield,
-      title: 'Secure-by-design',
-      description: 'Least-privilege access, audit logs, and clear data boundaries.',
+      title: 'Secure & Compliant',
+      description: 'HIPAA-compliant security with enterprise-grade encryption for client data.',
       color: 'text-hf-purple'
     },
     {
       icon: TrendingUp,
-      title: 'Measurable ROI',
-      description: 'Ship with KPIs, baselines, and weekly deltas.',
+      title: 'Proven Results',
+      description: 'Clients save 10-20 hours per week and see more bookings within 60 days.',
       color: 'text-hf-sky'
     },
     {
       icon: Zap,
-      title: 'Vendor-neutral',
-      description: 'We integrate with your stack; no lock-in.',
+      title: 'Easy Integration',
+      description: 'Works seamlessly with your existing calendar, CRM, and communication tools.',
       color: 'text-hf-navy'
     }
   ];
@@ -34,7 +34,7 @@ export function MissionPillars() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold font-display text-hf-ink mb-4">
-            Mission & What Makes Us Different
+            Why Therapists Choose HeyFlou
           </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

@@ -20,7 +20,7 @@ export const Footer = () => {
               <BrandLockup className="text-white [&_span]:text-white" />
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
-              AI Consulting for SMB workflow automation.
+              AI automation for therapists and service professionals. Save time, get more clients.
             </p>
             
             
@@ -91,7 +91,7 @@ export const Footer = () => {
             © 2025 HeyFlou. All rights reserved.
           </p>
           <p className="text-gray-400 text-sm mt-2 md:mt-0">
-            From audit to ROI in 90 days.
+            Transform your practice in 90 days.
           </p>
         </div>
       </div>

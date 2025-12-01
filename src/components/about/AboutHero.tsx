@@ -27,7 +27,7 @@ export function AboutHero() {
         
         {/* Subline */}
         <p className="mt-6 text-xl text-hf-navy/90 max-w-2xl mx-auto mb-8">
-          We help SMBs automate work with AI—safely, measurably, and fast.
+          We help therapists and service professionals save time and get more clients through proven AI automation.
         </p>
         
         {/* CTA group */}

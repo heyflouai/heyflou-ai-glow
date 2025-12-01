@@ -22,8 +22,8 @@ export default function ROICalculator() {
   return (
     <>
       <SEOHead 
-        title="AI ROI Calculator for SMBs | HeyFlou"
-        description="Calculate potential savings and ROI from AI automation. Free tool to estimate your business transformation benefits."
+        title="Time & Cost Savings Calculator | HeyFlou"
+        description="Calculate how much time and money AI automation could save your therapy practice or service business."
         canonical="https://heyflou.com/roi"
       />
       
@@ -34,10 +34,10 @@ export default function ROICalculator() {
               <Calculator className="text-white" size={32} />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold font-display text-hf-ink mb-6">
-              AI ROI Calculator
+              Calculate Your Time & Cost Savings
             </h1>
             <p className="text-xl text-muted-foreground">
-              Calculate your potential savings and payback period from AI automation.
+              See how much time and money AI automation could save your practice.
             </p>
           </div>
         </Section>
@@ -147,10 +147,10 @@ export default function ROICalculator() {
 
             <div className="text-center mt-12">
               <h3 className="text-2xl font-bold font-display text-hf-ink mb-4">
-                Ready to Make This Real?
+                Ready to Start Saving Time?
               </h3>
               <p className="text-lg text-muted-foreground mb-6">
-                Book a strategy call to discuss your specific automation opportunities.
+                Book a free strategy call to see exactly how we can help your practice.
               </p>
               <GradientButton variant="primary" size="lg" asChild>
                 <a href="https://calendly.com/salo-zayat/new-meeting" target="_blank" rel="noopener noreferrer">

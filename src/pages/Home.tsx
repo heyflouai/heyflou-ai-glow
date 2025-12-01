@@ -14,7 +14,7 @@ const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "HeyFlou",
-  "description": "AI Consulting for SMB Workflow Automation",
+  "description": "AI Automation for Therapists and Service Professionals",
   "url": "https://heyflou.com",
   "logo": "https://heyflou.com/logo.png",
   "sameAs": ["https://linkedin.com/company/heyflou", "https://twitter.com/heyflou"]
@@ -24,71 +24,71 @@ const faqJsonLd = {
   "@type": "FAQPage",
   "mainEntity": [{
     "@type": "Question",
-    "name": "Will AI replace my team?",
+    "name": "Will AI replace me or my staff?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "No—AI augments your team with human-in-the-loop processes. Our approach focuses on automating repetitive tasks so your team can focus on higher-value work."
+      "text": "No. AI handles repetitive admin work like scheduling and follow-ups so you can focus on your clients and growing your practice."
     }
   }, {
     "@type": "Question",
-    "name": "How do you handle data security?",
+    "name": "How do you keep client data secure?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "We follow vendor best practices with least-privilege access and opt-out of training data usage to ensure your business data remains secure and private."
+      "text": "We use enterprise-grade encryption and follow strict HIPAA-compliant security practices to protect all client information."
     }
   }, {
     "@type": "Question",
-    "name": "How fast can we see ROI?",
+    "name": "How quickly will I see results?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Often within months, depending on the use case. Most clients see measurable improvements in efficiency and cost savings within 90 days of implementation."
+      "text": "Most clients save 10-20 hours per week within the first month and see increased bookings within 60 days."
     }
   }]
 };
 const processSteps = [{
   step: "01",
-  title: "Discover",
-  description: "Audit your current workflows and identify automation opportunities"
+  title: "Discovery Call",
+  description: "We learn about your practice, current challenges, and automation goals"
 }, {
   step: "02",
-  title: "Design",
-  description: "Create custom AI solutions tailored to your business processes"
+  title: "Custom Design",
+  description: "Build your AI chatbot, CRM workflows, and lead capture systems"
 }, {
   step: "03",
-  title: "Deploy",
-  description: "Implement and integrate AI systems with your existing tools"
+  title: "Integration & Setup",
+  description: "Connect with your calendar, CRM, and existing tools seamlessly"
 }, {
   step: "04",
-  title: "Train & Improve",
-  description: "Upskill your team and continuously optimize performance"
+  title: "Launch & Support",
+  description: "Go live with full training and ongoing optimization support"
 }];
 const faqItems = [{
-  question: "Will AI replace my team?",
-  answer: "No. AI automates repetitive tasks so your team can focus on strategy and growth."
+  question: "Will AI replace me or my staff?",
+  answer: "No. AI handles repetitive admin work like scheduling and follow-ups so you can focus on your clients and growing your practice."
 }, {
-  question: "How do you handle data security?",
-  answer: "We use encryption and industry best practices to keep your data safe at all times."
+  question: "How do you keep client data secure?",
+  answer: "We use enterprise-grade encryption and follow strict HIPAA-compliant security practices to protect all client information."
 }, {
-  question: "How fast can we see ROI?",
-  answer: "Most SMBs notice time savings and measurable ROI within 90 days."
+  question: "How quickly will I see results?",
+  answer: "Most clients save 10-20 hours per week within the first month and see increased bookings within 60 days."
 }, {
-  question: "Do I need technical skills to use it?",
-  answer: "No. We handle setup, integration, and support so you can focus on your business."
+  question: "Do I need tech skills to use it?",
+  answer: "Not at all. We handle the entire setup, integration, and training. You just use it like any other tool in your practice."
 }, {
   question: "Is it expensive?",
-  answer: "Our plans are designed to save more money than they cost by reducing manual work."
+  answer: "Our systems typically pay for themselves within 2-3 months through time savings and increased client bookings."
 }, {
-  question: "Do I have to change my whole system?",
-  answer: "No. We connect with your existing tools and add automations to make them more efficient."
+  question: "Will I need to change my current systems?",
+  answer: "No. We integrate with your existing calendar, CRM, and communication tools without disrupting your workflow."
 }, {
-  question: "Does it work with my existing tools?",
-  answer: "Yes. We integrate with CRMs, email, and other apps you already use."
+  question: "Does it work with my calendar and CRM?",
+  answer: "Yes. We integrate with popular platforms like Google Calendar, Outlook, SimplePractice, TherapyNotes, and most major CRMs."
 }];
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const featuredCases = getFeaturedCases();
   return <>
-        <SEOHead title="HeyFlou — AI Consulting | Automate Your Work, Grow Your Business" description="Automate workflows, train teams, and deploy AI agents. Proven ROI for SMBs." canonical="https://heyflou.com" jsonLd={[organizationJsonLd, faqJsonLd]} />
+        <SEOHead title="AI Automation for Therapists & Service Professionals | HeyFlou" description="Save time and get more clients with AI chatbots, automated scheduling, and CRM management. Built for therapists and service professionals." canonical="https://heyflou.com" jsonLd={[organizationJsonLd, faqJsonLd]} />
       
       <main className="pt-16"> {/* Back to normal header spacing */}
         {/* Hero Section */}
@@ -133,12 +133,12 @@ export default function Home() {
           
           <div className="text-center max-w-4xl mx-auto relative">
             <div className="relative z-10">
-              <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-hf-ink">
-                HeyFlou: AI Consulting
-              </h1>
-              <h2 className="mt-2 text-2xl md:text-3xl font-semibold text-hf-navy/90">
-                Automate Your Work — Grow Your Business
-              </h2>
+            <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-hf-ink">
+              Never Miss a Client Again
+            </h1>
+            <h2 className="mt-2 text-2xl md:text-3xl font-semibold text-hf-navy/90">
+              AI Automation for Therapists & Service Professionals
+            </h2>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6 mt-8">
                 <GradientButton variant="hero" size="xl" asChild>
@@ -154,13 +154,13 @@ export default function Home() {
               {/* Hero badges */}
               <div className="flex flex-wrap justify-center gap-4 text-sm">
                 <div className="flex items-center px-3 py-1 bg-white/20 rounded-full backdrop-blur-sm">
-                  <span className="text-hf-ink font-medium">Human-in-the-loop</span>
+                  <span className="text-hf-ink font-medium">24/7 client communication</span>
                 </div>
                 <div className="flex items-center px-3 py-1 bg-white/20 rounded-full backdrop-blur-sm">
-                  <span className="text-hf-ink font-medium">Secure-by-design</span>
+                  <span className="text-hf-ink font-medium">Automatic scheduling</span>
                 </div>
                 <div className="flex items-center px-3 py-1 bg-white/20 rounded-full backdrop-blur-sm">
-                  <span className="text-hf-ink font-medium">From audit to ROI in 90 days</span>
+                  <span className="text-hf-ink font-medium">More clients, less admin work</span>
                 </div>
               </div>
             </div>
@@ -173,10 +173,10 @@ export default function Home() {
           <div className="text-center mb-12">
             
             <h2 className="text-3xl md:text-4xl font-bold font-display text-hf-ink mb-4">
-              Why AI Now?
+              Why Service Professionals Choose AI Automation
             </h2>
             <p className="text-lg text-muted-foreground">
-              The data shows SMBs using AI are outperforming competitors
+              Real results from therapists and service-based businesses
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -196,10 +196,10 @@ export default function Home() {
         <Section>
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold font-display text-hf-ink mb-4">
-              What We Do
+              How HeyFlou Helps You Grow
             </h2>
             <p className="text-lg text-muted-foreground">
-              Three core services to transform your business with AI
+              Three proven systems to save time and get more clients
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -208,19 +208,19 @@ export default function Home() {
                 <Zap className="text-white" size={24} />
               </div>
               <h3 className="text-xl font-bold font-display text-hf-ink mb-4">
-                Workflow Automation
+                AI Chatbot for Appointments
               </h3>
               <p className="text-muted-foreground mb-6">
-                Remove manual busywork across operations, finance, and customer experience.
+                Talk to new clients 24/7, answer questions, and book appointments automatically.
               </p>
               <ul className="space-y-2 text-sm text-muted-foreground mb-6">
-                <li>• Email triage and routing</li>
-                <li>• Invoice processing</li>
-                <li>• Automated reporting</li>
-                <li>• Data synchronization</li>
+                <li>• 24/7 client communication</li>
+                <li>• Automatic booking & rescheduling</li>
+                <li>• Client screening and qualification</li>
+                <li>• Calendar and CRM sync</li>
               </ul>
               <GradientButton variant="ghost" size="sm" asChild>
-                <Link to="/services#automation">Learn More</Link>
+                <Link to="/services">Learn More</Link>
               </GradientButton>
             </div>
 
@@ -229,19 +229,19 @@ export default function Home() {
                 <Users className="text-white" size={24} />
               </div>
               <h3 className="text-xl font-bold font-display text-hf-ink mb-4">
-                AI Training for Teams
+                CRM Management & Automation
               </h3>
               <p className="text-muted-foreground mb-6">
-                Upskill staff to safely use AI daily with role-based playbooks and governance.
+                Organize all your leads, follow-ups, and client journeys in one automated system.
               </p>
               <ul className="space-y-2 text-sm text-muted-foreground mb-6">
-                <li>• Role-based AI playbooks</li>
-                <li>• Prompt engineering training</li>
-                <li>• Governance frameworks</li>
-                <li>• Best practices workshops</li>
+                <li>• Lead and opportunity tracking</li>
+                <li>• Automated follow-up reminders</li>
+                <li>• Sales pipeline visualization</li>
+                <li>• Real-time business insights</li>
               </ul>
               <GradientButton variant="ghost" size="sm" asChild>
-                <Link to="/services#training">Learn More</Link>
+                <Link to="/services">Learn More</Link>
               </GradientButton>
             </div>
 
@@ -250,19 +250,19 @@ export default function Home() {
                 <Bot className="text-white" size={24} />
               </div>
               <h3 className="text-xl font-bold font-display text-hf-ink mb-4">
-                AI Agents for Your Business
+                Lead Generation & Nurturing
               </h3>
               <p className="text-muted-foreground mb-6">
-                Autonomous assistants that execute multi-step tasks with oversight and guardrails.
+                Turn website visitors into paying clients with smart capture and automated follow-ups.
               </p>
               <ul className="space-y-2 text-sm text-muted-foreground mb-6">
-                <li>• Lead follow-up automation</li>
-                <li>• Operations monitoring</li>
-                <li>• Intelligent scheduling</li>
-                <li>• Quality assurance checks</li>
+                <li>• Automated lead capture</li>
+                <li>• Smart qualification & scoring</li>
+                <li>• Personalized follow-up sequences</li>
+                <li>• Conversion tracking</li>
               </ul>
               <GradientButton variant="ghost" size="sm" asChild>
-                <Link to="/services#agents">Learn More</Link>
+                <Link to="/services">Learn More</Link>
               </GradientButton>
             </div>
           </div>
@@ -271,8 +271,8 @@ export default function Home() {
         {/* We Help Every Department */}
         <Section id="departments" className="py-20 md:py-28">
           <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--hf-ink))]">We Help Every Department</h2>
-            <p className="mt-3 text-[hsl(var(--hf-navy)/0.9)]">Plug AI where it saves the most time and reduces errors.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--hf-ink))]">Built for Service Professionals</h2>
+            <p className="mt-3 text-[hsl(var(--hf-navy)/0.9)]">AI solutions designed specifically for therapists, coaches, and service-based businesses.</p>
           </div>
           <DepartmentsCarousel className="mt-10 md:mt-12" />
         </Section>
@@ -282,10 +282,10 @@ export default function Home() {
         <Section background="muted">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold font-display text-hf-ink mb-4">
-              Our Process
+              How It Works
             </h2>
             <p className="text-lg text-muted-foreground">
-              From discovery to deployment in 90 days
+              From first call to fully automated system in 90 days
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -311,7 +311,7 @@ export default function Home() {
               Frequently Asked Questions
             </h2>
             <p className="text-lg text-muted-foreground">
-              Common questions about AI automation for SMBs
+              Common questions from therapists and service professionals
             </p>
           </div>
           <div className="max-w-3xl mx-auto space-y-4">
@@ -338,10 +338,10 @@ export default function Home() {
         <Section background="glow">
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold font-display text-hf-ink mb-4">
-              Let's map your first 90 days with AI
+              Ready to Save Time and Get More Clients?
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Book a strategy call to discover your automation opportunities and build a custom roadmap.
+              Book a free strategy call to see how AI automation can transform your practice in 90 days.
             </p>
             <GradientButton variant="hero" size="xl" asChild>
               <Link to="/contact">Get Started Today</Link>
