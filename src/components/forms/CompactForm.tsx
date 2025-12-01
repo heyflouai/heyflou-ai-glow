@@ -184,10 +184,10 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage }) => {
       <div className="space-y-6">
         <div>
           <h2 className="text-3xl md:text-4xl font-bold font-display text-hf-ink mb-4">
-            Start Your AI Project
+            Get Started with AI Automation
           </h2>
           <p className="text-lg text-muted-foreground">
-            Tell us about your business—our team will reach out with next steps.
+            Tell us about your practice and we'll show you how to save time and get more clients.
           </p>
         </div>
 
@@ -196,19 +196,19 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage }) => {
             <div className="w-8 h-8 rounded-full hf-gradient flex items-center justify-center">
               <Users className="w-4 h-4 text-white" />
             </div>
-            <span className="text-hf-navy font-medium">Human-in-the-loop</span>
+            <span className="text-hf-navy font-medium">Save 10-20 hours per week</span>
           </div>
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-full hf-gradient flex items-center justify-center">
               <Shield className="w-4 h-4 text-white" />
             </div>
-            <span className="text-hf-navy font-medium">Secure-by-design</span>
+            <span className="text-hf-navy font-medium">HIPAA-compliant & secure</span>
           </div>
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-full hf-gradient flex items-center justify-center">
               <Zap className="w-4 h-4 text-white" />
             </div>
-            <span className="text-hf-navy font-medium">From audit to ROI in 90 days</span>
+            <span className="text-hf-navy font-medium">Results in 60-90 days</span>
           </div>
         </div>
       </div>

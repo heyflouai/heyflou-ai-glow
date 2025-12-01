@@ -21,35 +21,35 @@ const WorkflowDiagram: React.FC = () => {
 export const ProblemSolution: React.FC = () => {
   const symptoms = [{
     icon: ClipboardList,
-    text: "Manual copy-paste between CRM, email, sheets, and ERP"
+    text: "Manually scheduling and rescheduling appointments all day"
   }, {
     icon: Mail,
-    text: "Repetitive customer questions clogging support channels"
+    text: "Answering the same client questions over and over"
   }, {
     icon: GitBranch,
-    text: "Inconsistent SOPs and 'tribal knowledge'"
+    text: "Losing track of leads and follow-ups in spreadsheets"
   }, {
     icon: AlarmClock,
-    text: "Delayed reporting and slow decision-making"
+    text: "Missing new inquiries because you're too busy"
   }, {
     icon: BarChart,
-    text: "Leads go cold; follow-ups are inconsistent"
+    text: "Spending more time on admin than serving clients"
   }, {
     icon: UsersRound,
-    text: "Scaling ops requires headcount instead of smarter systems"
+    text: "Wanting to grow but can't handle more manual work"
   }];
   const benefits = [{
     icon: Bot,
-    text: "Automate repetitive tasks across tools (email, CRM, tickets, docs)"
+    text: "AI chatbot handles client communication and booking 24/7"
   }, {
     icon: Workflow,
-    text: "Human-in-the-loop approvals for accuracy and control"
+    text: "Automated CRM tracks every lead, follow-up, and opportunity"
   }, {
     icon: Shield,
-    text: "Measurable time savings and fewer errors"
+    text: "Save 10-20 hours per week with proven automation"
   }, {
     icon: Gauge,
-    text: "Works with your systems via APIs and secure access"
+    text: "Integrates seamlessly with your calendar and existing tools"
   }];
   const services = [{
     title: "Workflow Automation",
@@ -64,7 +64,7 @@ export const ProblemSolution: React.FC = () => {
     description: "Agents that follow SOPs, execute tasks, and log everything.",
     outcome: "Reliable execution without adding headcount."
   }];
-  const stats = ["20+ hrs saved / employee / month", "~40% average productivity lift", "Support costs down ~50% with AI deflection"];
+  const stats = ["10-20 hours saved per week", "65% less admin workload", "40% faster response times"];
   return <div className="space-y-16">
       {/* Problem Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -74,10 +74,10 @@ export const ProblemSolution: React.FC = () => {
               The Problem We Solve
             </p>
             <h2 className="text-3xl md:text-4xl font-bold font-display text-hf-ink leading-tight">
-              SMBs are stuck in manual work, fragmented tools, and costly errors.
+              Therapists and service professionals waste hours on admin work instead of serving clients.
             </h2>
             <p className="text-lg text-muted-foreground">
-              Teams spend hours every week copying data between apps, replying to repetitive messages, and building reports by hand. Work slows, mistakes creep in, and scaling means hiring—rather than improving.
+              Every day you spend hours scheduling appointments, following up with clients, answering the same questions, and managing your CRM manually. Work piles up, opportunities are missed, and you're stuck doing tasks that don't grow your practice.
             </p>
           </div>
 
@@ -111,10 +111,10 @@ export const ProblemSolution: React.FC = () => {
             Our Solution
           </p>
           <h3 className="text-2xl md:text-3xl font-bold font-display text-hf-ink">
-            AI-powered workflows and agents that do the busywork—safely, and with oversight.
+            AI automation that handles your busywork—so you can focus on your clients.
           </h3>
           <p className="text-lg text-muted-foreground">
-            HeyFlou designs automations and AI agents that read context, take actions in your systems, and escalate edge cases to humans. We train your team and govern it with clear guardrails.
+            HeyFlou builds AI systems that talk to clients 24/7, schedule appointments automatically, manage your CRM, and nurture leads until they book. You stay in control while AI handles the repetitive work.
           </p>
         </div>
 
@@ -142,7 +142,7 @@ export const ProblemSolution: React.FC = () => {
               </div>)}
           </div>
           <p className="text-xs text-muted-foreground">
-            Benchmarks from the HeyFlou SMB AI Analysis ('24–'25)—results vary.
+            Average results from real therapy practices and service businesses—individual results may vary.
           </p>
         </div>
       </div>

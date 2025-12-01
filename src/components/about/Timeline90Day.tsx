@@ -4,30 +4,30 @@ export function Timeline90Day() {
   const steps = [
     {
       icon: Search,
-      title: 'Discover',
-      subtitle: 'Weeks 1–2',
-      description: 'Workshops, SOP capture, and opportunity map.',
+      title: 'Discovery',
+      subtitle: 'Week 1',
+      description: 'Understand your practice, client flow, and automation goals.',
       color: 'text-hf-teal'
     },
     {
       icon: Zap,
       title: 'Design',
-      subtitle: 'Weeks 3–4',
-      description: 'Automation specs, guardrails, and success metrics.',
+      subtitle: 'Weeks 2-4',
+      description: 'Build your AI chatbot, CRM workflows, and lead systems.',
       color: 'text-hf-purple'
     },
     {
       icon: TestTube,
-      title: 'Deploy',
-      subtitle: 'Weeks 5–8',
-      description: 'Build agents & workflows; pilot with HITL approvals.',
+      title: 'Integration',
+      subtitle: 'Weeks 5-8',
+      description: 'Connect with your calendar, CRM, and communication tools.',
       color: 'text-hf-sky'
     },
     {
       icon: TrendingUp,
-      title: 'Train & Improve',
-      subtitle: 'Weeks 9–12',
-      description: 'Team training, dashboards, and iteration.',
+      title: 'Launch & Optimize',
+      subtitle: 'Weeks 9-12',
+      description: 'Go live with training, support, and continuous improvements.',
       color: 'text-hf-navy'
     }
   ];
@@ -37,7 +37,7 @@ export function Timeline90Day() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold font-display text-hf-ink mb-4">
-            Our 90-Day Plan
+            Your 90-Day Transformation
           </h2>
         </div>
         

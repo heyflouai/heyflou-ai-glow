@@ -6,7 +6,7 @@ export function CTAWithForm() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold font-display text-hf-ink mb-6">
-            Ready to map your first 90 days with AI?
+            Ready to Save Time and Grow Your Practice?
           </h2>
         </div>
         

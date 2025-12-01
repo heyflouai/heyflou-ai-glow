@@ -1,9 +1,9 @@
 export function ResponsibleAI() {
   const policies = [
-    'Data stays in your systems whenever possible.',
-    'Access is least-privilege and time-bound.',
-    'All automations are logged; sensitive actions require approval.',
-    'Models are configured to not train on your data unless explicitly authorized.'
+    'All client data is encrypted and HIPAA-compliant.',
+    'Access is strictly controlled with secure authentication.',
+    'All automation actions are logged for your records.',
+    'Your data is never used to train AI models without explicit permission.'
   ];
 
   return (
@@ -11,7 +11,7 @@ export function ResponsibleAI() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold font-display text-hf-ink mb-4">
-            Responsible AI & Data Use
+            Security & Compliance You Can Trust
           </h2>
         </div>
         

@@ -8,8 +8,8 @@ export default function Services() {
   return (
     <>
       <SEOHead 
-        title="AI Automation, Team Training & Agents | HeyFlou"
-        description="Workflow automation, AI training, and intelligent agents for SMBs. Transform your business operations with proven AI solutions."
+        title="AI Chatbots, CRM Automation & Lead Generation | HeyFlou"
+        description="AI chatbots for appointments, CRM automation, and lead generation systems built for therapists and service professionals."
         canonical="https://heyflou.com/services"
       />
       
@@ -17,10 +17,10 @@ export default function Services() {
         <Section background="glow" padding="large">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold font-display text-hf-ink mb-6">
-              AI Solutions That Transform Your Business
+              AI Solutions for Therapists & Service Professionals
             </h1>
             <p className="text-xl text-muted-foreground">
-              From workflow automation to intelligent agents, we help SMBs operate faster, leaner, and smarter.
+              Save time, get more clients, and automate your practice with proven AI systems.
             </p>
           </div>
         </Section>
@@ -109,15 +109,15 @@ export default function Services() {
         <Section background="glow">
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="text-3xl font-bold font-display text-hf-ink mb-6">
-              Ready to Get Started?
+              Ready to Transform Your Practice?
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Book a strategy call to discuss your automation needs and build a custom solution.
+              Book a free strategy call to learn how AI can save you time and help you get more clients.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <GradientButton variant="hero" size="xl" asChild>
                 <a href="https://calendly.com/salo-zayat/new-meeting" target="_blank" rel="noopener noreferrer">
-                  Book Strategy Call
+                  Book Free Strategy Call
                 </a>
               </GradientButton>
               <GradientButton variant="secondary" size="xl" asChild>

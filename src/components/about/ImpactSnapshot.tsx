@@ -1,8 +1,8 @@
 export function ImpactSnapshot() {
   const metrics = [
-    '20+ hrs saved / employee / month',
-    '~40% productivity lift',
-    'Support costs down ~50% with AI deflection'
+    '10-20 hours saved per week',
+    '65% less admin workload',
+    '40% faster response times'
   ];
 
   return (
@@ -24,7 +24,7 @@ export function ImpactSnapshot() {
         </div>
         
         <p className="text-sm text-muted-foreground italic">
-          Benchmarks from our SMB AI Analysis ('24–'25)—results vary.
+          Average results from real therapy practices and service businesses—individual results may vary.
         </p>
       </div>
     </section>
