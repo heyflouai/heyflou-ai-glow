@@ -10,98 +10,63 @@ export type Dept = {
 export const departments: Dept[] = [
   {
     id: "marketing",
-    name: "Marketing",
-    problem: "Manual campaigns, slow A/B tests, and low lead quality.",
+    name: "Marketing (Travel Agencies)",
+    problem: "Travel agencies struggle with inconsistent bookings because their marketing is manual, slow, and hard to track.",
     solutions: [
-      "AI segmentation & dynamic copy for each audience",
-      "Website/chat capture → lead scoring & journeys",
-      "Auto creative variants and experiment routing"
+      "Automated WhatsApp & email follow-ups",
+      "AI chatbot promoting packages 24/7",
+      "High-conversion landing pages for deals"
     ],
-    kpis: ["+30% conversion", "−70% time-to-launch", "+20% MQL→SQL"],
-    integrations: ["HubSpot","GA4","Meta","Google Ads"]
+    kpis: ["Higher conversion rate", "More engaged leads", "Lower cost per booking"],
+    integrations: ["WhatsApp", "Meta Ads", "Google Ads", "Mailchimp"]
   },
   {
     id: "sales",
-    name: "Sales",
-    problem: "Slow follow-up and CRM busywork kill pipeline.",
+    name: "Sales (Travel Agencies)",
+    problem: "Leads go cold quickly due to slow responses and manual follow-ups.",
     solutions: [
-      "Auto-SDR agent: enrich, reply, and book meetings",
-      "CRM hygiene: notes, next-steps, and task creation",
-      "No-show reactivation and renewal nudges"
+      "Instant AI responses to inquiries",
+      "Automated reminders for quotes & price drops",
+      "CRM pipeline built for travel agencies"
     ],
-    kpis: ["+30% meetings booked", "−50% lead response time", "+15% win rate"],
-    integrations: ["Salesforce","HubSpot","Gmail","Calendly"]
+    kpis: ["Faster response time", "More closed bookings", "Higher quote-to-sale conversion"],
+    integrations: ["HubSpot", "Pipedrive", "Calendly", "WhatsApp"]
   },
   {
-    id: "support",
-    name: "Customer Support",
-    problem: "Repetitive tickets and long queues raise costs.",
+    id: "customer-experience",
+    name: "Customer Experience (Travel)",
+    problem: "Travelers expect fast, personalized service — but agencies can't answer everything manually.",
     solutions: [
-      "AI deflection for FAQs, order status, policy lookups",
-      "Agent-assist answers with sources; escalate edge cases",
-      "Proactive alerts from order/system events"
+      "24/7 AI travel assistant",
+      "Automated pre-trip messages",
+      "Personalized package suggestions"
     ],
-    kpis: ["−50% support costs", "resolve 70–80% FAQs", "+CSAT"],
-    integrations: ["Zendesk","Intercom","Shopify"]
+    kpis: ["Higher satisfaction", "Fewer repetitive questions", "Lower cancellation rate"],
+    integrations: ["WhatsApp", "Email", "Booking Systems"]
   },
   {
     id: "operations",
-    name: "Operations",
-    problem: "Status tracking, task routing, and handoffs are manual.",
+    name: "Operations (Travel Agencies)",
+    problem: "Managing documents, payments, and itinerary prep manually causes delays and mistakes.",
     solutions: [
-      "Auto triage & routing across teams/apps",
-      "Exception detection with alerting & summaries",
-      "SOP bots to run repeatable workflows"
+      "Automated reminders for payments & documents",
+      "Centralized traveler info in CRM",
+      "Smart workflows for trip preparation"
     ],
-    kpis: ["−25% cycle time", "−30% errors", "on-time delivery ↑"],
-    integrations: ["Asana","Notion","Slack","Odoo"]
+    kpis: ["Fewer operational errors", "Faster processing", "More on-time payments"],
+    integrations: ["Stripe", "Google Sheets", "Notion", "Zapier"]
   },
   {
-    id: "finance",
-    name: "Finance & Accounting",
-    problem: "AP/AR, reconciliation, and close are spreadsheet heavy.",
+    id: "therapists",
+    name: "Physiotherapists & Therapists",
+    problem: "Therapists lose clients due to slow responses, manual intake, and inconsistent follow-ups.",
     solutions: [
-      "OCR invoices + 3-way match to PO/GRN",
-      "Auto posting & approvals to accounting",
-      "Cash-flow summaries and variance alerts"
+      "AI intake chatbot",
+      "Appointment automation",
+      "CRM for patient tracking",
+      "Automated retention messages"
     ],
-    kpis: ["70–90% touchless AP", "faster month-end close", "fewer posting errors"],
-    integrations: ["QuickBooks","Xero","NetSuite"]
-  },
-  {
-    id: "hr",
-    name: "HR & People",
-    problem: "Onboarding and policy questions consume hours.",
-    solutions: [
-      "Automated onboarding checklists & account creation",
-      "Policy Q&A bot (24/7) with sourced answers",
-      "Training plans and compliance reminders"
-    ],
-    kpis: ["−50% time-to-onboard", "policy compliance ↑", "fewer tickets"],
-    integrations: ["Google Workspace","Okta","BambooHR"]
-  },
-  {
-    id: "it",
-    name: "IT & Data",
-    problem: "Silos and manual reporting block decisions.",
-    solutions: [
-      "Connect apps, centralize data (Sheets/DB/warehouse)",
-      "Automated KPI dashboards & anomaly alerts",
-      "Governance: permissions, logs, least-privilege"
-    ],
-    kpis: ["real-time visibility", "−80% manual reporting hours"],
-    integrations: ["BigQuery","Looker","Power BI","Sheets"]
-  },
-  {
-    id: "product",
-    name: "Product / Ecommerce",
-    problem: "Catalog QA and content updates don't scale.",
-    solutions: [
-      "Product data enrichment & spec checks",
-      "PDP copy/FAQs/alt-text generation with guardrails",
-      "Price/stock monitors with auto fixes or tickets"
-    ],
-    kpis: ["+10–20% PDP conversion", "−90% listing errors"],
-    integrations: ["Shopify","Woo","Contentful"]
+    kpis: ["Lower no-shows", "More weekly appointments", "Higher long-term retention"],
+    integrations: ["Google Calendar", "WhatsApp", "Email", "CRM"]
   }
 ]

@@ -271,8 +271,8 @@ export default function Home() {
         {/* We Help Every Department */}
         <Section id="departments" className="py-20 md:py-28">
           <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--hf-ink))]">Built for Service Professionals</h2>
-            <p className="mt-3 text-[hsl(var(--hf-navy)/0.9)]">AI solutions designed specifically for therapists, coaches, and service-based businesses.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--hf-ink))]">We Help Every Department</h2>
+            <p className="mt-3 text-[hsl(var(--hf-navy)/0.9)]">AI marketing and automation solutions for travel agencies and healthcare practices.</p>
           </div>
           <DepartmentsCarousel className="mt-10 md:mt-12" />
         </Section>
