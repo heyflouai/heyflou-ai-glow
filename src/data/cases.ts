@@ -16,49 +16,124 @@ export interface CaseStudy {
 
 export const caseStudies: CaseStudy[] = [
   {
-    id: "therapy-practice",
-    title: "Private Therapy Practice",
-    industry: "Healthcare",
-    useCase: "Client Communication",
-    challenge: "The therapist was spending hours each day replying to messages and manually scheduling appointments, often missing new inquiries.",
-    solution: "HeyFlou implemented an AI chatbot that handled all first conversations, filtered new clients, and synced appointments directly with the calendar and CRM.",
-    outcome: "65% reduction in administrative workload, 40% faster response time, and 30% increase in booked sessions within 60 days.",
+    id: "travel-agency-funnel",
+    title: "Travel Agency Booking Boost",
+    industry: "Travel",
+    useCase: "Marketing Automation",
+    challenge: "The agency was struggling to convert website visitors into bookings, with leads dropping off before completing inquiries.",
+    solution: "HeyFlou implemented a full automated marketing funnel with landing pages, email sequences, and WhatsApp follow-ups to capture and nurture leads.",
+    outcome: "62% increase in bookings within 90 days, with a fully automated lead nurturing system running 24/7.",
     metrics: {
-      primary: "65% less admin work",
-      secondary: "30% more sessions"
+      primary: "62% more bookings",
+      secondary: "Fully automated funnel"
     },
-    tags: ["AI Chatbot", "Therapy", "Automation"],
+    tags: ["Marketing Funnel", "Travel", "Automation"],
     featured: true
   },
   {
-    id: "coaching-business",
-    title: "Online Coaching Business",
-    industry: "Services",
-    useCase: "Lead Generation",
-    challenge: "Many leads were arriving from ads, but most were never followed up at the right time.",
-    solution: "We built a full CRM automation system with lead scoring, instant follow-ups, and real-time pipeline tracking.",
-    outcome: "2.3× growth in qualified leads, 50% increase in lead-to-client conversion, and zero missed follow-ups after automation.",
+    id: "tour-operator-chatbot",
+    title: "Tour Operator Lead Generation",
+    industry: "Travel",
+    useCase: "AI Chatbot",
+    challenge: "Many website visitors had questions but weren't converting into leads, and the team couldn't respond fast enough.",
+    solution: "We deployed an AI travel chatbot that promoted packages, answered questions instantly, and qualified leads with WhatsApp promo follow-ups.",
+    outcome: "3× growth in qualified leads and 45% faster response time to traveler inquiries.",
     metrics: {
-      primary: "2.3× qualified leads",
-      secondary: "50% conversion boost"
+      primary: "3× more leads",
+      secondary: "AI + WhatsApp promos"
     },
-    tags: ["CRM", "Lead Generation", "Automation"],
+    tags: ["AI Chatbot", "WhatsApp", "Lead Gen"],
     featured: true
   },
   {
-    id: "wellness-startup",
-    title: "Wellness & Mental Health Startup",
+    id: "physio-clinic-growth",
+    title: "Physiotherapy Clinic Growth",
     industry: "Healthcare",
-    useCase: "Lead Conversion",
-    challenge: "High website traffic, but very low conversion into consultations.",
-    solution: "We created a complete lead capture, chatbot qualification, and automated nurturing system connected to the CRM.",
-    outcome: "3× increase in consultation requests, consistent weekly growth in new clients, and fully automated client onboarding.",
+    useCase: "Patient Acquisition",
+    challenge: "The clinic had low visibility and relied heavily on referrals, missing out on digital marketing opportunities.",
+    solution: "HeyFlou built a complete digital marketing system with landing pages, automated intake, and patient nurturing sequences.",
+    outcome: "95% growth in monthly clients with consistent weekly booking increases.",
     metrics: {
-      primary: "3× consultations",
-      secondary: "Fully automated"
+      primary: "95% more clients",
+      secondary: "Consistent growth"
     },
-    tags: ["Lead Nurturing", "Chatbot", "CRM"],
+    tags: ["Healthcare", "Marketing", "Automation"],
     featured: true
+  },
+  {
+    id: "luxury-travel-sales",
+    title: "Luxury Travel Agency Sales",
+    industry: "Travel",
+    useCase: "High-Ticket Sales",
+    challenge: "High-ticket travel packages required extensive nurturing, but the sales process was manual and time-consuming.",
+    solution: "We created automated qualification funnels with personalized follow-ups specifically designed for premium travel experiences.",
+    outcome: "53% increase in high-ticket sales with reduced sales team workload.",
+    metrics: {
+      primary: "53% more high-ticket sales",
+      secondary: "Automated nurturing"
+    },
+    tags: ["Luxury Travel", "Sales", "Automation"],
+    featured: true
+  },
+  {
+    id: "student-travel-marketing",
+    title: "Student Travel Marketing Efficiency",
+    industry: "Travel",
+    useCase: "Cost Reduction",
+    challenge: "Marketing spend was high but conversions were low, with no clear visibility into which campaigns performed best.",
+    solution: "HeyFlou implemented a marketing CRM with analytics dashboard, optimizing campaigns and cutting waste from underperforming channels.",
+    outcome: "37% reduction in marketing costs while maintaining the same booking volume.",
+    metrics: {
+      primary: "37% lower costs",
+      secondary: "Same bookings"
+    },
+    tags: ["Student Travel", "Analytics", "Optimization"],
+    featured: false
+  },
+  {
+    id: "cruise-agency-revival",
+    title: "Cruise Agency Lead Revival",
+    industry: "Travel",
+    useCase: "Lead Re-engagement",
+    challenge: "Thousands of cold leads from past inquiries were sitting untouched in the CRM, representing missed revenue.",
+    solution: "We created automated WhatsApp and email re-engagement campaigns targeting cold leads with seasonal cruise promotions.",
+    outcome: "31% increase in sales from previously cold leads, turning dormant contacts into paying customers.",
+    metrics: {
+      primary: "31% more sales",
+      secondary: "Cold leads revived"
+    },
+    tags: ["Cruise", "Re-engagement", "WhatsApp"],
+    featured: false
+  },
+  {
+    id: "physio-marketing-roi",
+    title: "Physiotherapy Marketing ROI",
+    industry: "Healthcare",
+    useCase: "Marketing ROI",
+    challenge: "Marketing efforts weren't tracked properly, making it impossible to know which channels drove patient bookings.",
+    solution: "HeyFlou implemented a complete marketing analytics system with attribution tracking and automated campaign optimization.",
+    outcome: "Tripled marketing ROI by focusing budget on highest-performing channels.",
+    metrics: {
+      primary: "3× marketing ROI",
+      secondary: "Clear attribution"
+    },
+    tags: ["Healthcare", "Analytics", "ROI"],
+    featured: false
+  },
+  {
+    id: "therapist-content-funnel",
+    title: "Therapist Inquiry Growth",
+    industry: "Healthcare",
+    useCase: "Content Marketing",
+    challenge: "Great content was being created but wasn't converting into patient inquiries or appointments.",
+    solution: "We built content-to-booking funnels with AI chatbot qualification and automated follow-up sequences.",
+    outcome: "Doubled inquiries with content + chatbot funnel integration.",
+    metrics: {
+      primary: "2× more inquiries",
+      secondary: "Content + chatbot"
+    },
+    tags: ["Therapist", "Content", "Chatbot"],
+    featured: false
   }
 ];
 

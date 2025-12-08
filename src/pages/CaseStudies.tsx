@@ -6,8 +6,8 @@ export default function CaseStudies() {
   return (
     <>
       <SEOHead 
-        title="Success Stories - Therapists & Service Professionals | HeyFlou"
-        description="Real results from therapy practices and service businesses using AI automation to save time and get more clients."
+        title="Success Stories - Travel Agencies & Healthcare | HeyFlou"
+        description="Real results from travel agencies and healthcare practices using AI marketing automation to grow bookings and clients."
         canonical="https://heyflou.com/case-studies"
       />
       
@@ -15,10 +15,10 @@ export default function CaseStudies() {
         <Section background="glow" padding="large">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold font-display text-hf-ink mb-6">
-              Real Results from Real Practices
+              Real Results from Real Businesses
             </h1>
             <p className="text-xl text-muted-foreground">
-              See how therapists and service professionals are saving time and growing with AI automation.
+              See how travel agencies and healthcare practices grow with AI marketing automation.
             </p>
           </div>
         </Section>
