@@ -96,39 +96,25 @@ export default function Home() {
           {/* SOFT AURA BACKGROUND */}
           <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-visible">
             {/* main glow */}
-            <div
-              className="
+            <div className="
                 absolute left-1/2 -top-28 md:-top-36 -translate-x-1/2
                 w-[120vw] md:w-[90vw] h-[60vh] md:h-[66vh]
                 rounded-[9999px]
-              "
-              style={{
-                background:
-                  "radial-gradient(70% 55% at 50% 0%, hsl(var(--hf-teal)/0.16) 0%, hsl(var(--hf-sky)/0.12) 35%, hsl(var(--hf-purple)/0.16) 55%, transparent 80%)",
-                filter: "blur(72px) saturate(110%)",
-                opacity: 0.18,
-              }}
-            />
+              " style={{
+            background: "radial-gradient(70% 55% at 50% 0%, hsl(var(--hf-teal)/0.16) 0%, hsl(var(--hf-sky)/0.12) 35%, hsl(var(--hf-purple)/0.16) 55%, transparent 80%)",
+            filter: "blur(72px) saturate(110%)",
+            opacity: 0.18
+          }} />
             {/* feather & vignette so there's never a hard line */}
-            <div
-              className="absolute inset-0"
-              style={{
-                WebkitMaskImage:
-                  "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,.85) 40%, rgba(0,0,0,0) 85%)",
-                maskImage:
-                  "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,.85) 40%, rgba(0,0,0,0) 85%)",
-                background:
-                  "radial-gradient(100% 60% at 50% -10%, hsl(var(--hf-ink)/0.06) 0%, transparent 70%)",
-              }}
-            />
+            <div className="absolute inset-0" style={{
+            WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,.85) 40%, rgba(0,0,0,0) 85%)",
+            maskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,.85) 40%, rgba(0,0,0,0) 85%)",
+            background: "radial-gradient(100% 60% at 50% -10%, hsl(var(--hf-ink)/0.06) 0%, transparent 70%)"
+          }} />
             {/* microscopic noise to prevent gradient banding */}
-            <div
-              className="absolute inset-0 opacity-[0.03] mix-blend-overlay"
-              style={{
-                backgroundImage:
-                  "url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22 viewBox=%220 0 40 40%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%222%22 stitchTiles=%22stitch%22/></filter><rect width=%2240%22 height=%2240%22 filter=%22url(%23n)%22 opacity=%220.35%22/></svg>')",
-              }}
-            />
+            <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay" style={{
+            backgroundImage: "url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22 viewBox=%220 0 40 40%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%222%22 stitchTiles=%22stitch%22/></filter><rect width=%2240%22 height=%2240%22 filter=%22url(%23n)%22 opacity=%220.35%22/></svg>')"
+          }} />
           </div>
           
           <div className="text-center max-w-4xl mx-auto relative">
@@ -182,9 +168,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {keyMetrics.map((metric, index) => <KpiStat key={metric.id} value={metric.value} label={metric.label} description={metric.description} icon={index === 0 ? <TrendingUp size={24} /> : index === 1 ? <ChartBar size={24} /> : index === 2 ? <Users size={24} /> : index === 3 ? <Bot size={24} /> : index === 4 ? <Zap size={24} /> : <Shield size={24} />} />)}
           </div>
-          <p className="text-xs text-muted-foreground text-center mt-8">
-            Benchmarks reflect aggregated SMB research; results vary.
-          </p>
+          
         </Section>
 
         {/* Problem → Solution → What We Do */}
