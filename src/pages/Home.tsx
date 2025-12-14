@@ -6,10 +6,10 @@ import { KpiStat } from '@/components/ui/kpi-stat';
 import { keyMetrics, industryUseCases } from '@/data/metrics';
 import { getFeaturedCases } from '@/data/cases';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
 import { CompactForm } from '@/components/forms/CompactForm';
 import { ProblemSolution } from '@/components/home/ProblemSolution';
 import { DepartmentsCarousel } from '@/components/home/DepartmentsCarousel';
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -85,7 +85,6 @@ const faqItems = [{
   answer: "Yes. We integrate with popular platforms like Google Calendar, Outlook, SimplePractice, TherapyNotes, and most major CRMs."
 }];
 export default function Home() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const featuredCases = getFeaturedCases();
   return <>
         <SEOHead title="AI Automation for Therapists & Service Professionals | HeyFlou" description="Save time and get more clients with AI chatbots, automated scheduling, and CRM management. Built for therapists and service professionals." canonical="https://heyflou.com" jsonLd={[organizationJsonLd, faqJsonLd]} />
@@ -295,22 +294,25 @@ export default function Home() {
               Frequently Asked Questions
             </h2>
             <p className="text-lg text-muted-foreground">
-              Common questions from therapists and service professionals
+              Common questions from small business owners in healthcare, fitness, and service industries
             </p>
           </div>
-          <div className="max-w-3xl mx-auto space-y-4">
-            {faqItems.map((faq, index) => <div key={index} className="bg-card rounded-lg hf-shadow">
-                <button onClick={() => setOpenFaq(openFaq === index ? null : index)} className="w-full text-left p-6 flex items-center justify-between hover:bg-muted/50 transition-colors">
-                  <span className="font-semibold text-hf-ink">{faq.question}</span>
-                  <span className="text-hf-teal text-xl">
-                    {openFaq === index ? '−' : '+'}
-                  </span>
-                </button>
-                {openFaq === index && <div className="px-6 pb-6 text-muted-foreground">
-                    {faq.answer}
-                  </div>}
-              </div>)}
-          </div>
+          <Accordion type="single" collapsible className="max-w-3xl mx-auto space-y-4">
+            {faqItems.map((faq, index) => (
+              <AccordionItem 
+                key={index} 
+                value={`faq-${index}`}
+                className="bg-card rounded-lg hf-shadow border-none"
+              >
+                <AccordionTrigger className="px-6 py-6 hover:bg-muted/50 transition-colors hover:no-underline [&>svg]:text-hf-teal">
+                  <span className="font-semibold text-hf-ink text-left">{faq.question}</span>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-6 text-muted-foreground">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </Section>
 
         {/* Compact Form */}
