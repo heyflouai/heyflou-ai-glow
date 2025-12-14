@@ -21,48 +21,35 @@ const WorkflowDiagram: React.FC = () => {
 export const ProblemSolution: React.FC = () => {
   const symptoms = [{
     icon: ClipboardList,
-    text: "Manually scheduling and rescheduling appointments all day"
+    text: "Manually tracking clients in spreadsheets or notebooks"
   }, {
     icon: Mail,
-    text: "Answering the same client questions over and over"
+    text: "Answering the same questions on WhatsApp over and over"
   }, {
     icon: GitBranch,
-    text: "Losing track of leads and follow-ups in spreadsheets"
+    text: "Double-booking appointments and missing follow-ups"
   }, {
     icon: AlarmClock,
-    text: "Missing new inquiries because you're too busy"
+    text: "Losing leads because you're too busy to respond fast"
   }, {
     icon: BarChart,
-    text: "Spending more time on admin than serving clients"
+    text: "Spending more time on admin than actually serving clients"
   }, {
     icon: UsersRound,
-    text: "Wanting to grow but can't handle more manual work"
+    text: "Wanting to grow but drowning in manual work"
   }];
   const benefits = [{
     icon: Bot,
-    text: "AI chatbot handles client communication and booking 24/7"
+    text: "WhatsApp AI assistant answers client questions and books appointments 24/7"
   }, {
     icon: Workflow,
-    text: "Automated CRM tracks every lead, follow-up, and opportunity"
+    text: "Automated lead management tracks every contact, follow-up, and reminder"
   }, {
     icon: Shield,
-    text: "Save 10-20 hours per week with proven automation"
+    text: "CRM integration syncs with your calendar and existing tools seamlessly"
   }, {
     icon: Gauge,
-    text: "Integrates seamlessly with your calendar and existing tools"
-  }];
-  const services = [{
-    title: "Workflow Automation",
-    description: "Email triage, invoice handling, reporting, routing.",
-    outcome: "Cut busywork and cycle times."
-  }, {
-    title: "AI Training for Teams",
-    description: "Role-based playbooks, prompt ops, governance.",
-    outcome: "Confident, safe day-to-day AI use."
-  }, {
-    title: "AI Agents for Your Business",
-    description: "Agents that follow SOPs, execute tasks, and log everything.",
-    outcome: "Reliable execution without adding headcount."
+    text: "Save 10-20 hours per week with proven automation workflows"
   }];
   const stats = ["10-20 hours saved per week", "65% less admin workload", "40% faster response times"];
   return <div className="space-y-16">
@@ -74,10 +61,10 @@ export const ProblemSolution: React.FC = () => {
               The Problem We Solve
             </p>
             <h2 className="text-3xl md:text-4xl font-bold font-display text-hf-ink leading-tight">
-              Therapists and service professionals waste hours on admin work instead of serving clients.
+              Small businesses waste hours on repetitive admin work instead of serving their clients.
             </h2>
             <p className="text-lg text-muted-foreground">
-              Every day you spend hours scheduling appointments, following up with clients, answering the same questions, and managing your CRM manually. Work piles up, opportunities are missed, and you're stuck doing tasks that don't grow your practice.
+              Whether you run a medical practice, fitness studio, or travel agency, you're stuck doing the same tasks over and over. Scheduling appointments in Excel, answering the same WhatsApp messages, chasing follow-ups manually—it's exhausting. Your client pipeline grows, but so does the chaos. You want to scale, but can't afford to hire more staff just to handle admin.
             </p>
           </div>
 
@@ -114,7 +101,7 @@ export const ProblemSolution: React.FC = () => {
             AI automation that handles your busywork—so you can focus on your clients.
           </h3>
           <p className="text-lg text-muted-foreground">
-            HeyFlou builds AI systems that talk to clients 24/7, schedule appointments automatically, manage your CRM, and nurture leads until they book. You stay in control while AI handles the repetitive work.
+            HeyFlou builds custom AI systems that work 24/7 for your business. From WhatsApp chatbots that answer common questions and book appointments automatically, to CRM integrations that track every lead and follow-up—we handle the repetitive work. You stay in control while AI takes care of the rest.
           </p>
         </div>
 
@@ -142,7 +129,7 @@ export const ProblemSolution: React.FC = () => {
               </div>)}
           </div>
           <p className="text-xs text-muted-foreground">
-            Average results from real therapy practices and service businesses—individual results may vary.
+            Average results from real clients in healthcare, fitness, and service businesses—individual results may vary.
           </p>
         </div>
       </div>
