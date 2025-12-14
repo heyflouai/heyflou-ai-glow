@@ -205,7 +205,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <GradientButton variant="secondary" size="lg" className="w-full" asChild>
-                  <a href="https://calendly.com/salo-zayat/new-meeting" target="_blank" rel="noopener noreferrer">
+                  <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer">
                     Schedule Call
                   </a>
                 </GradientButton>

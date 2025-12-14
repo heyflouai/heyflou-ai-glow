@@ -74,7 +74,7 @@ export const Footer = () => {
               </li>
               <li>
                 <a 
-                  href="https://calendly.com/salo-zayat/new-meeting"
+                  href="https://calendly.com/heyflou-ai/30min"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-white transition-colors text-sm"
