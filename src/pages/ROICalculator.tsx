@@ -153,7 +153,7 @@ export default function ROICalculator() {
                 Book a free strategy call to see exactly how we can help your practice.
               </p>
               <GradientButton variant="primary" size="lg" asChild>
-                <a href="https://calendly.com/salo-zayat/new-meeting" target="_blank" rel="noopener noreferrer">
+                <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer">
                   Book Strategy Call
                 </a>
               </GradientButton>
