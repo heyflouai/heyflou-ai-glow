@@ -22,6 +22,7 @@ const handler = async (req: Request): Promise<Response> => {
     // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email || !emailRegex.test(email)) {
+      console.log("Invalid email format:", email);
       return new Response(
         JSON.stringify({ error: "Invalid email format", code: "INVALID_EMAIL" }),
         {
@@ -36,11 +37,13 @@ const handler = async (req: Request): Promise<Response> => {
     const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
+    const normalizedEmail = email.toLowerCase().trim();
+
     // Check if email already exists
     const { data: existingSubscriber, error: checkError } = await supabase
       .from("subscribers")
       .select("id")
-      .eq("email", email.toLowerCase().trim())
+      .eq("email", normalizedEmail)
       .maybeSingle();
 
     if (checkError) {
@@ -55,6 +58,7 @@ const handler = async (req: Request): Promise<Response> => {
     }
 
     if (existingSubscriber) {
+      console.log("Duplicate subscription attempt:", normalizedEmail);
       return new Response(
         JSON.stringify({ 
           message: "You're already subscribed.", 
@@ -68,9 +72,11 @@ const handler = async (req: Request): Promise<Response> => {
     }
 
     // Insert new subscriber
-    const { error: insertError } = await supabase
+    const { data: newSubscriber, error: insertError } = await supabase
       .from("subscribers")
-      .insert({ email: email.toLowerCase().trim() });
+      .insert({ email: normalizedEmail })
+      .select("email, created_at")
+      .single();
 
     if (insertError) {
       console.error("Error inserting subscriber:", insertError);
@@ -83,54 +89,16 @@ const handler = async (req: Request): Promise<Response> => {
       );
     }
 
-    // Send notification email using Resend
-    const resendApiKey = Deno.env.get("RESEND_API_KEY");
-    if (resendApiKey) {
-      try {
-        const now = new Date();
-        const formattedDate = now.toLocaleString("en-US", {
-          timeZone: "UTC",
-          dateStyle: "full",
-          timeStyle: "long",
-        });
-
-        const emailResponse = await fetch("https://api.resend.com/emails", {
-          method: "POST",
-          headers: {
-            "Authorization": `Bearer ${resendApiKey}`,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            from: "HeyFlou <onboarding@resend.dev>",
-            to: ["heyflou.ai@gmail.com"],
-            subject: "New AI Insights Subscriber",
-            html: `
-              <h2>New AI Insights Subscriber</h2>
-              <p><strong>Subscriber email:</strong> ${email}</p>
-              <p><strong>Date and time:</strong> ${formattedDate}</p>
-              <p><strong>Source:</strong> HeyFlou Website – Get AI Insights</p>
-            `,
-          }),
-        });
-
-        if (!emailResponse.ok) {
-          const errorText = await emailResponse.text();
-          console.error("Resend API error:", errorText);
-        } else {
-          console.log("Notification email sent successfully");
-        }
-      } catch (emailError) {
-        // Log email error but don't fail the subscription
-        console.error("Error sending notification email:", emailError);
-      }
-    } else {
-      console.log("RESEND_API_KEY not configured, skipping email notification");
-    }
+    console.log("New subscriber added:", normalizedEmail);
 
     return new Response(
       JSON.stringify({ 
         message: "Thanks for subscribing. You'll start receiving AI insights soon.",
-        code: "SUCCESS"
+        code: "SUCCESS",
+        subscriber: {
+          email: newSubscriber.email,
+          created_at: newSubscriber.created_at
+        }
       }),
       {
         status: 200,
