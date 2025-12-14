@@ -48,7 +48,7 @@ export function IntegrationsWall() {
         </div>
         
         {/* Logo Loop Animation */}
-        <div className="mb-12">
+        <div className="pb-4">
           <LogoLoop 
             logos={loopLogos}
             speed={80}
@@ -58,26 +58,6 @@ export function IntegrationsWall() {
             scaleOnHover={true}
             fadeOut={true}
           />
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {integrationGroups.map((group) => (
-            <div key={group.title}>
-              <h3 className="text-sm font-bold font-display text-hf-navy mb-3">
-                {group.title}
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {group.items.map((item) => (
-                  <span
-                    key={item}
-                    className="px-3 py-1 bg-muted text-muted-foreground rounded-full text-xs font-medium"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>
