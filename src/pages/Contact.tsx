@@ -221,7 +221,7 @@ export default function Contact() {
                       Direct Email
                     </h3>
                     <p className="text-muted-foreground">
-                      hello@heyflou.com
+                      heyflou.ai@gmail.com
                     </p>
                   </div>
                 </div>
