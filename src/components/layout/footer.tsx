@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BrandLockup } from '@/components/BrandLockup';
 import { GradientButton } from '@/components/ui/gradient-button';
+import { supabase } from '@/integrations/supabase/client';
+import { toast } from '@/hooks/use-toast';
 
 const navigationItems = [
   { name: 'Home', href: '/' },
@@ -10,6 +13,69 @@ const navigationItems = [
 ];
 
 export const Footer = () => {
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email.trim()) {
+      toast({
+        title: "Email required",
+        description: "Please enter your email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast({
+        title: "Invalid email",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke('subscribe-newsletter', {
+        body: { email: email.trim() }
+      });
+
+      if (error) {
+        throw error;
+      }
+
+      if (data.code === 'ALREADY_SUBSCRIBED') {
+        toast({
+          title: "Already subscribed",
+          description: data.message,
+        });
+      } else if (data.code === 'SUCCESS') {
+        toast({
+          title: "Subscribed!",
+          description: data.message,
+        });
+        setEmail('');
+      } else if (data.error) {
+        throw new Error(data.error);
+      }
+    } catch (error: any) {
+      console.error('Subscription error:', error);
+      toast({
+        title: "Subscription failed",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <footer className="bg-hf-navy text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -27,16 +93,24 @@ export const Footer = () => {
             {/* Email Capture */}
             <div className="max-w-sm">
               <p className="text-sm font-medium mb-2">Get AI insights</p>
-              <div className="flex gap-2">
+              <form onSubmit={handleSubscribe} className="flex gap-2">
                 <input
                   type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
-                  className="flex-1 px-3 py-2 text-sm bg-white/10 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-hf-teal"
+                  disabled={isSubmitting}
+                  className="flex-1 px-3 py-2 text-sm bg-white/10 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-hf-teal disabled:opacity-50"
                 />
-                <GradientButton variant="primary" size="sm">
-                  Subscribe
+                <GradientButton 
+                  type="submit"
+                  variant="primary" 
+                  size="sm"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Subscribing...' : 'Subscribe'}
                 </GradientButton>
-              </div>
+              </form>
               <p className="text-xs text-gray-400 mt-2">
                 We respect your privacy. Unsubscribe anytime.
               </p>
