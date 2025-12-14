@@ -4,19 +4,13 @@ import { GradientButton } from '@/components/ui/gradient-button';
 import { Link } from 'react-router-dom';
 import workflowDiagram from '@/assets/workflow-diagram.png';
 const WorkflowDiagram: React.FC = () => {
-  return (
-    <div className="relative w-full h-80 flex items-center justify-center">
+  return <div className="relative w-full h-80 flex items-center justify-center">
       {/* Glow background */}
       <div className="absolute inset-0 hf-glow rounded-full opacity-10"></div>
       
       {/* Workflow diagram */}
-      <img 
-        src={workflowDiagram} 
-        alt="Workflow automation diagram showing connected processes" 
-        className="relative z-10 max-w-full max-h-full object-contain"
-      />
-    </div>
-  );
+      <img src={workflowDiagram} alt="Workflow automation diagram showing connected processes" className="relative z-10 max-w-full max-h-full object-contain" />
+    </div>;
 };
 export const ProblemSolution: React.FC = () => {
   const symptoms = [{
@@ -63,9 +57,7 @@ export const ProblemSolution: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-bold font-display text-hf-ink leading-tight">
               Small businesses waste hours on repetitive admin work instead of serving their clients.
             </h2>
-            <p className="text-lg text-muted-foreground">
-              Whether you run a medical practice, fitness studio, or travel agency, you're stuck doing the same tasks over and over. Scheduling appointments in Excel, answering the same WhatsApp messages, chasing follow-ups manually—it's exhausting. Your client pipeline grows, but so does the chaos. You want to scale, but can't afford to hire more staff just to handle admin.
-            </p>
+            
           </div>
 
           <div className="space-y-4">
