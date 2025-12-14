@@ -42,6 +42,7 @@ export const Footer = () => {
     setIsSubmitting(true);
 
     try {
+      // Step 1: Subscribe (insert to DB)
       const { data, error } = await supabase.functions.invoke('subscribe-newsletter', {
         body: { email: email.trim() }
       });
@@ -61,14 +62,29 @@ export const Footer = () => {
           description: data.message,
         });
         setEmail('');
+
+        // Step 2: Send notification email (only for new subscribers)
+        if (data.subscriber) {
+          try {
+            await supabase.functions.invoke('notify-new-subscriber', {
+              body: {
+                email: data.subscriber.email,
+                created_at: data.subscriber.created_at
+              }
+            });
+          } catch (notifyError) {
+            // Log but don't show error to user - subscription was successful
+            console.error('Failed to send notification:', notifyError);
+          }
+        }
       } else if (data.error) {
         throw new Error(data.error);
       }
     } catch (error: any) {
       console.error('Subscription error:', error);
       toast({
-        title: "Subscription failed",
-        description: "Something went wrong. Please try again later.",
+        title: "Something went wrong",
+        description: "Please try again.",
         variant: "destructive",
       });
     } finally {
