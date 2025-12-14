@@ -134,10 +134,10 @@ export default function Home() {
           <div className="text-center max-w-4xl mx-auto relative">
             <div className="relative z-10">
             <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-hf-ink">
-              HeyFlou: AI Automation & Marketing Systems
+              HeyFlou: AI Consulting
             </h1>
             <h2 className="mt-2 text-2xl md:text-3xl font-semibold text-hf-navy/90">
-              Work Less, Convert More, Scale Faster
+              Automate Your Work — Grow Your Business
             </h2>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6 mt-8">
@@ -154,13 +154,13 @@ export default function Home() {
               {/* Hero badges */}
               <div className="flex flex-wrap justify-center gap-4 text-sm">
                 <div className="flex items-center px-3 py-1 bg-white/20 rounded-full backdrop-blur-sm">
-                  <span className="text-hf-ink font-medium">24/7 lead response</span>
+                  <span className="text-hf-ink font-medium">Human-in-the-loop</span>
                 </div>
                 <div className="flex items-center px-3 py-1 bg-white/20 rounded-full backdrop-blur-sm">
-                  <span className="text-hf-ink font-medium">Smart follow-ups</span>
+                  <span className="text-hf-ink font-medium">Secure-by-design</span>
                 </div>
                 <div className="flex items-center px-3 py-1 bg-white/20 rounded-full backdrop-blur-sm">
-                  <span className="text-hf-ink font-medium">More clients, less admin</span>
+                  <span className="text-hf-ink font-medium">From audit to ROI in 90 days</span>
                 </div>
               </div>
             </div>
