@@ -37,9 +37,10 @@ type CompactFormData = z.infer<typeof compactFormSchema>;
 
 interface CompactFormProps {
   sourcePage: string;
+  hidePromoText?: boolean;
 }
 
-export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage }) => {
+export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage, hidePromoText = false }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const { toast } = useToast();
@@ -164,6 +165,152 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage }) => {
         >
           Submit another inquiry
         </GradientButton>
+      </div>
+    );
+  }
+
+  if (hidePromoText) {
+    return (
+      <div className="bg-card rounded-xl p-6 md:p-8 hf-shadow">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
+          {/* Honeypot field */}
+          <FormField
+            type="hidden"
+            name="companyWebsite"
+            label=""
+            value={watchedValues.companyWebsite}
+            onChange={(value) => setValue('companyWebsite', value)}
+          />
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <FormField
+              label="First Name"
+              name="firstName"
+              type="text"
+              value={watchedValues.firstName}
+              onChange={(value) => setValue('firstName', value)}
+              error={errors.firstName?.message}
+              required
+              placeholder="John"
+            />
+
+            <FormField
+              label="Last Name"
+              name="lastName"
+              type="text"
+              value={watchedValues.lastName}
+              onChange={(value) => setValue('lastName', value)}
+              error={errors.lastName?.message}
+              required
+              placeholder="Doe"
+            />
+          </div>
+
+          <FormField
+            label="Work Email"
+            name="email"
+            type="email"
+            value={watchedValues.email}
+            onChange={(value) => setValue('email', value)}
+            error={errors.email?.message}
+            required
+            placeholder="john@company.com"
+          />
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <FormField
+              label="Company"
+              name="company"
+              type="text"
+              value={watchedValues.company}
+              onChange={(value) => setValue('company', value)}
+              error={errors.company?.message}
+              required
+              placeholder="Company Name"
+            />
+
+            <FormField
+              label="Website"
+              name="website"
+              type="text"
+              value={watchedValues.website}
+              onChange={(value) => setValue('website', value)}
+              error={errors.website?.message}
+              placeholder="yourdomain.com"
+              helpText="Optional"
+            />
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <FormField
+              label="Industry"
+              name="industry"
+              type="text"
+              value={watchedValues.industry}
+              onChange={(value) => setValue('industry', value)}
+              error={errors.industry?.message}
+              placeholder="e.g., Healthcare, Fitness Studio, Travel Agency"
+              required
+            />
+
+            <FormField
+              label="Team Size"
+              name="teamSize"
+              type="select"
+              value={watchedValues.teamSize}
+              onChange={(value) => setValue('teamSize', value)}
+              error={errors.teamSize?.message}
+              options={teamSizeOptions}
+              placeholder="Select team size"
+              required
+            />
+          </div>
+
+          <FormField
+            label="Message"
+            name="message"
+            type="textarea"
+            value={watchedValues.message}
+            onChange={(value) => setValue('message', value)}
+            error={errors.message?.message}
+            placeholder="Tell us about your goals or current challenges... (optional)"
+          />
+
+          <FormField
+            label="I agree to be contacted about AI automation opportunities"
+            name="consent"
+            type="checkbox"
+            value={watchedValues.consent}
+            onChange={(value) => setValue('consent', value)}
+            error={errors.consent?.message}
+            required
+          />
+
+          <div className="flex flex-col sm:flex-row gap-3 pt-2">
+            <GradientButton
+              type="submit"
+              variant="hero"
+              size="lg"
+              disabled={isSubmitting}
+              className="flex-1"
+            >
+              {isSubmitting ? 'Sending...' : 'Send Inquiry'}
+            </GradientButton>
+            
+            <GradientButton
+              variant="ghost"
+              size="lg"
+              asChild
+              className="flex-1"
+            >
+              <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer">
+                Book a Strategy Call
+              </a>
+            </GradientButton>
+          </div>
+
+          <ConsentNote />
+        </form>
       </div>
     );
   }
