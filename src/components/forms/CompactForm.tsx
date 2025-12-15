@@ -26,7 +26,7 @@ const compactFormSchema = z.object({
   ),
   company: z.string().trim().min(1, 'Company name is required').max(100, 'Company name must be less than 100 characters'),
   website: z.string().trim().optional(),
-  industry: z.string().min(1, 'Please select an industry'),
+  industry: z.string().trim().min(1, 'Industry is required').max(100, 'Industry must be less than 100 characters'),
   teamSize: z.string().min(1, 'Please select team size'),
   message: z.string().max(1000, 'Message must be less than 1000 characters').optional(),
   consent: z.boolean().refine(val => val === true, 'You must agree to be contacted'),
@@ -135,16 +135,6 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage }) => {
     }
   };
 
-  const industryOptions = [
-    { value: 'retail', label: 'Retail' },
-    { value: 'services', label: 'Services' },
-    { value: 'manufacturing', label: 'Manufacturing' },
-    { value: 'hospitality', label: 'Hospitality' },
-    { value: 'logistics', label: 'Logistics' },
-    { value: 'healthcare', label: 'Healthcare' },
-    { value: 'other', label: 'Other' },
-  ];
-
   const teamSizeOptions = [
     { value: '1-10', label: '1–10' },
     { value: '11-50', label: '11–50' },
@@ -155,9 +145,9 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage }) => {
   if (isSuccess) {
     return (
       <div className="bg-card rounded-xl p-8 hf-shadow text-center">
-        <CheckCircle className="w-12 h-12 text-hf-teal mx-auto mb-4" />
-        <h3 className="text-xl font-bold font-display text-hf-ink mb-2">
-          Thanks! We'll be in touch soon.
+        <CheckCircle className="w-16 h-16 text-hf-teal mx-auto mb-4" />
+        <h3 className="text-2xl font-bold font-display text-hf-ink mb-2">
+          Thank you! We'll be in touch within 24 hours.
         </h3>
         <p className="text-muted-foreground mb-6">
           Want to move faster?{' '}
@@ -288,12 +278,11 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage }) => {
             <FormField
               label="Industry"
               name="industry"
-              type="select"
+              type="text"
               value={watchedValues.industry}
               onChange={(value) => setValue('industry', value)}
               error={errors.industry?.message}
-              options={industryOptions}
-              placeholder="Select industry"
+              placeholder="e.g., Healthcare, Fitness Studio, Travel Agency"
               required
             />
 
