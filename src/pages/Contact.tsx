@@ -32,20 +32,18 @@ export default function Contact() {
 
             {/* Contact Options - 40% width */}
             <div className="lg:col-span-2 flex flex-col gap-6">
-              <div className="bg-card rounded-xl p-8 hf-shadow flex-1 flex flex-col">
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-lg hf-gradient flex items-center justify-center shrink-0">
-                    <Calendar className="text-white" size={24} />
+              <div className="bg-card rounded-xl p-6 hf-shadow flex-1 flex flex-col">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 rounded-lg hf-gradient flex items-center justify-center shrink-0">
+                    <Calendar className="text-white" size={20} />
                   </div>
-                  <div>
-                    <h3 className="text-lg font-bold font-display text-hf-ink mb-2">
-                      Free Strategy Call
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      30-minute consultation to explore your automation opportunities and see how AI can help your business.
-                    </p>
-                  </div>
+                  <h3 className="text-lg font-bold font-display text-hf-ink">
+                    Free Strategy Call
+                  </h3>
                 </div>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                  30-minute consultation to explore your automation opportunities and see how AI can help your business.
+                </p>
                 <div className="mt-auto">
                   <GradientButton variant="secondary" size="lg" className="w-full" asChild>
                     <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer">
@@ -55,21 +53,19 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="bg-card rounded-xl p-8 hf-shadow flex-1 flex flex-col">
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-lg hf-gradient flex items-center justify-center shrink-0">
-                    <Mail className="text-white" size={24} />
+              <div className="bg-card rounded-xl p-6 hf-shadow flex-1 flex flex-col">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 rounded-lg hf-gradient flex items-center justify-center shrink-0">
+                    <Mail className="text-white" size={20} />
                   </div>
-                  <div>
-                    <h3 className="text-lg font-bold font-display text-hf-ink mb-2">
-                      Direct Email
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      heyflou.ai@gmail.com
-                    </p>
-                  </div>
+                  <h3 className="text-lg font-bold font-display text-hf-ink">
+                    Direct Email
+                  </h3>
                 </div>
-                <p className="text-sm text-muted-foreground mt-auto leading-relaxed">
+                <p className="text-foreground font-medium mb-1">
+                  heyflou.ai@gmail.com
+                </p>
+                <p className="text-muted-foreground text-sm leading-relaxed">
                   We typically respond within 24 hours during business days.
                 </p>
               </div>
