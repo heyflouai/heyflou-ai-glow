@@ -10,6 +10,7 @@ const buttonVariants = cva(
       variant: {
         primary: "hf-gradient text-white hover:opacity-90 hf-shadow rounded-2xl",
         secondary: "border border-hf-ink text-hf-ink bg-transparent hover:bg-hf-ink hover:text-white rounded-2xl",
+        outline: "border border-hf-teal text-hf-teal bg-transparent hover:bg-hf-teal/10 rounded-2xl",
         hero: "hf-gradient text-white hover:opacity-90 hf-shadow-lg rounded-2xl transform transition-transform hover:scale-105 min-h-[44px]",
         ghost: "text-hf-ink hover:underline hover:text-hf-teal bg-transparent border-none shadow-none",
       },

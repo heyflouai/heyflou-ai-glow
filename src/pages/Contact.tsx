@@ -32,8 +32,8 @@ export default function Contact() {
 
             {/* Contact Options - 40% width */}
             <div className="lg:col-span-2 flex flex-col gap-6">
-              <div className="bg-card rounded-xl p-6 hf-shadow flex-1 flex flex-col">
-                <div className="flex items-center gap-3 mb-3">
+              <div className="bg-card rounded-xl p-5 hf-shadow">
+                <div className="flex items-center gap-3 mb-2">
                   <div className="w-10 h-10 rounded-lg hf-gradient flex items-center justify-center shrink-0">
                     <Calendar className="text-white" size={20} />
                   </div>
@@ -44,17 +44,15 @@ export default function Contact() {
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   30-minute consultation to explore your automation opportunities and see how AI can help your business.
                 </p>
-                <div className="mt-auto">
-                  <GradientButton variant="secondary" size="lg" className="w-full" asChild>
-                    <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer">
-                      Schedule Call
-                    </a>
-                  </GradientButton>
-                </div>
+                <GradientButton variant="secondary" size="lg" className="w-full" asChild>
+                  <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer">
+                    Schedule Call
+                  </a>
+                </GradientButton>
               </div>
 
-              <div className="bg-card rounded-xl p-6 hf-shadow flex-1 flex flex-col">
-                <div className="flex items-center gap-3 mb-3">
+              <div className="bg-card rounded-xl p-5 hf-shadow">
+                <div className="flex items-center gap-3 mb-2">
                   <div className="w-10 h-10 rounded-lg hf-gradient flex items-center justify-center shrink-0">
                     <Mail className="text-white" size={20} />
                   </div>
@@ -65,9 +63,14 @@ export default function Contact() {
                 <p className="text-foreground font-medium mb-1">
                   heyflou.ai@gmail.com
                 </p>
-                <p className="text-muted-foreground text-sm leading-relaxed">
+                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   We typically respond within 24 hours during business days.
                 </p>
+                <GradientButton variant="outline" size="lg" className="w-full" asChild>
+                  <a href="mailto:heyflou.ai@gmail.com?subject=AI%20Automation%20Inquiry">
+                    Send Email
+                  </a>
+                </GradientButton>
               </div>
             </div>
           </div>
