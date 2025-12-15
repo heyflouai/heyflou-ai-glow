@@ -98,7 +98,7 @@
 
     /* Muted elements */
     --muted: 222 30% 14%;
-    --muted-foreground: 215 20% 65%;
+    --muted-foreground: 215 25% 72%;
 
     /* Accent keeps brand sky blue */
     --accent: 206 83% 60%;
@@ -112,9 +112,17 @@
     --input: 222 25% 18%;
     --ring: 190 72% 44%;
 
-    /* Dark mode brand colors remain vibrant */
+    /* Dark mode brand colors - improved contrast */
     --hf-navy: 222 47% 8%;
-    --hf-ink: 210 40% 98%;
+    --hf-ink: 220 20% 97%;
+    
+    /* Dark mode text hierarchy tokens */
+    --hf-text-primary: 220 20% 97%;
+    --hf-text-secondary: 220 15% 75%;
+    --hf-text-benefit: 220 25% 92%;
+    
+    /* Dark mode surface for benefit rows */
+    --hf-surface-benefit: 222 40% 11%;
 
     /* Sidebar */
     --sidebar-background: 222 47% 6%;

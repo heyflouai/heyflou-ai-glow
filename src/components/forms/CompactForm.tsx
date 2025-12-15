@@ -320,32 +320,32 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage, hidePromoT
       {/* Left column - Copy */}
       <div className="space-y-6">
         <div>
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-hf-ink mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold font-display text-hf-ink dark:text-[hsl(220,20%,97%)] mb-4">
             Get Started with AI Automation
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-muted-foreground dark:text-[hsl(220,15%,75%)]">
             Tell us about your practice and we'll show you how to save time and get more clients.
           </p>
         </div>
 
-        <div className="space-y-4">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full hf-gradient flex items-center justify-center">
+        <div className="space-y-3">
+          <div className="flex items-center gap-3 p-3 rounded-lg dark:bg-[hsl(222,40%,11%)] dark:border dark:border-white/5">
+            <div className="w-9 h-9 rounded-full hf-gradient flex items-center justify-center dark:ring-1 dark:ring-white/10 dark:brightness-110">
               <Users className="w-4 h-4 text-white" />
             </div>
-            <span className="text-hf-navy font-medium">Save 10-20 hours per week</span>
+            <span className="text-hf-navy dark:text-[hsl(220,25%,92%)] font-medium">Save 10-20 hours per week</span>
           </div>
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full hf-gradient flex items-center justify-center">
+          <div className="flex items-center gap-3 p-3 rounded-lg dark:bg-[hsl(222,40%,11%)] dark:border dark:border-white/5">
+            <div className="w-9 h-9 rounded-full hf-gradient flex items-center justify-center dark:ring-1 dark:ring-white/10 dark:brightness-110">
               <Shield className="w-4 h-4 text-white" />
             </div>
-            <span className="text-hf-navy font-medium">HIPAA-compliant & secure</span>
+            <span className="text-hf-navy dark:text-[hsl(220,25%,92%)] font-medium">HIPAA-compliant & secure</span>
           </div>
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full hf-gradient flex items-center justify-center">
+          <div className="flex items-center gap-3 p-3 rounded-lg dark:bg-[hsl(222,40%,11%)] dark:border dark:border-white/5">
+            <div className="w-9 h-9 rounded-full hf-gradient flex items-center justify-center dark:ring-1 dark:ring-white/10 dark:brightness-110">
               <Zap className="w-4 h-4 text-white" />
             </div>
-            <span className="text-hf-navy font-medium">Results in 60-90 days</span>
+            <span className="text-hf-navy dark:text-[hsl(220,25%,92%)] font-medium">Results in 60-90 days</span>
           </div>
         </div>
       </div>
