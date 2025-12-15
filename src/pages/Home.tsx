@@ -92,8 +92,8 @@ export default function Home() {
       <main className="pt-16"> {/* Back to normal header spacing */}
         {/* Hero Section */}
         <section className="relative py-20 md:py-28 text-center overflow-visible">
-          {/* SOFT AURA BACKGROUND */}
-          <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-visible">
+          {/* SOFT AURA BACKGROUND - Light Mode */}
+          <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-visible dark:hidden">
             {/* main glow */}
             <div className="
                 absolute left-1/2 -top-28 md:-top-36 -translate-x-1/2
@@ -116,12 +116,44 @@ export default function Home() {
           }} />
           </div>
           
+          {/* PREMIUM HERO GLOW - Dark Mode Only */}
+          <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-visible hidden dark:block">
+            {/* Primary AI glow - centered behind headline */}
+            <div 
+              className="absolute left-1/2 -top-20 md:-top-32 -translate-x-1/2 w-[140vw] md:w-[100vw] h-[70vh] md:h-[80vh] rounded-[9999px]"
+              style={{
+                background: "radial-gradient(50% 45% at 50% 20%, hsl(206 83% 60% / 0.15) 0%, hsl(268 84% 65% / 0.12) 40%, transparent 70%)",
+                filter: "blur(80px)",
+              }}
+            />
+            {/* Secondary subtle purple accent */}
+            <div 
+              className="absolute left-1/2 top-0 -translate-x-1/2 w-[80vw] h-[50vh] rounded-[9999px]"
+              style={{
+                background: "radial-gradient(60% 50% at 50% 0%, hsl(268 84% 65% / 0.08) 0%, transparent 60%)",
+                filter: "blur(60px)",
+              }}
+            />
+            {/* Subtle teal accent on left */}
+            <div 
+              className="absolute left-[20%] top-[10%] w-[30vw] h-[40vh] rounded-full"
+              style={{
+                background: "radial-gradient(circle, hsl(190 72% 44% / 0.06) 0%, transparent 70%)",
+                filter: "blur(50px)",
+              }}
+            />
+            {/* Noise overlay for premium texture */}
+            <div className="absolute inset-0 opacity-[0.02] mix-blend-overlay" style={{
+              backgroundImage: "url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22 viewBox=%220 0 40 40%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%222%22 stitchTiles=%22stitch%22/></filter><rect width=%2240%22 height=%2240%22 filter=%22url(%23n)%22 opacity=%220.35%22/></svg>')"
+            }} />
+          </div>
+          
           <div className="text-center max-w-4xl mx-auto relative">
             <div className="relative z-10">
-            <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-hf-ink">
+            <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-foreground">
               HeyFlou: AI Consulting
             </h1>
-            <h2 className="mt-2 text-2xl md:text-3xl font-semibold text-hf-navy/90">
+            <h2 className="mt-2 text-2xl md:text-3xl font-semibold text-foreground/80">
               Automate Your Work — Grow Your Business
             </h2>
               
@@ -138,14 +170,14 @@ export default function Home() {
               
               {/* Hero badges */}
               <div className="flex flex-wrap justify-center gap-4 text-sm">
-                <div className="flex items-center px-3 py-1 bg-white/20 rounded-full backdrop-blur-sm">
-                  <span className="text-hf-ink font-medium">Human-in-the-loop</span>
+                <div className="flex items-center px-3 py-1 bg-background/40 dark:bg-card/50 rounded-full backdrop-blur-sm border border-border/50">
+                  <span className="text-foreground font-medium">Human-in-the-loop</span>
                 </div>
-                <div className="flex items-center px-3 py-1 bg-white/20 rounded-full backdrop-blur-sm">
-                  <span className="text-hf-ink font-medium">Secure-by-design</span>
+                <div className="flex items-center px-3 py-1 bg-background/40 dark:bg-card/50 rounded-full backdrop-blur-sm border border-border/50">
+                  <span className="text-foreground font-medium">Secure-by-design</span>
                 </div>
-                <div className="flex items-center px-3 py-1 bg-white/20 rounded-full backdrop-blur-sm">
-                  <span className="text-hf-ink font-medium">From audit to ROI in 90 days</span>
+                <div className="flex items-center px-3 py-1 bg-background/40 dark:bg-card/50 rounded-full backdrop-blur-sm border border-border/50">
+                  <span className="text-foreground font-medium">From audit to ROI in 90 days</span>
                 </div>
               </div>
             </div>
@@ -157,7 +189,7 @@ export default function Home() {
         <Section>
           <div className="text-center mb-12">
             
-            <h2 className="text-3xl md:text-4xl font-bold font-display text-hf-ink mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-4">
               Why Service Professionals Choose AI Automation
             </h2>
             <p className="text-lg text-muted-foreground">
@@ -178,7 +210,7 @@ export default function Home() {
         {/* What We Do - Services */}
         <Section>
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-display text-hf-ink mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-4">
               How HeyFlou Helps You Grow
             </h2>
             <p className="text-lg text-muted-foreground">
@@ -186,11 +218,11 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="bg-card rounded-xl p-8 hf-shadow hover:hf-shadow-lg transition-all duration-300 group">
+            <div className="bg-card rounded-xl p-8 hf-shadow hover:hf-shadow-lg transition-all duration-300 group border border-border/50">
               <div className="w-12 h-12 rounded-lg hf-gradient flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Zap className="text-white" size={24} />
               </div>
-              <h3 className="text-xl font-bold font-display text-hf-ink mb-4">
+              <h3 className="text-xl font-bold font-display text-foreground mb-4">
                 AI Chatbot for Appointments
               </h3>
               <p className="text-muted-foreground mb-6">
@@ -207,11 +239,11 @@ export default function Home() {
               </GradientButton>
             </div>
 
-            <div className="bg-card rounded-xl p-8 hf-shadow hover:hf-shadow-lg transition-all duration-300 group">
+            <div className="bg-card rounded-xl p-8 hf-shadow hover:hf-shadow-lg transition-all duration-300 group border border-border/50">
               <div className="w-12 h-12 rounded-lg hf-gradient flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Users className="text-white" size={24} />
               </div>
-              <h3 className="text-xl font-bold font-display text-hf-ink mb-4">
+              <h3 className="text-xl font-bold font-display text-foreground mb-4">
                 CRM Management & Automation
               </h3>
               <p className="text-muted-foreground mb-6">
@@ -228,11 +260,11 @@ export default function Home() {
               </GradientButton>
             </div>
 
-            <div className="bg-card rounded-xl p-8 hf-shadow hover:hf-shadow-lg transition-all duration-300 group">
+            <div className="bg-card rounded-xl p-8 hf-shadow hover:hf-shadow-lg transition-all duration-300 group border border-border/50">
               <div className="w-12 h-12 rounded-lg hf-gradient flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Bot className="text-white" size={24} />
               </div>
-              <h3 className="text-xl font-bold font-display text-hf-ink mb-4">
+              <h3 className="text-xl font-bold font-display text-foreground mb-4">
                 Lead Generation & Nurturing
               </h3>
               <p className="text-muted-foreground mb-6">
@@ -254,8 +286,8 @@ export default function Home() {
         {/* We Help Every Department */}
         <Section id="departments" className="py-20 md:py-28">
           <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--hf-ink))]">We Help Every Department</h2>
-            <p className="mt-3 text-[hsl(var(--hf-navy)/0.9)]">AI marketing and automation solutions for travel agencies and healthcare practices.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">We Help Every Department</h2>
+            <p className="mt-3 text-muted-foreground">AI marketing and automation solutions for travel agencies and healthcare practices.</p>
           </div>
           <DepartmentsCarousel className="mt-10 md:mt-12" />
         </Section>
@@ -264,7 +296,7 @@ export default function Home() {
         {/* Process */}
         <Section background="muted">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-display text-hf-ink mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-4">
               How It Works
             </h2>
             <p className="text-lg text-muted-foreground">
@@ -276,7 +308,7 @@ export default function Home() {
                 <div className="w-16 h-16 rounded-full hf-gradient flex items-center justify-center text-white font-bold text-lg mb-4 mx-auto group-hover:scale-110 transition-transform">
                   {step.step}
                 </div>
-                <h3 className="text-lg font-bold font-display text-hf-ink mb-2">
+                <h3 className="text-lg font-bold font-display text-foreground mb-2">
                   {step.title}
                 </h3>
                 <p className="text-sm text-muted-foreground">
@@ -290,7 +322,7 @@ export default function Home() {
         {/* FAQ */}
         <Section background="muted">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-display text-hf-ink mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-4">
               Frequently Asked Questions
             </h2>
             <p className="text-lg text-muted-foreground">
@@ -305,7 +337,7 @@ export default function Home() {
                 className="bg-card rounded-lg hf-shadow border-none"
               >
                 <AccordionTrigger className="px-6 py-6 hover:bg-muted/50 transition-colors hover:no-underline [&>svg]:text-hf-teal">
-                  <span className="font-semibold text-hf-ink text-left">{faq.question}</span>
+                  <span className="font-semibold text-foreground text-left">{faq.question}</span>
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-6 text-muted-foreground">
                   {faq.answer}
@@ -323,7 +355,7 @@ export default function Home() {
         {/* Final CTA */}
         <Section background="glow">
           <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold font-display text-hf-ink mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-4">
               Ready to Save Time and Get More Clients?
             </h2>
             <p className="text-lg text-muted-foreground mb-8">

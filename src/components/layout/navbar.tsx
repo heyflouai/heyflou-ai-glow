@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ArrowUp } from 'lucide-react';
+import { Menu, X, ArrowUp, Sun, Moon } from 'lucide-react';
 import { GradientButton } from '@/components/ui/gradient-button';
 import { BrandLockup } from '@/components/BrandLockup';
 import { cn } from '@/lib/utils';
+import { useTheme } from '@/hooks/use-theme';
 
 const navigationItems = [
   { name: 'Home', href: '/' },
@@ -17,6 +18,7 @@ export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const location = useLocation();
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,7 +58,7 @@ export const Navbar = () => {
                     "text-sm font-medium transition-colors hover:text-hf-teal",
                     location.pathname === item.href 
                       ? "text-hf-teal" 
-                      : "text-hf-ink"
+                      : "text-foreground"
                   )}
                 >
                   {item.name}
@@ -64,8 +66,31 @@ export const Navbar = () => {
               ))}
             </div>
 
-            {/* Desktop CTA */}
-            <div className="hidden md:flex items-center space-x-4">
+            {/* Desktop CTA + Theme Toggle */}
+            <div className="hidden md:flex items-center space-x-3">
+              {/* Theme Toggle */}
+              <button
+                onClick={toggleTheme}
+                className={cn(
+                  "flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200",
+                  "border border-border hover:bg-muted",
+                  "text-foreground"
+                )}
+                aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+              >
+                {theme === 'light' ? (
+                  <>
+                    <Moon size={16} />
+                    <span className="hidden lg:inline">Dark</span>
+                  </>
+                ) : (
+                  <>
+                    <Sun size={16} />
+                    <span className="hidden lg:inline">Light</span>
+                  </>
+                )}
+              </button>
+              
               <GradientButton 
                 variant="primary" 
                 size="sm" 
@@ -99,14 +124,36 @@ export const Navbar = () => {
                     "block text-base font-medium transition-colors hover:text-hf-teal",
                     location.pathname === item.href 
                       ? "text-hf-teal" 
-                      : "text-hf-ink"
+                      : "text-foreground"
                   )}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="pt-4">
+              <div className="pt-4 flex flex-col gap-3">
+                {/* Mobile Theme Toggle */}
+                <button
+                  onClick={toggleTheme}
+                  className={cn(
+                    "flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
+                    "border border-border hover:bg-muted",
+                    "text-foreground"
+                  )}
+                >
+                  {theme === 'light' ? (
+                    <>
+                      <Moon size={16} />
+                      <span>Dark Mode</span>
+                    </>
+                  ) : (
+                    <>
+                      <Sun size={16} />
+                      <span>Light Mode</span>
+                    </>
+                  )}
+                </button>
+                
                 <GradientButton 
                   variant="primary" 
                   size="sm" 

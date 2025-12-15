@@ -41,12 +41,12 @@ export const KpiStat = ({
         </div>
       )}
       <div className={cn(
-        "text-3xl font-bold font-display text-hf-ink mb-2 transition-all duration-700",
+        "text-3xl font-bold font-display text-foreground mb-2 transition-all duration-700",
         isVisible ? "animate-counter" : "opacity-0"
       )}>
         {value}
       </div>
-      <div className="text-sm font-semibold text-hf-navy mb-1">
+      <div className="text-sm font-semibold text-foreground/90 mb-1">
         {label}
       </div>
       <div className="text-sm text-muted-foreground">
