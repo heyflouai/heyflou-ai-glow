@@ -83,12 +83,9 @@ export const ProblemSolution: React.FC = () => {
       {/* Divider */}
       <div className="border-t border-hf-ink/8 dark:border-transparent dark:h-px dark:bg-gradient-to-r dark:from-transparent dark:via-hf-purple/30 dark:to-transparent"></div>
 
-      {/* Solution Section - Dark mode premium styling */}
-      <div className="relative space-y-8">
-        {/* Subtle gradient wash for dark mode */}
-        <div className="absolute inset-0 -mx-4 sm:-mx-6 lg:-mx-8 rounded-3xl dark:bg-gradient-to-br dark:from-hf-purple/5 dark:via-transparent dark:to-hf-sky/5 pointer-events-none"></div>
-        
-        <div className="relative text-center max-w-3xl mx-auto space-y-4">
+      {/* Solution Section */}
+      <div className="space-y-8">
+        <div className="text-center max-w-3xl mx-auto space-y-4">
           <p className="text-sm font-medium text-hf-teal uppercase tracking-wide dark:text-hf-sky dark:tracking-widest">
             Our Solution
           </p>
@@ -98,10 +95,9 @@ export const ProblemSolution: React.FC = () => {
             </span>
             <span className="dark:text-white/90">—so you can focus on your clients.</span>
           </h3>
-          
         </div>
 
-        <div className="relative grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {benefits.map((benefit, index) => {
           const Icon = benefit.icon;
           return <div key={index} className="flex items-start gap-3 animate-fade-in group" style={{
@@ -116,8 +112,8 @@ export const ProblemSolution: React.FC = () => {
         })}
         </div>
 
-        {/* Outcome Stats - Premium pill styling for dark mode */}
-        <div className="relative text-center space-y-4">
+        {/* Outcome Stats - Premium pill styling */}
+        <div className="text-center">
           <div className="flex flex-wrap justify-center gap-3">
             {stats.map((stat, index) => <div key={index} className="px-4 py-2 bg-hf-teal/10 rounded-full text-sm font-medium text-hf-navy animate-fade-in
                 dark:bg-gradient-to-r dark:from-hf-purple/15 dark:to-hf-sky/15 
@@ -130,9 +126,6 @@ export const ProblemSolution: React.FC = () => {
                 {stat}
               </div>)}
           </div>
-          <p className="text-xs text-muted-foreground dark:text-[hsl(220,20%,60%)]">
-            Average results from real clients in healthcare, fitness, and service businesses—individual results may vary.
-          </p>
         </div>
       </div>
 
