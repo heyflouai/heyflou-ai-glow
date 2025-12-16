@@ -16,7 +16,7 @@ export default function Services() {
       <main className="pt-16">
         <Section background="glow" padding="large">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold font-display text-hf-ink mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold font-display text-foreground mb-6">
               AI Marketing & Automation for Travel Agencies
             </h1>
             <p className="text-xl text-muted-foreground">
@@ -31,15 +31,15 @@ export default function Services() {
               <div className="w-16 h-16 rounded-xl hf-gradient flex items-center justify-center mb-6">
                 <Rocket className="text-white" size={32} />
               </div>
-              <h2 className="text-3xl font-bold font-display text-hf-ink mb-6">
+              <h2 className="text-3xl font-bold font-display text-foreground mb-6">
                 Full Marketing Engine for Travel Agencies
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
                 An all-in-one marketing system that generates more bookings through automated funnels, segmentation, and follow-up sequences. Includes landing pages, WhatsApp campaigns, and analytics.
               </p>
             </div>
-            <div className="bg-card rounded-xl p-8 hf-shadow">
-              <h3 className="font-bold text-hf-ink mb-4">Key Features:</h3>
+            <div className="bg-card rounded-xl p-8 hf-shadow border border-border/50">
+              <h3 className="font-bold text-foreground mb-4">Key Features:</h3>
               <ul className="space-y-3 text-muted-foreground">
                 <li>• Automated marketing funnels</li>
                 <li>• Lead segmentation & targeting</li>
@@ -54,8 +54,8 @@ export default function Services() {
 
         <Section background="muted" id="ai-chatbot">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1 bg-card rounded-xl p-8 hf-shadow">
-              <h3 className="font-bold text-hf-ink mb-4">Core Features:</h3>
+            <div className="order-2 lg:order-1 bg-card rounded-xl p-8 hf-shadow border border-border/50">
+              <h3 className="font-bold text-foreground mb-4">Core Features:</h3>
               <ul className="space-y-3 text-muted-foreground">
                 <li>• 24/7 package promotion</li>
                 <li>• Instant traveler Q&A</li>
@@ -69,7 +69,7 @@ export default function Services() {
               <div className="w-16 h-16 rounded-xl hf-gradient flex items-center justify-center mb-6">
                 <Bot className="text-white" size={32} />
               </div>
-              <h2 className="text-3xl font-bold font-display text-hf-ink mb-6">
+              <h2 className="text-3xl font-bold font-display text-foreground mb-6">
                 AI Travel Chatbot That Sells Your Packages
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
@@ -85,15 +85,15 @@ export default function Services() {
               <div className="w-16 h-16 rounded-xl hf-gradient flex items-center justify-center mb-6">
                 <MessageSquare className="text-white" size={32} />
               </div>
-              <h2 className="text-3xl font-bold font-display text-hf-ink mb-6">
+              <h2 className="text-3xl font-bold font-display text-foreground mb-6">
                 Automated WhatsApp Marketing & Follow-Ups
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
                 Recover abandoned inquiries, promote seasonal deals, and keep leads engaged automatically. Maximize conversions without extra manual work.
               </p>
             </div>
-            <div className="bg-card rounded-xl p-8 hf-shadow">
-              <h3 className="font-bold text-hf-ink mb-4">What's Included:</h3>
+            <div className="bg-card rounded-xl p-8 hf-shadow border border-border/50">
+              <h3 className="font-bold text-foreground mb-4">What's Included:</h3>
               <ul className="space-y-3 text-muted-foreground">
                 <li>• Abandoned inquiry recovery</li>
                 <li>• Seasonal deal promotions</li>
@@ -108,8 +108,8 @@ export default function Services() {
 
         <Section background="muted" id="crm">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1 bg-card rounded-xl p-8 hf-shadow">
-              <h3 className="font-bold text-hf-ink mb-4">Core Features:</h3>
+            <div className="order-2 lg:order-1 bg-card rounded-xl p-8 hf-shadow border border-border/50">
+              <h3 className="font-bold text-foreground mb-4">Core Features:</h3>
               <ul className="space-y-3 text-muted-foreground">
                 <li>• Lead pipeline tracking</li>
                 <li>• Campaign performance metrics</li>
@@ -123,7 +123,7 @@ export default function Services() {
               <div className="w-16 h-16 rounded-xl hf-gradient flex items-center justify-center mb-6">
                 <BarChart3 className="text-white" size={32} />
               </div>
-              <h2 className="text-3xl font-bold font-display text-hf-ink mb-6">
+              <h2 className="text-3xl font-bold font-display text-foreground mb-6">
                 Travel Marketing CRM & Analytics Dashboard
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
@@ -139,15 +139,15 @@ export default function Services() {
               <div className="w-16 h-16 rounded-xl hf-gradient flex items-center justify-center mb-6">
                 <FileText className="text-white" size={32} />
               </div>
-              <h2 className="text-3xl font-bold font-display text-hf-ink mb-6">
+              <h2 className="text-3xl font-bold font-display text-foreground mb-6">
                 High-Conversion Landing Pages for Trips
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
                 Optimized pages designed specifically for travel packages, group tours, and premium experiences. Engineered to turn traffic into paying clients.
               </p>
             </div>
-            <div className="bg-card rounded-xl p-8 hf-shadow">
-              <h3 className="font-bold text-hf-ink mb-4">What's Included:</h3>
+            <div className="bg-card rounded-xl p-8 hf-shadow border border-border/50">
+              <h3 className="font-bold text-foreground mb-4">What's Included:</h3>
               <ul className="space-y-3 text-muted-foreground">
                 <li>• Mobile-optimized designs</li>
                 <li>• A/B testing capabilities</li>
@@ -167,7 +167,7 @@ export default function Services() {
               <div className="w-16 h-16 rounded-xl hf-gradient flex items-center justify-center mb-6 mx-auto">
                 <Stethoscope className="text-white" size={32} />
               </div>
-              <h2 className="text-3xl font-bold font-display text-hf-ink mb-4">
+              <h2 className="text-3xl font-bold font-display text-foreground mb-4">
                 Also for Physiotherapists & Therapists
               </h2>
               <p className="text-lg text-muted-foreground">
@@ -175,28 +175,28 @@ export default function Services() {
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="bg-card rounded-xl p-6 hf-shadow">
-                <h3 className="font-bold text-hf-ink mb-2">AI Intake Chatbot</h3>
+              <div className="bg-card rounded-xl p-6 hf-shadow border border-border/50">
+                <h3 className="font-bold text-foreground mb-2">AI Intake Chatbot</h3>
                 <p className="text-sm text-muted-foreground">Collect patient information and screen inquiries automatically before appointments.</p>
               </div>
-              <div className="bg-card rounded-xl p-6 hf-shadow">
-                <h3 className="font-bold text-hf-ink mb-2">Appointment Automation</h3>
+              <div className="bg-card rounded-xl p-6 hf-shadow border border-border/50">
+                <h3 className="font-bold text-foreground mb-2">Appointment Automation</h3>
                 <p className="text-sm text-muted-foreground">24/7 booking, rescheduling, and calendar sync with your practice management system.</p>
               </div>
-              <div className="bg-card rounded-xl p-6 hf-shadow">
-                <h3 className="font-bold text-hf-ink mb-2">No-Show Reduction</h3>
+              <div className="bg-card rounded-xl p-6 hf-shadow border border-border/50">
+                <h3 className="font-bold text-foreground mb-2">No-Show Reduction</h3>
                 <p className="text-sm text-muted-foreground">Smart reminder workflows that reduce missed appointments by up to 60%.</p>
               </div>
-              <div className="bg-card rounded-xl p-6 hf-shadow">
-                <h3 className="font-bold text-hf-ink mb-2">Patient Tracking CRM</h3>
+              <div className="bg-card rounded-xl p-6 hf-shadow border border-border/50">
+                <h3 className="font-bold text-foreground mb-2">Patient Tracking CRM</h3>
                 <p className="text-sm text-muted-foreground">Track patient journeys, treatment progress, and follow-up care in one place.</p>
               </div>
-              <div className="bg-card rounded-xl p-6 hf-shadow">
-                <h3 className="font-bold text-hf-ink mb-2">WhatsApp Reminders</h3>
+              <div className="bg-card rounded-xl p-6 hf-shadow border border-border/50">
+                <h3 className="font-bold text-foreground mb-2">WhatsApp Reminders</h3>
                 <p className="text-sm text-muted-foreground">Automated appointment confirmations and reminders via WhatsApp and email.</p>
               </div>
-              <div className="bg-card rounded-xl p-6 hf-shadow">
-                <h3 className="font-bold text-hf-ink mb-2">Email Automation</h3>
+              <div className="bg-card rounded-xl p-6 hf-shadow border border-border/50">
+                <h3 className="font-bold text-foreground mb-2">Email Automation</h3>
                 <p className="text-sm text-muted-foreground">Post-treatment follow-ups, re-engagement campaigns, and patient nurturing.</p>
               </div>
             </div>
@@ -205,7 +205,7 @@ export default function Services() {
 
         <Section background="glow">
           <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl font-bold font-display text-hf-ink mb-6">
+            <h2 className="text-3xl font-bold font-display text-foreground mb-6">
               Ready to Grow Your Bookings?
             </h2>
             <p className="text-lg text-muted-foreground mb-8">

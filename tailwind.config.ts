@@ -51,6 +51,12 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Surface colors for sections
+        surface: {
+          primary: "hsl(var(--surface-primary))",
+          secondary: "hsl(var(--surface-secondary))",
+          elevated: "hsl(var(--surface-elevated))",
+        },
         // HeyFlou brand colors
         'hf-navy': "hsl(var(--hf-navy))",
         'hf-ink': "hsl(var(--hf-ink))",

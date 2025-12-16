@@ -6,9 +6,9 @@ export function ImpactSnapshot() {
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-muted">
+    <section className="py-20 md:py-28 bg-surface-secondary transition-colors duration-300">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold font-display text-hf-ink mb-8">
+        <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-8">
           Impact Snapshot
         </h2>
         
@@ -16,7 +16,7 @@ export function ImpactSnapshot() {
           {metrics.map((metric, index) => (
             <div 
               key={index}
-              className="inline-block px-6 py-3 bg-white rounded-full hf-shadow text-hf-navy font-medium"
+              className="inline-block px-6 py-3 bg-card rounded-full hf-shadow text-foreground font-medium border border-border/50 transition-colors duration-300"
             >
               {metric}
             </div>
