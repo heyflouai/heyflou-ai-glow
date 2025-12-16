@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ArrowUp, Sun, Moon } from 'lucide-react';
+import { Menu, X, ArrowUp } from 'lucide-react';
 import { GradientButton } from '@/components/ui/gradient-button';
 import { BrandLockup } from '@/components/BrandLockup';
 import { cn } from '@/lib/utils';
 import { useTheme } from '@/hooks/use-theme';
+import { AnimatedThemeToggler } from '@/components/ui/animated-theme-toggler';
 
 const navigationItems = [
   { name: 'Home', href: '/' },
@@ -68,28 +69,8 @@ export const Navbar = () => {
 
             {/* Desktop CTA + Theme Toggle */}
             <div className="hidden md:flex items-center space-x-3">
-              {/* Theme Toggle */}
-              <button
-                onClick={toggleTheme}
-                className={cn(
-                  "flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200",
-                  "border border-border hover:bg-muted",
-                  "text-foreground"
-                )}
-                aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-              >
-                {theme === 'light' ? (
-                  <>
-                    <Moon size={16} />
-                    <span className="hidden lg:inline">Dark</span>
-                  </>
-                ) : (
-                  <>
-                    <Sun size={16} />
-                    <span className="hidden lg:inline">Light</span>
-                  </>
-                )}
-              </button>
+              {/* Animated Theme Toggle */}
+              <AnimatedThemeToggler theme={theme} onToggle={toggleTheme} />
               
               <GradientButton 
                 variant="primary" 
@@ -133,26 +114,9 @@ export const Navbar = () => {
               ))}
               <div className="pt-4 flex flex-col gap-3">
                 {/* Mobile Theme Toggle */}
-                <button
-                  onClick={toggleTheme}
-                  className={cn(
-                    "flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
-                    "border border-border hover:bg-muted",
-                    "text-foreground"
-                  )}
-                >
-                  {theme === 'light' ? (
-                    <>
-                      <Moon size={16} />
-                      <span>Dark Mode</span>
-                    </>
-                  ) : (
-                    <>
-                      <Sun size={16} />
-                      <span>Light Mode</span>
-                    </>
-                  )}
-                </button>
+                <div className="flex items-center justify-center">
+                  <AnimatedThemeToggler theme={theme} onToggle={toggleTheme} />
+                </div>
                 
                 <GradientButton 
                   variant="primary" 
