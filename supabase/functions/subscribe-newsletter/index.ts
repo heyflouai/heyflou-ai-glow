@@ -10,6 +10,23 @@ interface SubscribeRequest {
   email: string;
 }
 
+// Sanitize input to prevent injection attacks
+function sanitizeInput(input: string, maxLength: number = 255): string {
+  if (typeof input !== 'string') return '';
+  return input
+    .trim()
+    .slice(0, maxLength)
+    .replace(/[\x00-\x1F\x7F]/g, '') // Remove control characters
+    .replace(/[<>]/g, ''); // Remove potential HTML/script injection chars
+}
+
+// Validate email with stricter regex and length limit
+function isValidEmail(email: string): boolean {
+  if (!email || email.length > 254) return false;
+  const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+  return emailRegex.test(email);
+}
+
 const handler = async (req: Request): Promise<Response> => {
   // Handle CORS preflight requests
   if (req.method === "OPTIONS") {
@@ -17,12 +34,14 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { email }: SubscribeRequest = await req.json();
+    const body = await req.json();
+    const rawEmail = body?.email;
 
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email || !emailRegex.test(email)) {
-      console.log("Invalid email format:", email);
+    // Sanitize and validate email
+    const email = sanitizeInput(rawEmail, 254);
+    
+    if (!isValidEmail(email)) {
+      console.log("Invalid email format:", email?.slice(0, 50));
       return new Response(
         JSON.stringify({ error: "Invalid email format", code: "INVALID_EMAIL" }),
         {
@@ -38,6 +57,26 @@ const handler = async (req: Request): Promise<Response> => {
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
     const normalizedEmail = email.toLowerCase().trim();
+
+    // Rate limiting: Check for recent subscriptions (max 5 attempts per hour from any source)
+    const oneHourAgo = new Date(Date.now() - 60 * 60 * 1000).toISOString();
+    const { count: recentCount, error: countError } = await supabase
+      .from("subscribers")
+      .select("*", { count: "exact", head: true })
+      .gte("created_at", oneHourAgo);
+
+    if (countError) {
+      console.error("Error checking rate limit:", countError);
+    } else if (recentCount && recentCount > 50) {
+      console.warn("Rate limit exceeded: too many subscriptions in the last hour");
+      return new Response(
+        JSON.stringify({ error: "Too many requests. Please try again later.", code: "RATE_LIMITED" }),
+        {
+          status: 429,
+          headers: { "Content-Type": "application/json", ...corsHeaders },
+        }
+      );
+    }
 
     // Check if email already exists
     const { data: existingSubscriber, error: checkError } = await supabase
@@ -58,7 +97,7 @@ const handler = async (req: Request): Promise<Response> => {
     }
 
     if (existingSubscriber) {
-      console.log("Duplicate subscription attempt:", normalizedEmail);
+      console.log("Duplicate subscription attempt");
       return new Response(
         JSON.stringify({ 
           message: "You're already subscribed.", 
@@ -89,7 +128,7 @@ const handler = async (req: Request): Promise<Response> => {
       );
     }
 
-    console.log("New subscriber added:", normalizedEmail);
+    console.log("New subscriber added successfully");
 
     return new Response(
       JSON.stringify({ 
@@ -106,9 +145,9 @@ const handler = async (req: Request): Promise<Response> => {
       }
     );
   } catch (error: any) {
-    console.error("Error in subscribe-newsletter function:", error);
+    console.error("Error in subscribe-newsletter function:", error?.message);
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ error: "An error occurred. Please try again." }),
       {
         status: 500,
         headers: { "Content-Type": "application/json", ...corsHeaders },
