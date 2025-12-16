@@ -2,10 +2,8 @@ import logoNew from '@/assets/heyflou-logo-new.png';
 import { GradientButton } from '@/components/ui/gradient-button';
 import { Button } from '@/components/ui/button';
 import { ExternalLink } from 'lucide-react';
-
 export function AboutHero() {
-  return (
-    <section className="relative py-20 md:py-28 text-center overflow-visible">
+  return <section className="relative py-20 md:py-28 text-center overflow-visible">
       {/* Subtle glow background */}
       <div className="pointer-events-none absolute inset-0 -z-10 hf-glow" />
       
@@ -25,55 +23,31 @@ export function AboutHero() {
         
         {/* Large logo below H1 */}
         <div className="flex justify-center mt-4 md:mt-6">
-          <img 
-            src={logoNew} 
-            alt="HeyFlou AI Consulting logo" 
-            className="h-[128px] md:h-[176px] lg:h-[224px] w-auto drop-shadow-sm
-              dark:drop-shadow-[0_0_40px_hsl(var(--hf-purple)/0.3)]"
-            loading="eager"
-          />
+          <img src={logoNew} alt="HeyFlou AI Consulting logo" className="h-[128px] md:h-[176px] lg:h-[224px] w-auto drop-shadow-sm
+              dark:drop-shadow-[0_0_40px_hsl(var(--hf-purple)/0.3)]" loading="eager" />
         </div>
         
         {/* Subline */}
         <p className="mt-6 text-xl text-hf-navy/90 max-w-2xl mx-auto mb-8
-          dark:text-[hsl(220,25%,80%)] dark:leading-relaxed">
-          We help therapists and service professionals save time and get more clients through proven AI automation.
-        </p>
+          dark:text-[hsl(220,25%,80%)] dark:leading-relaxed">We help small and medium size businesses and service professionals save time and get more clients through proven AI automation.</p>
         
         {/* CTA group */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <GradientButton 
-            variant="primary" 
-            size="lg"
-            asChild
-            className="dark:shadow-[0_0_30px_hsl(var(--hf-purple)/0.4)] dark:hover:shadow-[0_0_40px_hsl(var(--hf-purple)/0.5)]"
-          >
-            <a 
-              href="#contact"
-              className="inline-flex items-center gap-2"
-            >
+          <GradientButton variant="primary" size="lg" asChild className="dark:shadow-[0_0_30px_hsl(var(--hf-purple)/0.4)] dark:hover:shadow-[0_0_40px_hsl(var(--hf-purple)/0.5)]">
+            <a href="#contact" className="inline-flex items-center gap-2">
               Book a Strategy Call
             </a>
           </GradientButton>
           
-          <Button 
-            variant="ghost" 
-            size="lg"
-            asChild
-            className="dark:text-hf-sky dark:hover:text-white dark:hover:bg-hf-sky/10
+          <Button variant="ghost" size="lg" asChild className="dark:text-hf-sky dark:hover:text-white dark:hover:bg-hf-sky/10
               dark:hover:drop-shadow-[0_0_10px_hsl(var(--hf-sky)/0.4)]
-              transition-all duration-300"
-          >
-            <a 
-              href="/case-studies"
-              className="inline-flex items-center gap-2"
-            >
+              transition-all duration-300">
+            <a href="/case-studies" className="inline-flex items-center gap-2">
               See Case Studies
               <ExternalLink className="h-4 w-4" />
             </a>
           </Button>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 }
