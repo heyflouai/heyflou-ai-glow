@@ -15,9 +15,15 @@
     --hf-purple: 268 84% 65%;
     --hf-sky: 206 83% 60%;
     
-    /* Background system */
+    /* Background system - Light Mode */
     --background: 0 0% 100%;
+    --background-secondary: 220 14% 98%;
     --foreground: 222 28% 24%;
+    
+    /* Surface colors for sections */
+    --surface-primary: 0 0% 100%;
+    --surface-secondary: 220 14% 96%;
+    --surface-elevated: 0 0% 100%;
     
     /* Card system */
     --card: 0 0% 100%;
@@ -32,8 +38,8 @@
     --secondary-foreground: 0 0% 100%;
     
     /* Muted system */
-    --muted: 220 13% 96%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 215 20% 45%;
     
     /* Accent system */
     --accent: 206 83% 60%;
@@ -48,44 +54,48 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 28% 24%;
     
+    /* Text hierarchy */
+    --text-primary: 222 28% 24%;
+    --text-secondary: 215 20% 45%;
+    --text-muted: 215 15% 60%;
+    
     /* HeyFlou Gradients */
     --hf-gradient: linear-gradient(135deg, hsl(var(--hf-teal)), hsl(var(--hf-purple)));
-    --hf-glow: radial-gradient(80% 80% at 50% 0%, hsl(var(--hf-purple)/0.18) 0%, transparent 60%);
+    --hf-glow: radial-gradient(80% 80% at 50% 0%, hsl(var(--hf-purple)/0.12) 0%, transparent 60%);
     
     /* HeyFlou Shadows */
-    --hf-shadow: 0 12px 32px hsl(var(--hf-navy)/0.2);
-    --hf-shadow-lg: 0 20px 40px hsl(var(--hf-navy)/0.15);
+    --hf-shadow: 0 12px 32px hsl(var(--hf-navy)/0.1);
+    --hf-shadow-lg: 0 20px 40px hsl(var(--hf-navy)/0.12);
     
     /* Design tokens */
     --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
     /* Premium deep dark background */
     --background: 222 47% 6%;
+    --background-secondary: 222 40% 8%;
     --foreground: 210 40% 98%;
 
+    /* Surface colors for sections - dark mode */
+    --surface-primary: 222 47% 6%;
+    --surface-secondary: 222 40% 9%;
+    --surface-elevated: 222 35% 12%;
+
     /* Cards: slightly lighter surface */
-    --card: 222 40% 9%;
+    --card: 222 40% 10%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222 40% 9%;
+    --popover: 222 40% 10%;
     --popover-foreground: 210 40% 98%;
 
     /* Keep brand teal as primary */
@@ -97,8 +107,8 @@
     --secondary-foreground: 210 40% 98%;
 
     /* Muted elements */
-    --muted: 222 30% 14%;
-    --muted-foreground: 215 25% 72%;
+    --muted: 222 30% 12%;
+    --muted-foreground: 215 25% 65%;
 
     /* Accent keeps brand sky blue */
     --accent: 206 83% 60%;
@@ -117,9 +127,9 @@
     --hf-ink: 220 20% 97%;
     
     /* Dark mode text hierarchy tokens */
-    --hf-text-primary: 220 20% 97%;
-    --hf-text-secondary: 220 15% 75%;
-    --hf-text-benefit: 220 25% 92%;
+    --text-primary: 220 20% 97%;
+    --text-secondary: 220 20% 75%;
+    --text-muted: 220 15% 60%;
     
     /* Dark mode surface for benefit rows */
     --hf-surface-benefit: 222 40% 11%;
@@ -135,7 +145,7 @@
     --sidebar-ring: 190 72% 44%;
 
     /* Premium dark mode glow */
-    --hf-glow: radial-gradient(80% 80% at 50% 0%, hsl(var(--hf-purple)/0.25) 0%, transparent 60%);
+    --hf-glow: radial-gradient(80% 80% at 50% 0%, hsl(var(--hf-purple)/0.20) 0%, hsl(var(--hf-sky)/0.08) 40%, transparent 70%);
     --hf-shadow: 0 12px 32px hsl(0 0% 0% / 0.4);
     --hf-shadow-lg: 0 20px 40px hsl(0 0% 0% / 0.5);
   }
@@ -177,6 +187,39 @@
     box-shadow: var(--hf-shadow-lg);
   }
 
+  /* Section background utilities */
+  .section-primary {
+    @apply bg-background;
+  }
+
+  .section-secondary {
+    background-color: hsl(var(--surface-secondary));
+  }
+
+  .section-elevated {
+    background-color: hsl(var(--surface-elevated));
+  }
+
+  /* Text color utilities that adapt to theme */
+  .text-heading {
+    color: hsl(var(--text-primary));
+  }
+
+  .text-body {
+    color: hsl(var(--text-secondary));
+  }
+
+  /* Card styling that adapts properly */
+  .card-elevated {
+    @apply bg-card border border-border/50 rounded-xl;
+    box-shadow: var(--hf-shadow);
+  }
+
+  /* Pill/badge styling for both modes */
+  .pill-muted {
+    @apply bg-muted text-muted-foreground;
+  }
+
   /* Animations */
   .animate-float {
     animation: float 6s ease-in-out infinite;
@@ -202,6 +245,19 @@
   
   .font-ui {
     font-family: 'Inter', sans-serif;
+  }
+
+  /* Surface utility classes */
+  .bg-surface-primary {
+    background-color: hsl(var(--surface-primary));
+  }
+
+  .bg-surface-secondary {
+    background-color: hsl(var(--surface-secondary));
+  }
+
+  .bg-surface-elevated {
+    background-color: hsl(var(--surface-elevated));
   }
 }
 

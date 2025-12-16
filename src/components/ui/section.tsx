@@ -11,9 +11,9 @@ interface SectionProps {
 
 const backgroundVariants = {
   default: 'bg-background',
-  muted: 'bg-muted/30',
+  muted: 'bg-surface-secondary',
   gradient: 'hf-gradient',
-  glow: 'hf-glow'
+  glow: 'bg-background hf-glow'
 };
 
 const paddingVariants = {
@@ -36,6 +36,7 @@ export const Section = ({
       className={cn(
         backgroundVariants[background],
         paddingVariants[padding],
+        'transition-colors duration-300',
         className
       )}
     >

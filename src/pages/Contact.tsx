@@ -16,7 +16,7 @@ export default function Contact() {
       <main className="pt-16">
         <Section background="glow" padding="large">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold font-display text-hf-ink mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold font-display text-foreground mb-6">
               Let's Transform Your Business Together
             </h1>
             <p className="text-xl text-muted-foreground">
@@ -32,12 +32,12 @@ export default function Contact() {
 
             {/* Contact Options - 40% width */}
             <div className="lg:col-span-2 flex flex-col gap-6">
-              <div className="bg-card rounded-xl p-5 hf-shadow">
+              <div className="bg-card rounded-xl p-5 hf-shadow border border-border/50">
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-10 h-10 rounded-lg hf-gradient flex items-center justify-center shrink-0">
                     <Calendar className="text-white" size={20} />
                   </div>
-                  <h3 className="text-lg font-bold font-display text-hf-ink">
+                  <h3 className="text-lg font-bold font-display text-foreground">
                     Free Strategy Call
                   </h3>
                 </div>
@@ -51,12 +51,12 @@ export default function Contact() {
                 </GradientButton>
               </div>
 
-              <div className="bg-card rounded-xl p-5 hf-shadow">
+              <div className="bg-card rounded-xl p-5 hf-shadow border border-border/50">
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-10 h-10 rounded-lg hf-gradient flex items-center justify-center shrink-0">
                     <Mail className="text-white" size={20} />
                   </div>
-                  <h3 className="text-lg font-bold font-display text-hf-ink">
+                  <h3 className="text-lg font-bold font-display text-foreground">
                     Direct Email
                   </h3>
                 </div>

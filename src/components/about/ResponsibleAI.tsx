@@ -7,15 +7,15 @@ export function ResponsibleAI() {
   ];
 
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-20 md:py-28 bg-background transition-colors duration-300">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-hf-ink mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-4">
             Security & Compliance You Can Trust
           </h2>
         </div>
         
-        <div className="bg-card rounded-2xl p-8 hf-shadow">
+        <div className="bg-card rounded-2xl p-8 hf-shadow border border-border/50 transition-colors duration-300">
           <div className="space-y-4">
             {policies.map((policy, index) => (
               <div key={index} className="flex items-start gap-3">
