@@ -135,7 +135,7 @@ export const FormField: React.FC<FormFieldProps> = ({
                 <RadioGroupItem value={option.value} id={`${fieldId}-${option.value}`} />
                 <Label
                   htmlFor={`${fieldId}-${option.value}`}
-                  className="text-sm font-normal text-hf-navy cursor-pointer"
+                  className="text-sm font-normal text-hf-navy dark:text-foreground cursor-pointer"
                 >
                   {option.label}
                 </Label>
@@ -176,7 +176,7 @@ export const FormField: React.FC<FormFieldProps> = ({
                   />
                   <Label
                     htmlFor={`${fieldId}-${option.value}`}
-                    className="text-sm font-normal text-hf-navy cursor-pointer"
+                    className="text-sm font-normal text-hf-navy dark:text-foreground cursor-pointer"
                   >
                     {option.label}
                   </Label>
@@ -203,7 +203,7 @@ export const FormField: React.FC<FormFieldProps> = ({
               />
               <Label
                 htmlFor={fieldId}
-                className="text-sm font-normal text-hf-navy cursor-pointer"
+                className="text-sm font-normal text-hf-navy dark:text-foreground cursor-pointer"
               >
                 {label}
               </Label>
