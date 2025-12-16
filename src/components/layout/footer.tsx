@@ -7,36 +7,36 @@ import { toast } from '@/hooks/use-toast';
 import { Mail, Linkedin } from 'lucide-react';
 
 // X (formerly Twitter) logo component
-const XIcon = ({ className }: { className?: string }) => (
-  <svg 
-    viewBox="0 0 24 24" 
-    className={className}
-    fill="currentColor"
-    aria-hidden="true"
-  >
+const XIcon = ({
+  className
+}: {
+  className?: string;
+}) => <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden="true">
     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-  </svg>
-);
-
-const navigationItems = [
-  { name: 'Home', href: '/' },
-  { name: 'Services', href: '/services' },
-  { name: 'Case Studies', href: '/case-studies' },
-  { name: 'About', href: '/about' }
-];
-
+  </svg>;
+const navigationItems = [{
+  name: 'Home',
+  href: '/'
+}, {
+  name: 'Services',
+  href: '/services'
+}, {
+  name: 'Case Studies',
+  href: '/case-studies'
+}, {
+  name: 'About',
+  href: '/about'
+}];
 export const Footer = () => {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    
     if (!email.trim()) {
       toast({
         title: "Email required",
         description: "Please enter your email address.",
-        variant: "destructive",
+        variant: "destructive"
       });
       return;
     }
@@ -47,32 +47,33 @@ export const Footer = () => {
       toast({
         title: "Invalid email",
         description: "Please enter a valid email address.",
-        variant: "destructive",
+        variant: "destructive"
       });
       return;
     }
-
     setIsSubmitting(true);
-
     try {
       // Step 1: Subscribe (insert to DB)
-      const { data, error } = await supabase.functions.invoke('subscribe-newsletter', {
-        body: { email: email.trim() }
+      const {
+        data,
+        error
+      } = await supabase.functions.invoke('subscribe-newsletter', {
+        body: {
+          email: email.trim()
+        }
       });
-
       if (error) {
         throw error;
       }
-
       if (data.code === 'ALREADY_SUBSCRIBED') {
         toast({
           title: "Already subscribed",
-          description: data.message,
+          description: data.message
         });
       } else if (data.code === 'SUCCESS') {
         toast({
           title: "Subscribed!",
-          description: data.message,
+          description: data.message
         });
         setEmail('');
 
@@ -98,15 +99,13 @@ export const Footer = () => {
       toast({
         title: "Something went wrong",
         description: "Please try again.",
-        variant: "destructive",
+        variant: "destructive"
       });
     } finally {
       setIsSubmitting(false);
     }
   };
-
-  return (
-    <footer className="bg-hf-navy text-white">
+  return <footer className="bg-hf-navy text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand Section with Lockup */}
@@ -114,29 +113,15 @@ export const Footer = () => {
             <div className="mb-4">
               <BrandLockup className="text-white [&_span]:text-white" />
             </div>
-            <p className="text-gray-300 mb-6 max-w-md">
-              AI automation for therapists and service professionals. Save time, get more clients.
-            </p>
+            <p className="text-gray-300 mb-6 max-w-md">AI automation for SMBs and service professionals. Save time, get more clients.</p>
             
             
             {/* Email Capture */}
             <div className="max-w-sm">
               <p className="text-sm font-medium mb-2">Get AI insights</p>
               <form onSubmit={handleSubscribe} className="flex gap-2">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  disabled={isSubmitting}
-                  className="flex-1 px-3 py-2 text-sm bg-white/10 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-hf-teal disabled:opacity-50"
-                />
-                <GradientButton 
-                  type="submit"
-                  variant="primary" 
-                  size="sm"
-                  disabled={isSubmitting}
-                >
+                <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Enter your email" disabled={isSubmitting} className="flex-1 px-3 py-2 text-sm bg-white/10 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-hf-teal disabled:opacity-50" />
+                <GradientButton type="submit" variant="primary" size="sm" disabled={isSubmitting}>
                   {isSubmitting ? 'Subscribing...' : 'Subscribe'}
                 </GradientButton>
               </form>
@@ -150,16 +135,11 @@ export const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4">Navigation</h3>
             <ul className="space-y-2">
-              {navigationItems.map((item) => (
-                <li key={item.name}>
-                  <Link 
-                    to={item.href}
-                    className="text-gray-300 hover:text-white transition-colors text-sm"
-                  >
+              {navigationItems.map(item => <li key={item.name}>
+                  <Link to={item.href} className="text-gray-300 hover:text-white transition-colors text-sm">
                     {item.name}
                   </Link>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
 
@@ -168,51 +148,27 @@ export const Footer = () => {
             <h3 className="font-semibold mb-4">Get Started</h3>
             <ul className="space-y-2">
               <li>
-                <Link 
-                  to="/contact"
-                  className="text-gray-300 hover:text-white transition-colors text-sm"
-                >
+                <Link to="/contact" className="text-gray-300 hover:text-white transition-colors text-sm">
                   Contact Us
                 </Link>
               </li>
               <li>
-                <a 
-                  href="https://calendly.com/heyflou-ai/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white transition-colors text-sm"
-                >
+                <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors text-sm">
                   Book Strategy Call
                 </a>
               </li>
               <li className="pt-3">
-                <a 
-                  href="mailto:heyflou.ai@gmail.com"
-                  className="flex items-center gap-2 text-gray-300 hover:text-hf-teal transition-colors text-sm font-medium"
-                  aria-label="Email us at heyflou.ai@gmail.com"
-                >
+                <a href="mailto:heyflou.ai@gmail.com" className="flex items-center gap-2 text-gray-300 hover:text-hf-teal transition-colors text-sm font-medium" aria-label="Email us at heyflou.ai@gmail.com">
                   <Mail className="h-4 w-4" />
                   <span>heyflou.ai@gmail.com</span>
                 </a>
               </li>
             </ul>
             <div className="flex items-center gap-3 mt-4">
-              <a
-                href="https://www.linkedin.com/company/heyflou"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full bg-white/10 text-gray-300 hover:bg-hf-teal hover:text-white hover:scale-110 transition-all duration-200"
-                aria-label="Visit our LinkedIn"
-              >
+              <a href="https://www.linkedin.com/company/heyflou" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/10 text-gray-300 hover:bg-hf-teal hover:text-white hover:scale-110 transition-all duration-200" aria-label="Visit our LinkedIn">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a
-                href="https://x.com/Heyflou_"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full bg-white/10 text-gray-300 hover:bg-hf-teal hover:text-white hover:scale-110 transition-all duration-200"
-                aria-label="Follow us on X"
-              >
+              <a href="https://x.com/Heyflou_" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/10 text-gray-300 hover:bg-hf-teal hover:text-white hover:scale-110 transition-all duration-200" aria-label="Follow us on X">
                 <XIcon className="h-5 w-5" />
               </a>
             </div>
@@ -228,6 +184,5 @@ export const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
