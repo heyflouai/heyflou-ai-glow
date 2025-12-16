@@ -48,7 +48,7 @@ export function Timeline90Day() {
                   {/* Timeline dot */}
                   <div className="hidden lg:block absolute top-16 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-card border-4 border-primary rounded-full z-10"></div>
                   
-                  <div className="bg-card rounded-2xl p-6 hf-shadow border border-border/50
+                  <div className="h-full flex flex-col bg-card rounded-2xl p-6 hf-shadow border border-border/50
                     group-hover:-translate-y-1 group-hover:shadow-lg
                     transition-all duration-300">
                     <div className="flex justify-center mb-4">
@@ -62,7 +62,7 @@ export function Timeline90Day() {
                     <h3 className="text-xl font-bold font-display text-foreground mb-3">
                       {step.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-muted-foreground mt-auto">
                       {step.description}
                     </p>
                   </div>
