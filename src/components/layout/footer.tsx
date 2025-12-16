@@ -131,38 +131,6 @@ export const Footer = () => {
               <p className="text-xs text-gray-400 mt-2">
                 We respect your privacy. Unsubscribe anytime.
               </p>
-              
-              {/* Social Links */}
-              <div className="flex items-center gap-4 mt-4">
-                <a 
-                  href="mailto:heyflou.ai@gmail.com"
-                  className="flex items-center gap-2 text-gray-300 hover:text-hf-teal transition-colors text-sm font-medium"
-                  aria-label="Email us at heyflou.ai@gmail.com"
-                >
-                  <Mail className="h-5 w-5" />
-                  <span>heyflou.ai@gmail.com</span>
-                </a>
-              </div>
-              <div className="flex items-center gap-3 mt-3">
-                <a
-                  href="https://www.linkedin.com/company/heyflou"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-white/10 text-gray-300 hover:bg-hf-teal hover:text-white hover:scale-110 transition-all duration-200"
-                  aria-label="Visit our LinkedIn"
-                >
-                  <Linkedin className="h-5 w-5" />
-                </a>
-                <a
-                  href="https://x.com/Heyflou_"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-white/10 text-gray-300 hover:bg-hf-teal hover:text-white hover:scale-110 transition-all duration-200"
-                  aria-label="Follow us on X"
-                >
-                  <Twitter className="h-5 w-5" />
-                </a>
-              </div>
             </div>
           </div>
 
@@ -205,7 +173,37 @@ export const Footer = () => {
                   Book Strategy Call
                 </a>
               </li>
+              <li className="pt-3">
+                <a 
+                  href="mailto:heyflou.ai@gmail.com"
+                  className="flex items-center gap-2 text-gray-300 hover:text-hf-teal transition-colors text-sm font-medium"
+                  aria-label="Email us at heyflou.ai@gmail.com"
+                >
+                  <Mail className="h-4 w-4" />
+                  <span>heyflou.ai@gmail.com</span>
+                </a>
+              </li>
             </ul>
+            <div className="flex items-center gap-3 mt-4">
+              <a
+                href="https://www.linkedin.com/company/heyflou"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full bg-white/10 text-gray-300 hover:bg-hf-teal hover:text-white hover:scale-110 transition-all duration-200"
+                aria-label="Visit our LinkedIn"
+              >
+                <Linkedin className="h-5 w-5" />
+              </a>
+              <a
+                href="https://x.com/Heyflou_"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full bg-white/10 text-gray-300 hover:bg-hf-teal hover:text-white hover:scale-110 transition-all duration-200"
+                aria-label="Follow us on X"
+              >
+                <Twitter className="h-5 w-5" />
+              </a>
+            </div>
           </div>
         </div>
 
