@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
+import { NumberTicker, parseMetricValue } from '@/components/ui/number-ticker';
 
 interface KpiStatProps {
   value: string;
@@ -18,16 +18,7 @@ export const KpiStat = ({
   className,
   animated = true 
 }: KpiStatProps) => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    if (animated) {
-      const timer = setTimeout(() => setIsVisible(true), 200);
-      return () => clearTimeout(timer);
-    } else {
-      setIsVisible(true);
-    }
-  }, [animated]);
+  const { numericValue, prefix, suffix } = parseMetricValue(value);
 
   return (
     <div className={cn(
@@ -40,11 +31,17 @@ export const KpiStat = ({
           {icon}
         </div>
       )}
-      <div className={cn(
-        "text-3xl font-bold font-display text-foreground mb-2 transition-all duration-700",
-        isVisible ? "animate-counter" : "opacity-0"
-      )}>
-        {value}
+      <div className="text-3xl font-bold font-display text-foreground mb-2">
+        {animated ? (
+          <NumberTicker
+            value={numericValue}
+            prefix={prefix}
+            suffix={suffix}
+            delay={0.2}
+          />
+        ) : (
+          value
+        )}
       </div>
       <div className="text-sm font-semibold text-foreground/90 mb-1">
         {label}

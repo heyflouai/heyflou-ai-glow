@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import { CompactForm } from '@/components/forms/CompactForm';
 import { ProblemSolution } from '@/components/home/ProblemSolution';
 import { DepartmentsCarousel } from '@/components/home/DepartmentsCarousel';
+import { IntegrationBeams } from '@/components/home/IntegrationBeams';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 const organizationJsonLd = {
   "@context": "https://schema.org",
@@ -292,6 +293,8 @@ export default function Home() {
           <DepartmentsCarousel className="mt-10 md:mt-12" />
         </Section>
 
+        {/* Integration Beams - Above How It Works */}
+        <IntegrationBeams />
 
         {/* Process */}
         <Section background="muted">
