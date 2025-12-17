@@ -108,6 +108,32 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage, hidePromoT
         throw error;
       }
 
+      // Trigger n8n webhook in the background (fire-and-forget)
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+      fetch(`${supabaseUrl}/functions/v1/sync-contact-webhook`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: data.email,
+          first_name: data.firstName,
+          last_name: data.lastName,
+          company: data.company,
+          website: data.website || null,
+          industry: data.industry,
+          team_size: data.teamSize,
+          message: data.message || null,
+          source_page: sourcePage,
+          utm_source: trackingData.utmSource,
+          utm_medium: trackingData.utmMedium,
+          utm_campaign: trackingData.utmCampaign,
+          referrer: trackingData.referrer,
+          consent: data.consent,
+          created_at: new Date().toISOString(),
+        }),
+      }).catch((err) => {
+        console.error("Failed to trigger sync-contact-webhook:", err?.message);
+      });
+
       // Analytics tracking
       if (typeof window !== 'undefined' && Array.isArray(window.dataLayer)) {
         window.dataLayer.push({

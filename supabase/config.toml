@@ -8,3 +8,6 @@ verify_jwt = false
 
 [functions.sync-subscriber-webhook]
 verify_jwt = false
+
+[functions.sync-contact-webhook]
+verify_jwt = false
