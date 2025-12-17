@@ -10,7 +10,7 @@ interface SubscriberPayload {
   created_at: string;
 }
 
-const N8N_WEBHOOK_URL = "https://aidirected.app.n8n.cloud/webhook/heyflou-contact";
+const N8N_WEBHOOK_URL = "https://aidirected.app.n8n.cloud/webhook/heyflou-newsletter";
 
 const handler = async (req: Request): Promise<Response> => {
   // Handle CORS preflight requests
