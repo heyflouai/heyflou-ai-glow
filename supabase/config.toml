@@ -5,3 +5,6 @@ verify_jwt = false
 
 [functions.notify-new-subscriber]
 verify_jwt = false
+
+[functions.sync-subscriber-webhook]
+verify_jwt = false

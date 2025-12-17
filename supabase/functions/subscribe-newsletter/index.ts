@@ -130,6 +130,24 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("New subscriber added successfully");
 
+    // Trigger n8n webhook in the background (fire-and-forget)
+    const webhookUrl = `${supabaseUrl}/functions/v1/sync-subscriber-webhook`;
+    fetch(webhookUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${supabaseServiceKey}`,
+      },
+      body: JSON.stringify({
+        email: newSubscriber.email,
+        created_at: newSubscriber.created_at,
+      }),
+    }).then(() => {
+      console.log("Successfully triggered sync-subscriber-webhook");
+    }).catch((err) => {
+      console.error("Failed to trigger sync-subscriber-webhook:", err?.message);
+    });
+
     return new Response(
       JSON.stringify({ 
         message: "Thanks for subscribing. You'll start receiving AI insights soon.",
