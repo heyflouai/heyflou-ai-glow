@@ -1,13 +1,10 @@
 project_id = "syflufvohjamjngttugh"
 
-[functions.subscribe-newsletter]
+[functions.webhook-subscriber]
 verify_jwt = false
 
-[functions.notify-new-subscriber]
+[functions.webhook-contact]
 verify_jwt = false
 
-[functions.sync-subscriber-webhook]
-verify_jwt = false
-
-[functions.sync-contact-webhook]
+[functions.webhook-intake]
 verify_jwt = false
