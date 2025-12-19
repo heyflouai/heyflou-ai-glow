@@ -8,7 +8,7 @@ import { getFeaturedCases } from '@/data/cases';
 import { Link } from 'react-router-dom';
 import { CompactForm } from '@/components/forms/CompactForm';
 import { ProblemSolution } from '@/components/home/ProblemSolution';
-import { DepartmentsCarousel } from '@/components/home/DepartmentsCarousel';
+import { IndustriesWorkflows } from '@/components/home/IndustriesWorkflows';
 import { IntegrationBeams } from '@/components/home/IntegrationBeams';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 const organizationJsonLd = {
@@ -284,14 +284,12 @@ export default function Home() {
           </div>
         </Section>
 
-        {/* We Help Every Department */}
-        <Section id="departments" className="py-20 md:py-28">
-          <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">We Help Every Department</h2>
-            <p className="mt-3 text-muted-foreground">AI marketing and automation solutions for travel agencies and healthcare practices.</p>
+        {/* Industries We Serve & What We Automate */}
+        <section id="industries" className="py-20 md:py-24 bg-background">
+          <div className="container mx-auto px-4 md:px-6">
+            <IndustriesWorkflows />
           </div>
-          <DepartmentsCarousel className="mt-10 md:mt-12" />
-        </Section>
+        </section>
 
         {/* Integration Beams - Above How It Works */}
         <IntegrationBeams />
