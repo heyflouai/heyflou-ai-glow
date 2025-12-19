@@ -158,9 +158,9 @@ export const Footer = () => {
                 </a>
               </li>
               <li className="pt-3">
-                <a href="mailto:heyflou.ai@gmail.com" className="flex items-center gap-2 text-gray-300 hover:text-hf-teal transition-colors text-sm font-medium" aria-label="Email us at heyflou.ai@gmail.com">
+                <a href="mailto:Hello@heyflou.com" className="flex items-center gap-2 text-gray-300 hover:text-hf-teal transition-colors text-sm font-medium" aria-label="Email us at Hello@heyflou.com">
                   <Mail className="h-4 w-4" />
-                  <span>heyflou.ai@gmail.com</span>
+                  <span>Hello@heyflou.com</span>
                 </a>
               </li>
             </ul>

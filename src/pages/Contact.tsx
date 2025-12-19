@@ -61,13 +61,13 @@ export default function Contact() {
                   </h3>
                 </div>
                 <p className="text-foreground font-medium mb-1">
-                  heyflou.ai@gmail.com
+                  Hello@heyflou.com
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   We typically respond within 24 hours during business days.
                 </p>
                 <GradientButton variant="outline" size="lg" className="w-full" asChild>
-                  <a href="mailto:heyflou.ai@gmail.com?subject=AI%20Automation%20Inquiry">
+                  <a href="mailto:Hello@heyflou.com?subject=AI%20Automation%20Inquiry">
                     Send Email
                   </a>
                 </GradientButton>
