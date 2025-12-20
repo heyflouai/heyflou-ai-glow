@@ -4,8 +4,11 @@ import { Section } from '@/components/ui/section';
 import { GradientButton } from '@/components/ui/gradient-button';
 import { Input } from '@/components/ui/input';
 import { Calculator } from 'lucide-react';
+import { useTranslation } from '@/i18n';
 
 export default function ROICalculator() {
+  const t = useTranslation();
+  
   const [inputs, setInputs] = useState({
     teamSize: 10,
     hourlyRate: 25,
@@ -34,10 +37,10 @@ export default function ROICalculator() {
               <Calculator className="text-white" size={32} />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold font-display text-hf-ink mb-6">
-              Calculate Your Time & Cost Savings
+              {t.roiCalculator.title}
             </h1>
             <p className="text-xl text-muted-foreground">
-              See how much time and money AI automation could save your practice.
+              {t.roiCalculator.subtitle}
             </p>
           </div>
         </Section>
@@ -48,12 +51,12 @@ export default function ROICalculator() {
               {/* Calculator Inputs */}
               <div className="bg-card rounded-xl p-8 hf-shadow">
                 <h2 className="text-2xl font-bold font-display text-hf-ink mb-6">
-                  Your Business Details
+                  {t.roiCalculator.businessDetails}
                 </h2>
                 <div className="space-y-6">
                   <div>
                     <label className="block text-sm font-medium text-hf-ink mb-2">
-                      Team Size (employees)
+                      {t.roiCalculator.teamSize}
                     </label>
                     <Input
                       type="number"
@@ -64,7 +67,7 @@ export default function ROICalculator() {
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-hf-ink mb-2">
-                      Average Hourly Cost ($)
+                      {t.roiCalculator.avgHourlyCost}
                     </label>
                     <Input
                       type="number"
@@ -75,7 +78,7 @@ export default function ROICalculator() {
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-hf-ink mb-2">
-                      Hours Saved per Employee per Month
+                      {t.roiCalculator.hoursSavedPerEmployee}
                     </label>
                     <Input
                       type="number"
@@ -86,7 +89,7 @@ export default function ROICalculator() {
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-hf-ink mb-2">
-                      Expected Revenue Lift (%)
+                      {t.roiCalculator.expectedRevenueLift}
                     </label>
                     <Input
                       type="number"
@@ -102,43 +105,43 @@ export default function ROICalculator() {
               {/* Results */}
               <div className="bg-card rounded-xl p-8 hf-shadow">
                 <h2 className="text-2xl font-bold font-display text-hf-ink mb-6">
-                  Your ROI Projection
+                  {t.roiCalculator.roiProjection}
                 </h2>
                 <div className="space-y-6">
                   <div className="bg-gradient-to-r from-hf-teal/10 to-hf-purple/10 rounded-lg p-4">
                     <div className="text-2xl font-bold text-hf-teal">
                       ${monthlySavings.toLocaleString()}
                     </div>
-                    <div className="text-sm text-muted-foreground">Monthly Savings</div>
+                    <div className="text-sm text-muted-foreground">{t.roiCalculator.monthlySavings}</div>
                   </div>
                   
                   <div className="bg-gradient-to-r from-hf-teal/10 to-hf-purple/10 rounded-lg p-4">
                     <div className="text-2xl font-bold text-hf-teal">
                       ${annualSavings.toLocaleString()}
                     </div>
-                    <div className="text-sm text-muted-foreground">Annual Cost Savings</div>
+                    <div className="text-sm text-muted-foreground">{t.roiCalculator.annualCostSavings}</div>
                   </div>
 
                   <div className="bg-gradient-to-r from-hf-teal/10 to-hf-purple/10 rounded-lg p-4">
                     <div className="text-2xl font-bold text-hf-teal">
                       ${Math.round(revenueIncrease).toLocaleString()}
                     </div>
-                    <div className="text-sm text-muted-foreground">Annual Revenue Increase</div>
+                    <div className="text-sm text-muted-foreground">{t.roiCalculator.annualRevenueIncrease}</div>
                   </div>
 
                   <div className="bg-gradient-to-r from-hf-purple/20 to-hf-teal/20 rounded-lg p-4 border-2 border-hf-teal/20">
                     <div className="text-3xl font-bold text-hf-ink">
-                      {Math.round(paybackMonths)} months
+                      {Math.round(paybackMonths)} {t.roiCalculator.months}
                     </div>
-                    <div className="text-sm text-muted-foreground">Payback Period</div>
+                    <div className="text-sm text-muted-foreground">{t.roiCalculator.paybackPeriod}</div>
                   </div>
 
                   <div className="pt-4 border-t border-border">
                     <div className="text-lg font-semibold text-hf-ink">
-                      Total Annual Benefit: ${Math.round(totalBenefit).toLocaleString()}
+                      {t.roiCalculator.totalAnnualBenefit}: ${Math.round(totalBenefit).toLocaleString()}
                     </div>
                     <p className="text-sm text-muted-foreground mt-2">
-                      *Estimates based on industry averages. Actual results may vary.
+                      {t.roiCalculator.disclaimer}
                     </p>
                   </div>
                 </div>
@@ -147,14 +150,14 @@ export default function ROICalculator() {
 
             <div className="text-center mt-12">
               <h3 className="text-2xl font-bold font-display text-hf-ink mb-4">
-                Ready to Start Saving Time?
+                {t.roiCalculator.readyToStart}
               </h3>
               <p className="text-lg text-muted-foreground mb-6">
-                Book a free strategy call to see exactly how we can help your practice.
+                {t.roiCalculator.readyToStartDesc}
               </p>
               <GradientButton variant="primary" size="lg" asChild>
                 <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer">
-                  Book Strategy Call
+                  {t.roiCalculator.bookStrategyCall}
                 </a>
               </GradientButton>
             </div>

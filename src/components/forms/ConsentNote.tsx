@@ -1,17 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from '@/i18n';
 
 export const ConsentNote: React.FC = () => {
+  const t = useTranslation();
+  
   return (
     <p className="text-xs text-muted-foreground mt-4">
-      By submitting, you agree to be contacted and to our{' '}
+      {t.forms.consentText}{' '}
       <Link 
         to="/privacy" 
         className="text-hf-teal hover:underline"
         target="_blank"
         rel="noopener noreferrer"
       >
-        Privacy Policy
+        {t.forms.privacyPolicy}
       </Link>
       .
     </p>

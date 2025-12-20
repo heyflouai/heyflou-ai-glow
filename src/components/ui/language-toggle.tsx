@@ -1,15 +1,15 @@
-import { useLanguage, Language } from '@/i18n';
+import { useLanguage } from '@/i18n';
 import { cn } from '@/lib/utils';
 
 export function LanguageToggle() {
   const { language, setLanguage } = useLanguage();
 
-  const handleToggle = (lang: Language) => {
+  const handleToggle = (lang: 'en' | 'es') => {
     setLanguage(lang);
   };
 
   return (
-    <div className="flex items-center bg-muted rounded-full p-0.5 border border-border/50">
+    <div className="flex items-center gap-1 bg-muted rounded-full p-0.5">
       <button
         onClick={() => handleToggle('en')}
         className={cn(
@@ -18,7 +18,7 @@ export function LanguageToggle() {
             ? 'bg-hf-teal text-white shadow-sm'
             : 'text-muted-foreground hover:text-foreground'
         )}
-        aria-label="Switch to English"
+        aria-label={language === 'en' ? 'English selected' : 'Switch to English'}
       >
         EN
       </button>
@@ -30,7 +30,7 @@ export function LanguageToggle() {
             ? 'bg-hf-teal text-white shadow-sm'
             : 'text-muted-foreground hover:text-foreground'
         )}
-        aria-label="Cambiar a Español"
+        aria-label={language === 'es' ? 'Español seleccionado' : 'Cambiar a Español'}
       >
         ES
       </button>

@@ -1,5 +1,5 @@
-import { integrationGroups, integrationsLead } from '@/data/integrations';
 import { LogoLoop } from '@/components/ui/logo-loop';
+import { useTranslation } from '@/i18n';
 import { 
   Bot, 
   MessageSquare, 
@@ -12,9 +12,7 @@ import {
   Video,
   Zap,
   Cloud,
-  Building2,
-  Smartphone,
-  BarChart3
+  Smartphone
 } from 'lucide-react';
 
 const loopLogos = [
@@ -35,15 +33,17 @@ const loopLogos = [
 ];
 
 export function IntegrationsWall() {
+  const t = useTranslation();
+  
   return (
     <section className="py-20 md:py-28 bg-background transition-colors duration-300">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-4">
-            Tools & Integrations We Work With
+            {t.integrationsWall.title}
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
-            {integrationsLead}
+            {t.integrationsWall.subtitle}
           </p>
         </div>
         

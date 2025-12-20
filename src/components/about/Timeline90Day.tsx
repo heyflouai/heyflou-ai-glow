@@ -1,29 +1,32 @@
 import { Search, Zap, TestTube, TrendingUp } from 'lucide-react';
+import { useTranslation } from '@/i18n';
 
 export function Timeline90Day() {
+  const t = useTranslation();
+  
   const steps = [{
     icon: Search,
-    title: 'Discovery',
-    subtitle: 'Week 1',
-    description: 'Understand your practice, client flow, and automation goals.',
+    title: t.about.timeline1Title,
+    subtitle: t.about.timeline1Subtitle,
+    description: t.about.timeline1Desc,
     color: 'text-hf-teal'
   }, {
     icon: Zap,
-    title: 'Design',
-    subtitle: 'Weeks 2-4',
-    description: 'Build your AI chatbot, CRM workflows, and lead systems.',
+    title: t.about.timeline2Title,
+    subtitle: t.about.timeline2Subtitle,
+    description: t.about.timeline2Desc,
     color: 'text-hf-purple'
   }, {
     icon: TestTube,
-    title: 'Integration',
-    subtitle: 'Weeks 5-8',
-    description: 'Connect with your calendar, CRM, and communication tools.',
+    title: t.about.timeline3Title,
+    subtitle: t.about.timeline3Subtitle,
+    description: t.about.timeline3Desc,
     color: 'text-hf-sky'
   }, {
     icon: TrendingUp,
-    title: 'Launch & Optimize',
-    subtitle: 'Weeks 9-12',
-    description: 'Go live with training, support, and continuous improvements.',
+    title: t.about.timeline4Title,
+    subtitle: t.about.timeline4Subtitle,
+    description: t.about.timeline4Desc,
     color: 'text-primary'
   }];
 
@@ -32,7 +35,7 @@ export function Timeline90Day() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-4">
-            Your 90-Day Transformation
+            {t.about.timelineTitle}
           </h2>
         </div>
         

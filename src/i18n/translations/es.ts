@@ -408,6 +408,127 @@ export const es: TranslationKeys = {
     invalidEmailDesc: 'Por favor ingresa una dirección de email válida.',
     alreadySubscribed: 'Ya estás suscrito',
     subscribed: '¡Suscrito!',
+    
+    // Consent note
+    consentText: 'Al enviar, aceptas ser contactado y nuestra',
+    privacyPolicy: 'Política de Privacidad',
+    
+    // Questionnaire
+    questionnaireTitle: 'Cuestionario de Preparación para IA',
+    questionnaireSubtitle: 'Responde algunas preguntas para que podamos recomendar el camino más rápido hacia el ROI para tu equipo.',
+    contactInfo: 'Información de Contacto',
+    contactInfoDesc: 'Comencemos con tus datos básicos de contacto.',
+    businessInfo: 'Información del Negocio',
+    businessInfoDesc: 'Cuéntanos sobre tu empresa y rol.',
+    aiGoals: 'Objetivos de IA y Preferencias',
+    aiGoalsDesc: 'Ayúdanos a entender tu preparación para IA y objetivos.',
+    phone: 'Teléfono',
+    countryRegion: 'País/Región',
+    roleTitle: 'Rol/Título',
+    currentAiUsage: 'Uso Actual de IA',
+    toolsInUse: 'Herramientas en Uso',
+    selectAllApply: 'Selecciona todas las que apliquen',
+    areasOfInterest: 'Áreas de Interés',
+    goals: 'Objetivos',
+    biggestPain: 'Mayor Punto de Dolor',
+    biggestPainHelp: 'Opcional - ¿Cuál es tu mayor desafío operacional?',
+    budgetRange: 'Rango de Presupuesto',
+    timeline: 'Cronograma',
+    preferredContact: 'Método de Contacto Preferido',
+    previous: 'Anterior',
+    next: 'Siguiente',
+    submitting: 'Enviando...',
+    submitQuestionnaire: 'Enviar Cuestionario',
+    questionnaireThankYou: '¡Gracias! Revisaremos y te contactaremos pronto.',
+    questionnaireThankYouDesc: '¿Quieres avanzar más rápido? Reserva una llamada estratégica.',
+    thankYouQuestionnaireToast: '¡Gracias por completar el cuestionario!',
+    thankYouQuestionnaireToastDesc: 'Revisaremos tus respuestas y te contactaremos pronto.',
+    
+    // Industry options
+    industryRetail: 'Retail',
+    industryServices: 'Servicios',
+    industryManufacturing: 'Manufactura',
+    industryHospitality: 'Hospitalidad',
+    industryLogistics: 'Logística',
+    industryHealthcare: 'Salud',
+    industryOther: 'Otro',
+    
+    // AI Usage options
+    aiUsageNone: 'Ninguno',
+    aiUsageExperimenting: 'Experimentando',
+    aiUsageActiveLimited: 'Activo en 1–2 áreas',
+    aiUsageActiveTeams: 'Activo en todos los equipos',
+    
+    // Tools options
+    toolChatGPT: 'ChatGPT',
+    toolGemini: 'Gemini',
+    toolCopilot: 'Microsoft Copilot',
+    toolZapier: 'Zapier',
+    toolMake: 'Make',
+    toolHubSpot: 'HubSpot AI',
+    toolNotion: 'Notion AI',
+    toolOther: 'Otro',
+    
+    // Areas options
+    areaWorkflow: 'Automatización de Flujos',
+    areaAiTraining: 'Capacitación en IA',
+    areaAiAgents: 'Agentes de IA',
+    areaDataReadiness: 'Preparación de Datos',
+    areaIntegrations: 'Integraciones',
+    
+    // Goals options
+    goalSaveTime: 'Ahorrar tiempo',
+    goalReduceCosts: 'Reducir costos',
+    goalIncreaseRevenue: 'Aumentar ingresos',
+    goalImproveCX: 'Mejorar CX',
+    goalBetterReporting: 'Mejor reporting',
+    goalCompliance: 'Cumplimiento/Gobernanza',
+    
+    // Budget options
+    budgetUnder5k: '<$5k',
+    budget5kTo15k: '$5k–$15k',
+    budget15kTo50k: '$15k–$50k',
+    budgetOver50k: '$50k+',
+    budgetUndisclosed: 'No revelado',
+    
+    // Timeline options
+    timelineAsap: 'Lo antes posible',
+    timeline1to3Months: '1–3 meses',
+    timeline3to6Months: '3–6 meses',
+    timelineExploring: 'Explorando',
+    
+    // Contact method options
+    contactEmail: 'Email',
+    contactCall: 'Llamada',
+    contactWhatsApp: 'WhatsApp',
+  },
+
+  // ROI Calculator
+  roiCalculator: {
+    title: 'Calcula tus Ahorros de Tiempo y Costos',
+    subtitle: 'Ve cuánto tiempo y dinero podría ahorrarte la automatización con IA.',
+    businessDetails: 'Detalles de tu Negocio',
+    teamSize: 'Tamaño del Equipo (empleados)',
+    avgHourlyCost: 'Costo Promedio por Hora ($)',
+    hoursSavedPerEmployee: 'Horas Ahorradas por Empleado por Mes',
+    expectedRevenueLift: 'Aumento de Ingresos Esperado (%)',
+    roiProjection: 'Tu Proyección de ROI',
+    monthlySavings: 'Ahorros Mensuales',
+    annualCostSavings: 'Ahorros Anuales de Costos',
+    annualRevenueIncrease: 'Aumento Anual de Ingresos',
+    paybackPeriod: 'Período de Recuperación',
+    months: 'meses',
+    totalAnnualBenefit: 'Beneficio Anual Total',
+    disclaimer: '*Estimaciones basadas en promedios de la industria. Los resultados reales pueden variar.',
+    readyToStart: '¿Listo para Empezar a Ahorrar Tiempo?',
+    readyToStartDesc: 'Reserva una llamada estratégica gratis para ver exactamente cómo podemos ayudar a tu práctica.',
+    bookStrategyCall: 'Reservar Llamada Estratégica',
+  },
+
+  // Integrations Wall
+  integrationsWall: {
+    title: 'Herramientas e Integraciones con las que Trabajamos',
+    subtitle: 'Conectamos tus plataformas favoritas para crear flujos de trabajo automatizados sin problemas.',
   },
 
   // Footer

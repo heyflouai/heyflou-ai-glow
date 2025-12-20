@@ -1,9 +1,13 @@
+import { useTranslation } from '@/i18n';
+
 export function ResponsibleAI() {
+  const t = useTranslation();
+  
   const policies = [
-    'All client data is encrypted and HIPAA-compliant.',
-    'Access is strictly controlled with secure authentication.',
-    'All automation actions are logged for your records.',
-    'Your data is never used to train AI models without explicit permission.'
+    t.about.security1,
+    t.about.security2,
+    t.about.security3,
+    t.about.security4
   ];
 
   return (
@@ -11,7 +15,7 @@ export function ResponsibleAI() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-4">
-            Security & Compliance You Can Trust
+            {t.about.securityTitle}
           </h2>
         </div>
         
