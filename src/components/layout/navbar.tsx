@@ -6,13 +6,8 @@ import { BrandLockup } from '@/components/BrandLockup';
 import { cn } from '@/lib/utils';
 import { useTheme } from '@/hooks/use-theme';
 import { AnimatedThemeToggler } from '@/components/ui/animated-theme-toggler';
-
-const navigationItems = [
-  { name: 'Home', href: '/' },
-  { name: 'Services', href: '/services' },
-  { name: 'Case Studies', href: '/case-studies' },
-  { name: 'About', href: '/about' }
-];
+import { LanguageToggle } from '@/components/ui/language-toggle';
+import { useTranslation } from '@/i18n';
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -20,6 +15,14 @@ export const Navbar = () => {
   const [showBackToTop, setShowBackToTop] = useState(false);
   const location = useLocation();
   const { theme, toggleTheme } = useTheme();
+  const t = useTranslation();
+
+  const navigationItems = [
+    { name: t.nav.home, href: '/' },
+    { name: t.nav.services, href: '/services' },
+    { name: t.nav.caseStudies, href: '/case-studies' },
+    { name: t.nav.about, href: '/about' }
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,7 +56,7 @@ export const Navbar = () => {
             <div className="hidden md:flex items-center space-x-8">
               {navigationItems.map((item) => (
                 <Link
-                  key={item.name}
+                  key={item.href}
                   to={item.href}
                   className={cn(
                     "text-sm font-medium transition-colors hover:text-hf-teal",
@@ -67,8 +70,11 @@ export const Navbar = () => {
               ))}
             </div>
 
-            {/* Desktop CTA + Theme Toggle */}
+            {/* Desktop CTA + Theme Toggle + Language Toggle */}
             <div className="hidden md:flex items-center space-x-3">
+              {/* Language Toggle */}
+              <LanguageToggle />
+              
               {/* Animated Theme Toggle */}
               <AnimatedThemeToggler theme={theme} onToggle={toggleTheme} />
               
@@ -78,7 +84,7 @@ export const Navbar = () => {
                 asChild
               >
                 <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer">
-                  Book Free Call
+                  {t.nav.bookFreeCall}
                 </a>
               </GradientButton>
             </div>
@@ -99,7 +105,7 @@ export const Navbar = () => {
             <div className="px-4 py-6 space-y-4">
               {navigationItems.map((item) => (
                 <Link
-                  key={item.name}
+                  key={item.href}
                   to={item.href}
                   className={cn(
                     "block text-base font-medium transition-colors hover:text-hf-teal",
@@ -113,6 +119,11 @@ export const Navbar = () => {
                 </Link>
               ))}
               <div className="pt-4 flex flex-col gap-3">
+                {/* Mobile Language Toggle */}
+                <div className="flex items-center justify-center">
+                  <LanguageToggle />
+                </div>
+                
                 {/* Mobile Theme Toggle */}
                 <div className="flex items-center justify-center">
                   <AnimatedThemeToggler theme={theme} onToggle={toggleTheme} />
@@ -130,7 +141,7 @@ export const Navbar = () => {
                     rel="noopener noreferrer"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    Book Free Call
+                    {t.nav.bookFreeCall}
                   </a>
                 </GradientButton>
               </div>

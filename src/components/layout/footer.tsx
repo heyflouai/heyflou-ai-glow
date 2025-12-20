@@ -5,6 +5,7 @@ import { GradientButton } from '@/components/ui/gradient-button';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from '@/hooks/use-toast';
 import { Mail, Linkedin } from 'lucide-react';
+import { useTranslation } from '@/i18n';
 
 // X (formerly Twitter) logo component
 const XIcon = ({
@@ -14,46 +15,48 @@ const XIcon = ({
 }) => <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden="true">
     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
   </svg>;
-const navigationItems = [{
-  name: 'Home',
-  href: '/'
-}, {
-  name: 'Services',
-  href: '/services'
-}, {
-  name: 'Case Studies',
-  href: '/case-studies'
-}, {
-  name: 'About',
-  href: '/about'
-}];
+
 export const Footer = () => {
+  const t = useTranslation();
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const navigationItems = [{
+    name: t.nav.home,
+    href: '/'
+  }, {
+    name: t.nav.services,
+    href: '/services'
+  }, {
+    name: t.nav.caseStudies,
+    href: '/case-studies'
+  }, {
+    name: t.nav.about,
+    href: '/about'
+  }];
+
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.trim()) {
       toast({
-        title: "Email required",
-        description: "Please enter your email address.",
+        title: t.forms.emailRequired,
+        description: t.forms.emailRequiredDesc,
         variant: "destructive"
       });
       return;
     }
 
-    // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       toast({
-        title: "Invalid email",
-        description: "Please enter a valid email address.",
+        title: t.forms.invalidEmail,
+        description: t.forms.invalidEmailDesc,
         variant: "destructive"
       });
       return;
     }
     setIsSubmitting(true);
     try {
-      // Step 1: Subscribe (insert to DB)
       const {
         data,
         error
@@ -67,17 +70,16 @@ export const Footer = () => {
       }
       if (data.code === 'ALREADY_SUBSCRIBED') {
         toast({
-          title: "Already subscribed",
+          title: t.forms.alreadySubscribed,
           description: data.message
         });
       } else if (data.code === 'SUCCESS') {
         toast({
-          title: "Subscribed!",
+          title: t.forms.subscribed,
           description: data.message
         });
         setEmail('');
 
-        // Step 2: Send notification email (only for new subscribers)
         if (data.subscriber) {
           try {
             await supabase.functions.invoke('notify-new-subscriber', {
@@ -87,7 +89,6 @@ export const Footer = () => {
               }
             });
           } catch (notifyError) {
-            // Log but don't show error to user - subscription was successful
             console.error('Failed to send notification:', notifyError);
           }
         }
@@ -97,14 +98,15 @@ export const Footer = () => {
     } catch (error: any) {
       console.error('Subscription error:', error);
       toast({
-        title: "Something went wrong",
-        description: "Please try again.",
+        title: t.forms.submissionFailed,
+        description: t.forms.submissionFailedDesc,
         variant: "destructive"
       });
     } finally {
       setIsSubmitting(false);
     }
   };
+
   return <footer className="bg-hf-navy text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -113,27 +115,26 @@ export const Footer = () => {
             <div className="mb-4">
               <BrandLockup className="text-white [&_span]:text-white" />
             </div>
-            <p className="text-gray-300 mb-6 max-w-md">AI automation for SMBs and service professionals. Save time, get more clients.</p>
-            
+            <p className="text-gray-300 mb-6 max-w-md">{t.footer.tagline}</p>
             
             {/* Email Capture */}
             <div className="max-w-sm">
-              <p className="text-sm font-medium mb-2">Get AI insights</p>
+              <p className="text-sm font-medium mb-2">{t.footer.getAiInsights}</p>
               <form onSubmit={handleSubscribe} className="flex gap-2">
-                <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Enter your email" disabled={isSubmitting} className="flex-1 px-3 py-2 text-sm bg-white/10 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-hf-teal disabled:opacity-50" />
+                <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder={t.footer.enterEmail} disabled={isSubmitting} className="flex-1 px-3 py-2 text-sm bg-white/10 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-hf-teal disabled:opacity-50" />
                 <GradientButton type="submit" variant="primary" size="sm" disabled={isSubmitting}>
-                  {isSubmitting ? 'Subscribing...' : 'Subscribe'}
+                  {isSubmitting ? t.footer.subscribing : t.footer.subscribe}
                 </GradientButton>
               </form>
               <p className="text-xs text-gray-400 mt-2">
-                We respect your privacy. Unsubscribe anytime.
+                {t.footer.privacyNote}
               </p>
             </div>
           </div>
 
           {/* Navigation */}
           <div>
-            <h3 className="font-semibold mb-4">Navigation</h3>
+            <h3 className="font-semibold mb-4">{t.footer.navigation}</h3>
             <ul className="space-y-2">
               {navigationItems.map(item => <li key={item.name}>
                   <Link to={item.href} className="text-gray-300 hover:text-white transition-colors text-sm">
@@ -145,16 +146,16 @@ export const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h3 className="font-semibold mb-4">Get Started</h3>
+            <h3 className="font-semibold mb-4">{t.footer.getStarted}</h3>
             <ul className="space-y-2">
               <li>
                 <Link to="/contact" className="text-gray-300 hover:text-white transition-colors text-sm">
-                  Contact Us
+                  {t.footer.contactUs}
                 </Link>
               </li>
               <li>
                 <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors text-sm">
-                  Book Strategy Call
+                  {t.footer.bookStrategyCall}
                 </a>
               </li>
               <li className="pt-3">
@@ -177,10 +178,10 @@ export const Footer = () => {
 
         <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2025 HeyFlou. All rights reserved.
+            {t.footer.allRightsReserved}
           </p>
           <p className="text-gray-400 text-sm mt-2 md:mt-0">
-            Transform your practice in 90 days.
+            {t.footer.transform}
           </p>
         </div>
       </div>
