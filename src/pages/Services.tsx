@@ -3,8 +3,11 @@ import { Section } from '@/components/ui/section';
 import { GradientButton } from '@/components/ui/gradient-button';
 import { Rocket, Bot, MessageSquare, BarChart3, FileText, Stethoscope } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from '@/i18n';
 
 export default function Services() {
+  const t = useTranslation();
+
   return (
     <>
       <SEOHead 
@@ -17,10 +20,10 @@ export default function Services() {
         <Section background="glow" padding="large">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold font-display text-foreground mb-6">
-              AI Marketing & Automation for Travel Agencies
+              {t.services.heroTitle}
             </h1>
             <p className="text-xl text-muted-foreground">
-              Generate more bookings with automated funnels, AI chatbots, and WhatsApp campaigns—all in one platform.
+              {t.services.heroSubtitle}
             </p>
           </div>
         </Section>
@@ -32,21 +35,21 @@ export default function Services() {
                 <Rocket className="text-white" size={32} />
               </div>
               <h2 className="text-3xl font-bold font-display text-foreground mb-6">
-                Full Marketing Engine for Travel Agencies
+                {t.services.marketingEngineTitle}
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                An all-in-one marketing system that generates more bookings through automated funnels, segmentation, and follow-up sequences. Includes landing pages, WhatsApp campaigns, and analytics.
+                {t.services.marketingEngineDesc}
               </p>
             </div>
             <div className="bg-card rounded-xl p-8 hf-shadow border border-border/50">
-              <h3 className="font-bold text-foreground mb-4">Key Features:</h3>
+              <h3 className="font-bold text-foreground mb-4">{t.services.keyFeatures}</h3>
               <ul className="space-y-3 text-muted-foreground">
-                <li>• Automated marketing funnels</li>
-                <li>• Lead segmentation & targeting</li>
-                <li>• WhatsApp campaign management</li>
-                <li>• Email sequence automation</li>
-                <li>• Performance analytics dashboard</li>
-                <li>• Multi-channel campaign tracking</li>
+                <li>• {t.services.marketingFeature1}</li>
+                <li>• {t.services.marketingFeature2}</li>
+                <li>• {t.services.marketingFeature3}</li>
+                <li>• {t.services.marketingFeature4}</li>
+                <li>• {t.services.marketingFeature5}</li>
+                <li>• {t.services.marketingFeature6}</li>
               </ul>
             </div>
           </div>
@@ -55,14 +58,14 @@ export default function Services() {
         <Section background="muted" id="ai-chatbot">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 bg-card rounded-xl p-8 hf-shadow border border-border/50">
-              <h3 className="font-bold text-foreground mb-4">Core Features:</h3>
+              <h3 className="font-bold text-foreground mb-4">{t.services.coreFeatures}</h3>
               <ul className="space-y-3 text-muted-foreground">
-                <li>• 24/7 package promotion</li>
-                <li>• Instant traveler Q&A</li>
-                <li>• Lead qualification & scoring</li>
-                <li>• Seamless CRM integration</li>
-                <li>• Personalized trip recommendations</li>
-                <li>• Booking intent detection</li>
+                <li>• {t.services.chatbotFeature1}</li>
+                <li>• {t.services.chatbotFeature2}</li>
+                <li>• {t.services.chatbotFeature3}</li>
+                <li>• {t.services.chatbotFeature4}</li>
+                <li>• {t.services.chatbotFeature5}</li>
+                <li>• {t.services.chatbotFeature6}</li>
               </ul>
             </div>
             <div className="order-1 lg:order-2">
@@ -70,10 +73,10 @@ export default function Services() {
                 <Bot className="text-white" size={32} />
               </div>
               <h2 className="text-3xl font-bold font-display text-foreground mb-6">
-                AI Travel Chatbot That Sells Your Packages
+                {t.services.chatbotTitle}
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Your 24/7 marketing assistant. Promotes packages, answers traveler questions instantly, qualifies leads, and sends them into your CRM. Transforms inquiries into ready-to-book travelers.
+                {t.services.chatbotDesc}
               </p>
             </div>
           </div>
@@ -86,21 +89,21 @@ export default function Services() {
                 <MessageSquare className="text-white" size={32} />
               </div>
               <h2 className="text-3xl font-bold font-display text-foreground mb-6">
-                Automated WhatsApp Marketing & Follow-Ups
+                {t.services.whatsappTitle}
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Recover abandoned inquiries, promote seasonal deals, and keep leads engaged automatically. Maximize conversions without extra manual work.
+                {t.services.whatsappDesc}
               </p>
             </div>
             <div className="bg-card rounded-xl p-8 hf-shadow border border-border/50">
-              <h3 className="font-bold text-foreground mb-4">What's Included:</h3>
+              <h3 className="font-bold text-foreground mb-4">{t.services.whatsIncluded}</h3>
               <ul className="space-y-3 text-muted-foreground">
-                <li>• Abandoned inquiry recovery</li>
-                <li>• Seasonal deal promotions</li>
-                <li>• Automated follow-up sequences</li>
-                <li>• Broadcast campaigns</li>
-                <li>• Lead re-engagement workflows</li>
-                <li>• Response tracking & analytics</li>
+                <li>• {t.services.whatsappFeature1}</li>
+                <li>• {t.services.whatsappFeature2}</li>
+                <li>• {t.services.whatsappFeature3}</li>
+                <li>• {t.services.whatsappFeature4}</li>
+                <li>• {t.services.whatsappFeature5}</li>
+                <li>• {t.services.whatsappFeature6}</li>
               </ul>
             </div>
           </div>
@@ -109,14 +112,14 @@ export default function Services() {
         <Section background="muted" id="crm">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 bg-card rounded-xl p-8 hf-shadow border border-border/50">
-              <h3 className="font-bold text-foreground mb-4">Core Features:</h3>
+              <h3 className="font-bold text-foreground mb-4">{t.services.coreFeatures}</h3>
               <ul className="space-y-3 text-muted-foreground">
-                <li>• Lead pipeline tracking</li>
-                <li>• Campaign performance metrics</li>
-                <li>• Booking attribution insights</li>
-                <li>• Revenue forecasting</li>
-                <li>• Custom reporting dashboards</li>
-                <li>• ROI tracking by channel</li>
+                <li>• {t.services.crmFeature1}</li>
+                <li>• {t.services.crmFeature2}</li>
+                <li>• {t.services.crmFeature3}</li>
+                <li>• {t.services.crmFeature4}</li>
+                <li>• {t.services.crmFeature5}</li>
+                <li>• {t.services.crmFeature6}</li>
               </ul>
             </div>
             <div className="order-1 lg:order-2">
@@ -124,10 +127,10 @@ export default function Services() {
                 <BarChart3 className="text-white" size={32} />
               </div>
               <h2 className="text-3xl font-bold font-display text-foreground mb-6">
-                Travel Marketing CRM & Analytics Dashboard
+                {t.services.crmTitle}
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Track leads, measure campaign performance, and see exactly which marketing actions drive bookings. Simple insights → smarter decisions.
+                {t.services.crmDesc}
               </p>
             </div>
           </div>
@@ -140,21 +143,21 @@ export default function Services() {
                 <FileText className="text-white" size={32} />
               </div>
               <h2 className="text-3xl font-bold font-display text-foreground mb-6">
-                High-Conversion Landing Pages for Trips
+                {t.services.landingTitle}
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Optimized pages designed specifically for travel packages, group tours, and premium experiences. Engineered to turn traffic into paying clients.
+                {t.services.landingDesc}
               </p>
             </div>
             <div className="bg-card rounded-xl p-8 hf-shadow border border-border/50">
-              <h3 className="font-bold text-foreground mb-4">What's Included:</h3>
+              <h3 className="font-bold text-foreground mb-4">{t.services.whatsIncluded}</h3>
               <ul className="space-y-3 text-muted-foreground">
-                <li>• Mobile-optimized designs</li>
-                <li>• A/B testing capabilities</li>
-                <li>• Integrated booking forms</li>
-                <li>• Package showcase layouts</li>
-                <li>• Social proof elements</li>
-                <li>• Fast-loading performance</li>
+                <li>• {t.services.landingFeature1}</li>
+                <li>• {t.services.landingFeature2}</li>
+                <li>• {t.services.landingFeature3}</li>
+                <li>• {t.services.landingFeature4}</li>
+                <li>• {t.services.landingFeature5}</li>
+                <li>• {t.services.landingFeature6}</li>
               </ul>
             </div>
           </div>
@@ -168,36 +171,36 @@ export default function Services() {
                 <Stethoscope className="text-white" size={32} />
               </div>
               <h2 className="text-3xl font-bold font-display text-foreground mb-4">
-                Also for Physiotherapists & Therapists
+                {t.services.therapistsTitle}
               </h2>
               <p className="text-lg text-muted-foreground">
-                Streamline your practice with AI-powered patient management and automation.
+                {t.services.therapistsSubtitle}
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="bg-card rounded-xl p-6 hf-shadow border border-border/50">
-                <h3 className="font-bold text-foreground mb-2">AI Intake Chatbot</h3>
-                <p className="text-sm text-muted-foreground">Collect patient information and screen inquiries automatically before appointments.</p>
+                <h3 className="font-bold text-foreground mb-2">{t.services.intakeChatbot}</h3>
+                <p className="text-sm text-muted-foreground">{t.services.intakeChatbotDesc}</p>
               </div>
               <div className="bg-card rounded-xl p-6 hf-shadow border border-border/50">
-                <h3 className="font-bold text-foreground mb-2">Appointment Automation</h3>
-                <p className="text-sm text-muted-foreground">24/7 booking, rescheduling, and calendar sync with your practice management system.</p>
+                <h3 className="font-bold text-foreground mb-2">{t.services.appointmentAutomation}</h3>
+                <p className="text-sm text-muted-foreground">{t.services.appointmentAutomationDesc}</p>
               </div>
               <div className="bg-card rounded-xl p-6 hf-shadow border border-border/50">
-                <h3 className="font-bold text-foreground mb-2">No-Show Reduction</h3>
-                <p className="text-sm text-muted-foreground">Smart reminder workflows that reduce missed appointments by up to 60%.</p>
+                <h3 className="font-bold text-foreground mb-2">{t.services.noShowReduction}</h3>
+                <p className="text-sm text-muted-foreground">{t.services.noShowReductionDesc}</p>
               </div>
               <div className="bg-card rounded-xl p-6 hf-shadow border border-border/50">
-                <h3 className="font-bold text-foreground mb-2">Patient Tracking CRM</h3>
-                <p className="text-sm text-muted-foreground">Track patient journeys, treatment progress, and follow-up care in one place.</p>
+                <h3 className="font-bold text-foreground mb-2">{t.services.patientCrm}</h3>
+                <p className="text-sm text-muted-foreground">{t.services.patientCrmDesc}</p>
               </div>
               <div className="bg-card rounded-xl p-6 hf-shadow border border-border/50">
-                <h3 className="font-bold text-foreground mb-2">WhatsApp Reminders</h3>
-                <p className="text-sm text-muted-foreground">Automated appointment confirmations and reminders via WhatsApp and email.</p>
+                <h3 className="font-bold text-foreground mb-2">{t.services.whatsappReminders}</h3>
+                <p className="text-sm text-muted-foreground">{t.services.whatsappRemindersDesc}</p>
               </div>
               <div className="bg-card rounded-xl p-6 hf-shadow border border-border/50">
-                <h3 className="font-bold text-foreground mb-2">Email Automation</h3>
-                <p className="text-sm text-muted-foreground">Post-treatment follow-ups, re-engagement campaigns, and patient nurturing.</p>
+                <h3 className="font-bold text-foreground mb-2">{t.services.emailAutomation}</h3>
+                <p className="text-sm text-muted-foreground">{t.services.emailAutomationDesc}</p>
               </div>
             </div>
           </div>
@@ -206,19 +209,19 @@ export default function Services() {
         <Section background="glow">
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="text-3xl font-bold font-display text-foreground mb-6">
-              Ready to Grow Your Bookings?
+              {t.services.ctaTitle}
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Book a free strategy call to see how AI marketing automation can transform your business.
+              {t.services.ctaSubtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <GradientButton variant="hero" size="xl" asChild>
                 <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer">
-                  Book Free Strategy Call
+                  {t.services.bookFreeStrategyCall}
                 </a>
               </GradientButton>
               <GradientButton variant="secondary" size="xl" asChild>
-                <Link to="/contact">Get Quote</Link>
+                <Link to="/contact">{t.services.getQuote}</Link>
               </GradientButton>
             </div>
           </div>
