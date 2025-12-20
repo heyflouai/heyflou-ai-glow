@@ -1,0 +1,487 @@
+import type { TranslationKeys } from './en';
+
+export const es: TranslationKeys = {
+  // Navigation
+  nav: {
+    home: 'Inicio',
+    services: 'Servicios',
+    caseStudies: 'Casos de Éxito',
+    about: 'Nosotros',
+    bookFreeCall: 'Reservar Llamada',
+  },
+
+  // Home Page
+  home: {
+    heroTitle: 'HeyFlou: Consultoría IA',
+    heroSubtitle: 'Automatiza tu Trabajo — Haz Crecer tu Negocio',
+    bookStrategyCall: 'Reservar Llamada Estratégica',
+    getAiAudit: 'Obtener Auditoría IA',
+    badge1: 'Supervisión humana',
+    badge2: 'Seguridad integrada',
+    badge3: 'De auditoría a ROI en 90 días',
+    
+    // Stats Section
+    statsTitle: 'Por Qué los Profesionales Eligen Automatización con IA',
+    statsSubtitle: 'Resultados reales de terapeutas y negocios de servicios',
+    
+    // Services Section
+    servicesTitle: 'Cómo HeyFlou Te Ayuda a Crecer',
+    servicesSubtitle: 'Tres sistemas probados para ahorrar tiempo y conseguir más clientes',
+    learnMore: 'Saber Más',
+    
+    // Service Cards
+    service1Title: 'Chatbot IA para Citas',
+    service1Desc: 'Atiende nuevos clientes 24/7, responde preguntas y agenda citas automáticamente.',
+    service1Feature1: 'Comunicación 24/7 con clientes',
+    service1Feature2: 'Reservas y reprogramaciones automáticas',
+    service1Feature3: 'Filtrado y calificación de clientes',
+    service1Feature4: 'Sincronización con calendario y CRM',
+    
+    service2Title: 'Gestión de CRM y Automatización',
+    service2Desc: 'Organiza todos tus leads, seguimientos y recorridos de clientes en un sistema automatizado.',
+    service2Feature1: 'Seguimiento de leads y oportunidades',
+    service2Feature2: 'Recordatorios automáticos de seguimiento',
+    service2Feature3: 'Visualización del pipeline de ventas',
+    service2Feature4: 'Análisis de negocio en tiempo real',
+    
+    service3Title: 'Generación y Nurturing de Leads',
+    service3Desc: 'Convierte visitantes web en clientes con captura inteligente y seguimientos automatizados.',
+    service3Feature1: 'Captura automática de leads',
+    service3Feature2: 'Calificación y puntuación inteligente',
+    service3Feature3: 'Secuencias de seguimiento personalizadas',
+    service3Feature4: 'Seguimiento de conversiones',
+    
+    // Process Section
+    processTitle: 'Cómo Funciona',
+    processSubtitle: 'De la primera llamada a un sistema totalmente automatizado en 90 días',
+    step1Title: 'Llamada de Descubrimiento',
+    step1Desc: 'Conocemos tu práctica, desafíos actuales y objetivos de automatización',
+    step2Title: 'Diseño Personalizado',
+    step2Desc: 'Construimos tu chatbot IA, flujos de CRM y sistemas de captura de leads',
+    step3Title: 'Integración y Configuración',
+    step3Desc: 'Conectamos con tu calendario, CRM y herramientas existentes sin problemas',
+    step4Title: 'Lanzamiento y Soporte',
+    step4Desc: 'Arrancamos con capacitación completa y optimización continua',
+    
+    // FAQ Section
+    faqTitle: 'Preguntas Frecuentes',
+    faqSubtitle: 'Preguntas comunes de dueños de pequeños negocios en salud, fitness e industrias de servicios',
+    faq1Q: '¿La IA me reemplazará a mí o a mi equipo?',
+    faq1A: 'No. La IA maneja trabajo administrativo repetitivo como agendamiento y seguimientos para que puedas enfocarte en tus clientes y hacer crecer tu práctica.',
+    faq2Q: '¿Cómo mantienen seguros los datos de los clientes?',
+    faq2A: 'Usamos encriptación de nivel empresarial y seguimos prácticas de seguridad estrictas compatibles con HIPAA para proteger toda la información de clientes.',
+    faq3Q: '¿Qué tan rápido veré resultados?',
+    faq3A: 'La mayoría de clientes ahorran 10-20 horas por semana en el primer mes y ven más reservas en 60 días.',
+    faq4Q: '¿Necesito habilidades técnicas para usarlo?',
+    faq4A: 'Para nada. Nosotros manejamos toda la configuración, integración y capacitación. Solo lo usas como cualquier otra herramienta en tu práctica.',
+    faq5Q: '¿Es costoso?',
+    faq5A: 'Nuestros sistemas típicamente se pagan solos en 2-3 meses a través de ahorro de tiempo y aumento de reservas.',
+    faq6Q: '¿Necesitaré cambiar mis sistemas actuales?',
+    faq6A: 'No. Nos integramos con tu calendario, CRM y herramientas de comunicación existentes sin interrumpir tu flujo de trabajo.',
+    faq7Q: '¿Funciona con mi calendario y CRM?',
+    faq7A: 'Sí. Nos integramos con plataformas populares como Google Calendar, Outlook, SimplePractice, TherapyNotes y la mayoría de CRMs principales.',
+    
+    // Final CTA
+    finalCtaTitle: '¿Listo para transformar tu negocio?',
+    finalCtaBtn: 'Reservar Llamada Estratégica Gratis',
+  },
+
+  // Industries & Workflows Section
+  industries: {
+    title: 'Industrias que Atendemos y Lo que Automatizamos',
+    subtitle: 'Soluciones de IA personalizadas para negocios de salud, fitness y viajes. Elige tu industria para ver cómo podemos ayudarte.',
+    
+    // Verticals
+    healthcareTitle: 'Prácticas de Salud',
+    healthcareDesc: 'Consultorios médicos, terapeutas, clínicas de fisioterapia',
+    fitnessTitle: 'Fitness y Educación',
+    fitnessDesc: 'Estudios de yoga, pilates, gimnasios, tutores, escuelas de idiomas',
+    travelTitle: 'Agencias de Viajes',
+    travelDesc: 'Agencias de viajes, operadores turísticos, servicios de reserva',
+    
+    // Workflows Section
+    workflowsTitle: 'Nuestras Automatizaciones Principales',
+    keyFeatures: 'Características Clave',
+    useCases: 'Casos de Uso',
+    getThisAutomation: 'Obtener Esta Automatización',
+    learnMore: 'Saber más',
+    
+    // WhatsApp Chatbot
+    whatsappTitle: 'Chatbot IA para WhatsApp',
+    whatsappDesc: 'Responde preguntas de clientes 24/7, califica leads y agenda citas al instante',
+    whatsappTag: 'Todas las Industrias',
+    whatsappFeature1: 'Respuestas automatizadas 24/7',
+    whatsappFeature2: 'Preguntas de calificación de leads',
+    whatsappFeature3: 'Reserva de citas instantánea',
+    whatsappFeature4: 'Integración con tu calendario',
+    whatsappUseCase1: 'Responder preguntas comunes sobre servicios y precios',
+    whatsappUseCase2: 'Calificar nuevos leads antes de que lleguen a tu equipo',
+    whatsappUseCase3: 'Agendar citas directamente desde WhatsApp',
+    whatsappTimeline: '2-3 semanas para lanzar',
+    
+    // Lead Management
+    leadsTitle: 'Sistema de Gestión de Leads',
+    leadsDesc: 'Rastrea cada contacto y seguimiento automáticamente. Nunca pierdas una oportunidad.',
+    leadsTag: 'Todas las Industrias',
+    leadsFeature1: 'Seguimiento automático de contactos',
+    leadsFeature2: 'Recordatorios de seguimiento',
+    leadsFeature3: 'Puntuación y priorización de leads',
+    leadsFeature4: 'Visualización del pipeline',
+    leadsUseCase1: 'Nunca pierdas un seguimiento con recordatorios automáticos',
+    leadsUseCase2: 'Ve todo tu pipeline de un vistazo',
+    leadsUseCase3: 'Rastrea la fuente de leads y tasas de conversión',
+    leadsTimeline: '3-4 semanas para lanzar',
+    
+    // Appointment Scheduling
+    schedulingTitle: 'Agendamiento de Citas',
+    schedulingDesc: 'Reservas de calendario automatizadas con sincronización Google/Outlook y recordatorios de no-shows',
+    schedulingTag: 'Salud, Fitness',
+    schedulingFeature1: 'Sincronización con Google/Outlook',
+    schedulingFeature2: 'Confirmaciones de reserva automáticas',
+    schedulingFeature3: 'Recordatorios por SMS/email',
+    schedulingFeature4: 'Herramientas de reducción de no-shows',
+    schedulingUseCase1: 'Deja que los clientes reserven 24/7 sin llamadas telefónicas',
+    schedulingUseCase2: 'Reduce no-shows en 40% con recordatorios automáticos',
+    schedulingUseCase3: 'Sincroniza todos los calendarios de tu equipo',
+    schedulingTimeline: '2-3 semanas para lanzar',
+    
+    // CRM Integration
+    crmTitle: 'Integración de CRM',
+    crmDesc: 'Conecta tus herramientas existentes y sincroniza datos automáticamente a un sistema centralizado',
+    crmTag: 'Todas las Industrias',
+    crmFeature1: 'Conecta herramientas existentes (HubSpot, Salesforce, etc.)',
+    crmFeature2: 'Sincronización automática de datos',
+    crmFeature3: 'Base de datos centralizada de clientes',
+    crmFeature4: 'Automatización de flujos personalizados',
+    crmUseCase1: 'Deja de ingresar datos manualmente entre sistemas',
+    crmUseCase2: 'Mantén a todo tu equipo en la misma página',
+    crmUseCase3: 'Activa flujos automatizados basados en acciones de clientes',
+    crmTimeline: '3-5 semanas para lanzar',
+    
+    // Email & SMS
+    emailSmsTitle: 'Automatización de Email y SMS',
+    emailSmsDesc: 'Secuencias de seguimiento personalizadas, campañas de re-engagement y confirmaciones de reserva',
+    emailSmsTag: 'Todas las Industrias',
+    emailSmsFeature1: 'Secuencias de mensajes personalizados',
+    emailSmsFeature2: 'Campañas activadas por comportamiento',
+    emailSmsFeature3: 'Automatización de re-engagement',
+    emailSmsFeature4: 'Mensajes de confirmación de reserva',
+    emailSmsUseCase1: 'Da la bienvenida a nuevos clientes automáticamente',
+    emailSmsUseCase2: 'Re-engancha leads fríos con campañas segmentadas',
+    emailSmsUseCase3: 'Envía recordatorios y confirmaciones de citas',
+    emailSmsTimeline: '2-3 semanas para lanzar',
+    
+    // CTA
+    customWorkflowText: '¿Necesitas un flujo personalizado? Hablemos.',
+    getCustomSolution: 'Obtener Solución Personalizada',
+  },
+
+  // Problem Solution Section
+  problemSolution: {
+    problemLabel: 'El Problema que Resolvemos',
+    problemTitle: 'Los pequeños negocios pierden horas en trabajo administrativo repetitivo en lugar de atender a sus clientes.',
+    symptom1: 'Rastrear clientes manualmente en hojas de cálculo o cuadernos',
+    symptom2: 'Responder las mismas preguntas en WhatsApp una y otra vez',
+    symptom3: 'Dobles reservas y seguimientos perdidos',
+    symptom4: 'Perder leads porque estás muy ocupado para responder rápido',
+    symptom5: 'Pasar más tiempo en administración que atendiendo clientes',
+    symptom6: 'Querer crecer pero ahogarse en trabajo manual',
+    
+    solutionLabel: 'Nuestra Solución',
+    solutionTitle: 'Automatización con IA que maneja tu trabajo tedioso',
+    solutionTitleSuffix: '—para que puedas enfocarte en tus clientes.',
+    
+    benefit1: 'Asistente de IA en WhatsApp responde preguntas de clientes y agenda citas 24/7',
+    benefit2: 'Gestión automatizada de leads rastrea cada contacto, seguimiento y recordatorio',
+    benefit3: 'Integración de CRM sincroniza con tu calendario y herramientas existentes sin problemas',
+    benefit4: 'Ahorra 10-20 horas por semana con flujos de automatización probados',
+    
+    stat1: '10-20 horas ahorradas por semana',
+    stat2: '65% menos carga administrativa',
+    stat3: '40% tiempos de respuesta más rápidos',
+  },
+
+  // Integration Beams Section
+  integrations: {
+    title: 'Se Integra Sin Problemas con Tus Herramientas',
+    subtitle: 'Conecta HeyFlou con las apps que ya usas y automatiza todo tu flujo de trabajo',
+  },
+
+  // Services Page
+  services: {
+    heroTitle: 'Marketing con IA y Automatización para Agencias de Viajes',
+    heroSubtitle: 'Genera más reservas con embudos automatizados, chatbots de IA y campañas de WhatsApp—todo en una plataforma.',
+    
+    // Marketing Engine
+    marketingEngineTitle: 'Motor de Marketing Completo para Agencias de Viajes',
+    marketingEngineDesc: 'Un sistema de marketing todo-en-uno que genera más reservas a través de embudos automatizados, segmentación y secuencias de seguimiento. Incluye landing pages, campañas de WhatsApp y analíticas.',
+    keyFeatures: 'Características Clave:',
+    marketingFeature1: 'Embudos de marketing automatizados',
+    marketingFeature2: 'Segmentación y targeting de leads',
+    marketingFeature3: 'Gestión de campañas de WhatsApp',
+    marketingFeature4: 'Automatización de secuencias de email',
+    marketingFeature5: 'Dashboard de analíticas de rendimiento',
+    marketingFeature6: 'Seguimiento de campañas multicanal',
+    
+    // AI Chatbot
+    chatbotTitle: 'Chatbot de IA para Viajes que Vende tus Paquetes',
+    chatbotDesc: 'Tu asistente de marketing 24/7. Promociona paquetes, responde preguntas de viajeros al instante, califica leads y los envía a tu CRM. Transforma consultas en viajeros listos para reservar.',
+    coreFeatures: 'Características Principales:',
+    chatbotFeature1: 'Promoción de paquetes 24/7',
+    chatbotFeature2: 'Q&A instantáneo para viajeros',
+    chatbotFeature3: 'Calificación y puntuación de leads',
+    chatbotFeature4: 'Integración fluida con CRM',
+    chatbotFeature5: 'Recomendaciones de viajes personalizadas',
+    chatbotFeature6: 'Detección de intención de reserva',
+    
+    // WhatsApp
+    whatsappTitle: 'Marketing Automatizado de WhatsApp y Seguimientos',
+    whatsappDesc: 'Recupera consultas abandonadas, promociona ofertas de temporada y mantén a los leads enganchados automáticamente. Maximiza conversiones sin trabajo manual extra.',
+    whatsIncluded: 'Qué Incluye:',
+    whatsappFeature1: 'Recuperación de consultas abandonadas',
+    whatsappFeature2: 'Promociones de ofertas de temporada',
+    whatsappFeature3: 'Secuencias de seguimiento automatizadas',
+    whatsappFeature4: 'Campañas de broadcast',
+    whatsappFeature5: 'Flujos de re-engagement de leads',
+    whatsappFeature6: 'Seguimiento y analíticas de respuestas',
+    
+    // CRM
+    crmTitle: 'CRM de Marketing de Viajes y Dashboard de Analíticas',
+    crmDesc: 'Rastrea leads, mide el rendimiento de campañas y ve exactamente qué acciones de marketing generan reservas. Insights simples → decisiones más inteligentes.',
+    crmFeature1: 'Seguimiento del pipeline de leads',
+    crmFeature2: 'Métricas de rendimiento de campañas',
+    crmFeature3: 'Insights de atribución de reservas',
+    crmFeature4: 'Pronóstico de ingresos',
+    crmFeature5: 'Dashboards de reportes personalizados',
+    crmFeature6: 'Seguimiento de ROI por canal',
+    
+    // Landing Pages
+    landingTitle: 'Landing Pages de Alta Conversión para Viajes',
+    landingDesc: 'Páginas optimizadas diseñadas específicamente para paquetes de viaje, tours grupales y experiencias premium. Diseñadas para convertir tráfico en clientes.',
+    landingFeature1: 'Diseños optimizados para móvil',
+    landingFeature2: 'Capacidades de pruebas A/B',
+    landingFeature3: 'Formularios de reserva integrados',
+    landingFeature4: 'Layouts de exhibición de paquetes',
+    landingFeature5: 'Elementos de prueba social',
+    landingFeature6: 'Rendimiento de carga rápida',
+    
+    // Therapists Section
+    therapistsTitle: 'También para Fisioterapeutas y Terapeutas',
+    therapistsSubtitle: 'Optimiza tu práctica con gestión de pacientes impulsada por IA y automatización.',
+    intakeChatbot: 'Chatbot de Admisión IA',
+    intakeChatbotDesc: 'Recopila información de pacientes y filtra consultas automáticamente antes de las citas.',
+    appointmentAutomation: 'Automatización de Citas',
+    appointmentAutomationDesc: 'Reservas 24/7, reprogramación y sincronización de calendario con tu sistema de gestión de práctica.',
+    noShowReduction: 'Reducción de No-Shows',
+    noShowReductionDesc: 'Flujos de recordatorios inteligentes que reducen citas perdidas hasta en 60%.',
+    patientCrm: 'CRM de Seguimiento de Pacientes',
+    patientCrmDesc: 'Rastrea recorridos de pacientes, progreso de tratamiento y cuidado de seguimiento en un solo lugar.',
+    whatsappReminders: 'Recordatorios de WhatsApp',
+    whatsappRemindersDesc: 'Confirmaciones y recordatorios de citas automatizados vía WhatsApp y email.',
+    emailAutomation: 'Automatización de Email',
+    emailAutomationDesc: 'Seguimientos post-tratamiento, campañas de re-engagement y nurturing de pacientes.',
+    
+    // CTA
+    ctaTitle: '¿Listo para Aumentar tus Reservas?',
+    ctaSubtitle: 'Reserva una llamada estratégica gratis para ver cómo la automatización de marketing con IA puede transformar tu negocio.',
+    bookFreeStrategyCall: 'Reservar Llamada Estratégica Gratis',
+    getQuote: 'Obtener Cotización',
+  },
+
+  // Contact Page
+  contact: {
+    heroTitle: 'Transformemos tu Negocio Juntos',
+    heroSubtitle: 'Reserva una llamada estratégica gratis para descubrir cómo la automatización con IA puede ahorrarte tiempo y ayudarte a conseguir más clientes.',
+    
+    freeStrategyCall: 'Llamada Estratégica Gratis',
+    freeStrategyCallDesc: 'Consulta de 30 minutos para explorar tus oportunidades de automatización y ver cómo la IA puede ayudar a tu negocio.',
+    scheduleCall: 'Agendar Llamada',
+    
+    directEmail: 'Email Directo',
+    emailResponse: 'Normalmente respondemos en 24 horas durante días hábiles.',
+    sendEmail: 'Enviar Email',
+  },
+
+  // Case Studies Page
+  caseStudies: {
+    heroTitle: 'Resultados Reales de Negocios Reales',
+    heroSubtitle: 'Mira cómo agencias de viajes y prácticas de salud crecen con automatización de marketing con IA.',
+    challenge: 'Desafío:',
+    solution: 'Solución:',
+    outcome: 'Resultado:',
+  },
+
+  // About Page
+  about: {
+    heroTitle: 'Sobre HeyFlou',
+    heroSubtitle: 'Ayudamos a pequeñas y medianas empresas y profesionales de servicios a ahorrar tiempo y conseguir más clientes a través de automatización con IA probada.',
+    bookStrategyCall: 'Reservar Llamada Estratégica',
+    seeCaseStudies: 'Ver Casos de Éxito',
+    
+    // Mission Pillars
+    pillarsTitle: 'Por Qué los Negocios Eligen HeyFlou',
+    pillar1Title: 'Diseñado para tu Práctica',
+    pillar1Desc: 'Diseñado específicamente para terapeutas y profesionales de servicios que valoran su tiempo.',
+    pillar2Title: 'Seguro y Cumplido',
+    pillar2Desc: 'Seguridad compatible con HIPAA con encriptación de nivel empresarial para datos de clientes.',
+    pillar3Title: 'Resultados Probados',
+    pillar3Desc: 'Los clientes ahorran 10-20 horas por semana y ven más reservas en 60 días.',
+    pillar4Title: 'Integración Fácil',
+    pillar4Desc: 'Funciona sin problemas con tu calendario, CRM y herramientas de comunicación existentes.',
+    
+    // Timeline
+    timelineTitle: 'Tu Transformación de 90 Días',
+    timeline1Title: 'Descubrimiento',
+    timeline1Subtitle: 'Semana 1',
+    timeline1Desc: 'Entendemos tu práctica, flujo de clientes y objetivos de automatización.',
+    timeline2Title: 'Diseño',
+    timeline2Subtitle: 'Semanas 2-4',
+    timeline2Desc: 'Construimos tu chatbot IA, flujos de CRM y sistemas de leads.',
+    timeline3Title: 'Integración',
+    timeline3Subtitle: 'Semanas 5-8',
+    timeline3Desc: 'Conectamos con tu calendario, CRM y herramientas de comunicación.',
+    timeline4Title: 'Lanzamiento y Optimización',
+    timeline4Subtitle: 'Semanas 9-12',
+    timeline4Desc: 'Arrancamos con capacitación, soporte y mejoras continuas.',
+    
+    // Impact
+    impactTitle: 'Resumen de Impacto',
+    impact1: '10-20 horas ahorradas por semana',
+    impact2: '65% menos carga administrativa',
+    impact3: '40% tiempos de respuesta más rápidos',
+    impactDisclaimer: 'Resultados promedio de prácticas de terapia y negocios de servicios reales—los resultados individuales pueden variar.',
+    
+    // Team
+    teamTitle: 'Nuestro Equipo',
+    coFounder: 'Co-Fundador',
+    
+    // Security
+    securityTitle: 'Seguridad y Cumplimiento en los que Puedes Confiar',
+    security1: 'Todos los datos de clientes están encriptados y cumplen con HIPAA.',
+    security2: 'El acceso está estrictamente controlado con autenticación segura.',
+    security3: 'Todas las acciones de automatización se registran para tus archivos.',
+    security4: 'Tus datos nunca se usan para entrenar modelos de IA sin permiso explícito.',
+    
+    // CTA
+    ctaTitle: '¿Listo para Ahorrar Tiempo y Hacer Crecer tu Práctica?',
+  },
+
+  // Forms
+  forms: {
+    firstName: 'Nombre',
+    lastName: 'Apellido',
+    workEmail: 'Email de Trabajo',
+    company: 'Empresa',
+    website: 'Sitio Web',
+    optional: 'Opcional',
+    industry: 'Industria',
+    industryPlaceholder: 'ej., Salud, Estudio de Fitness, Agencia de Viajes',
+    teamSize: 'Tamaño del Equipo',
+    selectTeamSize: 'Seleccionar tamaño del equipo',
+    message: 'Mensaje',
+    messagePlaceholder: 'Cuéntanos sobre tus objetivos o desafíos actuales... (opcional)',
+    consent: 'Acepto ser contactado sobre oportunidades de automatización con IA',
+    sendInquiry: 'Enviar Consulta',
+    sending: 'Enviando...',
+    bookStrategyCall: 'Reservar Llamada Estratégica',
+    
+    // Success
+    thankYou: '¡Gracias! Nos pondremos en contacto en 24 horas.',
+    wantFaster: '¿Quieres avanzar más rápido?',
+    submitAnother: 'Enviar otra consulta',
+    
+    // Promo
+    getStartedTitle: 'Comienza con Automatización IA',
+    getStartedSubtitle: 'Cuéntanos sobre tu práctica y te mostraremos cómo ahorrar tiempo y conseguir más clientes.',
+    promo1: 'Ahorra 10-20 horas por semana',
+    promo2: 'Compatible con HIPAA y seguro',
+    promo3: 'Resultados en 60-90 días',
+    
+    // Toast
+    thankYouToast: '¡Gracias por tu consulta!',
+    thankYouToastDesc: 'Nuestro equipo se pondrá en contacto contigo pronto.',
+    submissionFailed: 'Error en el envío',
+    submissionFailedDesc: 'Por favor intenta de nuevo o contáctanos directamente.',
+    emailRequired: 'Email requerido',
+    emailRequiredDesc: 'Por favor ingresa tu dirección de email.',
+    invalidEmail: 'Email inválido',
+    invalidEmailDesc: 'Por favor ingresa una dirección de email válida.',
+    alreadySubscribed: 'Ya estás suscrito',
+    subscribed: '¡Suscrito!',
+  },
+
+  // Footer
+  footer: {
+    tagline: 'Automatización con IA para PyMEs y profesionales de servicios. Ahorra tiempo, consigue más clientes.',
+    getAiInsights: 'Recibe insights de IA',
+    enterEmail: 'Ingresa tu email',
+    subscribe: 'Suscribir',
+    subscribing: 'Suscribiendo...',
+    privacyNote: 'Respetamos tu privacidad. Cancela en cualquier momento.',
+    navigation: 'Navegación',
+    getStarted: 'Comenzar',
+    contactUs: 'Contáctanos',
+    bookStrategyCall: 'Reservar Llamada Estratégica',
+    allRightsReserved: '© 2025 HeyFlou. Todos los derechos reservados.',
+    transform: 'Transforma tu práctica en 90 días.',
+  },
+
+  // Metrics
+  metrics: {
+    revenueIncrease: 'Aumento de Ingresos',
+    revenueIncreaseDesc: 'de PyMEs usando IA reportan aumento de ingresos',
+    improvedMargins: 'Márgenes Mejorados',
+    improvedMarginsDesc: 'mejoraron márgenes de ganancia con adopción de IA',
+    scaleOperations: 'Escalar Operaciones',
+    scaleOperationsDesc: 'escalan operaciones más efectivamente',
+    usSmbAiUsage: 'Uso de IA en PyMEs EE.UU.',
+    usSmbAiUsageDesc: 'en 2025 (arriba del 39% en 2024)',
+    hoursSaved: 'Horas Ahorradas',
+    hoursSavedDesc: 'horas ahorradas por empleado por mes',
+    monthlySavings: 'Ahorros Mensuales',
+    monthlySavingsDesc: 'ahorro mensual promedio por negocio',
+  },
+
+  // Case Studies Data
+  cases: {
+    travelAgencyBooking: 'Impulso de Reservas para Agencia de Viajes',
+    travelAgencyBookingChallenge: 'La agencia luchaba por convertir visitantes web en reservas, con leads abandonando antes de completar consultas.',
+    travelAgencyBookingSolution: 'HeyFlou implementó un embudo de marketing automatizado completo con landing pages, secuencias de email y seguimientos de WhatsApp para capturar y nutrir leads.',
+    travelAgencyBookingOutcome: '62% de aumento en reservas en 90 días, con un sistema de nurturing de leads completamente automatizado funcionando 24/7.',
+    
+    tourOperatorLead: 'Generación de Leads para Operador Turístico',
+    tourOperatorLeadChallenge: 'Muchos visitantes web tenían preguntas pero no convertían en leads, y el equipo no podía responder lo suficientemente rápido.',
+    tourOperatorLeadSolution: 'Desplegamos un chatbot de viajes con IA que promocionaba paquetes, respondía preguntas al instante y calificaba leads con seguimientos promocionales por WhatsApp.',
+    tourOperatorLeadOutcome: '3× crecimiento en leads calificados y 45% más rápido en tiempo de respuesta a consultas de viajeros.',
+    
+    physioClinic: 'Crecimiento de Clínica de Fisioterapia',
+    physioClinicChallenge: 'La clínica tenía baja visibilidad y dependía mucho de referencias, perdiendo oportunidades de marketing digital.',
+    physioClinicSolution: 'HeyFlou construyó un sistema completo de marketing digital con landing pages, admisión automatizada y secuencias de nurturing de pacientes.',
+    physioClinicOutcome: '95% de crecimiento en clientes mensuales con aumentos de reservas semanales consistentes.',
+    
+    luxuryTravel: 'Ventas de Agencia de Viajes de Lujo',
+    luxuryTravelChallenge: 'Los paquetes de viaje premium requerían nurturing extensivo, pero el proceso de ventas era manual y consumía mucho tiempo.',
+    luxuryTravelSolution: 'Creamos embudos de calificación automatizados con seguimientos personalizados diseñados específicamente para experiencias de viaje premium.',
+    luxuryTravelOutcome: '53% de aumento en ventas de alto valor con reducción de carga de trabajo del equipo de ventas.',
+    
+    studentTravel: 'Eficiencia de Marketing de Viajes Estudiantiles',
+    studentTravelChallenge: 'El gasto en marketing era alto pero las conversiones eran bajas, sin visibilidad clara de qué campañas rendían mejor.',
+    studentTravelSolution: 'HeyFlou implementó un CRM de marketing con dashboard de analíticas, optimizando campañas y eliminando desperdicio de canales de bajo rendimiento.',
+    studentTravelOutcome: '37% de reducción en costos de marketing manteniendo el mismo volumen de reservas.',
+    
+    cruiseAgency: 'Reactivación de Leads de Agencia de Cruceros',
+    cruiseAgencyChallenge: 'Miles de leads fríos de consultas pasadas estaban sin tocar en el CRM, representando ingresos perdidos.',
+    cruiseAgencySolution: 'Creamos campañas automatizadas de re-engagement por WhatsApp y email dirigidas a leads fríos con promociones de cruceros de temporada.',
+    cruiseAgencyOutcome: '31% de aumento en ventas de leads previamente fríos, convirtiendo contactos dormidos en clientes.',
+    
+    physioMarketing: 'ROI de Marketing de Fisioterapia',
+    physioMarketingChallenge: 'Los esfuerzos de marketing no se rastreaban correctamente, haciendo imposible saber qué canales generaban reservas de pacientes.',
+    physioMarketingSolution: 'HeyFlou implementó un sistema completo de analíticas de marketing con seguimiento de atribución y optimización automatizada de campañas.',
+    physioMarketingOutcome: 'Triplicó el ROI de marketing al enfocar el presupuesto en los canales de mayor rendimiento.',
+    
+    therapistContent: 'Crecimiento de Consultas de Terapeuta',
+    therapistContentChallenge: 'Se creaba gran contenido pero no convertía en consultas de pacientes ni citas.',
+    therapistContentSolution: 'Construimos embudos de contenido-a-reserva con calificación por chatbot IA y secuencias de seguimiento automatizadas.',
+    therapistContentOutcome: 'Duplicó las consultas con integración de embudo de contenido + chatbot.',
+  },
+};
