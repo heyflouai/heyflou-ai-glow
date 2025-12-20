@@ -406,6 +406,127 @@ export const en = {
     invalidEmailDesc: 'Please enter a valid email address.',
     alreadySubscribed: 'Already subscribed',
     subscribed: 'Subscribed!',
+    
+    // Consent note
+    consentText: 'By submitting, you agree to be contacted and to our',
+    privacyPolicy: 'Privacy Policy',
+    
+    // Questionnaire
+    questionnaireTitle: 'AI Readiness Questionnaire',
+    questionnaireSubtitle: 'Answer a few questions so we can recommend the fastest path to ROI for your team.',
+    contactInfo: 'Contact Information',
+    contactInfoDesc: "Let's start with your basic contact details.",
+    businessInfo: 'Business Information',
+    businessInfoDesc: 'Tell us about your company and role.',
+    aiGoals: 'AI Goals & Preferences',
+    aiGoalsDesc: 'Help us understand your AI readiness and objectives.',
+    phone: 'Phone',
+    countryRegion: 'Country/Region',
+    roleTitle: 'Role/Title',
+    currentAiUsage: 'Current AI Usage',
+    toolsInUse: 'Tools in Use',
+    selectAllApply: 'Select all that apply',
+    areasOfInterest: 'Areas of Interest',
+    goals: 'Goals',
+    biggestPain: 'Biggest Pain Point',
+    biggestPainHelp: "Optional - What's your biggest operational challenge?",
+    budgetRange: 'Budget Range',
+    timeline: 'Timeline',
+    preferredContact: 'Preferred Contact Method',
+    previous: 'Previous',
+    next: 'Next',
+    submitting: 'Submitting...',
+    submitQuestionnaire: 'Submit Questionnaire',
+    questionnaireThankYou: 'Thanks! We\'ll review and follow up shortly.',
+    questionnaireThankYouDesc: 'Want to move faster? Book a strategy call.',
+    thankYouQuestionnaireToast: 'Thank you for completing the questionnaire!',
+    thankYouQuestionnaireToastDesc: 'We\'ll review your responses and follow up shortly.',
+    
+    // Industry options
+    industryRetail: 'Retail',
+    industryServices: 'Services',
+    industryManufacturing: 'Manufacturing',
+    industryHospitality: 'Hospitality',
+    industryLogistics: 'Logistics',
+    industryHealthcare: 'Healthcare',
+    industryOther: 'Other',
+    
+    // AI Usage options
+    aiUsageNone: 'None',
+    aiUsageExperimenting: 'Experimenting',
+    aiUsageActiveLimited: 'Active in 1–2 areas',
+    aiUsageActiveTeams: 'Active across teams',
+    
+    // Tools options
+    toolChatGPT: 'ChatGPT',
+    toolGemini: 'Gemini',
+    toolCopilot: 'Microsoft Copilot',
+    toolZapier: 'Zapier',
+    toolMake: 'Make',
+    toolHubSpot: 'HubSpot AI',
+    toolNotion: 'Notion AI',
+    toolOther: 'Other',
+    
+    // Areas options
+    areaWorkflow: 'Workflow Automation',
+    areaAiTraining: 'AI Training',
+    areaAiAgents: 'AI Agents',
+    areaDataReadiness: 'Data Readiness',
+    areaIntegrations: 'Integrations',
+    
+    // Goals options
+    goalSaveTime: 'Save time',
+    goalReduceCosts: 'Reduce costs',
+    goalIncreaseRevenue: 'Increase revenue',
+    goalImproveCX: 'Improve CX',
+    goalBetterReporting: 'Better reporting',
+    goalCompliance: 'Compliance/Governance',
+    
+    // Budget options
+    budgetUnder5k: '<$5k',
+    budget5kTo15k: '$5k–$15k',
+    budget15kTo50k: '$15k–$50k',
+    budgetOver50k: '$50k+',
+    budgetUndisclosed: 'Undisclosed',
+    
+    // Timeline options
+    timelineAsap: 'ASAP',
+    timeline1to3Months: '1–3 months',
+    timeline3to6Months: '3–6 months',
+    timelineExploring: 'Exploring',
+    
+    // Contact method options
+    contactEmail: 'Email',
+    contactCall: 'Call',
+    contactWhatsApp: 'WhatsApp',
+  },
+
+  // ROI Calculator
+  roiCalculator: {
+    title: 'Calculate Your Time & Cost Savings',
+    subtitle: 'See how much time and money AI automation could save your practice.',
+    businessDetails: 'Your Business Details',
+    teamSize: 'Team Size (employees)',
+    avgHourlyCost: 'Average Hourly Cost ($)',
+    hoursSavedPerEmployee: 'Hours Saved per Employee per Month',
+    expectedRevenueLift: 'Expected Revenue Lift (%)',
+    roiProjection: 'Your ROI Projection',
+    monthlySavings: 'Monthly Savings',
+    annualCostSavings: 'Annual Cost Savings',
+    annualRevenueIncrease: 'Annual Revenue Increase',
+    paybackPeriod: 'Payback Period',
+    months: 'months',
+    totalAnnualBenefit: 'Total Annual Benefit',
+    disclaimer: '*Estimates based on industry averages. Actual results may vary.',
+    readyToStart: 'Ready to Start Saving Time?',
+    readyToStartDesc: 'Book a free strategy call to see exactly how we can help your practice.',
+    bookStrategyCall: 'Book Strategy Call',
+  },
+
+  // Integrations Wall
+  integrationsWall: {
+    title: 'Tools & Integrations We Work With',
+    subtitle: 'We connect your favorite platforms to build seamless automated workflows.',
   },
 
   // Footer

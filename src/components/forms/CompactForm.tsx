@@ -8,6 +8,7 @@ import { ConsentNote } from './ConsentNote';
 import { GradientButton } from '@/components/ui/gradient-button';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
+import { useTranslation } from '@/i18n';
 
 const disposableEmailDomains = [
   '10minutemail.com', 'guerrillamail.com', 'tempmail.org', 'mailinator.com',
@@ -44,6 +45,7 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage, hidePromoT
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const { toast } = useToast();
+  const t = useTranslation();
 
   const {
     register,
@@ -146,15 +148,15 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage, hidePromoT
       setIsSuccess(true);
       reset();
       toast({
-        title: "Thank you for your inquiry!",
-        description: "Our team will reach out to you shortly.",
+        title: t.forms.thankYouToast,
+        description: t.forms.thankYouToastDesc,
       });
 
     } catch (error) {
       console.error('Form submission error:', error);
       toast({
-        title: "Submission failed",
-        description: "Please try again or contact us directly.",
+        title: t.forms.submissionFailed,
+        description: t.forms.submissionFailedDesc,
         variant: "destructive",
       });
     } finally {
@@ -174,13 +176,13 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage, hidePromoT
       <div className="bg-card rounded-xl p-8 hf-shadow text-center">
         <CheckCircle className="w-16 h-16 text-hf-teal mx-auto mb-4" />
         <h3 className="text-2xl font-bold font-display text-hf-ink mb-2">
-          Thank you! We'll be in touch within 24 hours.
+          {t.forms.thankYou}
         </h3>
         <p className="text-muted-foreground mb-6">
-          Want to move faster?{' '}
+          {t.forms.wantFaster}{' '}
           <GradientButton variant="ghost" size="sm" asChild>
             <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer">
-              Book a strategy call
+              {t.forms.bookStrategyCall}
             </a>
           </GradientButton>
         </p>
@@ -189,7 +191,7 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage, hidePromoT
           size="sm" 
           onClick={() => setIsSuccess(false)}
         >
-          Submit another inquiry
+          {t.forms.submitAnother}
         </GradientButton>
       </div>
     );
@@ -210,7 +212,7 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage, hidePromoT
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <FormField
-              label="First Name"
+              label={t.forms.firstName}
               name="firstName"
               type="text"
               value={watchedValues.firstName}
@@ -221,7 +223,7 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage, hidePromoT
             />
 
             <FormField
-              label="Last Name"
+              label={t.forms.lastName}
               name="lastName"
               type="text"
               value={watchedValues.lastName}
@@ -233,7 +235,7 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage, hidePromoT
           </div>
 
           <FormField
-            label="Work Email"
+            label={t.forms.workEmail}
             name="email"
             type="email"
             value={watchedValues.email}
@@ -245,65 +247,65 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage, hidePromoT
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <FormField
-              label="Company"
+              label={t.forms.company}
               name="company"
               type="text"
               value={watchedValues.company}
               onChange={(value) => setValue('company', value)}
               error={errors.company?.message}
               required
-              placeholder="Company Name"
+              placeholder={t.forms.company}
             />
 
             <FormField
-              label="Website"
+              label={t.forms.website}
               name="website"
               type="text"
               value={watchedValues.website}
               onChange={(value) => setValue('website', value)}
               error={errors.website?.message}
               placeholder="yourdomain.com"
-              helpText="Optional"
+              helpText={t.forms.optional}
             />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <FormField
-              label="Industry"
+              label={t.forms.industry}
               name="industry"
               type="text"
               value={watchedValues.industry}
               onChange={(value) => setValue('industry', value)}
               error={errors.industry?.message}
-              placeholder="e.g., Healthcare, Fitness Studio, Travel Agency"
+              placeholder={t.forms.industryPlaceholder}
               required
             />
 
             <FormField
-              label="Team Size"
+              label={t.forms.teamSize}
               name="teamSize"
               type="select"
               value={watchedValues.teamSize}
               onChange={(value) => setValue('teamSize', value)}
               error={errors.teamSize?.message}
               options={teamSizeOptions}
-              placeholder="Select team size"
+              placeholder={t.forms.selectTeamSize}
               required
             />
           </div>
 
           <FormField
-            label="Message"
+            label={t.forms.message}
             name="message"
             type="textarea"
             value={watchedValues.message}
             onChange={(value) => setValue('message', value)}
             error={errors.message?.message}
-            placeholder="Tell us about your goals or current challenges... (optional)"
+            placeholder={t.forms.messagePlaceholder}
           />
 
           <FormField
-            label="I agree to be contacted about AI automation opportunities"
+            label={t.forms.consent}
             name="consent"
             type="checkbox"
             value={watchedValues.consent}
@@ -320,7 +322,7 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage, hidePromoT
               disabled={isSubmitting}
               className="flex-1"
             >
-              {isSubmitting ? 'Sending...' : 'Send Inquiry'}
+              {isSubmitting ? t.forms.sending : t.forms.sendInquiry}
             </GradientButton>
             
             <GradientButton
@@ -330,7 +332,7 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage, hidePromoT
               className="flex-1"
             >
               <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer">
-                Book a Strategy Call
+                {t.forms.bookStrategyCall}
               </a>
             </GradientButton>
           </div>
@@ -347,10 +349,10 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage, hidePromoT
       <div className="space-y-6">
         <div>
           <h2 className="text-3xl md:text-4xl font-bold font-display text-hf-ink dark:text-[hsl(220,20%,97%)] mb-4">
-            Get Started with AI Automation
+            {t.forms.getStartedTitle}
           </h2>
           <p className="text-lg text-muted-foreground dark:text-[hsl(220,15%,75%)]">
-            Tell us about your practice and we'll show you how to save time and get more clients.
+            {t.forms.getStartedSubtitle}
           </p>
         </div>
 
@@ -359,19 +361,19 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage, hidePromoT
             <div className="w-9 h-9 rounded-full hf-gradient flex items-center justify-center dark:ring-1 dark:ring-white/10 dark:brightness-110">
               <Users className="w-4 h-4 text-white" />
             </div>
-            <span className="text-hf-navy dark:text-[hsl(220,25%,92%)] font-medium">Save 10-20 hours per week</span>
+            <span className="text-hf-navy dark:text-[hsl(220,25%,92%)] font-medium">{t.forms.promo1}</span>
           </div>
           <div className="flex items-center gap-3 p-3 rounded-lg dark:bg-[hsl(222,40%,11%)] dark:border dark:border-white/5">
             <div className="w-9 h-9 rounded-full hf-gradient flex items-center justify-center dark:ring-1 dark:ring-white/10 dark:brightness-110">
               <Shield className="w-4 h-4 text-white" />
             </div>
-            <span className="text-hf-navy dark:text-[hsl(220,25%,92%)] font-medium">HIPAA-compliant & secure</span>
+            <span className="text-hf-navy dark:text-[hsl(220,25%,92%)] font-medium">{t.forms.promo2}</span>
           </div>
           <div className="flex items-center gap-3 p-3 rounded-lg dark:bg-[hsl(222,40%,11%)] dark:border dark:border-white/5">
             <div className="w-9 h-9 rounded-full hf-gradient flex items-center justify-center dark:ring-1 dark:ring-white/10 dark:brightness-110">
               <Zap className="w-4 h-4 text-white" />
             </div>
-            <span className="text-hf-navy dark:text-[hsl(220,25%,92%)] font-medium">Results in 60-90 days</span>
+            <span className="text-hf-navy dark:text-[hsl(220,25%,92%)] font-medium">{t.forms.promo3}</span>
           </div>
         </div>
       </div>
@@ -390,7 +392,7 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage, hidePromoT
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <FormField
-              label="First Name"
+              label={t.forms.firstName}
               name="firstName"
               type="text"
               value={watchedValues.firstName}
@@ -401,7 +403,7 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage, hidePromoT
             />
 
             <FormField
-              label="Last Name"
+              label={t.forms.lastName}
               name="lastName"
               type="text"
               value={watchedValues.lastName}
@@ -413,7 +415,7 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage, hidePromoT
           </div>
 
           <FormField
-            label="Work Email"
+            label={t.forms.workEmail}
             name="email"
             type="email"
             value={watchedValues.email}
@@ -425,65 +427,65 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage, hidePromoT
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <FormField
-              label="Company"
+              label={t.forms.company}
               name="company"
               type="text"
               value={watchedValues.company}
               onChange={(value) => setValue('company', value)}
               error={errors.company?.message}
               required
-              placeholder="Company Name"
+              placeholder={t.forms.company}
             />
 
             <FormField
-              label="Website"
+              label={t.forms.website}
               name="website"
               type="text"
               value={watchedValues.website}
               onChange={(value) => setValue('website', value)}
               error={errors.website?.message}
               placeholder="yourdomain.com"
-              helpText="Optional"
+              helpText={t.forms.optional}
             />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <FormField
-              label="Industry"
+              label={t.forms.industry}
               name="industry"
               type="text"
               value={watchedValues.industry}
               onChange={(value) => setValue('industry', value)}
               error={errors.industry?.message}
-              placeholder="e.g., Healthcare, Fitness Studio, Travel Agency"
+              placeholder={t.forms.industryPlaceholder}
               required
             />
 
             <FormField
-              label="Team Size"
+              label={t.forms.teamSize}
               name="teamSize"
               type="select"
               value={watchedValues.teamSize}
               onChange={(value) => setValue('teamSize', value)}
               error={errors.teamSize?.message}
               options={teamSizeOptions}
-              placeholder="Select team size"
+              placeholder={t.forms.selectTeamSize}
               required
             />
           </div>
 
           <FormField
-            label="Message"
+            label={t.forms.message}
             name="message"
             type="textarea"
             value={watchedValues.message}
             onChange={(value) => setValue('message', value)}
             error={errors.message?.message}
-            placeholder="Tell us about your goals or current challenges... (optional)"
+            placeholder={t.forms.messagePlaceholder}
           />
 
           <FormField
-            label="I agree to be contacted about AI automation opportunities"
+            label={t.forms.consent}
             name="consent"
             type="checkbox"
             value={watchedValues.consent}
@@ -500,7 +502,7 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage, hidePromoT
               disabled={isSubmitting}
               className="flex-1"
             >
-              {isSubmitting ? 'Sending...' : 'Send Inquiry'}
+              {isSubmitting ? t.forms.sending : t.forms.sendInquiry}
             </GradientButton>
             
             <GradientButton
@@ -510,7 +512,7 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage, hidePromoT
               className="flex-1"
             >
               <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer">
-                Book a Strategy Call
+                {t.forms.bookStrategyCall}
               </a>
             </GradientButton>
           </div>

@@ -1,26 +1,29 @@
 import { Users, Shield, TrendingUp, Zap } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { useTranslation } from '@/i18n';
 
 export function MissionPillars() {
+  const t = useTranslation();
+  
   const pillars = [{
     icon: Users,
-    title: 'Built for Your Practice',
-    description: 'Designed specifically for therapists and service professionals who value their time.',
+    title: t.about.pillar1Title,
+    description: t.about.pillar1Desc,
     color: 'text-hf-teal'
   }, {
     icon: Shield,
-    title: 'Secure & Compliant',
-    description: 'HIPAA-compliant security with enterprise-grade encryption for client data.',
+    title: t.about.pillar2Title,
+    description: t.about.pillar2Desc,
     color: 'text-hf-purple'
   }, {
     icon: TrendingUp,
-    title: 'Proven Results',
-    description: 'Clients save 10-20 hours per week and see more bookings within 60 days.',
+    title: t.about.pillar3Title,
+    description: t.about.pillar3Desc,
     color: 'text-hf-sky'
   }, {
     icon: Zap,
-    title: 'Easy Integration',
-    description: 'Works seamlessly with your existing calendar, CRM, and communication tools.',
+    title: t.about.pillar4Title,
+    description: t.about.pillar4Desc,
     color: 'text-primary'
   }];
 
@@ -29,7 +32,7 @@ export function MissionPillars() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-4">
-            Why Businesses Choose HeyFlou
+            {t.about.pillarsTitle}
           </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

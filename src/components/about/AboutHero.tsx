@@ -2,8 +2,11 @@ import logoNew from '@/assets/heyflou-logo-new.png';
 import { GradientButton } from '@/components/ui/gradient-button';
 import { Button } from '@/components/ui/button';
 import { ExternalLink } from 'lucide-react';
+import { useTranslation } from '@/i18n';
 
 export function AboutHero() {
+  const t = useTranslation();
+  
   return (
     <section className="relative py-20 md:py-28 text-center overflow-visible bg-background transition-colors duration-300">
       {/* Subtle glow background - Light Mode */}
@@ -31,7 +34,7 @@ export function AboutHero() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* H1 first */}
         <h1 className="text-4xl md:text-5xl font-bold font-display text-foreground mb-4 md:mb-6">
-          About HeyFlou
+          {t.about.heroTitle}
         </h1>
         
         {/* Large logo below H1 */}
@@ -46,14 +49,14 @@ export function AboutHero() {
         
         {/* Subline */}
         <p className="mt-6 text-xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
-          We help small and medium size businesses and service professionals save time and get more clients through proven AI automation.
+          {t.about.heroSubtitle}
         </p>
         
         {/* CTA group */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <GradientButton variant="primary" size="lg" asChild>
             <a href="#contact" className="inline-flex items-center gap-2">
-              Book a Strategy Call
+              {t.about.bookStrategyCall}
             </a>
           </GradientButton>
           
@@ -64,7 +67,7 @@ export function AboutHero() {
             className="text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-300"
           >
             <a href="/case-studies" className="inline-flex items-center gap-2">
-              See Case Studies
+              {t.about.seeCaseStudies}
               <ExternalLink className="h-4 w-4" />
             </a>
           </Button>

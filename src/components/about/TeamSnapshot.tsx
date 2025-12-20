@@ -1,15 +1,18 @@
 import { Linkedin } from 'lucide-react';
+import { useTranslation } from '@/i18n';
 
 export function TeamSnapshot() {
+  const t = useTranslation();
+  
   const team = [
     {
       name: 'Samuel Nakach',
-      role: 'Co-Founder',
+      role: t.about.coFounder,
       linkedin: 'https://www.linkedin.com/in/samuel-nakach/'
     },
     {
       name: 'Salomon Zayat',
-      role: 'Co-Founder', 
+      role: t.about.coFounder, 
       linkedin: 'https://www.linkedin.com/in/salomon-zayat-32284b189'
     }
   ];
@@ -19,7 +22,7 @@ export function TeamSnapshot() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-4">
-            Team Snapshot
+            {t.about.teamTitle}
           </h2>
         </div>
         
@@ -45,7 +48,7 @@ export function TeamSnapshot() {
                 href={member.linkedin}
                 target="_blank"
                 rel="noopener"
-                aria-label={`Open ${member.name.split(' ')[0]}'s LinkedIn`}
+                aria-label={`LinkedIn ${member.name}`}
                 className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
               >
                 <Linkedin className="h-4 w-4" />

@@ -1,15 +1,19 @@
+import { useTranslation } from '@/i18n';
+
 export function ImpactSnapshot() {
+  const t = useTranslation();
+  
   const metrics = [
-    '10-20 hours saved per week',
-    '65% less admin workload',
-    '40% faster response times'
+    t.about.impact1,
+    t.about.impact2,
+    t.about.impact3
   ];
 
   return (
     <section className="py-20 md:py-28 bg-surface-secondary transition-colors duration-300">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-8">
-          Impact Snapshot
+          {t.about.impactTitle}
         </h2>
         
         <div className="flex flex-wrap justify-center gap-4 mb-6">
@@ -24,7 +28,7 @@ export function ImpactSnapshot() {
         </div>
         
         <p className="text-sm text-muted-foreground italic">
-          Average results from real therapy practices and service businesses—individual results may vary.
+          {t.about.impactDisclaimer}
         </p>
       </div>
     </section>
