@@ -8,8 +8,14 @@
 
 @layer base {
   :root {
+    /* ===== STANDARDIZED BACKGROUND TOKENS ===== */
+    /* Dark sections: #0f172a = 222 47% 11% */
+    /* Light sections: #ffffff = 0 0% 100% */
+    --bg-dark: 222 47% 11%;
+    --bg-light: 0 0% 100%;
+    
     /* HeyFlou Brand Colors (HSL only) */
-    --hf-navy: 221 53% 16%;
+    --hf-navy: 222 47% 11%;
     --hf-ink: 222 28% 24%;
     --hf-teal: 190 72% 44%;
     --hf-purple: 268 84% 65%;
@@ -20,7 +26,7 @@
     --background-secondary: 220 14% 98%;
     --foreground: 222 28% 24%;
     
-    /* Surface colors for sections */
+    /* Surface colors for sections - STANDARDIZED */
     --surface-primary: 0 0% 100%;
     --surface-secondary: 220 14% 96%;
     --surface-elevated: 0 0% 100%;
@@ -34,7 +40,7 @@
     --primary-foreground: 0 0% 100%;
     
     /* Secondary system */
-    --secondary: 221 53% 16%;
+    --secondary: 222 47% 11%;
     --secondary-foreground: 0 0% 100%;
     
     /* Muted system */
@@ -69,6 +75,18 @@
     
     /* Design tokens */
     --radius: 0.75rem;
+    
+    /* Icon sizing tokens */
+    --icon-sm: 20px;
+    --icon-md: 24px;
+    --icon-lg: 32px;
+    --icon-xl: 40px;
+    
+    /* Interaction tokens */
+    --transition-fast: 150ms;
+    --transition-base: 200ms;
+    --transition-slow: 300ms;
+    --focus-ring: 0 0 0 3px hsl(var(--hf-teal) / 0.4);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -81,21 +99,26 @@
   }
 
   .dark {
-    /* Premium deep dark background */
-    --background: 222 47% 6%;
-    --background-secondary: 222 40% 8%;
+    /* ===== STANDARDIZED DARK BACKGROUNDS ===== */
+    /* All dark sections use #0f172a = 222 47% 11% */
+    --bg-dark: 222 47% 11%;
+    --bg-light: 0 0% 100%;
+    
+    /* Premium deep dark background - STANDARDIZED to #0f172a */
+    --background: 222 47% 11%;
+    --background-secondary: 222 47% 11%;
     --foreground: 210 40% 98%;
 
-    /* Surface colors for sections - dark mode */
-    --surface-primary: 222 47% 6%;
-    --surface-secondary: 222 40% 9%;
-    --surface-elevated: 222 35% 12%;
+    /* Surface colors for sections - UNIFIED to prevent banding */
+    --surface-primary: 222 47% 11%;
+    --surface-secondary: 222 47% 11%;
+    --surface-elevated: 222 40% 14%;
 
-    /* Cards: slightly lighter surface */
-    --card: 222 40% 10%;
+    /* Cards: slightly lighter surface for depth */
+    --card: 222 40% 13%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222 40% 10%;
+    --popover: 222 40% 13%;
     --popover-foreground: 210 40% 98%;
 
     /* Keep brand teal as primary */
@@ -103,11 +126,11 @@
     --primary-foreground: 0 0% 100%;
 
     /* Secondary surfaces */
-    --secondary: 222 35% 14%;
+    --secondary: 222 35% 16%;
     --secondary-foreground: 210 40% 98%;
 
     /* Muted elements */
-    --muted: 222 30% 12%;
+    --muted: 222 30% 15%;
     --muted-foreground: 215 25% 65%;
 
     /* Accent keeps brand sky blue */
@@ -118,12 +141,12 @@
     --destructive-foreground: 210 40% 98%;
 
     /* Subtle borders */
-    --border: 222 25% 18%;
-    --input: 222 25% 18%;
+    --border: 222 25% 20%;
+    --input: 222 25% 20%;
     --ring: 190 72% 44%;
 
     /* Dark mode brand colors - improved contrast */
-    --hf-navy: 222 47% 8%;
+    --hf-navy: 222 47% 11%;
     --hf-ink: 220 20% 97%;
     
     /* Dark mode text hierarchy tokens */
@@ -132,16 +155,16 @@
     --text-muted: 220 15% 60%;
     
     /* Dark mode surface for benefit rows */
-    --hf-surface-benefit: 222 40% 11%;
+    --hf-surface-benefit: 222 40% 13%;
 
     /* Sidebar */
-    --sidebar-background: 222 47% 6%;
+    --sidebar-background: 222 47% 11%;
     --sidebar-foreground: 210 40% 98%;
     --sidebar-primary: 190 72% 44%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 222 35% 14%;
+    --sidebar-accent: 222 35% 16%;
     --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 222 25% 18%;
+    --sidebar-border: 222 25% 20%;
     --sidebar-ring: 190 72% 44%;
 
     /* Premium dark mode glow */
@@ -187,7 +210,7 @@
     box-shadow: var(--hf-shadow-lg);
   }
 
-  /* Section background utilities */
+  /* Section background utilities - STANDARDIZED */
   .section-primary {
     @apply bg-background;
   }
@@ -214,10 +237,77 @@
     @apply bg-card border border-border/50 rounded-xl;
     box-shadow: var(--hf-shadow);
   }
+  
+  /* Card hover micro-interaction */
+  .card-interactive {
+    @apply bg-card border border-border/50 rounded-xl transition-all duration-200;
+    box-shadow: var(--hf-shadow);
+  }
+  
+  .card-interactive:hover {
+    @apply -translate-y-0.5 border-border/80;
+    box-shadow: var(--hf-shadow-lg);
+  }
 
   /* Pill/badge styling for both modes */
   .pill-muted {
     @apply bg-muted text-muted-foreground;
+  }
+  
+  /* ===== INTERACTIVE ELEMENT STYLES ===== */
+  
+  /* Base interactive styles for all clickable elements */
+  .interactive {
+    @apply cursor-pointer transition-all;
+    transition-duration: var(--transition-base);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .interactive:hover {
+    @apply scale-[1.02];
+  }
+  
+  .interactive:active {
+    @apply scale-[0.98];
+  }
+  
+  .interactive:focus-visible {
+    @apply outline-none;
+    box-shadow: var(--focus-ring);
+  }
+  
+  /* Button-specific interactive styles */
+  .btn-interactive {
+    @apply cursor-pointer transition-all;
+    transition-duration: var(--transition-base);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .btn-interactive:hover {
+    @apply scale-[1.02] opacity-90;
+  }
+  
+  .btn-interactive:active {
+    @apply scale-[0.98];
+  }
+  
+  .btn-interactive:focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+  
+  /* Link interactive styles */
+  .link-interactive {
+    @apply cursor-pointer transition-all underline-offset-4;
+    transition-duration: var(--transition-fast);
+  }
+  
+  .link-interactive:hover {
+    @apply underline opacity-80;
+  }
+  
+  .link-interactive:focus-visible {
+    @apply outline-none;
+    box-shadow: var(--focus-ring);
   }
 
   /* Animations */
