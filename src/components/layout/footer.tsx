@@ -4,8 +4,9 @@ import { BrandLockup } from '@/components/BrandLockup';
 import { GradientButton } from '@/components/ui/gradient-button';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from '@/hooks/use-toast';
-import { Mail, Linkedin } from 'lucide-react';
+import { Mail, Linkedin, Loader2 } from 'lucide-react';
 import { useTranslation } from '@/i18n';
+import { cn } from '@/lib/utils';
 
 // X (formerly Twitter) logo component
 const XIcon = ({
@@ -121,9 +122,33 @@ export const Footer = () => {
             <div className="max-w-sm">
               <p className="text-sm font-medium mb-2">{t.footer.getAiInsights}</p>
               <form onSubmit={handleSubscribe} className="flex gap-2">
-                <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder={t.footer.enterEmail} disabled={isSubmitting} className="flex-1 px-3 py-2 text-sm bg-white/10 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-hf-teal disabled:opacity-50" />
-                <GradientButton type="submit" variant="primary" size="sm" disabled={isSubmitting}>
-                  {isSubmitting ? t.footer.subscribing : t.footer.subscribe}
+                <input 
+                  type="email" 
+                  value={email} 
+                  onChange={e => setEmail(e.target.value)} 
+                  placeholder={t.footer.enterEmail} 
+                  disabled={isSubmitting} 
+                  className={cn(
+                    "flex-1 px-3 py-2 text-sm bg-white/10 border rounded-md text-white placeholder-gray-400 transition-all duration-200",
+                    "focus:outline-none focus:ring-2 focus:ring-hf-teal disabled:opacity-50 disabled:cursor-not-allowed",
+                    "border-gray-600 focus:border-hf-teal"
+                  )} 
+                />
+                <GradientButton 
+                  type="submit" 
+                  variant="primary" 
+                  size="sm" 
+                  disabled={isSubmitting}
+                  className="min-w-[100px]"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                      <span className="sr-only">{t.footer.subscribing}</span>
+                    </>
+                  ) : (
+                    t.footer.subscribe
+                  )}
                 </GradientButton>
               </form>
               <p className="text-xs text-gray-400 mt-2">
