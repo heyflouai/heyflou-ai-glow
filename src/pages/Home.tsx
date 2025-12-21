@@ -18,7 +18,7 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "HeyFlou",
-    "description": "AI Automation for Therapists and Service Professionals",
+    "description": "AI Consulting for SMB Workflow Automation",
     "url": "https://heyflou.com",
     "logo": "https://heyflou.com/logo.png",
     "sameAs": ["https://linkedin.com/company/heyflou", "https://twitter.com/heyflou"]
@@ -102,7 +102,7 @@ export default function Home() {
   ];
 
   return <>
-    <SEOHead title="AI Automation for Therapists & Service Professionals | HeyFlou" description="Save time and get more clients with AI chatbots, automated scheduling, and CRM management. Built for therapists and service professionals." canonical="https://heyflou.com" jsonLd={[organizationJsonLd, faqJsonLd]} />
+    <SEOHead title="HeyFlou | AI Consulting for SMB Workflow Automation" description="Save time and get more clients with AI chatbots, automated lead management, and CRM integration. Built for small and medium businesses." canonical="https://heyflou.com" jsonLd={[organizationJsonLd, faqJsonLd]} />
   
     <main className="pt-16">
       {/* Hero Section */}

@@ -10,7 +10,7 @@ export default function Contact() {
   return (
     <>
       <SEOHead 
-        title="Contact HeyFlou - Book Your Free Strategy Call"
+        title="Contact | AI Consulting for SMB Workflow Automation"
         description="Book a free 30-minute strategy call to explore AI automation opportunities for your business."
         canonical="https://heyflou.com/contact"
       />

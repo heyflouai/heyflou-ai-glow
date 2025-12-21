@@ -11,8 +11,8 @@ export default function Services() {
   return (
     <>
       <SEOHead 
-        title="AI Marketing & Automation for Travel Agencies | HeyFlou"
-        description="Full marketing engine, AI chatbots, WhatsApp automation, and CRM for travel agencies. Also serving physiotherapists and therapists."
+        title="Services | AI Consulting for SMB Workflow Automation"
+        description="WhatsApp AI bots, lead management pipelines, CRM integration, and email automation for small and medium businesses."
         canonical="https://heyflou.com/services"
       />
       
