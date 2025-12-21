@@ -3,6 +3,7 @@ import { Section } from '@/components/ui/section';
 import { GradientButton } from '@/components/ui/gradient-button';
 import { Calendar, Mail } from 'lucide-react';
 import { useTranslation } from '@/i18n';
+import { PAGE_SEO, getCanonicalUrl } from '@/lib/seo-config';
 
 export default function Contact() {
   const t = useTranslation();
@@ -10,9 +11,9 @@ export default function Contact() {
   return (
     <>
       <SEOHead 
-        title="Contact | AI Consulting for SMB Workflow Automation"
-        description="Book a free 30-minute strategy call to explore AI automation opportunities for your business."
-        canonical="https://heyflou.com/contact"
+        title={PAGE_SEO.contact.title}
+        description={PAGE_SEO.contact.description}
+        canonical={getCanonicalUrl(PAGE_SEO.contact.path)}
       />
       
       <main className="pt-16">
