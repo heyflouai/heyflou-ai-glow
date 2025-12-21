@@ -603,6 +603,74 @@ export const en = {
     therapistContentSolution: 'We built content-to-booking funnels with AI chatbot qualification and automated follow-up sequences.',
     therapistContentOutcome: 'Doubled inquiries with content + chatbot funnel integration.',
   },
+
+  // Industry Systems Section (Homepage)
+  industrySystems: {
+    title: 'How HeyFlou Helps You Grow',
+    subtitle: 'Choose your industry. See the exact system we implement to save time and win more clients.',
+    
+    // Industry tabs
+    medical: 'Medical',
+    travel: 'Travel Agencies',
+    education: 'Private Ed / Fitness',
+    
+    // Pillar 1: Capture & Respond
+    pillar1Title: 'Capture & Respond',
+    pillar1Desc: 'Instant replies that turn visitors into qualified leads—24/7.',
+    pillar1Bullet1: '24/7 chat + instant answers',
+    pillar1Bullet2: 'Lead capture + qualification',
+    pillar1Bullet3: 'Human handoff when needed',
+    pillar1ExMedical: 'Patient questions → pre-screen → book consultation.',
+    pillar1ExTravel: 'Trip inquiry → capture details → qualify budget and dates.',
+    pillar1ExEducation: 'Program questions → trial class / intro call booking.',
+    pillar1Auto1: 'Website / WhatsApp chat capture',
+    pillar1Auto2: 'FAQ + smart instant replies',
+    pillar1Auto3: 'Lead qualification questions (industry-specific)',
+    pillar1Auto4: 'Contact info collection (name/phone/email)',
+    pillar1Auto5: 'Routing to the right team/member',
+    pillar1Auto6: 'Language switch (EN/ES)',
+    pillar1Auto7: 'Human handoff fallback',
+    
+    // Pillar 2: Qualify & Track
+    pillar2Title: 'Qualify & Track',
+    pillar2Desc: 'A clean pipeline that automatically tracks every lead and next step.',
+    pillar2Bullet1: 'Pipeline stages + lead status',
+    pillar2Bullet2: 'Automated reminders & tasks',
+    pillar2Bullet3: 'Source tracking + notes',
+    pillar2ExMedical: 'Track inquiries, referrals, and next steps automatically.',
+    pillar2ExTravel: 'Track leads by destination, status, and assigned agent.',
+    pillar2ExEducation: 'Track trials, enrollments, memberships, and next steps.',
+    pillar2Auto1: 'CRM record creation & enrichment',
+    pillar2Auto2: 'Pipeline stage updates',
+    pillar2Auto3: 'Auto follow-up tasks & reminders',
+    pillar2Auto4: 'Lead source tracking (ads/organic/referrals)',
+    pillar2Auto5: 'Notes & conversation history',
+    pillar2Auto6: 'Simple reporting snapshot',
+    pillar2Auto7: 'Integrations (Sheets/Zoho/HubSpot/etc.)',
+    
+    // Pillar 3: Convert & Retain
+    pillar3Title: 'Convert & Retain',
+    pillar3Desc: 'Follow-ups, reminders, and reactivation flows that increase booked clients.',
+    pillar3Bullet1: 'Nurture sequences',
+    pillar3Bullet2: 'No-show reduction',
+    pillar3Bullet3: 'Reactivation campaigns',
+    pillar3ExMedical: 'Reminders + post-visit follow-ups reduce no-shows.',
+    pillar3ExTravel: 'Automated follow-ups for quotes + booking reminders.',
+    pillar3ExEducation: 'Retention nudges + reactivation for inactive clients.',
+    pillar3Auto1: 'Booking links / booking request flow',
+    pillar3Auto2: 'Calendar sync (Google/Outlook)',
+    pillar3Auto3: 'Reschedule / cancellation flows',
+    pillar3Auto4: 'No-show reminders (SMS/WhatsApp/email)',
+    pillar3Auto5: 'Post-appointment follow-ups',
+    pillar3Auto6: 'Review requests (optional)',
+    pillar3Auto7: 'Reactivation sequences',
+    
+    // Other UI
+    exampleFor: 'Example for',
+    coreAutomations: 'Core automations included',
+    bookCall: 'Book Free Call',
+    seeCases: 'See Case Studies',
+  },
 };
 
 export type TranslationKeys = typeof en;
