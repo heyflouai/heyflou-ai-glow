@@ -688,12 +688,19 @@ export const es: TranslationKeys = {
 
   // Custom Solutions CTA
   customCta: {
+    badge: 'Automatización a Medida',
     buildCustom: 'Crear Workflow Personalizado',
     buildCustomSub: 'Cuéntanos tu proceso — diseñaremos un plan de automatización.',
     buildCustomDesc: 'La IA se adapta a tu proceso exacto. Diseñamos workflows a medida que se ajustan a tus herramientas, tu equipo y tus clientes.',
-    buildCustomExamples: 'Ejemplos: admisión • seguimientos • agenda • CRM',
+    buildCustomExamples: 'Ejemplos: procesos financieros • campañas de redes sociales • generadores de leads',
     moreComingSoon: 'Más Próximamente',
     exploreComingSoonSub: 'Más automatizaciones próximamente.',
+    getUpdates: 'Recibe actualizaciones',
+    yourEmail: 'Tu email',
+    notifyMe: 'Notifícame',
+    notifying: 'Enviando...',
+    notifySuccess: '✓ Listo, te avisamos',
+    notifyError: 'Intenta de nuevo.',
     
     // Modal
     modalTitle: 'Constructor de Workflow Personalizado',

@@ -686,12 +686,19 @@ export const en = {
 
   // Custom Solutions CTA
   customCta: {
+    badge: 'Tailored Automation',
     buildCustom: 'Build a Custom Workflow',
     buildCustomSub: "Tell us your process — we'll design an automation plan.",
     buildCustomDesc: 'AI can adapt to your exact process. We design tailored workflows that fit your tools, your team, and your clients.',
-    buildCustomExamples: 'Examples: intake • follow-ups • scheduling • CRM updates',
+    buildCustomExamples: 'Examples: financial processes • social media campaigns • lead generators',
     moreComingSoon: 'Coming Soon',
     exploreComingSoonSub: 'More automations are launching soon.',
+    getUpdates: 'Get updates',
+    yourEmail: 'Your email',
+    notifyMe: 'Notify me',
+    notifying: 'Sending...',
+    notifySuccess: "✓ You're in!",
+    notifyError: 'Try again.',
     
     // Modal
     modalTitle: 'Custom Workflow Builder',
