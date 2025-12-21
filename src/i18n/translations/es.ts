@@ -690,6 +690,8 @@ export const es: TranslationKeys = {
   customCta: {
     buildCustom: 'Crear Workflow Personalizado',
     buildCustomSub: 'Cuéntanos tu proceso — diseñaremos un plan de automatización.',
+    buildCustomDesc: 'La IA se adapta a tu proceso exacto. Diseñamos workflows a medida que se ajustan a tus herramientas, tu equipo y tus clientes.',
+    buildCustomExamples: 'Ejemplos: admisión • seguimientos • agenda • CRM',
     moreComingSoon: 'Más Próximamente',
     exploreComingSoonSub: 'Más automatizaciones próximamente.',
     
