@@ -533,18 +533,24 @@ export const es: TranslationKeys = {
 
   // Footer
   footer: {
-    tagline: 'Automatización con IA para PyMEs y profesionales de servicios. Ahorra tiempo, consigue más clientes.',
-    getAiInsights: 'Recibe insights de IA',
+    description: 'Consultoría de IA y automatización de flujos de trabajo para PyMEs. Chatbots de WhatsApp con IA, gestión de leads y CRM + email marketing.',
+    trustLine: 'Diseñado para Médicos, Agencias de Viajes y Educación/Fitness.',
+    company: 'Empresa',
+    solutions: 'Soluciones',
+    solutionWhatsApp: 'Bot de IA para WhatsApp',
+    solutionLeadPipeline: 'Pipeline de Gestión de Leads',
+    solutionCrmEmail: 'CRM + Email Marketing',
+    getProductUpdates: 'Recibe actualizaciones',
     enterEmail: 'Ingresa tu email',
     subscribe: 'Suscribir',
     subscribing: 'Suscribiendo...',
+    successMessage: '✓ ¡Estás dentro! Te enviaremos actualizaciones pronto.',
+    errorMessage: 'Algo salió mal. Intenta de nuevo.',
+    tryAgain: 'Intentar de nuevo',
     privacyNote: 'Respetamos tu privacidad. Cancela en cualquier momento.',
-    navigation: 'Navegación',
-    getStarted: 'Comenzar',
     contactUs: 'Contáctanos',
     bookStrategyCall: 'Reservar Llamada Estratégica',
     allRightsReserved: '© 2025 HeyFlou. Todos los derechos reservados.',
-    transform: 'Transforma tu práctica en 90 días.',
   },
 
   // Metrics
