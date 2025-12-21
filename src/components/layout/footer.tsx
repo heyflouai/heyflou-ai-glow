@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from '@/hooks/use-toast';
-import { Linkedin, Loader2, CheckCircle2, XCircle } from 'lucide-react';
+import { Linkedin, Loader2, CheckCircle2, XCircle, Mail } from 'lucide-react';
 import { useTranslation } from '@/i18n';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -30,12 +30,6 @@ export const Footer = () => {
     { name: t.nav.services, href: '/services' },
     { name: t.nav.caseStudies, href: '/case-studies' },
     { name: t.nav.about, href: '/about' },
-  ];
-
-  const solutionLinks = [
-    { name: t.footer.solutionWhatsApp, href: '/services#whatsapp' },
-    { name: t.footer.solutionLeadPipeline, href: '/services#crm' },
-    { name: t.footer.solutionCrmEmail, href: '/services#marketing-engine' },
   ];
 
   const socialLinks = [
@@ -155,23 +149,37 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Solutions Column */}
+          {/* Connect Column */}
           <div>
             <h3 className="font-semibold text-sm uppercase tracking-wider text-gray-300 mb-4">
-              {t.footer.solutions}
+              {t.footer.connect}
             </h3>
-            <ul className="space-y-3">
-              {solutionLinks.map((link) => (
-                <li key={link.name}>
-                  <Link 
-                    to={link.href} 
-                    className="text-gray-400 hover:text-white transition-colors text-sm link-interactive"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <div className="space-y-4">
+              <a 
+                href="mailto:Hello@HeyFlou.com" 
+                className="flex items-center gap-2 text-gray-400 hover:text-hf-teal transition-colors text-sm link-interactive"
+              >
+                <Mail className="h-4 w-4" />
+                Hello@HeyFlou.com
+              </a>
+              <div className="flex items-center gap-3">
+                {socialLinks.map((link) => {
+                  const IconComponent = link.icon;
+                  return (
+                    <a 
+                      key={link.name}
+                      href={link.href} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="p-2 rounded-full bg-white/5 text-gray-400 hover:bg-hf-teal hover:text-white transition-all duration-200 btn-interactive"
+                      aria-label={`Follow us on ${link.name}`}
+                    >
+                      <IconComponent className="h-5 w-5" />
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
           </div>
 
           {/* Newsletter Column */}
@@ -277,33 +285,14 @@ export const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10 mt-10 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             {/* Copyright */}
-            <p className="text-gray-500 text-sm order-2 md:order-1">
+            <p className="text-gray-500 text-sm">
               {t.footer.allRightsReserved}
             </p>
 
-            {/* Social Links */}
-            <div className="flex items-center gap-3 order-1 md:order-2">
-              {socialLinks.map((link) => {
-                const IconComponent = link.icon;
-                return (
-                  <a 
-                    key={link.name}
-                    href={link.href} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="p-2.5 rounded-full bg-white/5 text-gray-400 hover:bg-hf-teal hover:text-white transition-all duration-200 btn-interactive"
-                    aria-label={`Follow us on ${link.name}`}
-                  >
-                    <IconComponent className="h-5 w-5" />
-                  </a>
-                );
-              })}
-            </div>
-
             {/* Bottom Links */}
-            <div className="flex items-center gap-6 order-3">
+            <div className="flex items-center gap-6">
               <Link 
                 to="/contact" 
                 className="text-gray-500 hover:text-gray-300 text-sm transition-colors link-interactive"
