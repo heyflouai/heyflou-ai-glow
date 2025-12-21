@@ -688,7 +688,7 @@ export const en = {
   customCta: {
     buildCustom: 'Build a Custom Workflow',
     buildCustomSub: "Tell us your process — we'll design an automation plan.",
-    exploreComingSoon: "Explore What's Coming",
+    moreComingSoon: 'More Coming Soon',
     exploreComingSoonSub: 'More automations are launching soon.',
     
     // Modal

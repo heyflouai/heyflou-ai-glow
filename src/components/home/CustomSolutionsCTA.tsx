@@ -1,24 +1,21 @@
 import { useState } from 'react';
-import { Wand2, Sparkles, ChevronDown, Loader2, Check, X, AlertCircle } from 'lucide-react';
+import { Wand2, Sparkles, Loader2, Check, AlertCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { GradientButton } from '@/components/ui/gradient-button';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
-import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/components/ui/collapsible';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Label } from '@/components/ui/label';
 import { useTranslation } from '@/i18n';
 import { supabase } from '@/integrations/supabase/client';
-import { cn } from '@/lib/utils';
 
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
 
 export function CustomSolutionsCTA() {
   const t = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isRoadmapOpen, setIsRoadmapOpen] = useState(false);
   const [formStatus, setFormStatus] = useState<FormStatus>('idle');
   
   // Form state
@@ -89,13 +86,6 @@ export function CustomSolutionsCTA() {
     { value: 'other', label: t.customCta?.autoOther || 'Other' },
   ];
 
-  const roadmapItems = [
-    t.customCta?.roadmap1 || 'AI intake forms + smart qualification',
-    t.customCta?.roadmap2 || 'Review & referral automation',
-    t.customCta?.roadmap3 || 'Reactivation campaigns (WhatsApp + Email)',
-    t.customCta?.roadmap4 || 'Internal ops automation (reports, dashboards)',
-    t.customCta?.roadmap5 || 'Integrations: more CRMs and booking tools',
-  ];
 
   return (
     <div className="mt-12 md:mt-16">
@@ -123,66 +113,19 @@ export function CustomSolutionsCTA() {
             <div className="hidden sm:block w-px h-16 bg-border/30" />
             <div className="sm:hidden w-full h-px bg-border/30" />
 
-            {/* Secondary CTA - Explore What's Coming */}
+            {/* Secondary - More Coming Soon (text only) */}
             <div className="flex flex-col items-center text-center sm:text-left sm:items-start flex-1">
-              <Collapsible open={isRoadmapOpen} onOpenChange={setIsRoadmapOpen}>
-                <CollapsibleTrigger asChild>
-                  <Button 
-                    variant="outline" 
-                    size="lg"
-                    className="group w-full sm:w-auto border-border/40 hover:border-hf-teal/50 hover:bg-hf-teal/5 transition-all"
-                  >
-                    <Sparkles className="w-5 h-5 mr-2 text-hf-teal group-hover:scale-110 transition-transform" />
-                    {t.customCta?.exploreComingSoon || "Explore What's Coming"}
-                    <ChevronDown className={cn(
-                      "w-4 h-4 ml-2 transition-transform duration-200",
-                      isRoadmapOpen && "rotate-180"
-                    )} />
-                  </Button>
-                </CollapsibleTrigger>
-                <p className="text-xs text-muted-foreground mt-2 max-w-[280px]">
-                  {t.customCta?.exploreComingSoonSub || 'More automations are launching soon.'}
-                </p>
-              </Collapsible>
+              <div className="flex items-center gap-2">
+                <Sparkles className="w-5 h-5 text-hf-teal" />
+                <span className="text-base font-semibold text-foreground">
+                  {t.customCta?.moreComingSoon || 'More Coming Soon'}
+                </span>
+              </div>
+              <p className="text-xs text-muted-foreground mt-2 max-w-[280px]">
+                {t.customCta?.exploreComingSoonSub || 'More automations are launching soon.'}
+              </p>
             </div>
           </div>
-
-          {/* Roadmap Teaser - Collapsible Content */}
-          <Collapsible open={isRoadmapOpen} onOpenChange={setIsRoadmapOpen}>
-            <CollapsibleContent>
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.2 }}
-                className="mt-6 pt-6 border-t border-border/20"
-              >
-                <h4 className="text-sm font-semibold text-foreground mb-4">
-                  {t.customCta?.roadmapTitle || 'Upcoming Automations (Preview)'}
-                </h4>
-                <ul className="space-y-2.5 mb-4">
-                  {roadmapItems.map((item, index) => (
-                    <li key={index} className="flex items-start gap-2.5 text-sm text-muted-foreground">
-                      <span className="w-1.5 h-1.5 rounded-full bg-hf-teal/60 shrink-0 mt-1.5" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-xs text-muted-foreground/70">
-                  {t.customCta?.roadmapDisclaimer || 'Want something specific?'}{' '}
-                  <button 
-                    onClick={() => {
-                      setIsRoadmapOpen(false);
-                      setIsModalOpen(true);
-                    }}
-                    className="text-hf-teal hover:underline cursor-pointer"
-                  >
-                    {t.customCta?.roadmapLink || 'Request a custom workflow.'}
-                  </button>
-                </p>
-              </motion.div>
-            </CollapsibleContent>
-          </Collapsible>
         </div>
       </div>
 
