@@ -107,8 +107,8 @@ export default function CaseStudies() {
   return (
     <>
       <SEOHead 
-        title="Success Stories - Travel Agencies & Healthcare | HeyFlou"
-        description="Real results from travel agencies and healthcare practices using AI marketing automation to grow bookings and clients."
+        title="Case Studies | AI Consulting for SMB Workflow Automation"
+        description="Real results from small and medium businesses using AI workflow automation to grow bookings and clients."
         canonical="https://heyflou.com/case-studies"
       />
       

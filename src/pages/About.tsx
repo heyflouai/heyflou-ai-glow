@@ -12,8 +12,8 @@ export default function About() {
   return (
     <>
       <SEOHead 
-        title="About HeyFlou - AI Automation for Therapists & Service Professionals" 
-        description="Learn how HeyFlou helps therapists and service professionals save time and get more clients with proven AI automation." 
+        title="About HeyFlou | AI Consulting for SMB Workflow Automation" 
+        description="Learn how HeyFlou helps small and medium businesses save time and get more clients with proven AI workflow automation." 
         canonical="https://heyflou.com/about" 
       />
       

@@ -25,8 +25,8 @@ export default function ROICalculator() {
   return (
     <>
       <SEOHead 
-        title="Time & Cost Savings Calculator | HeyFlou"
-        description="Calculate how much time and money AI automation could save your therapy practice or service business."
+        title="ROI Calculator | AI Consulting for SMB Workflow Automation"
+        description="Calculate how much time and money AI automation could save your small or medium business."
         canonical="https://heyflou.com/roi"
       />
       
