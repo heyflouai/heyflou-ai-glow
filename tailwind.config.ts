@@ -77,6 +77,13 @@ export default {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(ellipse at center, var(--tw-gradient-stops))',
       },
+      spacing: {
+        // Icon size tokens for consistency
+        'icon-sm': '20px',
+        'icon-md': '24px',
+        'icon-lg': '32px',
+        'icon-xl': '40px',
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
