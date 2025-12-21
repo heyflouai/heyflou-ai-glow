@@ -531,18 +531,24 @@ export const en = {
 
   // Footer
   footer: {
-    tagline: 'AI automation for SMBs and service professionals. Save time, get more clients.',
-    getAiInsights: 'Get AI insights',
+    description: 'AI consulting and workflow automation for SMBs. WhatsApp AI bots, lead management pipelines, and CRM + email marketing.',
+    trustLine: 'Built for Medical, Travel Agencies, and Private Ed/Fitness.',
+    company: 'Company',
+    solutions: 'Solutions',
+    solutionWhatsApp: 'WhatsApp AI Bot',
+    solutionLeadPipeline: 'Lead Management Pipeline',
+    solutionCrmEmail: 'CRM + Email Marketing',
+    getProductUpdates: 'Get product updates',
     enterEmail: 'Enter your email',
     subscribe: 'Subscribe',
     subscribing: 'Subscribing...',
+    successMessage: "✓ You're in! We'll share updates soon.",
+    errorMessage: 'Something went wrong. Try again.',
+    tryAgain: 'Try again',
     privacyNote: 'We respect your privacy. Unsubscribe anytime.',
-    navigation: 'Navigation',
-    getStarted: 'Get Started',
     contactUs: 'Contact Us',
     bookStrategyCall: 'Book Strategy Call',
     allRightsReserved: '© 2025 HeyFlou. All rights reserved.',
-    transform: 'Transform your practice in 90 days.',
   },
 
   // Metrics
