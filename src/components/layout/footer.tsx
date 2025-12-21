@@ -113,26 +113,26 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="bg-bg-dark text-white border-t border-white/10">
+    <footer className="bg-muted dark:bg-bg-dark border-t border-border dark:border-white/10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <div className="mb-5">
-              <BrandLockup className="text-white [&_span]:text-white" />
+              <BrandLockup />
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed mb-4">
+            <p className="text-muted-foreground text-sm leading-relaxed mb-4">
               {t.footer.description}
             </p>
-            <p className="text-gray-500 text-xs">
+            <p className="text-muted-foreground/70 text-xs">
               {t.footer.trustLine}
             </p>
           </div>
 
           {/* Company Links */}
           <div>
-            <h3 className="font-semibold text-sm uppercase tracking-wider text-gray-300 mb-4">
+            <h3 className="font-semibold text-sm uppercase tracking-wider text-foreground mb-4">
               {t.footer.company}
             </h3>
             <ul className="space-y-3">
@@ -140,7 +140,7 @@ export const Footer = () => {
                 <li key={link.name}>
                   <Link 
                     to={link.href} 
-                    className="text-gray-400 hover:text-white transition-colors text-sm link-interactive"
+                    className="text-muted-foreground hover:text-foreground transition-colors text-sm link-interactive"
                   >
                     {link.name}
                   </Link>
@@ -151,13 +151,13 @@ export const Footer = () => {
 
           {/* Connect Column */}
           <div>
-            <h3 className="font-semibold text-sm uppercase tracking-wider text-gray-300 mb-4">
+            <h3 className="font-semibold text-sm uppercase tracking-wider text-foreground mb-4">
               {t.footer.connect}
             </h3>
             <div className="space-y-4">
               <a 
                 href="mailto:Hello@HeyFlou.com" 
-                className="flex items-center gap-2 text-gray-400 hover:text-hf-teal transition-colors text-sm link-interactive"
+                className="flex items-center gap-2 text-muted-foreground hover:text-hf-teal transition-colors text-sm link-interactive"
               >
                 <Mail className="h-4 w-4" />
                 Hello@HeyFlou.com
@@ -171,7 +171,7 @@ export const Footer = () => {
                       href={link.href} 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="p-2 rounded-full bg-white/5 text-gray-400 hover:bg-hf-teal hover:text-white transition-all duration-200 btn-interactive"
+                      className="p-2 rounded-full bg-foreground/5 text-muted-foreground hover:bg-hf-teal hover:text-white transition-all duration-200 btn-interactive"
                       aria-label={`Follow us on ${link.name}`}
                     >
                       <IconComponent className="h-5 w-5" />
@@ -184,7 +184,7 @@ export const Footer = () => {
 
           {/* Newsletter Column */}
           <div>
-            <h3 className="font-semibold text-sm uppercase tracking-wider text-gray-300 mb-4">
+            <h3 className="font-semibold text-sm uppercase tracking-wider text-foreground mb-4">
               {t.footer.getProductUpdates}
             </h3>
             
@@ -221,7 +221,7 @@ export const Footer = () => {
                       variant="outline" 
                       size="sm" 
                       onClick={resetForm}
-                      className="text-gray-300 border-gray-600 hover:bg-white/10 hover:text-white"
+                      className="text-muted-foreground border-border hover:bg-foreground/10 hover:text-foreground"
                     >
                       {t.footer.tryAgain}
                     </Button>
@@ -244,7 +244,7 @@ export const Footer = () => {
                         placeholder={t.footer.enterEmail}
                         disabled={status === 'loading'}
                         className={cn(
-                          "bg-white/5 border-gray-700 text-white placeholder:text-gray-500",
+                          "bg-foreground/5 border-border text-foreground placeholder:text-muted-foreground",
                           "focus:border-hf-teal focus:ring-hf-teal/30",
                           "disabled:opacity-50 disabled:cursor-not-allowed",
                           emailError && "border-red-500 focus:border-red-500"
@@ -273,7 +273,7 @@ export const Footer = () => {
                         t.footer.subscribe
                       )}
                     </Button>
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-muted-foreground/70">
                       {t.footer.privacyNote}
                     </p>
                   </motion.form>
@@ -284,10 +284,10 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 mt-10 pt-8">
+        <div className="border-t border-border dark:border-white/10 mt-10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             {/* Copyright */}
-            <p className="text-gray-500 text-sm">
+            <p className="text-muted-foreground/70 text-sm">
               {t.footer.allRightsReserved}
             </p>
 
@@ -295,7 +295,7 @@ export const Footer = () => {
             <div className="flex items-center gap-6">
               <Link 
                 to="/contact" 
-                className="text-gray-500 hover:text-gray-300 text-sm transition-colors link-interactive"
+                className="text-muted-foreground hover:text-foreground text-sm transition-colors link-interactive"
               >
                 {t.footer.contactUs}
               </Link>
@@ -303,7 +303,7 @@ export const Footer = () => {
                 href="https://calendly.com/heyflou-ai/30min" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-gray-500 hover:text-gray-300 text-sm transition-colors link-interactive"
+                className="text-muted-foreground hover:text-foreground text-sm transition-colors link-interactive"
               >
                 {t.footer.bookStrategyCall}
               </a>
