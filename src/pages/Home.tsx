@@ -10,19 +10,10 @@ import { IndustrySystems } from '@/components/home/IndustrySystems';
 import { IntegrationBeams } from '@/components/home/IntegrationBeams';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 import { useTranslation } from '@/i18n';
+import { PAGE_SEO, getCanonicalUrl } from '@/lib/seo-config';
 
 export default function Home() {
   const t = useTranslation();
-
-  const organizationJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "HeyFlou",
-    "description": "AI Consulting for SMB Workflow Automation",
-    "url": "https://heyflou.com",
-    "logo": "https://heyflou.com/logo.png",
-    "sameAs": ["https://linkedin.com/company/heyflou", "https://twitter.com/heyflou"]
-  };
 
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -102,7 +93,12 @@ export default function Home() {
   ];
 
   return <>
-    <SEOHead title="HeyFlou | AI Consulting for SMB Workflow Automation" description="Save time and get more clients with AI chatbots, automated lead management, and CRM integration. Built for small and medium businesses." canonical="https://heyflou.com" jsonLd={[organizationJsonLd, faqJsonLd]} />
+    <SEOHead 
+      title={PAGE_SEO.home.title} 
+      description={PAGE_SEO.home.description} 
+      canonical={getCanonicalUrl(PAGE_SEO.home.path)} 
+      jsonLd={faqJsonLd} 
+    />
   
     <main className="pt-16">
       {/* Hero Section */}

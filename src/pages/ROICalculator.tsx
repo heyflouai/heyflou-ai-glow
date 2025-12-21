@@ -5,6 +5,7 @@ import { GradientButton } from '@/components/ui/gradient-button';
 import { Input } from '@/components/ui/input';
 import { Calculator } from 'lucide-react';
 import { useTranslation } from '@/i18n';
+import { PAGE_SEO, getCanonicalUrl } from '@/lib/seo-config';
 
 export default function ROICalculator() {
   const t = useTranslation();
@@ -25,9 +26,9 @@ export default function ROICalculator() {
   return (
     <>
       <SEOHead 
-        title="ROI Calculator | AI Consulting for SMB Workflow Automation"
-        description="Calculate how much time and money AI automation could save your small or medium business."
-        canonical="https://heyflou.com/roi"
+        title={PAGE_SEO.roiCalculator.title}
+        description={PAGE_SEO.roiCalculator.description}
+        canonical={getCanonicalUrl(PAGE_SEO.roiCalculator.path)}
       />
       
       <main className="pt-16">

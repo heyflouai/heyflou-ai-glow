@@ -7,14 +7,15 @@ import { IntegrationsWall } from '@/components/about/IntegrationsWall';
 import { TeamSnapshot } from '@/components/about/TeamSnapshot';
 import { ResponsibleAI } from '@/components/about/ResponsibleAI';
 import { CTAWithForm } from '@/components/about/CTAWithForm';
+import { PAGE_SEO, getCanonicalUrl } from '@/lib/seo-config';
 
 export default function About() {
   return (
     <>
       <SEOHead 
-        title="About HeyFlou | AI Consulting for SMB Workflow Automation" 
-        description="Learn how HeyFlou helps small and medium businesses save time and get more clients with proven AI workflow automation." 
-        canonical="https://heyflou.com/about" 
+        title={PAGE_SEO.about.title}
+        description={PAGE_SEO.about.description}
+        canonical={getCanonicalUrl(PAGE_SEO.about.path)}
       />
       
       <main>

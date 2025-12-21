@@ -4,6 +4,7 @@ import { GradientButton } from '@/components/ui/gradient-button';
 import { Rocket, Bot, MessageSquare, BarChart3, FileText, Stethoscope } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from '@/i18n';
+import { PAGE_SEO, SERVICE_SCHEMA, getCanonicalUrl } from '@/lib/seo-config';
 
 export default function Services() {
   const t = useTranslation();
@@ -11,9 +12,10 @@ export default function Services() {
   return (
     <>
       <SEOHead 
-        title="Services | AI Consulting for SMB Workflow Automation"
-        description="WhatsApp AI bots, lead management pipelines, CRM integration, and email automation for small and medium businesses."
-        canonical="https://heyflou.com/services"
+        title={PAGE_SEO.services.title}
+        description={PAGE_SEO.services.description}
+        canonical={getCanonicalUrl(PAGE_SEO.services.path)}
+        jsonLd={SERVICE_SCHEMA}
       />
       
       <main className="pt-16">

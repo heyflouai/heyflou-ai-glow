@@ -1,6 +1,7 @@
 import { SEOHead } from '@/components/ui/seo-head';
 import { Section } from '@/components/ui/section';
 import { useTranslation } from '@/i18n';
+import { PAGE_SEO, getCanonicalUrl } from '@/lib/seo-config';
 
 export default function CaseStudies() {
   const t = useTranslation();
@@ -107,9 +108,9 @@ export default function CaseStudies() {
   return (
     <>
       <SEOHead 
-        title="Case Studies | AI Consulting for SMB Workflow Automation"
-        description="Real results from small and medium businesses using AI workflow automation to grow bookings and clients."
-        canonical="https://heyflou.com/case-studies"
+        title={PAGE_SEO.caseStudies.title}
+        description={PAGE_SEO.caseStudies.description}
+        canonical={getCanonicalUrl(PAGE_SEO.caseStudies.path)}
       />
       
       <main className="pt-16">
