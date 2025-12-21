@@ -605,4 +605,72 @@ export const es: TranslationKeys = {
     therapistContentSolution: 'Construimos embudos de contenido-a-reserva con calificación por chatbot IA y secuencias de seguimiento automatizadas.',
     therapistContentOutcome: 'Duplicó las consultas con integración de embudo de contenido + chatbot.',
   },
+
+  // Industry Systems Section (Homepage)
+  industrySystems: {
+    title: 'Cómo HeyFlou Te Ayuda a Crecer',
+    subtitle: 'Elige tu industria. Mira el sistema exacto que implementamos para ahorrar tiempo y ganar más clientes.',
+    
+    // Industry tabs
+    medical: 'Médico',
+    travel: 'Agencias de Viajes',
+    education: 'Educación / Fitness',
+    
+    // Pillar 1: Capture & Respond
+    pillar1Title: 'Captura y Responde',
+    pillar1Desc: 'Respuestas instantáneas que convierten visitantes en leads calificados—24/7.',
+    pillar1Bullet1: 'Chat 24/7 + respuestas instantáneas',
+    pillar1Bullet2: 'Captura + calificación de leads',
+    pillar1Bullet3: 'Transferencia humana cuando es necesario',
+    pillar1ExMedical: 'Preguntas de pacientes → pre-filtro → reservar consulta.',
+    pillar1ExTravel: 'Consulta de viaje → capturar detalles → calificar presupuesto y fechas.',
+    pillar1ExEducation: 'Preguntas del programa → clase de prueba / llamada intro.',
+    pillar1Auto1: 'Captura de chat web / WhatsApp',
+    pillar1Auto2: 'FAQ + respuestas inteligentes instantáneas',
+    pillar1Auto3: 'Preguntas de calificación (específicas por industria)',
+    pillar1Auto4: 'Recolección de info de contacto (nombre/teléfono/email)',
+    pillar1Auto5: 'Enrutamiento al equipo/miembro correcto',
+    pillar1Auto6: 'Cambio de idioma (EN/ES)',
+    pillar1Auto7: 'Respaldo de transferencia humana',
+    
+    // Pillar 2: Qualify & Track
+    pillar2Title: 'Califica y Rastrea',
+    pillar2Desc: 'Un pipeline limpio que rastrea automáticamente cada lead y próximo paso.',
+    pillar2Bullet1: 'Etapas de pipeline + estado del lead',
+    pillar2Bullet2: 'Recordatorios y tareas automatizadas',
+    pillar2Bullet3: 'Seguimiento de fuente + notas',
+    pillar2ExMedical: 'Rastrea consultas, referencias y próximos pasos automáticamente.',
+    pillar2ExTravel: 'Rastrea leads por destino, estado y agente asignado.',
+    pillar2ExEducation: 'Rastrea pruebas, inscripciones, membresías y próximos pasos.',
+    pillar2Auto1: 'Creación y enriquecimiento de registro CRM',
+    pillar2Auto2: 'Actualizaciones de etapa del pipeline',
+    pillar2Auto3: 'Tareas y recordatorios de seguimiento automáticos',
+    pillar2Auto4: 'Seguimiento de fuente de leads (ads/orgánico/referencias)',
+    pillar2Auto5: 'Notas e historial de conversaciones',
+    pillar2Auto6: 'Snapshot de reportes simple',
+    pillar2Auto7: 'Integraciones (Sheets/Zoho/HubSpot/etc.)',
+    
+    // Pillar 3: Convert & Retain
+    pillar3Title: 'Convierte y Retiene',
+    pillar3Desc: 'Seguimientos, recordatorios y flujos de reactivación que aumentan clientes reservados.',
+    pillar3Bullet1: 'Secuencias de nurturing',
+    pillar3Bullet2: 'Reducción de no-shows',
+    pillar3Bullet3: 'Campañas de reactivación',
+    pillar3ExMedical: 'Recordatorios + seguimientos post-visita reducen no-shows.',
+    pillar3ExTravel: 'Seguimientos automatizados para cotizaciones + recordatorios de reserva.',
+    pillar3ExEducation: 'Nudges de retención + reactivación para clientes inactivos.',
+    pillar3Auto1: 'Links de reserva / flujo de solicitud de reserva',
+    pillar3Auto2: 'Sincronización de calendario (Google/Outlook)',
+    pillar3Auto3: 'Flujos de reprogramación / cancelación',
+    pillar3Auto4: 'Recordatorios de no-show (SMS/WhatsApp/email)',
+    pillar3Auto5: 'Seguimientos post-cita',
+    pillar3Auto6: 'Solicitudes de reseña (opcional)',
+    pillar3Auto7: 'Secuencias de reactivación',
+    
+    // Other UI
+    exampleFor: 'Ejemplo para',
+    coreAutomations: 'Automatizaciones incluidas',
+    bookCall: 'Reservar Llamada Gratis',
+    seeCases: 'Ver Casos de Éxito',
+  },
 };
