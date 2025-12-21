@@ -683,6 +683,56 @@ export const en = {
     bookCall: 'Book Free Call',
     seeCases: 'See Case Studies',
   },
+
+  // Custom Solutions CTA
+  customCta: {
+    buildCustom: 'Build a Custom Workflow',
+    buildCustomSub: "Tell us your process — we'll design an automation plan.",
+    exploreComingSoon: "Explore What's Coming",
+    exploreComingSoonSub: 'More automations are launching soon.',
+    
+    // Modal
+    modalTitle: 'Custom Workflow Builder',
+    modalSubtitle: "Answer 3 questions — we'll recommend the right automation.",
+    labelIndustry: 'Industry',
+    selectIndustry: 'Select your industry',
+    labelAutomation: 'What do you want to automate?',
+    selectAutomation: 'Select automation type',
+    labelDescription: 'Describe your current process (1–2 sentences)',
+    descriptionPlaceholder: 'e.g., We currently track leads in a spreadsheet and follow up manually...',
+    labelEmail: 'Email',
+    labelPhone: 'WhatsApp / Phone',
+    sendRequest: 'Send Request',
+    sending: 'Sending…',
+    successMessage: "✓ Thanks! We'll reply within 24 hours.",
+    errorMessage: 'Something went wrong — please try again.',
+    tryAgain: 'Try Again',
+    
+    // Industries
+    industryMedical: 'Medical',
+    industryTravel: 'Travel Agencies',
+    industryEducation: 'Private Ed & Fitness',
+    industryOther: 'Other',
+    
+    // Automation types
+    autoLeadCapture: 'Lead capture',
+    autoFollowUps: 'Follow-ups',
+    autoScheduling: 'Scheduling',
+    autoCrmUpdates: 'CRM updates',
+    autoEmailMarketing: 'Email marketing',
+    autoReporting: 'Reporting',
+    autoOther: 'Other',
+    
+    // Roadmap
+    roadmapTitle: 'Upcoming Automations (Preview)',
+    roadmap1: 'AI intake forms + smart qualification',
+    roadmap2: 'Review & referral automation',
+    roadmap3: 'Reactivation campaigns (WhatsApp + Email)',
+    roadmap4: 'Internal ops automation (reports, dashboards)',
+    roadmap5: 'Integrations: more CRMs and booking tools',
+    roadmapDisclaimer: 'Want something specific?',
+    roadmapLink: 'Request a custom workflow.',
+  },
 };
 
 export type TranslationKeys = typeof en;

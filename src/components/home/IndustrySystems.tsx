@@ -6,6 +6,7 @@ import { GradientButton } from '@/components/ui/gradient-button';
 import { Link } from 'react-router-dom';
 import { useTranslation } from '@/i18n';
 import { cn } from '@/lib/utils';
+import { CustomSolutionsCTA } from './CustomSolutionsCTA';
 
 type Industry = 'medical' | 'travel' | 'education';
 
@@ -276,6 +277,9 @@ export function IndustrySystems({ className }: { className?: string }) {
               </Link>
             </GradientButton>
           </div>
+          
+          {/* Custom Solutions CTA */}
+          <CustomSolutionsCTA />
         </div>
       </div>
     </section>

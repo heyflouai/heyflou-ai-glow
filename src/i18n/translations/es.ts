@@ -685,4 +685,54 @@ export const es: TranslationKeys = {
     bookCall: 'Reservar Llamada Gratis',
     seeCases: 'Ver Casos de Éxito',
   },
+
+  // Custom Solutions CTA
+  customCta: {
+    buildCustom: 'Crear Workflow Personalizado',
+    buildCustomSub: 'Cuéntanos tu proceso — diseñaremos un plan de automatización.',
+    exploreComingSoon: 'Explora lo que Viene',
+    exploreComingSoonSub: 'Más automatizaciones próximamente.',
+    
+    // Modal
+    modalTitle: 'Constructor de Workflow Personalizado',
+    modalSubtitle: 'Responde 3 preguntas — te recomendaremos la automatización correcta.',
+    labelIndustry: 'Industria',
+    selectIndustry: 'Selecciona tu industria',
+    labelAutomation: '¿Qué quieres automatizar?',
+    selectAutomation: 'Selecciona tipo de automatización',
+    labelDescription: 'Describe tu proceso actual (1–2 oraciones)',
+    descriptionPlaceholder: 'ej., Actualmente rastreamos leads en una hoja de cálculo y hacemos seguimiento manual...',
+    labelEmail: 'Correo electrónico',
+    labelPhone: 'WhatsApp / Teléfono',
+    sendRequest: 'Enviar Solicitud',
+    sending: 'Enviando…',
+    successMessage: '✓ ¡Gracias! Responderemos en 24 horas.',
+    errorMessage: 'Algo salió mal — intenta de nuevo.',
+    tryAgain: 'Intentar de Nuevo',
+    
+    // Industries
+    industryMedical: 'Médico',
+    industryTravel: 'Agencias de Viajes',
+    industryEducation: 'Educación Privada y Fitness',
+    industryOther: 'Otro',
+    
+    // Automation types
+    autoLeadCapture: 'Captura de leads',
+    autoFollowUps: 'Seguimientos',
+    autoScheduling: 'Agendamiento',
+    autoCrmUpdates: 'Actualizaciones de CRM',
+    autoEmailMarketing: 'Email marketing',
+    autoReporting: 'Reportes',
+    autoOther: 'Otro',
+    
+    // Roadmap
+    roadmapTitle: 'Próximas Automatizaciones (Vista Previa)',
+    roadmap1: 'Formularios de intake con IA + calificación inteligente',
+    roadmap2: 'Automatización de reseñas y referidos',
+    roadmap3: 'Campañas de reactivación (WhatsApp + Email)',
+    roadmap4: 'Automatización de operaciones internas (reportes, dashboards)',
+    roadmap5: 'Integraciones: más CRMs y herramientas de reservas',
+    roadmapDisclaimer: '¿Quieres algo específico?',
+    roadmapLink: 'Solicita un workflow personalizado.',
+  },
 };
