@@ -6,6 +6,8 @@ import { CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 import { FormField } from './FormField';
 import { ConsentNote } from './ConsentNote';
 import { GradientButton } from '@/components/ui/gradient-button';
+import { SubmitButton } from '@/components/ui/submit-button';
+import { FormAlert } from '@/components/ui/form-alert';
 import { Progress } from '@/components/ui/progress';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
@@ -56,6 +58,7 @@ export const QuestionnaireForm: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const { toast } = useToast();
 
   const {
@@ -102,6 +105,7 @@ export const QuestionnaireForm: React.FC = () => {
     }
 
     setIsSubmitting(true);
+    setSubmitError(null);
 
     try {
       const trackingData = getTrackingData();
@@ -157,6 +161,7 @@ export const QuestionnaireForm: React.FC = () => {
 
     } catch (error) {
       console.error('Form submission error:', error);
+      setSubmitError("Please try again or contact us directly.");
       toast({
         title: "Submission failed",
         description: "Please try again or contact us directly.",
@@ -610,18 +615,29 @@ export const QuestionnaireForm: React.FC = () => {
                     Book a Strategy Call
                   </a>
                 </GradientButton>
-                <GradientButton
-                  type="submit"
+                <SubmitButton
                   variant="hero"
                   size="lg"
-                  disabled={isSubmitting}
+                  isSubmitting={isSubmitting}
+                  loadingText="Submitting..."
                 >
-                  {isSubmitting ? 'Submitting...' : 'Submit Questionnaire'}
-                </GradientButton>
+                  Submit Questionnaire
+                </SubmitButton>
               </>
             )}
           </div>
         </div>
+
+        {/* Inline Error Alert */}
+        {submitError && currentStep === 3 && (
+          <FormAlert
+            type="error"
+            title="Submission failed"
+            message={submitError}
+            onDismiss={() => setSubmitError(null)}
+            className="mt-4"
+          />
+        )}
 
         {currentStep === 3 && <ConsentNote />}
       </form>

@@ -6,6 +6,8 @@ import { CheckCircle, Users, Shield, Zap } from 'lucide-react';
 import { FormField } from './FormField';
 import { ConsentNote } from './ConsentNote';
 import { GradientButton } from '@/components/ui/gradient-button';
+import { SubmitButton } from '@/components/ui/submit-button';
+import { FormAlert } from '@/components/ui/form-alert';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { useTranslation } from '@/i18n';
@@ -44,6 +46,7 @@ interface CompactFormProps {
 export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage, hidePromoText = false }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const { toast } = useToast();
   const t = useTranslation();
 
@@ -83,6 +86,7 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage, hidePromoT
     }
 
     setIsSubmitting(true);
+    setSubmitError(null);
 
     try {
       const trackingData = getTrackingData();
@@ -154,6 +158,7 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage, hidePromoT
 
     } catch (error) {
       console.error('Form submission error:', error);
+      setSubmitError(t.forms.submissionFailedDesc);
       toast({
         title: t.forms.submissionFailed,
         description: t.forms.submissionFailedDesc,
@@ -314,16 +319,26 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage, hidePromoT
             required
           />
 
+          {/* Inline Error Alert */}
+          {submitError && (
+            <FormAlert
+              type="error"
+              title={t.forms.submissionFailed}
+              message={submitError}
+              onDismiss={() => setSubmitError(null)}
+            />
+          )}
+
           <div className="flex flex-col sm:flex-row gap-3 pt-2">
-            <GradientButton
-              type="submit"
+            <SubmitButton
               variant="hero"
               size="lg"
-              disabled={isSubmitting}
+              isSubmitting={isSubmitting}
+              loadingText={t.forms.sending}
               className="flex-1"
             >
-              {isSubmitting ? t.forms.sending : t.forms.sendInquiry}
-            </GradientButton>
+              {t.forms.sendInquiry}
+            </SubmitButton>
             
             <GradientButton
               variant="ghost"
@@ -494,16 +509,26 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage, hidePromoT
             required
           />
 
+          {/* Inline Error Alert */}
+          {submitError && (
+            <FormAlert
+              type="error"
+              title={t.forms.submissionFailed}
+              message={submitError}
+              onDismiss={() => setSubmitError(null)}
+            />
+          )}
+
           <div className="flex flex-col sm:flex-row gap-3 pt-2">
-            <GradientButton
-              type="submit"
+            <SubmitButton
               variant="hero"
               size="lg"
-              disabled={isSubmitting}
+              isSubmitting={isSubmitting}
+              loadingText={t.forms.sending}
               className="flex-1"
             >
-              {isSubmitting ? t.forms.sending : t.forms.sendInquiry}
-            </GradientButton>
+              {t.forms.sendInquiry}
+            </SubmitButton>
             
             <GradientButton
               variant="ghost"
