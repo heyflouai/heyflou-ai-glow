@@ -690,7 +690,7 @@ export const es: TranslationKeys = {
   customCta: {
     buildCustom: 'Crear Workflow Personalizado',
     buildCustomSub: 'Cuéntanos tu proceso — diseñaremos un plan de automatización.',
-    exploreComingSoon: 'Explora lo que Viene',
+    moreComingSoon: 'Más Próximamente',
     exploreComingSoonSub: 'Más automatizaciones próximamente.',
     
     // Modal
