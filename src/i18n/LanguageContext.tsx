@@ -80,9 +80,21 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
+// Fallback context for HMR edge cases
+const fallbackContext: LanguageContextType = {
+  language: 'en',
+  setLanguage: () => {},
+  t: en,
+};
+
 export function useLanguage() {
   const context = useContext(LanguageContext);
+  // Return fallback during HMR to prevent crashes
   if (context === undefined) {
+    if (process.env.NODE_ENV === 'development') {
+      console.warn('[i18n] LanguageContext not found, using fallback. This may happen during HMR.');
+      return fallbackContext;
+    }
     throw new Error('useLanguage must be used within a LanguageProvider');
   }
   return context;
