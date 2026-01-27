@@ -1,6 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { cn } from '@/lib/utils';
 
 interface WorkflowVisualizationProps {
   selectedApps: Set<string>;
@@ -12,63 +11,50 @@ export const WorkflowVisualization = ({ selectedApps }: WorkflowVisualizationPro
 
   // Calculate positions for nodes in a radial layout
   const getNodePosition = (index: number, total: number) => {
-    const angle = (index * 2 * Math.PI) / total - Math.PI / 2; // Start from top
-    const radius = 120; // Distance from center
-    const x = 150 + radius * Math.cos(angle); // Center at 150
-    const y = 150 + radius * Math.sin(angle); // Center at 150
-    return { x, y, angle };
+    const angle = (index * 2 * Math.PI) / total - Math.PI / 2;
+    const radius = 90;
+    const x = 125 + radius * Math.cos(angle);
+    const y = 125 + radius * Math.sin(angle);
+    return { x, y };
   };
 
   // Generate curved path from app node to center
   const getCurvedPath = (x: number, y: number) => {
-    const centerX = 150;
-    const centerY = 150;
-    
-    // Calculate control point for curve
-    const midX = (x + centerX) / 2;
-    const midY = (y + centerY) / 2;
-    
-    // Offset control point perpendicular to the line
+    const centerX = 125;
+    const centerY = 125;
     const dx = centerX - x;
     const dy = centerY - y;
     const len = Math.sqrt(dx * dx + dy * dy);
-    const offset = len * 0.15;
-    
-    const ctrlX = midX + (dy / len) * offset;
-    const ctrlY = midY - (dx / len) * offset;
-    
-    return `M ${x} ${y} Q ${ctrlX} ${ctrlY} ${centerX} ${centerY}`;
+    const offset = len * 0.12;
+    const midX = (x + centerX) / 2 + (dy / len) * offset;
+    const midY = (y + centerY) / 2 - (dx / len) * offset;
+    return `M ${x} ${y} Q ${midX} ${midY} ${centerX} ${centerY}`;
   };
 
   return (
-    <Card className="border-primary/20 bg-card overflow-hidden">
-      <CardHeader className="pb-3">
+    <Card className="border-border bg-card">
+      <CardHeader className="pb-2">
         <CardTitle className="text-lg">Your Automation Workflow</CardTitle>
+        {!hasApps && (
+          <p className="text-sm text-muted-foreground mt-1">
+            Select apps to generate a visual workflow preview.
+          </p>
+        )}
       </CardHeader>
-      <CardContent>
-        <div className="relative w-full aspect-square max-w-[300px] mx-auto bg-gradient-to-br from-background via-background to-muted/30 rounded-xl">
-          {/* SVG Container */}
-          <svg 
-            viewBox="0 0 300 300" 
-            className="w-full h-full"
-            style={{ filter: 'drop-shadow(0 0 20px hsl(var(--primary) / 0.1))' }}
-          >
-            {/* Background glow */}
+      <CardContent className="pt-2">
+        <div className="relative w-full max-w-[250px] mx-auto aspect-square">
+          <svg viewBox="0 0 250 250" className="w-full h-full">
             <defs>
               <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.15" />
+                <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.08" />
                 <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0" />
               </radialGradient>
-              <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.6" />
-                <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.2" />
-              </linearGradient>
             </defs>
-            
-            {/* Background glow circle */}
-            <circle cx="150" cy="150" r="80" fill="url(#centerGlow)" />
 
-            {/* Connection lines */}
+            {/* Background glow */}
+            <circle cx="125" cy="125" r="60" fill="url(#centerGlow)" />
+
+            {/* Connection lines - only when apps exist */}
             <AnimatePresence>
               {hasApps && apps.map((app, index) => {
                 const { x, y } = getNodePosition(index, apps.length);
@@ -77,73 +63,67 @@ export const WorkflowVisualization = ({ selectedApps }: WorkflowVisualizationPro
                     key={`line-${app}`}
                     d={getCurvedPath(x, y)}
                     fill="none"
-                    stroke="url(#lineGradient)"
-                    strokeWidth="2"
+                    stroke="hsl(var(--primary))"
+                    strokeOpacity="0.3"
+                    strokeWidth="1.5"
                     strokeLinecap="round"
                     initial={{ pathLength: 0, opacity: 0 }}
                     animate={{ pathLength: 1, opacity: 1 }}
                     exit={{ pathLength: 0, opacity: 0 }}
-                    transition={{ duration: 0.4, ease: 'easeOut' }}
+                    transition={{ duration: 0.3, ease: 'easeOut' }}
                   />
                 );
               })}
             </AnimatePresence>
 
-            {/* Center node */}
+            {/* Center node - always visible */}
             <motion.g
-              initial={{ scale: 0.8, opacity: 0 }}
+              initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.2 }}
             >
-              {/* Outer glow ring */}
+              {/* Outer ring */}
               <circle
-                cx="150"
-                cy="150"
-                r="42"
+                cx="125"
+                cy="125"
+                r="32"
                 fill="none"
                 stroke="hsl(var(--primary))"
                 strokeWidth="1"
-                opacity="0.3"
+                strokeOpacity={hasApps ? 0.4 : 0.2}
               />
               {/* Main circle */}
               <circle
-                cx="150"
-                cy="150"
-                r="36"
+                cx="125"
+                cy="125"
+                r="26"
                 fill="hsl(var(--card))"
                 stroke="hsl(var(--primary))"
-                strokeWidth="2"
-                className="drop-shadow-lg"
+                strokeWidth="1.5"
+                strokeOpacity={hasApps ? 1 : 0.5}
               />
-              {/* Inner accent */}
-              <circle
-                cx="150"
-                cy="150"
-                r="28"
-                fill="none"
-                stroke="hsl(var(--primary))"
-                strokeWidth="1"
-                opacity="0.4"
-              />
+              {/* Center label - only when apps selected */}
+              {hasApps && (
+                <>
+                  <text
+                    x="125"
+                    y="123"
+                    textAnchor="middle"
+                    className="fill-foreground text-[8px] font-semibold"
+                  >
+                    HeyFlou
+                  </text>
+                  <text
+                    x="125"
+                    y="133"
+                    textAnchor="middle"
+                    className="fill-muted-foreground text-[6px]"
+                  >
+                    Automation
+                  </text>
+                </>
+              )}
             </motion.g>
-
-            {/* Center label */}
-            <text
-              x="150"
-              y="146"
-              textAnchor="middle"
-              className="fill-foreground text-[9px] font-semibold"
-            >
-              HeyFlou
-            </text>
-            <text
-              x="150"
-              y="158"
-              textAnchor="middle"
-              className="fill-muted-foreground text-[7px]"
-            >
-              Automation
-            </text>
 
             {/* App nodes */}
             <AnimatePresence mode="popLayout">
@@ -153,74 +133,48 @@ export const WorkflowVisualization = ({ selectedApps }: WorkflowVisualizationPro
                   <motion.g
                     key={app}
                     initial={{ scale: 0, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1, x: 0, y: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0, opacity: 0 }}
                     transition={{ 
                       type: 'spring', 
-                      stiffness: 300, 
+                      stiffness: 350, 
                       damping: 25,
-                      delay: index * 0.05 
+                      delay: index * 0.03 
                     }}
                     layout
                   >
-                    {/* App node glow */}
                     <circle
                       cx={x}
                       cy={y}
-                      r="26"
-                      fill="hsl(var(--primary))"
-                      opacity="0.1"
-                    />
-                    {/* App node circle */}
-                    <circle
-                      cx={x}
-                      cy={y}
-                      r="22"
+                      r="18"
                       fill="hsl(var(--card))"
                       stroke="hsl(var(--border))"
-                      strokeWidth="1.5"
+                      strokeWidth="1"
                     />
-                    {/* App name - truncated */}
                     <text
                       x={x}
                       y={y + 1}
                       textAnchor="middle"
                       dominantBaseline="middle"
-                      className="fill-foreground text-[7px] font-medium"
+                      className="fill-foreground text-[6px] font-medium"
                     >
-                      {app.length > 10 ? `${app.slice(0, 9)}…` : app}
+                      {app.length > 8 ? `${app.slice(0, 7)}…` : app}
                     </text>
                   </motion.g>
                 );
               })}
             </AnimatePresence>
           </svg>
-
-          {/* Empty state overlay */}
-          <AnimatePresence>
-            {!hasApps && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="absolute inset-0 flex items-center justify-center"
-              >
-                <p className="text-sm text-muted-foreground text-center px-8">
-                  Select apps to see your automation workflow
-                </p>
-              </motion.div>
-            )}
-          </AnimatePresence>
         </div>
 
-        {/* App count indicator */}
+        {/* App count */}
         {hasApps && (
           <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-xs text-muted-foreground text-center mt-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-xs text-muted-foreground text-center mt-2"
           >
-            {apps.length} app{apps.length !== 1 ? 's' : ''} connected to your automation
+            {apps.length} app{apps.length !== 1 ? 's' : ''} connected
           </motion.p>
         )}
       </CardContent>
