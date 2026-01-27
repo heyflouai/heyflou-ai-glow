@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { ChevronRight } from 'lucide-react';
 
 interface WorkflowVisualizationProps {
   selectedApps: Set<string>;
@@ -9,172 +10,113 @@ export const WorkflowVisualization = ({ selectedApps }: WorkflowVisualizationPro
   const apps = Array.from(selectedApps);
   const hasApps = apps.length > 0;
 
-  // Calculate positions for nodes in a radial layout
-  const getNodePosition = (index: number, total: number) => {
-    const angle = (index * 2 * Math.PI) / total - Math.PI / 2;
-    const radius = 90;
-    const x = 125 + radius * Math.cos(angle);
-    const y = 125 + radius * Math.sin(angle);
-    return { x, y };
-  };
-
-  // Generate curved path from app node to center
-  const getCurvedPath = (x: number, y: number) => {
-    const centerX = 125;
-    const centerY = 125;
-    const dx = centerX - x;
-    const dy = centerY - y;
-    const len = Math.sqrt(dx * dx + dy * dy);
-    const offset = len * 0.12;
-    const midX = (x + centerX) / 2 + (dy / len) * offset;
-    const midY = (y + centerY) / 2 - (dx / len) * offset;
-    return `M ${x} ${y} Q ${midX} ${midY} ${centerX} ${centerY}`;
-  };
-
   return (
     <Card className="border-border bg-card">
-      <CardHeader className="pb-2">
+      <CardHeader className="pb-3">
         <CardTitle className="text-lg">Your Automation Workflow</CardTitle>
-        {!hasApps && (
-          <p className="text-sm text-muted-foreground mt-1">
-            Select apps to generate a visual workflow preview.
-          </p>
-        )}
       </CardHeader>
-      <CardContent className="pt-2">
-        <div className="relative w-full max-w-[250px] mx-auto aspect-square">
-          <svg viewBox="0 0 250 250" className="w-full h-full">
-            <defs>
-              <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.08" />
-                <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0" />
-              </radialGradient>
-            </defs>
+      <CardContent>
+        {/* Workflow container with horizontal scroll */}
+        <div 
+          className="relative min-h-[100px] rounded-lg border border-border/50 bg-muted/30 overflow-x-auto"
+          style={{
+            backgroundImage: 'radial-gradient(circle, hsl(var(--border)) 1px, transparent 1px)',
+            backgroundSize: '20px 20px',
+          }}
+        >
+          {/* Empty state */}
+          {!hasApps && (
+            <div className="flex items-center justify-center h-[100px] px-4">
+              <p className="text-sm text-muted-foreground text-center">
+                Select apps to generate a workflow preview
+              </p>
+            </div>
+          )}
 
-            {/* Background glow */}
-            <circle cx="125" cy="125" r="60" fill="url(#centerGlow)" />
+          {/* Workflow nodes */}
+          {hasApps && (
+            <div className="flex items-center gap-0 p-4 min-w-max">
+              {/* Start trigger node */}
+              <motion.div
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                className="flex items-center justify-center w-10 h-10 rounded-lg border border-primary/30 bg-primary/10 shrink-0"
+              >
+                <div className="w-2 h-2 rounded-full bg-primary" />
+              </motion.div>
 
-            {/* Connection lines - only when apps exist */}
-            <AnimatePresence>
-              {hasApps && apps.map((app, index) => {
-                const { x, y } = getNodePosition(index, apps.length);
-                return (
-                  <motion.path
-                    key={`line-${app}`}
-                    d={getCurvedPath(x, y)}
-                    fill="none"
-                    stroke="hsl(var(--primary))"
-                    strokeOpacity="0.3"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    initial={{ pathLength: 0, opacity: 0 }}
-                    animate={{ pathLength: 1, opacity: 1 }}
-                    exit={{ pathLength: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: 'easeOut' }}
-                  />
-                );
-              })}
-            </AnimatePresence>
+              {/* Connector from trigger */}
+              <div className="flex items-center shrink-0">
+                <div className="w-6 h-[2px] bg-border" />
+                <ChevronRight className="w-3 h-3 text-muted-foreground -ml-1" />
+              </div>
 
-            {/* Center node - always visible */}
-            <motion.g
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.2 }}
-            >
-              {/* Outer ring */}
-              <circle
-                cx="125"
-                cy="125"
-                r="32"
-                fill="none"
-                stroke="hsl(var(--primary))"
-                strokeWidth="1"
-                strokeOpacity={hasApps ? 0.4 : 0.2}
-              />
-              {/* Main circle */}
-              <circle
-                cx="125"
-                cy="125"
-                r="26"
-                fill="hsl(var(--card))"
-                stroke="hsl(var(--primary))"
-                strokeWidth="1.5"
-                strokeOpacity={hasApps ? 1 : 0.5}
-              />
-              {/* Center label - only when apps selected */}
-              {hasApps && (
-                <>
-                  <text
-                    x="125"
-                    y="123"
-                    textAnchor="middle"
-                    className="fill-foreground text-[8px] font-semibold"
-                  >
-                    HeyFlou
-                  </text>
-                  <text
-                    x="125"
-                    y="133"
-                    textAnchor="middle"
-                    className="fill-muted-foreground text-[6px]"
-                  >
-                    Automation
-                  </text>
-                </>
-              )}
-            </motion.g>
-
-            {/* App nodes */}
-            <AnimatePresence mode="popLayout">
-              {hasApps && apps.map((app, index) => {
-                const { x, y } = getNodePosition(index, apps.length);
-                return (
-                  <motion.g
+              {/* App nodes */}
+              <AnimatePresence mode="popLayout">
+                {apps.map((app, index) => (
+                  <motion.div
                     key={app}
-                    initial={{ scale: 0, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    exit={{ scale: 0, opacity: 0 }}
+                    className="flex items-center"
+                    initial={{ opacity: 0, scale: 0.8, x: -20 }}
+                    animate={{ opacity: 1, scale: 1, x: 0 }}
+                    exit={{ opacity: 0, scale: 0.8, x: -20 }}
                     transition={{ 
                       type: 'spring', 
-                      stiffness: 350, 
+                      stiffness: 400, 
                       damping: 25,
-                      delay: index * 0.03 
+                      delay: index * 0.03
                     }}
                     layout
                   >
-                    <circle
-                      cx={x}
-                      cy={y}
-                      r="18"
-                      fill="hsl(var(--card))"
-                      stroke="hsl(var(--border))"
-                      strokeWidth="1"
-                    />
-                    <text
-                      x={x}
-                      y={y + 1}
-                      textAnchor="middle"
-                      dominantBaseline="middle"
-                      className="fill-foreground text-[6px] font-medium"
-                    >
-                      {app.length > 8 ? `${app.slice(0, 7)}…` : app}
-                    </text>
-                  </motion.g>
-                );
-              })}
-            </AnimatePresence>
-          </svg>
+                    {/* App node */}
+                    <div className="flex items-center gap-2 px-3 py-2 rounded-lg border border-border bg-card shadow-sm shrink-0 min-w-[80px]">
+                      {/* Icon placeholder */}
+                      <div className="w-5 h-5 rounded bg-muted flex items-center justify-center shrink-0">
+                        <span className="text-[10px] text-muted-foreground font-medium">
+                          {app.charAt(0).toUpperCase()}
+                        </span>
+                      </div>
+                      {/* App name */}
+                      <span className="text-xs font-medium text-foreground whitespace-nowrap">
+                        {app.length > 12 ? `${app.slice(0, 11)}…` : app}
+                      </span>
+                    </div>
+
+                    {/* Connector to next node */}
+                    {index < apps.length - 1 && (
+                      <div className="flex items-center shrink-0">
+                        <div className="w-6 h-[2px] bg-border" />
+                        <ChevronRight className="w-3 h-3 text-muted-foreground -ml-1" />
+                      </div>
+                    )}
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+
+              {/* End node */}
+              <div className="flex items-center shrink-0">
+                <div className="w-6 h-[2px] bg-border" />
+                <ChevronRight className="w-3 h-3 text-muted-foreground -ml-1" />
+              </div>
+              <motion.div
+                initial={{ opacity: 0, x: 10 }}
+                animate={{ opacity: 1, x: 0 }}
+                className="flex items-center justify-center w-10 h-10 rounded-lg border border-primary/30 bg-primary/10 shrink-0"
+              >
+                <div className="w-2 h-2 rounded-full bg-primary" />
+              </motion.div>
+            </div>
+          )}
         </div>
 
-        {/* App count */}
+        {/* Step count */}
         {hasApps && (
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-xs text-muted-foreground text-center mt-2"
+            className="text-xs text-muted-foreground mt-3"
           >
-            {apps.length} app{apps.length !== 1 ? 's' : ''} connected
+            {apps.length} step{apps.length !== 1 ? 's' : ''} in workflow
           </motion.p>
         )}
       </CardContent>
