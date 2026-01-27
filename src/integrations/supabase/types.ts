@@ -14,6 +14,41 @@ export type Database = {
   }
   public: {
     Tables: {
+      app_price_overrides: {
+        Row: {
+          app_id: string
+          created_at: string
+          id: string
+          override_price: number
+          updated_at: string
+          vertical: string
+        }
+        Insert: {
+          app_id: string
+          created_at?: string
+          id?: string
+          override_price: number
+          updated_at?: string
+          vertical: string
+        }
+        Update: {
+          app_id?: string
+          created_at?: string
+          id?: string
+          override_price?: number
+          updated_at?: string
+          vertical?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "app_price_overrides_app_id_fkey"
+            columns: ["app_id"]
+            isOneToOne: false
+            referencedRelation: "apps_master"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       apps_catalog: {
         Row: {
           app_price: number
@@ -37,6 +72,36 @@ export type Database = {
         }
         Update: {
           app_price?: number
+          category?: string
+          created_at?: string
+          description?: string
+          id?: string
+          name?: string
+          sort_order?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      apps_master: {
+        Row: {
+          category: string
+          created_at: string
+          description: string
+          id: string
+          name: string
+          sort_order: number
+          updated_at: string
+        }
+        Insert: {
+          category: string
+          created_at?: string
+          description: string
+          id: string
+          name: string
+          sort_order?: number
+          updated_at?: string
+        }
+        Update: {
           category?: string
           created_at?: string
           description?: string
@@ -269,6 +334,33 @@ export type Database = {
           created_at?: string
           email?: string
           id?: string
+        }
+        Relationships: []
+      }
+      vertical_settings: {
+        Row: {
+          base_price: number
+          created_at: string
+          currency: string
+          default_app_price: number
+          id: string
+          updated_at: string
+        }
+        Insert: {
+          base_price?: number
+          created_at?: string
+          currency?: string
+          default_app_price?: number
+          id: string
+          updated_at?: string
+        }
+        Update: {
+          base_price?: number
+          created_at?: string
+          currency?: string
+          default_app_price?: number
+          id?: string
+          updated_at?: string
         }
         Relationships: []
       }

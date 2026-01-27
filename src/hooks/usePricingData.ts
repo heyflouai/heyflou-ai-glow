@@ -1,10 +1,13 @@
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
 
-export interface PricingSettings {
+export type VerticalType = 'custom' | 'travel' | 'health';
+
+export interface VerticalSettings {
   id: string;
   currency: string;
-  custom_base_price: number;
+  base_price: number;
+  default_app_price: number;
 }
 
 export interface OfferPackage {
@@ -16,37 +19,45 @@ export interface OfferPackage {
   sort_order: number;
 }
 
-export interface AppCatalogItem {
+export interface AppMasterItem {
   id: string;
   name: string;
   category: string;
   description: string;
-  app_price: number;
   sort_order: number;
+}
+
+export interface AppPriceOverride {
+  id: string;
+  vertical: string;
+  app_id: string;
+  override_price: number;
 }
 
 export interface GroupedApps {
   name: string;
-  apps: { id: string; name: string; description: string; app_price: number }[];
+  apps: { id: string; name: string; description: string }[];
 }
 
-export const usePricingSettings = () => {
+// Fetch vertical settings for a specific vertical
+export const useVerticalSettings = (vertical: VerticalType) => {
   return useQuery({
-    queryKey: ['pricing-settings'],
+    queryKey: ['vertical-settings', vertical],
     queryFn: async () => {
       const { data, error } = await supabase
-        .from('pricing_settings')
-        .select('id, currency, custom_base_price')
-        .eq('id', 'default')
+        .from('vertical_settings')
+        .select('id, currency, base_price, default_app_price')
+        .eq('id', vertical)
         .maybeSingle();
       
       if (error) throw error;
-      return data as PricingSettings | null;
+      return data as VerticalSettings | null;
     },
     staleTime: 1000 * 60 * 5,
   });
 };
 
+// Fetch offer packages for travel/health verticals
 export const useOfferPackages = (vertical: 'travel' | 'health') => {
   return useQuery({
     queryKey: ['offer-packages', vertical],
@@ -64,27 +75,27 @@ export const useOfferPackages = (vertical: 'travel' | 'health') => {
   });
 };
 
-export const useAppsCatalog = () => {
+// Fetch apps master catalog (no pricing info)
+export const useAppsMaster = () => {
   return useQuery({
-    queryKey: ['apps-catalog'],
+    queryKey: ['apps-master'],
     queryFn: async () => {
       const { data, error } = await supabase
-        .from('apps_catalog')
-        .select('*')
+        .from('apps_master')
+        .select('id, name, category, description, sort_order')
         .order('category', { ascending: true })
         .order('sort_order', { ascending: true });
       
       if (error) throw error;
       
       // Group apps by category
-      const grouped = (data as AppCatalogItem[]).reduce((acc, app) => {
+      const grouped = (data as AppMasterItem[]).reduce((acc, app) => {
         const existing = acc.find(g => g.name === app.category);
         if (existing) {
           existing.apps.push({ 
             id: app.id, 
             name: app.name, 
             description: app.description,
-            app_price: app.app_price,
           });
         } else {
           acc.push({
@@ -93,7 +104,6 @@ export const useAppsCatalog = () => {
               id: app.id, 
               name: app.name, 
               description: app.description,
-              app_price: app.app_price,
             }],
           });
         }
@@ -106,23 +116,34 @@ export const useAppsCatalog = () => {
   });
 };
 
-// Helper to get a map of app name -> price
-export const useAppPriceMap = () => {
+// Fetch app price overrides for a specific vertical
+export const useAppPriceOverrides = (vertical: VerticalType) => {
   return useQuery({
-    queryKey: ['app-price-map'],
+    queryKey: ['app-price-overrides', vertical],
     queryFn: async () => {
       const { data, error } = await supabase
-        .from('apps_catalog')
-        .select('name, app_price');
+        .from('app_price_overrides')
+        .select('id, vertical, app_id, override_price')
+        .eq('vertical', vertical);
       
       if (error) throw error;
       
-      const priceMap = new Map<string, number>();
-      (data || []).forEach(app => {
-        priceMap.set(app.name, app.app_price);
+      // Create a map of app_id -> override_price for quick lookup
+      const overrideMap = new Map<string, number>();
+      (data || []).forEach(override => {
+        overrideMap.set(override.app_id, override.override_price);
       });
-      return priceMap;
+      return overrideMap;
     },
     staleTime: 1000 * 60 * 5,
   });
+};
+
+// Compute the effective price for an app given vertical settings and overrides
+export const computeAppPrice = (
+  appId: string,
+  defaultAppPrice: number,
+  overrideMap: Map<string, number>
+): number => {
+  return overrideMap.has(appId) ? overrideMap.get(appId)! : defaultAppPrice;
 };

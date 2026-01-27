@@ -2,15 +2,20 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import { Check, Loader2 } from 'lucide-react';
-import { useAppsCatalog } from '@/hooks/usePricingData';
+import { useAppsMaster, useAppPriceOverrides, useVerticalSettings, computeAppPrice, VerticalType } from '@/hooks/usePricingData';
 
 interface AppSelectorProps {
   selectedApps: Set<string>;
   onToggleApp: (appName: string) => void;
+  vertical: VerticalType;
 }
 
-export const AppSelector = ({ selectedApps, onToggleApp }: AppSelectorProps) => {
-  const { data: appCategories, isLoading, error } = useAppsCatalog();
+export const AppSelector = ({ selectedApps, onToggleApp, vertical }: AppSelectorProps) => {
+  const { data: appCategories, isLoading: appsLoading, error: appsError } = useAppsMaster();
+  const { data: verticalSettings, isLoading: settingsLoading } = useVerticalSettings(vertical);
+  const { data: overrideMap, isLoading: overridesLoading } = useAppPriceOverrides(vertical);
+
+  const isLoading = appsLoading || settingsLoading || overridesLoading;
 
   if (isLoading) {
     return (
@@ -23,7 +28,7 @@ export const AppSelector = ({ selectedApps, onToggleApp }: AppSelectorProps) => 
     );
   }
 
-  if (error || !appCategories) {
+  if (appsError || !appCategories || !verticalSettings || !overrideMap) {
     return (
       <Card>
         <CardContent className="py-8 text-center text-destructive">
@@ -32,6 +37,8 @@ export const AppSelector = ({ selectedApps, onToggleApp }: AppSelectorProps) => 
       </Card>
     );
   }
+
+  const defaultAppPrice = verticalSettings.default_app_price;
 
   return (
     <Card>
@@ -47,6 +54,7 @@ export const AppSelector = ({ selectedApps, onToggleApp }: AppSelectorProps) => 
             <div className="grid gap-3 sm:grid-cols-2">
               {category.apps.map((app) => {
                 const isSelected = selectedApps.has(app.name);
+                const appPrice = computeAppPrice(app.id, defaultAppPrice, overrideMap);
                 return (
                   <button
                     key={app.id}
@@ -70,7 +78,7 @@ export const AppSelector = ({ selectedApps, onToggleApp }: AppSelectorProps) => 
                           isSelected && "bg-primary-foreground/20 text-primary-foreground"
                         )}
                       >
-                        +${app.app_price}
+                        +${appPrice}
                       </Badge>
                     </div>
                     <p className={cn(

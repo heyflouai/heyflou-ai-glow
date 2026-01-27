@@ -4,7 +4,7 @@ import { ArrowLeft, Loader2 } from 'lucide-react';
 import { AppSelector } from './AppSelector';
 import { PricingSummary } from './PricingSummary';
 import { BasePackageSelector } from './BasePackageSelector';
-import { usePricingSettings, useOfferPackages } from '@/hooks/usePricingData';
+import { useVerticalSettings, useOfferPackages } from '@/hooks/usePricingData';
 
 interface TravelAgencyProps {
   onBack: () => void;
@@ -14,7 +14,7 @@ export const TravelAgency = ({ onBack }: TravelAgencyProps) => {
   const [selectedPackageId, setSelectedPackageId] = useState<string | null>(null);
   const [selectedApps, setSelectedApps] = useState<Set<string>>(new Set());
   
-  const { data: settings, isLoading: settingsLoading } = usePricingSettings();
+  const { data: settings, isLoading: settingsLoading } = useVerticalSettings('travel');
   const { data: packages, isLoading: packagesLoading, error } = useOfferPackages('travel');
 
   const isLoading = settingsLoading || packagesLoading;
@@ -86,6 +86,7 @@ export const TravelAgency = ({ onBack }: TravelAgencyProps) => {
           <AppSelector 
             selectedApps={selectedApps} 
             onToggleApp={toggleApp}
+            vertical="travel"
           />
         </>
       )}
@@ -96,7 +97,6 @@ export const TravelAgency = ({ onBack }: TravelAgencyProps) => {
           basePackageName={selectedPackage.name}
           basePrice={selectedPackage.price}
           selectedApps={selectedApps}
-          currency={settings.currency}
         />
       )}
 
