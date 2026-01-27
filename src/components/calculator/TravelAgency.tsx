@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft, Loader2 } from 'lucide-react';
 import { AppSelector } from './AppSelector';
 import { PricingSummary } from './PricingSummary';
+import { WorkflowVisualization } from './WorkflowVisualization';
 import { BasePackageSelector } from './BasePackageSelector';
 import { useVerticalSettings, useOfferPackages } from '@/hooks/usePricingData';
 
@@ -92,12 +93,15 @@ export const TravelAgency = ({ onBack }: TravelAgencyProps) => {
       )}
 
       {selectedPackage && (
-        <PricingSummary
-          offerType="travel"
-          basePackageName={selectedPackage.name}
-          basePrice={selectedPackage.price}
-          selectedApps={selectedApps}
-        />
+        <>
+          <PricingSummary
+            offerType="travel"
+            basePackageName={selectedPackage.name}
+            basePrice={selectedPackage.price}
+            selectedApps={selectedApps}
+          />
+          <WorkflowVisualization selectedApps={selectedApps} />
+        </>
       )}
 
       {!selectedPackageId && (

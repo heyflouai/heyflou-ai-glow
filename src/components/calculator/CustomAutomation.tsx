@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft, Loader2 } from 'lucide-react';
 import { AppSelector } from './AppSelector';
 import { PricingSummary } from './PricingSummary';
+import { WorkflowVisualization } from './WorkflowVisualization';
 import { useVerticalSettings } from '@/hooks/usePricingData';
 
 interface CustomAutomationProps {
@@ -85,6 +86,8 @@ export const CustomAutomation = ({ onBack }: CustomAutomationProps) => {
         basePrice={settings.base_price}
         selectedApps={selectedApps}
       />
+
+      <WorkflowVisualization selectedApps={selectedApps} />
     </div>
   );
 };
