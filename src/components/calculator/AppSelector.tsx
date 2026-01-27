@@ -7,10 +7,9 @@ import { useAppsCatalog } from '@/hooks/usePricingData';
 interface AppSelectorProps {
   selectedApps: Set<string>;
   onToggleApp: (appName: string) => void;
-  appAddonPrice: number;
 }
 
-export const AppSelector = ({ selectedApps, onToggleApp, appAddonPrice }: AppSelectorProps) => {
+export const AppSelector = ({ selectedApps, onToggleApp }: AppSelectorProps) => {
   const { data: appCategories, isLoading, error } = useAppsCatalog();
 
   if (isLoading) {
@@ -71,7 +70,7 @@ export const AppSelector = ({ selectedApps, onToggleApp, appAddonPrice }: AppSel
                           isSelected && "bg-primary-foreground/20 text-primary-foreground"
                         )}
                       >
-                        +${appAddonPrice}
+                        +${app.app_price}
                       </Badge>
                     </div>
                     <p className={cn(
