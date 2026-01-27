@@ -86,7 +86,6 @@ export const HealthAutomation = ({ onBack }: HealthAutomationProps) => {
           <AppSelector 
             selectedApps={selectedApps} 
             onToggleApp={toggleApp}
-            appAddonPrice={settings.app_addon_price}
           />
         </>
       )}
@@ -97,7 +96,6 @@ export const HealthAutomation = ({ onBack }: HealthAutomationProps) => {
           basePackageName={selectedPackage.name}
           basePrice={selectedPackage.price}
           selectedApps={selectedApps}
-          appAddonPrice={settings.app_addon_price}
           currency={settings.currency}
         />
       )}

@@ -16,6 +16,7 @@ export type Database = {
     Tables: {
       apps_catalog: {
         Row: {
+          app_price: number
           category: string
           created_at: string
           description: string
@@ -25,6 +26,7 @@ export type Database = {
           updated_at: string
         }
         Insert: {
+          app_price?: number
           category: string
           created_at?: string
           description: string
@@ -34,6 +36,7 @@ export type Database = {
           updated_at?: string
         }
         Update: {
+          app_price?: number
           category?: string
           created_at?: string
           description?: string

@@ -77,14 +77,12 @@ export const CustomAutomation = ({ onBack }: CustomAutomationProps) => {
       <AppSelector 
         selectedApps={selectedApps} 
         onToggleApp={toggleApp} 
-        appAddonPrice={settings.app_addon_price}
       />
 
       <PricingSummary
         offerType="custom"
         basePrice={settings.custom_base_price}
         selectedApps={selectedApps}
-        appAddonPrice={settings.app_addon_price}
         currency={settings.currency}
       />
     </div>
