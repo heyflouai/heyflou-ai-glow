@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft, Loader2 } from 'lucide-react';
 import { AppSelector } from './AppSelector';
 import { PricingSummary } from './PricingSummary';
-import { usePricingSettings } from '@/hooks/usePricingData';
+import { useVerticalSettings } from '@/hooks/usePricingData';
 
 interface CustomAutomationProps {
   onBack: () => void;
@@ -12,7 +12,7 @@ interface CustomAutomationProps {
 
 export const CustomAutomation = ({ onBack }: CustomAutomationProps) => {
   const [selectedApps, setSelectedApps] = useState<Set<string>>(new Set());
-  const { data: settings, isLoading, error } = usePricingSettings();
+  const { data: settings, isLoading, error } = useVerticalSettings('custom');
 
   const toggleApp = (appName: string) => {
     setSelectedApps(prev => {
@@ -68,7 +68,7 @@ export const CustomAutomation = ({ onBack }: CustomAutomationProps) => {
               Base setup, workflow design and configuration
             </p>
             <span className="text-2xl font-bold text-foreground">
-              ${settings.custom_base_price}
+              ${settings.base_price}
             </span>
           </div>
         </CardContent>
@@ -76,14 +76,14 @@ export const CustomAutomation = ({ onBack }: CustomAutomationProps) => {
 
       <AppSelector 
         selectedApps={selectedApps} 
-        onToggleApp={toggleApp} 
+        onToggleApp={toggleApp}
+        vertical="custom"
       />
 
       <PricingSummary
         offerType="custom"
-        basePrice={settings.custom_base_price}
+        basePrice={settings.base_price}
         selectedApps={selectedApps}
-        currency={settings.currency}
       />
     </div>
   );

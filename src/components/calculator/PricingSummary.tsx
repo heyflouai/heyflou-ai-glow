@@ -1,18 +1,16 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { useAppPriceMap } from '@/hooks/usePricingData';
-
-export type OfferType = 'custom' | 'travel' | 'health';
+import { Loader2 } from 'lucide-react';
+import { useAppsMaster, useAppPriceOverrides, useVerticalSettings, computeAppPrice, VerticalType } from '@/hooks/usePricingData';
 
 interface PricingSummaryProps {
-  offerType: OfferType;
+  offerType: VerticalType;
   basePackageName?: string;
   basePrice: number;
   selectedApps: Set<string>;
-  currency: string;
 }
 
-const offerLabels: Record<OfferType, string> = {
+const offerLabels: Record<VerticalType, string> = {
   custom: 'Custom Automation',
   travel: 'Travel Agency',
   health: 'Health',
@@ -23,15 +21,44 @@ export const PricingSummary = ({
   basePackageName, 
   basePrice, 
   selectedApps,
-  currency,
 }: PricingSummaryProps) => {
-  const { data: priceMap } = useAppPriceMap();
+  const { data: appCategories, isLoading: appsLoading } = useAppsMaster();
+  const { data: verticalSettings, isLoading: settingsLoading } = useVerticalSettings(offerType);
+  const { data: overrideMap, isLoading: overridesLoading } = useAppPriceOverrides(offerType);
 
-  // Calculate total from individual app prices
+  const isLoading = appsLoading || settingsLoading || overridesLoading;
+
+  if (isLoading || !appCategories || !verticalSettings || !overrideMap) {
+    return (
+      <Card className="border-primary/20 bg-card">
+        <CardHeader className="pb-3">
+          <CardTitle className="text-lg">Pricing Summary</CardTitle>
+        </CardHeader>
+        <CardContent className="flex items-center justify-center py-4">
+          <Loader2 className="h-5 w-5 animate-spin text-muted-foreground" />
+          <span className="ml-2 text-muted-foreground">Loading...</span>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  const defaultAppPrice = verticalSettings.default_app_price;
+  const currency = verticalSettings.currency;
+
+  // Build a flat map of app name -> { id, price }
+  const appNameToData = new Map<string, { id: string; price: number }>();
+  appCategories.forEach(category => {
+    category.apps.forEach(app => {
+      const price = computeAppPrice(app.id, defaultAppPrice, overrideMap);
+      appNameToData.set(app.name, { id: app.id, price });
+    });
+  });
+
+  // Calculate prices for selected apps
   const selectedAppsList = Array.from(selectedApps);
-  const appPrices = selectedAppsList.map(app => ({
-    name: app,
-    price: priceMap?.get(app) ?? 0,
+  const appPrices = selectedAppsList.map(name => ({
+    name,
+    price: appNameToData.get(name)?.price ?? defaultAppPrice,
   }));
   const appsTotal = appPrices.reduce((sum, app) => sum + app.price, 0);
   const finalTotal = basePrice + appsTotal;
