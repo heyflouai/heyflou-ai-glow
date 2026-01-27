@@ -8,42 +8,89 @@ import { Check } from 'lucide-react';
 const BASE_PRICE = 500;
 const APP_PRICE = 25;
 
-const appCategories = [
+interface AppInfo {
+  name: string;
+  description: string;
+}
+
+const appCategories: { name: string; apps: AppInfo[] }[] = [
   {
     name: "CRM",
-    apps: ["HubSpot", "Salesforce", "Pipedrive", "Zoho CRM"]
+    apps: [
+      { name: "HubSpot", description: "Manage contacts, deals, and customer interactions in one centralized CRM." },
+      { name: "Salesforce", description: "Enterprise-level CRM for sales pipelines, automation, and customer data." },
+      { name: "Pipedrive", description: "Visual sales pipeline management for tracking deals and leads." },
+      { name: "Zoho CRM", description: "All-in-one CRM to manage sales, leads, and customer relationships." }
+    ]
   },
   {
     name: "Communication",
-    apps: ["WhatsApp", "Slack", "Telegram", "Microsoft Teams", "Discord"]
+    apps: [
+      { name: "WhatsApp", description: "Send and receive automated messages with customers through WhatsApp." },
+      { name: "Slack", description: "Automate internal team notifications and workflow updates in Slack." },
+      { name: "Telegram", description: "Create automated messaging and alerts through Telegram bots." },
+      { name: "Microsoft Teams", description: "Connect workflows with Microsoft Teams channels and chats." },
+      { name: "Discord", description: "Automate community messages and notifications in Discord servers." }
+    ]
   },
   {
     name: "Email",
-    apps: ["Gmail", "Outlook", "Mailchimp", "SendGrid"]
+    apps: [
+      { name: "Gmail", description: "Send, receive, and automate email workflows using Gmail." },
+      { name: "Outlook", description: "Automate email communication using Microsoft Outlook." },
+      { name: "Mailchimp", description: "Trigger and manage email marketing campaigns automatically." },
+      { name: "SendGrid", description: "Send transactional and automated emails at scale." }
+    ]
   },
   {
     name: "Productivity",
-    apps: ["Google Sheets", "Microsoft Excel", "Notion", "Airtable", "Trello", "Asana"]
+    apps: [
+      { name: "Google Sheets", description: "Automatically read, write, and update data in Google Sheets." },
+      { name: "Microsoft Excel", description: "Sync and process spreadsheet data in automated workflows." },
+      { name: "Notion", description: "Create, update, and manage structured data inside Notion." },
+      { name: "Airtable", description: "Combine spreadsheet simplicity with database functionality." },
+      { name: "Trello", description: "Automate task creation and status updates on Trello boards." },
+      { name: "Asana", description: "Trigger and track tasks across Asana projects." }
+    ]
   },
   {
     name: "Scheduling",
-    apps: ["Calendly", "Google Calendar", "Cal.com"]
+    apps: [
+      { name: "Calendly", description: "Automatically schedule meetings based on availability." },
+      { name: "Google Calendar", description: "Create, update, and manage calendar events automatically." },
+      { name: "Cal.com", description: "Open-source scheduling automation for meetings and bookings." }
+    ]
   },
   {
     name: "Payment",
-    apps: ["Stripe", "PayPal", "Square"]
+    apps: [
+      { name: "Stripe", description: "Process and automate online payments and billing workflows." },
+      { name: "PayPal", description: "Accept and manage payments through PayPal automations." },
+      { name: "Square", description: "Automate point-of-sale and payment operations." }
+    ]
   },
   {
     name: "E-commerce",
-    apps: ["Shopify", "WooCommerce"]
+    apps: [
+      { name: "Shopify", description: "Automate order processing and customer workflows for Shopify stores." },
+      { name: "WooCommerce", description: "Manage and automate e-commerce workflows in WooCommerce." }
+    ]
   },
   {
     name: "Social Media",
-    apps: ["Facebook", "Instagram", "LinkedIn"]
+    apps: [
+      { name: "Facebook", description: "Automate messages, leads, and post-related workflows on Facebook." },
+      { name: "Instagram", description: "Automate DM responses and lead capture on Instagram." },
+      { name: "LinkedIn", description: "Automate lead generation and outreach workflows on LinkedIn." }
+    ]
   },
   {
     name: "Storage",
-    apps: ["Google Drive", "Dropbox", "OneDrive"]
+    apps: [
+      { name: "Google Drive", description: "Store, organize, and automate file handling in Google Drive." },
+      { name: "Dropbox", description: "Sync and manage files automatically using Dropbox." },
+      { name: "OneDrive", description: "Automate file storage and access within Microsoft OneDrive." }
+    ]
   }
 ];
 
@@ -115,31 +162,41 @@ const Calculator = () => {
                       <h3 className="text-sm font-semibold text-muted-foreground mb-3">
                         {category.name}
                       </h3>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="grid gap-3 sm:grid-cols-2">
                         {category.apps.map((app) => {
-                          const isSelected = selectedApps.has(app);
+                          const isSelected = selectedApps.has(app.name);
                           return (
                             <button
-                              key={app}
-                              onClick={() => toggleApp(app)}
+                              key={app.name}
+                              onClick={() => toggleApp(app.name)}
                               className={cn(
-                                "inline-flex items-center gap-2 px-3 py-2 rounded-lg border text-sm font-medium transition-all duration-200",
+                                "flex flex-col items-start gap-1 p-3 rounded-lg border text-left transition-all duration-200",
                                 isSelected
                                   ? "bg-primary text-primary-foreground border-primary"
                                   : "bg-card text-foreground border-border hover:border-primary/50 hover:bg-accent"
                               )}
                             >
-                              {isSelected && <Check className="h-4 w-4" />}
-                              <span>{app}</span>
-                              <Badge 
-                                variant="secondary" 
-                                className={cn(
-                                  "text-xs",
-                                  isSelected && "bg-primary-foreground/20 text-primary-foreground"
-                                )}
-                              >
-                                +${APP_PRICE}
-                              </Badge>
+                              <div className="flex items-center justify-between w-full">
+                                <div className="flex items-center gap-2">
+                                  {isSelected && <Check className="h-4 w-4 shrink-0" />}
+                                  <span className="font-medium text-sm">{app.name}</span>
+                                </div>
+                                <Badge 
+                                  variant="secondary" 
+                                  className={cn(
+                                    "text-xs shrink-0",
+                                    isSelected && "bg-primary-foreground/20 text-primary-foreground"
+                                  )}
+                                >
+                                  +${APP_PRICE}
+                                </Badge>
+                              </div>
+                              <p className={cn(
+                                "text-xs leading-relaxed",
+                                isSelected ? "text-primary-foreground/80" : "text-muted-foreground"
+                              )}>
+                                {app.description}
+                              </p>
                             </button>
                           );
                         })}
