@@ -1,30 +1,10 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Loader2 } from 'lucide-react';
 import { AppSelector } from './AppSelector';
 import { PricingSummary } from './PricingSummary';
-import { BasePackageSelector, BasePackage } from './BasePackageSelector';
-
-const healthPackages: BasePackage[] = [
-  {
-    id: 'basic',
-    name: 'Basic Health Automation',
-    price: 400,
-    description: 'Automates patient intake, basic communication, and appointment handling.',
-  },
-  {
-    id: 'standard',
-    name: 'Standard Health Automation',
-    price: 600,
-    description: 'Includes CRM syncing, appointment workflows, reminders, and internal coordination.',
-  },
-  {
-    id: 'advanced',
-    name: 'Advanced Health Automation',
-    price: 800,
-    description: 'End-to-end health automation including complex workflows, integrations, and advanced logic.',
-  },
-];
+import { BasePackageSelector } from './BasePackageSelector';
+import { usePricingSettings, useOfferPackages } from '@/hooks/usePricingData';
 
 interface HealthAutomationProps {
   onBack: () => void;
@@ -33,8 +13,12 @@ interface HealthAutomationProps {
 export const HealthAutomation = ({ onBack }: HealthAutomationProps) => {
   const [selectedPackageId, setSelectedPackageId] = useState<string | null>(null);
   const [selectedApps, setSelectedApps] = useState<Set<string>>(new Set());
+  
+  const { data: settings, isLoading: settingsLoading } = usePricingSettings();
+  const { data: packages, isLoading: packagesLoading, error } = useOfferPackages('health');
 
-  const selectedPackage = healthPackages.find(p => p.id === selectedPackageId);
+  const isLoading = settingsLoading || packagesLoading;
+  const selectedPackage = packages?.find(p => p.id === selectedPackageId);
 
   const toggleApp = (appName: string) => {
     setSelectedApps(prev => {
@@ -47,6 +31,33 @@ export const HealthAutomation = ({ onBack }: HealthAutomationProps) => {
       return newSet;
     });
   };
+
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center py-16">
+        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+        <span className="ml-3 text-muted-foreground">Loading pricing...</span>
+      </div>
+    );
+  }
+
+  if (error || !packages || !settings) {
+    return (
+      <div className="text-center py-16 text-destructive">
+        <p>Failed to load pricing data. Please refresh the page.</p>
+        <Button variant="ghost" onClick={onBack} className="mt-4">
+          Go back
+        </Button>
+      </div>
+    );
+  }
+
+  const basePackages = packages.map(pkg => ({
+    id: pkg.id,
+    name: pkg.name,
+    price: pkg.price,
+    description: pkg.description,
+  }));
 
   return (
     <div className="space-y-6">
@@ -62,7 +73,7 @@ export const HealthAutomation = ({ onBack }: HealthAutomationProps) => {
 
       <BasePackageSelector
         title="Step 1: Choose Base Automation"
-        packages={healthPackages}
+        packages={basePackages}
         selectedPackageId={selectedPackageId}
         onSelectPackage={setSelectedPackageId}
       />
@@ -72,7 +83,11 @@ export const HealthAutomation = ({ onBack }: HealthAutomationProps) => {
           <div className="text-center">
             <p className="text-sm text-muted-foreground">Step 2: Add optional app integrations</p>
           </div>
-          <AppSelector selectedApps={selectedApps} onToggleApp={toggleApp} />
+          <AppSelector 
+            selectedApps={selectedApps} 
+            onToggleApp={toggleApp}
+            appAddonPrice={settings.app_addon_price}
+          />
         </>
       )}
 
@@ -82,6 +97,8 @@ export const HealthAutomation = ({ onBack }: HealthAutomationProps) => {
           basePackageName={selectedPackage.name}
           basePrice={selectedPackage.price}
           selectedApps={selectedApps}
+          appAddonPrice={settings.app_addon_price}
+          currency={settings.currency}
         />
       )}
 

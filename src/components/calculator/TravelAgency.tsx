@@ -1,30 +1,10 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Loader2 } from 'lucide-react';
 import { AppSelector } from './AppSelector';
 import { PricingSummary } from './PricingSummary';
-import { BasePackageSelector, BasePackage } from './BasePackageSelector';
-
-const travelPackages: BasePackage[] = [
-  {
-    id: 'basic',
-    name: 'Basic Travel Automation',
-    price: 300,
-    description: 'Automates lead intake, basic customer communication, and simple workflows for travel agencies.',
-  },
-  {
-    id: 'standard',
-    name: 'Standard Travel Automation',
-    price: 500,
-    description: 'Includes CRM syncing, automated follow-ups, booking coordination, and internal notifications.',
-  },
-  {
-    id: 'advanced',
-    name: 'Advanced Travel Automation',
-    price: 700,
-    description: 'Full travel automation including advanced workflows, integrations, and multi-step customer journeys.',
-  },
-];
+import { BasePackageSelector } from './BasePackageSelector';
+import { usePricingSettings, useOfferPackages } from '@/hooks/usePricingData';
 
 interface TravelAgencyProps {
   onBack: () => void;
@@ -33,8 +13,12 @@ interface TravelAgencyProps {
 export const TravelAgency = ({ onBack }: TravelAgencyProps) => {
   const [selectedPackageId, setSelectedPackageId] = useState<string | null>(null);
   const [selectedApps, setSelectedApps] = useState<Set<string>>(new Set());
+  
+  const { data: settings, isLoading: settingsLoading } = usePricingSettings();
+  const { data: packages, isLoading: packagesLoading, error } = useOfferPackages('travel');
 
-  const selectedPackage = travelPackages.find(p => p.id === selectedPackageId);
+  const isLoading = settingsLoading || packagesLoading;
+  const selectedPackage = packages?.find(p => p.id === selectedPackageId);
 
   const toggleApp = (appName: string) => {
     setSelectedApps(prev => {
@@ -47,6 +31,33 @@ export const TravelAgency = ({ onBack }: TravelAgencyProps) => {
       return newSet;
     });
   };
+
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center py-16">
+        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+        <span className="ml-3 text-muted-foreground">Loading pricing...</span>
+      </div>
+    );
+  }
+
+  if (error || !packages || !settings) {
+    return (
+      <div className="text-center py-16 text-destructive">
+        <p>Failed to load pricing data. Please refresh the page.</p>
+        <Button variant="ghost" onClick={onBack} className="mt-4">
+          Go back
+        </Button>
+      </div>
+    );
+  }
+
+  const basePackages = packages.map(pkg => ({
+    id: pkg.id,
+    name: pkg.name,
+    price: pkg.price,
+    description: pkg.description,
+  }));
 
   return (
     <div className="space-y-6">
@@ -62,7 +73,7 @@ export const TravelAgency = ({ onBack }: TravelAgencyProps) => {
 
       <BasePackageSelector
         title="Step 1: Choose Base Automation"
-        packages={travelPackages}
+        packages={basePackages}
         selectedPackageId={selectedPackageId}
         onSelectPackage={setSelectedPackageId}
       />
@@ -72,7 +83,11 @@ export const TravelAgency = ({ onBack }: TravelAgencyProps) => {
           <div className="text-center">
             <p className="text-sm text-muted-foreground">Step 2: Add optional app integrations</p>
           </div>
-          <AppSelector selectedApps={selectedApps} onToggleApp={toggleApp} />
+          <AppSelector 
+            selectedApps={selectedApps} 
+            onToggleApp={toggleApp}
+            appAddonPrice={settings.app_addon_price}
+          />
         </>
       )}
 
@@ -82,6 +97,8 @@ export const TravelAgency = ({ onBack }: TravelAgencyProps) => {
           basePackageName={selectedPackage.name}
           basePrice={selectedPackage.price}
           selectedApps={selectedApps}
+          appAddonPrice={settings.app_addon_price}
+          currency={settings.currency}
         />
       )}
 

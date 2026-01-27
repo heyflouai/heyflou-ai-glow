@@ -1,6 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { APP_PRICE } from '@/data/calculatorApps';
 
 export type OfferType = 'custom' | 'travel' | 'health';
 
@@ -9,6 +8,8 @@ interface PricingSummaryProps {
   basePackageName?: string;
   basePrice: number;
   selectedApps: Set<string>;
+  appAddonPrice: number;
+  currency: string;
 }
 
 const offerLabels: Record<OfferType, string> = {
@@ -21,9 +22,11 @@ export const PricingSummary = ({
   offerType, 
   basePackageName, 
   basePrice, 
-  selectedApps 
+  selectedApps,
+  appAddonPrice,
+  currency,
 }: PricingSummaryProps) => {
-  const appsTotal = selectedApps.size * APP_PRICE;
+  const appsTotal = selectedApps.size * appAddonPrice;
   const finalTotal = basePrice + appsTotal;
 
   return (
@@ -59,7 +62,7 @@ export const PricingSummary = ({
             <div className="flex justify-between items-center">
               <span className="text-foreground font-semibold">Total</span>
               <span className="text-3xl font-bold text-primary">
-                ${finalTotal.toLocaleString()}
+                ${finalTotal.toLocaleString()} {currency}
               </span>
             </div>
           </div>
