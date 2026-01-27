@@ -14,6 +14,36 @@ export type Database = {
   }
   public: {
     Tables: {
+      apps_catalog: {
+        Row: {
+          category: string
+          created_at: string
+          description: string
+          id: string
+          name: string
+          sort_order: number
+          updated_at: string
+        }
+        Insert: {
+          category: string
+          created_at?: string
+          description: string
+          id: string
+          name: string
+          sort_order?: number
+          updated_at?: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          description?: string
+          id?: string
+          name?: string
+          sort_order?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
       contacts: {
         Row: {
           company: string
@@ -158,6 +188,66 @@ export type Database = {
           utm_medium?: string | null
           utm_source?: string | null
           website?: string | null
+        }
+        Relationships: []
+      }
+      offer_packages: {
+        Row: {
+          created_at: string
+          description: string
+          id: string
+          name: string
+          price: number
+          sort_order: number
+          updated_at: string
+          vertical: string
+        }
+        Insert: {
+          created_at?: string
+          description: string
+          id: string
+          name: string
+          price: number
+          sort_order?: number
+          updated_at?: string
+          vertical: string
+        }
+        Update: {
+          created_at?: string
+          description?: string
+          id?: string
+          name?: string
+          price?: number
+          sort_order?: number
+          updated_at?: string
+          vertical?: string
+        }
+        Relationships: []
+      }
+      pricing_settings: {
+        Row: {
+          app_addon_price: number
+          created_at: string
+          currency: string
+          custom_base_price: number
+          id: string
+          updated_at: string
+        }
+        Insert: {
+          app_addon_price?: number
+          created_at?: string
+          currency?: string
+          custom_base_price?: number
+          id?: string
+          updated_at?: string
+        }
+        Update: {
+          app_addon_price?: number
+          created_at?: string
+          currency?: string
+          custom_base_price?: number
+          id?: string
+          updated_at?: string
         }
         Relationships: []
       }

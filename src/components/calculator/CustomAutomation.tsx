@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Loader2 } from 'lucide-react';
 import { AppSelector } from './AppSelector';
 import { PricingSummary } from './PricingSummary';
-
-const BASE_PRICE = 500;
+import { usePricingSettings } from '@/hooks/usePricingData';
 
 interface CustomAutomationProps {
   onBack: () => void;
@@ -13,6 +12,7 @@ interface CustomAutomationProps {
 
 export const CustomAutomation = ({ onBack }: CustomAutomationProps) => {
   const [selectedApps, setSelectedApps] = useState<Set<string>>(new Set());
+  const { data: settings, isLoading, error } = usePricingSettings();
 
   const toggleApp = (appName: string) => {
     setSelectedApps(prev => {
@@ -25,6 +25,26 @@ export const CustomAutomation = ({ onBack }: CustomAutomationProps) => {
       return newSet;
     });
   };
+
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center py-16">
+        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+        <span className="ml-3 text-muted-foreground">Loading pricing...</span>
+      </div>
+    );
+  }
+
+  if (error || !settings) {
+    return (
+      <div className="text-center py-16 text-destructive">
+        <p>Failed to load pricing settings. Please refresh the page.</p>
+        <Button variant="ghost" onClick={onBack} className="mt-4">
+          Go back
+        </Button>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">
@@ -48,18 +68,24 @@ export const CustomAutomation = ({ onBack }: CustomAutomationProps) => {
               Base setup, workflow design and configuration
             </p>
             <span className="text-2xl font-bold text-foreground">
-              ${BASE_PRICE}
+              ${settings.custom_base_price}
             </span>
           </div>
         </CardContent>
       </Card>
 
-      <AppSelector selectedApps={selectedApps} onToggleApp={toggleApp} />
+      <AppSelector 
+        selectedApps={selectedApps} 
+        onToggleApp={toggleApp} 
+        appAddonPrice={settings.app_addon_price}
+      />
 
       <PricingSummary
         offerType="custom"
-        basePrice={BASE_PRICE}
+        basePrice={settings.custom_base_price}
         selectedApps={selectedApps}
+        appAddonPrice={settings.app_addon_price}
+        currency={settings.currency}
       />
     </div>
   );

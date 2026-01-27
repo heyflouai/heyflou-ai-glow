@@ -1,15 +1,39 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
-import { Check } from 'lucide-react';
-import { appCategories, APP_PRICE } from '@/data/calculatorApps';
+import { Check, Loader2 } from 'lucide-react';
+import { useAppsCatalog } from '@/hooks/usePricingData';
 
 interface AppSelectorProps {
   selectedApps: Set<string>;
   onToggleApp: (appName: string) => void;
+  appAddonPrice: number;
 }
 
-export const AppSelector = ({ selectedApps, onToggleApp }: AppSelectorProps) => {
+export const AppSelector = ({ selectedApps, onToggleApp, appAddonPrice }: AppSelectorProps) => {
+  const { data: appCategories, isLoading, error } = useAppsCatalog();
+
+  if (isLoading) {
+    return (
+      <Card>
+        <CardContent className="flex items-center justify-center py-12">
+          <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
+          <span className="ml-2 text-muted-foreground">Loading apps...</span>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  if (error || !appCategories) {
+    return (
+      <Card>
+        <CardContent className="py-8 text-center text-destructive">
+          Failed to load app catalog. Please refresh the page.
+        </CardContent>
+      </Card>
+    );
+  }
+
   return (
     <Card>
       <CardHeader className="pb-3">
@@ -26,7 +50,7 @@ export const AppSelector = ({ selectedApps, onToggleApp }: AppSelectorProps) => 
                 const isSelected = selectedApps.has(app.name);
                 return (
                   <button
-                    key={app.name}
+                    key={app.id}
                     onClick={() => onToggleApp(app.name)}
                     className={cn(
                       "flex flex-col items-start gap-1 p-3 rounded-lg border text-left transition-all duration-200",
@@ -47,7 +71,7 @@ export const AppSelector = ({ selectedApps, onToggleApp }: AppSelectorProps) => 
                           isSelected && "bg-primary-foreground/20 text-primary-foreground"
                         )}
                       >
-                        +${APP_PRICE}
+                        +${appAddonPrice}
                       </Badge>
                     </div>
                     <p className={cn(
