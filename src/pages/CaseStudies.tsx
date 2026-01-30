@@ -10,97 +10,97 @@ export default function CaseStudies() {
     {
       id: "travel-agency-funnel",
       title: t.cases.travelAgencyBooking,
-      industry: "Travel",
-      useCase: "Marketing Automation",
+      industry: t.caseStudies.industryTravel,
+      useCase: t.caseStudies.useCaseMarketingAutomation,
       challenge: t.cases.travelAgencyBookingChallenge,
       solution: t.cases.travelAgencyBookingSolution,
       outcome: t.cases.travelAgencyBookingOutcome,
-      metrics: { primary: "62% more bookings", secondary: "Fully automated funnel" },
-      tags: ["Marketing Funnel", "Travel", "Automation"],
+      metrics: { primary: t.caseStudies.metrics62MoreBookings, secondary: t.caseStudies.metricsFullyAutomatedFunnel },
+      tags: [t.caseStudies.tagMarketingFunnel, t.caseStudies.tagTravel, t.caseStudies.tagAutomation],
       featured: true
     },
     {
       id: "tour-operator-chatbot",
       title: t.cases.tourOperatorLead,
-      industry: "Travel",
-      useCase: "AI Chatbot",
+      industry: t.caseStudies.industryTravel,
+      useCase: t.caseStudies.useCaseAiChatbot,
       challenge: t.cases.tourOperatorLeadChallenge,
       solution: t.cases.tourOperatorLeadSolution,
       outcome: t.cases.tourOperatorLeadOutcome,
-      metrics: { primary: "3× more leads", secondary: "AI + WhatsApp promos" },
-      tags: ["AI Chatbot", "WhatsApp", "Lead Gen"],
+      metrics: { primary: t.caseStudies.metrics3xMoreLeads, secondary: t.caseStudies.metricsAiWhatsappPromos },
+      tags: [t.caseStudies.tagAiChatbot, t.caseStudies.tagWhatsApp, t.caseStudies.tagLeadGen],
       featured: true
     },
     {
       id: "physio-clinic-growth",
       title: t.cases.physioClinic,
-      industry: "Healthcare",
-      useCase: "Patient Acquisition",
+      industry: t.caseStudies.industryHealthcare,
+      useCase: t.caseStudies.useCasePatientAcquisition,
       challenge: t.cases.physioClinicChallenge,
       solution: t.cases.physioClinicSolution,
       outcome: t.cases.physioClinicOutcome,
-      metrics: { primary: "95% more clients", secondary: "Consistent growth" },
-      tags: ["Healthcare", "Marketing", "Automation"],
+      metrics: { primary: t.caseStudies.metrics95MoreClients, secondary: t.caseStudies.metricsConsistentGrowth },
+      tags: [t.caseStudies.tagHealthcare, t.caseStudies.tagMarketing, t.caseStudies.tagAutomation],
       featured: true
     },
     {
       id: "luxury-travel-sales",
       title: t.cases.luxuryTravel,
-      industry: "Travel",
-      useCase: "High-Ticket Sales",
+      industry: t.caseStudies.industryTravel,
+      useCase: t.caseStudies.useCaseHighTicketSales,
       challenge: t.cases.luxuryTravelChallenge,
       solution: t.cases.luxuryTravelSolution,
       outcome: t.cases.luxuryTravelOutcome,
-      metrics: { primary: "53% more high-ticket sales", secondary: "Automated nurturing" },
-      tags: ["Luxury Travel", "Sales", "Automation"],
+      metrics: { primary: t.caseStudies.metrics53MoreHighTicketSales, secondary: t.caseStudies.metricsAutomatedNurturing },
+      tags: [t.caseStudies.tagLuxuryTravel, t.caseStudies.tagSales, t.caseStudies.tagAutomation],
       featured: true
     },
     {
       id: "student-travel-marketing",
       title: t.cases.studentTravel,
-      industry: "Travel",
-      useCase: "Cost Reduction",
+      industry: t.caseStudies.industryTravel,
+      useCase: t.caseStudies.useCaseCostReduction,
       challenge: t.cases.studentTravelChallenge,
       solution: t.cases.studentTravelSolution,
       outcome: t.cases.studentTravelOutcome,
-      metrics: { primary: "37% lower costs", secondary: "Same bookings" },
-      tags: ["Student Travel", "Analytics", "Optimization"],
+      metrics: { primary: t.caseStudies.metrics37LowerCosts, secondary: t.caseStudies.metricsSameBookings },
+      tags: [t.caseStudies.tagStudentTravel, t.caseStudies.tagAnalytics, t.caseStudies.tagOptimization],
       featured: false
     },
     {
       id: "cruise-agency-revival",
       title: t.cases.cruiseAgency,
-      industry: "Travel",
-      useCase: "Lead Re-engagement",
+      industry: t.caseStudies.industryTravel,
+      useCase: t.caseStudies.useCaseLeadReengagement,
       challenge: t.cases.cruiseAgencyChallenge,
       solution: t.cases.cruiseAgencySolution,
       outcome: t.cases.cruiseAgencyOutcome,
-      metrics: { primary: "31% more sales", secondary: "Cold leads revived" },
-      tags: ["Cruise", "Re-engagement", "WhatsApp"],
+      metrics: { primary: t.caseStudies.metrics31MoreSales, secondary: t.caseStudies.metricsColdLeadsRevived },
+      tags: [t.caseStudies.tagCruise, t.caseStudies.tagReengagement, t.caseStudies.tagWhatsApp],
       featured: false
     },
     {
       id: "physio-marketing-roi",
       title: t.cases.physioMarketing,
-      industry: "Healthcare",
-      useCase: "Marketing ROI",
+      industry: t.caseStudies.industryHealthcare,
+      useCase: t.caseStudies.useCaseMarketingRoi,
       challenge: t.cases.physioMarketingChallenge,
       solution: t.cases.physioMarketingSolution,
       outcome: t.cases.physioMarketingOutcome,
-      metrics: { primary: "3× marketing ROI", secondary: "Clear attribution" },
-      tags: ["Healthcare", "Analytics", "ROI"],
+      metrics: { primary: t.caseStudies.metrics3xMarketingRoi, secondary: t.caseStudies.metricsClearAttribution },
+      tags: [t.caseStudies.tagHealthcare, t.caseStudies.tagAnalytics, t.caseStudies.tagRoi],
       featured: false
     },
     {
       id: "therapist-content-funnel",
       title: t.cases.therapistContent,
-      industry: "Healthcare",
-      useCase: "Content Marketing",
+      industry: t.caseStudies.industryHealthcare,
+      useCase: t.caseStudies.useCaseContentMarketing,
       challenge: t.cases.therapistContentChallenge,
       solution: t.cases.therapistContentSolution,
       outcome: t.cases.therapistContentOutcome,
-      metrics: { primary: "2× more inquiries", secondary: "Content + chatbot" },
-      tags: ["Therapist", "Content", "Chatbot"],
+      metrics: { primary: t.caseStudies.metrics2xMoreInquiries, secondary: t.caseStudies.metricsContentChatbot },
+      tags: [t.caseStudies.tagTherapist, t.caseStudies.tagContent, t.caseStudies.tagChatbot],
       featured: false
     }
   ];
@@ -160,8 +160,8 @@ export default function CaseStudies() {
                     </div>
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    {caseStudy.tags.map((tag) => (
-                      <span key={tag} className="px-2 py-1 bg-muted text-muted-foreground rounded text-xs">
+                    {caseStudy.tags.map((tag, index) => (
+                      <span key={index} className="px-2 py-1 bg-muted text-muted-foreground rounded text-xs">
                         {tag}
                       </span>
                     ))}
