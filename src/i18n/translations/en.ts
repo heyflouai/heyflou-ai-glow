@@ -286,6 +286,147 @@ export const en = {
     getQuote: 'Get Quote',
   },
 
+  // Services Page (New)
+  servicesPage: {
+    // Hero
+    heroTitle: 'AI Automation Solutions for Growing Businesses',
+    heroSubtitle: 'Industry-specific automation services that eliminate manual work, accelerate processes, and scale your operations without adding headcount',
+    heroCta: 'Book a Free Consultation',
+    learnMore: 'Learn More',
+
+    // Travel Agency Section
+    travelSectionTitle: 'Travel Agency Automation',
+    travelSectionIntro: 'Transform how you sell travel with AI automation that engages leads 24/7, manages bookings, and handles complex itinerary requests while you focus on creating dream vacations.',
+    travelCta: 'Automate Your Travel Agency',
+
+    // Travel Services
+    travelChatbotTitle: 'AI Travel Sales Chatbot',
+    travelChatbotDesc: 'Your 24/7 AI sales agent that sells dreams and books adventures. This intelligent chatbot engages website visitors, answers questions about destinations, packages, and pricing, qualifies leads based on budget and travel preferences, and captures bookings—even while you sleep.',
+    travelChatbotBenefit1: 'Engage travel shoppers instantly 24/7',
+    travelChatbotBenefit2: 'Answer destination and package questions automatically',
+    travelChatbotBenefit3: 'Qualify leads by budget, dates, and travel style',
+    travelChatbotBenefit4: 'Capture bookings and consultation requests after hours',
+
+    travelSchedulerTitle: 'Smart Consultation Scheduler',
+    travelSchedulerDesc: 'Your AI-powered discovery call booking engine. Automatically schedules consultation calls with qualified leads, sends reminders, handles rescheduling, and syncs with your calendar. More dream vacation consultations, zero email back-and-forth.',
+    travelSchedulerBenefit1: 'Self-service consultation booking 24/7',
+    travelSchedulerBenefit2: 'Automated multi-channel reminders (email, SMS, WhatsApp)',
+    travelSchedulerBenefit3: 'Intelligent lead qualification before booking',
+    travelSchedulerBenefit4: 'Team calendar synchronization for multi-agent agencies',
+
+    travelCrmTitle: 'Travel CRM & Quote Tracking',
+    travelCrmDesc: 'Your intelligent quote and lead tracking system. Automatically syncs travel inquiries, quotes, and client data across your CRM, email, and booking platforms. Every lead tracked, every quote logged—no booking falls through the cracks.',
+    travelCrmBenefit1: 'Unified lead tracking from all inquiry sources',
+    travelCrmBenefit2: 'Automatic quote and itinerary logging',
+    travelCrmBenefit3: 'Real-time pipeline visibility and follow-up reminders',
+    travelCrmBenefit4: 'Integration with booking platforms and GDS systems',
+
+    // Healthcare Section
+    healthcareSectionTitle: 'Healthcare & Medical Automation',
+    healthcareSectionIntro: 'Reduce administrative burden and improve patient experience with intelligent automation designed for therapists, physical therapy clinics, counselors, and private medical practices.',
+    healthcareCta: 'Transform Your Practice',
+
+    // Healthcare Services
+    healthChatbotTitle: 'AI Patient Engagement Assistant',
+    healthChatbotDesc: 'Your 24/7 AI patient engagement assistant. Answers common questions about services, pricing, insurance, and availability. Pre-screens patients, collects intake information, and guides them to book appointments—reducing front desk workload by up to 70%.',
+    healthChatbotBenefit1: 'Instant responses to patient inquiries 24/7',
+    healthChatbotBenefit2: 'Automated intake form collection and insurance verification',
+    healthChatbotBenefit3: 'Patient pre-screening before appointments',
+    healthChatbotBenefit4: 'Reduced front desk call volume and administrative burden',
+
+    healthSchedulerTitle: 'Patient Appointment System',
+    healthSchedulerDesc: 'Your AI-powered appointment booking system. Patients can self-schedule, reschedule, or cancel appointments 24/7. Automatic reminders reduce no-shows by up to 70%, and smart scheduling optimizes your provider\'s calendar for maximum efficiency.',
+    healthSchedulerBenefit1: '24/7 patient self-scheduling portal',
+    healthSchedulerBenefit2: 'Automated reminder sequences (email, SMS, WhatsApp)',
+    healthSchedulerBenefit3: 'No-show reduction up to 70%',
+    healthSchedulerBenefit4: 'Telehealth and in-person appointment support',
+
+    healthIntegrationTitle: 'Practice Management Integration',
+    healthIntegrationDesc: 'Your intelligent patient data hub. Automatically syncs patient information, treatment history, and communications across your practice management system, email, billing platforms, and insurance verification tools.',
+    healthIntegrationBenefit1: 'Unified patient records across all systems',
+    healthIntegrationBenefit2: 'Automated billing and insurance workflows',
+    healthIntegrationBenefit3: 'HIPAA-compliant data handling and security',
+    healthIntegrationBenefit4: 'Complete patient interaction and treatment history',
+
+    // Fitness & Education Section
+    fitnessSectionTitle: 'Fitness & Private Education Automation',
+    fitnessSectionIntro: 'Scale your gym, fitness studio, tutoring service, or education center with automation that handles bookings, member engagement, and administrative tasks.',
+    fitnessCta: 'Scale Your Studio/Academy',
+
+    // Fitness Services
+    fitnessChatbotTitle: 'AI Member & Student Assistant',
+    fitnessChatbotDesc: 'Intelligent chatbot that answers questions about classes, memberships, schedules, courses, and pricing. Qualifies leads, handles trial class or lesson bookings, and manages member or student inquiries 24/7—so you can focus on delivering great experiences.',
+    fitnessChatbotBenefit1: 'Instant answers about classes, memberships, and courses',
+    fitnessChatbotBenefit2: 'Trial class and consultation booking automation',
+    fitnessChatbotBenefit3: 'Multi-language support for diverse communities',
+    fitnessChatbotBenefit4: 'Automated FAQ handling for members and students',
+
+    fitnessSchedulerTitle: 'Class & Session Scheduler',
+    fitnessSchedulerDesc: 'Members and students can book classes, personal training sessions, or lessons 24/7. Automated reminders, waitlist management, and capacity tracking. Optimizes instructor schedules and facility utilization automatically.',
+    fitnessSchedulerBenefit1: 'Self-service class, session, and lesson booking',
+    fitnessSchedulerBenefit2: 'Automated waitlist and capacity management',
+    fitnessSchedulerBenefit3: 'Instructor/tutor calendar optimization',
+    fitnessSchedulerBenefit4: 'Attendance tracking and member/student engagement',
+
+    fitnessManagementTitle: 'Member & Student Management',
+    fitnessManagementDesc: 'Sync member and student data across booking systems, payment processors, email marketing, and communication platforms. Automate onboarding sequences, renewal reminders, progress tracking, and re-engagement campaigns without manual effort.',
+    fitnessManagementBenefit1: 'Unified member/student database across platforms',
+    fitnessManagementBenefit2: 'Automated renewal and payment reminders',
+    fitnessManagementBenefit3: 'Engagement and retention campaign automation',
+    fitnessManagementBenefit4: 'Progress tracking and parent communication (for education)',
+
+    // Custom Automation Section
+    customSectionTitle: 'Custom Business Automation',
+    customSectionIntro: 'Enterprise-grade automation solutions tailored to your unique business processes, industry, and systems—built from scratch for any business.',
+    customCta: 'Discuss Your Custom Automation Needs',
+
+    // Custom Services
+    customChatbotTitle: 'Custom AI Chatbot',
+    customChatbotDesc: 'Fully custom AI-powered chatbot built from scratch for your specific business. Handles customer inquiries, qualifies leads, provides 24/7 support, and integrates with your existing systems. Trained on your brand voice, products, services, and workflows.',
+    customChatbotBenefit1: 'Fully customized to your business and industry',
+    customChatbotBenefit2: 'Integration with any platform, CRM, or custom system',
+    customChatbotBenefit3: 'Advanced conversation flows and intelligent routing',
+    customChatbotBenefit4: 'Multilingual capabilities and brand voice training',
+
+    customWorkflowTitle: 'End-to-End Workflow Automation',
+    customWorkflowDesc: 'Transform complex multi-step processes into automated workflows connecting all your business tools. Eliminate manual data entry, handoffs, and coordination bottlenecks. From lead capture to order fulfillment to billing—automate entire business processes.',
+    customWorkflowBenefit1: 'Custom process automation from trigger to completion',
+    customWorkflowBenefit2: 'Multi-system integration and intelligent orchestration',
+    customWorkflowBenefit3: 'Smart decision logic, routing, and exception handling',
+    customWorkflowBenefit4: 'Real-time dashboards and performance monitoring',
+
+    customIntegrationTitle: 'Enterprise System Integration',
+    customIntegrationDesc: 'Custom CRM integration and data synchronization across all your platforms. Connects sales, marketing, operations, and finance data in real-time. Includes custom API development, complex data mapping, automated reporting dashboards, and bi-directional sync.',
+    customIntegrationBenefit1: 'Unlimited platform connections and integrations',
+    customIntegrationBenefit2: 'Real-time bidirectional data synchronization',
+    customIntegrationBenefit3: 'Custom API and webhook development',
+    customIntegrationBenefit4: 'Enterprise-grade security, compliance, and audit trails',
+
+    customDocumentTitle: 'AI Document Automation',
+    customDocumentDesc: 'Automated creation of proposals, contracts, reports, invoices, and marketing materials from your data. Custom-branded templates with conditional logic for different scenarios. Integration with e-signature platforms, automatic distribution, and bulk generation.',
+    customDocumentBenefit1: 'Instant professional document generation (proposals, contracts, reports)',
+    customDocumentBenefit2: 'Branded templates with intelligent conditional logic',
+    customDocumentBenefit3: 'E-signature workflow integration (DocuSign, Adobe Sign)',
+    customDocumentBenefit4: 'Bulk document generation and automated distribution',
+
+    // Consulting Section
+    consultingBadge: 'AI Consulting',
+    consultingTitle: 'Strategic AI Consulting & Implementation Guidance',
+    consultingDesc: 'Not sure where to start with AI automation? Our consulting service helps you identify high-impact opportunities, select the right AI tools for your industry, and build a practical implementation roadmap—without the overwhelm.',
+    consultingBenefit1: 'Comprehensive workflow audit and bottleneck analysis',
+    consultingBenefit2: 'AI tool recommendations tailored to your budget and tech stack',
+    consultingBenefit3: 'Industry benchmark insights (how top performers use AI)',
+    consultingBenefit4: 'Prioritized automation roadmap with quick wins',
+    consultingBenefit5: 'Implementation guidance, training, and 30-day support',
+    consultingBenefit6: 'ROI projections and success metrics framework',
+    consultingCta: 'Book a Strategy Consultation',
+
+    // Final CTA
+    finalCtaTitle: 'Ready to Automate Your Business?',
+    finalCtaSubtitle: 'Schedule a discovery call to discuss your automation needs and see how we can help you save time and scale operations.',
+    finalCtaButton: 'Schedule a Discovery Call',
+  },
+
   // Contact Page
   contact: {
     heroTitle: "Let's Transform Your Business Together",
