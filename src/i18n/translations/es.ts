@@ -288,6 +288,147 @@ export const es: TranslationKeys = {
     getQuote: 'Obtener Cotización',
   },
 
+  // Services Page (New)
+  servicesPage: {
+    // Hero
+    heroTitle: 'Soluciones de Automatización con IA para Negocios en Crecimiento',
+    heroSubtitle: 'Servicios de automatización específicos por industria que eliminan trabajo manual, aceleran procesos y escalan tus operaciones sin contratar más personal',
+    heroCta: 'Reservar Consulta Gratis',
+    learnMore: 'Saber Más',
+
+    // Travel Agency Section
+    travelSectionTitle: 'Automatización para Agencias de Viajes',
+    travelSectionIntro: 'Transforma cómo vendes viajes con automatización de IA que engancha leads 24/7, gestiona reservas y maneja solicitudes complejas de itinerarios mientras tú te enfocas en crear vacaciones de ensueño.',
+    travelCta: 'Automatiza Tu Agencia de Viajes',
+
+    // Travel Services
+    travelChatbotTitle: 'Chatbot de Ventas de Viajes con IA',
+    travelChatbotDesc: 'Tu agente de ventas de IA 24/7 que vende sueños y reserva aventuras. Este chatbot inteligente engancha visitantes web, responde preguntas sobre destinos, paquetes y precios, califica leads por presupuesto y preferencias, y captura reservas—incluso mientras duermes.',
+    travelChatbotBenefit1: 'Engancha viajeros al instante 24/7',
+    travelChatbotBenefit2: 'Responde preguntas de destinos y paquetes automáticamente',
+    travelChatbotBenefit3: 'Califica leads por presupuesto, fechas y estilo de viaje',
+    travelChatbotBenefit4: 'Captura reservas y solicitudes de consulta fuera de horario',
+
+    travelSchedulerTitle: 'Agendador Inteligente de Consultas',
+    travelSchedulerDesc: 'Tu motor de reservas de llamadas de descubrimiento impulsado por IA. Agenda automáticamente llamadas de consulta con leads calificados, envía recordatorios, maneja reprogramaciones y sincroniza con tu calendario. Más consultas de vacaciones de ensueño, cero intercambio de emails.',
+    travelSchedulerBenefit1: 'Reserva de consultas autoservicio 24/7',
+    travelSchedulerBenefit2: 'Recordatorios automatizados multicanal (email, SMS, WhatsApp)',
+    travelSchedulerBenefit3: 'Calificación inteligente de leads antes de reservar',
+    travelSchedulerBenefit4: 'Sincronización de calendarios de equipo para agencias multiagente',
+
+    travelCrmTitle: 'CRM de Viajes y Seguimiento de Cotizaciones',
+    travelCrmDesc: 'Tu sistema inteligente de seguimiento de cotizaciones y leads. Sincroniza automáticamente consultas de viaje, cotizaciones y datos de clientes en tu CRM, email y plataformas de reservas. Cada lead rastreado, cada cotización registrada—ninguna reserva se escapa.',
+    travelCrmBenefit1: 'Seguimiento unificado de leads de todas las fuentes',
+    travelCrmBenefit2: 'Registro automático de cotizaciones e itinerarios',
+    travelCrmBenefit3: 'Visibilidad del pipeline en tiempo real y recordatorios de seguimiento',
+    travelCrmBenefit4: 'Integración con plataformas de reservas y sistemas GDS',
+
+    // Healthcare Section
+    healthcareSectionTitle: 'Automatización para Salud y Medicina',
+    healthcareSectionIntro: 'Reduce la carga administrativa y mejora la experiencia del paciente con automatización inteligente diseñada para terapeutas, clínicas de fisioterapia, consejeros y consultorios médicos privados.',
+    healthcareCta: 'Transforma Tu Práctica',
+
+    // Healthcare Services
+    healthChatbotTitle: 'Asistente de Engagement de Pacientes con IA',
+    healthChatbotDesc: 'Tu asistente de engagement de pacientes 24/7 con IA. Responde preguntas comunes sobre servicios, precios, seguros y disponibilidad. Pre-filtra pacientes, recopila información de admisión y los guía a reservar citas—reduciendo la carga de recepción hasta en 70%.',
+    healthChatbotBenefit1: 'Respuestas instantáneas a consultas de pacientes 24/7',
+    healthChatbotBenefit2: 'Recopilación automatizada de formularios y verificación de seguros',
+    healthChatbotBenefit3: 'Pre-filtro de pacientes antes de citas',
+    healthChatbotBenefit4: 'Reducción de llamadas y carga administrativa en recepción',
+
+    healthSchedulerTitle: 'Sistema de Citas para Pacientes',
+    healthSchedulerDesc: 'Tu sistema de reservas de citas impulsado por IA. Los pacientes pueden auto-agendar, reprogramar o cancelar citas 24/7. Los recordatorios automáticos reducen no-shows hasta en 70%, y la programación inteligente optimiza el calendario de tu proveedor.',
+    healthSchedulerBenefit1: 'Portal de auto-agendamiento 24/7',
+    healthSchedulerBenefit2: 'Secuencias de recordatorios automatizados (email, SMS, WhatsApp)',
+    healthSchedulerBenefit3: 'Reducción de no-shows hasta 70%',
+    healthSchedulerBenefit4: 'Soporte para citas presenciales y telemedicina',
+
+    healthIntegrationTitle: 'Integración de Gestión de Práctica',
+    healthIntegrationDesc: 'Tu hub inteligente de datos de pacientes. Sincroniza automáticamente información de pacientes, historial de tratamientos y comunicaciones con tu sistema de gestión, email, plataformas de facturación y verificación de seguros.',
+    healthIntegrationBenefit1: 'Registros unificados de pacientes en todos los sistemas',
+    healthIntegrationBenefit2: 'Flujos automatizados de facturación y seguros',
+    healthIntegrationBenefit3: 'Manejo de datos compatible con HIPAA y seguro',
+    healthIntegrationBenefit4: 'Historial completo de interacciones y tratamientos',
+
+    // Fitness & Education Section
+    fitnessSectionTitle: 'Automatización para Fitness y Educación Privada',
+    fitnessSectionIntro: 'Escala tu gimnasio, estudio de fitness, servicio de tutorías o centro educativo con automatización que maneja reservas, engagement de miembros y tareas administrativas.',
+    fitnessCta: 'Escala Tu Estudio/Academia',
+
+    // Fitness Services
+    fitnessChatbotTitle: 'Asistente de Miembros y Estudiantes con IA',
+    fitnessChatbotDesc: 'Chatbot inteligente que responde preguntas sobre clases, membresías, horarios, cursos y precios. Califica leads, maneja reservas de clases de prueba o lecciones, y gestiona consultas de miembros o estudiantes 24/7—para que tú te enfoques en crear experiencias increíbles.',
+    fitnessChatbotBenefit1: 'Respuestas instantáneas sobre clases, membresías y cursos',
+    fitnessChatbotBenefit2: 'Automatización de reservas de clases de prueba y consultas',
+    fitnessChatbotBenefit3: 'Soporte multilingüe para comunidades diversas',
+    fitnessChatbotBenefit4: 'Manejo automatizado de FAQs para miembros y estudiantes',
+
+    fitnessSchedulerTitle: 'Agendador de Clases y Sesiones',
+    fitnessSchedulerDesc: 'Miembros y estudiantes pueden reservar clases, sesiones de entrenamiento personal o lecciones 24/7. Recordatorios automatizados, gestión de lista de espera y seguimiento de capacidad. Optimiza horarios de instructores y uso de instalaciones automáticamente.',
+    fitnessSchedulerBenefit1: 'Reserva autoservicio de clases, sesiones y lecciones',
+    fitnessSchedulerBenefit2: 'Gestión automatizada de lista de espera y capacidad',
+    fitnessSchedulerBenefit3: 'Optimización de calendario de instructores/tutores',
+    fitnessSchedulerBenefit4: 'Seguimiento de asistencia y engagement de miembros/estudiantes',
+
+    fitnessManagementTitle: 'Gestión de Miembros y Estudiantes',
+    fitnessManagementDesc: 'Sincroniza datos de miembros y estudiantes en sistemas de reservas, procesadores de pago, email marketing y plataformas de comunicación. Automatiza secuencias de onboarding, recordatorios de renovación, seguimiento de progreso y campañas de re-engagement.',
+    fitnessManagementBenefit1: 'Base de datos unificada de miembros/estudiantes en todas las plataformas',
+    fitnessManagementBenefit2: 'Recordatorios automatizados de renovación y pagos',
+    fitnessManagementBenefit3: 'Automatización de campañas de engagement y retención',
+    fitnessManagementBenefit4: 'Seguimiento de progreso y comunicación con padres (para educación)',
+
+    // Custom Automation Section
+    customSectionTitle: 'Automatización Empresarial Personalizada',
+    customSectionIntro: 'Soluciones de automatización de nivel empresarial adaptadas a tus procesos de negocio únicos, industria y sistemas—construidas desde cero para cualquier negocio.',
+    customCta: 'Discute Tus Necesidades de Automatización',
+
+    // Custom Services
+    customChatbotTitle: 'Chatbot de IA Personalizado',
+    customChatbotDesc: 'Chatbot de IA completamente personalizado construido desde cero para tu negocio específico. Maneja consultas de clientes, califica leads, proporciona soporte 24/7 e integra con tus sistemas existentes. Entrenado en tu voz de marca, productos, servicios y flujos.',
+    customChatbotBenefit1: 'Completamente personalizado para tu negocio e industria',
+    customChatbotBenefit2: 'Integración con cualquier plataforma, CRM o sistema personalizado',
+    customChatbotBenefit3: 'Flujos de conversación avanzados y enrutamiento inteligente',
+    customChatbotBenefit4: 'Capacidades multilingües y entrenamiento de voz de marca',
+
+    customWorkflowTitle: 'Automatización de Workflows End-to-End',
+    customWorkflowDesc: 'Transforma procesos complejos de múltiples pasos en workflows automatizados que conectan todas tus herramientas de negocio. Elimina entrada manual de datos, traspasos y cuellos de botella. De captura de leads a fulfillment a facturación—automatiza procesos completos.',
+    customWorkflowBenefit1: 'Automatización de procesos personalizados de principio a fin',
+    customWorkflowBenefit2: 'Integración multi-sistema y orquestación inteligente',
+    customWorkflowBenefit3: 'Lógica de decisión inteligente, enrutamiento y manejo de excepciones',
+    customWorkflowBenefit4: 'Dashboards en tiempo real y monitoreo de rendimiento',
+
+    customIntegrationTitle: 'Integración de Sistemas Empresariales',
+    customIntegrationDesc: 'Integración de CRM personalizada y sincronización de datos en todas tus plataformas. Conecta datos de ventas, marketing, operaciones y finanzas en tiempo real. Incluye desarrollo de API personalizado, mapeo de datos complejos, dashboards de reportes automatizados.',
+    customIntegrationBenefit1: 'Conexiones e integraciones ilimitadas de plataformas',
+    customIntegrationBenefit2: 'Sincronización de datos bidireccional en tiempo real',
+    customIntegrationBenefit3: 'Desarrollo de API y webhooks personalizados',
+    customIntegrationBenefit4: 'Seguridad de nivel empresarial, cumplimiento y auditoría',
+
+    customDocumentTitle: 'Automatización de Documentos con IA',
+    customDocumentDesc: 'Creación automatizada de propuestas, contratos, reportes, facturas y materiales de marketing desde tus datos. Plantillas con marca y lógica condicional para diferentes escenarios. Integración con plataformas de firma electrónica, distribución automática y generación masiva.',
+    customDocumentBenefit1: 'Generación instantánea de documentos profesionales (propuestas, contratos, reportes)',
+    customDocumentBenefit2: 'Plantillas con marca y lógica condicional inteligente',
+    customDocumentBenefit3: 'Integración de flujos de firma electrónica (DocuSign, Adobe Sign)',
+    customDocumentBenefit4: 'Generación masiva de documentos y distribución automatizada',
+
+    // Consulting Section
+    consultingBadge: 'Consultoría de IA',
+    consultingTitle: 'Consultoría Estratégica de IA y Guía de Implementación',
+    consultingDesc: '¿No sabes por dónde empezar con automatización de IA? Nuestro servicio de consultoría te ayuda a identificar oportunidades de alto impacto, seleccionar las herramientas de IA correctas para tu industria, y crear una hoja de ruta práctica de implementación—sin abrumarte.',
+    consultingBenefit1: 'Auditoría completa de workflows y análisis de cuellos de botella',
+    consultingBenefit2: 'Recomendaciones de herramientas de IA según tu presupuesto y stack tecnológico',
+    consultingBenefit3: 'Insights de benchmarks de industria (cómo los líderes usan IA)',
+    consultingBenefit4: 'Hoja de ruta de automatización priorizada con quick wins',
+    consultingBenefit5: 'Guía de implementación, capacitación y soporte de 30 días',
+    consultingBenefit6: 'Proyecciones de ROI y framework de métricas de éxito',
+    consultingCta: 'Reservar Consulta Estratégica',
+
+    // Final CTA
+    finalCtaTitle: '¿Listo para Automatizar Tu Negocio?',
+    finalCtaSubtitle: 'Agenda una llamada de descubrimiento para discutir tus necesidades de automatización y ver cómo podemos ayudarte a ahorrar tiempo y escalar operaciones.',
+    finalCtaButton: 'Agendar Llamada de Descubrimiento',
+  },
+
   // Contact Page
   contact: {
     heroTitle: 'Transformemos tu Negocio Juntos',

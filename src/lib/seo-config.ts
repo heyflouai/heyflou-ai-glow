@@ -28,8 +28,8 @@ export const PAGE_SEO = {
     path: "/",
   },
   services: {
-    title: "Services | WhatsApp AI Bot, Lead Pipeline, CRM + Email Marketing | HeyFlou",
-    description: "We implement WhatsApp AI bots, lead management pipelines, and CRM + email marketing to help SMBs capture leads, follow up automatically, and increase bookings.",
+    title: "AI Automation Services | Travel, Healthcare, Fitness & Education | HeyFlou",
+    description: "Industry-specific AI automation solutions for travel agencies, healthcare practices, fitness studios, and education centers. Eliminate manual work and scale operations with intelligent chatbots, scheduling, and workflow automation.",
     path: "/services",
   },
   caseStudies: {
