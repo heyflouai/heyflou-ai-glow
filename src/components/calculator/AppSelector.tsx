@@ -3,6 +3,7 @@ import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import { Check, Loader2 } from 'lucide-react';
 import { useAppsMaster, useAppPriceOverrides, useVerticalSettings, computeAppPrice, VerticalType } from '@/hooks/usePricingData';
+import { useTranslation } from '@/i18n';
 
 interface AppSelectorProps {
   selectedApps: Set<string>;
@@ -11,6 +12,7 @@ interface AppSelectorProps {
 }
 
 export const AppSelector = ({ selectedApps, onToggleApp, vertical }: AppSelectorProps) => {
+  const t = useTranslation();
   const { data: appCategories, isLoading: appsLoading, error: appsError } = useAppsMaster();
   const { data: verticalSettings, isLoading: settingsLoading } = useVerticalSettings(vertical);
   const { data: overrideMap, isLoading: overridesLoading } = useAppPriceOverrides(vertical);
@@ -22,7 +24,7 @@ export const AppSelector = ({ selectedApps, onToggleApp, vertical }: AppSelector
       <Card>
         <CardContent className="flex items-center justify-center py-12">
           <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
-          <span className="ml-2 text-muted-foreground">Loading apps...</span>
+          <span className="ml-2 text-muted-foreground">{t.calculator.loadingApps}</span>
         </CardContent>
       </Card>
     );
@@ -32,7 +34,7 @@ export const AppSelector = ({ selectedApps, onToggleApp, vertical }: AppSelector
     return (
       <Card>
         <CardContent className="py-8 text-center text-destructive">
-          Failed to load app catalog. Please refresh the page.
+          {t.calculator.failedToLoadApps}
         </CardContent>
       </Card>
     );
@@ -43,7 +45,7 @@ export const AppSelector = ({ selectedApps, onToggleApp, vertical }: AppSelector
   return (
     <Card>
       <CardHeader className="pb-3">
-        <CardTitle className="text-lg">App Integrations</CardTitle>
+        <CardTitle className="text-lg">{t.calculator.appIntegrations}</CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
         {appCategories.map((category) => (

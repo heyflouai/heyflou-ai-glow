@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Loader2 } from 'lucide-react';
 import { useAppsMaster, useAppPriceOverrides, useVerticalSettings, computeAppPrice, VerticalType } from '@/hooks/usePricingData';
+import { useTranslation } from '@/i18n';
 
 interface PricingSummaryProps {
   offerType: VerticalType;
@@ -10,33 +11,34 @@ interface PricingSummaryProps {
   selectedApps: Set<string>;
 }
 
-const offerLabels: Record<VerticalType, string> = {
-  custom: 'Custom Automation',
-  travel: 'Travel Agency',
-  health: 'Health',
-};
-
 export const PricingSummary = ({ 
   offerType, 
   basePackageName, 
   basePrice, 
   selectedApps,
 }: PricingSummaryProps) => {
+  const t = useTranslation();
   const { data: appCategories, isLoading: appsLoading } = useAppsMaster();
   const { data: verticalSettings, isLoading: settingsLoading } = useVerticalSettings(offerType);
   const { data: overrideMap, isLoading: overridesLoading } = useAppPriceOverrides(offerType);
 
   const isLoading = appsLoading || settingsLoading || overridesLoading;
 
+  const offerLabels: Record<VerticalType, string> = {
+    custom: t.calculator.customAutomation,
+    travel: t.calculator.travelAgency,
+    health: t.calculator.health,
+  };
+
   if (isLoading || !appCategories || !verticalSettings || !overrideMap) {
     return (
       <Card className="border-primary/20 bg-card">
         <CardHeader className="pb-3">
-          <CardTitle className="text-lg">Pricing Summary</CardTitle>
+          <CardTitle className="text-lg">{t.calculator.pricingSummary}</CardTitle>
         </CardHeader>
         <CardContent className="flex items-center justify-center py-4">
           <Loader2 className="h-5 w-5 animate-spin text-muted-foreground" />
-          <span className="ml-2 text-muted-foreground">Loading...</span>
+          <span className="ml-2 text-muted-foreground">{t.calculator.loading}</span>
         </CardContent>
       </Card>
     );
@@ -66,27 +68,27 @@ export const PricingSummary = ({
   return (
     <Card className="border-primary/20 bg-card">
       <CardHeader className="pb-3">
-        <CardTitle className="text-lg">Pricing Summary</CardTitle>
+        <CardTitle className="text-lg">{t.calculator.pricingSummary}</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="space-y-3">
           <div className="flex justify-between text-sm">
-            <span className="text-muted-foreground">Offer type</span>
+            <span className="text-muted-foreground">{t.calculator.offerType}</span>
             <span className="font-medium">{offerLabels[offerType]}</span>
           </div>
           {basePackageName && (
             <div className="flex justify-between text-sm">
-              <span className="text-muted-foreground">Base package</span>
+              <span className="text-muted-foreground">{t.calculator.basePackage}</span>
               <span className="font-medium">{basePackageName}</span>
             </div>
           )}
           <div className="flex justify-between text-sm">
-            <span className="text-muted-foreground">Base price</span>
+            <span className="text-muted-foreground">{t.calculator.basePrice}</span>
             <span className="font-medium">${basePrice}</span>
           </div>
           <div className="flex justify-between text-sm">
             <span className="text-muted-foreground">
-              Apps subtotal ({selectedApps.size})
+              {t.calculator.appsSubtotal} ({selectedApps.size})
             </span>
             <span className="font-medium">
               {appsTotal > 0 ? `+$${appsTotal}` : '$0'}
@@ -94,7 +96,7 @@ export const PricingSummary = ({
           </div>
           <div className="border-t border-border pt-3 mt-3">
             <div className="flex justify-between items-center">
-              <span className="text-foreground font-semibold">Total</span>
+              <span className="text-foreground font-semibold">{t.calculator.total}</span>
               <span className="text-3xl font-bold text-primary">
                 ${finalTotal.toLocaleString()} {currency}
               </span>
@@ -104,7 +106,7 @@ export const PricingSummary = ({
 
         {selectedAppsList.length > 0 && (
           <div className="mt-6 pt-4 border-t border-border">
-            <p className="text-xs text-muted-foreground mb-2">Selected integrations:</p>
+            <p className="text-xs text-muted-foreground mb-2">{t.calculator.selectedIntegrations}</p>
             <div className="flex flex-wrap gap-1">
               {appPrices.map(app => (
                 <Badge key={app.name} variant="outline" className="text-xs">

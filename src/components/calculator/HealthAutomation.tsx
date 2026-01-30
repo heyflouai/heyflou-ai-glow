@@ -6,12 +6,14 @@ import { PricingSummary } from './PricingSummary';
 import { WorkflowVisualization } from './WorkflowVisualization';
 import { BasePackageSelector } from './BasePackageSelector';
 import { useVerticalSettings, useOfferPackages } from '@/hooks/usePricingData';
+import { useTranslation } from '@/i18n';
 
 interface HealthAutomationProps {
   onBack: () => void;
 }
 
 export const HealthAutomation = ({ onBack }: HealthAutomationProps) => {
+  const t = useTranslation();
   const [selectedPackageId, setSelectedPackageId] = useState<string | null>(null);
   const [selectedApps, setSelectedApps] = useState<Set<string>>(new Set());
   
@@ -37,7 +39,7 @@ export const HealthAutomation = ({ onBack }: HealthAutomationProps) => {
     return (
       <div className="flex items-center justify-center py-16">
         <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
-        <span className="ml-3 text-muted-foreground">Loading pricing...</span>
+        <span className="ml-3 text-muted-foreground">{t.calculator.loadingPricing}</span>
       </div>
     );
   }
@@ -45,9 +47,9 @@ export const HealthAutomation = ({ onBack }: HealthAutomationProps) => {
   if (error || !packages || !settings) {
     return (
       <div className="text-center py-16 text-destructive">
-        <p>Failed to load pricing data. Please refresh the page.</p>
+        <p>{t.calculator.failedToLoadData}</p>
         <Button variant="ghost" onClick={onBack} className="mt-4">
-          Go back
+          {t.calculator.goBack}
         </Button>
       </div>
     );
@@ -64,16 +66,16 @@ export const HealthAutomation = ({ onBack }: HealthAutomationProps) => {
     <div className="space-y-6">
       <Button variant="ghost" onClick={onBack} className="gap-2">
         <ArrowLeft className="h-4 w-4" />
-        Back to selection
+        {t.calculator.backToSelection}
       </Button>
 
       <div className="text-center mb-6">
-        <h2 className="text-2xl font-bold text-foreground">Health</h2>
-        <p className="text-muted-foreground mt-1">Automation solutions for healthcare providers</p>
+        <h2 className="text-2xl font-bold text-foreground">{t.calculator.health}</h2>
+        <p className="text-muted-foreground mt-1">{t.calculator.automationSolutionsFor} {t.calculator.healthcareProviders}</p>
       </div>
 
       <BasePackageSelector
-        title="Step 1: Choose Base Automation"
+        title={t.calculator.step1ChooseBase}
         packages={basePackages}
         selectedPackageId={selectedPackageId}
         onSelectPackage={setSelectedPackageId}
@@ -82,7 +84,7 @@ export const HealthAutomation = ({ onBack }: HealthAutomationProps) => {
       {selectedPackageId && (
         <>
           <div className="text-center">
-            <p className="text-sm text-muted-foreground">Step 2: Add optional app integrations</p>
+            <p className="text-sm text-muted-foreground">{t.calculator.step2AddApps}</p>
           </div>
           <AppSelector 
             selectedApps={selectedApps} 
@@ -106,7 +108,7 @@ export const HealthAutomation = ({ onBack }: HealthAutomationProps) => {
 
       {!selectedPackageId && (
         <div className="text-center py-8 text-muted-foreground">
-          <p>Select a base automation package to see the pricing summary</p>
+          <p>{t.calculator.selectPackagePrompt}</p>
         </div>
       )}
     </div>
