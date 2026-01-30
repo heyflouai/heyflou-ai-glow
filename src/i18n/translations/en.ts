@@ -742,6 +742,68 @@ export const en = {
     roadmapDisclaimer: 'Want something specific?',
     roadmapLink: 'Request a custom workflow.',
   },
+
+  // Calculator Page
+  calculator: {
+    // Main page
+    pageTitle: 'Internal Pricing Calculator',
+    pageSubtitle: 'Calculate custom automation pricing based on app integrations',
+    
+    // Offer selector
+    selectOfferType: 'Select Offer Type',
+    selectOfferTypeDesc: 'Choose the type of automation package to build a quote',
+    
+    // Offer types
+    customAutomation: 'Custom Automation',
+    customAutomationDesc: 'Build a custom automation solution with flexible app integrations',
+    travelAgency: 'Travel Agency',
+    travelAgencyDesc: 'Pre-configured automation packages for travel agencies',
+    health: 'Health',
+    healthDesc: 'Automation solutions designed for healthcare providers',
+    
+    // Navigation
+    backToSelection: 'Back to selection',
+    goBack: 'Go back',
+    
+    // Custom automation
+    baseAutomationBuild: 'Base Automation Build',
+    baseSetupDesc: 'Base setup, workflow design and configuration',
+    buildCustomSolution: 'Build your custom automation solution',
+    
+    // Travel & Health
+    automationSolutionsFor: 'Automation solutions for',
+    travelAgencies: 'travel agencies',
+    healthcareProviders: 'healthcare providers',
+    step1ChooseBase: 'Step 1: Choose Base Automation',
+    step2AddApps: 'Step 2: Add optional app integrations',
+    selectPackagePrompt: 'Select a base automation package to see the pricing summary',
+    
+    // App selector
+    appIntegrations: 'App Integrations',
+    loadingApps: 'Loading apps...',
+    failedToLoadApps: 'Failed to load app catalog. Please refresh the page.',
+    
+    // Pricing summary
+    pricingSummary: 'Pricing Summary',
+    loading: 'Loading...',
+    offerType: 'Offer type',
+    basePackage: 'Base package',
+    basePrice: 'Base price',
+    appsSubtotal: 'Apps subtotal',
+    total: 'Total',
+    selectedIntegrations: 'Selected integrations:',
+    
+    // Workflow visualization
+    workflowTitle: 'Your Automation Workflow',
+    workflowEmptyState: 'Select apps to generate a workflow preview',
+    stepsInWorkflow: 'step in workflow',
+    stepsInWorkflowPlural: 'steps in workflow',
+    
+    // Loading/Error states
+    loadingPricing: 'Loading pricing...',
+    failedToLoadPricing: 'Failed to load pricing settings. Please refresh the page.',
+    failedToLoadData: 'Failed to load pricing data. Please refresh the page.',
+  },
 };
 
 export type TranslationKeys = typeof en;

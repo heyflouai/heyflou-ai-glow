@@ -744,4 +744,66 @@ export const es: TranslationKeys = {
     roadmapDisclaimer: '¿Quieres algo específico?',
     roadmapLink: 'Solicita un workflow personalizado.',
   },
+
+  // Calculator Page
+  calculator: {
+    // Main page
+    pageTitle: 'Calculadora Interna de Precios',
+    pageSubtitle: 'Calcula precios de automatización basados en integraciones de apps',
+    
+    // Offer selector
+    selectOfferType: 'Seleccionar Tipo de Oferta',
+    selectOfferTypeDesc: 'Elige el tipo de paquete de automatización para crear una cotización',
+    
+    // Offer types
+    customAutomation: 'Automatización Personalizada',
+    customAutomationDesc: 'Construye una solución de automatización personalizada con integraciones flexibles',
+    travelAgency: 'Agencia de Viajes',
+    travelAgencyDesc: 'Paquetes de automatización preconfigurados para agencias de viajes',
+    health: 'Salud',
+    healthDesc: 'Soluciones de automatización diseñadas para proveedores de salud',
+    
+    // Navigation
+    backToSelection: 'Volver a selección',
+    goBack: 'Volver',
+    
+    // Custom automation
+    baseAutomationBuild: 'Automatización Base',
+    baseSetupDesc: 'Configuración base, diseño de workflow y configuración',
+    buildCustomSolution: 'Construye tu solución de automatización personalizada',
+    
+    // Travel & Health
+    automationSolutionsFor: 'Soluciones de automatización para',
+    travelAgencies: 'agencias de viajes',
+    healthcareProviders: 'proveedores de salud',
+    step1ChooseBase: 'Paso 1: Elige Automatización Base',
+    step2AddApps: 'Paso 2: Agrega integraciones de apps opcionales',
+    selectPackagePrompt: 'Selecciona un paquete base para ver el resumen de precios',
+    
+    // App selector
+    appIntegrations: 'Integraciones de Apps',
+    loadingApps: 'Cargando apps...',
+    failedToLoadApps: 'Error al cargar catálogo de apps. Por favor recarga la página.',
+    
+    // Pricing summary
+    pricingSummary: 'Resumen de Precios',
+    loading: 'Cargando...',
+    offerType: 'Tipo de oferta',
+    basePackage: 'Paquete base',
+    basePrice: 'Precio base',
+    appsSubtotal: 'Subtotal de apps',
+    total: 'Total',
+    selectedIntegrations: 'Integraciones seleccionadas:',
+    
+    // Workflow visualization
+    workflowTitle: 'Tu Workflow de Automatización',
+    workflowEmptyState: 'Selecciona apps para generar una vista previa del workflow',
+    stepsInWorkflow: 'paso en el workflow',
+    stepsInWorkflowPlural: 'pasos en el workflow',
+    
+    // Loading/Error states
+    loadingPricing: 'Cargando precios...',
+    failedToLoadPricing: 'Error al cargar configuración de precios. Por favor recarga la página.',
+    failedToLoadData: 'Error al cargar datos de precios. Por favor recarga la página.',
+  },
 };

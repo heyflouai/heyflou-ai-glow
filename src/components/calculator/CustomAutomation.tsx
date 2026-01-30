@@ -6,12 +6,14 @@ import { AppSelector } from './AppSelector';
 import { PricingSummary } from './PricingSummary';
 import { WorkflowVisualization } from './WorkflowVisualization';
 import { useVerticalSettings } from '@/hooks/usePricingData';
+import { useTranslation } from '@/i18n';
 
 interface CustomAutomationProps {
   onBack: () => void;
 }
 
 export const CustomAutomation = ({ onBack }: CustomAutomationProps) => {
+  const t = useTranslation();
   const [selectedApps, setSelectedApps] = useState<Set<string>>(new Set());
   const { data: settings, isLoading, error } = useVerticalSettings('custom');
 
@@ -31,7 +33,7 @@ export const CustomAutomation = ({ onBack }: CustomAutomationProps) => {
     return (
       <div className="flex items-center justify-center py-16">
         <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
-        <span className="ml-3 text-muted-foreground">Loading pricing...</span>
+        <span className="ml-3 text-muted-foreground">{t.calculator.loadingPricing}</span>
       </div>
     );
   }
@@ -39,9 +41,9 @@ export const CustomAutomation = ({ onBack }: CustomAutomationProps) => {
   if (error || !settings) {
     return (
       <div className="text-center py-16 text-destructive">
-        <p>Failed to load pricing settings. Please refresh the page.</p>
+        <p>{t.calculator.failedToLoadPricing}</p>
         <Button variant="ghost" onClick={onBack} className="mt-4">
-          Go back
+          {t.calculator.goBack}
         </Button>
       </div>
     );
@@ -51,22 +53,22 @@ export const CustomAutomation = ({ onBack }: CustomAutomationProps) => {
     <div className="space-y-6">
       <Button variant="ghost" onClick={onBack} className="gap-2">
         <ArrowLeft className="h-4 w-4" />
-        Back to selection
+        {t.calculator.backToSelection}
       </Button>
 
       <div className="text-center mb-6">
-        <h2 className="text-2xl font-bold text-foreground">Custom Automation</h2>
-        <p className="text-muted-foreground mt-1">Build your custom automation solution</p>
+        <h2 className="text-2xl font-bold text-foreground">{t.calculator.customAutomation}</h2>
+        <p className="text-muted-foreground mt-1">{t.calculator.buildCustomSolution}</p>
       </div>
 
       <Card>
         <CardHeader className="pb-3">
-          <CardTitle className="text-lg">Base Automation Build</CardTitle>
+          <CardTitle className="text-lg">{t.calculator.baseAutomationBuild}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="flex items-center justify-between">
             <p className="text-muted-foreground text-sm">
-              Base setup, workflow design and configuration
+              {t.calculator.baseSetupDesc}
             </p>
             <span className="text-2xl font-bold text-foreground">
               ${settings.base_price}

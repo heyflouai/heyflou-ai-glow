@@ -1,19 +1,21 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ChevronRight } from 'lucide-react';
+import { useTranslation } from '@/i18n';
 
 interface WorkflowVisualizationProps {
   selectedApps: Set<string>;
 }
 
 export const WorkflowVisualization = ({ selectedApps }: WorkflowVisualizationProps) => {
+  const t = useTranslation();
   const apps = Array.from(selectedApps);
   const hasApps = apps.length > 0;
 
   return (
     <Card className="border-border bg-card">
       <CardHeader className="pb-3">
-        <CardTitle className="text-lg">Your Automation Workflow</CardTitle>
+        <CardTitle className="text-lg">{t.calculator.workflowTitle}</CardTitle>
       </CardHeader>
       <CardContent>
         {/* Workflow container with horizontal scroll */}
@@ -28,7 +30,7 @@ export const WorkflowVisualization = ({ selectedApps }: WorkflowVisualizationPro
           {!hasApps && (
             <div className="flex items-center justify-center h-[100px] px-4">
               <p className="text-sm text-muted-foreground text-center">
-                Select apps to generate a workflow preview
+                {t.calculator.workflowEmptyState}
               </p>
             </div>
           )}
@@ -116,7 +118,7 @@ export const WorkflowVisualization = ({ selectedApps }: WorkflowVisualizationPro
             animate={{ opacity: 1 }}
             className="text-xs text-muted-foreground mt-3"
           >
-            {apps.length} step{apps.length !== 1 ? 's' : ''} in workflow
+            {apps.length} {apps.length !== 1 ? t.calculator.stepsInWorkflowPlural : t.calculator.stepsInWorkflow}
           </motion.p>
         )}
       </CardContent>

@@ -4,8 +4,10 @@ import { OfferSelector, OfferOption } from '@/components/calculator/OfferSelecto
 import { CustomAutomation } from '@/components/calculator/CustomAutomation';
 import { TravelAgency } from '@/components/calculator/TravelAgency';
 import { HealthAutomation } from '@/components/calculator/HealthAutomation';
+import { useTranslation } from '@/i18n';
 
 const Calculator = () => {
+  const t = useTranslation();
   const [selectedOffer, setSelectedOffer] = useState<OfferOption | null>(null);
 
   const handleBack = () => {
@@ -15,8 +17,8 @@ const Calculator = () => {
   return (
     <>
       <SEOHead 
-        title="HeyFlou Calculator"
-        description="Internal pricing calculator for custom automation builds."
+        title={t.calculator.pageTitle}
+        description={t.calculator.pageSubtitle}
         noIndex={true}
       />
       
@@ -26,10 +28,10 @@ const Calculator = () => {
             {/* Header */}
             <div className="text-center mb-8">
               <h1 className="text-3xl font-bold text-foreground mb-2">
-                Internal Pricing Calculator
+                {t.calculator.pageTitle}
               </h1>
               <p className="text-muted-foreground">
-                Calculate custom automation pricing based on app integrations
+                {t.calculator.pageSubtitle}
               </p>
             </div>
 
