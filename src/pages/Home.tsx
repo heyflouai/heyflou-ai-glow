@@ -10,6 +10,7 @@ import { IndustryCards } from '@/components/home/IndustryCards';
 import { IntegrationBeams } from '@/components/home/IntegrationBeams';
 import { HeroWorkflow } from '@/components/home/HeroWorkflow';
 import { ValuePropositionTimeline } from '@/components/home/ValuePropositionTimeline';
+import { FinalCTA } from '@/components/home/FinalCTA';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 import { useTranslation } from '@/i18n';
 import { PAGE_SEO, getCanonicalUrl } from '@/lib/seo-config';
@@ -298,17 +299,8 @@ export default function Home() {
         <CompactForm sourcePage="home" />
       </Section>
 
-      {/* Final CTA */}
-      <Section background="glow" className="text-center px-5 md:px-0">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold font-display text-foreground mb-5 md:mb-6">
-          {t.home.finalCtaTitle}
-        </h2>
-        <GradientButton variant="hero" size="xl" asChild className="w-full sm:w-auto">
-          <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer">
-            {t.home.finalCtaBtn}
-          </a>
-        </GradientButton>
-      </Section>
+      {/* Final CTA with Multiple Options */}
+      <FinalCTA />
     </main>
   </>;
 }
