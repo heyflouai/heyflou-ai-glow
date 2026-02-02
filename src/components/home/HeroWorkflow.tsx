@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { AnimatedBeam } from "@/components/ui/animated-beam";
 import { motion } from "framer-motion";
 import { MessageSquare, Calendar, Bell, CheckCircle, Building2 } from "lucide-react";
+import { useTranslation } from "@/i18n";
 
 const Circle = forwardRef<HTMLDivElement, { className?: string; children?: React.ReactNode; label?: string; isCenter?: boolean }>(
   ({ className, children, label, isCenter }, ref) => (
@@ -35,6 +36,7 @@ const Circle = forwardRef<HTMLDivElement, { className?: string; children?: React
 Circle.displayName = "Circle";
 
 export function HeroWorkflow() {
+  const t = useTranslation();
   const containerRef = useRef<HTMLDivElement>(null);
   const centerRef = useRef<HTMLDivElement>(null);
   const chatbotRef = useRef<HTMLDivElement>(null);
@@ -55,29 +57,29 @@ export function HeroWorkflow() {
       >
         {/* Top row - Chatbot and Appointments */}
         <div className="flex w-full justify-between items-start mb-6 md:mb-8 px-2 md:px-4">
-          <Circle ref={chatbotRef} label="24/7 AI Assistant">
+          <Circle ref={chatbotRef} label={t.homepage.workflowChatbot}>
             <MessageSquare className="w-4 h-4 md:w-5 md:h-5 text-hf-teal" />
           </Circle>
           
-          <Circle ref={appointmentsRef} label="Smart Scheduling">
+          <Circle ref={appointmentsRef} label={t.homepage.workflowAppointments}>
             <Calendar className="w-4 h-4 md:w-5 md:h-5 text-hf-teal" />
           </Circle>
         </div>
         
         {/* Center - Your Business */}
         <div className="mb-6 md:mb-8">
-          <Circle ref={centerRef} label="Your Business" isCenter>
+          <Circle ref={centerRef} label={t.homepage.workflowYourBusiness} isCenter>
             <Building2 className="w-6 h-6 md:w-7 md:h-7 text-white" />
           </Circle>
         </div>
         
         {/* Bottom row - Reminders and Confirmations */}
         <div className="flex w-full justify-between items-end px-2 md:px-4">
-          <Circle ref={remindersRef} label="Auto Reminders">
+          <Circle ref={remindersRef} label={t.homepage.workflowReminders}>
             <Bell className="w-4 h-4 md:w-5 md:h-5 text-hf-teal" />
           </Circle>
           
-          <Circle ref={confirmationsRef} label="Instant Confirmations">
+          <Circle ref={confirmationsRef} label={t.homepage.workflowConfirmations}>
             <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-hf-teal" />
           </Circle>
         </div>

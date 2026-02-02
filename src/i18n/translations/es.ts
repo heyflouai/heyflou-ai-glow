@@ -1497,4 +1497,187 @@ export const es: TranslationKeys = {
     ctaSubtitle: '¿No puedes esperar a nuestra solución específica para viajes? Construimos automatizaciones personalizadas para cualquier negocio.',
     ctaButton: 'Explorar Automatizaciones Personalizadas',
   },
+
+  // New Homepage Sections
+  homepage: {
+    // Hero Section
+    heroHook: 'Deja de Perder Tiempo en Tareas Repetitivas',
+    heroTitle: 'Automatización IA que Realmente Funciona',
+    heroSubtitle: 'Construimos soluciones de IA personalizadas para negocios de salud, fitness y educación. Sin rodeos. Solo resultados.',
+    heroPrimaryCta: 'Reservar Consulta Gratis →',
+    heroSecondaryCta: 'Explorar Soluciones',
+    
+    // Hero Workflow
+    workflowYourBusiness: 'Tu Negocio',
+    workflowChatbot: 'Asistente IA 24/7',
+    workflowAppointments: 'Agendamiento Inteligente',
+    workflowReminders: 'Recordatorios Automáticos',
+    workflowConfirmations: 'Confirmaciones Instantáneas',
+    
+    // Before/After Features Section
+    featuresTitle: 'Deja de Perder Dinero en Procesos Manuales',
+    featuresSubtitle: 'Mira cómo la automatización transforma las operaciones diarias',
+    featuresReadyCta: '¿Listo para Transformar tus Operaciones?',
+    featuresExplore: 'Explorar Nuestras Soluciones →',
+    
+    // Feature Cards
+    feature1Title: 'Captura de Leads 24/7',
+    feature1Before: 'Perdiendo 40% de leads que llegan fuera del horario laboral',
+    feature1Impact: '$2,000+ de ingresos perdidos mensualmente',
+    feature1After: 'El chatbot IA captura y califica cada consulta al instante—incluso a las 2am',
+    feature1Result: '100% de captura de leads • Cero oportunidades perdidas',
+    
+    feature2Title: 'Agendamiento Inteligente',
+    feature2Before: 'Pasando 10+ horas semanales en llamadas y emails solo para agendar citas',
+    feature2Impact: 'Podrías atender 15 clientes más al mes',
+    feature2After: 'Los clientes reservan al instante 24/7. Los recordatorios automáticos eliminan las ausencias',
+    feature2Result: '10 horas ahorradas semanalmente • 15% más reservas',
+    
+    feature3Title: 'Seguimientos Automatizados',
+    feature3Before: 'Los seguimientos se pierden. Los clientes se sienten descuidados entre sesiones',
+    feature3Impact: '20% de rotación por mala comunicación',
+    feature3After: 'Check-ins personalizados, consejos de bienestar y recordatorios enviados automáticamente',
+    feature3Result: '20% más retención • Mayor satisfacción',
+    
+    feature4Title: 'Facturación Inteligente',
+    feature4Before: 'Persiguiendo clientes para pagos manualmente. Conversaciones incómodas. Flujo de caja retrasado',
+    feature4Impact: 'Promedio de 2 semanas de retraso en pagos',
+    feature4After: 'Facturación automatizada, recordatorios amigables y procesamiento de pagos instantáneo',
+    feature4Result: 'Pagos más rápidos • Flujo de caja mejorado',
+    
+    feature5Title: 'Cero Entrada de Datos',
+    feature5Before: 'El personal pasa 5+ horas semanales ingresando información de clientes en múltiples sistemas',
+    feature5Impact: 'Errores, retrasos y tiempo perdido',
+    feature5After: 'La información se captura una vez, se sincroniza en todas partes automáticamente',
+    feature5Result: '5 horas ahorradas semanalmente • 95% menos errores',
+    
+    feature6Title: 'Insights Instantáneos',
+    feature6Before: 'Pasando horas compilando reportes manualmente. Los datos siempre están desactualizados',
+    feature6Impact: 'Tomando decisiones basadas en intuición',
+    feature6After: 'Dashboards en tiempo real mostrando reservas, ingresos y tendencias automáticamente',
+    feature6Result: 'Decisiones basadas en datos • Detecta tendencias temprano',
+    
+    beforeLabel: 'Antes',
+    afterLabel: 'Después',
+    impactLabel: 'Impacto',
+    
+    // Industry Cards Section
+    industryTitle: 'Soluciones de Automatización para Tu Industria',
+    industrySubtitle: 'Flujos de trabajo con IA personalizados específicamente para los desafíos únicos de tu industria',
+    industryNotSeeYours: '¿No ves tu industria? Construimos soluciones personalizadas para cualquier negocio.',
+    industryLetsTalk: 'Hablemos →',
+    
+    // Industry Card 1 - Healthcare
+    industryHealthcareTitle: 'Automatización de Salud',
+    industryHealthcareHook: '¿Cansado de que las ausencias a citas te cuesten miles?',
+    industryHealthcareDesc: 'Automatización de punta a punta para terapeutas, psicólogos, fisioterapeutas y clínicas privadas.',
+    industryHealthcareLabel: 'Lo que Automatizamos:',
+    industryHealthcareFeature1: 'Recordatorios y confirmaciones de citas',
+    industryHealthcareFeature2: 'Formularios de admisión y papeleo',
+    industryHealthcareFeature3: 'Secuencias de seguimiento post-sesión',
+    industryHealthcareFeature4: 'Gestión de lista de espera por cancelaciones',
+    industryHealthcareMetric: 'Ahorra 10+ horas por semana',
+    industryHealthcareCta: 'Explorar Soluciones de Salud',
+    
+    // Industry Card 2 - Fitness
+    industryFitnessTitle: 'Fitness y Educación',
+    industryFitnessHook: '¿Luchando con el caos de reservas y renovaciones perdidas?',
+    industryFitnessDesc: 'Automatización inteligente para gimnasios, estudios, entrenadores, tutores y escuelas privadas.',
+    industryFitnessLabel: 'Lo que Automatizamos:',
+    industryFitnessFeature1: 'Reservas de clases y gestión de capacidad',
+    industryFitnessFeature2: 'Recordatorios de renovación de membresías',
+    industryFitnessFeature3: 'Secuencias de conversión de prueba a miembro',
+    industryFitnessFeature4: 'Automatización de pagos y facturación',
+    industryFitnessMetric: 'Aumenta reservas en 30%',
+    industryFitnessCta: 'Explorar Soluciones de Fitness',
+    
+    // Industry Card 3 - Custom
+    industryCustomTitle: 'Automatización Personalizada',
+    industryCustomHook: '¿Tienes un desafío de negocio único?',
+    industryCustomDesc: 'Automatización IA a medida para cualquier negocio, cualquier industria, cualquier flujo de trabajo.',
+    industryCustomLabel: 'Lo que Construimos:',
+    industryCustomFeature1: 'Sistemas de comunicación con clientes',
+    industryCustomFeature2: 'Flujos de gestión de leads',
+    industryCustomFeature3: 'Automatización de procesos internos',
+    industryCustomFeature4: 'Integraciones multi-plataforma',
+    industryCustomMetric: 'Construido para tus necesidades exactas',
+    industryCustomCta: 'Diseña Tu Solución',
+    
+    // Industry Card 4 - Travel
+    industryTravelTitle: 'Automatización para Agencias de Viajes',
+    industryTravelHook: '¿Ahogándote en confirmaciones de reservas y consultas de clientes?',
+    industryTravelDesc: 'Automatización impulsada por IA para agencias de viajes y operadores turísticos.',
+    industryTravelLabel: 'Lo que Estamos Construyendo:',
+    industryTravelFeature1: 'Confirmaciones de reservas automatizadas',
+    industryTravelFeature2: 'Respuestas a consultas de clientes 24/7',
+    industryTravelFeature3: 'Gestión de itinerarios',
+    industryTravelFeature4: 'Coordinación con proveedores',
+    industryTravelMetric: 'Únete a la lista de espera',
+    industryTravelCta: 'Obtener Acceso Anticipado',
+    industryTravelBadge: 'Próximamente Q3 2025',
+    
+    // Industry Card 5 - Consulting
+    industryConsultingTitle: 'Estrategia y Consultoría IA',
+    industryConsultingHook: '¿No sabes dónde encaja la IA en tu negocio?',
+    industryConsultingDesc: 'Orientación estratégica para navegar tu viaje de transformación con IA.',
+    industryConsultingLabel: 'Lo que Ofrecemos:',
+    industryConsultingFeature1: 'Evaluación de preparación para IA',
+    industryConsultingFeature2: 'Desarrollo de estrategia IA personalizada',
+    industryConsultingFeature3: 'Selección de proveedores y herramientas',
+    industryConsultingFeature4: 'Planificación de implementación',
+    industryConsultingMetric: 'Enfoque de estrategia primero',
+    industryConsultingCta: 'Obtener Orientación Estratégica',
+    
+    // Timeline Section
+    timelineTitle: 'De Caos Manual a Eficiencia con IA',
+    timelineHighlight: 'en 4 Semanas',
+    timelineSubtitle: 'Proceso claro. Sin complejidad. Resultados reales.',
+    timelineReadyCta: '¿Listo para Comenzar Tu Proyecto?',
+    timelineBookCta: 'Reservar Llamada de Descubrimiento →',
+    
+    // Timeline Steps
+    timelineWeek1: 'Semana 1',
+    timelineStep1Title: 'Llamada de Descubrimiento',
+    timelineStep1Desc: 'Entendemos tu negocio, puntos de dolor, procesos actuales y objetivos de automatización. Sin pitch de ventas—solo escuchando.',
+    timelineStep1Label: 'Lo que Obtienes:',
+    timelineStep1Item1: 'Consulta grabada',
+    timelineStep1Item2: 'Documento de análisis de problemas',
+    timelineStep1Item3: 'Evaluación inicial de viabilidad',
+    
+    timelineWeek2: 'Semana 2',
+    timelineStep2Title: 'Diseño Personalizado',
+    timelineStep2Desc: 'Mapeamos tus flujos de trabajo, diseñamos la arquitectura de automatización y creamos un plan de implementación detallado a tu medida.',
+    timelineStep2Label: 'Lo que Obtienes:',
+    timelineStep2Item1: 'Diagramas visuales de flujos',
+    timelineStep2Item2: 'Documento de especificación técnica',
+    timelineStep2Item3: 'Desglose de costos transparente',
+    timelineStep2Item4: 'Cronograma e hitos',
+    
+    timelineWeek3: 'Semana 3',
+    timelineStep3Title: 'Construir y Probar',
+    timelineStep3Desc: 'Desarrollamos tu automatización, integramos con tus herramientas existentes y probamos rigurosamente cada flujo con escenarios reales.',
+    timelineStep3Label: 'Lo que Obtienes:',
+    timelineStep3Item1: 'Prototipo de automatización funcionando',
+    timelineStep3Item2: 'Integración con tus sistemas',
+    timelineStep3Item3: 'Documentación de resultados de pruebas',
+    timelineStep3Item4: 'Preparación de materiales de capacitación',
+    
+    timelineWeek4: 'Semana 4+',
+    timelineStep4Title: 'Implementar y Soportar',
+    timelineStep4Desc: 'Lanzamos tu automatización con capacitación completa del equipo, documentación y monitoreo 24/7. Empiezas a ver resultados inmediatamente.',
+    timelineStep4Label: 'Lo que Obtienes:',
+    timelineStep4Item1: 'Implementación de automatización en vivo',
+    timelineStep4Item2: 'Sesión de capacitación del equipo',
+    timelineStep4Item3: 'Documentación completa',
+    timelineStep4Item4: 'Monitoreo y soporte 24/7',
+    
+    // Final CTA Section
+    finalCtaHook: '¿Todavía Haciendo Esto Manualmente?',
+    finalCtaTitle: 'Construyamos Tu Solución de IA Personalizada',
+    finalCtaDesc: 'Consulta gratuita de 30 minutos. Sin presión, sin plantillas genéricas. Solo un plan personalizado para tu negocio.',
+    finalCtaPrimary: 'Reservar Tu Consulta Gratis →',
+    finalCtaAlt: '¿Ya tienes un proyecto en mente?',
+    finalCtaEmail: 'Escríbenos: hello@heyflou.com',
+    finalCtaUrgency: 'Cupos limitados: Tomamos 3 proyectos personalizados por mes',
+  },
 };

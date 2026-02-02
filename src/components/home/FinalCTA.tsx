@@ -3,8 +3,12 @@ import { motion } from "framer-motion";
 import { Mail, Zap } from "lucide-react";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
 import { Meteors } from "@/components/ui/meteors";
+import { useTranslation } from "@/i18n";
 
 export function FinalCTA() {
+  const t = useTranslation();
+  const hp = t.homepage as Record<string, string>;
+
   return (
     <section className="relative py-12 md:py-20 lg:py-24 overflow-hidden">
       {/* Background */}
@@ -42,7 +46,7 @@ export function FinalCTA() {
           transition={{ duration: 0.4 }}
           className="text-base md:text-lg lg:text-xl font-semibold text-hf-teal text-center mb-3"
         >
-          Still Doing This Manually?
+          {hp.finalCtaHook}
         </motion.p>
         
         {/* H2 */}
@@ -53,7 +57,7 @@ export function FinalCTA() {
           transition={{ duration: 0.4, delay: 0.1 }}
           className="text-xl md:text-2xl lg:text-3xl font-bold text-foreground text-center mb-4"
         >
-          Let's Build Your Custom AI Solution
+          {hp.finalCtaTitle}
         </motion.h2>
         
         {/* Description */}
@@ -64,8 +68,7 @@ export function FinalCTA() {
           transition={{ duration: 0.4, delay: 0.15 }}
           className="text-sm md:text-base text-muted-foreground text-center max-w-xl mx-auto mb-6 leading-relaxed"
         >
-          Free 30-minute consultation. No pressure, no generic templates. 
-          Just a custom plan for your business.
+          {hp.finalCtaDesc}
         </motion.p>
         
         {/* Primary CTA */}
@@ -88,7 +91,7 @@ export function FinalCTA() {
               background="linear-gradient(135deg, hsl(var(--hf-teal)), hsl(var(--hf-purple)))"
               className="px-6 md:px-8 py-3.5 md:py-4 text-sm md:text-base font-semibold text-white w-full min-h-[48px]"
             >
-              Book Your Free Consultation →
+              {hp.finalCtaPrimary}
             </ShimmerButton>
           </a>
         </motion.div>
@@ -102,14 +105,14 @@ export function FinalCTA() {
           className="text-center mb-6"
         >
           <p className="text-sm md:text-base text-muted-foreground mb-2">
-            Already have a project in mind?
+            {hp.finalCtaAlt}
           </p>
           <a 
             href="mailto:hello@heyflou.com"
             className="inline-flex items-center gap-2 text-sm md:text-base text-hf-teal hover:underline transition-colors"
           >
             <Mail className="w-4 h-4" />
-            Email us: hello@heyflou.com
+            {hp.finalCtaEmail}
           </a>
         </motion.div>
         
@@ -118,13 +121,13 @@ export function FinalCTA() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.5 }}
+          transition={{ duration: 0.4, delay: 0.3 }}
           className="flex justify-center"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20">
             <Zap className="w-4 h-4 text-orange-400" />
             <span className="text-xs md:text-sm font-medium text-orange-400">
-              Limited spots: We take on 3 custom projects per month
+              {hp.finalCtaUrgency}
             </span>
           </div>
         </motion.div>

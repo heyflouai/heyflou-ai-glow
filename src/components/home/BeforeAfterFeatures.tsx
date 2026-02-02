@@ -12,96 +12,69 @@ import {
   Check
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "@/i18n";
 
 interface FeatureCard {
   icon: React.ReactNode;
-  title: string;
-  before: {
-    problem: string;
-    impact: string;
-  };
-  after: {
-    solution: string;
-    result: string;
-  };
+  titleKey: string;
+  beforeKey: string;
+  impactKey: string;
+  afterKey: string;
+  resultKey: string;
 }
 
-const features: FeatureCard[] = [
+const featureKeys: FeatureCard[] = [
   {
     icon: <Smartphone className="w-6 h-6" />,
-    title: "24/7 Lead Capture",
-    before: {
-      problem: "Missing 40% of leads that come in outside business hours",
-      impact: "$2,000+ monthly lost revenue"
-    },
-    after: {
-      solution: "AI chatbot captures and qualifies every inquiry instantly—even at 2am",
-      result: "100% lead capture rate • Zero missed opportunities"
-    }
+    titleKey: "feature1Title",
+    beforeKey: "feature1Before",
+    impactKey: "feature1Impact",
+    afterKey: "feature1After",
+    resultKey: "feature1Result"
   },
   {
     icon: <Calendar className="w-6 h-6" />,
-    title: "Smart Scheduling",
-    before: {
-      problem: "Spending 10+ hours per week on phone calls and emails just to book appointments",
-      impact: "Could serve 15 more clients monthly"
-    },
-    after: {
-      solution: "Clients book instantly 24/7. Automatic reminders eliminate no-shows",
-      result: "10 hours saved weekly • 15% more bookings"
-    }
+    titleKey: "feature2Title",
+    beforeKey: "feature2Before",
+    impactKey: "feature2Impact",
+    afterKey: "feature2After",
+    resultKey: "feature2Result"
   },
   {
     icon: <MessageSquare className="w-6 h-6" />,
-    title: "Automated Follow-Ups",
-    before: {
-      problem: "Follow-ups fall through the cracks. Clients feel neglected between sessions",
-      impact: "20% churn due to poor communication"
-    },
-    after: {
-      solution: "Personalized check-ins, wellness tips, and reminders sent automatically",
-      result: "20% increase in retention • Higher satisfaction"
-    }
+    titleKey: "feature3Title",
+    beforeKey: "feature3Before",
+    impactKey: "feature3Impact",
+    afterKey: "feature3After",
+    resultKey: "feature3Result"
   },
   {
     icon: <CreditCard className="w-6 h-6" />,
-    title: "Smart Billing",
-    before: {
-      problem: "Chasing clients for payments manually. Awkward conversations. Delayed cash flow",
-      impact: "Average 2-week payment delay"
-    },
-    after: {
-      solution: "Automated invoicing, friendly reminders, and instant payment processing",
-      result: "Faster payments • Improved cash flow"
-    }
+    titleKey: "feature4Title",
+    beforeKey: "feature4Before",
+    impactKey: "feature4Impact",
+    afterKey: "feature4After",
+    resultKey: "feature4Result"
   },
   {
     icon: <Database className="w-6 h-6" />,
-    title: "Zero Data Entry",
-    before: {
-      problem: "Staff spends 5+ hours weekly entering client information into multiple systems",
-      impact: "Errors, delays, and wasted time"
-    },
-    after: {
-      solution: "Information captured once, synced everywhere automatically",
-      result: "5 hours saved weekly • 95% fewer errors"
-    }
+    titleKey: "feature5Title",
+    beforeKey: "feature5Before",
+    impactKey: "feature5Impact",
+    afterKey: "feature5After",
+    resultKey: "feature5Result"
   },
   {
     icon: <TrendingUp className="w-6 h-6" />,
-    title: "Instant Insights",
-    before: {
-      problem: "Spending hours compiling reports manually. Data always outdated",
-      impact: "Making decisions based on gut feeling"
-    },
-    after: {
-      solution: "Real-time dashboards showing bookings, revenue, and trends automatically",
-      result: "Data-driven decisions • Spot trends early"
-    }
+    titleKey: "feature6Title",
+    beforeKey: "feature6Before",
+    impactKey: "feature6Impact",
+    afterKey: "feature6After",
+    resultKey: "feature6Result"
   }
 ];
 
-function FeatureCardComponent({ feature, index }: { feature: FeatureCard; index: number }) {
+function FeatureCardComponent({ feature, index, translations }: { feature: FeatureCard; index: number; translations: Record<string, string> }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -125,20 +98,20 @@ function FeatureCardComponent({ feature, index }: { feature: FeatureCard; index:
       
       {/* Title */}
       <h3 className="text-lg md:text-xl font-bold text-foreground mb-6">
-        {feature.title}
+        {translations[feature.titleKey]}
       </h3>
       
       {/* Before Section */}
       <div className="mb-5">
         <div className="flex items-center gap-2 mb-2">
           <X className="w-4 h-4 text-orange-400" />
-          <span className="text-sm font-semibold text-orange-400">Before</span>
+          <span className="text-sm font-semibold text-orange-400">{translations.beforeLabel}</span>
         </div>
         <p className="text-sm text-muted-foreground leading-relaxed mb-1">
-          {feature.before.problem}
+          {translations[feature.beforeKey]}
         </p>
         <p className="text-xs text-muted-foreground/70 italic">
-          Impact: {feature.before.impact}
+          {translations.impactLabel}: {translations[feature.impactKey]}
         </p>
       </div>
       
@@ -149,13 +122,13 @@ function FeatureCardComponent({ feature, index }: { feature: FeatureCard; index:
       <div>
         <div className="flex items-center gap-2 mb-2">
           <Check className="w-4 h-4 text-green-400" />
-          <span className="text-sm font-semibold text-green-400">After</span>
+          <span className="text-sm font-semibold text-green-400">{translations.afterLabel}</span>
         </div>
         <p className="text-sm text-foreground/80 leading-relaxed mb-1">
-          {feature.after.solution}
+          {translations[feature.afterKey]}
         </p>
         <p className="text-xs font-semibold text-hf-teal">
-          {feature.after.result}
+          {translations[feature.resultKey]}
         </p>
       </div>
     </motion.div>
@@ -163,6 +136,9 @@ function FeatureCardComponent({ feature, index }: { feature: FeatureCard; index:
 }
 
 export function BeforeAfterFeatures() {
+  const t = useTranslation();
+  const hp = t.homepage as Record<string, string>;
+
   return (
     <section className="py-16 md:py-24 lg:py-28 bg-muted/50">
       <div className="container mx-auto px-5 md:px-6 lg:px-8">
@@ -175,7 +151,7 @@ export function BeforeAfterFeatures() {
             transition={{ duration: 0.5 }}
             className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4"
           >
-            Stop Losing Money to Manual Processes
+            {hp.featuresTitle}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -184,14 +160,14 @@ export function BeforeAfterFeatures() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto"
           >
-            See how automation transforms daily operations
+            {hp.featuresSubtitle}
           </motion.p>
         </div>
         
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-          {features.map((feature, index) => (
-            <FeatureCardComponent key={index} feature={feature} index={index} />
+          {featureKeys.map((feature, index) => (
+            <FeatureCardComponent key={index} feature={feature} index={index} translations={hp} />
           ))}
         </div>
         
@@ -204,13 +180,13 @@ export function BeforeAfterFeatures() {
           className="text-center mt-12 md:mt-16"
         >
           <p className="text-lg md:text-xl font-semibold text-foreground mb-4">
-            Ready to Transform Your Operations?
+            {hp.featuresReadyCta}
           </p>
           <Link
             to="/services"
             className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-foreground bg-transparent border border-hf-teal/50 rounded-full transition-all duration-300 hover:border-hf-teal hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:scale-[1.02]"
           >
-            Explore Our Solutions →
+            {hp.featuresExplore}
           </Link>
         </motion.div>
       </div>

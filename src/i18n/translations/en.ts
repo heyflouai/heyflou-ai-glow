@@ -1495,6 +1495,189 @@ export const en = {
     ctaSubtitle: "Can't wait for our travel-specific solution? We build custom automations for any business.",
     ctaButton: 'Explore Custom Automations',
   },
+
+  // New Homepage Sections
+  homepage: {
+    // Hero Section
+    heroHook: 'Stop Wasting Time on Repetitive Tasks',
+    heroTitle: 'AI Automation That Actually Works',
+    heroSubtitle: 'We build custom AI solutions for healthcare, fitness, and education businesses. No fluff. Just results.',
+    heroPrimaryCta: 'Book Free Consultation →',
+    heroSecondaryCta: 'Explore Solutions',
+    
+    // Hero Workflow
+    workflowYourBusiness: 'Your Business',
+    workflowChatbot: '24/7 AI Assistant',
+    workflowAppointments: 'Smart Scheduling',
+    workflowReminders: 'Auto Reminders',
+    workflowConfirmations: 'Instant Confirmations',
+    
+    // Before/After Features Section
+    featuresTitle: 'Stop Losing Money to Manual Processes',
+    featuresSubtitle: 'See how automation transforms daily operations',
+    featuresReadyCta: 'Ready to Transform Your Operations?',
+    featuresExplore: 'Explore Our Solutions →',
+    
+    // Feature Cards
+    feature1Title: '24/7 Lead Capture',
+    feature1Before: 'Missing 40% of leads that come in outside business hours',
+    feature1Impact: '$2,000+ monthly lost revenue',
+    feature1After: 'AI chatbot captures and qualifies every inquiry instantly—even at 2am',
+    feature1Result: '100% lead capture rate • Zero missed opportunities',
+    
+    feature2Title: 'Smart Scheduling',
+    feature2Before: 'Spending 10+ hours per week on phone calls and emails just to book appointments',
+    feature2Impact: 'Could serve 15 more clients monthly',
+    feature2After: 'Clients book instantly 24/7. Automatic reminders eliminate no-shows',
+    feature2Result: '10 hours saved weekly • 15% more bookings',
+    
+    feature3Title: 'Automated Follow-Ups',
+    feature3Before: 'Follow-ups fall through the cracks. Clients feel neglected between sessions',
+    feature3Impact: '20% churn due to poor communication',
+    feature3After: 'Personalized check-ins, wellness tips, and reminders sent automatically',
+    feature3Result: '20% increase in retention • Higher satisfaction',
+    
+    feature4Title: 'Smart Billing',
+    feature4Before: 'Chasing clients for payments manually. Awkward conversations. Delayed cash flow',
+    feature4Impact: 'Average 2-week payment delay',
+    feature4After: 'Automated invoicing, friendly reminders, and instant payment processing',
+    feature4Result: 'Faster payments • Improved cash flow',
+    
+    feature5Title: 'Zero Data Entry',
+    feature5Before: 'Staff spends 5+ hours weekly entering client information into multiple systems',
+    feature5Impact: 'Errors, delays, and wasted time',
+    feature5After: 'Information captured once, synced everywhere automatically',
+    feature5Result: '5 hours saved weekly • 95% fewer errors',
+    
+    feature6Title: 'Instant Insights',
+    feature6Before: 'Spending hours compiling reports manually. Data always outdated',
+    feature6Impact: 'Making decisions based on gut feeling',
+    feature6After: 'Real-time dashboards showing bookings, revenue, and trends automatically',
+    feature6Result: 'Data-driven decisions • Spot trends early',
+    
+    beforeLabel: 'Before',
+    afterLabel: 'After',
+    impactLabel: 'Impact',
+    
+    // Industry Cards Section
+    industryTitle: 'Automation Solutions for Your Industry',
+    industrySubtitle: "Custom AI workflows built specifically for your industry's unique challenges",
+    industryNotSeeYours: "Don't see your industry? We build custom solutions for any business.",
+    industryLetsTalk: "Let's talk →",
+    
+    // Industry Card 1 - Healthcare
+    industryHealthcareTitle: 'Healthcare Automation',
+    industryHealthcareHook: 'Tired of appointment no-shows costing you thousands?',
+    industryHealthcareDesc: 'End-to-end automation for therapists, psychologists, physical therapists, and private clinics.',
+    industryHealthcareLabel: 'What We Automate:',
+    industryHealthcareFeature1: 'Appointment reminders & confirmations',
+    industryHealthcareFeature2: 'Patient intake forms & paperwork',
+    industryHealthcareFeature3: 'Post-session follow-up sequences',
+    industryHealthcareFeature4: 'Cancellation waitlist management',
+    industryHealthcareMetric: 'Save 10+ hours per week',
+    industryHealthcareCta: 'Explore Healthcare Solutions',
+    
+    // Industry Card 2 - Fitness
+    industryFitnessTitle: 'Fitness & Education',
+    industryFitnessHook: 'Struggling with class booking chaos and missed renewals?',
+    industryFitnessDesc: 'Smart automation for gyms, studios, trainers, tutors, and private schools.',
+    industryFitnessLabel: 'What We Automate:',
+    industryFitnessFeature1: 'Class booking & capacity management',
+    industryFitnessFeature2: 'Membership renewal reminders',
+    industryFitnessFeature3: 'Trial-to-member conversion sequences',
+    industryFitnessFeature4: 'Payment & billing automation',
+    industryFitnessMetric: 'Increase bookings by 30%',
+    industryFitnessCta: 'Explore Fitness Solutions',
+    
+    // Industry Card 3 - Custom
+    industryCustomTitle: 'Custom Automation',
+    industryCustomHook: 'Have a unique business challenge?',
+    industryCustomDesc: 'Tailored AI automation for any business, any industry, any workflow.',
+    industryCustomLabel: 'What We Build:',
+    industryCustomFeature1: 'Customer communication systems',
+    industryCustomFeature2: 'Lead management workflows',
+    industryCustomFeature3: 'Internal process automation',
+    industryCustomFeature4: 'Multi-platform integrations',
+    industryCustomMetric: 'Built for your exact needs',
+    industryCustomCta: 'Design Your Solution',
+    
+    // Industry Card 4 - Travel
+    industryTravelTitle: 'Travel Agency Automation',
+    industryTravelHook: 'Drowning in booking confirmations and client inquiries?',
+    industryTravelDesc: 'AI-powered automation for travel agencies and tour operators.',
+    industryTravelLabel: "What We're Building:",
+    industryTravelFeature1: 'Automated booking confirmations',
+    industryTravelFeature2: 'Client inquiry responses 24/7',
+    industryTravelFeature3: 'Itinerary management',
+    industryTravelFeature4: 'Supplier coordination',
+    industryTravelMetric: 'Join the waitlist',
+    industryTravelCta: 'Get Early Access',
+    industryTravelBadge: 'Coming Q3 2025',
+    
+    // Industry Card 5 - Consulting
+    industryConsultingTitle: 'AI Strategy & Consulting',
+    industryConsultingHook: 'Uncertain where AI fits in your business?',
+    industryConsultingDesc: 'Strategic guidance to navigate your AI transformation journey.',
+    industryConsultingLabel: 'What We Offer:',
+    industryConsultingFeature1: 'AI readiness assessment',
+    industryConsultingFeature2: 'Custom AI strategy development',
+    industryConsultingFeature3: 'Vendor & tool selection',
+    industryConsultingFeature4: 'Implementation planning',
+    industryConsultingMetric: 'Strategy-first approach',
+    industryConsultingCta: 'Get Strategic Guidance',
+    
+    // Timeline Section
+    timelineTitle: 'From Manual Chaos to AI-Powered Efficiency',
+    timelineHighlight: 'in 4 Weeks',
+    timelineSubtitle: 'Clear process. No complexity. Real results.',
+    timelineReadyCta: 'Ready to Start Your Project?',
+    timelineBookCta: 'Book Discovery Call →',
+    
+    // Timeline Steps
+    timelineWeek1: 'Week 1',
+    timelineStep1Title: 'Discovery Call',
+    timelineStep1Desc: 'We understand your business, pain points, current processes, and automation goals. No sales pitch—just listening.',
+    timelineStep1Label: 'What You Get:',
+    timelineStep1Item1: 'Recorded consultation',
+    timelineStep1Item2: 'Problem analysis document',
+    timelineStep1Item3: 'Initial feasibility assessment',
+    
+    timelineWeek2: 'Week 2',
+    timelineStep2Title: 'Custom Design',
+    timelineStep2Desc: 'We map your workflows, design the automation architecture, and create a detailed implementation plan tailored to your business.',
+    timelineStep2Label: 'What You Get:',
+    timelineStep2Item1: 'Visual workflow diagrams',
+    timelineStep2Item2: 'Technical specification document',
+    timelineStep2Item3: 'Transparent cost breakdown',
+    timelineStep2Item4: 'Timeline & milestones',
+    
+    timelineWeek3: 'Week 3',
+    timelineStep3Title: 'Build & Test',
+    timelineStep3Desc: 'We develop your automation, integrate with your existing tools, and rigorously test every workflow with real scenarios.',
+    timelineStep3Label: 'What You Get:',
+    timelineStep3Item1: 'Working automation prototype',
+    timelineStep3Item2: 'Integration with your systems',
+    timelineStep3Item3: 'Test results documentation',
+    timelineStep3Item4: 'Training materials prep',
+    
+    timelineWeek4: 'Week 4+',
+    timelineStep4Title: 'Deploy & Support',
+    timelineStep4Desc: 'We launch your automation with full team training, documentation, and 24/7 monitoring. You start seeing results immediately.',
+    timelineStep4Label: 'What You Get:',
+    timelineStep4Item1: 'Live automation deployment',
+    timelineStep4Item2: 'Team training session',
+    timelineStep4Item3: 'Complete documentation',
+    timelineStep4Item4: '24/7 monitoring & support',
+    
+    // Final CTA Section
+    finalCtaHook: 'Still Doing This Manually?',
+    finalCtaTitle: "Let's Build Your Custom AI Solution",
+    finalCtaDesc: 'Free 30-minute consultation. No pressure, no generic templates. Just a custom plan for your business.',
+    finalCtaPrimary: 'Book Your Free Consultation →',
+    finalCtaAlt: 'Already have a project in mind?',
+    finalCtaEmail: 'Email us: hello@heyflou.com',
+    finalCtaUrgency: 'Limited spots: We take on 3 custom projects per month',
+  },
 };
 
 export type TranslationKeys = typeof en;
