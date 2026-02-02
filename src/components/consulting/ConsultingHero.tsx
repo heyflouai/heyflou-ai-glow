@@ -1,18 +1,14 @@
 import { motion } from 'framer-motion';
 import { Lightbulb } from 'lucide-react';
 import { Section } from '@/components/ui/section';
-import { GradientButton } from '@/components/ui/gradient-button';
-import { Button } from '@/components/ui/button';
+import { ShimmerButton } from '@/components/ui/shimmer-button';
+import { MovingBorderButton } from '@/components/ui/moving-border';
 import { FlipWords } from '@/components/ui/flip-words';
 import { useTranslation } from '@/i18n';
 
 export function ConsultingHero() {
   const t = useTranslation();
   const consulting = t.consulting as Record<string, string>;
-
-  const scrollToForm = () => {
-    document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
-  };
 
   return (
     <Section background="glow" padding="large">
@@ -52,14 +48,27 @@ export function ConsultingHero() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <GradientButton variant="hero" size="lg" onClick={scrollToForm}>
-            {consulting.getStrategicGuidance}
-          </GradientButton>
-          <Button variant="outline" size="lg" asChild>
-            <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer">
-              {consulting.bookConsultation}
-            </a>
-          </Button>
+          <a href="#contact-form" className="w-full sm:w-auto">
+            <ShimmerButton
+              shimmerColor="hsl(var(--hf-purple))"
+              shimmerDuration="2.5s"
+              background="hsl(var(--primary))"
+              className="px-8 py-4 text-base font-semibold text-primary-foreground w-full sm:w-auto"
+            >
+              {consulting.getStrategicGuidance}
+            </ShimmerButton>
+          </a>
+          <MovingBorderButton
+            as="a"
+            href="https://calendly.com/heyflou-ai/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            containerClassName="h-14 w-full sm:w-auto"
+            className="px-6 py-3 font-medium"
+            duration={3000}
+          >
+            {consulting.bookConsultation}
+          </MovingBorderButton>
         </motion.div>
       </div>
     </Section>
