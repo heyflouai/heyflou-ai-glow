@@ -1,4 +1,5 @@
 import { SEOHead } from '@/components/ui/seo-head';
+import { IndustrySwitcher } from '@/components/ui/industry-switcher';
 import { CustomHero } from '@/components/custom-automation/CustomHero';
 import { CustomApproach } from '@/components/custom-automation/CustomApproach';
 import { CustomCapabilities } from '@/components/custom-automation/CustomCapabilities';
@@ -18,6 +19,7 @@ export default function CustomAutomation() {
       />
       
       <main className="pt-16">
+        <IndustrySwitcher />
         <CustomHero />
         <CustomApproach />
         <CustomCapabilities />

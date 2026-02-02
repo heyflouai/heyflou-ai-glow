@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { Plane } from 'lucide-react';
 import { Section } from '@/components/ui/section';
 import { Badge } from '@/components/ui/badge';
-import { ServicesBreadcrumbNav } from '@/components/ui/services-breadcrumb-nav';
 import { useTranslation } from '@/i18n';
 
 export function TravelHero() {
@@ -10,18 +9,8 @@ export function TravelHero() {
   const travel = t.travelAgencies as Record<string, string>;
 
   return (
-    <Section background="glow" padding="large" className="pt-24">
+    <Section background="glow" padding="large">
       <div className="max-w-5xl mx-auto text-center space-y-8">
-        {/* Breadcrumb */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="flex justify-center"
-        >
-          <ServicesBreadcrumbNav currentPage={t.nav.travelAgencies} centered />
-        </motion.div>
-
         {/* Coming Soon Badge */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}

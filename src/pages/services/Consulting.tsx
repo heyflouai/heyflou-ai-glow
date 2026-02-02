@@ -1,4 +1,5 @@
 import { SEOHead } from '@/components/ui/seo-head';
+import { IndustrySwitcher } from '@/components/ui/industry-switcher';
 import { ConsultingHero } from '@/components/consulting/ConsultingHero';
 import { ConsultingChallenge } from '@/components/consulting/ConsultingChallenge';
 import { ConsultingServices } from '@/components/consulting/ConsultingServices';
@@ -18,6 +19,7 @@ export default function Consulting() {
       />
       
       <main className="pt-16">
+        <IndustrySwitcher />
         <ConsultingHero />
         <ConsultingChallenge />
         <ConsultingServices />
