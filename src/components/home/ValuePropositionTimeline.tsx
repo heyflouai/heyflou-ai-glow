@@ -68,20 +68,20 @@ function TimelineCard({ step, index }: { step: TimelineStep; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: index * 0.15 }}
-      className="relative"
+      className="relative h-full"
     >
       {/* Timeline connector line - visible on desktop */}
       {index < steps.length - 1 && (
-        <div className="hidden lg:block absolute top-1/2 -right-8 w-16 h-0.5 bg-gradient-to-r from-hf-teal/50 to-hf-purple/50" />
+        <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-gradient-to-r from-hf-teal/50 to-hf-purple/50" />
       )}
       
       {/* Mobile vertical connector */}
       {index < steps.length - 1 && (
-        <div className="lg:hidden absolute left-8 top-full w-0.5 h-8 bg-gradient-to-b from-hf-teal/50 to-hf-purple/50" />
+        <div className="lg:hidden absolute left-6 top-full w-0.5 h-8 bg-gradient-to-b from-hf-teal/50 to-hf-purple/50" />
       )}
       
       <div className={cn(
-        "relative p-6 md:p-8 rounded-2xl",
+        "relative h-full flex flex-col p-5 md:p-6 rounded-2xl",
         "bg-card/80 backdrop-blur-sm",
         "border border-border/50 hover:border-hf-teal/30",
         "transition-all duration-300",
@@ -89,35 +89,35 @@ function TimelineCard({ step, index }: { step: TimelineStep; index: number }) {
         "group"
       )}>
         {/* Week Badge + Icon */}
-        <div className="flex items-center gap-4 mb-4">
-          <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl hf-gradient flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform">
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl hf-gradient flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform">
             {step.icon}
           </div>
-          <div>
-            <span className="text-xs md:text-sm font-semibold text-hf-teal uppercase tracking-wide">
+          <div className="min-w-0">
+            <span className="text-[10px] md:text-xs font-semibold text-hf-teal uppercase tracking-wide block">
               {step.week}
             </span>
-            <h3 className="text-lg md:text-xl font-bold text-foreground">
+            <h3 className="text-base md:text-lg font-bold text-foreground leading-tight">
               {step.title}
             </h3>
           </div>
         </div>
         
         {/* Description */}
-        <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-5">
+        <p className="text-xs md:text-sm text-muted-foreground leading-relaxed mb-4 flex-grow">
           {step.description}
         </p>
         
         {/* Deliverables */}
-        <div>
-          <span className="text-xs md:text-sm font-semibold text-hf-teal uppercase tracking-wide mb-3 block">
+        <div className="mt-auto">
+          <span className="text-[10px] md:text-xs font-semibold text-hf-teal uppercase tracking-wide mb-2 block">
             What You Get:
           </span>
-          <ul className="space-y-2">
+          <ul className="space-y-1.5">
             {step.deliverables.map((item, i) => (
-              <li key={i} className="flex items-start gap-2 text-sm text-foreground/80">
-                <Check className="w-4 h-4 text-hf-teal shrink-0 mt-0.5" />
-                <span>{item}</span>
+              <li key={i} className="flex items-start gap-1.5 text-xs md:text-sm text-foreground/80">
+                <Check className="w-3.5 h-3.5 text-hf-teal shrink-0 mt-0.5" />
+                <span className="leading-tight">{item}</span>
               </li>
             ))}
           </ul>
