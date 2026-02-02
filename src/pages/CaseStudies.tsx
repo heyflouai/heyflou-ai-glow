@@ -121,7 +121,7 @@ const CaseStudyCard = ({
       </div>
 
       {/* Tags - pushed to bottom with mt-auto */}
-      <div className="mt-auto mb-5">
+      <div className="mt-auto">
         <div className="flex flex-wrap gap-2">
           {tags.map((tag, idx) => (
             <span
@@ -133,14 +133,6 @@ const CaseStudyCard = ({
           ))}
         </div>
       </div>
-
-      {/* Button - at bottom */}
-      <Link to="/contact" className="block w-full">
-        <button className="w-full min-h-[48px] h-12 bg-gradient-to-r from-hf-teal to-hf-purple text-white font-semibold rounded-xl flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
-          {viewDetails}
-          <ArrowRight className="w-4 h-4" />
-        </button>
-      </Link>
     </motion.div>
   );
 };
