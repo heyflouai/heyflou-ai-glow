@@ -1,55 +1,51 @@
 import { motion } from 'framer-motion';
 import { 
-  HelpCircle, 
-  GitFork, 
-  Shield, 
-  TrendingUp
+  Compass, 
+  Layers, 
+  Map, 
+  ShieldAlert
 } from 'lucide-react';
 import { Section } from '@/components/ui/section';
 import { FocusCards, type FocusCard } from '@/components/ui/focus-cards';
-import { useTranslation } from '@/i18n';
 
 export function ConsultingChallenge() {
-  const t = useTranslation();
-  const consulting = t.consulting as Record<string, string>;
-
   const challenges: FocusCard[] = [
     {
-      title: consulting.challengeWhere || "Where to Start?",
-      description: consulting.challengeWhereDesc || "AI opportunities seem endless, but knowing which ones will actually move the needle for your business is the hard part.",
-      icon: HelpCircle,
+      title: "Uncertain Where AI Fits",
+      description: "You know AI is transforming industries, but struggle to identify concrete, high-impact opportunities specific to your business model, customers, and operations.",
+      icon: Compass,
     },
     {
-      title: consulting.challengeVendors || "Vendor Overload",
-      description: consulting.challengeVendorsDesc || "Every vendor promises the world. Cutting through the noise to find solutions that actually fit your needs takes expertise.",
-      icon: GitFork,
+      title: "Overwhelmed by AI Options",
+      description: "Hundreds of AI tools and vendors promise transformation. Without expertise, it's impossible to separate hype from reality and choose solutions that actually deliver ROI.",
+      icon: Layers,
     },
     {
-      title: consulting.challengeRisk || "Risk & Uncertainty",
-      description: consulting.challengeRiskDesc || "AI investments are significant. Without proper planning, you risk costly mistakes and wasted resources.",
-      icon: Shield,
+      title: "Need Roadmap, Not Just Tools",
+      description: "Implementing AI tools without strategy leads to disconnected pilots and wasted investment. You need a cohesive plan aligned with business goals, not just technology.",
+      icon: Map,
     },
     {
-      title: consulting.challengeROI || "Proving ROI",
-      description: consulting.challengeROIDesc || "Stakeholders want to see results. Building a business case that demonstrates clear value is essential but challenging.",
-      icon: TrendingUp,
+      title: "Want to Avoid Expensive Mistakes",
+      description: "You've seen AI projects fail or heard horror stories. Without expert guidance, the risk of choosing wrong tools, poor implementation, or cultural resistance feels too high.",
+      icon: ShieldAlert,
     },
   ];
 
   return (
-    <Section background="default" padding="large">
+    <Section background="default" padding="default">
       <motion.div
-        className="text-center mb-12"
+        className="text-center mb-8 md:mb-12"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-4">
-          {consulting.challengeTitle}
+        <h2 className="text-h2 text-foreground mb-4">
+          The AI Opportunity Gap
         </h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          {consulting.challengeSubtitle || "Navigating AI transformation is complex. Here's what keeps leaders up at night."}
+        <p className="text-body text-muted-foreground max-w-2xl mx-auto">
+          Navigating AI transformation is complex. Here's what keeps leaders up at night.
         </p>
       </motion.div>
 
