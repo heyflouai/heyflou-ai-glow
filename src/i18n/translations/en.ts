@@ -6,6 +6,13 @@ export const en = {
     caseStudies: 'Case Studies',
     about: 'About',
     bookFreeCall: 'Book Free Call',
+    // Services dropdown items
+    healthcare: 'Healthcare',
+    fitnessEducation: 'Fitness & Education',
+    travelAgencies: 'Travel Agencies',
+    customAutomations: 'Custom Automations',
+    aiConsulting: 'AI Consulting',
+    comingSoon: 'Coming Soon',
   },
 
   // Home Page

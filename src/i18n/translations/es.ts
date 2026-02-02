@@ -8,6 +8,13 @@ export const es: TranslationKeys = {
     caseStudies: 'Casos de Éxito',
     about: 'Nosotros',
     bookFreeCall: 'Reservar Llamada',
+    // Services dropdown items
+    healthcare: 'Salud',
+    fitnessEducation: 'Fitness y Educación',
+    travelAgencies: 'Agencias de Viajes',
+    customAutomations: 'Automatizaciones Personalizadas',
+    aiConsulting: 'Consultoría IA',
+    comingSoon: 'Próximamente',
   },
 
   // Home Page
