@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Heart } from 'lucide-react';
 import { Section } from '@/components/ui/section';
 import { GradientButton } from '@/components/ui/gradient-button';
+import { FlipWords } from '@/components/ui/flip-words';
 import { useTranslation } from '@/i18n';
 import logo from '@/assets/heyflou-logo-new.png';
 
@@ -25,9 +26,10 @@ export function HealthcareHero() {
           </div>
         </div>
 
-        {/* Title */}
+        {/* Title with FlipWords */}
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display text-foreground mb-6 text-center leading-tight">
-          {hcT.heroTitle}
+          <span>HeyFlou for </span>
+          <FlipWords words={["Healthcare"]} />
         </h1>
 
         {/* Subtitle */}
