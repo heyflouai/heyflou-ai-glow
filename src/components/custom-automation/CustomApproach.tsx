@@ -9,37 +9,40 @@ import {
 } from 'lucide-react';
 import { Section } from '@/components/ui/section';
 import { FocusCards, type FocusCard } from '@/components/ui/focus-cards';
+import { useTranslation } from '@/i18n';
 
 export function CustomApproach() {
+  const t = useTranslation();
+
   const capabilities: FocusCard[] = [
     {
-      title: "Customer Communication Automation",
-      description: "Automate inquiries, support tickets, FAQs, and follow-ups across email, SMS, WhatsApp, and chat. Provide 24/7 responses while your team focuses on complex issues.",
+      title: t.customAutomation.capCommunication,
+      description: t.customAutomation.capCommunicationDesc,
       icon: MessageSquare,
     },
     {
-      title: "Intelligent Lead Management",
-      description: "Capture, qualify, route, and nurture leads automatically. Score prospects, trigger personalized sequences, and ensure no opportunity falls through the cracks.",
+      title: t.customAutomation.capLead,
+      description: t.customAutomation.capLeadDesc,
       icon: Target,
     },
     {
-      title: "Smart Scheduling & Appointments",
-      description: "Automated booking, reminders, rescheduling, and cancellation management. Reduce no-shows, optimize calendar utilization, and eliminate scheduling back-and-forth.",
+      title: t.customAutomation.capAppointment,
+      description: t.customAutomation.capAppointmentDesc,
       icon: CalendarCheck,
     },
     {
-      title: "Internal Process Automation",
-      description: "Streamline onboarding, approvals, data entry, reporting, and team coordination. Eliminate repetitive tasks and reduce human error in your operations.",
+      title: t.customAutomation.capOperations,
+      description: t.customAutomation.capOperationsDesc,
       icon: Settings,
     },
     {
-      title: "Data Collection & Processing",
-      description: "Automatically collect, validate, transform, and route data between systems. Build custom integrations and workflows that match your exact business logic.",
+      title: t.customAutomation.capData,
+      description: t.customAutomation.capDataDesc,
       icon: Database,
     },
     {
-      title: "Seamless Platform Integration",
-      description: "Connect your CRM, calendar, communication tools, payment systems, and databases. Create unified workflows across all your business tools.",
+      title: t.customAutomation.capIntegration,
+      description: t.customAutomation.capIntegrationDesc,
       icon: Network,
     },
   ];
@@ -54,10 +57,10 @@ export function CustomApproach() {
         transition={{ duration: 0.5 }}
       >
         <h2 className="text-h2 text-foreground mb-4">
-          Your Business, Your Automation
+          {t.customAutomation.approachTitle}
         </h2>
         <p className="text-body text-muted-foreground max-w-2xl mx-auto">
-          Every business is unique. That's why we build solutions that fit you, not the other way around.
+          {t.customAutomation.approachSubtitle}
         </p>
       </motion.div>
 

@@ -7,27 +7,30 @@ import {
 } from 'lucide-react';
 import { Section } from '@/components/ui/section';
 import { FocusCards, type FocusCard } from '@/components/ui/focus-cards';
+import { useTranslation } from '@/i18n';
 
 export function ConsultingChallenge() {
+  const t = useTranslation();
+
   const challenges: FocusCard[] = [
     {
-      title: "Uncertain Where AI Fits",
-      description: "You know AI is transforming industries, but struggle to identify concrete, high-impact opportunities specific to your business model, customers, and operations.",
+      title: t.consulting.challengeUncertain,
+      description: t.consulting.challengeUncertainDesc,
       icon: Compass,
     },
     {
-      title: "Overwhelmed by AI Options",
-      description: "Hundreds of AI tools and vendors promise transformation. Without expertise, it's impossible to separate hype from reality and choose solutions that actually deliver ROI.",
+      title: t.consulting.challengeOverwhelmed,
+      description: t.consulting.challengeOverwhelmedDesc,
       icon: Layers,
     },
     {
-      title: "Need Roadmap, Not Just Tools",
-      description: "Implementing AI tools without strategy leads to disconnected pilots and wasted investment. You need a cohesive plan aligned with business goals, not just technology.",
+      title: t.consulting.challengeRoadmap,
+      description: t.consulting.challengeRoadmapDesc,
       icon: Map,
     },
     {
-      title: "Want to Avoid Expensive Mistakes",
-      description: "You've seen AI projects fail or heard horror stories. Without expert guidance, the risk of choosing wrong tools, poor implementation, or cultural resistance feels too high.",
+      title: t.consulting.challengeRisk,
+      description: t.consulting.challengeRiskDesc,
       icon: ShieldAlert,
     },
   ];
@@ -42,10 +45,10 @@ export function ConsultingChallenge() {
         transition={{ duration: 0.5 }}
       >
         <h2 className="text-h2 text-foreground mb-4">
-          The AI Opportunity Gap
+          {t.consulting.challengeTitle}
         </h2>
         <p className="text-body text-muted-foreground max-w-2xl mx-auto">
-          Navigating AI transformation is complex. Here's what keeps leaders up at night.
+          {t.consulting.challengeSubtitle}
         </p>
       </motion.div>
 
