@@ -3,7 +3,6 @@ import { Lightbulb } from 'lucide-react';
 import { Section } from '@/components/ui/section';
 import { GradientButton } from '@/components/ui/gradient-button';
 import { Button } from '@/components/ui/button';
-import { ServicesBreadcrumbNav } from '@/components/ui/services-breadcrumb-nav';
 import { useTranslation } from '@/i18n';
 
 export function ConsultingHero() {
@@ -15,18 +14,8 @@ export function ConsultingHero() {
   };
 
   return (
-    <Section background="glow" padding="large" className="pt-24">
+    <Section background="glow" padding="large">
       <div className="max-w-5xl mx-auto text-center space-y-8">
-        {/* Breadcrumb */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="flex justify-center"
-        >
-          <ServicesBreadcrumbNav currentPage={t.nav.aiConsulting} centered />
-        </motion.div>
-
         {/* Logo Icon */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}

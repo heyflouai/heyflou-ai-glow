@@ -1,4 +1,5 @@
 import { SEOHead } from '@/components/ui/seo-head';
+import { IndustrySwitcher } from '@/components/ui/industry-switcher';
 import { FitnessHero } from '@/components/fitness-education/FitnessHero';
 import { FitnessProblem } from '@/components/fitness-education/FitnessProblem';
 import { FitnessSolution } from '@/components/fitness-education/FitnessSolution';
@@ -17,6 +18,7 @@ export default function FitnessEducation() {
       />
       
       <main className="pt-16">
+        <IndustrySwitcher />
         <FitnessHero />
         <FitnessProblem />
         <FitnessSolution />

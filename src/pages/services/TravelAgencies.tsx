@@ -1,4 +1,5 @@
 import { SEOHead } from '@/components/ui/seo-head';
+import { IndustrySwitcher } from '@/components/ui/industry-switcher';
 import { TravelHero } from '@/components/travel-agencies/TravelHero';
 import { TravelComingSoon } from '@/components/travel-agencies/TravelComingSoon';
 import { TravelEarlyAccess } from '@/components/travel-agencies/TravelEarlyAccess';
@@ -16,6 +17,7 @@ export default function TravelAgencies() {
       />
       
       <main className="pt-16">
+        <IndustrySwitcher />
         <TravelHero />
         <TravelComingSoon />
         <TravelEarlyAccess />

@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { Settings } from 'lucide-react';
 import { Section } from '@/components/ui/section';
 import { GradientButton } from '@/components/ui/gradient-button';
-import { ServicesBreadcrumbNav } from '@/components/ui/services-breadcrumb-nav';
 import { useTranslation } from '@/i18n';
 import logo from '@/assets/heyflou-logo-new.png';
 
@@ -11,18 +10,13 @@ export function CustomHero() {
   const caT = t.customAutomation as Record<string, string>;
 
   return (
-    <Section background="glow" padding="large" className="pt-24">
+    <Section background="glow" padding="large">
       <motion.div
         className="max-w-5xl mx-auto"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        {/* Breadcrumb */}
-        <div className="mb-8">
-          <ServicesBreadcrumbNav currentPage={t.nav.customAutomations} />
-        </div>
-
         {/* Logo + Settings Icon */}
         <div className="flex items-center justify-center gap-4 mb-8">
           <img src={logo} alt="HeyFlou" className="h-12 w-auto" />
