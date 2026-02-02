@@ -3,14 +3,12 @@ import { Section } from '@/components/ui/section';
 import { useTranslation } from '@/i18n';
 import { PAGE_SEO, getCanonicalUrl } from '@/lib/seo-config';
 import { Spotlight } from '@/components/ui/spotlight';
-import { CardContainer, CardBody, CardItem } from '@/components/ui/3d-card';
 import { NumberTicker, parseMetricValue } from '@/components/ui/number-ticker';
 import { MovingBorderButton } from '@/components/ui/moving-border';
 import { ShimmerButton } from '@/components/ui/shimmer-button';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Wallet, Target, ArrowRight, Check, AlertCircle, TrendingUp, Clock, Percent, Zap } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { Wallet, Target, ArrowRight, Check, AlertCircle, Clock, Percent, Zap } from 'lucide-react';
 
 interface CaseStudyCardProps {
   icon: React.ReactNode;
@@ -42,106 +40,108 @@ const CaseStudyCard = ({
   viewDetails,
 }: CaseStudyCardProps) => {
   return (
-    <CardContainer containerClassName="py-4 md:py-6">
-      <CardBody className="bg-gradient-to-b from-card to-card/80 border border-primary/20 rounded-[20px] p-6 md:p-8 lg:p-10 w-full max-w-full md:max-w-[480px] h-auto min-h-[600px] md:min-h-[720px] group hover:border-primary/40 hover:shadow-[0_20px_50px_rgba(6,182,212,0.2)] transition-all duration-400">
-        {/* Icon */}
-        <CardItem translateZ={50} className="w-full flex justify-center mb-5">
-          <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-hf-teal to-hf-purple flex items-center justify-center text-white">
-            {icon}
-          </div>
-        </CardItem>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="flex flex-col h-full bg-gradient-to-b from-card to-card/80 border border-primary/20 rounded-2xl p-6 md:p-8 lg:p-10 overflow-hidden hover:border-primary/40 hover:shadow-[0_20px_50px_rgba(6,182,212,0.15)] transition-all duration-300"
+    >
+      {/* Icon */}
+      <div className="flex justify-center mb-5">
+        <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-hf-teal to-hf-purple flex items-center justify-center text-white shrink-0">
+          {icon}
+        </div>
+      </div>
 
-        {/* Title */}
-        <CardItem translateZ={40} className="w-full text-center mb-2">
-          <h3 className="text-xl md:text-2xl font-bold font-display text-foreground">
-            {title}
-          </h3>
-        </CardItem>
+      {/* Title */}
+      <div className="text-center mb-2">
+        <h3 className="text-xl md:text-2xl font-bold font-display text-foreground break-words">
+          {title}
+        </h3>
+      </div>
 
-        {/* Client Type */}
-        <CardItem translateZ={30} className="w-full text-center mb-4">
-          <span className="text-xs md:text-sm font-medium text-primary uppercase tracking-wider">
-            {clientType}
-          </span>
-        </CardItem>
+      {/* Client Type */}
+      <div className="text-center mb-4">
+        <span className="text-xs md:text-sm font-medium text-primary uppercase tracking-wider">
+          {clientType}
+        </span>
+      </div>
 
-        {/* Description */}
-        <CardItem translateZ={20} className="w-full text-center mb-6">
-          <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-            {description}
-          </p>
-        </CardItem>
+      {/* Description */}
+      <div className="text-center mb-6">
+        <p className="text-sm md:text-base text-muted-foreground leading-relaxed break-words">
+          {description}
+        </p>
+      </div>
 
-        {/* Challenge Section */}
-        <CardItem translateZ={15} className="w-full mb-4">
-          <h4 className="text-xs md:text-sm font-bold text-primary uppercase tracking-wider mb-3">
-            {challengeTitle}
-          </h4>
-          <ul className="space-y-2">
-            {challenges.map((challenge, idx) => (
-              <li key={idx} className="flex items-start gap-2 text-xs md:text-sm text-muted-foreground">
-                <AlertCircle className="w-3.5 h-3.5 md:w-4 md:h-4 text-destructive shrink-0 mt-0.5" />
-                <span>{challenge}</span>
-              </li>
-            ))}
-          </ul>
-        </CardItem>
+      {/* Challenge Section */}
+      <div className="mb-5">
+        <h4 className="text-xs md:text-sm font-bold text-primary uppercase tracking-wider mb-3">
+          {challengeTitle}
+        </h4>
+        <ul className="space-y-2">
+          {challenges.map((challenge, idx) => (
+            <li key={idx} className="flex items-start gap-2 text-xs md:text-sm text-muted-foreground">
+              <AlertCircle className="w-3.5 h-3.5 md:w-4 md:h-4 text-destructive shrink-0 mt-0.5" />
+              <span className="break-words">{challenge}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
 
-        {/* Solution Section */}
-        <CardItem translateZ={15} className="w-full mb-4">
-          <h4 className="text-xs md:text-sm font-bold text-primary uppercase tracking-wider mb-3 mt-5">
-            {solutionTitle}
-          </h4>
-          <ul className="space-y-2">
-            {solutions.map((solution, idx) => (
-              <li key={idx} className="flex items-start gap-2 text-xs md:text-sm text-muted-foreground">
-                <Check className="w-3.5 h-3.5 md:w-4 md:h-4 text-accent shrink-0 mt-0.5" />
-                <span>{solution}</span>
-              </li>
-            ))}
-          </ul>
-        </CardItem>
+      {/* Solution Section */}
+      <div className="mb-5">
+        <h4 className="text-xs md:text-sm font-bold text-primary uppercase tracking-wider mb-3">
+          {solutionTitle}
+        </h4>
+        <ul className="space-y-2">
+          {solutions.map((solution, idx) => (
+            <li key={idx} className="flex items-start gap-2 text-xs md:text-sm text-muted-foreground">
+              <Check className="w-3.5 h-3.5 md:w-4 md:h-4 text-accent shrink-0 mt-0.5" />
+              <span className="break-words">{solution}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
 
-        {/* Results Section */}
-        <CardItem translateZ={15} className="w-full mb-6">
-          <h4 className="text-xs md:text-sm font-bold text-primary uppercase tracking-wider mb-3 mt-5">
-            {resultsTitle}
-          </h4>
-          <ul className="space-y-2.5">
-            {results.map((result, idx) => (
-              <li key={idx} className="flex items-start gap-2 text-sm md:text-base font-semibold text-foreground">
-                <span>{result.emoji}</span>
-                <span>{result.text}</span>
-              </li>
-            ))}
-          </ul>
-        </CardItem>
+      {/* Results Section */}
+      <div className="mb-6">
+        <h4 className="text-xs md:text-sm font-bold text-primary uppercase tracking-wider mb-3">
+          {resultsTitle}
+        </h4>
+        <ul className="space-y-2.5">
+          {results.map((result, idx) => (
+            <li key={idx} className="flex items-start gap-2 text-sm md:text-base font-semibold text-foreground">
+              <span className="shrink-0">{result.emoji}</span>
+              <span className="break-words">{result.text}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
 
-        {/* Tags */}
-        <CardItem translateZ={10} className="w-full mb-6">
-          <div className="flex flex-wrap gap-2">
-            {tags.map((tag, idx) => (
-              <span
-                key={idx}
-                className="px-3 py-1.5 bg-primary/10 border border-primary/30 rounded-full text-xs text-primary"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        </CardItem>
+      {/* Tags - pushed to bottom with mt-auto */}
+      <div className="mt-auto mb-5">
+        <div className="flex flex-wrap gap-2">
+          {tags.map((tag, idx) => (
+            <span
+              key={idx}
+              className="px-3 py-1.5 bg-primary/10 border border-primary/30 rounded-full text-xs text-primary"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
 
-        {/* Button */}
-        <CardItem translateZ={25} className="w-full mt-auto">
-          <Link to="/contact" className="block w-full">
-            <button className="w-full h-12 bg-gradient-to-r from-hf-teal to-hf-purple text-white font-semibold rounded-xl flex items-center justify-center gap-2 group-hover:opacity-90 transition-opacity">
-              {viewDetails}
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </Link>
-        </CardItem>
-      </CardBody>
-    </CardContainer>
+      {/* Button - at bottom */}
+      <Link to="/contact" className="block w-full">
+        <button className="w-full min-h-[48px] h-12 bg-gradient-to-r from-hf-teal to-hf-purple text-white font-semibold rounded-xl flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+          {viewDetails}
+          <ArrowRight className="w-4 h-4" />
+        </button>
+      </Link>
+    </motion.div>
   );
 };
 
@@ -299,7 +299,8 @@ export default function CaseStudies() {
             </motion.h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
+          {/* Fixed Grid - no overlap, proper gaps */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 max-w-7xl mx-auto">
             <CaseStudyCard {...caseStudy1} />
             <CaseStudyCard {...caseStudy2} />
           </div>
