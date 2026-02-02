@@ -13,7 +13,7 @@ export function HealthcareCTA() {
         className="text-center max-w-3xl mx-auto"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.5 }}
       >
         <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-6">
@@ -23,12 +23,12 @@ export function HealthcareCTA() {
           {hcT.ctaSubtitle}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <GradientButton variant="hero" size="xl" asChild>
+          <GradientButton variant="hero" size="xl" asChild className="w-full sm:w-auto min-h-[48px]">
             <a href="#contact-form">
               {hcT.startAutomation}
             </a>
           </GradientButton>
-          <GradientButton variant="secondary" size="xl" asChild>
+          <GradientButton variant="secondary" size="xl" asChild className="w-full sm:w-auto min-h-[48px]">
             <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer">
               {hcT.scheduleDemo}
             </a>

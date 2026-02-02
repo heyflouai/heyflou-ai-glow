@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, CheckCircle } from 'lucide-react';
+import { Send, CheckCircle, Loader2 } from 'lucide-react';
 import { Section } from '@/components/ui/section';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -66,7 +66,7 @@ export function TravelEarlyAccess() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5 }}
           className="text-center mb-8"
         >
@@ -81,7 +81,7 @@ export function TravelEarlyAccess() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           <Card className="border border-border/50 bg-card">
@@ -96,6 +96,8 @@ export function TravelEarlyAccess() {
                     placeholder={travel.formNamePlaceholder}
                     required
                     minLength={2}
+                    className="h-11 md:h-10 transition-all duration-200 focus:ring-2 focus:ring-ring focus:ring-offset-1"
+                    aria-required="true"
                   />
                 </div>
 
@@ -108,6 +110,8 @@ export function TravelEarlyAccess() {
                     type="email"
                     placeholder={travel.formEmailPlaceholder}
                     required
+                    className="h-11 md:h-10 transition-all duration-200 focus:ring-2 focus:ring-ring focus:ring-offset-1"
+                    aria-required="true"
                   />
                 </div>
 
@@ -118,6 +122,7 @@ export function TravelEarlyAccess() {
                     id="agency"
                     name="agency"
                     placeholder={travel.formAgencyPlaceholder}
+                    className="h-11 md:h-10 transition-all duration-200 focus:ring-2 focus:ring-ring focus:ring-offset-1"
                   />
                 </div>
 
@@ -128,7 +133,7 @@ export function TravelEarlyAccess() {
                     id="challenge"
                     name="challenge"
                     placeholder={travel.formChallengePlaceholder}
-                    className="min-h-[100px]"
+                    className="min-h-[100px] transition-all duration-200 focus:ring-2 focus:ring-ring focus:ring-offset-1"
                   />
                 </div>
 
@@ -138,11 +143,15 @@ export function TravelEarlyAccess() {
                     type="submit"
                     variant="hero"
                     size="lg"
-                    className="w-full"
+                    className="w-full min-h-[44px]"
                     disabled={isSubmitting}
+                    aria-label={isSubmitting ? travel.formSending : travel.formSubmit}
                   >
                     {isSubmitting ? (
-                      travel.formSending
+                      <>
+                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                        {travel.formSending}
+                      </>
                     ) : (
                       <>
                         <Send className="w-4 h-4 mr-2" />

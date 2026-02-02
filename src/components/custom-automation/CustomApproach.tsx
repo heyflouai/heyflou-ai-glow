@@ -16,7 +16,7 @@ export function CustomApproach() {
           {caT.approachTitle}
         </h2>
       </div>
-      <TextRevealByWord text={approachText} />
+      <TextRevealByWord text={approachText} className="h-[150vh] md:h-[200vh]" />
     </Section>
   );
 }

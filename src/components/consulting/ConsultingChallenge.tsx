@@ -13,7 +13,7 @@ export function ConsultingChallenge() {
           {consulting.challengeTitle}
         </h2>
       </div>
-      <TextRevealByWord text={consulting.challengeText} />
+      <TextRevealByWord text={consulting.challengeText} className="h-[150vh] md:h-[200vh]" />
     </Section>
   );
 }

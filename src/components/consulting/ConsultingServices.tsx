@@ -69,6 +69,7 @@ export function ConsultingServices() {
           {services.map((service, i) => (
             <BentoGridItem
               key={i}
+              index={i}
               title={consulting[service.titleKey]}
               description={consulting[service.descKey]}
               icon={service.icon}

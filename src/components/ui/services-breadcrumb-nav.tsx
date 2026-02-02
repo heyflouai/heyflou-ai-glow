@@ -93,7 +93,7 @@ export function ServicesBreadcrumbNav({ currentPage, className, centered = false
                       <Icon className="w-4 h-4 text-primary shrink-0" />
                       <span className="flex-1">{t.nav[service.key as keyof typeof t.nav]}</span>
                       {service.badge && (
-                        <span className="text-[10px] px-1.5 py-0.5 rounded bg-accent text-muted-foreground">
+                        <span className="text-[10px] px-1.5 py-0.5 rounded bg-primary/10 text-primary animate-pulse">
                           {t.nav[service.badge as keyof typeof t.nav]}
                         </span>
                       )}
