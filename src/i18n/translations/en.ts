@@ -1076,6 +1076,78 @@ export const en = {
     formSuccessTitle: 'Thank you!',
     formSuccessMessage: 'We\'ll be in touch within 24 hours to discuss your automation needs.',
   },
+
+  // Fitness & Education Page
+  fitnessEducation: {
+    // Hero Section
+    heroTitle: 'HeyFlou for Fitness & Private Education',
+    heroSubtitle: 'AI Automation for Gyms, Studios, Personal Trainers, Tutors & Private Schools',
+    getStarted: 'Get Started',
+    bookStrategyCall: 'Book a Strategy Call',
+
+    // Problem Section
+    problemTitle: 'The Challenge Fitness & Education Businesses Face',
+    problemText: 'Fitness studios and educational institutions struggle with class booking chaos, membership renewals falling through the cracks, trial class follow-ups that never happen, complex student onboarding, and constant schedule changes. Your focus should be on training and teaching, not drowning in admin work.',
+
+    // Solution Section
+    solutionTitle: 'How HeyFlou Automates Your Business',
+    solutionIntro: 'We build custom AI workflows that handle scheduling, memberships, and communications so you can focus on your clients and students.',
+    solutionBookingTitle: 'AI Class Booking Assistant',
+    solutionBookingDesc: 'Clients book classes, personal training sessions, or tutoring slots 24/7 via WhatsApp, web, or SMS. Automatic waitlist management included.',
+    solutionRenewalTitle: 'Membership Renewal Automation',
+    solutionRenewalDesc: 'Automated reminders before expiry, easy renewal links, and win-back campaigns for lapsed members.',
+    solutionTrialTitle: 'Trial-to-Member Conversion System',
+    solutionTrialDesc: 'Automated follow-ups after trial classes with personalized offers to convert prospects into paying members.',
+    solutionOnboardingTitle: 'Student/Client Onboarding Flow',
+    solutionOnboardingDesc: 'Digital forms, welcome sequences, and orientation materials sent automatically. New clients feel welcomed from day one.',
+    solutionPaymentTitle: 'Payment & Billing Reminders',
+    solutionPaymentDesc: 'Automated payment reminders, failed payment recovery, and invoice delivery.',
+    solutionScheduleTitle: 'Schedule Change Manager',
+    solutionScheduleDesc: 'Instant notifications when classes change, cancel, or have openings. Clients stay informed automatically.',
+    demoVideoPlaceholder: 'Demo Video Coming Soon',
+
+    // Integrations Section
+    integrationsTitle: 'Seamlessly Connects With Your Tools',
+    integrationsSubtitle: 'HeyFlou integrates with the platforms you already use to create a unified workflow.',
+
+    // CTA Section
+    ctaTitle: 'Ready to Automate Your Operations?',
+    ctaSubtitle: 'Join hundreds of fitness and education businesses saving 15+ hours per week with intelligent automation.',
+    startAutomation: 'Start Your Automation',
+    scheduleDemo: 'Schedule a Demo',
+
+    // Contact Form
+    formTitle: 'Tell Us About Your Business',
+    formSubtitle: 'Fill out the form below and we\'ll get back to you within 24 hours.',
+    formName: 'Name',
+    formNamePlaceholder: 'John Smith',
+    formEmail: 'Email',
+    formEmailPlaceholder: 'john@mybusiness.com',
+    formPhone: 'Phone (optional)',
+    formPhonePlaceholder: '+1 (555) 123-4567',
+    formBusinessType: 'Business Type',
+    formBusinessTypePlaceholder: 'Select your business type',
+    businessTypePersonalTrainer: 'Personal Trainer',
+    businessTypeGymStudio: 'Gym / Studio',
+    businessTypeTutoring: 'Tutoring Service',
+    businessTypePrivateSchool: 'Private School',
+    businessTypeLanguageAcademy: 'Language Academy',
+    businessTypeOther: 'Other',
+    formBusinessSize: 'Business Size',
+    formBusinessSizePlaceholder: 'Select your business size',
+    businessSizeSolo: 'Solo',
+    businessSize2to5: '2-5 Staff',
+    businessSize6to15: '6-15 Staff',
+    businessSize15plus: '15+ Staff',
+    formChallenge: 'Biggest Challenge',
+    formChallengePlaceholder: 'Describe the biggest operational challenge in your business...',
+    formReferral: 'How did you hear about us?',
+    formReferralPlaceholder: 'e.g., Google, LinkedIn, Referral',
+    formSubmit: 'Send Inquiry',
+    formSending: 'Sending...',
+    formSuccessTitle: 'Thank you!',
+    formSuccessMessage: 'We\'ll be in touch within 24 hours to discuss your automation needs.',
+  },
 };
 
 export type TranslationKeys = typeof en;
