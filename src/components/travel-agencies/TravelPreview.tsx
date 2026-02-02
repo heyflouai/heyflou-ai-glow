@@ -53,12 +53,12 @@ export function TravelPreview() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="text-center mb-8 md:mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-4">
+          <h2 className="text-h2 text-foreground mb-4">
             {travel.previewTitle}
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-body text-muted-foreground">
             {travel.previewSubtitle}
           </p>
         </motion.div>

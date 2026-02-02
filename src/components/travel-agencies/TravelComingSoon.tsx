@@ -56,18 +56,18 @@ export function TravelComingSoon() {
   return (
     <Section background="default" padding="default">
       <motion.div
-        className="text-center mb-12"
+        className="text-center mb-8 md:mb-12"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-4">
+        <h2 className="text-h2 text-foreground mb-4">
           {travel.comingSoonTitle}
         </h2>
         
         {/* Typewriter effect for anticipation */}
-        <div className="text-lg text-primary font-medium h-8 mb-4">
+        <div className="text-subtitle text-primary font-medium h-8 mb-4">
           <Typewriter 
             text={typewriterPhrases}
             speed={40}
@@ -79,7 +79,7 @@ export function TravelComingSoon() {
           />
         </div>
         
-        <p className="text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-body text-muted-foreground max-w-2xl mx-auto">
           {travel.comingSoonSubtitle || "We're building something special for travel professionals. Here's a sneak peek."}
         </p>
       </motion.div>
