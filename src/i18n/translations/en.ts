@@ -1005,6 +1005,77 @@ export const en = {
     failedToLoadPricing: 'Failed to load pricing settings. Please refresh the page.',
     failedToLoadData: 'Failed to load pricing data. Please refresh the page.',
   },
+
+  // Healthcare Page
+  healthcare: {
+    // Hero Section
+    heroTitle: 'HeyFlou for Healthcare',
+    heroSubtitle: 'AI Automation for Therapists, Psychologists, Physical Therapists & Private Clinics',
+    getStarted: 'Get Started',
+    bookStrategyCall: 'Book a Strategy Call',
+
+    // Problem Section
+    problemTitle: 'The Challenge Healthcare Practices Face',
+    problemText: 'Healthcare practices lose hours every week to appointment no-shows, manual intake forms, endless client follow-ups, and scheduling chaos. Your time should be spent healing patients, not chasing paperwork and phone calls.',
+
+    // Solution Section
+    solutionTitle: 'How HeyFlou Automates Your Practice',
+    solutionIntro: 'We build custom AI workflows that handle the administrative burden so you can focus on patient care.',
+    solutionSchedulerTitle: 'AI Appointment Scheduler',
+    solutionSchedulerDesc: 'Patients book, reschedule, and confirm appointments 24/7 through WhatsApp, your website, or SMS. No more phone tag.',
+    solutionIntakeTitle: 'Automated Intake & Forms',
+    solutionIntakeDesc: 'Digital intake forms sent automatically before appointments. Data syncs to your system instantly.',
+    solutionFollowupTitle: 'Smart Follow-up System',
+    solutionFollowupDesc: 'Automated check-ins, treatment reminders, and satisfaction surveys sent at the right time.',
+    solutionChatbotTitle: 'Client Support Chatbot',
+    solutionChatbotDesc: 'Answer FAQs about services, insurance, and availability instantly. Routes complex questions to your team.',
+    solutionCancellationTitle: 'Cancellation Management',
+    solutionCancellationDesc: 'Automatic waitlist management fills cancelled slots quickly, reducing revenue loss.',
+    solutionRemindersTitle: 'Session Reminders & Confirmations',
+    solutionRemindersDesc: 'Multi-channel reminders via SMS, email, and WhatsApp reduce no-shows by up to 80%.',
+    demoVideoPlaceholder: 'Demo Video Coming Soon',
+
+    // Integrations Section
+    integrationsTitle: 'Seamlessly Connects With Your Tools',
+    integrationsSubtitle: 'HeyFlou integrates with the platforms you already use to create a unified workflow.',
+
+    // CTA Section
+    ctaTitle: 'Ready to Automate Your Practice?',
+    ctaSubtitle: 'Join hundreds of healthcare professionals saving 10+ hours per week with intelligent automation.',
+    startAutomation: 'Start Your Automation',
+    scheduleDemo: 'Schedule a Demo',
+
+    // Contact Form
+    formTitle: 'Tell Us About Your Practice',
+    formSubtitle: 'Fill out the form below and we\'ll get back to you within 24 hours.',
+    formName: 'Name',
+    formNamePlaceholder: 'Dr. Jane Smith',
+    formEmail: 'Email',
+    formEmailPlaceholder: 'jane@practice.com',
+    formPhone: 'Phone (optional)',
+    formPhonePlaceholder: '+1 (555) 123-4567',
+    formPracticeType: 'Practice Type',
+    formPracticeTypePlaceholder: 'Select your practice type',
+    practiceTypeTherapist: 'Therapist',
+    practiceTypePsychologist: 'Psychologist',
+    practiceTypePhysicalTherapist: 'Physical Therapist',
+    practiceTypeClinic: 'Clinic',
+    practiceTypeOther: 'Other',
+    formPracticeSize: 'Practice Size',
+    formPracticeSizePlaceholder: 'Select your practice size',
+    practiceSizeSolo: 'Solo Practice',
+    practiceSize2to5: '2-5 Staff',
+    practiceSize6to10: '6-10 Staff',
+    practiceSize10plus: '10+ Staff',
+    formChallenge: 'Biggest Challenge',
+    formChallengePlaceholder: 'Describe the biggest administrative challenge in your practice...',
+    formReferral: 'How did you hear about us?',
+    formReferralPlaceholder: 'e.g., Google, LinkedIn, Referral',
+    formSubmit: 'Send Inquiry',
+    formSending: 'Sending...',
+    formSuccessTitle: 'Thank you!',
+    formSuccessMessage: 'We\'ll be in touch within 24 hours to discuss your automation needs.',
+  },
 };
 
 export type TranslationKeys = typeof en;

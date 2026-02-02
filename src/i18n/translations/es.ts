@@ -1007,4 +1007,75 @@ export const es: TranslationKeys = {
     failedToLoadPricing: 'Error al cargar configuración de precios. Por favor recarga la página.',
     failedToLoadData: 'Error al cargar datos de precios. Por favor recarga la página.',
   },
+
+  // Healthcare Page
+  healthcare: {
+    // Hero Section
+    heroTitle: 'HeyFlou para Salud',
+    heroSubtitle: 'Automatización con IA para Terapeutas, Psicólogos, Fisioterapeutas y Clínicas Privadas',
+    getStarted: 'Comenzar',
+    bookStrategyCall: 'Reservar Llamada Estratégica',
+
+    // Problem Section
+    problemTitle: 'El Desafío que Enfrentan las Prácticas de Salud',
+    problemText: 'Las prácticas de salud pierden horas cada semana por citas perdidas, formularios de admisión manuales, seguimientos interminables y caos en la programación. Tu tiempo debería dedicarse a sanar pacientes, no a perseguir papeleos y llamadas telefónicas.',
+
+    // Solution Section
+    solutionTitle: 'Cómo HeyFlou Automatiza tu Práctica',
+    solutionIntro: 'Construimos flujos de trabajo de IA personalizados que manejan la carga administrativa para que puedas enfocarte en el cuidado del paciente.',
+    solutionSchedulerTitle: 'Programador de Citas con IA',
+    solutionSchedulerDesc: 'Los pacientes reservan, reprograman y confirman citas 24/7 a través de WhatsApp, tu sitio web o SMS. Sin más juego telefónico.',
+    solutionIntakeTitle: 'Admisión y Formularios Automatizados',
+    solutionIntakeDesc: 'Formularios de admisión digitales enviados automáticamente antes de las citas. Los datos se sincronizan con tu sistema al instante.',
+    solutionFollowupTitle: 'Sistema de Seguimiento Inteligente',
+    solutionFollowupDesc: 'Revisiones automatizadas, recordatorios de tratamiento y encuestas de satisfacción enviadas en el momento adecuado.',
+    solutionChatbotTitle: 'Chatbot de Soporte al Cliente',
+    solutionChatbotDesc: 'Responde preguntas frecuentes sobre servicios, seguros y disponibilidad al instante. Redirige preguntas complejas a tu equipo.',
+    solutionCancellationTitle: 'Gestión de Cancelaciones',
+    solutionCancellationDesc: 'Gestión automática de lista de espera que llena espacios cancelados rápidamente, reduciendo la pérdida de ingresos.',
+    solutionRemindersTitle: 'Recordatorios y Confirmaciones de Sesión',
+    solutionRemindersDesc: 'Recordatorios multicanal vía SMS, correo y WhatsApp reducen las ausencias hasta en un 80%.',
+    demoVideoPlaceholder: 'Video Demo Próximamente',
+
+    // Integrations Section
+    integrationsTitle: 'Se Conecta Perfectamente con tus Herramientas',
+    integrationsSubtitle: 'HeyFlou se integra con las plataformas que ya usas para crear un flujo de trabajo unificado.',
+
+    // CTA Section
+    ctaTitle: '¿Listo para Automatizar tu Práctica?',
+    ctaSubtitle: 'Únete a cientos de profesionales de la salud que ahorran más de 10 horas por semana con automatización inteligente.',
+    startAutomation: 'Comenzar tu Automatización',
+    scheduleDemo: 'Agendar una Demo',
+
+    // Contact Form
+    formTitle: 'Cuéntanos Sobre tu Práctica',
+    formSubtitle: 'Completa el formulario y te contactaremos en 24 horas.',
+    formName: 'Nombre',
+    formNamePlaceholder: 'Dra. María García',
+    formEmail: 'Correo Electrónico',
+    formEmailPlaceholder: 'maria@consultorio.com',
+    formPhone: 'Teléfono (opcional)',
+    formPhonePlaceholder: '+52 55 1234 5678',
+    formPracticeType: 'Tipo de Práctica',
+    formPracticeTypePlaceholder: 'Selecciona tu tipo de práctica',
+    practiceTypeTherapist: 'Terapeuta',
+    practiceTypePsychologist: 'Psicólogo/a',
+    practiceTypePhysicalTherapist: 'Fisioterapeuta',
+    practiceTypeClinic: 'Clínica',
+    practiceTypeOther: 'Otro',
+    formPracticeSize: 'Tamaño de la Práctica',
+    formPracticeSizePlaceholder: 'Selecciona el tamaño de tu práctica',
+    practiceSizeSolo: 'Práctica Individual',
+    practiceSize2to5: '2-5 Empleados',
+    practiceSize6to10: '6-10 Empleados',
+    practiceSize10plus: '10+ Empleados',
+    formChallenge: 'Mayor Desafío',
+    formChallengePlaceholder: 'Describe el mayor desafío administrativo en tu práctica...',
+    formReferral: '¿Cómo nos conociste?',
+    formReferralPlaceholder: 'ej., Google, LinkedIn, Referencia',
+    formSubmit: 'Enviar Consulta',
+    formSending: 'Enviando...',
+    formSuccessTitle: '¡Gracias!',
+    formSuccessMessage: 'Nos pondremos en contacto en 24 horas para hablar sobre tus necesidades de automatización.',
+  },
 };
