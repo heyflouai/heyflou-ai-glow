@@ -1234,4 +1234,89 @@ export const es: TranslationKeys = {
     formSuccessTitle: '¡Gracias!',
     formSuccessMessage: 'Nos pondremos en contacto en 24 horas para hablar sobre tu proyecto de automatización personalizada.',
   },
+
+  // AI Consulting Page
+  consulting: {
+    // Hero Section
+    heroTitle: 'Estrategia y Consultoría IA',
+    heroSubtitle: 'Orientación Experta para Navegar la Transformación de IA en tu Negocio',
+    getStrategicGuidance: 'Obtener Orientación Estratégica',
+    bookConsultation: 'Reservar Consulta',
+
+    // Challenge Section
+    challengeTitle: 'La Brecha de Oportunidad de IA',
+    challengeText: 'Sabes que la IA puede transformar tu negocio pero no estás seguro dónde encaja, te abruman las opciones y te preocupan los errores costosos. Necesitas una hoja de ruta estratégica, no solo herramientas. Nuestra consultoría cierra la brecha entre el potencial de IA y los resultados prácticos del negocio.',
+
+    // Services Section
+    servicesTitle: 'Nuestros Servicios de Consultoría',
+    servicesIntro: 'Servicios integrales de consultoría de IA para guiar tu viaje de transformación desde la evaluación hasta la implementación.',
+    serviceAssessmentTitle: 'Evaluación de Preparación para IA',
+    serviceAssessmentDesc: 'Evalúa tu infraestructura actual, calidad de datos y preparación organizacional para la adopción de IA.',
+    serviceStrategyTitle: 'Desarrollo de Estrategia IA Personalizada',
+    serviceStrategyDesc: 'Construye una hoja de ruta de IA adaptada a tus objetivos de negocio y panorama competitivo.',
+    serviceVendorTitle: 'Selección de Proveedores y Herramientas',
+    serviceVendorDesc: 'Navega el panorama de proveedores de IA con evaluaciones objetivas y recomendaciones.',
+    serviceImplementationTitle: 'Planificación de Implementación',
+    serviceImplementationDesc: 'Crea planes de proyecto detallados con cronogramas, hitos, requisitos de recursos y estrategias de mitigación de riesgos.',
+    serviceTrainingTitle: 'Capacitación y Habilitación del Equipo',
+    serviceTrainingDesc: 'Mejora las habilidades de tu equipo con capacitación práctica de IA adaptada a tu industria y casos de uso.',
+    serviceROITitle: 'Análisis de ROI y Métricas',
+    serviceROIDesc: 'Define métricas de éxito, rastrea KPIs y mide el impacto real de tus inversiones en IA.',
+
+    // Technologies Section
+    technologiesTitle: 'Tecnologías y Plataformas con las que Trabajamos',
+    technologiesSubtitle: 'Te ayudamos a navegar el panorama de IA y seleccionar las herramientas adecuadas para tus necesidades.',
+
+    // Audience Section
+    audienceTitle: 'Quién se Beneficia de la Consultoría de IA',
+    audienceSMBTitle: 'PyMEs en Crecimiento Listas para Escalar con IA',
+    audienceSMBDesc: 'Pequeñas y medianas empresas que buscan aprovechar la IA para obtener ventaja competitiva sin el presupuesto empresarial o experiencia interna.',
+    audienceRedirectTitle: 'Empresas con Pilotos de IA Fallidos',
+    audienceRedirectDesc: 'Organizaciones que han intentado iniciativas de IA pero necesitan orientación experta para redirigir y lograr resultados reales.',
+    audienceLeadershipTitle: 'Equipos de Liderazgo Construyendo Estrategias IA-First',
+    audienceLeadershipDesc: 'Equipos ejecutivos que buscan incorporar la IA en su estrategia de negocio a largo plazo y cultura empresarial.',
+
+    // CTA Section
+    ctaTitle: '¿Listo para Construir tu Estrategia de IA?',
+    ctaSubtitle: 'Hablemos sobre cómo la IA puede transformar tu negocio con un enfoque estratégico y medido.',
+    startStrategy: 'Iniciar tu Estrategia',
+    scheduleCall: 'Agendar Llamada',
+
+    // Contact Form
+    formTitle: 'Hablemos de tu Estrategia de IA',
+    formSubtitle: 'Cuéntanos sobre tu negocio y objetivos de IA. Te responderemos en 24 horas.',
+    formName: 'Nombre',
+    formNamePlaceholder: 'Tu nombre',
+    formEmail: 'Correo Electrónico',
+    formEmailPlaceholder: 'tu@empresa.com',
+    formPhone: 'Teléfono (opcional)',
+    formPhonePlaceholder: '+52 55 1234 5678',
+    formCompany: 'Nombre de la Empresa',
+    formCompanyPlaceholder: 'El nombre de tu empresa',
+    formRole: 'Cargo / Título',
+    formRolePlaceholder: 'ej., CEO, CTO, Director de Operaciones',
+    formIndustry: 'Industria',
+    formIndustryPlaceholder: 'Selecciona tu industria',
+    industryHealthcare: 'Salud',
+    industryFinance: 'Finanzas y Banca',
+    industryRetail: 'Retail y E-commerce',
+    industryTechnology: 'Tecnología',
+    industryManufacturing: 'Manufactura',
+    industryProfessionalServices: 'Servicios Profesionales',
+    industryOther: 'Otro',
+    formGoal: '¿Cuál es tu objetivo de IA?',
+    formGoalPlaceholder: 'Describe lo que quieres lograr con IA en tu negocio...',
+    formTimeline: 'Plazo',
+    formTimelinePlaceholder: 'Selecciona tu plazo',
+    timelineExploring: 'Explorando',
+    timeline1to3: '1-3 meses',
+    timeline3to6: '3-6 meses',
+    timeline6plus: '6+ meses',
+    formReferral: '¿Cómo nos conociste?',
+    formReferralPlaceholder: 'ej., Google, LinkedIn, Referencia',
+    formSubmit: 'Enviar Consulta',
+    formSending: 'Enviando...',
+    formSuccessTitle: '¡Gracias!',
+    formSuccessMessage: 'Nos pondremos en contacto en 24 horas para hablar sobre tu estrategia de IA.',
+  },
 };
