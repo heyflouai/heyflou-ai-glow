@@ -1271,9 +1271,9 @@ export const en = {
   consulting: {
     // Hero Section
     heroTitle: 'AI Strategy & Consulting',
-    heroSubtitle: 'Expert Guidance to Navigate AI Transformation for Your Business',
+    heroSubtitle: 'Expert Strategic Guidance to Navigate Your AI Transformation Journey',
     getStrategicGuidance: 'Get Strategic Guidance',
-    bookConsultation: 'Book a Consultation',
+    bookConsultation: 'Schedule Strategy Call',
 
     // Challenge Section
     challengeTitle: 'The AI Opportunity Gap',
@@ -1281,19 +1281,19 @@ export const en = {
 
     // Services Section
     servicesTitle: 'Our Consulting Offerings',
-    servicesIntro: 'Comprehensive AI consulting services to guide your transformation journey from assessment to implementation.',
+    servicesIntro: 'Strategic AI consulting services to guide your transformation journey—we advise, you execute.',
     serviceAssessmentTitle: 'AI Readiness Assessment',
-    serviceAssessmentDesc: 'Evaluate your current infrastructure, data quality, and organizational readiness for AI adoption.',
+    serviceAssessmentDesc: 'Evaluate your current infrastructure, data quality, and organizational readiness. We provide a detailed report with recommendations—no implementation.',
     serviceStrategyTitle: 'Custom AI Strategy Development',
-    serviceStrategyDesc: 'Build a tailored AI roadmap aligned with your business goals and competitive landscape.',
+    serviceStrategyDesc: 'Build a tailored AI roadmap aligned with your business goals. We design the strategy, you choose how to execute—with us or your team.',
     serviceVendorTitle: 'Vendor & Tool Selection',
-    serviceVendorDesc: 'Navigate the AI vendor landscape with objective evaluations and recommendations.',
+    serviceVendorDesc: 'Navigate the AI vendor landscape with objective evaluations. We help you choose the right tools and negotiate with vendors—unbiased guidance.',
     serviceImplementationTitle: 'Implementation Planning',
-    serviceImplementationDesc: 'Create detailed project plans with timelines, milestones, resource requirements, and risk mitigation strategies.',
+    serviceImplementationDesc: 'Create detailed project plans with timelines, milestones, and resource requirements. We design your implementation roadmap, not build the solution.',
     serviceTrainingTitle: 'Team Training & Enablement',
-    serviceTrainingDesc: 'Upskill your team with hands-on AI training tailored to your industry and use cases.',
+    serviceTrainingDesc: 'Upskill your team with hands-on AI training tailored to your industry and use cases. We teach, you implement.',
     serviceROITitle: 'ROI Analysis & Metrics',
-    serviceROIDesc: 'Define success metrics, track KPIs, and measure the real business impact of your AI investments.',
+    serviceROIDesc: 'Define success metrics, track KPIs, and measure the real business impact of your AI investments. Strategic measurement, not execution.',
 
     // Technologies Section
     technologiesTitle: 'Technologies & Platforms We Work With',
@@ -1302,17 +1302,17 @@ export const en = {
     // Audience Section
     audienceTitle: 'Who Benefits From AI Consulting',
     audienceSMBTitle: 'Growing SMBs Ready to Scale with AI',
-    audienceSMBDesc: 'Small and medium businesses looking to leverage AI for competitive advantage without the enterprise budget or in-house expertise.',
-    audienceRedirectTitle: 'Companies with Failed AI Pilots',
-    audienceRedirectDesc: 'Organizations that have tried AI initiatives but need expert guidance to redirect and achieve real results.',
+    audienceSMBDesc: 'Small and medium businesses seeking expert guidance to leverage AI for competitive advantage without the enterprise budget or in-house expertise. We help you build your AI strategy.',
+    audienceRedirectTitle: 'Companies with Failed AI Pilots Needing Direction',
+    audienceRedirectDesc: 'Organizations that have tried AI initiatives but need expert guidance to redirect and achieve real results. We analyze what went wrong and create a new strategic path forward.',
     audienceLeadershipTitle: 'Leadership Teams Building AI-First Strategies',
-    audienceLeadershipDesc: 'Executive teams seeking to embed AI into their long-term business strategy and company culture.',
+    audienceLeadershipDesc: 'Executive teams seeking to embed AI into their long-term business strategy and company culture. We provide the strategic framework and guidance to lead your organization\'s AI transformation.',
 
     // CTA Section
     ctaTitle: 'Ready to Build Your AI Strategy?',
-    ctaSubtitle: 'Let\'s discuss how AI can transform your business with a strategic, measured approach.',
-    startStrategy: 'Start Your Strategy',
-    scheduleCall: 'Schedule Call',
+    ctaSubtitle: 'Let\'s discuss how strategic AI planning can transform your business—with a measured, expert approach.',
+    startStrategy: 'Get Strategic Guidance',
+    scheduleCall: 'Schedule Strategy Call',
 
     // Contact Form
     formTitle: 'Let\'s Discuss Your AI Strategy',
