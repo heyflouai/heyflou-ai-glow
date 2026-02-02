@@ -23,7 +23,7 @@ export function FinalCTASection() {
           {servicesT.finalCtaSubtitle}
         </p>
         <GradientButton variant="hero" size="xl" asChild>
-          <a href="mailto:hello@heyflou.com">
+          <a href="https://calendly.com/salo-zayat/new-meeting" target="_blank" rel="noopener noreferrer">
             {servicesT.finalCtaButton}
           </a>
         </GradientButton>

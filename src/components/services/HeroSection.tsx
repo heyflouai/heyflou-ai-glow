@@ -22,7 +22,7 @@ export function HeroSection() {
           {servicesT.heroSubtitle}
         </p>
         <GradientButton variant="hero" size="xl" asChild>
-          <a href="mailto:hello@heyflou.com">
+          <a href="https://calendly.com/salo-zayat/new-meeting" target="_blank" rel="noopener noreferrer">
             {servicesT.heroCta}
           </a>
         </GradientButton>

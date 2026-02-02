@@ -52,7 +52,7 @@ export default function Contact() {
                   {t.contact.freeStrategyCallDesc}
                 </p>
                 <GradientButton variant="secondary" size="lg" className="w-full" asChild>
-                  <a href="mailto:hello@heyflou.com">
+                  <a href="https://calendly.com/salo-zayat/new-meeting" target="_blank" rel="noopener noreferrer">
                     {t.contact.scheduleCall}
                   </a>
                 </GradientButton>

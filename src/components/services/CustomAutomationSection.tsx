@@ -49,7 +49,7 @@ export function CustomAutomationSection() {
           transition={{ duration: 0.4, delay: 0.3 }}
         >
           <GradientButton variant="hero" size="lg" asChild>
-            <a href="mailto:hello@heyflou.com">
+            <a href="https://calendly.com/salo-zayat/new-meeting" target="_blank" rel="noopener noreferrer">
               {servicesT.customCta}
             </a>
           </GradientButton>
