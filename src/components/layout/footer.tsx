@@ -5,10 +5,11 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from '@/hooks/use-toast';
-import { Linkedin, Loader2, CheckCircle2, XCircle, Mail } from 'lucide-react';
+import { Linkedin, Loader2, CheckCircle2, XCircle, Mail, Github, ArrowUpRight } from 'lucide-react';
 import { useTranslation } from '@/i18n';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
+import { LanguageToggle } from '@/components/ui/language-toggle';
 
 // X (formerly Twitter) logo component
 const XIcon = ({ className }: { className?: string }) => (
@@ -25,13 +26,36 @@ export const Footer = () => {
   const [status, setStatus] = useState<SubscriptionStatus>('idle');
   const [emailError, setEmailError] = useState('');
 
-  const companyLinks = [
-    { name: t.nav.home, href: '/' },
-    { name: t.nav.services, href: '/services' },
-    { name: t.nav.caseStudies, href: '/case-studies' },
-    { name: t.nav.about, href: '/about' },
+  // Solutions column links
+  const solutionsLinks = [
+    { name: t.footer.healthcareAutomation, href: '/services/healthcare' },
+    { name: t.footer.fitnessEducation, href: '/services/fitness-education' },
+    { name: t.footer.customAutomations, href: '/services/custom' },
+    { name: t.footer.aiConsulting, href: '/services/consulting' },
+    { name: `${t.footer.travelAgencies}`, href: '/services/travel-agencies', badge: t.footer.comingSoon },
   ];
 
+  // Company column links
+  const companyLinks = [
+    { name: t.footer.aboutUs, href: '/about' },
+    { name: t.footer.caseStudies, href: '/case-studies' },
+    { name: t.footer.contactUs, href: '/contact' },
+  ];
+
+  // Resources column links
+  const resourcesLinks = [
+    { name: t.footer.helpCenter, href: '/contact' },
+    { name: t.footer.bookACall, href: 'https://calendly.com/heyflou-ai/30min', external: true },
+  ];
+
+  // Legal column links
+  const legalLinks = [
+    { name: t.footer.privacyPolicy, href: '#' },
+    { name: t.footer.termsOfService, href: '#' },
+    { name: t.footer.cookiePolicy, href: '#' },
+  ];
+
+  // Social links
   const socialLinks = [
     { 
       name: 'LinkedIn', 
@@ -112,75 +136,134 @@ export const Footer = () => {
     setEmailError('');
   };
 
+  const FooterLink = ({ 
+    href, 
+    children, 
+    external = false,
+    badge
+  }: { 
+    href: string; 
+    children: React.ReactNode; 
+    external?: boolean;
+    badge?: string;
+  }) => {
+    const className = cn(
+      "text-muted-foreground hover:text-hf-teal transition-colors duration-200 text-sm",
+      "py-1.5 inline-flex items-center gap-2 group min-h-[44px] md:min-h-0"
+    );
+
+    if (external) {
+      return (
+        <a 
+          href={href} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className={className}
+        >
+          {children}
+          <ArrowUpRight className="h-3 w-3 opacity-0 -translate-y-0.5 translate-x-0.5 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-200" />
+        </a>
+      );
+    }
+
+    return (
+      <Link to={href} className={className}>
+        {children}
+        {badge && (
+          <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-hf-teal/20 text-hf-teal font-medium">
+            {badge}
+          </span>
+        )}
+      </Link>
+    );
+  };
+
+  const FooterColumn = ({ 
+    title, 
+    links 
+  }: { 
+    title: string; 
+    links: Array<{ name: string; href: string; external?: boolean; badge?: string }>;
+  }) => (
+    <div>
+      <h3 className="font-semibold text-sm uppercase tracking-wider text-foreground mb-4">
+        {title}
+      </h3>
+      <ul className="space-y-1">
+        {links.map((link) => (
+          <li key={link.name}>
+            <FooterLink href={link.href} external={link.external} badge={link.badge}>
+              {link.name}
+            </FooterLink>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+
   return (
     <footer className="bg-muted dark:bg-bg-dark border-t border-border dark:border-white/10 safe-bottom">
-      <div className="container mx-auto px-5 md:px-6 lg:px-8 py-10 md:py-12 lg:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-12">
+      {/* Main Footer Content */}
+      <div className="container mx-auto px-5 md:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-8">
           
-          {/* Brand Column */}
-          <div className="lg:col-span-1">
-            <div className="mb-5">
-              <BrandLockup />
-            </div>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+          {/* Brand Column - Takes 2 columns on desktop */}
+          <div className="lg:col-span-2 space-y-5">
+            <BrandLockup size="lg" />
+            
+            <p className="text-hf-teal font-medium text-sm">
+              {t.footer.tagline}
+            </p>
+            
+            <p className="text-muted-foreground text-sm leading-relaxed max-w-sm">
               {t.footer.description}
             </p>
-            <p className="text-muted-foreground/70 text-xs">
-              {t.footer.trustLine}
-            </p>
-          </div>
 
-          {/* Company Links */}
-          <div>
-            <h3 className="font-semibold text-sm uppercase tracking-wider text-foreground mb-4">
-              {t.footer.company}
-            </h3>
-            <ul className="space-y-2 md:space-y-3">
-              {companyLinks.map((link) => (
-                <li key={link.name}>
-                  <Link 
-                    to={link.href} 
-                    className="text-muted-foreground hover:text-foreground transition-colors text-sm link-interactive py-1.5 md:py-0 inline-block min-h-[44px] md:min-h-0 flex items-center"
+            {/* Social Icons */}
+            <div className="flex items-center gap-3 pt-2">
+              {socialLinks.map((link) => {
+                const IconComponent = link.icon;
+                return (
+                  <a 
+                    key={link.name}
+                    href={link.href} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className={cn(
+                      "w-10 h-10 rounded-full flex items-center justify-center",
+                      "bg-foreground/5 border border-border/50 text-muted-foreground",
+                      "hover:bg-hf-teal hover:border-hf-teal hover:text-white hover:scale-110",
+                      "transition-all duration-200"
+                    )}
+                    aria-label={`Follow us on ${link.name}`}
                   >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Connect Column */}
-          <div>
-            <h3 className="font-semibold text-sm uppercase tracking-wider text-foreground mb-4">
-              {t.footer.connect}
-            </h3>
-            <div className="space-y-4">
+                    <IconComponent className="h-4 w-4" />
+                  </a>
+                );
+              })}
               <a 
                 href="mailto:Hello@HeyFlou.com" 
-                className="flex items-center gap-2 text-muted-foreground hover:text-hf-teal transition-colors text-sm link-interactive"
+                className={cn(
+                  "w-10 h-10 rounded-full flex items-center justify-center",
+                  "bg-foreground/5 border border-border/50 text-muted-foreground",
+                  "hover:bg-hf-teal hover:border-hf-teal hover:text-white hover:scale-110",
+                  "transition-all duration-200"
+                )}
+                aria-label="Email us"
               >
                 <Mail className="h-4 w-4" />
-                Hello@HeyFlou.com
               </a>
-              <div className="flex items-center gap-3">
-                {socialLinks.map((link) => {
-                  const IconComponent = link.icon;
-                  return (
-                    <a 
-                      key={link.name}
-                      href={link.href} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="p-3 rounded-full bg-foreground/5 text-muted-foreground hover:bg-hf-teal hover:text-white transition-all duration-200 btn-interactive min-h-[48px] min-w-[48px] flex items-center justify-center"
-                      aria-label={`Follow us on ${link.name}`}
-                    >
-                      <IconComponent className="h-5 w-5" />
-                    </a>
-                  );
-                })}
-              </div>
             </div>
           </div>
+
+          {/* Solutions Column */}
+          <FooterColumn title={t.footer.solutions} links={solutionsLinks} />
+
+          {/* Company Column */}
+          <FooterColumn title={t.footer.company} links={companyLinks} />
+
+          {/* Resources Column */}
+          <FooterColumn title={t.footer.resources} links={resourcesLinks} />
 
           {/* Newsletter Column */}
           <div>
@@ -262,7 +345,7 @@ export const Footer = () => {
                     <Button 
                       type="submit" 
                       disabled={status === 'loading'}
-                      className="w-full bg-hf-teal hover:bg-hf-teal/90 text-white font-medium"
+                      className="w-full bg-hf-teal hover:bg-hf-teal/90 text-white font-medium min-h-[48px]"
                     >
                       {status === 'loading' ? (
                         <span className="flex items-center justify-center gap-2">
@@ -282,31 +365,33 @@ export const Footer = () => {
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-border dark:border-white/10 mt-10 pt-8">
+      {/* Bottom Bar */}
+      <div className="border-t border-border dark:border-white/10">
+        <div className="container mx-auto px-5 md:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             {/* Copyright */}
-            <p className="text-muted-foreground/70 text-sm">
+            <p className="text-muted-foreground/70 text-sm order-2 md:order-1">
               {t.footer.allRightsReserved}
             </p>
 
-            {/* Bottom Links */}
-            <div className="flex items-center gap-6">
-              <Link 
-                to="/contact" 
-                className="text-muted-foreground hover:text-foreground text-sm transition-colors link-interactive"
-              >
-                {t.footer.contactUs}
-              </Link>
-              <a 
-                href="https://calendly.com/heyflou-ai/30min" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-muted-foreground hover:text-foreground text-sm transition-colors link-interactive"
-              >
-                {t.footer.bookStrategyCall}
-              </a>
+            {/* Legal Links */}
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 order-1 md:order-2">
+              {legalLinks.map((link, index) => (
+                <Link 
+                  key={link.name}
+                  to={link.href} 
+                  className="text-muted-foreground/70 hover:text-foreground text-sm transition-colors"
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+
+            {/* Language Toggle */}
+            <div className="order-3">
+              <LanguageToggle />
             </div>
           </div>
         </div>
