@@ -6,7 +6,7 @@ import { KpiStat } from '@/components/ui/kpi-stat';
 import { Link } from 'react-router-dom';
 import { CompactForm } from '@/components/forms/CompactForm';
 import { BeforeAfterFeatures } from '@/components/home/BeforeAfterFeatures';
-import { IndustrySystems } from '@/components/home/IndustrySystems';
+import { IndustryCards } from '@/components/home/IndustryCards';
 import { IntegrationBeams } from '@/components/home/IntegrationBeams';
 import { HeroWorkflow } from '@/components/home/HeroWorkflow';
 import { ValuePropositionTimeline } from '@/components/home/ValuePropositionTimeline';
@@ -255,8 +255,8 @@ export default function Home() {
       {/* Before/After Features - Problem to Solution */}
       <BeforeAfterFeatures />
 
-      {/* Industry Systems - Unified Section */}
-      <IndustrySystems className="bg-background" />
+      {/* Industry Cards - Service Pages */}
+      <IndustryCards />
 
       {/* Integration Beams - Above How It Works */}
       <IntegrationBeams />
