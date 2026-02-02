@@ -172,7 +172,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-7xl font-bold text-foreground leading-[1.1] drop-shadow-sm"
             >
-              AI Automation That Actually Works for SMBs
+              AI Automation That Actually Works
             </motion.h1>
             
             {/* Subtitle */}
@@ -206,10 +206,10 @@ export default function Home() {
               
               {/* Secondary CTA */}
               <Link 
-                to="/case-studies" 
+                to="/services" 
                 className="w-full sm:w-auto inline-flex items-center justify-center px-6 md:px-8 py-3.5 md:py-4 text-sm md:text-base font-medium text-foreground bg-transparent border border-hf-teal/50 rounded-full transition-all duration-300 hover:border-hf-teal hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:scale-[1.02]"
               >
-                See Case Studies
+                Explore Solutions
               </Link>
             </motion.div>
               
