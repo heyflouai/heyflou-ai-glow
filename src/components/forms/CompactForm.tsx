@@ -186,7 +186,7 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage, hidePromoT
         <p className="text-muted-foreground mb-6">
           {t.forms.wantFaster}{' '}
           <GradientButton variant="ghost" size="sm" asChild>
-            <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer">
+            <a href="https://calendly.com/salo-zayat/new-meeting" target="_blank" rel="noopener noreferrer">
               {t.forms.bookStrategyCall}
             </a>
           </GradientButton>

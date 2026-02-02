@@ -300,7 +300,7 @@ export const Footer = () => {
                 {t.footer.contactUs}
               </Link>
               <a 
-                href="https://calendly.com/heyflou-ai/30min" 
+                href="https://calendly.com/salo-zayat/new-meeting" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-muted-foreground hover:text-foreground text-sm transition-colors link-interactive"

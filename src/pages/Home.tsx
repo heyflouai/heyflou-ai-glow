@@ -159,7 +159,7 @@ export default function Home() {
               
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6 mt-8">
               <GradientButton variant="hero" size="xl" asChild>
-                <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer">
+                <a href="https://calendly.com/salo-zayat/new-meeting" target="_blank" rel="noopener noreferrer">
                   {t.home.bookStrategyCall}
                 </a>
               </GradientButton>
@@ -276,7 +276,7 @@ export default function Home() {
           {t.home.finalCtaTitle}
         </h2>
         <GradientButton variant="hero" size="xl" asChild>
-          <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer">
+          <a href="https://calendly.com/salo-zayat/new-meeting" target="_blank" rel="noopener noreferrer">
             {t.home.finalCtaBtn}
           </a>
         </GradientButton>
