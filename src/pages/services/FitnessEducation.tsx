@@ -17,7 +17,7 @@ export default function FitnessEducation() {
         canonical={getCanonicalUrl('/services/fitness-education')}
       />
       
-      <main className="pt-16">
+      <main>
         <IndustrySwitcher />
         <FitnessHero />
         <FitnessProblem />

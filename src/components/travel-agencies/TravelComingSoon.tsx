@@ -54,7 +54,7 @@ export function TravelComingSoon() {
   ];
 
   return (
-    <Section background="default" padding="large">
+    <Section background="default" padding="default">
       <motion.div
         className="text-center mb-12"
         initial={{ opacity: 0, y: 20 }}

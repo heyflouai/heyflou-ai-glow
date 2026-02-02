@@ -35,7 +35,7 @@ export function TravelEarlyAccess() {
 
   if (isSuccess) {
     return (
-      <Section background="muted" id="early-access">
+      <Section background="muted" id="early-access" padding="default">
         <div className="max-w-xl mx-auto">
           {/* Gradient border container */}
           <div className="relative p-[2px] rounded-2xl bg-gradient-to-r from-hf-teal via-hf-purple to-hf-sky">
@@ -103,7 +103,7 @@ export function TravelEarlyAccess() {
   }
 
   return (
-    <Section background="muted" id="early-access">
+    <Section background="muted" id="early-access" padding="default">
       <div className="max-w-xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

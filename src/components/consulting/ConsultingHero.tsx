@@ -11,7 +11,7 @@ export function ConsultingHero() {
   const consulting = t.consulting as Record<string, string>;
 
   return (
-    <Section background="glow" padding="large">
+    <Section background="glow" padding="hero">
       <div className="max-w-5xl mx-auto text-center space-y-8">
         {/* Logo Icon */}
         <motion.div

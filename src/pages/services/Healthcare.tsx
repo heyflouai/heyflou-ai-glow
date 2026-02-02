@@ -17,7 +17,7 @@ export default function Healthcare() {
         canonical={getCanonicalUrl('/services/healthcare')}
       />
       
-      <main className="pt-16">
+      <main>
         <IndustrySwitcher />
         <HealthcareHero />
         <HealthcareProblem />

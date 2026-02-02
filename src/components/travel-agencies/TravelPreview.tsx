@@ -46,7 +46,7 @@ export function TravelPreview() {
   };
 
   return (
-    <Section background="default" id="preview">
+    <Section background="default" id="preview" padding="default">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
