@@ -1232,6 +1232,91 @@ export const en = {
     formSuccessTitle: 'Thank you!',
     formSuccessMessage: 'We\'ll be in touch within 24 hours to discuss your custom automation project.',
   },
+
+  // AI Consulting Page
+  consulting: {
+    // Hero Section
+    heroTitle: 'AI Strategy & Consulting',
+    heroSubtitle: 'Expert Guidance to Navigate AI Transformation for Your Business',
+    getStrategicGuidance: 'Get Strategic Guidance',
+    bookConsultation: 'Book a Consultation',
+
+    // Challenge Section
+    challengeTitle: 'The AI Opportunity Gap',
+    challengeText: 'You know AI can transform your business but you\'re uncertain where it fits, overwhelmed by options, and worried about expensive mistakes. You need a strategic roadmap, not just tools. Our consulting bridges the gap between AI potential and practical business results.',
+
+    // Services Section
+    servicesTitle: 'Our Consulting Offerings',
+    servicesIntro: 'Comprehensive AI consulting services to guide your transformation journey from assessment to implementation.',
+    serviceAssessmentTitle: 'AI Readiness Assessment',
+    serviceAssessmentDesc: 'Evaluate your current infrastructure, data quality, and organizational readiness for AI adoption.',
+    serviceStrategyTitle: 'Custom AI Strategy Development',
+    serviceStrategyDesc: 'Build a tailored AI roadmap aligned with your business goals and competitive landscape.',
+    serviceVendorTitle: 'Vendor & Tool Selection',
+    serviceVendorDesc: 'Navigate the AI vendor landscape with objective evaluations and recommendations.',
+    serviceImplementationTitle: 'Implementation Planning',
+    serviceImplementationDesc: 'Create detailed project plans with timelines, milestones, resource requirements, and risk mitigation strategies.',
+    serviceTrainingTitle: 'Team Training & Enablement',
+    serviceTrainingDesc: 'Upskill your team with hands-on AI training tailored to your industry and use cases.',
+    serviceROITitle: 'ROI Analysis & Metrics',
+    serviceROIDesc: 'Define success metrics, track KPIs, and measure the real business impact of your AI investments.',
+
+    // Technologies Section
+    technologiesTitle: 'Technologies & Platforms We Work With',
+    technologiesSubtitle: 'We help you navigate the AI landscape and select the right tools for your needs.',
+
+    // Audience Section
+    audienceTitle: 'Who Benefits From AI Consulting',
+    audienceSMBTitle: 'Growing SMBs Ready to Scale with AI',
+    audienceSMBDesc: 'Small and medium businesses looking to leverage AI for competitive advantage without the enterprise budget or in-house expertise.',
+    audienceRedirectTitle: 'Companies with Failed AI Pilots',
+    audienceRedirectDesc: 'Organizations that have tried AI initiatives but need expert guidance to redirect and achieve real results.',
+    audienceLeadershipTitle: 'Leadership Teams Building AI-First Strategies',
+    audienceLeadershipDesc: 'Executive teams seeking to embed AI into their long-term business strategy and company culture.',
+
+    // CTA Section
+    ctaTitle: 'Ready to Build Your AI Strategy?',
+    ctaSubtitle: 'Let\'s discuss how AI can transform your business with a strategic, measured approach.',
+    startStrategy: 'Start Your Strategy',
+    scheduleCall: 'Schedule Call',
+
+    // Contact Form
+    formTitle: 'Let\'s Discuss Your AI Strategy',
+    formSubtitle: 'Tell us about your business and AI goals. We\'ll get back to you within 24 hours.',
+    formName: 'Name',
+    formNamePlaceholder: 'Your name',
+    formEmail: 'Email',
+    formEmailPlaceholder: 'you@company.com',
+    formPhone: 'Phone (optional)',
+    formPhonePlaceholder: '+1 (555) 123-4567',
+    formCompany: 'Company Name',
+    formCompanyPlaceholder: 'Your company name',
+    formRole: 'Role / Title',
+    formRolePlaceholder: 'e.g., CEO, CTO, Operations Director',
+    formIndustry: 'Industry',
+    formIndustryPlaceholder: 'Select your industry',
+    industryHealthcare: 'Healthcare',
+    industryFinance: 'Finance & Banking',
+    industryRetail: 'Retail & E-commerce',
+    industryTechnology: 'Technology',
+    industryManufacturing: 'Manufacturing',
+    industryProfessionalServices: 'Professional Services',
+    industryOther: 'Other',
+    formGoal: 'What\'s your AI goal?',
+    formGoalPlaceholder: 'Describe what you want to achieve with AI in your business...',
+    formTimeline: 'Timeline',
+    formTimelinePlaceholder: 'Select your timeline',
+    timelineExploring: 'Exploring',
+    timeline1to3: '1-3 months',
+    timeline3to6: '3-6 months',
+    timeline6plus: '6+ months',
+    formReferral: 'How did you hear about us?',
+    formReferralPlaceholder: 'e.g., Google, LinkedIn, Referral',
+    formSubmit: 'Send Inquiry',
+    formSending: 'Sending...',
+    formSuccessTitle: 'Thank you!',
+    formSuccessMessage: 'We\'ll be in touch within 24 hours to discuss your AI strategy.',
+  },
 };
 
 export type TranslationKeys = typeof en;
