@@ -25,6 +25,7 @@ import {
 import { useToast } from '@/hooks/use-toast';
 import { useTranslation } from '@/i18n';
 import { CheckCircle, Loader2 } from 'lucide-react';
+import { supabase } from '@/integrations/supabase/client';
 
 const formSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -60,21 +61,67 @@ export function CustomContactForm() {
     },
   });
 
+  const getTrackingData = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    return {
+      utmSource: urlParams.get('utm_source') || null,
+      utmMedium: urlParams.get('utm_medium') || null,
+      utmCampaign: urlParams.get('utm_campaign') || null,
+      referrer: document.referrer || null,
+    };
+  };
+
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    
-    console.log('Form submitted:', data);
-    
-    setIsSubmitting(false);
-    setIsSuccess(true);
-    
-    toast({
-      title: caT.formSuccessTitle || "Thank you!",
-      description: caT.formSuccessMessage || "We'll be in touch within 24 hours.",
-    });
+
+    try {
+      const trackingData = getTrackingData();
+      const nameParts = data.name.trim().split(' ');
+      const firstName = nameParts[0] || '';
+      const lastName = nameParts.slice(1).join(' ') || '';
+
+      const messageContent = [
+        `Automation Needs: ${data.automationNeeds}`,
+        data.currentTools ? `Current Tools: ${data.currentTools}` : '',
+        data.phone ? `Phone: ${data.phone}` : '',
+      ].filter(Boolean).join('\n');
+
+      const { error } = await supabase
+        .from('contacts')
+        .insert({
+          first_name: firstName,
+          last_name: lastName,
+          email: data.email,
+          company: data.industry,
+          industry: data.industry,
+          team_size: data.companySize,
+          message: messageContent,
+          source_page: 'custom-automation',
+          utm_source: trackingData.utmSource,
+          utm_medium: trackingData.utmMedium,
+          utm_campaign: trackingData.utmCampaign,
+          referrer: data.referralSource || trackingData.referrer,
+          consent: true,
+        });
+
+      if (error) throw error;
+
+      setIsSuccess(true);
+      form.reset();
+      toast({
+        title: caT.formSuccessTitle || "Thank you!",
+        description: caT.formSuccessMessage || "We'll be in touch within 24 hours.",
+      });
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast({
+        title: "Submission failed",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSuccess) {

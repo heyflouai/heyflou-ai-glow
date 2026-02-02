@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, CheckCircle } from 'lucide-react';
+import { Send, CheckCircle, Loader2 } from 'lucide-react';
 import { Section } from '@/components/ui/section';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -15,22 +15,89 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { useTranslation } from '@/i18n';
+import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 
 export function ConsultingContactForm() {
   const t = useTranslation();
   const consulting = t.consulting as Record<string, string>;
+  const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+
+  const getTrackingData = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    return {
+      utmSource: urlParams.get('utm_source') || null,
+      utmMedium: urlParams.get('utm_medium') || null,
+      utmCampaign: urlParams.get('utm_campaign') || null,
+      referrer: document.referrer || null,
+    };
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    setIsSuccess(true);
+    try {
+      const formData = new FormData(e.currentTarget);
+      const name = formData.get('name') as string;
+      const email = formData.get('email') as string;
+      const phone = formData.get('phone') as string;
+      const company = formData.get('company') as string;
+      const role = formData.get('role') as string;
+      const industry = formData.get('industry') as string;
+      const goal = formData.get('goal') as string;
+      const timeline = formData.get('timeline') as string;
+      const referral = formData.get('referral') as string;
+      
+      const trackingData = getTrackingData();
+      const nameParts = name.trim().split(' ');
+      const firstName = nameParts[0] || '';
+      const lastName = nameParts.slice(1).join(' ') || '';
+
+      const messageContent = [
+        goal ? `Goal: ${goal}` : '',
+        role ? `Role: ${role}` : '',
+        timeline ? `Timeline: ${timeline}` : '',
+        phone ? `Phone: ${phone}` : '',
+      ].filter(Boolean).join('\n');
+
+      const { error } = await supabase
+        .from('contacts')
+        .insert({
+          first_name: firstName,
+          last_name: lastName,
+          email: email,
+          company: company,
+          industry: industry || 'Consulting',
+          team_size: '1-10',
+          message: messageContent || 'AI Consulting inquiry',
+          source_page: 'consulting',
+          utm_source: trackingData.utmSource,
+          utm_medium: trackingData.utmMedium,
+          utm_campaign: trackingData.utmCampaign,
+          referrer: referral || trackingData.referrer,
+          consent: true,
+        });
+
+      if (error) throw error;
+
+      setIsSuccess(true);
+      toast({
+        title: consulting.formSuccessTitle || "Thank you!",
+        description: consulting.formSuccessMessage || "We'll be in touch within 24 hours.",
+      });
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast({
+        title: "Submission failed",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSuccess) {
