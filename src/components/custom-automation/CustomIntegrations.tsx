@@ -1,6 +1,12 @@
 import { motion } from 'framer-motion';
 import { Section } from '@/components/ui/section';
-import { OrbitingCircles } from '@/components/ui/orbiting-circles';
+import { 
+  OrbitingCircles, 
+  IntegrationIcon, 
+  CenterLogo, 
+  IntegrationsBackground,
+  AnimatedUnderline 
+} from '@/components/ui/orbiting-circles';
 import { useTranslation } from '@/i18n';
 import logo from '@/assets/heyflou-logo-new.png';
 
@@ -73,116 +79,111 @@ export function CustomIntegrations() {
         transition={{ duration: 0.5 }}
       >
         <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-4">
-          {caT.integrationsTitle}
+          <AnimatedUnderline>{caT.integrationsTitle}</AnimatedUnderline>
         </h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
           {caT.integrationsSubtitle}
         </p>
       </motion.div>
 
-      <div className="relative flex h-[350px] md:h-[500px] w-full flex-col items-center justify-center overflow-hidden" role="img" aria-label="Integration diagram showing HeyFlou connecting with business tools">
-        {/* Center Logo */}
-        <div className="z-10 flex h-20 w-20 items-center justify-center rounded-full border border-border bg-background shadow-lg">
-          <img src={logo} alt="HeyFlou" className="h-12 w-auto" />
+      <IntegrationsBackground>
+        <div className="relative flex h-[350px] md:h-[500px] w-full flex-col items-center justify-center overflow-hidden" role="img" aria-label="Integration diagram showing HeyFlou connecting with business tools">
+          {/* Center Logo with Glow */}
+          <CenterLogo logo={logo} alt="HeyFlou" />
+
+          {/* Inner Orbit */}
+          <OrbitingCircles
+            className="size-[50px] border-none bg-transparent"
+            duration={20}
+            delay={0}
+            radius={80}
+            dashedPath
+            glowPath
+          >
+            <IntegrationIcon icon={<SlackIcon />} name="Slack" />
+          </OrbitingCircles>
+
+          <OrbitingCircles
+            className="size-[50px] border-none bg-transparent"
+            duration={20}
+            delay={10}
+            radius={80}
+            path={false}
+          >
+            <IntegrationIcon icon={<NotionIcon />} name="Notion" />
+          </OrbitingCircles>
+
+          {/* Middle Orbit */}
+          <OrbitingCircles
+            className="size-[50px] border-none bg-transparent"
+            duration={25}
+            delay={0}
+            radius={140}
+            reverse
+            dashedPath
+            glowPath
+          >
+            <IntegrationIcon icon={<GoogleWorkspaceIcon />} name="Google Workspace" />
+          </OrbitingCircles>
+
+          <OrbitingCircles
+            className="size-[50px] border-none bg-transparent"
+            duration={25}
+            delay={8}
+            radius={140}
+            reverse
+            path={false}
+          >
+            <IntegrationIcon icon={<HubSpotIcon />} name="HubSpot" />
+          </OrbitingCircles>
+
+          <OrbitingCircles
+            className="size-[50px] border-none bg-transparent"
+            duration={25}
+            delay={16}
+            radius={140}
+            reverse
+            path={false}
+          >
+            <IntegrationIcon icon={<StripeIcon />} name="Stripe" />
+          </OrbitingCircles>
+
+          {/* Outer Orbit - Hidden on mobile */}
+          <OrbitingCircles
+            className="size-[50px] border-none bg-transparent"
+            duration={30}
+            delay={0}
+            radius={200}
+            hideOnMobile
+            dashedPath
+            glowPath
+          >
+            <IntegrationIcon icon={<ZapierIcon />} name="Zapier" />
+          </OrbitingCircles>
+
+          <OrbitingCircles
+            className="size-[50px] border-none bg-transparent"
+            duration={30}
+            delay={10}
+            radius={200}
+            hideOnMobile
+            path={false}
+          >
+            <IntegrationIcon icon={<N8nIcon />} name="n8n" />
+          </OrbitingCircles>
+
+          <OrbitingCircles
+            className="size-[50px] border-none bg-transparent"
+            duration={30}
+            delay={20}
+            radius={200}
+            hideOnMobile
+            path={false}
+          >
+            <IntegrationIcon icon={<MakeIcon />} name="Make" />
+          </OrbitingCircles>
         </div>
-
-        {/* Inner Orbit */}
-        <OrbitingCircles
-          className="size-[50px] border-none bg-transparent"
-          duration={20}
-          delay={0}
-          radius={80}
-        >
-          <div className="flex items-center justify-center rounded-full bg-background p-2 shadow-md border border-border">
-            <SlackIcon />
-          </div>
-        </OrbitingCircles>
-
-        <OrbitingCircles
-          className="size-[50px] border-none bg-transparent"
-          duration={20}
-          delay={10}
-          radius={80}
-        >
-          <div className="flex items-center justify-center rounded-full bg-background p-2 shadow-md border border-border">
-            <NotionIcon />
-          </div>
-        </OrbitingCircles>
-
-        {/* Middle Orbit */}
-        <OrbitingCircles
-          className="size-[50px] border-none bg-transparent"
-          duration={25}
-          delay={0}
-          radius={140}
-          reverse
-        >
-          <div className="flex items-center justify-center rounded-full bg-background p-2 shadow-md border border-border">
-            <GoogleWorkspaceIcon />
-          </div>
-        </OrbitingCircles>
-
-        <OrbitingCircles
-          className="size-[50px] border-none bg-transparent"
-          duration={25}
-          delay={8}
-          radius={140}
-          reverse
-        >
-          <div className="flex items-center justify-center rounded-full bg-background p-2 shadow-md border border-border">
-            <HubSpotIcon />
-          </div>
-        </OrbitingCircles>
-
-        <OrbitingCircles
-          className="size-[50px] border-none bg-transparent"
-          duration={25}
-          delay={16}
-          radius={140}
-          reverse
-        >
-          <div className="flex items-center justify-center rounded-full bg-background p-2 shadow-md border border-border">
-            <StripeIcon />
-          </div>
-        </OrbitingCircles>
-
-        {/* Outer Orbit - Hidden on mobile */}
-        <OrbitingCircles
-          className="size-[50px] border-none bg-transparent"
-          duration={30}
-          delay={0}
-          radius={200}
-          hideOnMobile
-        >
-          <div className="flex items-center justify-center rounded-full bg-background p-2 shadow-md border border-border">
-            <ZapierIcon />
-          </div>
-        </OrbitingCircles>
-
-        <OrbitingCircles
-          className="size-[50px] border-none bg-transparent"
-          duration={30}
-          delay={10}
-          radius={200}
-          hideOnMobile
-        >
-          <div className="flex items-center justify-center rounded-full bg-background p-2 shadow-md border border-border">
-            <N8nIcon />
-          </div>
-        </OrbitingCircles>
-
-        <OrbitingCircles
-          className="size-[50px] border-none bg-transparent"
-          duration={30}
-          delay={20}
-          radius={200}
-          hideOnMobile
-        >
-          <div className="flex items-center justify-center rounded-full bg-background p-2 shadow-md border border-border">
-            <MakeIcon />
-          </div>
-        </OrbitingCircles>
-      </div>
+      </IntegrationsBackground>
 
       {/* Subtext */}
       <motion.p
