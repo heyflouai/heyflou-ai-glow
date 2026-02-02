@@ -113,9 +113,9 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="bg-muted dark:bg-bg-dark border-t border-border dark:border-white/10">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+    <footer className="bg-muted dark:bg-bg-dark border-t border-border dark:border-white/10 safe-bottom">
+      <div className="container mx-auto px-5 md:px-6 lg:px-8 py-10 md:py-12 lg:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-12">
           
           {/* Brand Column */}
           <div className="lg:col-span-1">
@@ -135,12 +135,12 @@ export const Footer = () => {
             <h3 className="font-semibold text-sm uppercase tracking-wider text-foreground mb-4">
               {t.footer.company}
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2 md:space-y-3">
               {companyLinks.map((link) => (
                 <li key={link.name}>
                   <Link 
                     to={link.href} 
-                    className="text-muted-foreground hover:text-foreground transition-colors text-sm link-interactive"
+                    className="text-muted-foreground hover:text-foreground transition-colors text-sm link-interactive py-1.5 md:py-0 inline-block min-h-[44px] md:min-h-0 flex items-center"
                   >
                     {link.name}
                   </Link>
@@ -171,7 +171,7 @@ export const Footer = () => {
                       href={link.href} 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="p-2 rounded-full bg-foreground/5 text-muted-foreground hover:bg-hf-teal hover:text-white transition-all duration-200 btn-interactive"
+                      className="p-3 rounded-full bg-foreground/5 text-muted-foreground hover:bg-hf-teal hover:text-white transition-all duration-200 btn-interactive min-h-[48px] min-w-[48px] flex items-center justify-center"
                       aria-label={`Follow us on ${link.name}`}
                     >
                       <IconComponent className="h-5 w-5" />

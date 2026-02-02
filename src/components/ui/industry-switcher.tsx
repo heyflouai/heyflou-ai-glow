@@ -75,10 +75,10 @@ export function IndustrySwitcher() {
 
   return (
     <div className="sticky top-16 z-40 w-full bg-background/80 backdrop-blur-md border-b border-border/50">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 md:px-6">
         <div
           ref={scrollContainerRef}
-          className="flex items-center gap-2 py-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory md:justify-center"
+          className="flex items-center gap-2 py-3 md:py-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory md:justify-center -mx-4 px-4 md:mx-0 md:px-0"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {industries.map((industry, index) => {
@@ -93,8 +93,8 @@ export function IndustrySwitcher() {
               >
                 <motion.div
                   className={cn(
-                    'relative flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-200',
-                    'border border-transparent',
+                    'relative flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-medium transition-all duration-200',
+                    'border border-transparent min-h-[44px] md:min-h-0',
                     isActive
                       ? 'bg-primary text-primary-foreground shadow-md'
                       : 'bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground hover:border-border/50'

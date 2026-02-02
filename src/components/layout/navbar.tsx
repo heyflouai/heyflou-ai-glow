@@ -165,25 +165,25 @@ export const Navbar = () => {
               </GradientButton>
             </div>
 
-            {/* Mobile menu button */}
+            {/* Mobile menu button - 48px touch target */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 text-hf-ink hover:text-hf-teal transition-colors"
+              className="md:hidden p-3 min-h-[48px] min-w-[48px] flex items-center justify-center text-hf-ink hover:text-hf-teal transition-colors"
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-16 left-0 right-0 bg-background/95 backdrop-blur-md border-b border-border">
-            <div className="px-4 py-6 space-y-4">
+          <div className="md:hidden absolute top-16 left-0 right-0 bg-background/95 backdrop-blur-md border-b border-border safe-bottom">
+            <div className="px-5 py-6 space-y-3">
               {/* Home */}
               <Link
                 to="/"
                 className={cn(
-                  "block text-base font-medium transition-colors hover:text-hf-teal",
+                  "block text-base font-medium transition-colors hover:text-hf-teal py-2 min-h-[48px] flex items-center",
                   location.pathname === '/' 
                     ? "text-hf-teal" 
                     : "text-foreground"
@@ -195,7 +195,7 @@ export const Navbar = () => {
 
               {/* Services Collapsible */}
               <Collapsible open={isServicesOpen} onOpenChange={setIsServicesOpen}>
-                <CollapsibleTrigger className="flex items-center justify-between w-full text-base font-medium transition-colors hover:text-hf-teal">
+                <CollapsibleTrigger className="flex items-center justify-between w-full text-base font-medium transition-colors hover:text-hf-teal py-2 min-h-[48px]">
                   <span className={cn(isServicesActive && "text-hf-teal")}>
                     {t.nav.services}
                   </span>
@@ -206,13 +206,13 @@ export const Navbar = () => {
                     )} 
                   />
                 </CollapsibleTrigger>
-                <CollapsibleContent className="mt-2 ml-4 space-y-2 animate-accordion-down">
+                <CollapsibleContent className="mt-1 ml-4 space-y-1 animate-accordion-down">
                   {servicesDropdownItems.map((item) => (
                     <Link
                       key={item.href}
                       to={item.href}
                       className={cn(
-                        "flex items-center justify-between py-2 text-sm transition-colors hover:text-hf-teal",
+                        "flex items-center justify-between py-3 min-h-[48px] text-sm transition-colors hover:text-hf-teal",
                         location.pathname === item.href 
                           ? "text-hf-teal" 
                           : "text-muted-foreground"
@@ -233,13 +233,12 @@ export const Navbar = () => {
                 </CollapsibleContent>
               </Collapsible>
 
-              {/* Other Nav Items */}
               {navigationItems.slice(1).map((item) => (
                 <Link
                   key={item.href}
                   to={item.href}
                   className={cn(
-                    "block text-base font-medium transition-colors hover:text-hf-teal",
+                    "block text-base font-medium transition-colors hover:text-hf-teal py-2 min-h-[48px] flex items-center",
                     location.pathname === item.href 
                       ? "text-hf-teal" 
                       : "text-foreground"

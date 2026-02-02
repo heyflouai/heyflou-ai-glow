@@ -102,7 +102,7 @@ export default function Home() {
   
     <main className="pt-16">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-28 text-center overflow-visible">
+      <section className="relative py-12 md:py-20 lg:py-28 text-center overflow-visible px-5 md:px-6">
         {/* SOFT AURA BACKGROUND - Light Mode */}
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-visible dark:hidden">
           <div className="absolute left-1/2 -top-28 md:-top-36 -translate-x-1/2 w-[120vw] md:w-[90vw] h-[60vh] md:h-[66vh] rounded-[9999px]" style={{
@@ -150,33 +150,33 @@ export default function Home() {
         
         <div className="text-center max-w-4xl mx-auto relative">
           <div className="relative z-10">
-            <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-foreground">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-tight">
               {t.home.heroTitle}
             </h1>
-            <h2 className="mt-2 text-2xl md:text-3xl font-semibold text-foreground/80">
+            <h2 className="mt-2 text-xl md:text-2xl lg:text-3xl font-semibold text-foreground/80">
               {t.home.heroSubtitle}
             </h2>
               
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6 mt-8">
-              <GradientButton variant="hero" size="xl" asChild>
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-6 mt-6 md:mt-8">
+              <GradientButton variant="hero" size="xl" asChild className="w-full sm:w-auto">
                 <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer">
                   {t.home.bookStrategyCall}
                 </a>
               </GradientButton>
-              <GradientButton variant="secondary" size="xl" asChild>
+              <GradientButton variant="secondary" size="xl" asChild className="w-full sm:w-auto">
                 <Link to="/contact">{t.home.getAiAudit}</Link>
               </GradientButton>
             </div>
               
             {/* Hero badges */}
-            <div className="flex flex-wrap justify-center gap-4 text-sm">
-              <div className="flex items-center px-3 py-1 bg-background/40 dark:bg-card/50 rounded-full backdrop-blur-sm border border-border/50">
+            <div className="flex flex-wrap justify-center gap-2 md:gap-4 text-xs md:text-sm">
+              <div className="flex items-center px-2.5 md:px-3 py-1.5 md:py-1 bg-background/40 dark:bg-card/50 rounded-full backdrop-blur-sm border border-border/50">
                 <span className="text-foreground font-medium">{t.home.badge1}</span>
               </div>
-              <div className="flex items-center px-3 py-1 bg-background/40 dark:bg-card/50 rounded-full backdrop-blur-sm border border-border/50">
+              <div className="flex items-center px-2.5 md:px-3 py-1.5 md:py-1 bg-background/40 dark:bg-card/50 rounded-full backdrop-blur-sm border border-border/50">
                 <span className="text-foreground font-medium">{t.home.badge2}</span>
               </div>
-              <div className="flex items-center px-3 py-1 bg-background/40 dark:bg-card/50 rounded-full backdrop-blur-sm border border-border/50">
+              <div className="flex items-center px-2.5 md:px-3 py-1.5 md:py-1 bg-background/40 dark:bg-card/50 rounded-full backdrop-blur-sm border border-border/50">
                 <span className="text-foreground font-medium">{t.home.badge3}</span>
               </div>
             </div>
@@ -187,15 +187,15 @@ export default function Home() {
 
       {/* Why AI Now - Stats Grid */}
       <Section>
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-4">
+        <div className="text-center mb-8 md:mb-12 px-5 md:px-0">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold font-display text-foreground mb-3 md:mb-4">
             {t.home.statsTitle}
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-base md:text-lg text-muted-foreground">
             {t.home.statsSubtitle}
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 px-5 md:px-0">
           {keyMetrics.map((metric, index) => <KpiStat key={metric.id} value={metric.value} label={metric.label} description={metric.description} icon={index === 0 ? <TrendingUp size={24} /> : index === 1 ? <ChartBar size={24} /> : index === 2 ? <Users size={24} /> : index === 3 ? <Bot size={24} /> : index === 4 ? <Zap size={24} /> : <Shield size={24} />} />)}
         </div>
       </Section>
@@ -213,23 +213,23 @@ export default function Home() {
 
       {/* Process */}
       <Section background="muted">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-4">
+        <div className="text-center mb-8 md:mb-12 px-5 md:px-0">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold font-display text-foreground mb-3 md:mb-4">
             {t.home.processTitle}
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-base md:text-lg text-muted-foreground">
             {t.home.processSubtitle}
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 px-5 md:px-0">
           {processSteps.map((step, index) => <div key={index} className="text-center group">
-              <div className="w-16 h-16 rounded-full hf-gradient flex items-center justify-center text-white font-bold text-lg mb-4 mx-auto group-hover:scale-110 transition-transform">
+              <div className="w-12 h-12 md:w-16 md:h-16 rounded-full hf-gradient flex items-center justify-center text-white font-bold text-base md:text-lg mb-3 md:mb-4 mx-auto group-hover:scale-110 transition-transform">
                 {step.step}
               </div>
-              <h3 className="text-lg font-bold font-display text-foreground mb-2">
+              <h3 className="text-sm md:text-lg font-bold font-display text-foreground mb-1 md:mb-2">
                 {step.title}
               </h3>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-xs md:text-sm text-muted-foreground">
                 {step.description}
               </p>
             </div>)}
@@ -239,25 +239,25 @@ export default function Home() {
 
       {/* FAQ */}
       <Section background="muted">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-4">
+        <div className="text-center mb-8 md:mb-12 px-5 md:px-0">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold font-display text-foreground mb-3 md:mb-4">
             {t.home.faqTitle}
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-base md:text-lg text-muted-foreground">
             {t.home.faqSubtitle}
           </p>
         </div>
-        <Accordion type="single" collapsible className="max-w-3xl mx-auto space-y-4">
+        <Accordion type="single" collapsible className="max-w-3xl mx-auto space-y-3 md:space-y-4 px-5 md:px-0">
           {faqItems.map((faq, index) => (
             <AccordionItem 
               key={index} 
               value={`faq-${index}`}
               className="bg-card rounded-lg hf-shadow border-none"
             >
-              <AccordionTrigger className="px-6 py-6 hover:bg-muted/50 transition-colors hover:no-underline [&>svg]:text-hf-teal">
-                <span className="font-semibold text-foreground text-left">{faq.question}</span>
+              <AccordionTrigger className="px-4 md:px-6 py-4 md:py-6 hover:bg-muted/50 transition-colors hover:no-underline [&>svg]:text-hf-teal min-h-[48px]">
+                <span className="font-semibold text-foreground text-left text-sm md:text-base">{faq.question}</span>
               </AccordionTrigger>
-              <AccordionContent className="px-6 pb-6 text-muted-foreground">
+              <AccordionContent className="px-4 md:px-6 pb-4 md:pb-6 text-muted-foreground text-sm md:text-base">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>
@@ -271,11 +271,11 @@ export default function Home() {
       </Section>
 
       {/* Final CTA */}
-      <Section background="glow" className="text-center">
-        <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-6">
+      <Section background="glow" className="text-center px-5 md:px-0">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold font-display text-foreground mb-5 md:mb-6">
           {t.home.finalCtaTitle}
         </h2>
-        <GradientButton variant="hero" size="xl" asChild>
+        <GradientButton variant="hero" size="xl" asChild className="w-full sm:w-auto">
           <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer">
             {t.home.finalCtaBtn}
           </a>
