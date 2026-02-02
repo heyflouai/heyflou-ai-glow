@@ -1148,6 +1148,90 @@ export const en = {
     formSuccessTitle: 'Thank you!',
     formSuccessMessage: 'We\'ll be in touch within 24 hours to discuss your automation needs.',
   },
+
+  // Custom Automation Page
+  customAutomation: {
+    // Hero Section
+    heroTitle: 'Custom AI Automations',
+    heroSubtitle: 'Tailored AI Solutions for Any Business, Any Industry, Any Size',
+    describeChallenge: 'Describe Your Challenge',
+    explorePossibilities: 'Explore Possibilities',
+
+    // Approach Section
+    approachTitle: 'Your Business, Your Automation',
+    approachText: 'Every business is unique. That\'s why we don\'t offer cookie-cutter solutions. We start with deep discovery to understand your specific challenges, then design custom workflows that fit your exact needs. Our integrations are flexible, our approach is tailored, and your success is our measure.',
+
+    // Capabilities Section
+    capabilitiesTitle: 'What We Can Automate',
+    capabilitiesIntro: 'From customer-facing workflows to internal operations, we build automation solutions that transform how you work.',
+    capCommunicationTitle: 'Customer Communication',
+    capCommunicationDesc: 'Automate responses, follow-ups, and support across email, chat, WhatsApp, and more. Never miss a customer inquiry again.',
+    capLeadTitle: 'Lead Management',
+    capLeadDesc: 'Capture, qualify, and nurture leads automatically. Smart routing and scoring included.',
+    capAppointmentTitle: 'Appointment Systems',
+    capAppointmentDesc: 'Booking, reminders, cancellations, and rescheduling handled automatically.',
+    capOperationsTitle: 'Internal Operations',
+    capOperationsDesc: 'Streamline approvals, notifications, task assignments, and team coordination with custom workflows.',
+    capDataTitle: 'Data Processing',
+    capDataDesc: 'Extract, transform, and sync data between systems automatically.',
+    capIntegrationTitle: 'Multi-Platform Integration',
+    capIntegrationDesc: 'Connect your existing tools and create seamless workflows across multiple platforms and services.',
+
+    // Integrations Section
+    integrationsTitle: 'We Integrate With 1000+ Tools',
+    integrationsSubtitle: 'From popular SaaS platforms to custom APIs, we connect it all.',
+    integrationsSubtext: 'And virtually any other platform via API',
+
+    // Process Section
+    processTitle: 'How We Build Your Custom Automation',
+    processSubtitle: 'A proven 4-step process from discovery to deployment',
+    processStep1Title: 'Discovery Call',
+    processStep1Label: 'Step 1',
+    processStep1Desc: 'We start by understanding your business, your challenges, and your goals. This foundational conversation shapes everything that follows.',
+    processStep2Title: 'Custom Design',
+    processStep2Label: 'Step 2',
+    processStep2Desc: 'We map your unique workflows and design an automation solution tailored specifically to your needs. No templates, just solutions.',
+    processStep3Title: 'Build & Test',
+    processStep3Label: 'Step 3',
+    processStep3Desc: 'Our team builds your automation with rigorous testing at every stage. You review and approve before anything goes live.',
+    processStep4Title: 'Deploy & Support',
+    processStep4Label: 'Step 4',
+    processStep4Desc: 'We launch your automation and provide ongoing maintenance and support. As your business evolves, your automation evolves with it.',
+
+    // CTA Section
+    ctaTitle: 'Ready to Build Your Solution?',
+    ctaSubtitle: 'Every automation we build is unique. Let\'s discuss what\'s possible for your business.',
+    startProject: 'Start Your Project',
+    scheduleConsultation: 'Schedule Consultation',
+
+    // Contact Form
+    formTitle: 'Describe Your Automation Needs',
+    formSubtitle: 'Tell us about your business and what you\'d like to automate. We\'ll get back to you within 24 hours.',
+    formName: 'Name',
+    formNamePlaceholder: 'Your name',
+    formEmail: 'Email',
+    formEmailPlaceholder: 'you@company.com',
+    formPhone: 'Phone (optional)',
+    formPhonePlaceholder: '+1 (555) 123-4567',
+    formIndustry: 'Industry',
+    formIndustryPlaceholder: 'e.g., E-commerce, Real Estate, Legal...',
+    formCompanySize: 'Company Size',
+    formCompanySizePlaceholder: 'Select your company size',
+    companySizeSolo: 'Solo',
+    companySize2to10: '2-10 employees',
+    companySize11to50: '11-50 employees',
+    companySize50plus: '50+ employees',
+    formAutomationNeeds: 'What do you want to automate?',
+    formAutomationNeedsPlaceholder: 'Describe the processes, tasks, or workflows you\'d like to automate. Be as specific as possible...',
+    formCurrentTools: 'Current tools you use',
+    formCurrentToolsPlaceholder: 'e.g., Salesforce, Google Sheets, Slack, custom CRM...',
+    formReferral: 'How did you hear about us?',
+    formReferralPlaceholder: 'e.g., Google, LinkedIn, Referral',
+    formSubmit: 'Send Inquiry',
+    formSending: 'Sending...',
+    formSuccessTitle: 'Thank you!',
+    formSuccessMessage: 'We\'ll be in touch within 24 hours to discuss your custom automation project.',
+  },
 };
 
 export type TranslationKeys = typeof en;

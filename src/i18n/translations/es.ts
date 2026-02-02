@@ -1150,4 +1150,88 @@ export const es: TranslationKeys = {
     formSuccessTitle: '¡Gracias!',
     formSuccessMessage: 'Nos pondremos en contacto en 24 horas para hablar sobre tus necesidades de automatización.',
   },
+
+  // Custom Automation Page
+  customAutomation: {
+    // Hero Section
+    heroTitle: 'Automatizaciones IA Personalizadas',
+    heroSubtitle: 'Soluciones de IA a Medida para Cualquier Negocio, Cualquier Industria, Cualquier Tamaño',
+    describeChallenge: 'Describe tu Desafío',
+    explorePossibilities: 'Explorar Posibilidades',
+
+    // Approach Section
+    approachTitle: 'Tu Negocio, Tu Automatización',
+    approachText: 'Cada negocio es único. Por eso no ofrecemos soluciones genéricas. Comenzamos con un descubrimiento profundo para entender tus desafíos específicos, luego diseñamos flujos de trabajo personalizados que se ajustan a tus necesidades exactas. Nuestras integraciones son flexibles, nuestro enfoque es personalizado, y tu éxito es nuestra medida.',
+
+    // Capabilities Section
+    capabilitiesTitle: 'Qué Podemos Automatizar',
+    capabilitiesIntro: 'Desde flujos de trabajo orientados al cliente hasta operaciones internas, construimos soluciones de automatización que transforman tu forma de trabajar.',
+    capCommunicationTitle: 'Comunicación con Clientes',
+    capCommunicationDesc: 'Automatiza respuestas, seguimientos y soporte a través de email, chat, WhatsApp y más. Nunca más pierdas una consulta de cliente.',
+    capLeadTitle: 'Gestión de Leads',
+    capLeadDesc: 'Captura, califica y nutre leads automáticamente. Enrutamiento inteligente y puntuación incluidos.',
+    capAppointmentTitle: 'Sistemas de Citas',
+    capAppointmentDesc: 'Reservas, recordatorios, cancelaciones y reprogramaciones manejadas automáticamente.',
+    capOperationsTitle: 'Operaciones Internas',
+    capOperationsDesc: 'Agiliza aprobaciones, notificaciones, asignación de tareas y coordinación de equipos con flujos personalizados.',
+    capDataTitle: 'Procesamiento de Datos',
+    capDataDesc: 'Extrae, transforma y sincroniza datos entre sistemas automáticamente.',
+    capIntegrationTitle: 'Integración Multi-Plataforma',
+    capIntegrationDesc: 'Conecta tus herramientas existentes y crea flujos de trabajo fluidos entre múltiples plataformas y servicios.',
+
+    // Integrations Section
+    integrationsTitle: 'Nos Integramos con 1000+ Herramientas',
+    integrationsSubtitle: 'Desde plataformas SaaS populares hasta APIs personalizadas, conectamos todo.',
+    integrationsSubtext: 'Y prácticamente cualquier otra plataforma vía API',
+
+    // Process Section
+    processTitle: 'Cómo Construimos tu Automatización Personalizada',
+    processSubtitle: 'Un proceso probado de 4 pasos desde el descubrimiento hasta el despliegue',
+    processStep1Title: 'Llamada de Descubrimiento',
+    processStep1Label: 'Paso 1',
+    processStep1Desc: 'Comenzamos entendiendo tu negocio, tus desafíos y tus objetivos. Esta conversación fundamental da forma a todo lo que sigue.',
+    processStep2Title: 'Diseño Personalizado',
+    processStep2Label: 'Paso 2',
+    processStep2Desc: 'Mapeamos tus flujos de trabajo únicos y diseñamos una solución de automatización hecha específicamente para tus necesidades. Sin plantillas, solo soluciones.',
+    processStep3Title: 'Construir y Probar',
+    processStep3Label: 'Paso 3',
+    processStep3Desc: 'Nuestro equipo construye tu automatización con pruebas rigurosas en cada etapa. Revisas y apruebas antes de que algo salga en vivo.',
+    processStep4Title: 'Desplegar y Soportar',
+    processStep4Label: 'Paso 4',
+    processStep4Desc: 'Lanzamos tu automatización y proporcionamos mantenimiento y soporte continuo. A medida que tu negocio evoluciona, tu automatización evoluciona con él.',
+
+    // CTA Section
+    ctaTitle: '¿Listo para Construir tu Solución?',
+    ctaSubtitle: 'Cada automatización que construimos es única. Hablemos sobre lo que es posible para tu negocio.',
+    startProject: 'Iniciar tu Proyecto',
+    scheduleConsultation: 'Agendar Consulta',
+
+    // Contact Form
+    formTitle: 'Describe tus Necesidades de Automatización',
+    formSubtitle: 'Cuéntanos sobre tu negocio y qué te gustaría automatizar. Te responderemos en 24 horas.',
+    formName: 'Nombre',
+    formNamePlaceholder: 'Tu nombre',
+    formEmail: 'Correo Electrónico',
+    formEmailPlaceholder: 'tu@empresa.com',
+    formPhone: 'Teléfono (opcional)',
+    formPhonePlaceholder: '+52 55 1234 5678',
+    formIndustry: 'Industria',
+    formIndustryPlaceholder: 'ej., E-commerce, Bienes Raíces, Legal...',
+    formCompanySize: 'Tamaño de la Empresa',
+    formCompanySizePlaceholder: 'Selecciona el tamaño de tu empresa',
+    companySizeSolo: 'Solo',
+    companySize2to10: '2-10 empleados',
+    companySize11to50: '11-50 empleados',
+    companySize50plus: '50+ empleados',
+    formAutomationNeeds: '¿Qué quieres automatizar?',
+    formAutomationNeedsPlaceholder: 'Describe los procesos, tareas o flujos de trabajo que te gustaría automatizar. Sé lo más específico posible...',
+    formCurrentTools: 'Herramientas actuales que usas',
+    formCurrentToolsPlaceholder: 'ej., Salesforce, Google Sheets, Slack, CRM personalizado...',
+    formReferral: '¿Cómo nos conociste?',
+    formReferralPlaceholder: 'ej., Google, LinkedIn, Referencia',
+    formSubmit: 'Enviar Consulta',
+    formSending: 'Enviando...',
+    formSuccessTitle: '¡Gracias!',
+    formSuccessMessage: 'Nos pondremos en contacto en 24 horas para hablar sobre tu proyecto de automatización personalizada.',
+  },
 };
