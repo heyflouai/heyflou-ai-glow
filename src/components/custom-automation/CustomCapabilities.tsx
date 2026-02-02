@@ -78,7 +78,6 @@ export function CustomCapabilities() {
             index={index}
             title={caT[cap.titleKey]}
             description={caT[cap.descKey]}
-            icon={cap.icon}
             className={cap.className}
             header={
               <div className="flex items-center justify-center h-24 rounded-xl bg-muted/50">
