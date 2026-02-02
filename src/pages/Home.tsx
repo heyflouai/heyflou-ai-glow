@@ -5,7 +5,7 @@ import { GradientButton } from '@/components/ui/gradient-button';
 import { KpiStat } from '@/components/ui/kpi-stat';
 import { Link } from 'react-router-dom';
 import { CompactForm } from '@/components/forms/CompactForm';
-import { ProblemSolution } from '@/components/home/ProblemSolution';
+import { BeforeAfterFeatures } from '@/components/home/BeforeAfterFeatures';
 import { IndustrySystems } from '@/components/home/IndustrySystems';
 import { IntegrationBeams } from '@/components/home/IntegrationBeams';
 import { HeroWorkflow } from '@/components/home/HeroWorkflow';
@@ -252,10 +252,8 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Problem → Solution → What We Do */}
-      <Section id="problem-solution" background="muted">
-        <ProblemSolution />
-      </Section>
+      {/* Before/After Features - Problem to Solution */}
+      <BeforeAfterFeatures />
 
       {/* Industry Systems - Unified Section */}
       <IndustrySystems className="bg-background" />
