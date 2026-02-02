@@ -55,7 +55,7 @@ export function ServiceCard({ service, index = 0 }: ServiceCardProps) {
 
           <div className="pt-2">
             <GradientButton variant="secondary" size="sm" className="w-full" asChild>
-              <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer">
+              <a href="https://calendly.com/salo-zayat/new-meeting" target="_blank" rel="noopener noreferrer">
                 {servicesT.learnMore || 'Learn More'}
               </a>
             </GradientButton>

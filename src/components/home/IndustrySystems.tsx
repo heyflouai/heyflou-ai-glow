@@ -267,7 +267,7 @@ export function IndustrySystems({ className }: { className?: string }) {
         <div className="text-center mt-14 md:mt-20">
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <GradientButton variant="hero" size="lg" asChild>
-              <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer">
+              <a href="https://calendly.com/salo-zayat/new-meeting" target="_blank" rel="noopener noreferrer">
                 {t.industrySystems.bookCall}
               </a>
             </GradientButton>
