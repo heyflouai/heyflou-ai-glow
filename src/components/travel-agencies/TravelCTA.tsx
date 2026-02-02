@@ -10,7 +10,7 @@ export function TravelCTA() {
   const travel = t.travelAgencies as Record<string, string>;
 
   return (
-    <Section background="muted" padding="large" className="relative overflow-hidden">
+    <Section background="muted" padding="default" className="relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-hf-teal/5 via-hf-purple/5 to-hf-sky/5 rounded-full blur-3xl" />

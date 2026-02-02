@@ -78,7 +78,7 @@ export default function Services() {
       
       <main className="services-page">
         {/* Hero Section with Spotlight & Animated Background */}
-        <Section background="default" padding="large" className="relative overflow-hidden pt-24 md:pt-32">
+        <Section background="default" padding="hero" className="relative overflow-hidden">
           {/* Animated gradient background */}
           <div className="absolute inset-0 -z-10">
             <div className="absolute inset-0 bg-gradient-to-br from-hf-teal/5 via-transparent to-hf-purple/5" />
@@ -111,7 +111,7 @@ export default function Services() {
         </Section>
 
         {/* Industry Cards Section - Consistent spacing */}
-        <Section background="muted" id="industries" className="py-20 md:py-[120px]">
+        <Section background="muted" id="industries" padding="default">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -130,7 +130,7 @@ export default function Services() {
         </Section>
 
         {/* Process Section - With background pattern */}
-        <Section background="default" id="process" className="py-20 md:py-[120px] relative overflow-hidden">
+        <Section background="default" id="process" padding="default" className="relative overflow-hidden">
           {/* Subtle background pattern */}
           <div className="absolute inset-0 -z-10">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_hsl(var(--primary)/0.03)_1px,_transparent_1px)] bg-[size:24px_24px]" />
@@ -159,7 +159,7 @@ export default function Services() {
         </Section>
 
         {/* CTA Section - Gradient background with visual element */}
-        <Section background="muted" padding="large" className="py-20 md:py-[120px] relative overflow-hidden">
+        <Section background="muted" padding="default" className="relative overflow-hidden">
           {/* Gradient overlay */}
           <div className="absolute inset-0 -z-10">
             <div className="absolute inset-0 bg-gradient-to-br from-hf-teal/5 via-transparent to-hf-purple/5" />

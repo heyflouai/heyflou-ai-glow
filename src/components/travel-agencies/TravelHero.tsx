@@ -11,7 +11,7 @@ export function TravelHero() {
   const travel = t.travelAgencies as Record<string, string>;
 
   return (
-    <Section background="glow" padding="large" className="relative overflow-hidden">
+    <Section background="glow" padding="hero" className="relative overflow-hidden">
       {/* Animated background gradient */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-br from-hf-teal/10 via-transparent to-hf-purple/10 animate-pulse" />

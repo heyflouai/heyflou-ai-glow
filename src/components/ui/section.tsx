@@ -5,7 +5,7 @@ interface SectionProps {
   className?: string;
   background?: 'default' | 'muted' | 'gradient' | 'glow';
   container?: boolean;
-  padding?: 'default' | 'large' | 'small';
+  padding?: 'default' | 'large' | 'small' | 'hero' | 'none';
   id?: string;
 }
 
@@ -16,10 +16,13 @@ const backgroundVariants = {
   glow: 'bg-background hf-glow'
 };
 
+// Standardized spacing: Desktop 120px, Mobile 80px
 const paddingVariants = {
-  small: 'py-12',
-  default: 'py-16 lg:py-24',
-  large: 'py-20 lg:py-32'
+  none: '',
+  small: 'py-10 md:py-16', // 40px / 64px
+  default: 'py-20 md:py-[120px]', // 80px / 120px - Standard section spacing
+  large: 'py-20 md:py-[120px]', // Same as default for consistency
+  hero: 'pt-20 pb-[120px] md:pt-20 md:pb-[120px]', // Hero: 80px top, 120px bottom
 };
 
 export const Section = ({ 
@@ -41,7 +44,7 @@ export const Section = ({
       )}
     >
       {container ? (
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="service-container mx-auto">
           {children}
         </div>
       ) : (

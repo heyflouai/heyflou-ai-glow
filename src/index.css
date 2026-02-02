@@ -76,6 +76,20 @@
     /* Design tokens */
     --radius: 0.75rem;
     
+    /* Spacing tokens - Standardized */
+    --section-spacing-desktop: 120px;
+    --section-spacing-mobile: 80px;
+    --heading-to-content: 32px;
+    --content-block-gap: 48px;
+    --form-field-gap: 24px;
+    --hero-top-padding: 80px;
+    --hero-bottom-padding: 120px;
+    
+    /* Container padding */
+    --container-padding-desktop: 80px;
+    --container-padding-tablet: 48px;
+    --container-padding-mobile: 24px;
+    
     /* Icon sizing tokens */
     --icon-sm: 20px;
     --icon-md: 24px;
@@ -348,6 +362,43 @@
 
   .bg-surface-elevated {
     background-color: hsl(var(--surface-elevated));
+  }
+
+  /* Standardized service page container */
+  .service-container {
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-padding-mobile);
+    padding-right: var(--container-padding-mobile);
+  }
+
+  @media (min-width: 768px) {
+    .service-container {
+      padding-left: var(--container-padding-tablet);
+      padding-right: var(--container-padding-tablet);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .service-container {
+      padding-left: var(--container-padding-desktop);
+      padding-right: var(--container-padding-desktop);
+    }
+  }
+
+  /* Section internal spacing utilities */
+  .section-header {
+    margin-bottom: var(--heading-to-content);
+  }
+
+  .content-block {
+    margin-bottom: var(--content-block-gap);
+  }
+
+  .form-spacing > * + * {
+    margin-top: var(--form-field-gap);
   }
 }
 

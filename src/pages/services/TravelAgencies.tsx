@@ -16,7 +16,7 @@ export default function TravelAgencies() {
         canonical={getCanonicalUrl('/services/travel-agencies')}
       />
       
-      <main className="pt-16">
+      <main>
         <IndustrySwitcher />
         <TravelHero />
         <TravelComingSoon />

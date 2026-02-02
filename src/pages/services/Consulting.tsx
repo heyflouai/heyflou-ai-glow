@@ -18,7 +18,7 @@ export default function Consulting() {
         canonical={getCanonicalUrl('/services/consulting')}
       />
       
-      <main className="pt-16">
+      <main>
         <IndustrySwitcher />
         <ConsultingHero />
         <ConsultingChallenge />

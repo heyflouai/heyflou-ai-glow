@@ -18,7 +18,7 @@ export default function CustomAutomation() {
         canonical={getCanonicalUrl('/services/custom')}
       />
       
-      <main className="pt-16">
+      <main>
         <IndustrySwitcher />
         <CustomHero />
         <CustomApproach />
