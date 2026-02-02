@@ -65,7 +65,7 @@ export function ConsultingServices() {
           </p>
         </motion.div>
 
-        <BentoGrid className="md:auto-rows-[12rem]">
+        <BentoGrid>
           {services.map((service, i) => (
             <BentoGridItem
               key={i}

@@ -25,7 +25,8 @@ export const BentoGrid = ({
         },
       }}
       className={cn(
-        "grid auto-rows-[18rem] grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl mx-auto",
+        "grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto",
+        "auto-rows-fr", // Equal height rows
         className
       )}
     >
@@ -105,8 +106,8 @@ export const BentoGridItem = ({
       }}
       className={cn(
         "row-span-1 rounded-xl group/bento relative overflow-hidden",
-        "p-4 bg-card border border-border/50",
-        "justify-between flex flex-col space-y-4",
+        "p-8 bg-card border border-border/50", // 32px padding
+        "flex flex-col h-full min-h-[14rem]", // Ensure minimum height and stretch
         "transition-all duration-300 ease-out",
         // Enhanced hover states
         "hover:shadow-2xl hover:shadow-primary/10",
@@ -157,9 +158,11 @@ export const BentoGridItem = ({
       />
 
       {/* Header with transform-3d effect */}
-      <div style={{ transform: "translateZ(20px)" }}>
-        {header}
-      </div>
+      {header && (
+        <div style={{ transform: "translateZ(20px)" }} className="mb-4">
+          {header}
+        </div>
+      )}
 
       {/* Content area */}
       <motion.div 
