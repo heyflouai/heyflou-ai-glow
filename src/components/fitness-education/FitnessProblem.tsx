@@ -9,37 +9,40 @@ import {
 } from 'lucide-react';
 import { Section } from '@/components/ui/section';
 import { FocusCards, type FocusCard } from '@/components/ui/focus-cards';
+import { useTranslation } from '@/i18n';
 
 export function FitnessProblem() {
+  const t = useTranslation();
+
   const painPoints: FocusCard[] = [
     {
-      title: "Class Booking Chaos",
-      description: "Managing class capacities, waitlists, and last-minute bookings manually leads to overbooking, confusion, and frustrated clients unable to secure their spot.",
+      title: t.fitnessEducation.painBooking,
+      description: t.fitnessEducation.painBookingDesc,
       icon: CalendarX,
     },
     {
-      title: "Missed Renewal Opportunities",
-      description: "Manual renewal reminders fall through the cracks. Members lapse without warning, and you lose revenue. Chasing down expired memberships wastes valuable time.",
+      title: t.fitnessEducation.painRenewal,
+      description: t.fitnessEducation.painRenewalDesc,
       icon: RefreshCw,
     },
     {
-      title: "Trial-to-Member Conversion Gap",
-      description: "Trial clients attend once and disappear. Without systematic follow-up, you lose potential long-term members. Manual outreach is inconsistent and time-consuming.",
+      title: t.fitnessEducation.painTrial,
+      description: t.fitnessEducation.painTrialDesc,
       icon: UserMinus,
     },
     {
-      title: "Inconsistent Client Onboarding",
-      description: "New members need waivers, orientation, goal-setting, and program recommendations. Manual onboarding leads to incomplete information and slower time-to-value.",
+      title: t.fitnessEducation.painOnboarding,
+      description: t.fitnessEducation.painOnboardingDesc,
       icon: ClipboardList,
     },
     {
-      title: "Last-Minute Schedule Changes",
-      description: "Class cancellations, instructor substitutions, and time changes require manual notifications. Clients show up to cancelled classes or miss important updates.",
+      title: t.fitnessEducation.painScheduleChanges,
+      description: t.fitnessEducation.painScheduleChangesDesc,
       icon: CalendarClock,
     },
     {
-      title: "Payment & Billing Headaches",
-      description: "Tracking membership payments, failed transactions, and payment method updates manually creates accounting nightmares and awkward conversations with clients.",
+      title: t.fitnessEducation.painPayment,
+      description: t.fitnessEducation.painPaymentDesc,
       icon: CreditCard,
     },
   ];
@@ -54,10 +57,10 @@ export function FitnessProblem() {
         transition={{ duration: 0.5 }}
       >
         <h2 className="text-h2 text-foreground mb-4">
-          The Challenge Fitness & Education Businesses Face
+          {t.fitnessEducation.problemTitle}
         </h2>
         <p className="text-body text-muted-foreground max-w-2xl mx-auto">
-          These challenges are holding your business back from growth and excellence.
+          {t.fitnessEducation.problemSubtitle}
         </p>
       </motion.div>
 
