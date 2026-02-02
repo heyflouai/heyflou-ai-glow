@@ -1,59 +1,67 @@
 import { motion } from 'framer-motion';
 import { 
-  Search, 
-  Puzzle, 
-  Layers, 
-  Workflow
+  MessageSquare, 
+  Target, 
+  CalendarCheck, 
+  Settings,
+  Database,
+  Network
 } from 'lucide-react';
 import { Section } from '@/components/ui/section';
 import { FocusCards, type FocusCard } from '@/components/ui/focus-cards';
-import { useTranslation } from '@/i18n';
 
 export function CustomApproach() {
-  const t = useTranslation();
-  const caT = t.customAutomation as Record<string, string>;
-
-  const approachCards: FocusCard[] = [
+  const capabilities: FocusCard[] = [
     {
-      title: caT.approachDiscovery || "Deep Discovery",
-      description: caT.approachDiscoveryDesc || "We start by understanding your specific challenges, workflows, and goals. No assumptions, just listening.",
-      icon: Search,
+      title: "Customer Communication Automation",
+      description: "Automate inquiries, support tickets, FAQs, and follow-ups across email, SMS, WhatsApp, and chat. Provide 24/7 responses while your team focuses on complex issues.",
+      icon: MessageSquare,
     },
     {
-      title: caT.approachTailored || "Tailored Design",
-      description: caT.approachTailoredDesc || "We don't offer cookie-cutter solutions. Every workflow is designed to fit your exact needs and processes.",
-      icon: Puzzle,
+      title: "Intelligent Lead Management",
+      description: "Capture, qualify, route, and nurture leads automatically. Score prospects, trigger personalized sequences, and ensure no opportunity falls through the cracks.",
+      icon: Target,
     },
     {
-      title: caT.approachFlexible || "Flexible Integrations",
-      description: caT.approachFlexibleDesc || "Connect your existing tools seamlessly. We work with the software you already use and love.",
-      icon: Layers,
+      title: "Smart Scheduling & Appointments",
+      description: "Automated booking, reminders, rescheduling, and cancellation management. Reduce no-shows, optimize calendar utilization, and eliminate scheduling back-and-forth.",
+      icon: CalendarCheck,
     },
     {
-      title: caT.approachSuccess || "Your Success, Our Measure",
-      description: caT.approachSuccessDesc || "We measure our work by your outcomes. If it doesn't save you time or money, we haven't done our job.",
-      icon: Workflow,
+      title: "Internal Process Automation",
+      description: "Streamline onboarding, approvals, data entry, reporting, and team coordination. Eliminate repetitive tasks and reduce human error in your operations.",
+      icon: Settings,
+    },
+    {
+      title: "Data Collection & Processing",
+      description: "Automatically collect, validate, transform, and route data between systems. Build custom integrations and workflows that match your exact business logic.",
+      icon: Database,
+    },
+    {
+      title: "Seamless Platform Integration",
+      description: "Connect your CRM, calendar, communication tools, payment systems, and databases. Create unified workflows across all your business tools.",
+      icon: Network,
     },
   ];
 
   return (
-    <Section background="muted" padding="large">
+    <Section background="muted" padding="default">
       <motion.div
-        className="text-center mb-12"
+        className="text-center mb-8 md:mb-12"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-4">
-          {caT.approachTitle}
+        <h2 className="text-h2 text-foreground mb-4">
+          Your Business, Your Automation
         </h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          {caT.approachSubtitle || "Every business is unique. That's why we build solutions that fit you, not the other way around."}
+        <p className="text-body text-muted-foreground max-w-2xl mx-auto">
+          Every business is unique. That's why we build solutions that fit you, not the other way around.
         </p>
       </motion.div>
 
-      <FocusCards cards={approachCards} className="lg:grid-cols-2" />
+      <FocusCards cards={capabilities} />
     </Section>
   );
 }

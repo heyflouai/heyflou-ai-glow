@@ -2,49 +2,45 @@ import { motion } from 'framer-motion';
 import { 
   CalendarX, 
   FileText, 
-  PhoneOff, 
+  MessageSquareWarning, 
   Clock,
-  UserX,
-  AlertCircle
+  Phone,
+  AlertTriangle
 } from 'lucide-react';
 import { Section } from '@/components/ui/section';
 import { FocusCards, type FocusCard } from '@/components/ui/focus-cards';
-import { useTranslation } from '@/i18n';
 
 export function HealthcareProblem() {
-  const t = useTranslation();
-  const hcT = t.healthcare as Record<string, string>;
-
   const painPoints: FocusCard[] = [
     {
-      title: hcT.painNoShows || "Appointment No-Shows",
-      description: hcT.painNoShowsDesc || "Hours lost every week to patients who don't show up, with no automated reminders or easy rescheduling options.",
+      title: "Appointment No-Shows",
+      description: "Last-minute cancellations and no-shows disrupt your schedule, waste valuable time slots, and reduce revenue. Manual reminder calls are time-consuming and often ineffective.",
       icon: CalendarX,
     },
     {
-      title: hcT.painIntakeForms || "Manual Intake Forms",
-      description: hcT.painIntakeFormsDesc || "Paper forms and manual data entry eat up valuable time that should be spent with patients.",
+      title: "Manual Intake & Paperwork",
+      description: "Patients fill out the same information repeatedly. Paper forms create data entry work, errors, and storage challenges. Digital intake is fragmented across multiple systems.",
       icon: FileText,
     },
     {
-      title: hcT.painFollowUps || "Endless Follow-Ups",
-      description: hcT.painFollowUpsDesc || "Chasing patients for post-appointment tasks, prescription refills, and check-ins.",
-      icon: PhoneOff,
+      title: "Inconsistent Follow-Ups",
+      description: "Post-session check-ins, appointment reminders, and wellness tips fall through the cracks when your team is busy. Patients feel disconnected between visits.",
+      icon: MessageSquareWarning,
     },
     {
-      title: hcT.painScheduling || "Scheduling Chaos",
-      description: hcT.painSchedulingDesc || "Double bookings, availability conflicts, and constant back-and-forth to find suitable times.",
+      title: "Scheduling Complexity",
+      description: "Managing multiple practitioners, room availability, and patient preferences manually leads to double-bookings, conflicts, and frustrated patients trying to find appointment times.",
       icon: Clock,
     },
     {
-      title: hcT.painPatientComms || "Patient Communication",
-      description: hcT.painPatientCommsDesc || "Answering the same questions repeatedly, managing inquiries across multiple channels.",
-      icon: UserX,
+      title: "Time-Consuming Patient Communication",
+      description: "Answering the same questions repeatedly about hours, services, insurance, and policies. Phone tag with patients takes staff away from in-person care.",
+      icon: Phone,
     },
     {
-      title: hcT.painAdminOverload || "Admin Overload",
-      description: hcT.painAdminOverloadDesc || "Your time should be spent healing patients, not drowning in paperwork and phone calls.",
-      icon: AlertCircle,
+      title: "Administrative Burden",
+      description: "Your team spends more time on phone calls, paperwork, and scheduling than on patient care. Administrative tasks prevent you from growing your practice.",
+      icon: AlertTriangle,
     },
   ];
 
@@ -58,10 +54,10 @@ export function HealthcareProblem() {
         transition={{ duration: 0.5 }}
       >
         <h2 className="text-h2 text-foreground mb-4">
-          {hcT.problemTitle}
+          The Challenge Healthcare Practices Face
         </h2>
         <p className="text-body text-muted-foreground max-w-2xl mx-auto">
-          {hcT.problemSubtitle || "These challenges are costing your practice time and money every single day."}
+          These challenges are costing your practice time and money every single day.
         </p>
       </motion.div>
 

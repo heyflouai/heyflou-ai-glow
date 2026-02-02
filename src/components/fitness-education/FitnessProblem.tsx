@@ -3,48 +3,44 @@ import {
   CalendarX, 
   RefreshCw, 
   UserMinus, 
-  GraduationCap,
-  Clock,
-  AlertCircle
+  ClipboardList,
+  CalendarClock,
+  CreditCard
 } from 'lucide-react';
 import { Section } from '@/components/ui/section';
 import { FocusCards, type FocusCard } from '@/components/ui/focus-cards';
-import { useTranslation } from '@/i18n';
 
 export function FitnessProblem() {
-  const t = useTranslation();
-  const feT = t.fitnessEducation as Record<string, string>;
-
   const painPoints: FocusCard[] = [
     {
-      title: feT.painBookingChaos || "Class Booking Chaos",
-      description: feT.painBookingChaosDesc || "Managing class schedules, waitlists, and last-minute cancellations manually takes hours every week.",
+      title: "Class Booking Chaos",
+      description: "Managing class capacities, waitlists, and last-minute bookings manually leads to overbooking, confusion, and frustrated clients unable to secure their spot.",
       icon: CalendarX,
     },
     {
-      title: feT.painMembershipRenewals || "Membership Renewals",
-      description: feT.painMembershipRenewalsDesc || "Renewals falling through the cracks, missed payments, and members leaving without you even knowing.",
+      title: "Missed Renewal Opportunities",
+      description: "Manual renewal reminders fall through the cracks. Members lapse without warning, and you lose revenue. Chasing down expired memberships wastes valuable time.",
       icon: RefreshCw,
     },
     {
-      title: feT.painTrialFollowUps || "Trial Class Follow-Ups",
-      description: feT.painTrialFollowUpsDesc || "New leads try a class and never hear from you again. Conversions suffer without automated nurturing.",
+      title: "Trial-to-Member Conversion Gap",
+      description: "Trial clients attend once and disappear. Without systematic follow-up, you lose potential long-term members. Manual outreach is inconsistent and time-consuming.",
       icon: UserMinus,
     },
     {
-      title: feT.painOnboarding || "Complex Onboarding",
-      description: feT.painOnboardingDesc || "New student and member onboarding involves too many manual steps, forms, and back-and-forth emails.",
-      icon: GraduationCap,
+      title: "Inconsistent Client Onboarding",
+      description: "New members need waivers, orientation, goal-setting, and program recommendations. Manual onboarding leads to incomplete information and slower time-to-value.",
+      icon: ClipboardList,
     },
     {
-      title: feT.painScheduleChanges || "Constant Schedule Changes",
-      description: feT.painScheduleChangesDesc || "Instructor changes, room switches, and holiday schedules create communication headaches.",
-      icon: Clock,
+      title: "Last-Minute Schedule Changes",
+      description: "Class cancellations, instructor substitutions, and time changes require manual notifications. Clients show up to cancelled classes or miss important updates.",
+      icon: CalendarClock,
     },
     {
-      title: feT.painAdminBurden || "Admin Burden",
-      description: feT.painAdminBurdenDesc || "Your focus should be on training and teaching, not drowning in administrative work.",
-      icon: AlertCircle,
+      title: "Payment & Billing Headaches",
+      description: "Tracking membership payments, failed transactions, and payment method updates manually creates accounting nightmares and awkward conversations with clients.",
+      icon: CreditCard,
     },
   ];
 
@@ -58,10 +54,10 @@ export function FitnessProblem() {
         transition={{ duration: 0.5 }}
       >
         <h2 className="text-h2 text-foreground mb-4">
-          {feT.problemTitle}
+          The Challenge Fitness & Education Businesses Face
         </h2>
         <p className="text-body text-muted-foreground max-w-2xl mx-auto">
-          {feT.problemSubtitle || "These challenges are holding your business back from growth and excellence."}
+          These challenges are holding your business back from growth and excellence.
         </p>
       </motion.div>
 
