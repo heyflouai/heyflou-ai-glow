@@ -3,6 +3,7 @@ import { Lightbulb } from 'lucide-react';
 import { Section } from '@/components/ui/section';
 import { GradientButton } from '@/components/ui/gradient-button';
 import { Button } from '@/components/ui/button';
+import { FlipWords } from '@/components/ui/flip-words';
 import { useTranslation } from '@/i18n';
 
 export function ConsultingHero() {
@@ -28,7 +29,7 @@ export function ConsultingHero() {
           </div>
         </motion.div>
 
-        {/* Heading */}
+        {/* Heading with FlipWords */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -36,7 +37,8 @@ export function ConsultingHero() {
           className="space-y-4"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display text-foreground">
-            {consulting.heroTitle}
+            <span>HeyFlou </span>
+            <FlipWords words={["AI Strategy & Consulting"]} />
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
             {consulting.heroSubtitle}

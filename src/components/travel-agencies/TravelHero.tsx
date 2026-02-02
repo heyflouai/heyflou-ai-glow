@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Plane } from 'lucide-react';
 import { Section } from '@/components/ui/section';
 import { Badge } from '@/components/ui/badge';
+import { FlipWords } from '@/components/ui/flip-words';
 import { useTranslation } from '@/i18n';
 
 export function TravelHero() {
@@ -34,7 +35,7 @@ export function TravelHero() {
           </div>
         </motion.div>
 
-        {/* Heading */}
+        {/* Heading with FlipWords */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -42,7 +43,8 @@ export function TravelHero() {
           className="space-y-4"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display text-foreground">
-            {travel.heroTitle}
+            <span>HeyFlou for </span>
+            <FlipWords words={["Travel Agencies"]} />
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
             {travel.heroSubtitle}
