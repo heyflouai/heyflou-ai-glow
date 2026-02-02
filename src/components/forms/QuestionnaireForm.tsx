@@ -271,7 +271,7 @@ export const QuestionnaireForm: React.FC = () => {
           Want to move faster? Book a strategy call.
         </p>
         <GradientButton variant="hero" size="lg" asChild>
-          <a href="https://calendly.com/salo-zayat/new-meeting" target="_blank" rel="noopener noreferrer">
+          <a href="mailto:hello@heyflou.com">
             Book a Strategy Call
           </a>
         </GradientButton>
@@ -611,7 +611,7 @@ export const QuestionnaireForm: React.FC = () => {
                   size="lg"
                   asChild
                 >
-                  <a href="https://calendly.com/salo-zayat/new-meeting" target="_blank" rel="noopener noreferrer">
+                  <a href="mailto:hello@heyflou.com">
                     Book a Strategy Call
                   </a>
                 </GradientButton>

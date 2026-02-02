@@ -64,7 +64,7 @@ export function ConsultingSection() {
                   {/* CTA */}
                   <div className="pt-2">
                     <GradientButton variant="hero" size="lg" asChild>
-                      <a href="https://calendly.com/salo-zayat/new-meeting" target="_blank" rel="noopener noreferrer">
+                      <a href="mailto:hello@heyflou.com">
                         {servicesT.consultingCta}
                       </a>
                     </GradientButton>
