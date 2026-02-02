@@ -1078,4 +1078,76 @@ export const es: TranslationKeys = {
     formSuccessTitle: '¡Gracias!',
     formSuccessMessage: 'Nos pondremos en contacto en 24 horas para hablar sobre tus necesidades de automatización.',
   },
+
+  // Fitness & Education Page
+  fitnessEducation: {
+    // Hero Section
+    heroTitle: 'HeyFlou para Fitness y Educación Privada',
+    heroSubtitle: 'Automatización con IA para Gimnasios, Estudios, Entrenadores Personales, Tutores y Escuelas Privadas',
+    getStarted: 'Comenzar',
+    bookStrategyCall: 'Reservar Llamada Estratégica',
+
+    // Problem Section
+    problemTitle: 'El Desafío que Enfrentan los Negocios de Fitness y Educación',
+    problemText: 'Los estudios de fitness e instituciones educativas luchan con el caos de reservas de clases, renovaciones de membresías que se pierden, seguimientos de clases de prueba que nunca ocurren, onboarding complejo de estudiantes y cambios constantes de horarios. Tu enfoque debería estar en entrenar y enseñar, no ahogándote en trabajo administrativo.',
+
+    // Solution Section
+    solutionTitle: 'Cómo HeyFlou Automatiza tu Negocio',
+    solutionIntro: 'Construimos flujos de trabajo de IA personalizados que manejan horarios, membresías y comunicaciones para que puedas enfocarte en tus clientes y estudiantes.',
+    solutionBookingTitle: 'Asistente de Reservas con IA',
+    solutionBookingDesc: 'Los clientes reservan clases, sesiones de entrenamiento o tutorías 24/7 vía WhatsApp, web o SMS. Gestión automática de lista de espera incluida.',
+    solutionRenewalTitle: 'Automatización de Renovación de Membresías',
+    solutionRenewalDesc: 'Recordatorios automáticos antes del vencimiento, enlaces fáciles de renovación y campañas de recuperación para miembros inactivos.',
+    solutionTrialTitle: 'Sistema de Conversión Prueba-a-Miembro',
+    solutionTrialDesc: 'Seguimientos automáticos después de clases de prueba con ofertas personalizadas para convertir prospectos en miembros de pago.',
+    solutionOnboardingTitle: 'Flujo de Onboarding de Estudiantes/Clientes',
+    solutionOnboardingDesc: 'Formularios digitales, secuencias de bienvenida y materiales de orientación enviados automáticamente. Los nuevos clientes se sienten bienvenidos desde el primer día.',
+    solutionPaymentTitle: 'Recordatorios de Pago y Facturación',
+    solutionPaymentDesc: 'Recordatorios automáticos de pago, recuperación de pagos fallidos y entrega de facturas.',
+    solutionScheduleTitle: 'Gestor de Cambios de Horario',
+    solutionScheduleDesc: 'Notificaciones instantáneas cuando las clases cambian, se cancelan o tienen aperturas. Los clientes se mantienen informados automáticamente.',
+    demoVideoPlaceholder: 'Video Demo Próximamente',
+
+    // Integrations Section
+    integrationsTitle: 'Se Conecta Perfectamente con tus Herramientas',
+    integrationsSubtitle: 'HeyFlou se integra con las plataformas que ya usas para crear un flujo de trabajo unificado.',
+
+    // CTA Section
+    ctaTitle: '¿Listo para Automatizar tus Operaciones?',
+    ctaSubtitle: 'Únete a cientos de negocios de fitness y educación que ahorran más de 15 horas por semana con automatización inteligente.',
+    startAutomation: 'Comenzar tu Automatización',
+    scheduleDemo: 'Agendar una Demo',
+
+    // Contact Form
+    formTitle: 'Cuéntanos Sobre tu Negocio',
+    formSubtitle: 'Completa el formulario y te contactaremos en 24 horas.',
+    formName: 'Nombre',
+    formNamePlaceholder: 'Juan Pérez',
+    formEmail: 'Correo Electrónico',
+    formEmailPlaceholder: 'juan@minegocio.com',
+    formPhone: 'Teléfono (opcional)',
+    formPhonePlaceholder: '+52 55 1234 5678',
+    formBusinessType: 'Tipo de Negocio',
+    formBusinessTypePlaceholder: 'Selecciona tu tipo de negocio',
+    businessTypePersonalTrainer: 'Entrenador Personal',
+    businessTypeGymStudio: 'Gimnasio / Estudio',
+    businessTypeTutoring: 'Servicio de Tutorías',
+    businessTypePrivateSchool: 'Escuela Privada',
+    businessTypeLanguageAcademy: 'Academia de Idiomas',
+    businessTypeOther: 'Otro',
+    formBusinessSize: 'Tamaño del Negocio',
+    formBusinessSizePlaceholder: 'Selecciona el tamaño de tu negocio',
+    businessSizeSolo: 'Solo',
+    businessSize2to5: '2-5 Empleados',
+    businessSize6to15: '6-15 Empleados',
+    businessSize15plus: '15+ Empleados',
+    formChallenge: 'Mayor Desafío',
+    formChallengePlaceholder: 'Describe el mayor desafío operativo en tu negocio...',
+    formReferral: '¿Cómo nos conociste?',
+    formReferralPlaceholder: 'ej., Google, LinkedIn, Referencia',
+    formSubmit: 'Enviar Consulta',
+    formSending: 'Enviando...',
+    formSuccessTitle: '¡Gracias!',
+    formSuccessMessage: 'Nos pondremos en contacto en 24 horas para hablar sobre tus necesidades de automatización.',
+  },
 };
