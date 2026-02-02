@@ -11,107 +11,83 @@ import {
   ArrowRight
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "@/i18n";
 
-interface IndustryCard {
+interface IndustryCardData {
   icon: React.ReactNode;
-  industry: string;
-  hookQuestion: string;
-  description: string;
-  features: string[];
-  featuresLabel: string;
-  keyMetric: string;
-  cta: string;
+  titleKey: string;
+  hookKey: string;
+  descKey: string;
+  labelKey: string;
+  featureKeys: string[];
+  metricKey: string;
+  ctaKey: string;
   link: string;
   comingSoon?: boolean;
-  comingSoonBadge?: string;
+  badgeKey?: string;
 }
 
-const industries: IndustryCard[] = [
+const industryData: IndustryCardData[] = [
   {
     icon: <Stethoscope className="w-7 h-7 md:w-8 md:h-8" />,
-    industry: "Healthcare Automation",
-    hookQuestion: "Tired of appointment no-shows costing you thousands?",
-    description: "End-to-end automation for therapists, psychologists, physical therapists, and private clinics.",
-    featuresLabel: "What We Automate:",
-    features: [
-      "Appointment reminders & confirmations",
-      "Patient intake forms & paperwork",
-      "Post-session follow-up sequences",
-      "Cancellation waitlist management"
-    ],
-    keyMetric: "Save 10+ hours per week",
-    cta: "Explore Healthcare Solutions",
+    titleKey: "industryHealthcareTitle",
+    hookKey: "industryHealthcareHook",
+    descKey: "industryHealthcareDesc",
+    labelKey: "industryHealthcareLabel",
+    featureKeys: ["industryHealthcareFeature1", "industryHealthcareFeature2", "industryHealthcareFeature3", "industryHealthcareFeature4"],
+    metricKey: "industryHealthcareMetric",
+    ctaKey: "industryHealthcareCta",
     link: "/services/healthcare"
   },
   {
     icon: <Dumbbell className="w-7 h-7 md:w-8 md:h-8" />,
-    industry: "Fitness & Education",
-    hookQuestion: "Struggling with class booking chaos and missed renewals?",
-    description: "Smart automation for gyms, studios, trainers, tutors, and private schools.",
-    featuresLabel: "What We Automate:",
-    features: [
-      "Class booking & capacity management",
-      "Membership renewal reminders",
-      "Trial-to-member conversion sequences",
-      "Payment & billing automation"
-    ],
-    keyMetric: "Increase bookings by 30%",
-    cta: "Explore Fitness Solutions",
+    titleKey: "industryFitnessTitle",
+    hookKey: "industryFitnessHook",
+    descKey: "industryFitnessDesc",
+    labelKey: "industryFitnessLabel",
+    featureKeys: ["industryFitnessFeature1", "industryFitnessFeature2", "industryFitnessFeature3", "industryFitnessFeature4"],
+    metricKey: "industryFitnessMetric",
+    ctaKey: "industryFitnessCta",
     link: "/services/fitness-education"
   },
   {
     icon: <Settings className="w-7 h-7 md:w-8 md:h-8" />,
-    industry: "Custom Automation",
-    hookQuestion: "Have a unique business challenge?",
-    description: "Tailored AI automation for any business, any industry, any workflow.",
-    featuresLabel: "What We Build:",
-    features: [
-      "Customer communication systems",
-      "Lead management workflows",
-      "Internal process automation",
-      "Multi-platform integrations"
-    ],
-    keyMetric: "Built for your exact needs",
-    cta: "Design Your Solution",
+    titleKey: "industryCustomTitle",
+    hookKey: "industryCustomHook",
+    descKey: "industryCustomDesc",
+    labelKey: "industryCustomLabel",
+    featureKeys: ["industryCustomFeature1", "industryCustomFeature2", "industryCustomFeature3", "industryCustomFeature4"],
+    metricKey: "industryCustomMetric",
+    ctaKey: "industryCustomCta",
     link: "/services/custom-automation"
   },
   {
     icon: <Plane className="w-7 h-7 md:w-8 md:h-8" />,
-    industry: "Travel Agency Automation",
-    hookQuestion: "Drowning in booking confirmations and client inquiries?",
-    description: "AI-powered automation for travel agencies and tour operators.",
-    featuresLabel: "What We're Building:",
-    features: [
-      "Automated booking confirmations",
-      "Client inquiry responses 24/7",
-      "Itinerary management",
-      "Supplier coordination"
-    ],
-    keyMetric: "Join the waitlist",
-    cta: "Get Early Access",
+    titleKey: "industryTravelTitle",
+    hookKey: "industryTravelHook",
+    descKey: "industryTravelDesc",
+    labelKey: "industryTravelLabel",
+    featureKeys: ["industryTravelFeature1", "industryTravelFeature2", "industryTravelFeature3", "industryTravelFeature4"],
+    metricKey: "industryTravelMetric",
+    ctaKey: "industryTravelCta",
     link: "/services/travel-agencies",
     comingSoon: true,
-    comingSoonBadge: "Coming Q3 2025"
+    badgeKey: "industryTravelBadge"
   },
   {
     icon: <Lightbulb className="w-7 h-7 md:w-8 md:h-8" />,
-    industry: "AI Strategy & Consulting",
-    hookQuestion: "Uncertain where AI fits in your business?",
-    description: "Strategic guidance to navigate your AI transformation journey.",
-    featuresLabel: "What We Offer:",
-    features: [
-      "AI readiness assessment",
-      "Custom AI strategy development",
-      "Vendor & tool selection",
-      "Implementation planning"
-    ],
-    keyMetric: "Strategy-first approach",
-    cta: "Get Strategic Guidance",
+    titleKey: "industryConsultingTitle",
+    hookKey: "industryConsultingHook",
+    descKey: "industryConsultingDesc",
+    labelKey: "industryConsultingLabel",
+    featureKeys: ["industryConsultingFeature1", "industryConsultingFeature2", "industryConsultingFeature3", "industryConsultingFeature4"],
+    metricKey: "industryConsultingMetric",
+    ctaKey: "industryConsultingCta",
     link: "/services/consulting"
   }
 ];
 
-function IndustryCardComponent({ card, index }: { card: IndustryCard; index: number }) {
+function IndustryCardComponent({ card, index, translations }: { card: IndustryCardData; index: number; translations: Record<string, string> }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -141,38 +117,38 @@ function IndustryCardComponent({ card, index }: { card: IndustryCard; index: num
       
       {/* Industry Name */}
       <h3 className="text-xl md:text-2xl font-bold text-foreground text-center mb-2">
-        {card.industry}
+        {translations[card.titleKey]}
       </h3>
       
       {/* Coming Soon Badge */}
-      {card.comingSoon && card.comingSoonBadge && (
+      {card.comingSoon && card.badgeKey && (
         <div className="flex justify-center mb-3">
           <span className="px-3 py-1 text-xs font-medium text-hf-teal bg-hf-teal/10 border border-hf-teal/30 rounded-full">
-            {card.comingSoonBadge}
+            {translations[card.badgeKey]}
           </span>
         </div>
       )}
       
       {/* Hook Question */}
       <p className="text-base md:text-lg italic text-hf-teal text-center mb-4">
-        "{card.hookQuestion}"
+        "{translations[card.hookKey]}"
       </p>
       
       {/* Description */}
       <p className="text-sm md:text-base text-muted-foreground text-center leading-relaxed mb-5">
-        {card.description}
+        {translations[card.descKey]}
       </p>
       
       {/* Features List */}
       <div className="flex-grow mb-5">
         <span className="text-xs md:text-sm font-semibold text-hf-teal uppercase tracking-wide mb-3 block">
-          {card.featuresLabel}
+          {translations[card.labelKey]}
         </span>
         <ul className="space-y-2">
-          {card.features.map((feature, i) => (
+          {card.featureKeys.map((key, i) => (
             <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
               <Check className="w-4 h-4 text-green-400 shrink-0 mt-0.5" />
-              <span>{feature}</span>
+              <span>{translations[key]}</span>
             </li>
           ))}
         </ul>
@@ -183,7 +159,7 @@ function IndustryCardComponent({ card, index }: { card: IndustryCard; index: num
       
       {/* Key Metric */}
       <p className="text-sm font-bold text-foreground text-center mb-5">
-        📊 {card.keyMetric}
+        📊 {translations[card.metricKey]}
       </p>
       
       {/* CTA Button */}
@@ -198,7 +174,7 @@ function IndustryCardComponent({ card, index }: { card: IndustryCard; index: num
             : "bg-transparent border border-hf-teal/50 text-foreground hover:hf-gradient hover:text-white hover:border-transparent hover:shadow-[0_0_20px_rgba(6,182,212,0.3)]"
         )}
       >
-        {card.cta}
+        {translations[card.ctaKey]}
         <ArrowRight className="w-4 h-4" />
       </Link>
     </motion.div>
@@ -206,6 +182,9 @@ function IndustryCardComponent({ card, index }: { card: IndustryCard; index: num
 }
 
 export function IndustryCards() {
+  const t = useTranslation();
+  const hp = t.homepage as Record<string, string>;
+
   return (
     <section className="py-16 md:py-24 lg:py-28 bg-background">
       <div className="container mx-auto px-5 md:px-6 lg:px-8">
@@ -218,7 +197,7 @@ export function IndustryCards() {
             transition={{ duration: 0.5 }}
             className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4"
           >
-            Automation Solutions for Your Industry
+            {hp.industryTitle}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -227,21 +206,21 @@ export function IndustryCards() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto"
           >
-            Custom AI workflows built specifically for your industry's unique challenges
+            {hp.industrySubtitle}
           </motion.p>
         </div>
         
         {/* Cards Grid - First Row (3 cards) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto mb-6 md:mb-8">
-          {industries.slice(0, 3).map((card, index) => (
-            <IndustryCardComponent key={index} card={card} index={index} />
+          {industryData.slice(0, 3).map((card, index) => (
+            <IndustryCardComponent key={index} card={card} index={index} translations={hp} />
           ))}
         </div>
         
         {/* Cards Grid - Second Row (2 cards centered) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
-          {industries.slice(3).map((card, index) => (
-            <IndustryCardComponent key={index + 3} card={card} index={index + 3} />
+          {industryData.slice(3).map((card, index) => (
+            <IndustryCardComponent key={index + 3} card={card} index={index + 3} translations={hp} />
           ))}
         </div>
         
@@ -253,9 +232,9 @@ export function IndustryCards() {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="text-center text-sm text-muted-foreground mt-10 md:mt-12"
         >
-          Don't see your industry? We build custom solutions for any business.{" "}
+          {hp.industryNotSeeYours}{" "}
           <Link to="/contact" className="text-hf-teal hover:underline">
-            Let's talk →
+            {hp.industryLetsTalk}
           </Link>
         </motion.p>
       </div>

@@ -162,7 +162,7 @@ export default function Home() {
               transition={{ duration: 0.5 }}
               className="text-base md:text-lg font-semibold uppercase tracking-wide text-hf-teal mb-3"
             >
-              Stop Wasting Time on Repetitive Tasks
+              {t.homepage.heroHook}
             </motion.p>
             
             {/* H1 - Main Headline */}
@@ -172,7 +172,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-7xl font-bold text-foreground leading-[1.1] drop-shadow-sm"
             >
-              AI Automation That Actually Works
+              {t.homepage.heroTitle}
             </motion.h1>
             
             {/* Subtitle */}
@@ -182,7 +182,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
             >
-              We build custom AI solutions for healthcare, fitness, and education businesses. No fluff. Just results.
+              {t.homepage.heroSubtitle}
             </motion.p>
               
             {/* CTA Buttons */}
@@ -200,7 +200,7 @@ export default function Home() {
                   background="hsl(var(--primary))"
                   className="px-8 md:px-10 py-4 md:py-5 text-base md:text-lg font-semibold text-primary-foreground w-full"
                 >
-                  Book Free Consultation →
+                  {t.homepage.heroPrimaryCta}
                 </ShimmerButton>
               </a>
               
@@ -209,7 +209,7 @@ export default function Home() {
                 to="/services" 
                 className="w-full sm:w-auto inline-flex items-center justify-center px-6 md:px-8 py-3.5 md:py-4 text-sm md:text-base font-medium text-foreground bg-transparent border border-hf-teal/50 rounded-full transition-all duration-300 hover:border-hf-teal hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:scale-[1.02]"
               >
-                Explore Solutions
+                {t.homepage.heroSecondaryCta}
               </Link>
             </motion.div>
               
