@@ -293,11 +293,45 @@ export const en = {
     getQuote: 'Get Quote',
   },
 
-  // Services Page (New)
+  // Services Page (Hub)
   servicesPage: {
     // Hero
-    heroTitle: 'AI Automation Solutions for Growing Businesses',
-    heroSubtitle: 'Industry-specific automation services that eliminate manual work, accelerate processes, and scale your operations without adding headcount',
+    heroTitle: 'AI Automation Solutions by Industry',
+    heroSubtitle: 'Choose your industry to see how HeyFlou can transform your operations',
+    
+    // Industry Cards Section
+    industryCardsTitle: 'Explore Solutions for Your Industry',
+    
+    // Card content
+    cardHealthcareTitle: 'Healthcare',
+    cardHealthcareDesc: 'For therapists, clinics & healthcare practices',
+    cardFitnessTitle: 'Fitness & Education',
+    cardFitnessDesc: 'For gyms, studios, trainers & private schools',
+    cardTravelTitle: 'Travel Agencies',
+    cardTravelDesc: 'For travel professionals',
+    cardTravelBadge: 'Coming Soon',
+    cardCustomTitle: 'Custom Automations',
+    cardCustomDesc: 'For any business, any industry',
+    cardConsultingTitle: 'AI Consulting',
+    cardConsultingDesc: 'Strategic AI guidance & planning',
+    
+    // Process Section
+    processTitle: 'Our Process',
+    processSubtitle: 'From discovery to ongoing support',
+    step1Title: 'Discover',
+    step1Desc: 'We understand your business, your challenges, and your goals through in-depth discovery conversations.',
+    step2Title: 'Build',
+    step2Desc: 'We design and create your custom automation solution, tailored specifically to your workflows.',
+    step3Title: 'Support',
+    step3Desc: 'Ongoing optimization, maintenance, and support to ensure your automation evolves with your business.',
+    
+    // CTA Section
+    notSureTitle: 'Not Sure Where to Start?',
+    notSureSubtitle: "Let us help you find the right solution for your business needs.",
+    exploreCustom: 'Explore Custom Automations',
+    bookStrategyCall: 'Book a Strategy Call',
+
+    // Legacy keys (keeping for backward compatibility)
     heroCta: 'Book a Free Consultation',
     learnMore: 'Learn More',
 

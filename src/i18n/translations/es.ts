@@ -295,11 +295,45 @@ export const es: TranslationKeys = {
     getQuote: 'Obtener Cotización',
   },
 
-  // Services Page (New)
+  // Services Page (Hub)
   servicesPage: {
     // Hero
-    heroTitle: 'Soluciones de Automatización con IA para Negocios en Crecimiento',
-    heroSubtitle: 'Servicios de automatización específicos por industria que eliminan trabajo manual, aceleran procesos y escalan tus operaciones sin contratar más personal',
+    heroTitle: 'Soluciones de Automatización con IA por Industria',
+    heroSubtitle: 'Elige tu industria para ver cómo HeyFlou puede transformar tus operaciones',
+    
+    // Industry Cards Section
+    industryCardsTitle: 'Explora Soluciones para Tu Industria',
+    
+    // Card content
+    cardHealthcareTitle: 'Salud',
+    cardHealthcareDesc: 'Para terapeutas, clínicas y prácticas de salud',
+    cardFitnessTitle: 'Fitness y Educación',
+    cardFitnessDesc: 'Para gimnasios, estudios, entrenadores y escuelas privadas',
+    cardTravelTitle: 'Agencias de Viajes',
+    cardTravelDesc: 'Para profesionales del turismo',
+    cardTravelBadge: 'Próximamente',
+    cardCustomTitle: 'Automatizaciones Personalizadas',
+    cardCustomDesc: 'Para cualquier negocio, cualquier industria',
+    cardConsultingTitle: 'Consultoría IA',
+    cardConsultingDesc: 'Orientación estratégica y planificación de IA',
+    
+    // Process Section
+    processTitle: 'Nuestro Proceso',
+    processSubtitle: 'Desde el descubrimiento hasta el soporte continuo',
+    step1Title: 'Descubrir',
+    step1Desc: 'Entendemos tu negocio, tus desafíos y tus objetivos a través de conversaciones de descubrimiento detalladas.',
+    step2Title: 'Construir',
+    step2Desc: 'Diseñamos y creamos tu solución de automatización personalizada, adaptada específicamente a tus flujos de trabajo.',
+    step3Title: 'Soportar',
+    step3Desc: 'Optimización, mantenimiento y soporte continuo para asegurar que tu automatización evolucione con tu negocio.',
+    
+    // CTA Section
+    notSureTitle: '¿No Sabes Por Dónde Empezar?',
+    notSureSubtitle: 'Déjanos ayudarte a encontrar la solución correcta para las necesidades de tu negocio.',
+    exploreCustom: 'Explorar Automatizaciones Personalizadas',
+    bookStrategyCall: 'Reservar Llamada Estratégica',
+
+    // Legacy keys (keeping for backward compatibility)
     heroCta: 'Reservar Consulta Gratis',
     learnMore: 'Saber Más',
 
