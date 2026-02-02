@@ -71,7 +71,7 @@ export function FitnessSolution() {
         </p>
       </motion.div>
 
-      <BentoGrid className="mb-12">
+      <BentoGrid>
         {solutions.map((solution, index) => (
           <BentoGridItem
             key={index}
@@ -90,26 +90,6 @@ export function FitnessSolution() {
           />
         ))}
       </BentoGrid>
-
-      {/* Demo Video Placeholder */}
-      <motion.div
-        className="max-w-4xl mx-auto"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
-        <div className="aspect-video rounded-xl bg-muted border border-border/50 flex items-center justify-center">
-          <div className="text-center">
-            <div className="w-16 h-16 rounded-full hf-gradient flex items-center justify-center mx-auto mb-4">
-              <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            </div>
-            <p className="text-muted-foreground font-medium">{feT.demoVideoPlaceholder}</p>
-          </div>
-        </div>
-      </motion.div>
     </Section>
   );
 }
