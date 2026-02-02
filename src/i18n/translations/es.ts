@@ -1319,4 +1319,51 @@ export const es: TranslationKeys = {
     formSuccessTitle: '¡Gracias!',
     formSuccessMessage: 'Nos pondremos en contacto en 24 horas para hablar sobre tu estrategia de IA.',
   },
+
+  // Travel Agencies Page (Coming Soon)
+  travelAgencies: {
+    // Hero
+    heroTitle: 'HeyFlou para Agencias de Viajes',
+    heroSubtitle: 'Soluciones de Automatización con IA para Profesionales del Turismo — Próximamente',
+    comingSoonBadge: 'Próximamente',
+
+    // Coming Soon Section
+    comingSoonTitle: 'Estamos Construyendo Algo Especial para Profesionales del Turismo',
+    comingSoonText: 'Estamos diseñando automatización con IA específica para agencias de viajes, operadores turísticos y consultores de viajes. Desde asistentes de reservas impulsados por IA hasta gestión inteligente de itinerarios, estamos creando soluciones que entienden los desafíos únicos de la industria turística. Sé de los primeros en transformar cómo vendes viajes.',
+    expectedLaunch: '🗓️ Lanzamiento Esperado: Q3 2025',
+    getEarlyAccess: 'Obtener Acceso Anticipado',
+
+    // Early Access Form
+    formTitle: 'Obtén Acceso Anticipado y Ayuda a Moldear Este Producto',
+    formSubtitle: 'Únete a la lista de espera y ayúdanos a construir la solución perfecta para tu agencia.',
+    formName: 'Nombre',
+    formNamePlaceholder: 'Tu nombre',
+    formEmail: 'Correo Electrónico',
+    formEmailPlaceholder: 'tu@agencia.com',
+    formAgency: 'Nombre de la Agencia (opcional)',
+    formAgencyPlaceholder: 'El nombre de tu agencia de viajes',
+    formChallenge: 'Mayor Desafío Operativo',
+    formChallengePlaceholder: '¿Qué te consume más tiempo que desearías automatizar?',
+    formSubmit: 'Notificarme Cuando Lancemos',
+    formSending: 'Enviando...',
+    formSuccessTitle: '¡Estás en la lista!',
+    formSuccessMessage: 'Te notificaremos tan pronto como lancemos y podemos contactarte para obtener retroalimentación temprana.',
+
+    // Preview Section
+    previewTitle: 'Lo Que Estamos Construyendo',
+    previewSubtitle: 'Un vistazo a las funciones de automatización en desarrollo.',
+    previewBookingTitle: 'Asistente de Reservas con IA',
+    previewBookingDesc: 'Responde consultas de viajeros 24/7, califica leads y captura intención de reserva automáticamente.',
+    previewInquiryTitle: 'Automatización de Consultas de Clientes',
+    previewInquiryDesc: 'Dirige y responde consultas a través de email, WhatsApp y chat web al instante.',
+    previewItineraryTitle: 'Gestión de Itinerarios de Viaje',
+    previewItineraryDesc: 'Genera, envía y rastrea itinerarios personalizados con secuencias de seguimiento inteligentes.',
+    previewMultiPlatformTitle: 'Soporte Multi-Plataforma',
+    previewMultiPlatformDesc: 'Conéctate con sistemas de reservas, CRMs y herramientas de comunicación que ya usas.',
+
+    // CTA Section
+    ctaTitle: '¿Necesitas Automatización Ahora?',
+    ctaSubtitle: '¿No puedes esperar a nuestra solución específica para viajes? Construimos automatizaciones personalizadas para cualquier negocio.',
+    ctaButton: 'Explorar Automatizaciones Personalizadas',
+  },
 };

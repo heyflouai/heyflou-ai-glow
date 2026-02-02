@@ -1317,6 +1317,53 @@ export const en = {
     formSuccessTitle: 'Thank you!',
     formSuccessMessage: 'We\'ll be in touch within 24 hours to discuss your AI strategy.',
   },
+
+  // Travel Agencies Page (Coming Soon)
+  travelAgencies: {
+    // Hero
+    heroTitle: 'HeyFlou for Travel Agencies',
+    heroSubtitle: 'AI Automation Solutions for Travel Professionals — Launching Soon',
+    comingSoonBadge: 'Coming Soon',
+
+    // Coming Soon Section
+    comingSoonTitle: "We're Building Something Special for Travel Pros",
+    comingSoonText: 'We\'re crafting purpose-built AI automation for travel agencies, tour operators, and travel consultants. From AI-powered booking assistants to intelligent itinerary management, we\'re designing solutions that understand the unique challenges of the travel industry. Be among the first to transform how you sell travel.',
+    expectedLaunch: '🗓️ Expected Launch: Q3 2025',
+    getEarlyAccess: 'Get Early Access',
+
+    // Early Access Form
+    formTitle: 'Get Early Access & Shape This Product',
+    formSubtitle: 'Join the waitlist and help us build the perfect solution for your agency.',
+    formName: 'Name',
+    formNamePlaceholder: 'Your name',
+    formEmail: 'Email',
+    formEmailPlaceholder: 'you@agency.com',
+    formAgency: 'Agency Name (optional)',
+    formAgencyPlaceholder: 'Your travel agency name',
+    formChallenge: 'Biggest Operational Challenge',
+    formChallengePlaceholder: 'What takes up most of your time that you wish was automated?',
+    formSubmit: 'Notify Me When We Launch',
+    formSending: 'Submitting...',
+    formSuccessTitle: "You're on the list!",
+    formSuccessMessage: "We'll notify you as soon as we launch and may reach out for early feedback.",
+
+    // Preview Section
+    previewTitle: "What We're Building",
+    previewSubtitle: 'Sneak peek at the automation features in development.',
+    previewBookingTitle: 'AI Booking Assistant',
+    previewBookingDesc: 'Answer traveler inquiries 24/7, qualify leads, and capture booking intent automatically.',
+    previewInquiryTitle: 'Client Inquiry Automation',
+    previewInquiryDesc: 'Route and respond to inquiries across email, WhatsApp, and web chat instantly.',
+    previewItineraryTitle: 'Travel Itinerary Management',
+    previewItineraryDesc: 'Generate, send, and track custom itineraries with smart follow-up sequences.',
+    previewMultiPlatformTitle: 'Multi-Platform Support',
+    previewMultiPlatformDesc: 'Connect with booking systems, CRMs, and communication tools you already use.',
+
+    // CTA Section
+    ctaTitle: 'Need Automation Now?',
+    ctaSubtitle: "Can't wait for our travel-specific solution? We build custom automations for any business.",
+    ctaButton: 'Explore Custom Automations',
+  },
 };
 
 export type TranslationKeys = typeof en;
