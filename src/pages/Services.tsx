@@ -105,7 +105,7 @@ export default function Services() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5 }}
             className="text-center mb-8"
           >
@@ -125,7 +125,7 @@ export default function Services() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5 }}
               className="text-center mb-12"
             >
@@ -146,7 +146,7 @@ export default function Services() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5 }}
             className="max-w-2xl mx-auto text-center space-y-8"
           >
@@ -157,13 +157,13 @@ export default function Services() {
               {servicesT.notSureSubtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link to="/services/custom">
-                <ShimmerButton className="text-base font-semibold">
+              <Link to="/services/custom" className="w-full sm:w-auto">
+                <ShimmerButton className="text-base font-semibold w-full min-h-[48px]">
                   {servicesT.exploreCustom}
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </ShimmerButton>
               </Link>
-              <Button variant="outline" size="lg" asChild>
+              <Button variant="outline" size="lg" asChild className="w-full sm:w-auto min-h-[48px]">
                 <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer">
                   {servicesT.bookStrategyCall}
                 </a>

@@ -69,7 +69,7 @@ export function HealthcareIntegrations() {
         </p>
       </motion.div>
 
-      <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden">
+      <div className="relative flex h-[350px] md:h-[500px] w-full flex-col items-center justify-center overflow-hidden" role="img" aria-label="Integration diagram showing HeyFlou connecting with various healthcare tools">
         {/* Center Logo */}
         <div className="z-10 flex h-20 w-20 items-center justify-center rounded-full border border-border bg-background shadow-lg">
           <img src={logo} alt="HeyFlou" className="h-12 w-auto" />
@@ -135,12 +135,13 @@ export function HealthcareIntegrations() {
           </div>
         </OrbitingCircles>
 
-        {/* Outer Orbit */}
+        {/* Outer Orbit - Hidden on mobile */}
         <OrbitingCircles
           className="size-[50px] border-none bg-transparent"
           duration={30}
           delay={0}
           radius={200}
+          hideOnMobile
         >
           <div className="flex items-center justify-center rounded-full bg-background p-2 shadow-md border border-border">
             <NotionIcon />
@@ -152,6 +153,7 @@ export function HealthcareIntegrations() {
           duration={30}
           delay={15}
           radius={200}
+          hideOnMobile
         >
           <div className="flex items-center justify-center rounded-full bg-background p-2 shadow-md border border-border">
             <StripeIcon />

@@ -75,6 +75,7 @@ export function CustomCapabilities() {
         {capabilities.map((cap, index) => (
           <BentoGridItem
             key={index}
+            index={index}
             title={caT[cap.titleKey]}
             description={caT[cap.descKey]}
             icon={cap.icon}

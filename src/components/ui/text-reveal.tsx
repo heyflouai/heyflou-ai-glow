@@ -17,7 +17,7 @@ export const TextRevealByWord: FC<TextRevealByWordProps> = ({
 
   const { scrollYProgress } = useScroll({
     target: targetRef,
-    offset: ["start 0.9", "start 0.25"],
+    offset: ["start 0.7", "start 0.3"],
   });
 
   const words = text.split(" ");
@@ -27,7 +27,11 @@ export const TextRevealByWord: FC<TextRevealByWordProps> = ({
       <div
         className="sticky top-0 mx-auto flex h-[50%] max-w-4xl items-center bg-transparent px-[1rem] py-[5rem]"
       >
-        <p className="flex flex-wrap p-5 text-2xl font-bold text-foreground/20 dark:text-foreground/20 md:p-8 md:text-3xl lg:p-10 lg:text-4xl xl:text-5xl">
+        <p 
+          className="flex flex-wrap p-5 text-xl font-bold text-foreground/20 dark:text-foreground/20 md:p-8 md:text-2xl lg:p-10 lg:text-3xl xl:text-4xl"
+          role="region"
+          aria-label="Scroll to reveal text"
+        >
           {words.map((word, i) => {
             const start = i / words.length;
             const end = start + 1 / words.length;

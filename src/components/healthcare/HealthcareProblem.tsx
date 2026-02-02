@@ -16,7 +16,7 @@ export function HealthcareProblem() {
           {hcT.problemTitle}
         </h2>
       </div>
-      <TextRevealByWord text={problemText} />
+      <TextRevealByWord text={problemText} className="h-[150vh] md:h-[200vh]" />
     </Section>
   );
 }

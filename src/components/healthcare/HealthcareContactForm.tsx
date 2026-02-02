@@ -105,7 +105,7 @@ export function HealthcareContactForm() {
         className="max-w-2xl mx-auto"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.5 }}
       >
         <div className="text-center mb-10">
@@ -117,7 +117,7 @@ export function HealthcareContactForm() {
           </p>
         </div>
 
-        <div className="bg-card rounded-xl p-8 border border-border/50 shadow-lg">
+        <div className="bg-card rounded-xl p-6 md:p-8 border border-border/50 shadow-lg">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -129,7 +129,12 @@ export function HealthcareContactForm() {
                     <FormItem>
                       <FormLabel>{hcT.formName} *</FormLabel>
                       <FormControl>
-                        <Input placeholder={hcT.formNamePlaceholder} {...field} />
+                        <Input 
+                          placeholder={hcT.formNamePlaceholder} 
+                          className="h-11 md:h-10 transition-all duration-200 focus:ring-2 focus:ring-ring focus:ring-offset-1"
+                          aria-required="true"
+                          {...field} 
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -144,7 +149,13 @@ export function HealthcareContactForm() {
                     <FormItem>
                       <FormLabel>{hcT.formEmail} *</FormLabel>
                       <FormControl>
-                        <Input type="email" placeholder={hcT.formEmailPlaceholder} {...field} />
+                        <Input 
+                          type="email" 
+                          placeholder={hcT.formEmailPlaceholder} 
+                          className="h-11 md:h-10 transition-all duration-200 focus:ring-2 focus:ring-ring focus:ring-offset-1"
+                          aria-required="true"
+                          {...field} 
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -161,7 +172,12 @@ export function HealthcareContactForm() {
                     <FormItem>
                       <FormLabel>{hcT.formPhone}</FormLabel>
                       <FormControl>
-                        <Input type="tel" placeholder={hcT.formPhonePlaceholder} {...field} />
+                        <Input 
+                          type="tel" 
+                          placeholder={hcT.formPhonePlaceholder} 
+                          className="h-11 md:h-10 transition-all duration-200 focus:ring-2 focus:ring-ring focus:ring-offset-1"
+                          {...field} 
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -258,8 +274,9 @@ export function HealthcareContactForm() {
               <Button
                 type="submit"
                 size="lg"
-                className="w-full hf-gradient text-white hover:opacity-90 transition-opacity"
+                className="w-full hf-gradient text-white hover:opacity-90 transition-opacity min-h-[48px]"
                 disabled={isSubmitting}
+                aria-label={isSubmitting ? hcT.formSending : hcT.formSubmit}
               >
                 {isSubmitting ? (
                   <>

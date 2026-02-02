@@ -2,7 +2,7 @@
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, ReactNode } from "react";
 
 export const HoverEffect = ({
   items,
@@ -12,27 +12,28 @@ export const HoverEffect = ({
     title: string;
     description: string;
     link: string;
-    icon?: React.ReactNode;
+    icon?: ReactNode;
     badge?: string;
   }[];
   className?: string;
 }) => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10",
+        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10 gap-4",
         className
       )}
     >
       {items.map((item, idx) => (
         <Link
-          to={item.link}
-          key={item.link}
+          to={item?.link}
+          key={item?.link}
           className="relative group block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
+          aria-label={`Navigate to ${item.title}`}
         >
           <AnimatePresence>
             {hoveredIndex === idx && (
@@ -51,20 +52,34 @@ export const HoverEffect = ({
               />
             )}
           </AnimatePresence>
-          <Card>
-            <div className="flex items-start justify-between">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                {item.icon}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ 
+              duration: 0.4, 
+              delay: idx * 0.1,
+              ease: [0.25, 0.1, 0.25, 1]
+            }}
+            whileHover={{ y: -4 }}
+          >
+            <Card>
+              <div className="flex items-center gap-3 mb-4">
+                {item.icon && (
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                    {item.icon}
+                  </div>
+                )}
+                {item.badge && (
+                  <span className="ml-auto text-[10px] px-2 py-1 rounded-full bg-primary/10 text-primary font-medium animate-pulse">
+                    {item.badge}
+                  </span>
+                )}
               </div>
-              {item.badge && (
-                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-accent text-accent-foreground">
-                  {item.badge}
-                </span>
-              )}
-            </div>
-            <CardTitle>{item.title}</CardTitle>
-            <CardDescription>{item.description}</CardDescription>
-          </Card>
+              <CardTitle>{item.title}</CardTitle>
+              <CardDescription>{item.description}</CardDescription>
+            </Card>
+          </motion.div>
         </Link>
       ))}
     </div>
@@ -81,7 +96,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "rounded-2xl h-full w-full p-4 overflow-hidden bg-card border border-border/50 group-hover:border-primary/50 relative z-20 transition-colors duration-200",
+        "rounded-2xl h-full w-full p-4 overflow-hidden bg-card border border-border/50 dark:border-border/30 group-hover:border-primary/30 relative z-20 transition-all duration-200",
         className
       )}
     >
@@ -100,7 +115,7 @@ export const CardTitle = ({
   children: React.ReactNode;
 }) => {
   return (
-    <h4 className={cn("text-foreground font-bold font-display text-lg tracking-wide mt-2", className)}>
+    <h4 className={cn("text-foreground font-bold tracking-wide mt-2", className)}>
       {children}
     </h4>
   );
@@ -116,7 +131,7 @@ export const CardDescription = ({
   return (
     <p
       className={cn(
-        "mt-2 text-muted-foreground tracking-wide leading-relaxed text-sm",
+        "mt-4 text-muted-foreground tracking-wide leading-relaxed text-sm",
         className
       )}
     >

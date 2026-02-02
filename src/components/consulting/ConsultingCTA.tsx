@@ -17,7 +17,7 @@ export function ConsultingCTA() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.5 }}
         className="max-w-3xl mx-auto text-center space-y-8"
       >
@@ -32,7 +32,7 @@ export function ConsultingCTA() {
             variant="secondary" 
             size="lg" 
             onClick={scrollToForm}
-            className="bg-white text-primary hover:bg-white/90"
+            className="bg-white text-primary hover:bg-white/90 w-full sm:w-auto min-h-[48px]"
           >
             {consulting.startStrategy}
           </GradientButton>
@@ -40,7 +40,7 @@ export function ConsultingCTA() {
             variant="outline" 
             size="lg" 
             asChild
-            className="border-white text-white hover:bg-white/10"
+            className="border-white text-white hover:bg-white/10 w-full sm:w-auto min-h-[48px]"
           >
             <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer">
               {consulting.scheduleCall}

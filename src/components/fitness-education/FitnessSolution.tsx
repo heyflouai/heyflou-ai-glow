@@ -75,6 +75,7 @@ export function FitnessSolution() {
         {solutions.map((solution, index) => (
           <BentoGridItem
             key={index}
+            index={index}
             title={feT[solution.titleKey]}
             description={feT[solution.descKey]}
             icon={solution.icon}

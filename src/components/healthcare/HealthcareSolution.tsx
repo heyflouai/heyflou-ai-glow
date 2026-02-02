@@ -75,6 +75,7 @@ export function HealthcareSolution() {
         {solutions.map((solution, index) => (
           <BentoGridItem
             key={index}
+            index={index}
             title={hcT[solution.titleKey]}
             description={hcT[solution.descKey]}
             icon={solution.icon}
