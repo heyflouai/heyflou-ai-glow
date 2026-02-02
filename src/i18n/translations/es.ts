@@ -1273,9 +1273,9 @@ export const es: TranslationKeys = {
   consulting: {
     // Hero Section
     heroTitle: 'Estrategia y Consultoría IA',
-    heroSubtitle: 'Orientación Experta para Navegar la Transformación de IA en tu Negocio',
+    heroSubtitle: 'Orientación Estratégica Experta para Navegar tu Viaje de Transformación con IA',
     getStrategicGuidance: 'Obtener Orientación Estratégica',
-    bookConsultation: 'Reservar Consulta',
+    bookConsultation: 'Agendar Llamada Estratégica',
 
     // Challenge Section
     challengeTitle: 'La Brecha de Oportunidad de IA',
@@ -1283,19 +1283,19 @@ export const es: TranslationKeys = {
 
     // Services Section
     servicesTitle: 'Nuestros Servicios de Consultoría',
-    servicesIntro: 'Servicios integrales de consultoría de IA para guiar tu viaje de transformación desde la evaluación hasta la implementación.',
+    servicesIntro: 'Servicios estratégicos de consultoría de IA para guiar tu viaje de transformación—nosotros asesoramos, tú ejecutas.',
     serviceAssessmentTitle: 'Evaluación de Preparación para IA',
-    serviceAssessmentDesc: 'Evalúa tu infraestructura actual, calidad de datos y preparación organizacional para la adopción de IA.',
+    serviceAssessmentDesc: 'Evalúa tu infraestructura actual, calidad de datos y preparación organizacional. Proporcionamos un informe detallado con recomendaciones—sin implementación.',
     serviceStrategyTitle: 'Desarrollo de Estrategia IA Personalizada',
-    serviceStrategyDesc: 'Construye una hoja de ruta de IA adaptada a tus objetivos de negocio y panorama competitivo.',
+    serviceStrategyDesc: 'Construye una hoja de ruta de IA adaptada a tus objetivos de negocio. Nosotros diseñamos la estrategia, tú decides cómo ejecutar—con nosotros o tu equipo.',
     serviceVendorTitle: 'Selección de Proveedores y Herramientas',
-    serviceVendorDesc: 'Navega el panorama de proveedores de IA con evaluaciones objetivas y recomendaciones.',
+    serviceVendorDesc: 'Navega el panorama de proveedores de IA con evaluaciones objetivas. Te ayudamos a elegir las herramientas correctas y negociar con proveedores—orientación imparcial.',
     serviceImplementationTitle: 'Planificación de Implementación',
-    serviceImplementationDesc: 'Crea planes de proyecto detallados con cronogramas, hitos, requisitos de recursos y estrategias de mitigación de riesgos.',
+    serviceImplementationDesc: 'Crea planes de proyecto detallados con cronogramas, hitos y requisitos de recursos. Diseñamos tu hoja de ruta de implementación, no construimos la solución.',
     serviceTrainingTitle: 'Capacitación y Habilitación del Equipo',
-    serviceTrainingDesc: 'Mejora las habilidades de tu equipo con capacitación práctica de IA adaptada a tu industria y casos de uso.',
+    serviceTrainingDesc: 'Mejora las habilidades de tu equipo con capacitación práctica de IA adaptada a tu industria y casos de uso. Nosotros enseñamos, tú implementas.',
     serviceROITitle: 'Análisis de ROI y Métricas',
-    serviceROIDesc: 'Define métricas de éxito, rastrea KPIs y mide el impacto real de tus inversiones en IA.',
+    serviceROIDesc: 'Define métricas de éxito, rastrea KPIs y mide el impacto real de tus inversiones en IA. Medición estratégica, no ejecución.',
 
     // Technologies Section
     technologiesTitle: 'Tecnologías y Plataformas con las que Trabajamos',
@@ -1304,17 +1304,17 @@ export const es: TranslationKeys = {
     // Audience Section
     audienceTitle: 'Quién se Beneficia de la Consultoría de IA',
     audienceSMBTitle: 'PyMEs en Crecimiento Listas para Escalar con IA',
-    audienceSMBDesc: 'Pequeñas y medianas empresas que buscan aprovechar la IA para obtener ventaja competitiva sin el presupuesto empresarial o experiencia interna.',
-    audienceRedirectTitle: 'Empresas con Pilotos de IA Fallidos',
-    audienceRedirectDesc: 'Organizaciones que han intentado iniciativas de IA pero necesitan orientación experta para redirigir y lograr resultados reales.',
+    audienceSMBDesc: 'Pequeñas y medianas empresas que buscan orientación experta para aprovechar la IA como ventaja competitiva sin el presupuesto empresarial o experiencia interna. Te ayudamos a construir tu estrategia de IA.',
+    audienceRedirectTitle: 'Empresas con Pilotos de IA Fallidos que Necesitan Dirección',
+    audienceRedirectDesc: 'Organizaciones que han intentado iniciativas de IA pero necesitan orientación experta para redirigir y lograr resultados reales. Analizamos qué salió mal y creamos un nuevo camino estratégico.',
     audienceLeadershipTitle: 'Equipos de Liderazgo Construyendo Estrategias IA-First',
-    audienceLeadershipDesc: 'Equipos ejecutivos que buscan incorporar la IA en su estrategia de negocio a largo plazo y cultura empresarial.',
+    audienceLeadershipDesc: 'Equipos ejecutivos que buscan incorporar la IA en su estrategia de negocio a largo plazo y cultura empresarial. Proporcionamos el marco estratégico y orientación para liderar la transformación de IA de tu organización.',
 
     // CTA Section
     ctaTitle: '¿Listo para Construir tu Estrategia de IA?',
-    ctaSubtitle: 'Hablemos sobre cómo la IA puede transformar tu negocio con un enfoque estratégico y medido.',
-    startStrategy: 'Iniciar tu Estrategia',
-    scheduleCall: 'Agendar Llamada',
+    ctaSubtitle: 'Hablemos sobre cómo la planificación estratégica de IA puede transformar tu negocio—con un enfoque medido y experto.',
+    startStrategy: 'Obtener Orientación Estratégica',
+    scheduleCall: 'Agendar Llamada Estratégica',
 
     // Contact Form
     formTitle: 'Hablemos de tu Estrategia de IA',
