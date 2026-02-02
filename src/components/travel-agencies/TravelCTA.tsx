@@ -23,10 +23,10 @@ export function TravelCTA() {
         transition={{ duration: 0.5 }}
         className="max-w-2xl mx-auto text-center space-y-8"
       >
-        <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground">
+        <h2 className="text-h2 text-foreground">
           {travel.ctaTitle}
         </h2>
-        <p className="text-lg text-muted-foreground">
+        <p className="text-body text-muted-foreground">
           {travel.ctaSubtitle}
         </p>
         

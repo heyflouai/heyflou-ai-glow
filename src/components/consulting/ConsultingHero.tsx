@@ -32,11 +32,11 @@ export function ConsultingHero() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="space-y-4"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display text-foreground">
+          <h1 className="text-h1 text-foreground">
             <span>HeyFlou </span>
             <FlipWords words={["AI Strategy & Consulting"]} />
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-subtitle-lg text-muted-foreground max-w-3xl mx-auto">
             {consulting.heroSubtitle}
           </p>
         </motion.div>
@@ -53,7 +53,7 @@ export function ConsultingHero() {
               shimmerColor="hsl(var(--hf-purple))"
               shimmerDuration="2.5s"
               background="hsl(var(--primary))"
-              className="px-8 py-4 text-base font-semibold text-primary-foreground w-full sm:w-auto"
+              className="px-8 py-4 text-button text-primary-foreground w-full sm:w-auto"
             >
               {consulting.getStrategicGuidance}
             </ShimmerButton>
@@ -64,7 +64,7 @@ export function ConsultingHero() {
             target="_blank"
             rel="noopener noreferrer"
             containerClassName="h-14 w-full sm:w-auto"
-            className="px-6 py-3 font-medium"
+            className="px-6 py-3 text-button"
             duration={3000}
           >
             {consulting.bookConsultation}

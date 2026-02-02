@@ -59,11 +59,11 @@ export function TravelHero() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="space-y-4"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display text-foreground">
+          <h1 className="text-h1 text-foreground">
             <span>HeyFlou for </span>
             <FlipWords words={["Travel Agencies", "Tour Operators", "Travel Pros"]} />
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-subtitle-lg text-muted-foreground max-w-3xl mx-auto">
             {travel.heroSubtitle}
           </p>
         </motion.div>

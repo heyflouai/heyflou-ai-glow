@@ -9,7 +9,7 @@ export function ConsultingCTA() {
   const consulting = t.consulting as Record<string, string>;
 
   return (
-    <Section background="gradient" padding="large">
+    <Section background="gradient" padding="default">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -17,10 +17,10 @@ export function ConsultingCTA() {
         transition={{ duration: 0.5 }}
         className="max-w-3xl mx-auto text-center space-y-8"
       >
-        <h2 className="text-3xl md:text-4xl font-bold font-display text-white">
+        <h2 className="text-h2 text-white">
           {consulting.ctaTitle}
         </h2>
-        <p className="text-lg text-white/80">
+        <p className="text-body text-white/80">
           {consulting.ctaSubtitle}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -29,7 +29,7 @@ export function ConsultingCTA() {
               shimmerColor="hsl(var(--hf-teal))"
               shimmerDuration="2.5s"
               background="hsl(0 0% 100%)"
-              className="px-8 py-4 text-base font-semibold text-primary w-full"
+              className="px-8 py-4 text-button text-primary w-full"
             >
               {consulting.startStrategy}
             </ShimmerButton>
@@ -40,7 +40,7 @@ export function ConsultingCTA() {
             target="_blank"
             rel="noopener noreferrer"
             containerClassName="h-14 w-full sm:w-auto"
-            className="px-6 py-3 font-medium text-white border-white/30"
+            className="px-6 py-3 text-button text-white border-white/30"
             borderClassName="bg-[radial-gradient(hsl(0_0%_100%)_40%,transparent_60%)]"
             duration={3000}
           >

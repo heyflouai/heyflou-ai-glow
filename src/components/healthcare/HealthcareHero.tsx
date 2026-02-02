@@ -28,13 +28,13 @@ export function HealthcareHero() {
         </div>
 
         {/* Title with FlipWords */}
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display text-foreground mb-6 text-center leading-tight">
+        <h1 className="text-h1 text-foreground mb-6 text-center">
           <span>HeyFlou for </span>
           <FlipWords words={["Healthcare"]} />
         </h1>
 
         {/* Subtitle */}
-        <p className="text-xl text-muted-foreground mb-10 max-w-3xl mx-auto text-center">
+        <p className="text-subtitle-lg text-muted-foreground mb-10 max-w-3xl mx-auto text-center">
           {hcT.heroSubtitle}
         </p>
 
@@ -45,7 +45,7 @@ export function HealthcareHero() {
               shimmerColor="hsl(var(--hf-teal))"
               shimmerDuration="2.5s"
               background="hsl(var(--primary))"
-              className="px-8 py-4 text-base font-semibold text-primary-foreground w-full sm:w-auto"
+              className="px-8 py-4 text-button text-primary-foreground w-full sm:w-auto"
             >
               {hcT.getStarted}
             </ShimmerButton>
@@ -56,7 +56,7 @@ export function HealthcareHero() {
             target="_blank"
             rel="noopener noreferrer"
             containerClassName="h-14 w-full sm:w-auto"
-            className="px-6 py-3 font-medium"
+            className="px-6 py-3 text-button"
             duration={3000}
           >
             {hcT.bookStrategyCall}

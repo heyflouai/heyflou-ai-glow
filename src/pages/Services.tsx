@@ -99,11 +99,11 @@ export default function Services() {
               transition={{ duration: 0.5 }}
               className="space-y-6"
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display text-foreground">
+              <h1 className="text-h1 text-foreground">
                 {servicesT.heroTitle}
               </h1>
               {/* Gradient text subtitle */}
-              <p className="text-xl md:text-2xl max-w-2xl mx-auto bg-gradient-to-r from-hf-teal via-primary to-hf-purple bg-clip-text text-transparent font-medium">
+              <p className="text-subtitle-lg max-w-2xl mx-auto bg-gradient-to-r from-hf-teal via-primary to-hf-purple bg-clip-text text-transparent font-medium">
                 {servicesT.heroSubtitle}
               </p>
             </motion.div>
@@ -119,7 +119,7 @@ export default function Services() {
             transition={{ duration: 0.5 }}
             className="text-center mb-8"
           >
-            <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground">
+            <h2 className="text-h2 text-foreground">
               {servicesT.industryCardsTitle}
             </h2>
           </motion.div>
@@ -146,10 +146,10 @@ export default function Services() {
               transition={{ duration: 0.5 }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-4">
+              <h2 className="text-h2 text-foreground mb-4">
                 {servicesT.processTitle}
               </h2>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-body text-muted-foreground">
                 {servicesT.processSubtitle}
               </p>
             </motion.div>
@@ -184,10 +184,10 @@ export default function Services() {
               <Sparkles className="w-8 h-8 text-white" />
             </motion.div>
 
-            <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground">
+            <h2 className="text-h2 text-foreground">
               {servicesT.notSureTitle}
             </h2>
-            <p className="text-lg text-muted-foreground max-w-xl mx-auto">
+            <p className="text-body text-muted-foreground max-w-xl mx-auto">
               {servicesT.notSureSubtitle}
             </p>
 

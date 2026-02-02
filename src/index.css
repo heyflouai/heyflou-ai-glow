@@ -400,6 +400,109 @@
   .form-spacing > * + * {
     margin-top: var(--form-field-gap);
   }
+
+  /* ===== STANDARDIZED TYPOGRAPHY ===== */
+  
+  /* H1 - Hero headings: 36px mobile / 56px desktop */
+  .text-h1 {
+    font-size: 2.25rem; /* 36px */
+    line-height: 1.2;
+    font-weight: 700;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  
+  @media (min-width: 768px) {
+    .text-h1 {
+      font-size: 3.5rem; /* 56px */
+    }
+  }
+
+  /* H2 - Section headings: 28px mobile / 40px desktop */
+  .text-h2 {
+    font-size: 1.75rem; /* 28px */
+    line-height: 1.25;
+    font-weight: 700;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  
+  @media (min-width: 768px) {
+    .text-h2 {
+      font-size: 2.5rem; /* 40px */
+    }
+  }
+
+  /* H3 - Subsections: 22px mobile / 28px desktop */
+  .text-h3 {
+    font-size: 1.375rem; /* 22px */
+    line-height: 1.3;
+    font-weight: 600;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  
+  @media (min-width: 768px) {
+    .text-h3 {
+      font-size: 1.75rem; /* 28px */
+    }
+  }
+
+  /* Body text: 16px mobile / 18px desktop */
+  .text-body {
+    font-size: 1rem; /* 16px */
+    line-height: 1.6;
+    font-weight: 400;
+  }
+  
+  @media (min-width: 768px) {
+    .text-body {
+      font-size: 1.125rem; /* 18px */
+      line-height: 1.7;
+    }
+  }
+
+  /* Hero subtitle: 18px mobile / 20px desktop */
+  .text-subtitle {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.5;
+    font-weight: 400;
+  }
+  
+  @media (min-width: 768px) {
+    .text-subtitle {
+      font-size: 1.25rem; /* 20px */
+    }
+  }
+
+  /* Large subtitle for hero sections: 18px mobile / 22px desktop */
+  .text-subtitle-lg {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.5;
+    font-weight: 400;
+  }
+  
+  @media (min-width: 768px) {
+    .text-subtitle-lg {
+      font-size: 1.375rem; /* 22px */
+    }
+  }
+
+  /* Button text: 16px all screens */
+  .text-button {
+    font-size: 1rem; /* 16px */
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  /* Small text: 14px all screens */
+  .text-small {
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.5;
+  }
+
+  /* Caption text: 12px all screens */
+  .text-caption {
+    font-size: 0.75rem; /* 12px */
+    line-height: 1.4;
+  }
 }
 
 @keyframes float {
