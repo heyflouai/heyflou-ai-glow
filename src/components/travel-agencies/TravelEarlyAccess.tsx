@@ -9,6 +9,7 @@ import { Label } from '@/components/ui/label';
 import { ShimmerButton } from '@/components/ui/shimmer-button';
 import { useToast } from '@/hooks/use-toast';
 import { useTranslation } from '@/i18n';
+import { supabase } from '@/integrations/supabase/client';
 
 export function TravelEarlyAccess() {
   const t = useTranslation();
@@ -17,20 +18,67 @@ export function TravelEarlyAccess() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
+  const getTrackingData = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    return {
+      utmSource: urlParams.get('utm_source') || null,
+      utmMedium: urlParams.get('utm_medium') || null,
+      utmCampaign: urlParams.get('utm_campaign') || null,
+      referrer: document.referrer || null,
+    };
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    setIsSuccess(true);
-    
-    toast({
-      title: travel.formSuccessTitle,
-      description: travel.formSuccessMessage,
-    });
+    try {
+      const formData = new FormData(e.currentTarget);
+      const name = formData.get('name') as string;
+      const email = formData.get('email') as string;
+      const agency = formData.get('agency') as string;
+      const challenge = formData.get('challenge') as string;
+      
+      const trackingData = getTrackingData();
+      const nameParts = name.trim().split(' ');
+      const firstName = nameParts[0] || '';
+      const lastName = nameParts.slice(1).join(' ') || '';
+
+      const { error } = await supabase
+        .from('contacts')
+        .insert({
+          first_name: firstName,
+          last_name: lastName,
+          email: email,
+          company: agency || 'Not provided',
+          industry: 'Travel Agency',
+          team_size: '1-10',
+          message: challenge ? `Challenge: ${challenge}` : 'Early access waitlist signup',
+          source_page: 'travel-agencies',
+          utm_source: trackingData.utmSource,
+          utm_medium: trackingData.utmMedium,
+          utm_campaign: trackingData.utmCampaign,
+          referrer: trackingData.referrer,
+          consent: true,
+        });
+
+      if (error) throw error;
+
+      setIsSuccess(true);
+      toast({
+        title: travel.formSuccessTitle,
+        description: travel.formSuccessMessage,
+      });
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast({
+        title: "Submission failed",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSuccess) {
