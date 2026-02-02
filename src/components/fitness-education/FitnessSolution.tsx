@@ -78,7 +78,6 @@ export function FitnessSolution() {
             index={index}
             title={feT[solution.titleKey]}
             description={feT[solution.descKey]}
-            icon={solution.icon}
             className={solution.className}
             header={
               <div className="flex items-center justify-center h-24 rounded-xl bg-muted/50">
