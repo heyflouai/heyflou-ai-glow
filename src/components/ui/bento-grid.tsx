@@ -1,10 +1,10 @@
-import { ReactNode, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 interface BentoGridProps {
   className?: string;
-  children?: ReactNode;
+  children?: React.ReactNode;
 }
 
 export const BentoGrid = ({
@@ -25,7 +25,7 @@ export const BentoGrid = ({
         },
       }}
       className={cn(
-        "grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto",
+        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-7xl mx-auto px-5 md:px-0",
         "auto-rows-fr", // Equal height rows
         className
       )}
@@ -37,10 +37,10 @@ export const BentoGrid = ({
 
 interface BentoGridItemProps {
   className?: string;
-  title?: string | ReactNode;
-  description?: string | ReactNode;
-  header?: ReactNode;
-  icon?: ReactNode;
+  title?: string | React.ReactNode;
+  description?: string | React.ReactNode;
+  header?: React.ReactNode;
+  icon?: React.ReactNode;
   index?: number;
 }
 
@@ -53,8 +53,17 @@ export const BentoGridItem = ({
   index = 0,
 }: BentoGridItemProps) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   
-  // 3D tilt effect values
+  // Check for mobile on mount
+  React.useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+  
+  // 3D tilt effect values - disabled on mobile
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   
@@ -65,6 +74,7 @@ export const BentoGridItem = ({
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-5deg", "5deg"]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (isMobile) return; // Disable tilt on mobile
     const rect = e.currentTarget.getBoundingClientRect();
     const width = rect.width;
     const height = rect.height;
@@ -99,20 +109,22 @@ export const BentoGridItem = ({
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={handleMouseLeave}
-      style={{
+      style={isMobile ? {} : {
         rotateX,
         rotateY,
         transformStyle: "preserve-3d",
       }}
       className={cn(
         "row-span-1 rounded-xl group/bento relative overflow-hidden",
-        "p-8 bg-card border border-border/50", // 32px padding
-        "flex flex-col h-full min-h-[14rem]", // Ensure minimum height and stretch
+        "p-6 md:p-8 bg-card border border-border/50",
+        "flex flex-col h-full min-h-[12rem] md:min-h-[14rem]",
         "transition-all duration-300 ease-out",
-        // Enhanced hover states
-        "hover:shadow-2xl hover:shadow-primary/10",
+        // Enhanced hover states - simpler on mobile
+        "hover:shadow-lg md:hover:shadow-2xl hover:shadow-primary/10",
         "hover:border-primary/30",
-        "hover:-translate-y-2",
+        "md:hover:-translate-y-2",
+        // Mobile tap effect
+        "active:scale-[0.98] md:active:scale-100",
         className
       )}
     >

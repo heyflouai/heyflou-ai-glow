@@ -31,16 +31,16 @@ export function IntegrationBeams() {
   const div8Ref = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="py-16 md:py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-4">{t.integrations.title}</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{t.integrations.subtitle}</p>
+    <section className="py-[60px] md:py-16 lg:py-20 bg-background">
+      <div className="container mx-auto px-5 md:px-6">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold font-display text-foreground mb-3 md:mb-4">{t.integrations.title}</h2>
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">{t.integrations.subtitle}</p>
         </div>
-        <div className="relative flex w-full max-w-4xl mx-auto items-center justify-center overflow-hidden rounded-lg p-10 md:p-16" ref={containerRef}>
-          <div className="flex size-full flex-col items-stretch justify-between gap-10">
+        <div className="relative flex w-full max-w-4xl mx-auto items-center justify-center overflow-hidden rounded-lg p-6 md:p-10 lg:p-16" ref={containerRef}>
+          <div className="flex size-full flex-col items-stretch justify-between gap-6 md:gap-10">
             <div className="flex flex-row items-center justify-between"><Circle ref={div1Ref}><GoogleDriveIcon /></Circle><Circle ref={div2Ref}><NotionIcon /></Circle><Circle ref={div3Ref}><WhatsAppIcon /></Circle></div>
-            <div className="flex flex-row items-center justify-between"><Circle ref={div4Ref}><SlackIcon /></Circle><Circle ref={centerRef} className="size-20 md:size-24 border-hf-teal/30 dark:border-hf-purple/50 dark:shadow-[0_0_30px_rgba(99,102,241,0.3)]"><img src={heyflouLogo} alt="HeyFlou" className="w-12 h-12 md:w-14 md:h-14 object-contain" /></Circle><Circle ref={div5Ref}><GoogleDocsIcon /></Circle></div>
+            <div className="flex flex-row items-center justify-between"><Circle ref={div4Ref}><SlackIcon /></Circle><Circle ref={centerRef} className="size-16 md:size-20 lg:size-24 border-hf-teal/30 dark:border-hf-purple/50 dark:shadow-[0_0_30px_rgba(99,102,241,0.3)]"><img src={heyflouLogo} alt="HeyFlou" className="w-9 h-9 md:w-12 md:h-12 lg:w-14 lg:h-14 object-contain" /></Circle><Circle ref={div5Ref}><GoogleDocsIcon /></Circle></div>
             <div className="flex flex-row items-center justify-between"><Circle ref={div6Ref}><ZapierIcon /></Circle><Circle ref={div7Ref}><MessengerIcon /></Circle><Circle ref={div8Ref}><HubSpotIcon /></Circle></div>
           </div>
           <AnimatedBeam containerRef={containerRef} fromRef={centerRef} toRef={div1Ref} curvature={-75} gradientStartColor="#18ccfc" gradientStopColor="#6344f5" />

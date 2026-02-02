@@ -24,9 +24,18 @@ export const CardContainer = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isMouseEntered, setIsMouseEntered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect mobile on mount
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!containerRef.current) return;
+    if (isMobile || !containerRef.current) return; // Disable 3D on mobile
     const { left, top, width, height } =
       containerRef.current.getBoundingClientRect();
     const x = (e.clientX - left - width / 2) / 25;
@@ -35,6 +44,7 @@ export const CardContainer = ({
   };
 
   const handleMouseEnter = () => {
+    if (isMobile) return;
     setIsMouseEntered(true);
     if (!containerRef.current) return;
   };
@@ -44,15 +54,29 @@ export const CardContainer = ({
     setIsMouseEntered(false);
     containerRef.current.style.transform = `rotateY(0deg) rotateX(0deg)`;
   };
+
+  // Mobile tap handler - simple scale effect
+  const handleTouchStart = () => {
+    if (isMobile && containerRef.current) {
+      containerRef.current.style.transform = 'scale(0.98)';
+    }
+  };
+
+  const handleTouchEnd = () => {
+    if (isMobile && containerRef.current) {
+      containerRef.current.style.transform = 'scale(1)';
+    }
+  };
+
   return (
     <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
       <div
         className={cn(
-          "py-10 flex items-center justify-center",
+          "py-6 md:py-10 flex items-center justify-center",
           containerClassName
         )}
         style={{
-          perspective: "1000px",
+          perspective: isMobile ? "none" : "1000px",
         }}
       >
         <div
@@ -60,12 +84,14 @@ export const CardContainer = ({
           onMouseEnter={handleMouseEnter}
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
           className={cn(
             "flex items-center justify-center relative transition-all duration-200 ease-linear",
             className
           )}
           style={{
-            transformStyle: "preserve-3d",
+            transformStyle: isMobile ? "flat" : "preserve-3d",
           }}
         >
           {children}
@@ -85,7 +111,7 @@ export const CardBody = ({
   return (
     <div
       className={cn(
-        "h-96 w-96 [transform-style:preserve-3d]  [&>*]:[transform-style:preserve-3d]",
+        "h-auto w-full max-w-[calc(100vw-40px)] md:h-96 md:w-96 md:[transform-style:preserve-3d] md:[&>*]:[transform-style:preserve-3d]",
         className
       )}
     >

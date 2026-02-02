@@ -16,13 +16,13 @@ const backgroundVariants = {
   glow: 'bg-background hf-glow'
 };
 
-// Standardized spacing: Desktop 120px, Mobile 80px
+// Standardized spacing: Desktop 120px, Tablet 80px, Mobile 60px
 const paddingVariants = {
   none: '',
-  small: 'py-10 md:py-16', // 40px / 64px
-  default: 'py-20 md:py-[120px]', // 80px / 120px - Standard section spacing
-  large: 'py-20 md:py-[120px]', // Same as default for consistency
-  hero: 'pt-20 pb-[120px] md:pt-20 md:pb-[120px]', // Hero: 80px top, 120px bottom
+  small: 'py-8 md:py-10 lg:py-16', // 32px / 40px / 64px
+  default: 'py-[60px] md:py-20 lg:py-[120px]', // 60px / 80px / 120px - Standard section spacing
+  large: 'py-[60px] md:py-20 lg:py-[120px]', // Same as default for consistency
+  hero: 'pt-16 pb-[60px] md:pt-20 md:pb-20 lg:pb-[120px]', // Hero: 64px/60px mobile, 80px/80px tablet, 80px/120px desktop
 };
 
 export const Section = ({ 
