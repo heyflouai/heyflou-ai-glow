@@ -1,16 +1,12 @@
 import { motion } from 'framer-motion';
 import { Section } from '@/components/ui/section';
-import { GradientButton } from '@/components/ui/gradient-button';
-import { Button } from '@/components/ui/button';
+import { ShimmerButton } from '@/components/ui/shimmer-button';
+import { MovingBorderButton } from '@/components/ui/moving-border';
 import { useTranslation } from '@/i18n';
 
 export function ConsultingCTA() {
   const t = useTranslation();
   const consulting = t.consulting as Record<string, string>;
-
-  const scrollToForm = () => {
-    document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
-  };
 
   return (
     <Section background="gradient" padding="large">
@@ -28,24 +24,28 @@ export function ConsultingCTA() {
           {consulting.ctaSubtitle}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <GradientButton 
-            variant="secondary" 
-            size="lg" 
-            onClick={scrollToForm}
-            className="bg-white text-primary hover:bg-white/90 w-full sm:w-auto min-h-[48px]"
+          <a href="#contact-form" className="w-full sm:w-auto">
+            <ShimmerButton
+              shimmerColor="hsl(var(--hf-teal))"
+              shimmerDuration="2.5s"
+              background="hsl(0 0% 100%)"
+              className="px-8 py-4 text-base font-semibold text-primary w-full"
+            >
+              {consulting.startStrategy}
+            </ShimmerButton>
+          </a>
+          <MovingBorderButton
+            as="a"
+            href="https://calendly.com/heyflou-ai/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            containerClassName="h-14 w-full sm:w-auto"
+            className="px-6 py-3 font-medium text-white border-white/30"
+            borderClassName="bg-[radial-gradient(hsl(0_0%_100%)_40%,transparent_60%)]"
+            duration={3000}
           >
-            {consulting.startStrategy}
-          </GradientButton>
-          <Button 
-            variant="outline" 
-            size="lg" 
-            asChild
-            className="border-white text-white hover:bg-white/10 w-full sm:w-auto min-h-[48px]"
-          >
-            <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer">
-              {consulting.scheduleCall}
-            </a>
-          </Button>
+            {consulting.scheduleCall}
+          </MovingBorderButton>
         </div>
       </motion.div>
     </Section>

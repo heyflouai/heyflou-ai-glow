@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Section } from '@/components/ui/section';
-import { GradientButton } from '@/components/ui/gradient-button';
+import { ShimmerButton } from '@/components/ui/shimmer-button';
+import { MovingBorderButton } from '@/components/ui/moving-border';
 import { useTranslation } from '@/i18n';
 
 export function FitnessCTA() {
@@ -22,17 +23,28 @@ export function FitnessCTA() {
         <p className="text-lg text-muted-foreground mb-8">
           {feT.ctaSubtitle}
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <GradientButton variant="hero" size="xl" asChild className="w-full sm:w-auto min-h-[48px]">
-            <a href="#contact-form">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a href="#contact-form" className="w-full sm:w-auto">
+            <ShimmerButton
+              shimmerColor="hsl(var(--hf-purple))"
+              shimmerDuration="2.5s"
+              background="hsl(var(--primary))"
+              className="px-8 py-4 text-base font-semibold text-primary-foreground w-full"
+            >
               {feT.startAutomation}
-            </a>
-          </GradientButton>
-          <GradientButton variant="secondary" size="xl" asChild className="w-full sm:w-auto min-h-[48px]">
-            <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer">
-              {feT.scheduleDemo}
-            </a>
-          </GradientButton>
+            </ShimmerButton>
+          </a>
+          <MovingBorderButton
+            as="a"
+            href="https://calendly.com/heyflou-ai/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            containerClassName="h-14 w-full sm:w-auto"
+            className="px-6 py-3 font-medium"
+            duration={3000}
+          >
+            {feT.scheduleDemo}
+          </MovingBorderButton>
         </div>
       </motion.div>
     </Section>

@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import { Dumbbell } from 'lucide-react';
 import { Section } from '@/components/ui/section';
-import { GradientButton } from '@/components/ui/gradient-button';
+import { ShimmerButton } from '@/components/ui/shimmer-button';
+import { MovingBorderButton } from '@/components/ui/moving-border';
 import { FlipWords } from '@/components/ui/flip-words';
 import { useTranslation } from '@/i18n';
 import logo from '@/assets/heyflou-logo-new.png';
@@ -38,17 +39,28 @@ export function FitnessHero() {
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <GradientButton variant="hero" size="xl" asChild>
-            <a href="#contact-form">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a href="#contact-form" className="w-full sm:w-auto">
+            <ShimmerButton
+              shimmerColor="hsl(var(--hf-purple))"
+              shimmerDuration="2.5s"
+              background="hsl(var(--primary))"
+              className="px-8 py-4 text-base font-semibold text-primary-foreground w-full sm:w-auto"
+            >
               {feT.getStarted}
-            </a>
-          </GradientButton>
-          <GradientButton variant="secondary" size="xl" asChild>
-            <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer">
-              {feT.bookStrategyCall}
-            </a>
-          </GradientButton>
+            </ShimmerButton>
+          </a>
+          <MovingBorderButton
+            as="a"
+            href="https://calendly.com/heyflou-ai/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            containerClassName="h-14 w-full sm:w-auto"
+            className="px-6 py-3 font-medium"
+            duration={3000}
+          >
+            {feT.bookStrategyCall}
+          </MovingBorderButton>
         </div>
       </motion.div>
     </Section>
