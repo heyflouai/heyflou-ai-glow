@@ -8,9 +8,12 @@ import { CompactForm } from '@/components/forms/CompactForm';
 import { ProblemSolution } from '@/components/home/ProblemSolution';
 import { IndustrySystems } from '@/components/home/IndustrySystems';
 import { IntegrationBeams } from '@/components/home/IntegrationBeams';
+import { HeroWorkflow } from '@/components/home/HeroWorkflow';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 import { useTranslation } from '@/i18n';
 import { PAGE_SEO, getCanonicalUrl } from '@/lib/seo-config';
+import { ShimmerButton } from '@/components/ui/shimmer-button';
+import { motion } from 'framer-motion';
 
 export default function Home() {
   const t = useTranslation();
@@ -150,26 +153,71 @@ export default function Home() {
         
         <div className="text-center max-w-4xl mx-auto relative">
           <div className="relative z-10">
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-tight">
-              {t.home.heroTitle}
-            </h1>
-            <h2 className="mt-2 text-xl md:text-2xl lg:text-3xl font-semibold text-foreground/80">
-              {t.home.heroSubtitle}
-            </h2>
+            {/* Hook Line */}
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-base md:text-lg font-semibold uppercase tracking-wide text-hf-teal mb-3"
+            >
+              Stop Wasting Time on Repetitive Tasks
+            </motion.p>
+            
+            {/* H1 - Main Headline */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-4xl md:text-5xl lg:text-7xl font-bold text-foreground leading-[1.1] drop-shadow-sm"
+            >
+              AI Automation That Actually Works for SMBs
+            </motion.h1>
+            
+            {/* Subtitle */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
+            >
+              We build custom AI solutions for healthcare, fitness, and education businesses. No fluff. Just results.
+            </motion.p>
               
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-6 mt-6 md:mt-8">
-              <GradientButton variant="hero" size="xl" asChild className="w-full sm:w-auto">
-                <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer">
-                  {t.home.bookStrategyCall}
-                </a>
-              </GradientButton>
-              <GradientButton variant="secondary" size="xl" asChild className="w-full sm:w-auto">
-                <Link to="/contact">{t.home.getAiAudit}</Link>
-              </GradientButton>
-            </div>
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-8 md:mt-10"
+            >
+              {/* Primary CTA - Shimmer Button */}
+              <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                <ShimmerButton
+                  shimmerColor="hsl(var(--hf-teal))"
+                  shimmerDuration="2.5s"
+                  background="hsl(var(--primary))"
+                  className="px-8 md:px-10 py-4 md:py-5 text-base md:text-lg font-semibold text-primary-foreground w-full"
+                >
+                  Book Free Consultation →
+                </ShimmerButton>
+              </a>
               
-            {/* Hero badges */}
-            <div className="flex flex-wrap justify-center gap-2 md:gap-4 text-xs md:text-sm">
+              {/* Secondary CTA */}
+              <Link 
+                to="/case-studies" 
+                className="w-full sm:w-auto inline-flex items-center justify-center px-6 md:px-8 py-3.5 md:py-4 text-sm md:text-base font-medium text-foreground bg-transparent border border-hf-teal/50 rounded-full transition-all duration-300 hover:border-hf-teal hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:scale-[1.02]"
+              >
+                See Case Studies
+              </Link>
+            </motion.div>
+              
+            {/* Hero badges / Trust line */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="flex flex-wrap justify-center gap-2 md:gap-4 text-xs md:text-sm mt-8"
+            >
               <div className="flex items-center px-2.5 md:px-3 py-1.5 md:py-1 bg-background/40 dark:bg-card/50 rounded-full backdrop-blur-sm border border-border/50">
                 <span className="text-foreground font-medium">{t.home.badge1}</span>
               </div>
@@ -179,7 +227,10 @@ export default function Home() {
               <div className="flex items-center px-2.5 md:px-3 py-1.5 md:py-1 bg-background/40 dark:bg-card/50 rounded-full backdrop-blur-sm border border-border/50">
                 <span className="text-foreground font-medium">{t.home.badge3}</span>
               </div>
-            </div>
+            </motion.div>
+            
+            {/* Animated Workflow Diagram */}
+            <HeroWorkflow />
           </div>
         </div>
       </section>
