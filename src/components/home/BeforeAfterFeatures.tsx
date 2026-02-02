@@ -207,10 +207,10 @@ export function BeforeAfterFeatures() {
             Ready to Transform Your Operations?
           </p>
           <Link
-            to="/case-studies"
+            to="/services"
             className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-foreground bg-transparent border border-hf-teal/50 rounded-full transition-all duration-300 hover:border-hf-teal hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:scale-[1.02]"
           >
-            See Our Case Studies →
+            Explore Our Solutions →
           </Link>
         </motion.div>
       </div>
