@@ -766,10 +766,47 @@ export const en = {
 
   // Footer
   footer: {
-    description: 'AI consulting and workflow automation for SMBs. WhatsApp AI bots, lead management pipelines, and CRM + email marketing.',
+    // Brand section
+    tagline: 'AI Automation & Consulting for SMBs',
+    description: 'We help small and medium businesses integrate AI into their operations through intelligent automation and strategic consulting. Save time, reduce costs, and scale smarter with HeyFlou.',
     trustLine: 'Built for Medical, Travel Agencies, and Private Ed/Fitness.',
+    
+    // Column headers
+    solutions: 'Solutions',
     company: 'Company',
+    resources: 'Resources',
+    legal: 'Legal',
     connect: 'Connect',
+    
+    // Solutions links
+    healthcareAutomation: 'Healthcare Automation',
+    fitnessEducation: 'Fitness & Education',
+    customAutomations: 'Custom Automations',
+    aiConsulting: 'AI Consulting',
+    travelAgencies: 'Travel Agencies',
+    comingSoon: 'Coming Soon',
+    
+    // Company links
+    aboutUs: 'About Us',
+    howItWorks: 'How It Works',
+    caseStudies: 'Case Studies',
+    blog: 'Blog',
+    careers: 'Careers',
+    
+    // Resources links
+    documentation: 'Documentation',
+    apiReference: 'API Reference',
+    helpCenter: 'Help Center',
+    contactSupport: 'Contact Support',
+    bookACall: 'Book a Call',
+    
+    // Legal links
+    privacyPolicy: 'Privacy Policy',
+    termsOfService: 'Terms of Service',
+    cookiePolicy: 'Cookie Policy',
+    dataProcessing: 'Data Processing',
+    
+    // Newsletter
     getProductUpdates: 'Get product updates',
     enterEmail: 'Enter your email',
     subscribe: 'Subscribe',
@@ -778,9 +815,12 @@ export const en = {
     errorMessage: 'Something went wrong. Try again.',
     tryAgain: 'Try again',
     privacyNote: 'We respect your privacy. Unsubscribe anytime.',
+    
+    // Bottom bar
     contactUs: 'Contact Us',
     bookStrategyCall: 'Book Strategy Call',
     allRightsReserved: '© 2025 HeyFlou. All rights reserved.',
+    madeWithLove: 'Made with ❤️',
   },
 
   // Metrics

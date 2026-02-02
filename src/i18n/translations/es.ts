@@ -768,10 +768,47 @@ export const es: TranslationKeys = {
 
   // Footer
   footer: {
-    description: 'Consultoría de IA y automatización de flujos de trabajo para PyMEs. Chatbots de WhatsApp con IA, gestión de leads y CRM + email marketing.',
+    // Brand section
+    tagline: 'Automatización de IA y Consultoría para PyMEs',
+    description: 'Ayudamos a pequeñas y medianas empresas a integrar IA en sus operaciones a través de automatización inteligente y consultoría estratégica. Ahorra tiempo, reduce costos y escala de manera más inteligente con HeyFlou.',
     trustLine: 'Diseñado para Médicos, Agencias de Viajes y Educación/Fitness.',
+    
+    // Column headers
+    solutions: 'Soluciones',
     company: 'Empresa',
+    resources: 'Recursos',
+    legal: 'Legal',
     connect: 'Conectar',
+    
+    // Solutions links
+    healthcareAutomation: 'Automatización de Salud',
+    fitnessEducation: 'Fitness y Educación',
+    customAutomations: 'Automatizaciones Personalizadas',
+    aiConsulting: 'Consultoría IA',
+    travelAgencies: 'Agencias de Viajes',
+    comingSoon: 'Próximamente',
+    
+    // Company links
+    aboutUs: 'Sobre Nosotros',
+    howItWorks: 'Cómo Funciona',
+    caseStudies: 'Casos de Éxito',
+    blog: 'Blog',
+    careers: 'Carreras',
+    
+    // Resources links
+    documentation: 'Documentación',
+    apiReference: 'Referencia de API',
+    helpCenter: 'Centro de Ayuda',
+    contactSupport: 'Soporte de Contacto',
+    bookACall: 'Reservar Llamada',
+    
+    // Legal links
+    privacyPolicy: 'Política de Privacidad',
+    termsOfService: 'Términos de Servicio',
+    cookiePolicy: 'Política de Cookies',
+    dataProcessing: 'Procesamiento de Datos',
+    
+    // Newsletter
     getProductUpdates: 'Recibe actualizaciones',
     enterEmail: 'Ingresa tu email',
     subscribe: 'Suscribir',
@@ -780,9 +817,12 @@ export const es: TranslationKeys = {
     errorMessage: 'Algo salió mal. Intenta de nuevo.',
     tryAgain: 'Intentar de nuevo',
     privacyNote: 'Respetamos tu privacidad. Cancela en cualquier momento.',
+    
+    // Bottom bar
     contactUs: 'Contáctanos',
     bookStrategyCall: 'Reservar Llamada Estratégica',
     allRightsReserved: '© 2025 HeyFlou. Todos los derechos reservados.',
+    madeWithLove: 'Hecho con ❤️',
   },
 
   // Metrics
