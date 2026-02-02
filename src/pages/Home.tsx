@@ -9,6 +9,7 @@ import { ProblemSolution } from '@/components/home/ProblemSolution';
 import { IndustrySystems } from '@/components/home/IndustrySystems';
 import { IntegrationBeams } from '@/components/home/IntegrationBeams';
 import { HeroWorkflow } from '@/components/home/HeroWorkflow';
+import { ValuePropositionTimeline } from '@/components/home/ValuePropositionTimeline';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 import { useTranslation } from '@/i18n';
 import { PAGE_SEO, getCanonicalUrl } from '@/lib/seo-config';
@@ -262,30 +263,8 @@ export default function Home() {
       {/* Integration Beams - Above How It Works */}
       <IntegrationBeams />
 
-      {/* Process */}
-      <Section background="muted">
-        <div className="text-center mb-8 md:mb-12 px-5 md:px-0">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold font-display text-foreground mb-3 md:mb-4">
-            {t.home.processTitle}
-          </h2>
-          <p className="text-base md:text-lg text-muted-foreground">
-            {t.home.processSubtitle}
-          </p>
-        </div>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 px-5 md:px-0">
-          {processSteps.map((step, index) => <div key={index} className="text-center group">
-              <div className="w-12 h-12 md:w-16 md:h-16 rounded-full hf-gradient flex items-center justify-center text-white font-bold text-base md:text-lg mb-3 md:mb-4 mx-auto group-hover:scale-110 transition-transform">
-                {step.step}
-              </div>
-              <h3 className="text-sm md:text-lg font-bold font-display text-foreground mb-1 md:mb-2">
-                {step.title}
-              </h3>
-              <p className="text-xs md:text-sm text-muted-foreground">
-                {step.description}
-              </p>
-            </div>)}
-        </div>
-      </Section>
+      {/* Value Proposition Timeline - 4 Week Process */}
+      <ValuePropositionTimeline />
 
 
       {/* FAQ */}
