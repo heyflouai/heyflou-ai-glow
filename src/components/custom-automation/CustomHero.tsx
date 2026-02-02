@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { ChevronRight, Settings } from 'lucide-react';
+import { Settings } from 'lucide-react';
 import { Section } from '@/components/ui/section';
 import { GradientButton } from '@/components/ui/gradient-button';
+import { ServicesBreadcrumbNav } from '@/components/ui/services-breadcrumb-nav';
 import { useTranslation } from '@/i18n';
 import logo from '@/assets/heyflou-logo-new.png';
 
@@ -19,17 +19,9 @@ export function CustomHero() {
         transition={{ duration: 0.6 }}
       >
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-8">
-          <Link to="/" className="hover:text-primary transition-colors">
-            {t.nav.home}
-          </Link>
-          <ChevronRight className="w-4 h-4" />
-          <Link to="/services" className="hover:text-primary transition-colors">
-            {t.nav.services}
-          </Link>
-          <ChevronRight className="w-4 h-4" />
-          <span className="text-foreground font-medium">{t.nav.customAutomations}</span>
-        </nav>
+        <div className="mb-8">
+          <ServicesBreadcrumbNav currentPage={t.nav.customAutomations} />
+        </div>
 
         {/* Logo + Settings Icon */}
         <div className="flex items-center justify-center gap-4 mb-8">

@@ -1,17 +1,9 @@
 import { motion } from 'framer-motion';
-import { Lightbulb, ChevronRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Lightbulb } from 'lucide-react';
 import { Section } from '@/components/ui/section';
 import { GradientButton } from '@/components/ui/gradient-button';
 import { Button } from '@/components/ui/button';
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from '@/components/ui/breadcrumb';
+import { ServicesBreadcrumbNav } from '@/components/ui/services-breadcrumb-nav';
 import { useTranslation } from '@/i18n';
 
 export function ConsultingHero() {
@@ -23,37 +15,16 @@ export function ConsultingHero() {
   };
 
   return (
-    <Section background="glow" padding="large">
+    <Section background="glow" padding="large" className="pt-24">
       <div className="max-w-5xl mx-auto text-center space-y-8">
         {/* Breadcrumb */}
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
+          className="flex justify-center"
         >
-          <Breadcrumb>
-            <BreadcrumbList className="justify-center">
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link to="/">{t.nav.home}</Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator>
-                <ChevronRight className="h-4 w-4" />
-              </BreadcrumbSeparator>
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link to="/services">{t.nav.services}</Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator>
-                <ChevronRight className="h-4 w-4" />
-              </BreadcrumbSeparator>
-              <BreadcrumbItem>
-                <BreadcrumbPage>{t.nav.aiConsulting}</BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
+          <ServicesBreadcrumbNav currentPage={t.nav.aiConsulting} centered />
         </motion.div>
 
         {/* Logo Icon */}
