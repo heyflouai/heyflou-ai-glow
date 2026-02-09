@@ -558,8 +558,8 @@ export const en = {
 
   // About Page
   about: {
-    heroTitle: 'Save 10+ Hours Per Week While Growing Your Client Base',
-    heroSubtitle: 'Stop wasting time on repetitive admin tasks. We build AI automation specifically for private healthcare, fitness studios, and real estate professionals—so you can focus on what you do best: serving your clients.',
+    heroTitle: 'Bridging the AI Gap for Small Businesses',
+    heroSubtitle: 'We grew up in Mexico seeing traditional SMBs struggle—and studied in Israel\'s high-tech ecosystem. Now we\'re democratizing AI for the businesses being left behind.',
     bookStrategyCall: 'Book a Strategy Call',
     seeCaseStudies: 'See Case Studies',
 
