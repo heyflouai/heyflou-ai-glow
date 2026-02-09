@@ -1,4 +1,4 @@
-import { Target, Globe, TrendingUp, Puzzle } from 'lucide-react';
+import { Target, Clock, TrendingUp, Puzzle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { useTranslation } from '@/i18n';
 
@@ -11,7 +11,7 @@ export function MissionPillars() {
     description: t.about.pillar1Desc,
     color: 'text-hf-teal'
   }, {
-    icon: Globe,
+    icon: Clock,
     title: t.about.pillar2Title,
     description: t.about.pillar2Desc,
     color: 'text-hf-purple'
