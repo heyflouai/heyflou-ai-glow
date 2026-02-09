@@ -2,7 +2,7 @@ import { SEOHead } from '@/components/ui/seo-head';
 import { AboutHero } from '@/components/about/AboutHero';
 import { AIGapSection } from '@/components/about/AIGapSection';
 import { MissionPillars } from '@/components/about/MissionPillars';
-import { Timeline90Day } from '@/components/about/Timeline90Day';
+import { SMBStruggle } from '@/components/about/SMBStruggle';
 import { ImpactSnapshot } from '@/components/about/ImpactSnapshot';
 import { IntegrationsWall } from '@/components/about/IntegrationsWall';
 import { TeamSnapshot } from '@/components/about/TeamSnapshot';
@@ -23,7 +23,7 @@ export default function About() {
         <AboutHero />
         <AIGapSection />
         <MissionPillars />
-        <Timeline90Day />
+        <SMBStruggle />
         <ImpactSnapshot />
         <IntegrationsWall />
         <TeamSnapshot />
