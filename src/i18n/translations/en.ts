@@ -647,11 +647,17 @@ export const en = {
     coFounder: 'Co-Founder',
     
     // Security
-    securityTitle: 'Security & Compliance You Can Trust',
-    security1: 'All client data is encrypted and HIPAA-compliant.',
-    security2: 'Access is strictly controlled with secure authentication.',
-    security3: 'All automation actions are logged for your records.',
-    security4: 'Your data is never used to train AI models without explicit permission.',
+    security: {
+      title: "Your Clients' Privacy, Guaranteed",
+      subtitle: "Sensitive client information deserves protection. We handle your data with enterprise-grade security—because your clients' trust is non-negotiable.",
+      card1Title: 'Compliance-Ready Infrastructure',
+      card1Desc: 'Our systems meet industry data protection standards, including HIPAA-ready infrastructure for businesses handling sensitive information.',
+      card2Title: 'End-to-End Encryption',
+      card2Desc: "Every message, every booking, every piece of client data is encrypted. We can't read it. Hackers can't steal it. Your clients' information stays safe.",
+      card3Title: 'SOC 2 Certified Partners Only',
+      card3Desc: 'We only use tier-1, security-audited platforms (AWS, Twilio, Stripe). No sketchy third-party tools. No data leaks. No compromises.',
+      tagline: 'Peace of mind for you. Protection for your clients.',
+    },
     
     // CTA
     ctaTitle: 'Ready to Save Time and Grow Your Practice?',
