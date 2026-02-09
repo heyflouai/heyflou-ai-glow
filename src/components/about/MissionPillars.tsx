@@ -1,4 +1,4 @@
-import { Users, Shield, TrendingUp, Zap } from 'lucide-react';
+import { Target, Globe, TrendingUp, Puzzle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { useTranslation } from '@/i18n';
 
@@ -6,12 +6,12 @@ export function MissionPillars() {
   const t = useTranslation();
   
   const pillars = [{
-    icon: Users,
+    icon: Target,
     title: t.about.pillar1Title,
     description: t.about.pillar1Desc,
     color: 'text-hf-teal'
   }, {
-    icon: Shield,
+    icon: Globe,
     title: t.about.pillar2Title,
     description: t.about.pillar2Desc,
     color: 'text-hf-purple'
@@ -21,7 +21,7 @@ export function MissionPillars() {
     description: t.about.pillar3Desc,
     color: 'text-hf-sky'
   }, {
-    icon: Zap,
+    icon: Puzzle,
     title: t.about.pillar4Title,
     description: t.about.pillar4Desc,
     color: 'text-primary'
