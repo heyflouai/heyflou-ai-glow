@@ -565,21 +565,23 @@ export const en = {
 
     // AI Gap Section
     aiGap: {
-      title: 'The AI Gap Is Real',
+      title: 'The AI Gap Is Widening',
+      subtitle: 'While large enterprises automate everything, small businesses are stuck doing it all manually.',
       enterpriseTitle: 'Large Enterprises',
-      enterprise1: 'Rapidly adopting AI',
-      enterprise2: 'Automating workflows',
+      enterpriseStatus: 'Winning with AI',
+      enterprise1: 'Automated workflows',
+      enterprise2: '24/7 customer service',
       enterprise3: 'Scaling effortlessly',
       smbTitle: 'Small Businesses',
-      smb1: 'Being left behind',
-      smb2: 'Manual processes',
-      smb3: 'Limited resources',
-      description: 'Large enterprises are rapidly adopting AI, automating workflows, and scaling effortlessly. Meanwhile, small businesses—therapists, gym owners, real estate agents—are being left behind.',
+      smbStatus: 'Left Behind',
+      smb1: 'Everything manual',
+      smb2: 'Missing leads after hours',
+      smb3: 'No time to grow',
       stat1: 'of SMBs still handle inquiries manually',
       stat2: 'hours wasted per week on admin tasks',
       stat3: 'in lost SMB productivity yearly',
-      solutionLabel: 'Our Solution:',
-      solutionText: 'We build it. You use it. We maintain it.',
+      solutionLine1: 'HeyFlou bridges the gap.',
+      solutionLine2: 'We bring enterprise-level AI automation to the businesses that need it most.',
     },
 
     // Mission Pillars
