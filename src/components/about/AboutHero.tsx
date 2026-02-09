@@ -1,9 +1,17 @@
 import logoNew from '@/assets/heyflou-logo-new.png';
 import { GradientButton } from '@/components/ui/gradient-button';
 import { Button } from '@/components/ui/button';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, HeartPulse, Dumbbell, Plane, Settings, Sparkles } from 'lucide-react';
 import { useTranslation } from '@/i18n';
 import { motion } from 'framer-motion';
+
+const serviceBubbles = [
+  { key: 'healthcare', icon: HeartPulse, variant: 'filled' as const },
+  { key: 'fitness', icon: Dumbbell, variant: 'outlined' as const },
+  { key: 'travel', icon: Plane, variant: 'muted' as const, soon: true },
+  { key: 'custom', icon: Settings, variant: 'outlined' as const },
+  { key: 'consulting', icon: Sparkles, variant: 'outlined' as const },
+];
 
 export function AboutHero() {
   const t = useTranslation();
@@ -63,15 +71,63 @@ export function AboutHero() {
           {t.about.heroTitle}
         </motion.h1>
         
-        {/* Subheadline */}
-        <motion.p 
-          className="text-subtitle-lg text-muted-foreground max-w-[700px] mx-auto mb-8 leading-relaxed"
+        {/* Service Bubbles */}
+        <motion.div 
+          className="flex flex-wrap justify-center gap-2.5 md:gap-3 max-w-[700px] mx-auto mt-6 mb-8"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.15 }}
         >
-          {t.about.heroSubtitle}
-        </motion.p>
+          {serviceBubbles.map((bubble) => {
+            const Icon = bubble.icon;
+            const label = (t.about.serviceBubbles as Record<string, string>)[bubble.key];
+            const soonLabel = t.about.serviceBubbles?.soon;
+
+            if (bubble.variant === 'filled') {
+              return (
+                <span
+                  key={bubble.key}
+                  className="relative inline-flex items-center gap-2 hf-gradient text-white rounded-full px-5 py-2.5 md:px-6 md:py-3 text-sm md:text-[15px] font-semibold transition-transform duration-200 hover:scale-105"
+                >
+                  <Icon size={18} className="md:w-5 md:h-5 shrink-0" />
+                  {label}
+                </span>
+              );
+            }
+
+            if (bubble.variant === 'muted') {
+              return (
+                <span
+                  key={bubble.key}
+                  className="relative inline-flex items-center gap-2 rounded-full px-5 py-2.5 md:px-6 md:py-3 text-sm md:text-[15px] font-semibold border-2 border-border/30 text-muted-foreground/50 transition-transform duration-200 hover:scale-105"
+                >
+                  <Icon size={18} className="md:w-5 md:h-5 shrink-0 opacity-50" />
+                  {label}
+                  {bubble.soon && (
+                    <span className="absolute -top-2 -right-2 hf-gradient text-white text-[11px] px-2 py-0.5 rounded-full font-semibold">
+                      {soonLabel}
+                    </span>
+                  )}
+                </span>
+              );
+            }
+
+            return (
+              <span
+                key={bubble.key}
+                className="relative inline-flex items-center gap-2 rounded-full px-5 py-2.5 md:px-6 md:py-3 text-sm md:text-[15px] font-semibold border-2 border-transparent bg-clip-padding text-foreground transition-transform duration-200 hover:scale-105"
+                style={{
+                  backgroundImage: 'linear-gradient(hsl(var(--background)), hsl(var(--background))), linear-gradient(135deg, hsl(var(--hf-teal)), hsl(var(--hf-purple)))',
+                  backgroundOrigin: 'border-box',
+                  backgroundClip: 'padding-box, border-box',
+                }}
+              >
+                <Icon size={18} className="md:w-5 md:h-5 shrink-0 text-[hsl(var(--hf-purple))]" />
+                {label}
+              </span>
+            );
+          })}
+        </motion.div>
 
         {/* Tagline */}
         <motion.p

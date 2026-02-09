@@ -561,6 +561,14 @@ export const en = {
     heroTitle: 'Your Business Deserves AI Automation That Actually Works',
     heroSubtitle: 'Stop wasting time on repetitive admin tasks. We build AI automation specifically for private healthcare, fitness studios, and real estate professionals—so you can focus on what you do best: serving your clients.',
     heroTagline: 'We build it. You use it. We maintain it.',
+    serviceBubbles: {
+      healthcare: 'Healthcare',
+      fitness: 'Fitness & Education',
+      travel: 'Travel Agencies',
+      custom: 'Custom Solutions',
+      consulting: 'AI Consulting',
+      soon: 'Soon',
+    },
     bookStrategyCall: 'Book a Strategy Call',
     seeCaseStudies: 'See Case Studies',
 
