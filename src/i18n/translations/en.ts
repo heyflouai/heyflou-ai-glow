@@ -560,6 +560,7 @@ export const en = {
   about: {
     heroTitle: 'Your Business Deserves AI Automation That Actually Works',
     heroSubtitle: 'Stop wasting time on repetitive admin tasks. We build AI automation specifically for private healthcare, fitness studios, and real estate professionals—so you can focus on what you do best: serving your clients.',
+    heroTagline: 'We build it. You use it. We maintain it.',
     bookStrategyCall: 'Book a Strategy Call',
     seeCaseStudies: 'See Case Studies',
 

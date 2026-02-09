@@ -72,6 +72,18 @@ export function AboutHero() {
         >
           {t.about.heroSubtitle}
         </motion.p>
+
+        {/* Tagline */}
+        <motion.p
+          className="text-xl md:text-2xl font-bold text-center max-w-[600px] mx-auto mt-8 mb-8 tracking-wide leading-snug"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.22 }}
+        >
+          <span className="bg-clip-text text-transparent hf-gradient">
+            {t.about.heroTagline}
+          </span>
+        </motion.p>
         
         {/* Logo with pulse animation */}
         <motion.div 

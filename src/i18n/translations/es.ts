@@ -562,6 +562,7 @@ export const es: TranslationKeys = {
   about: {
     heroTitle: 'Tu Negocio Merece Automatización con IA Que Realmente Funciona',
     heroSubtitle: 'Deja de perder tiempo en tareas administrativas repetitivas. Construimos automatización con IA específicamente para profesionales de salud privada, estudios de fitness e inmobiliaria—para que te enfoques en lo que mejor haces: servir a tus clientes.',
+    heroTagline: 'Nosotros lo construimos. Tú lo usas. Nosotros lo mantenemos.',
     bookStrategyCall: 'Reservar Llamada Estratégica',
     seeCaseStudies: 'Ver Casos de Éxito',
 
