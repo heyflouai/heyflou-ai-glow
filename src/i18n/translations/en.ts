@@ -562,7 +562,26 @@ export const en = {
     heroSubtitle: 'We grew up in Mexico seeing traditional SMBs struggle—and studied in Israel\'s high-tech ecosystem. Now we\'re democratizing AI for the businesses being left behind.',
     bookStrategyCall: 'Book a Strategy Call',
     seeCaseStudies: 'See Case Studies',
-    
+
+    // AI Gap Section
+    aiGap: {
+      title: 'The AI Gap Is Real',
+      enterpriseTitle: 'Large Enterprises',
+      enterprise1: 'Rapidly adopting AI',
+      enterprise2: 'Automating workflows',
+      enterprise3: 'Scaling effortlessly',
+      smbTitle: 'Small Businesses',
+      smb1: 'Being left behind',
+      smb2: 'Manual processes',
+      smb3: 'Limited resources',
+      description: 'Large enterprises are rapidly adopting AI, automating workflows, and scaling effortlessly. Meanwhile, small businesses—therapists, gym owners, real estate agents—are being left behind.',
+      stat1: 'of SMBs still handle inquiries manually',
+      stat2: 'hours wasted per week on admin tasks',
+      stat3: 'in lost SMB productivity yearly',
+      solutionLabel: 'Our Solution:',
+      solutionText: 'We build it. You use it. We maintain it.',
+    },
+
     // Mission Pillars
     pillarsTitle: 'Why Businesses Choose HeyFlou',
     pillar1Title: 'Built for Your Practice',

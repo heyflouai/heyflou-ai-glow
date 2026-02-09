@@ -564,7 +564,26 @@ export const es: TranslationKeys = {
     heroSubtitle: 'Crecimos en México viendo a las PYMEs tradicionales luchar—y estudiamos en el ecosistema de alta tecnología de Israel. Ahora estamos democratizando la IA para los negocios que están siendo dejados atrás.',
     bookStrategyCall: 'Reservar Llamada Estratégica',
     seeCaseStudies: 'Ver Casos de Éxito',
-    
+
+    // AI Gap Section
+    aiGap: {
+      title: 'La Brecha de IA Es Real',
+      enterpriseTitle: 'Grandes Empresas',
+      enterprise1: 'Adoptando IA rápidamente',
+      enterprise2: 'Automatizando flujos',
+      enterprise3: 'Escalando sin esfuerzo',
+      smbTitle: 'Pequeños Negocios',
+      smb1: 'Quedándose atrás',
+      smb2: 'Procesos manuales',
+      smb3: 'Recursos limitados',
+      description: 'Las grandes empresas están adoptando IA rápidamente, automatizando flujos y escalando sin esfuerzo. Mientras tanto, los pequeños negocios—terapeutas, dueños de gimnasios, agentes inmobiliarios—están quedándose atrás.',
+      stat1: 'de PYMEs manejan consultas manualmente',
+      stat2: 'horas desperdiciadas por semana en tareas admin',
+      stat3: 'en productividad perdida de PYMEs anualmente',
+      solutionLabel: 'Nuestra Solución:',
+      solutionText: 'Nosotros lo construimos. Tú lo usas. Nosotros lo mantenemos.',
+    },
+
     // Mission Pillars
     pillarsTitle: 'Por Qué los Negocios Eligen HeyFlou',
     pillar1Title: 'Diseñado para tu Práctica',
