@@ -560,8 +560,8 @@ export const es: TranslationKeys = {
 
   // About Page
   about: {
-    heroTitle: 'Sobre HeyFlou',
-    heroSubtitle: 'Ayudamos a pequeñas y medianas empresas y profesionales de servicios a ahorrar tiempo y conseguir más clientes a través de automatización con IA probada.',
+    heroTitle: 'Cerrando la Brecha de IA para Pequeñas Empresas',
+    heroSubtitle: 'Crecimos en México viendo a las PYMEs tradicionales luchar—y estudiamos en el ecosistema de alta tecnología de Israel. Ahora estamos democratizando la IA para los negocios que están siendo dejados atrás.',
     bookStrategyCall: 'Reservar Llamada Estratégica',
     seeCaseStudies: 'Ver Casos de Éxito',
     
