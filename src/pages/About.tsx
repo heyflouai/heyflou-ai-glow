@@ -1,5 +1,6 @@
 import { SEOHead } from '@/components/ui/seo-head';
 import { AboutHero } from '@/components/about/AboutHero';
+import { AIGapSection } from '@/components/about/AIGapSection';
 import { MissionPillars } from '@/components/about/MissionPillars';
 import { Timeline90Day } from '@/components/about/Timeline90Day';
 import { ImpactSnapshot } from '@/components/about/ImpactSnapshot';
@@ -20,6 +21,7 @@ export default function About() {
       
       <main>
         <AboutHero />
+        <AIGapSection />
         <MissionPillars />
         <Timeline90Day />
         <ImpactSnapshot />
