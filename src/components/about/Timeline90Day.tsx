@@ -9,24 +9,28 @@ export function Timeline90Day() {
     title: t.about.timeline1Title,
     subtitle: t.about.timeline1Subtitle,
     description: t.about.timeline1Desc,
+    detail: t.about.timeline1Detail,
     color: 'text-hf-teal'
   }, {
     icon: Zap,
     title: t.about.timeline2Title,
     subtitle: t.about.timeline2Subtitle,
     description: t.about.timeline2Desc,
+    detail: t.about.timeline2Detail,
     color: 'text-hf-purple'
   }, {
     icon: TestTube,
     title: t.about.timeline3Title,
     subtitle: t.about.timeline3Subtitle,
     description: t.about.timeline3Desc,
+    detail: t.about.timeline3Detail,
     color: 'text-hf-sky'
   }, {
     icon: TrendingUp,
     title: t.about.timeline4Title,
     subtitle: t.about.timeline4Subtitle,
     description: t.about.timeline4Desc,
+    detail: t.about.timeline4Detail,
     color: 'text-primary'
   }];
 
@@ -60,6 +64,9 @@ export function Timeline90Day() {
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed flex-grow">
                     {step.description}
+                  </p>
+                  <p className="text-xs text-muted-foreground/70 mt-2 leading-snug">
+                    {step.detail}
                   </p>
                 </div>
               </div>
