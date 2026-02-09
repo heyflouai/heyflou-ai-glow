@@ -558,8 +558,8 @@ export const en = {
 
   // About Page
   about: {
-    heroTitle: 'About HeyFlou',
-    heroSubtitle: 'We help small and medium size businesses and service professionals save time and get more clients through proven AI automation.',
+    heroTitle: 'Bridging the AI Gap for Small Businesses',
+    heroSubtitle: 'We grew up in Mexico seeing traditional SMBs struggle—and studied in Israel\'s high-tech ecosystem. Now we\'re democratizing AI for the businesses being left behind.',
     bookStrategyCall: 'Book a Strategy Call',
     seeCaseStudies: 'See Case Studies',
     
