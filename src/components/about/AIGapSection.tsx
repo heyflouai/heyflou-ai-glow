@@ -11,6 +11,16 @@ const fadeUp = {
   }),
 };
 
+/* Shared gradient border style using background-clip trick */
+const gradientBorderStyle: React.CSSProperties = {
+  border: '2px solid transparent',
+  backgroundClip: 'padding-box, border-box',
+  backgroundOrigin: 'padding-box, border-box',
+  backgroundImage:
+    'linear-gradient(hsl(var(--card)), hsl(var(--card))), linear-gradient(135deg, hsl(190 72% 44%), hsl(268 84% 65%))',
+  boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
+};
+
 export function AIGapSection() {
   const t = useTranslation();
   const gap = t.about.aiGap;
@@ -29,7 +39,7 @@ export function AIGapSection() {
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Headline */}
         <motion.h2
-          className="text-[36px] md:text-[48px] font-bold font-display text-foreground text-center mb-5 leading-[1.2] tracking-[-0.02em]"
+          className="text-[32px] md:text-[42px] font-bold font-display text-foreground text-center mb-5 leading-[1.2] tracking-[-0.01em]"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-60px' }}
@@ -41,7 +51,7 @@ export function AIGapSection() {
 
         {/* Subheadline */}
         <motion.p
-          className="text-[18px] md:text-[20px] text-muted-foreground/70 text-center max-w-[900px] mx-auto mb-16 leading-[1.5]"
+          className="text-[16px] md:text-[18px] text-muted-foreground/70 text-center max-w-[900px] mx-auto mb-14 leading-[1.5]"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-60px' }}
@@ -52,30 +62,27 @@ export function AIGapSection() {
         </motion.p>
 
         {/* Two-column comparison */}
-        <div className="grid md:grid-cols-2 gap-6 md:gap-10 max-w-[900px] mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-[900px] mx-auto">
           {/* Enterprise card */}
           <motion.div
-            className="rounded-[20px] bg-card p-6 md:p-10 min-h-[360px] flex flex-col"
-            style={{
-              border: '3px solid #10B981',
-              boxShadow: '0 4px 20px rgba(16, 185, 129, 0.15)',
-            }}
+            className="rounded-2xl p-6 md:p-9 min-h-[320px] flex flex-col"
+            style={gradientBorderStyle}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-40px' }}
             custom={2}
             variants={fadeUp}
           >
-            <Building2 className="h-14 w-14 mb-6" style={{ color: '#10B981' }} />
-            <h3 className="text-[24px] md:text-[28px] font-bold text-foreground mb-3">{gap.enterpriseTitle}</h3>
-            <div className="flex items-center gap-2 mb-6">
-              <CheckCircle2 className="h-5 w-5" style={{ color: '#10B981' }} />
-              <span className="text-base font-semibold" style={{ color: '#10B981' }}>{gap.enterpriseStatus}</span>
+            <Building2 className="h-12 w-12 mb-5 text-primary" />
+            <h3 className="text-[22px] md:text-[24px] font-bold text-foreground mb-3">{gap.enterpriseTitle}</h3>
+            <div className="flex items-center gap-2 mb-5">
+              <CheckCircle2 className="h-5 w-5 text-primary" />
+              <span className="text-[15px] font-semibold text-primary">{gap.enterpriseStatus}</span>
             </div>
-            <ul className="space-y-4">
+            <ul className="space-y-3">
               {enterpriseItems.map((item, i) => (
-                <li key={i} className="flex items-start gap-2 text-[15px] md:text-[16px] leading-[2.0] text-foreground">
-                  <span className="mt-1" style={{ color: '#10B981' }}>•</span>
+                <li key={i} className="flex items-start gap-2 text-[14px] md:text-[15px] leading-[1.8] text-foreground/90">
+                  <span className="mt-1 text-primary">•</span>
                   {item}
                 </li>
               ))}
@@ -84,27 +91,24 @@ export function AIGapSection() {
 
           {/* SMB card */}
           <motion.div
-            className="rounded-[20px] bg-card p-6 md:p-10 min-h-[360px] flex flex-col"
-            style={{
-              border: '3px solid #EF4444',
-              boxShadow: '0 4px 20px rgba(239, 68, 68, 0.15)',
-            }}
+            className="rounded-2xl p-6 md:p-9 min-h-[320px] flex flex-col"
+            style={gradientBorderStyle}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-40px' }}
             custom={3}
             variants={fadeUp}
           >
-            <Store className="h-14 w-14 mb-6" style={{ color: '#EF4444' }} />
-            <h3 className="text-[24px] md:text-[28px] font-bold text-foreground mb-3">{gap.smbTitle}</h3>
-            <div className="flex items-center gap-2 mb-6">
-              <XCircle className="h-5 w-5" style={{ color: '#EF4444' }} />
-              <span className="text-base font-semibold" style={{ color: '#EF4444' }}>{gap.smbStatus}</span>
+            <Store className="h-12 w-12 mb-5 text-primary" />
+            <h3 className="text-[22px] md:text-[24px] font-bold text-foreground mb-3">{gap.smbTitle}</h3>
+            <div className="flex items-center gap-2 mb-5">
+              <XCircle className="h-5 w-5 text-muted-foreground/60" />
+              <span className="text-[15px] font-semibold text-muted-foreground/60">{gap.smbStatus}</span>
             </div>
-            <ul className="space-y-4">
+            <ul className="space-y-3">
               {smbItems.map((item, i) => (
-                <li key={i} className="flex items-start gap-2 text-[15px] md:text-[16px] leading-[2.0] text-foreground/80">
-                  <span className="mt-1" style={{ color: '#EF4444' }}>•</span>
+                <li key={i} className="flex items-start gap-2 text-[14px] md:text-[15px] leading-[1.8] text-foreground/70">
+                  <span className="mt-1 text-muted-foreground/50">•</span>
                   {item}
                 </li>
               ))}
@@ -113,46 +117,37 @@ export function AIGapSection() {
         </div>
 
         {/* Spacer */}
-        <div className="h-[72px]" />
+        <div className="h-16" />
 
         {/* Three stat cards */}
         <div className="grid sm:grid-cols-3 gap-6 max-w-[1000px] mx-auto">
           {stats.map((stat, i) => (
             <motion.div
               key={i}
-              className="rounded-[20px] bg-card p-8 md:p-12 shadow-sm text-center flex flex-col items-center min-h-[240px] justify-center"
+              className="rounded-2xl bg-card p-8 md:p-10 text-center flex flex-col items-center min-h-[200px] justify-center"
+              style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: '-40px' }}
               custom={4 + i}
               variants={fadeUp}
             >
-              <stat.icon className="h-10 w-10 mb-5" style={{ stroke: 'url(#stat-gradient)' }} />
-              <span className="text-[48px] md:text-[64px] font-extrabold text-foreground mb-4 font-display tracking-[-0.02em]">
+              <stat.icon className="h-9 w-9 mb-5 text-primary" />
+              <span className="text-[40px] md:text-[52px] font-bold text-foreground mb-3 font-display tracking-[-0.01em]">
                 {stat.number}
               </span>
-              <span className="text-[14px] md:text-[15px] text-muted-foreground/70 leading-[1.5] max-w-[200px]">{stat.label}</span>
+              <span className="text-[13px] md:text-[14px] text-muted-foreground/65 leading-[1.5] max-w-[180px]">{stat.label}</span>
             </motion.div>
           ))}
         </div>
 
-        {/* SVG gradient definition for stat icons */}
-        <svg width="0" height="0" className="absolute">
-          <defs>
-            <linearGradient id="stat-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="hsl(190, 72%, 44%)" />
-              <stop offset="100%" stopColor="hsl(268, 84%, 65%)" />
-            </linearGradient>
-          </defs>
-        </svg>
-
         {/* Spacer */}
-        <div className="h-[72px]" />
+        <div className="h-16" />
 
         {/* Solution tagline */}
         <div className="max-w-[800px] mx-auto text-center">
           <motion.p
-            className="text-[28px] md:text-[36px] font-bold text-foreground mb-4 font-display"
+            className="text-[26px] md:text-[32px] font-bold text-foreground mb-3 font-display"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-40px' }}
@@ -162,7 +157,7 @@ export function AIGapSection() {
             {gap.solutionLine1}
           </motion.p>
           <motion.p
-            className="text-[18px] md:text-[20px] text-muted-foreground/70 leading-[1.6]"
+            className="text-[16px] md:text-[18px] text-muted-foreground/70 leading-[1.6]"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-40px' }}
