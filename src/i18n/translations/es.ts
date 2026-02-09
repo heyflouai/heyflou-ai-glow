@@ -649,11 +649,17 @@ export const es: TranslationKeys = {
     coFounder: 'Co-Fundador',
     
     // Security
-    securityTitle: 'Seguridad y Cumplimiento en los que Puedes Confiar',
-    security1: 'Todos los datos de clientes están encriptados y cumplen con HIPAA.',
-    security2: 'El acceso está estrictamente controlado con autenticación segura.',
-    security3: 'Todas las acciones de automatización se registran para tus archivos.',
-    security4: 'Tus datos nunca se usan para entrenar modelos de IA sin permiso explícito.',
+    security: {
+      title: 'Privacidad de tus Clientes, Garantizada',
+      subtitle: 'La información sensible de los clientes merece protección. Manejamos tus datos con seguridad de nivel empresarial—porque la confianza de tus clientes no es negociable.',
+      card1Title: 'Infraestructura Lista para Cumplimiento',
+      card1Desc: 'Nuestros sistemas cumplen con estándares de protección de datos de la industria, incluyendo infraestructura lista para HIPAA para negocios que manejan información sensible.',
+      card2Title: 'Encriptación de Extremo a Extremo',
+      card2Desc: 'Cada mensaje, cada reserva, cada dato del cliente está encriptado. No podemos leerlo. Los hackers no pueden robarlo. La información de tus clientes permanece segura.',
+      card3Title: 'Solo Socios Certificados SOC 2',
+      card3Desc: 'Solo usamos plataformas de primer nivel auditadas en seguridad (AWS, Twilio, Stripe). Sin herramientas de terceros dudosas. Sin fugas de datos. Sin compromisos.',
+      tagline: 'Tranquilidad para ti. Protección para tus clientes.',
+    },
     
     // CTA
     ctaTitle: '¿Listo para Ahorrar Tiempo y Hacer Crecer tu Práctica?',
