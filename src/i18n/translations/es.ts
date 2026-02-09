@@ -560,8 +560,8 @@ export const es: TranslationKeys = {
 
   // About Page
   about: {
-    heroTitle: 'Cerrando la Brecha de IA para Pequeñas Empresas',
-    heroSubtitle: 'Crecimos en México viendo a las PYMEs tradicionales luchar—y estudiamos en el ecosistema de alta tecnología de Israel. Ahora estamos democratizando la IA para los negocios que están siendo dejados atrás.',
+    heroTitle: 'Ahorra 10+ Horas por Semana Mientras Creces tu Base de Clientes',
+    heroSubtitle: 'Deja de perder tiempo en tareas administrativas repetitivas. Construimos automatización con IA específicamente para profesionales de salud privada, estudios de fitness e inmobiliaria—para que te enfoques en lo que mejor haces: servir a tus clientes.',
     bookStrategyCall: 'Reservar Llamada Estratégica',
     seeCaseStudies: 'Ver Casos de Éxito',
 
