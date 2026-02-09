@@ -626,11 +626,23 @@ export const es: TranslationKeys = {
     },
     
     // Impact
-    impactTitle: 'Resumen de Impacto',
-    impact1: '10-20 horas ahorradas por semana',
-    impact2: '65% menos carga administrativa',
-    impact3: '40% tiempos de respuesta más rápidos',
-    impactDisclaimer: 'Resultados promedio de prácticas de terapia y negocios de servicios reales—los resultados individuales pueden variar.',
+    impact: {
+      title: 'Resultados Reales, No Promesas',
+      subtitle: 'Estas no son proyecciones. Estos son resultados promedio de pequeños negocios reales en sus primeros 90 días con HeyFlou.',
+      metric1Number: '15+',
+      metric1Subtext: 'por semana en tiempo administrativo',
+      metric1Meaning: 'Horas Ahorradas',
+      metric2Number: '60%',
+      metric2Subtext: 'en los primeros 90 días',
+      metric2Meaning: 'Más Reservas',
+      metric3Number: '24/7',
+      metric3Subtext: 'sin contratar a nadie',
+      metric3Meaning: 'Cobertura',
+      metric4Number: '90',
+      metric4Subtext: 'período típico de retorno',
+      metric4Meaning: 'Días al ROI',
+      disclaimer: 'Resultados promedio de negocios basados en servicios en meses 1-3. Los resultados individuales varían según industria, volumen e implementación.',
+    },
     
     // Team
     teamTitle: 'Nuestro Equipo',
