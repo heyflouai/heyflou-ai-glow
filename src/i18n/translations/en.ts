@@ -624,11 +624,23 @@ export const en = {
     },
     
     // Impact
-    impactTitle: 'Impact Snapshot',
-    impact1: '10-20 hours saved per week',
-    impact2: '65% less admin workload',
-    impact3: '40% faster response times',
-    impactDisclaimer: 'Average results from real therapy practices and service businesses—individual results may vary.',
+    impact: {
+      title: 'Real Results, Not Promises',
+      subtitle: "These aren't projections. These are average results from real small businesses in their first 90 days with HeyFlou.",
+      metric1Number: '15+',
+      metric1Subtext: 'per week in admin time',
+      metric1Meaning: 'Hours Saved',
+      metric2Number: '60%',
+      metric2Subtext: 'in the first 90 days',
+      metric2Meaning: 'More Bookings',
+      metric3Number: '24/7',
+      metric3Subtext: 'without hiring anyone',
+      metric3Meaning: 'Coverage',
+      metric4Number: '90',
+      metric4Subtext: 'typical payback period',
+      metric4Meaning: 'Days to ROI',
+      disclaimer: 'Average results from service-based businesses in months 1-3. Individual results vary based on industry, volume, and implementation.',
+    },
     
     // Team
     teamTitle: 'Team Snapshot',
