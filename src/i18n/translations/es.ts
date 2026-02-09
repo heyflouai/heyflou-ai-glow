@@ -567,21 +567,23 @@ export const es: TranslationKeys = {
 
     // AI Gap Section
     aiGap: {
-      title: 'La Brecha de IA Es Real',
+      title: 'La Brecha de IA Se Está Ampliando',
+      subtitle: 'Mientras las grandes empresas automatizan todo, los pequeños negocios están atascados haciéndolo todo manualmente.',
       enterpriseTitle: 'Grandes Empresas',
-      enterprise1: 'Adoptando IA rápidamente',
-      enterprise2: 'Automatizando flujos',
+      enterpriseStatus: 'Ganando con IA',
+      enterprise1: 'Flujos automatizados',
+      enterprise2: 'Servicio al cliente 24/7',
       enterprise3: 'Escalando sin esfuerzo',
       smbTitle: 'Pequeños Negocios',
-      smb1: 'Quedándose atrás',
-      smb2: 'Procesos manuales',
-      smb3: 'Recursos limitados',
-      description: 'Las grandes empresas están adoptando IA rápidamente, automatizando flujos y escalando sin esfuerzo. Mientras tanto, los pequeños negocios—terapeutas, dueños de gimnasios, agentes inmobiliarios—están quedándose atrás.',
+      smbStatus: 'Quedándose Atrás',
+      smb1: 'Todo manual',
+      smb2: 'Perdiendo leads fuera de horario',
+      smb3: 'Sin tiempo para crecer',
       stat1: 'de PYMEs manejan consultas manualmente',
       stat2: 'horas desperdiciadas por semana en tareas admin',
       stat3: 'en productividad perdida de PYMEs anualmente',
-      solutionLabel: 'Nuestra Solución:',
-      solutionText: 'Nosotros lo construimos. Tú lo usas. Nosotros lo mantenemos.',
+      solutionLine1: 'HeyFlou cierra la brecha.',
+      solutionLine2: 'Llevamos automatización con IA de nivel empresarial a los negocios que más lo necesitan.',
     },
 
     // Mission Pillars
