@@ -28,31 +28,31 @@ export function MissionPillars() {
   }];
 
   return (
-    <section className="py-20 md:py-28 bg-background transition-colors duration-300">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+    <section className="py-20 md:py-[100px] bg-background transition-colors duration-300">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-10 md:mb-[60px]">
           <h2 className="text-3xl md:text-4xl font-bold font-display text-foreground mb-4">
             {t.about.pillarsTitle}
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 lg:gap-8">
           {pillars.map((pillar, index) => {
             const Icon = pillar.icon;
             return (
               <Card 
                 key={index} 
-                className="text-center p-6 hf-shadow rounded-2xl border border-border/50 bg-card transition-colors duration-300"
+                className="text-center hf-shadow rounded-2xl border border-border/50 bg-card transition-colors duration-300 min-h-[300px] lg:min-h-[340px] flex"
               >
-                <CardContent className="pt-6">
-                  <div className="flex justify-center mb-4">
+                <CardContent className="pt-8 pb-8 px-7 flex flex-col items-center">
+                  <div className="flex justify-center mb-6">
                     <div className={`p-3 rounded-full bg-muted ${pillar.color}`}>
-                      <Icon className="h-6 w-6" />
+                      <Icon className="h-8 w-8 lg:h-10 lg:w-10" strokeWidth={1.5} />
                     </div>
                   </div>
-                  <h3 className="text-lg font-bold font-display text-foreground mb-3">
+                  <h3 className="text-lg lg:text-xl font-bold font-display text-foreground mb-4 leading-snug">
                     {pillar.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm lg:text-[15px] text-muted-foreground leading-relaxed lg:leading-[1.6]">
                     {pillar.description}
                   </p>
                 </CardContent>
