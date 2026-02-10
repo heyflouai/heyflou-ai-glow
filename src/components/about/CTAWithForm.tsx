@@ -11,6 +11,7 @@ import { FormAlert } from '@/components/ui/form-alert';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { useTranslation } from '@/i18n';
+import { sendConfirmationEmail } from '@/lib/send-confirmation-email';
 import { motion } from 'framer-motion';
 
 const fadeUp = {
@@ -106,24 +107,17 @@ export function CTAWithForm() {
 
       if (error) throw error;
 
-      // Fire-and-forget webhook
-      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-      fetch(`${supabaseUrl}/functions/v1/sync-contact-webhook`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email: data.email,
-          first_name: firstName,
-          last_name: lastName,
-          company: data.businessType,
-          industry: data.businessType,
-          team_size: '-',
-          message: data.timeSink || null,
-          source_page: 'about-cta',
-          consent: data.consent,
-          created_at: new Date().toISOString(),
-        }),
-      }).catch(() => {});
+      sendConfirmationEmail({
+        name: data.name || '',
+        email: data.email,
+        formSource: 'about-cta',
+        message: data.timeSink || '',
+        fields: {
+          Phone: data.phone || '',
+          'Business Type': data.businessType,
+          'Time Sink': data.timeSink || '',
+        },
+      });
 
       setIsSuccess(true);
       reset();

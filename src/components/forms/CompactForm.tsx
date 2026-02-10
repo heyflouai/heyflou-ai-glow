@@ -11,6 +11,7 @@ import { FormAlert } from '@/components/ui/form-alert';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { useTranslation } from '@/i18n';
+import { sendConfirmationEmail } from '@/lib/send-confirmation-email';
 
 const disposableEmailDomains = [
   '10minutemail.com', 'guerrillamail.com', 'tempmail.org', 'mailinator.com',
@@ -113,6 +114,21 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage, hidePromoT
       if (error) {
         throw error;
       }
+
+      // Send confirmation + admin notification emails (fire-and-forget)
+      sendConfirmationEmail({
+        name: `${data.firstName} ${data.lastName}`,
+        email: data.email,
+        formSource: sourcePage,
+        message: data.message || '',
+        fields: {
+          Company: data.company,
+          Website: data.website || '',
+          Industry: data.industry,
+          'Team Size': data.teamSize,
+          Message: data.message || '',
+        },
+      });
 
       // Trigger n8n webhook in the background (fire-and-forget)
       const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;

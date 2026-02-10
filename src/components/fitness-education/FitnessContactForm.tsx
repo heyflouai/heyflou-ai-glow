@@ -26,6 +26,7 @@ import { useToast } from '@/hooks/use-toast';
 import { useTranslation } from '@/i18n';
 import { CheckCircle, Loader2 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
+import { sendConfirmationEmail } from '@/lib/send-confirmation-email';
 
 const formSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -97,6 +98,20 @@ export function FitnessContactForm() {
         });
 
       if (error) throw error;
+
+      sendConfirmationEmail({
+        name: data.name,
+        email: data.email,
+        formSource: 'fitness-education',
+        message: data.biggestChallenge,
+        fields: {
+          Phone: data.phone || '',
+          'Business Type': data.businessType,
+          'Business Size': data.businessSize,
+          Challenge: data.biggestChallenge,
+          Referral: data.referralSource || '',
+        },
+      });
 
       setIsSuccess(true);
       form.reset();
