@@ -286,15 +286,14 @@ async function sendToHubSpot(
   const [firstName, ...rest] = name.split(" ");
   const lastName = rest.join(" ") || "";
 
+  // Only standard HubSpot properties (custom ones need manual setup in HubSpot)
   const properties: Record<string, string> = {
     email,
     firstname: firstName,
     lastname: lastName,
-    form_source: formSource,
     lifecyclestage: isNewsletter ? "subscriber" : "lead",
     hs_lead_status: "NEW",
   };
-  if (message) properties.message = message;
 
   // Try create
   const createRes = await fetch("https://api.hubapi.com/crm/v3/objects/contacts", {
