@@ -26,6 +26,7 @@ import { useToast } from '@/hooks/use-toast';
 import { useTranslation } from '@/i18n';
 import { CheckCircle, Loader2 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
+import { sendConfirmationEmail } from '@/lib/send-confirmation-email';
 
 const formSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -105,6 +106,21 @@ export function CustomContactForm() {
         });
 
       if (error) throw error;
+
+      sendConfirmationEmail({
+        name: data.name,
+        email: data.email,
+        formSource: 'custom-automation',
+        message: data.automationNeeds,
+        fields: {
+          Phone: data.phone || '',
+          Industry: data.industry,
+          'Company Size': data.companySize,
+          'Automation Needs': data.automationNeeds,
+          'Current Tools': data.currentTools || '',
+          Referral: data.referralSource || '',
+        },
+      });
 
       setIsSuccess(true);
       form.reset();

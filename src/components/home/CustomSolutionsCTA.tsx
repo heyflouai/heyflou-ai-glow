@@ -8,6 +8,7 @@ import { useTranslation } from '@/i18n';
 import { motion } from 'framer-motion';
 import { supabase } from '@/integrations/supabase/client';
 import { cn } from '@/lib/utils';
+import { sendConfirmationEmail } from '@/lib/send-confirmation-email';
 
 export function CustomSolutionsCTA() {
   const t = useTranslation();
@@ -47,6 +48,13 @@ export function CustomSolutionsCTA() {
       if (error) throw error;
       
       setSubmitState('success');
+      sendConfirmationEmail({
+        name: email.split('@')[0],
+        email: email.trim(),
+        formSource: 'newsletter-cta',
+        message: '',
+        fields: { 'Signup Type': 'Coming Soon Newsletter' },
+      });
       setEmail('');
     } catch {
       setSubmitState('error');

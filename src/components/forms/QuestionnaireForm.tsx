@@ -11,6 +11,7 @@ import { FormAlert } from '@/components/ui/form-alert';
 import { Progress } from '@/components/ui/progress';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
+import { sendConfirmationEmail } from '@/lib/send-confirmation-email';
 
 const disposableEmailDomains = [
   '10minutemail.com', 'guerrillamail.com', 'tempmail.org', 'mailinator.com',
@@ -142,6 +143,27 @@ export const QuestionnaireForm: React.FC = () => {
       if (error) {
         throw error;
       }
+
+      sendConfirmationEmail({
+        name: `${data.firstName} ${data.lastName}`,
+        email: data.email,
+        formSource: 'questionnaire',
+        message: data.biggestPain || '',
+        fields: {
+          Company: data.company,
+          Website: data.website || '',
+          Industry: data.industry,
+          'Team Size': data.teamSize,
+          Role: data.role || '',
+          'AI Usage': data.currentAiUsage,
+          'Areas of Interest': (data.areasOfInterest || []).join(', '),
+          Goals: (data.goals || []).join(', '),
+          'Biggest Pain': data.biggestPain || '',
+          Budget: data.budgetRange,
+          Timeline: data.timeline,
+          'Preferred Contact': data.preferredContact,
+        },
+      });
 
       // Analytics tracking
       if (typeof window !== 'undefined' && Array.isArray(window.dataLayer)) {

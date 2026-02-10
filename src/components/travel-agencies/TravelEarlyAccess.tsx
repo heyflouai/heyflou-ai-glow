@@ -10,6 +10,7 @@ import { ShimmerButton } from '@/components/ui/shimmer-button';
 import { useToast } from '@/hooks/use-toast';
 import { useTranslation } from '@/i18n';
 import { supabase } from '@/integrations/supabase/client';
+import { sendConfirmationEmail } from '@/lib/send-confirmation-email';
 
 export function TravelEarlyAccess() {
   const t = useTranslation();
@@ -63,6 +64,17 @@ export function TravelEarlyAccess() {
         });
 
       if (error) throw error;
+
+      sendConfirmationEmail({
+        name,
+        email,
+        formSource: 'travel-agencies',
+        message: challenge || '',
+        fields: {
+          Agency: agency || '',
+          Challenge: challenge || '',
+        },
+      });
 
       setIsSuccess(true);
       toast({

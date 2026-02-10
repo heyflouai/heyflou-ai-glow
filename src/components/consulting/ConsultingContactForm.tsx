@@ -17,6 +17,7 @@ import {
 import { useTranslation } from '@/i18n';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
+import { sendConfirmationEmail } from '@/lib/send-confirmation-email';
 
 export function ConsultingContactForm() {
   const t = useTranslation();
@@ -82,6 +83,22 @@ export function ConsultingContactForm() {
         });
 
       if (error) throw error;
+
+      sendConfirmationEmail({
+        name,
+        email,
+        formSource: 'consulting',
+        message: goal || '',
+        fields: {
+          Phone: phone || '',
+          Company: company,
+          Role: role || '',
+          Industry: industry || '',
+          Goal: goal || '',
+          Timeline: timeline || '',
+          Referral: referral || '',
+        },
+      });
 
       setIsSuccess(true);
       toast({
