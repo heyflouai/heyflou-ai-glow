@@ -9,6 +9,7 @@ import { Linkedin, Loader2, CheckCircle2, XCircle, Mail, Github, ArrowUpRight } 
 import { useTranslation } from '@/i18n';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
+import { sendConfirmationEmail } from '@/lib/send-confirmation-email';
 import { LanguageToggle } from '@/components/ui/language-toggle';
 
 // X (formerly Twitter) logo component
@@ -109,6 +110,13 @@ export const Footer = () => {
           description: data.message
         });
         setStatus('success');
+        sendConfirmationEmail({
+          name: email.split('@')[0],
+          email: email.trim(),
+          formSource: 'footer-newsletter',
+          message: '',
+          fields: { 'Signup Type': 'Newsletter Subscription' },
+        });
         setEmail('');
       } else if (data.error) {
         throw new Error(data.error);
