@@ -30,6 +30,7 @@ function detectLanguage(text: string): "es" | "en" {
 
 function buildUserConfirmationHtml(name: string, lang: "es" | "en"): string {
   const isEs = lang === "es";
+  const year = new Date().getFullYear();
   return `
 <!DOCTYPE html>
 <html lang="${lang}">
@@ -37,40 +38,92 @@ function buildUserConfirmationHtml(name: string, lang: "es" | "en"): string {
 <body style="margin:0;padding:0;background:#f4f4f5;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
 <table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f5;padding:40px 20px;">
 <tr><td align="center">
-<table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
-  <tr><td style="background:linear-gradient(135deg,#14b8a6,#7c3aed);padding:32px 40px;text-align:center;">
-    <h1 style="color:#ffffff;font-size:24px;margin:0;font-weight:700;">HeyFlou</h1>
-    <p style="color:rgba(255,255,255,0.85);font-size:14px;margin:8px 0 0;">AI Automation for Small Businesses</p>
+<table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08);">
+
+  <!-- GRADIENT HEADER -->
+  <tr><td style="background:linear-gradient(135deg,#3b82f6,#8b5cf6);padding:48px 40px 36px;text-align:center;">
+    <h1 style="color:#ffffff;font-size:32px;margin:0;font-weight:800;">
+      ${isEs ? `¡Hola ${name}! 👋` : `Hi ${name}! 👋`}
+    </h1>
+    <p style="color:rgba(255,255,255,0.85);font-size:15px;margin:12px 0 0;font-weight:400;">
+      ${isEs ? "Automatización inteligente para tu negocio" : "Smart Automation for Your Business"}
+    </p>
+    <!-- Wave separator -->
+    <div style="margin-top:24px;">
+      <svg viewBox="0 0 600 40" width="100%" height="40" preserveAspectRatio="none" style="display:block;">
+        <path d="M0,20 Q150,40 300,20 T600,20 L600,40 L0,40 Z" fill="#ffffff"/>
+      </svg>
+    </div>
   </td></tr>
-  <tr><td style="padding:40px;">
-    <h2 style="color:#1a1a2e;font-size:22px;margin:0 0 16px;font-weight:700;">
-      ${isEs ? `¡Hola ${name}!` : `Hi ${name}!`}
-    </h2>
-    <p style="color:#4a4a5a;font-size:16px;line-height:1.6;margin:0 0 24px;">
+
+  <!-- LOGO SECTION -->
+  <tr><td style="background:#ffffff;padding:24px 40px 8px;text-align:center;">
+    <img src="https://heyflou.com/favicon.png" alt="HeyFlou" width="56" height="56" style="display:inline-block;border-radius:12px;" />
+    <p style="color:#6b7280;font-size:13px;margin:8px 0 0;font-weight:600;letter-spacing:0.5px;">HEYFLOU</p>
+  </td></tr>
+
+  <!-- MAIN CONTENT -->
+  <tr><td style="background:#ffffff;padding:24px 40px 40px;">
+    <p style="color:#374151;font-size:16px;line-height:1.7;margin:0 0 24px;text-align:center;">
       ${isEs
-        ? "Recibimos tu mensaje y nuestro equipo lo está revisando. Te responderemos dentro de las próximas <strong>24 horas</strong>."
-        : "We received your message and our team is reviewing it. We'll get back to you within <strong>24 hours</strong>."}
+        ? `Recibimos tu mensaje y nuestro equipo lo está revisando. Te responderemos dentro de las próximas <strong style="color:#1f2937;">24 horas</strong>.`
+        : `We received your message and our team is reviewing it. We'll get back to you within <strong style="color:#1f2937;">24 hours</strong>.`}
     </p>
-    <p style="color:#4a4a5a;font-size:16px;line-height:1.6;margin:0 0 24px;">
-      ${isEs
-        ? "Mientras tanto, si deseas agendar una llamada estratégica gratuita:"
-        : "In the meantime, if you'd like to book a free strategy call:"}
-    </p>
-    <table cellpadding="0" cellspacing="0" style="margin:0 auto 24px;"><tr><td>
-      <a href="https://calendly.com/heyflou-ai/30min" style="display:inline-block;background:linear-gradient(135deg,#14b8a6,#7c3aed);color:#ffffff;text-decoration:none;padding:14px 32px;border-radius:8px;font-size:16px;font-weight:600;">
-        ${isEs ? "Agendar Llamada Gratuita" : "Book Free Strategy Call"}
+
+    <!-- Highlight Box -->
+    <table width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 28px;">
+      <tr><td style="background:linear-gradient(135deg,#eff6ff,#f5f3ff);border-radius:12px;padding:20px 24px;border-left:4px solid #8b5cf6;">
+        <p style="margin:0;color:#4b5563;font-size:15px;line-height:1.6;">
+          💡 <strong style="color:#1f2937;">${isEs ? "¿Quieres saber más?" : "Want to learn more?"}</strong><br/>
+          ${isEs
+            ? "Agenda una llamada estratégica gratuita y descubre cómo la automatización puede transformar tu negocio."
+            : "Book a free strategy call and discover how automation can transform your business."}
+        </p>
+      </td></tr>
+    </table>
+
+    <!-- Primary CTA -->
+    <table cellpadding="0" cellspacing="0" style="margin:0 auto 16px;"><tr><td>
+      <a href="https://calendly.com/heyflou-ai/30min" style="display:inline-block;background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#ffffff;text-decoration:none;padding:14px 36px;border-radius:10px;font-size:16px;font-weight:700;letter-spacing:0.3px;">
+        ${isEs ? "📅 Agendar Llamada Gratuita" : "📅 Book Free Strategy Call"}
       </a>
     </td></tr></table>
-    <p style="color:#8a8a9a;font-size:14px;line-height:1.5;margin:0;">
+
+    <!-- Secondary CTAs -->
+    <table cellpadding="0" cellspacing="0" style="margin:0 auto;"><tr>
+      <td style="padding:0 6px;">
+        <a href="https://heyflou.com/services" style="display:inline-block;border:2px solid #e5e7eb;color:#4b5563;text-decoration:none;padding:10px 24px;border-radius:8px;font-size:14px;font-weight:600;">
+          ${isEs ? "Ver Servicios" : "View Services"}
+        </a>
+      </td>
+      <td style="padding:0 6px;">
+        <a href="https://heyflou.com/about" style="display:inline-block;border:2px solid #e5e7eb;color:#4b5563;text-decoration:none;padding:10px 24px;border-radius:8px;font-size:14px;font-weight:600;">
+          ${isEs ? "Sobre Nosotros" : "About Us"}
+        </a>
+      </td>
+    </tr></table>
+  </td></tr>
+
+  <!-- FOOTER -->
+  <tr><td style="background:#f9fafb;padding:24px 40px;text-align:center;border-top:1px solid #e5e7eb;">
+    <p style="color:#6b7280;font-size:14px;margin:0 0 12px;font-weight:500;">
       ${isEs ? "— El equipo de HeyFlou" : "— The HeyFlou Team"}
     </p>
-  </td></tr>
-  <tr><td style="background:#f9fafb;padding:20px 40px;text-align:center;border-top:1px solid #e5e7eb;">
+    <table cellpadding="0" cellspacing="0" style="margin:0 auto 12px;"><tr>
+      <td style="padding:0 8px;">
+        <a href="https://www.linkedin.com/company/heyflou" style="color:#6b7280;text-decoration:none;font-size:13px;">LinkedIn</a>
+      </td>
+      <td style="color:#d1d5db;">|</td>
+      <td style="padding:0 8px;">
+        <a href="https://x.com/Heyflou_" style="color:#6b7280;text-decoration:none;font-size:13px;">X / Twitter</a>
+      </td>
+    </tr></table>
     <p style="color:#9ca3af;font-size:12px;margin:0;">
-      © ${new Date().getFullYear()} HeyFlou. All rights reserved.<br>
-      <a href="https://heyflou.com" style="color:#14b8a6;text-decoration:none;">heyflou.com</a>
+      © ${year} HeyFlou. All rights reserved. ·
+      <a href="https://heyflou.com" style="color:#8b5cf6;text-decoration:none;">heyflou.com</a>
     </p>
   </td></tr>
+
 </table>
 </td></tr>
 </table>
