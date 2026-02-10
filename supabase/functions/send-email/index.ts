@@ -273,6 +273,105 @@ function buildAdminNotificationHtml(fields: Record<string, string>, formSource: 
 </html>`;
 }
 
+// ── HubSpot helpers ──────────────────────────────────────────────────────────
+
+async function sendToHubSpot(
+  email: string,
+  name: string,
+  formSource: string,
+  message: string,
+  isNewsletter: boolean,
+  apiKey: string,
+): Promise<{ success: boolean; action: string }> {
+  const [firstName, ...rest] = name.split(" ");
+  const lastName = rest.join(" ") || "";
+
+  const properties: Record<string, string> = {
+    email,
+    firstname: firstName,
+    lastname: lastName,
+    form_source: formSource,
+    lifecyclestage: isNewsletter ? "subscriber" : "lead",
+    hs_lead_status: "NEW",
+  };
+  if (message) properties.message = message;
+
+  // Try create
+  const createRes = await fetch("https://api.hubapi.com/crm/v3/objects/contacts", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ properties }),
+  });
+
+  if (createRes.ok) {
+    return { success: true, action: "created" };
+  }
+
+  // 409 = duplicate → update
+  if (createRes.status === 409) {
+    console.log("HubSpot: Contact exists, updating…");
+    return await updateHubSpotContact(email, properties, apiKey);
+  }
+
+  const errBody = await createRes.text();
+  throw new Error(`HubSpot create failed [${createRes.status}]: ${errBody}`);
+}
+
+async function updateHubSpotContact(
+  email: string,
+  properties: Record<string, string>,
+  apiKey: string,
+): Promise<{ success: boolean; action: string }> {
+  // Search for existing contact by email
+  const searchRes = await fetch("https://api.hubapi.com/crm/v3/objects/contacts/search", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      filterGroups: [{
+        filters: [{ propertyName: "email", operator: "EQ", value: email }],
+      }],
+    }),
+  });
+
+  if (!searchRes.ok) {
+    const errBody = await searchRes.text();
+    throw new Error(`HubSpot search failed [${searchRes.status}]: ${errBody}`);
+  }
+
+  const searchData = await searchRes.json();
+  if (!searchData.results?.length) {
+    throw new Error("HubSpot: contact not found after 409");
+  }
+
+  const contactId = searchData.results[0].id;
+  // Remove lifecyclestage from update (HubSpot doesn't allow downgrade)
+  const { lifecyclestage: _, ...updateProps } = properties;
+
+  const updateRes = await fetch(`https://api.hubapi.com/crm/v3/objects/contacts/${contactId}`, {
+    method: "PATCH",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ properties: updateProps }),
+  });
+
+  if (!updateRes.ok) {
+    const errBody = await updateRes.text();
+    throw new Error(`HubSpot update failed [${updateRes.status}]: ${errBody}`);
+  }
+
+  return { success: true, action: "updated" };
+}
+
+// ── Main handler ─────────────────────────────────────────────────────────────
+
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
@@ -290,6 +389,9 @@ Deno.serve(async (req) => {
     if (!ADMIN_EMAIL) {
       throw new Error("ADMIN_EMAIL is not configured");
     }
+
+    const HUBSPOT_API_KEY = Deno.env.get("HUBSPOT_API_KEY");
+    console.log("HUBSPOT_API_KEY loaded:", HUBSPOT_API_KEY ? "YES" : "NO");
 
     const resend = new Resend(RESEND_API_KEY);
 
@@ -326,18 +428,16 @@ Deno.serve(async (req) => {
       ? (lang === "es" ? "🎉 ¡Bienvenido/a a HeyFlou!" : "🎉 Welcome to HeyFlou!")
       : (lang === "es" ? "✅ Recibimos tu mensaje - HeyFlou" : "✅ We Received Your Message - HeyFlou");
 
-    // Send both emails in parallel
-    console.log("Sending user email to:", email, "| newsletter:", isNewsletter);
-    console.log("Sending admin notification email to:", ADMIN_EMAIL);
-    const [userEmailResult, adminEmailResult] = await Promise.allSettled([
-      // User email (welcome or confirmation)
+    // Build all promises: user email, admin email, HubSpot
+    const promises: Promise<unknown>[] = [
+      // User email
       resend.emails.send({
         from: "HeyFlou <noreply@support.heyflou.com>",
         to: email,
         subject: userSubject,
         html: userHtml,
       }),
-      // Admin notification email
+      // Admin notification
       resend.emails.send({
         from: "HeyFlou Leads <leads@support.heyflou.com>",
         to: ADMIN_EMAIL,
@@ -347,23 +447,33 @@ Deno.serve(async (req) => {
           formSource
         ),
       }),
-    ]);
+    ];
 
+    // Add HubSpot if key is present (non-blocking)
+    if (HUBSPOT_API_KEY) {
+      promises.push(
+        sendToHubSpot(email, displayName, formSource, message, isNewsletter, HUBSPOT_API_KEY)
+      );
+    } else {
+      console.warn("HUBSPOT_API_KEY not set – skipping HubSpot sync");
+    }
+
+    console.log("Sending user email to:", email, "| newsletter:", isNewsletter);
+    console.log("Sending admin notification to:", ADMIN_EMAIL);
+    if (HUBSPOT_API_KEY) console.log("Syncing to HubSpot…");
+
+    const results = await Promise.allSettled(promises);
+
+    const labels = ["User email", "Admin email", "HubSpot"];
     const errors: string[] = [];
-    if (userEmailResult.status === "rejected") {
-      console.error("User email FAILED:", userEmailResult.reason);
-      console.error("User email error stack:", userEmailResult.reason?.stack);
-      errors.push("User confirmation email failed");
-    } else {
-      console.log("User email SUCCESS:", JSON.stringify(userEmailResult.value));
-    }
-    if (adminEmailResult.status === "rejected") {
-      console.error("Admin email FAILED:", adminEmailResult.reason);
-      console.error("Admin email error stack:", adminEmailResult.reason?.stack);
-      errors.push("Admin notification email failed");
-    } else {
-      console.log("Admin email SUCCESS:", JSON.stringify(adminEmailResult.value));
-    }
+    results.forEach((r, i) => {
+      if (r.status === "rejected") {
+        console.error(`${labels[i]} FAILED:`, r.reason);
+        errors.push(`${labels[i]} failed`);
+      } else {
+        console.log(`${labels[i]} SUCCESS:`, JSON.stringify(r.value));
+      }
+    });
 
     return new Response(
       JSON.stringify({
