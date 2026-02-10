@@ -58,8 +58,7 @@ function buildUserConfirmationHtml(name: string, lang: "es" | "en"): string {
 
   <!-- LOGO SECTION -->
   <tr><td style="background:#ffffff;padding:24px 40px 8px;text-align:center;">
-    <img src="https://heyflou.com/favicon.png" alt="HeyFlou" width="56" height="56" style="display:inline-block;border-radius:12px;" />
-    <p style="color:#6b7280;font-size:13px;margin:8px 0 0;font-weight:600;letter-spacing:0.5px;">HEYFLOU</p>
+    <img src="https://heyflou.com/assets/heyflou-logo-new-9MAiMHaw.png" alt="HeyFlou" width="180" style="display:inline-block;" />
   </td></tr>
 
   <!-- MAIN CONTENT -->
@@ -171,11 +170,13 @@ Deno.serve(async (req) => {
 
   try {
     const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
+    console.log("RESEND_API_KEY loaded:", RESEND_API_KEY ? "YES" : "NO");
     if (!RESEND_API_KEY) {
       throw new Error("RESEND_API_KEY is not configured");
     }
 
     const ADMIN_EMAIL = Deno.env.get("ADMIN_EMAIL");
+    console.log("ADMIN_EMAIL loaded:", ADMIN_EMAIL ? "YES" : "NO");
     if (!ADMIN_EMAIL) {
       throw new Error("ADMIN_EMAIL is not configured");
     }
@@ -183,6 +184,7 @@ Deno.serve(async (req) => {
     const resend = new Resend(RESEND_API_KEY);
 
     const body = await req.json();
+    console.log("Received request body:", JSON.stringify(body));
     const {
       name,
       email,
@@ -201,15 +203,18 @@ Deno.serve(async (req) => {
     // Detect language from message and name
     const textToAnalyze = `${message} ${name || ""} ${Object.values(fields).join(" ")}`;
     const lang = detectLanguage(textToAnalyze);
+    console.log("Detected language:", lang);
 
     const displayName = name || email.split("@")[0];
 
     // Send both emails in parallel
+    console.log("Sending user confirmation email to:", email);
+    console.log("Sending admin notification email to:", ADMIN_EMAIL);
     const [userEmailResult, adminEmailResult] = await Promise.allSettled([
       // User confirmation email
       resend.emails.send({
-        from: "HeyFlou <noreply@heyflou.com>",
-        to: [email],
+        from: "HeyFlou <noreply@support.heyflou.com>",
+        to: email,
         subject: lang === "es"
           ? "✅ Recibimos tu mensaje - HeyFlou"
           : "✅ We Received Your Message - HeyFlou",
@@ -217,8 +222,8 @@ Deno.serve(async (req) => {
       }),
       // Admin notification email
       resend.emails.send({
-        from: "HeyFlou Leads <noreply@heyflou.com>",
-        to: [ADMIN_EMAIL],
+        from: "HeyFlou Leads <leads@support.heyflou.com>",
+        to: ADMIN_EMAIL,
         subject: `🔔 New Lead from heyflou.com [${formSource}]`,
         html: buildAdminNotificationHtml(
           { Name: displayName, Email: email, ...fields },
@@ -229,12 +234,18 @@ Deno.serve(async (req) => {
 
     const errors: string[] = [];
     if (userEmailResult.status === "rejected") {
-      console.error("User email failed:", userEmailResult.reason);
+      console.error("User email FAILED:", userEmailResult.reason);
+      console.error("User email error stack:", userEmailResult.reason?.stack);
       errors.push("User confirmation email failed");
+    } else {
+      console.log("User email SUCCESS:", JSON.stringify(userEmailResult.value));
     }
     if (adminEmailResult.status === "rejected") {
-      console.error("Admin email failed:", adminEmailResult.reason);
+      console.error("Admin email FAILED:", adminEmailResult.reason);
+      console.error("Admin email error stack:", adminEmailResult.reason?.stack);
       errors.push("Admin notification email failed");
+    } else {
+      console.log("Admin email SUCCESS:", JSON.stringify(adminEmailResult.value));
     }
 
     return new Response(
@@ -247,6 +258,7 @@ Deno.serve(async (req) => {
     );
   } catch (error: unknown) {
     console.error("Error in send-email function:", error);
+    console.error("Error stack:", error instanceof Error ? error.stack : "No stack");
     const errorMessage = error instanceof Error ? error.message : "Unknown error";
     return new Response(
       JSON.stringify({ error: errorMessage }),
