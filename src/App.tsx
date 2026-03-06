@@ -19,6 +19,7 @@ import Contact from "./pages/Contact";
 
 import Calculator from "./pages/Calculator";
 import NotFound from "./pages/NotFound";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const queryClient = new QueryClient();
 
