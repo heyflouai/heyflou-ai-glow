@@ -52,7 +52,7 @@ export const Footer = () => {
   // Legal column links
   const legalLinks = [
     { name: t.footer.privacyPolicy, href: '/privacy-policy' },
-    { name: t.footer.termsOfService, href: '#' },
+    { name: t.footer.termsOfService, href: '/terms' },
     { name: t.footer.cookiePolicy, href: '#' },
   ];
 
