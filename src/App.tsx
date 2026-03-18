@@ -16,9 +16,11 @@ import TravelAgencies from "./pages/services/TravelAgencies";
 import CaseStudies from "./pages/CaseStudies";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-
+import Pricing from "./pages/Pricing";
 import Calculator from "./pages/Calculator";
 import Terms from "./pages/Terms";
+import Refund from "./pages/Refund";
+import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 
