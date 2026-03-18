@@ -41,6 +41,7 @@ export const Footer = () => {
     { name: t.footer.aboutUs, href: '/about' },
     { name: t.footer.caseStudies, href: '/case-studies' },
     { name: t.footer.contactUs, href: '/contact' },
+    { name: 'Pricing', href: '/pricing' },
   ];
 
   // Resources column links
