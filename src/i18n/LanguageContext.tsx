@@ -91,7 +91,7 @@ export function useLanguage() {
   const context = useContext(LanguageContext);
   // Return fallback during HMR to prevent crashes
   if (context === undefined) {
-    if (process.env.NODE_ENV === 'development') {
+    if (import.meta.env.DEV) {
       console.warn('[i18n] LanguageContext not found, using fallback. This may happen during HMR.');
       return fallbackContext;
     }
