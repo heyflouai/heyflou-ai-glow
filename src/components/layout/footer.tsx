@@ -52,8 +52,9 @@ export const Footer = () => {
 
   // Legal column links
   const legalLinks = [
-    { name: t.footer.privacyPolicy, href: '/privacy-policy' },
+    { name: t.footer.privacyPolicy, href: '/privacy' },
     { name: t.footer.termsOfService, href: '/terms' },
+    { name: 'Refund Policy', href: '/refund' },
     { name: t.footer.cookiePolicy, href: '#' },
   ];
 
