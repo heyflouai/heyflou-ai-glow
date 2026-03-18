@@ -67,7 +67,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   // Wrap translations in proxy for development debugging
   const t = useMemo(() => {
     const rawTranslations = translations[language];
-    if (process.env.NODE_ENV === 'development') {
+    if (import.meta.env.DEV) {
       return createTranslationProxy(rawTranslations);
     }
     return rawTranslations;
