@@ -61,6 +61,11 @@ export const Footer = () => {
   // Social links
   const socialLinks = [
     { 
+      name: 'Instagram', 
+      href: 'https://www.instagram.com/heyflou_ai/', 
+      icon: Instagram 
+    },
+    { 
       name: 'LinkedIn', 
       href: 'https://www.linkedin.com/company/heyflou', 
       icon: Linkedin 
