@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from '@/hooks/use-toast';
-import { Linkedin, Loader2, CheckCircle2, XCircle, Mail, Github, ArrowUpRight } from 'lucide-react';
+import { Linkedin, Loader2, CheckCircle2, XCircle, Mail, Github, ArrowUpRight, Instagram } from 'lucide-react';
 import { useTranslation } from '@/i18n';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -60,6 +60,11 @@ export const Footer = () => {
 
   // Social links
   const socialLinks = [
+    { 
+      name: 'Instagram', 
+      href: 'https://www.instagram.com/heyflou_ai/', 
+      icon: Instagram 
+    },
     { 
       name: 'LinkedIn', 
       href: 'https://www.linkedin.com/company/heyflou', 
