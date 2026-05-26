@@ -152,9 +152,8 @@ export default function Home() {
         </div>
         
         <div className="max-w-7xl mx-auto relative">
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[55fr_45fr] gap-10 lg:gap-12 items-center text-center lg:text-left">
-            <div>
-            {/* Hook Line */}
+          {/* Hook + H1 - Full width above grid */}
+          <div className="text-center mb-6 lg:mb-10">
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -164,7 +163,6 @@ export default function Home() {
               {t.homepage.heroHook}
             </motion.p>
             
-            {/* H1 - Main Headline */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -173,90 +171,75 @@ export default function Home() {
             >
               {t.homepage.heroTitle}
             </motion.h1>
-            
-            {/* Subtitle */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed"
-            >
-              {t.homepage.heroSubtitle}
-            </motion.p>
-              
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mt-8 md:mt-10"
-            >
-              {/* Primary CTA - Shimmer Button */}
-              <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                <ShimmerButton
-                  shimmerColor="hsl(var(--hf-teal))"
-                  shimmerDuration="2.5s"
-                  background="hsl(var(--primary))"
-                  className="px-8 md:px-10 py-4 md:py-5 text-base md:text-lg font-semibold text-primary-foreground w-full"
-                >
-                  {t.homepage.heroPrimaryCta}
-                </ShimmerButton>
-              </a>
-              
-              {/* Secondary CTA */}
-              <Link 
-                to="/case-studies" 
-                className="w-full sm:w-auto inline-flex items-center justify-center px-6 md:px-8 py-3.5 md:py-4 text-sm md:text-base font-medium text-foreground bg-transparent border border-hf-teal/50 rounded-full transition-all duration-300 hover:border-hf-teal hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:scale-[1.02]"
+          </div>
+
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[55fr_45fr] gap-10 lg:gap-12 items-center text-center lg:text-left">
+            <div>
+              {/* Subtitle */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed"
               >
-                {t.homepage.heroSecondaryCta}
-              </Link>
-            </motion.div>
+                {t.homepage.heroSubtitle}
+              </motion.p>
+              
+              {/* CTA Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mt-8 md:mt-10"
+              >
+                {/* Primary CTA - Shimmer Button */}
+                <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                  <ShimmerButton
+                    shimmerColor="hsl(var(--hf-teal))"
+                    shimmerDuration="2.5s"
+                    background="hsl(var(--primary))"
+                    className="px-8 md:px-10 py-4 md:py-5 text-base md:text-lg font-semibold text-primary-foreground w-full"
+                  >
+                    {t.homepage.heroPrimaryCta}
+                  </ShimmerButton>
+                </a>
+                
+                {/* Secondary CTA */}
+                <Link 
+                  to="/case-studies" 
+                  className="w-full sm:w-auto inline-flex items-center justify-center px-6 md:px-8 py-3.5 md:py-4 text-sm md:text-base font-medium text-foreground bg-transparent border border-hf-teal/50 rounded-full transition-all duration-300 hover:border-hf-teal hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:scale-[1.02]"
+                >
+                  {t.homepage.heroSecondaryCta}
+                </Link>
+              </motion.div>
 
-            {/* AWS Startup Club Trust Badge */}
-            <motion.a
-              href="https://aws.amazon.com/startups/"
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.35 }}
-              className="group mt-10 mx-4 lg:mx-0 px-4 py-5 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-3 text-center sm:text-left border-t border-[#e0e0e0] dark:border-[#333] sm:border-t-0 cursor-pointer"
-              aria-label="AWS Startup Club - Backed by AWS"
-            >
-              <img
-                src={awsLogo}
-                alt="Amazon Web Services"
-                className="h-7 sm:h-8 w-auto shrink-0 transition-transform duration-200 group-hover:scale-105 dark:invert dark:brightness-110"
-              />
-              <div className="flex flex-col items-center sm:items-start">
-                <span className="text-[15px] sm:text-[16px] font-semibold text-[#1a1a1a] dark:text-[#f0f0f0] leading-tight">
-                  Backed by AWS
-                </span>
-                <span className="text-[13px] sm:text-[14px] font-normal text-[#666] dark:text-[#999] leading-snug mt-0.5">
-                  Part of the AWS Startup Club in Tel Aviv
-                  <br />
-                  Trusted by Amazon Web Services for innovation and scale
-                </span>
-              </div>
-            </motion.a>
-
-            {/* Hero badges / Trust line */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex flex-wrap justify-center lg:justify-start gap-2 md:gap-4 text-xs md:text-sm mt-8"
-            >
-              <div className="flex items-center px-2.5 md:px-3 py-1.5 md:py-1 bg-background/40 dark:bg-card/50 rounded-full backdrop-blur-sm border border-border/50">
-                <span className="text-foreground font-medium">{t.home.badge1}</span>
-              </div>
-              <div className="flex items-center px-2.5 md:px-3 py-1.5 md:py-1 bg-background/40 dark:bg-card/50 rounded-full backdrop-blur-sm border border-border/50">
-                <span className="text-foreground font-medium">{t.home.badge2}</span>
-              </div>
-              <div className="flex items-center px-2.5 md:px-3 py-1.5 md:py-1 bg-background/40 dark:bg-card/50 rounded-full backdrop-blur-sm border border-border/50">
-                <span className="text-foreground font-medium">{t.home.badge3}</span>
-              </div>
-            </motion.div>
+              {/* AWS Startup Club Trust Badge */}
+              <motion.a
+                href="https://aws.amazon.com/startups/"
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.35 }}
+                className="group mt-10 mx-4 lg:mx-0 px-4 py-5 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-3 text-center sm:text-left border-t border-[#e0e0e0] dark:border-[#333] sm:border-t-0 cursor-pointer"
+                aria-label="AWS Startup Club - Backed by AWS"
+              >
+                <img
+                  src={awsLogo}
+                  alt="Amazon Web Services"
+                  className="h-7 sm:h-8 w-auto shrink-0 transition-transform duration-200 group-hover:scale-105 dark:invert dark:brightness-110"
+                />
+                <div className="flex flex-col items-center sm:items-start">
+                  <span className="text-[15px] sm:text-[16px] font-semibold text-[#1a1a1a] dark:text-[#f0f0f0] leading-tight">
+                    Backed by AWS
+                  </span>
+                  <span className="text-[13px] sm:text-[14px] font-normal text-[#666] dark:text-[#999] leading-snug mt-0.5">
+                    Part of the AWS Startup Club in Tel Aviv
+                    <br />
+                    Trusted by Amazon Web Services for innovation and scale
+                  </span>
+                </div>
+              </motion.a>
             </div>
 
             {/* Right column - Animated Workflow Diagram */}
