@@ -1629,31 +1629,37 @@ export const es: TranslationKeys = {
     feature1Before: 'Un cliente potencial te escribe a las 9pm. Nadie responde. Para la mañana, ya reservó con tu competencia.',
     feature1After: 'Un agente de IA responde al instante, hace las preguntas correctas y agenda la cita — a las 2am si es necesario. Ningún lead queda sin respuesta.',
     feature1Stat: '40% de los leads contactan al primer negocio que responde',
+    feature1Short: 'Los agentes de IA responden al instante y agendan la cita — incluso a las 2am. Ningún lead se enfría.',
     
     feature2Title: 'Agendamiento',
     feature2Before: 'Tu equipo pasa más de 10 horas semanales en llamadas y mensajes de ida y vuelta solo para confirmar citas.',
     feature2After: 'Un agente de IA de agendamiento lo maneja todo — disponibilidad, confirmaciones, recordatorios, reprogramaciones. Tu equipo nunca vuelve a tocar un calendario.',
     feature2Stat: '90% de usuarios de IA dicen que les ahorra tiempo significativo semanalmente (Microsoft 2024)',
+    feature2Short: 'La IA gestiona disponibilidad, confirmaciones, recordatorios y cambios. Tu equipo no toca el calendario.',
     
     feature3Title: 'Seguimientos',
     feature3Before: 'Los clientes se pierden entre sesiones. Los seguimientos se olvidan. Las re-reservas no suceden. Los ingresos se filtran lentamente.',
     feature3After: 'Un agente de IA envía check-ins personalizados y prompts de re-reserva en tu nombre — en el momento justo, cada vez. Los clientes se sienten atendidos sin que tú levantes un dedo.',
     feature3Stat: '48% de PYMEs vieron mejora medible en CX tras desplegar agentes de IA (Salesforce 2024)',
+    feature3Short: 'Check-ins personalizados y re-reservas enviadas automáticamente. Tus clientes se sienten atendidos sin esfuerzo.',
     
     feature4Title: 'Facturación y Pagos',
     feature4Before: 'Persigues a los clientes para cobrar manualmente. Es incómodo. Es lento. El flujo de caja sufre porque nadie quiere ser quien cobre.',
     feature4After: 'Un agente de IA de facturación envía facturas, recordatorios amigables y registra pagos automáticamente. La conversación incómoda desaparece.',
     feature4Stat: 'Los negocios recuperan un promedio de 12+ horas por empleado mensualmente',
+    feature4Short: 'Facturas, recordatorios amigables y registros de pago — enviados solos. La conversación incómoda desaparece.',
     
     feature5Title: 'Datos y Administración',
     feature5Before: 'Tu personal ingresa la misma información del cliente en 3 sistemas diferentes. Ocurren errores. El tiempo desaparece. Nada está jamás completamente actualizado.',
     feature5After: 'Un agente de IA captura los datos una vez y los sincroniza en todas partes. Tus sistemas se mantienen actualizados sin que nadie los gestione.',
     feature5Stat: '57% de la jornada se gasta en comunicación, no en creación (Microsoft 2023)',
+    feature5Short: 'Datos capturados una vez y sincronizados en todas partes. Sin doble entrada, sin errores, sin sistemas desactualizados.',
     
     feature6Title: 'Reportes',
     feature6Before: 'Pasas horas semanales extrayendo números de diferentes lugares para entender cómo le va realmente a tu negocio.',
     feature6After: 'Un agente de IA de reportes entrega dashboards en vivo — reservas, ingresos, ausencias, tendencias — actualizados automáticamente. Ves la verdad sobre tu negocio en tiempo real.',
     feature6Stat: 'Quienes adoptan IA son 3x más propensos a escalar operaciones efectivamente',
+    feature6Short: 'Dashboards en vivo de reservas, ingresos y tendencias — actualizados solos. Ves la verdad en tiempo real.',
     
     beforeLabel: 'Antes',
     afterLabel: 'Después',
