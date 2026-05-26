@@ -1755,6 +1755,26 @@ export const en = {
     finalCtaAlt: 'Already have a project in mind?',
     finalCtaEmail: 'Email us: hello@heyflou.com',
     finalCtaUrgency: 'Limited spots: We take on 3 custom projects per month',
+
+    // Tools vs Agents Section
+    toolsVsAgents: {
+      title: "There's a difference between AI tools and AI agents.",
+      leftLabel: 'AI Tools (DIY)',
+      leftHeader: 'You buy the tools. You figure it out.',
+      leftBullet1: 'ChatGPT, Claude, Gemini — powerful only if you know how to use them correctly',
+      leftBullet2: 'Requires setup, maintenance, and constant tweaking',
+      leftBullet3: 'Your team still manages the workflow',
+      leftBullet4: 'Results depend on how much time you invest',
+      leftBullet5: 'Average company: 80% of AI investment sees no bottom-line impact',
+      rightLabel: 'AI Agents (HeyFlou)',
+      rightHeader: 'We deploy the agents. They do the work.',
+      rightBullet1: 'Custom AI agents trained on YOUR business processes',
+      rightBullet2: 'We handle setup, monitoring, and optimization',
+      rightBullet3: 'Agents act autonomously — reply, book, follow up, report',
+      rightBullet4: 'Your team only sees the results, not the complexity',
+      rightBullet5: '90% of users say AI agents save them measurable time every week',
+      tagline: "We don't hand you software. We hand you a working AI team.",
+    },
   },
 };
 

@@ -1757,5 +1757,25 @@ export const es: TranslationKeys = {
     finalCtaAlt: '¿Ya tienes un proyecto en mente?',
     finalCtaEmail: 'Escríbenos: hello@heyflou.com',
     finalCtaUrgency: 'Cupos limitados: Tomamos 3 proyectos personalizados por mes',
+
+    // Tools vs Agents Section
+    toolsVsAgents: {
+      title: 'Hay una diferencia entre herramientas de IA y agentes de IA.',
+      leftLabel: 'Herramientas de IA (DIY)',
+      leftHeader: 'Tú compras las herramientas. Tú las configuras.',
+      leftBullet1: 'ChatGPT, Claude, Gemini — potentes solo si sabes usarlas correctamente',
+      leftBullet2: 'Requieren configuración, mantenimiento y ajustes constantes',
+      leftBullet3: 'Tu equipo sigue gestionando el flujo de trabajo',
+      leftBullet4: 'Los resultados dependen de cuánto tiempo inviertas',
+      leftBullet5: 'Promedio empresarial: el 80% de la inversión en IA no impacta los resultados',
+      rightLabel: 'Agentes de IA (HeyFlou)',
+      rightHeader: 'Nosotros desplegamos los agentes. Ellos hacen el trabajo.',
+      rightBullet1: 'Agentes de IA personalizados entrenados en LOS procesos de TU negocio',
+      rightBullet2: 'Nosotros manejamos la configuración, monitoreo y optimización',
+      rightBullet3: 'Los agentes actúan de forma autónoma — responden, agendan, siguen, reportan',
+      rightBullet4: 'Tu equipo solo ve los resultados, no la complejidad',
+      rightBullet5: 'El 90% de usuarios dicen que los agentes de IA les ahorran tiempo medible cada semana',
+      tagline: 'No te entregamos software. Te entregamos un equipo de IA funcionando.',
+    },
   },
 };
