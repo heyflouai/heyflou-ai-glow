@@ -1627,31 +1627,37 @@ export const en = {
     feature1Before: 'A potential client messages you at 9pm. No one answers. By morning, they\'ve booked with your competitor.',
     feature1After: 'An AI agent replies instantly, asks the right questions, and books the appointment — at 2am if needed. No lead goes unanswered.',
     feature1Stat: '40% of leads contact the first business that responds',
+    feature1Short: 'AI agents reply instantly and book the meeting — even at 2am. No lead goes cold.',
     
     feature2Title: 'Scheduling',
     feature2Before: 'Your team spends 10+ hours every week on back-and-forth calls and messages just to confirm appointments.',
     feature2After: 'An AI scheduling agent handles all of it — availability, confirmations, reminders, reschedules. Your team never touches a calendar again.',
     feature2Stat: '90% of AI users say it saves them significant time weekly (Microsoft 2024)',
+    feature2Short: 'AI handles availability, confirmations, reminders and reschedules. Your team never touches a calendar.',
     
     feature3Title: 'Follow-Ups',
     feature3Before: 'Clients fall off between sessions. Follow-ups get forgotten. Rebookings don\'t happen. Revenue leaks slowly.',
     feature3After: 'An AI agent sends personalized check-ins and rebook prompts on your behalf — at the right time, every time. Clients feel attended to without you lifting a finger.',
     feature3Stat: '48% of SMBs saw measurable CX improvement after deploying AI agents (Salesforce 2024)',
+    feature3Short: 'Personalized check-ins and rebook prompts sent automatically. Clients feel attended to — effortlessly.',
     
     feature4Title: 'Billing & Payments',
     feature4Before: 'You chase clients for payments manually. It\'s awkward. It\'s slow. Cash flow suffers because no one wants to be the one who follows up.',
     feature4After: 'An AI billing agent sends invoices, sends friendly reminders, and logs payments automatically. The awkward conversation disappears.',
     feature4Stat: 'Businesses recover an avg. of 12+ hours per employee monthly',
+    feature4Short: 'Invoices, friendly reminders and payment logs — sent automatically. The awkward chase disappears.',
     
     feature5Title: 'Data & Admin',
     feature5Before: 'Your staff enters the same client information into 3 different systems. Errors happen. Time disappears. Nothing is ever fully up to date.',
     feature5After: 'An AI agent captures data once and syncs it everywhere. Your systems stay current without anyone managing them.',
     feature5Stat: '57% of the workday is spent on communication, not creation (Microsoft 2023)',
+    feature5Short: 'Data captured once, synced everywhere. No double entry, no errors, no stale systems.',
     
     feature6Title: 'Reporting',
     feature6Before: 'You spend hours every week pulling numbers from different places to understand how your business is actually doing.',
     feature6After: 'An AI reporting agent delivers live dashboards — bookings, revenue, no-shows, trends — updated automatically. You see the truth about your business in real time.',
     feature6Stat: 'AI adopters are 3x more likely to scale operations effectively',
+    feature6Short: 'Live dashboards for bookings, revenue and trends — updated automatically. See the truth in real time.',
     
     beforeLabel: 'Before',
     afterLabel: 'After',

@@ -8,9 +8,6 @@ import {
   CreditCard, 
   Database, 
   TrendingUp,
-  X,
-  Check,
-  Sparkles
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useTranslation } from "@/i18n";
@@ -18,115 +15,74 @@ import { useTranslation } from "@/i18n";
 interface FeatureCard {
   icon: React.ReactNode;
   titleKey: string;
-  beforeKey: string;
-  afterKey: string;
-  statKey: string;
+  shortKey: string;
 }
 
 const featureKeys: FeatureCard[] = [
   {
-    icon: <Smartphone className="w-6 h-6" />,
+    icon: <Smartphone className="w-5 h-5" strokeWidth={1.5} />,
     titleKey: "feature1Title",
-    beforeKey: "feature1Before",
-    afterKey: "feature1After",
-    statKey: "feature1Stat"
+    shortKey: "feature1Short",
   },
   {
-    icon: <Calendar className="w-6 h-6" />,
+    icon: <Calendar className="w-5 h-5" strokeWidth={1.5} />,
     titleKey: "feature2Title",
-    beforeKey: "feature2Before",
-    afterKey: "feature2After",
-    statKey: "feature2Stat"
+    shortKey: "feature2Short",
   },
   {
-    icon: <MessageSquare className="w-6 h-6" />,
+    icon: <MessageSquare className="w-5 h-5" strokeWidth={1.5} />,
     titleKey: "feature3Title",
-    beforeKey: "feature3Before",
-    afterKey: "feature3After",
-    statKey: "feature3Stat"
+    shortKey: "feature3Short",
   },
   {
-    icon: <CreditCard className="w-6 h-6" />,
+    icon: <CreditCard className="w-5 h-5" strokeWidth={1.5} />,
     titleKey: "feature4Title",
-    beforeKey: "feature4Before",
-    afterKey: "feature4After",
-    statKey: "feature4Stat"
+    shortKey: "feature4Short",
   },
   {
-    icon: <Database className="w-6 h-6" />,
+    icon: <Database className="w-5 h-5" strokeWidth={1.5} />,
     titleKey: "feature5Title",
-    beforeKey: "feature5Before",
-    afterKey: "feature5After",
-    statKey: "feature5Stat"
+    shortKey: "feature5Short",
   },
   {
-    icon: <TrendingUp className="w-6 h-6" />,
+    icon: <TrendingUp className="w-5 h-5" strokeWidth={1.5} />,
     titleKey: "feature6Title",
-    beforeKey: "feature6Before",
-    afterKey: "feature6After",
-    statKey: "feature6Stat"
+    shortKey: "feature6Short",
   }
 ];
 
-function FeatureCardComponent({ feature, index, translations }: { feature: FeatureCard; index: number; translations: Record<string, string> }) {
+function FeatureCell({
+  feature,
+  index,
+  translations,
+  borderClasses,
+}: {
+  feature: FeatureCard;
+  index: number;
+  translations: Record<string, string>;
+  borderClasses: string;
+}) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.45, delay: index * 0.07 }}
       className={cn(
-        "relative p-6 md:p-8 rounded-2xl",
-        "bg-card/80 backdrop-blur-sm",
-        "border border-border/50 hover:border-hf-teal/30",
-        "transition-all duration-300",
-        "hover:shadow-[0_0_40px_rgba(6,182,212,0.12)]",
-        "hover:-translate-y-2",
-        "group"
+        "group relative px-6 py-8 md:px-8 md:py-10 transition-colors duration-300",
+        "hover:bg-hf-teal/[0.03]",
+        borderClasses
       )}
     >
-      {/* Icon */}
-      <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl hf-gradient flex items-center justify-center text-white mb-5 group-hover:scale-110 transition-transform">
+      <div className="mb-5 text-hf-teal/80 group-hover:text-hf-teal transition-colors">
         {feature.icon}
       </div>
-      
-      {/* Title */}
-      <h3 className="text-lg md:text-xl font-bold text-foreground mb-6">
+      <h3 className="text-base md:text-lg font-semibold text-foreground mb-2 tracking-tight">
         {translations[feature.titleKey]}
       </h3>
-      
-      {/* Before Section */}
-      <div className="mb-5">
-        <div className="flex items-center gap-2 mb-2">
-          <X className="w-4 h-4 text-orange-400" />
-          <span className="text-sm font-semibold text-orange-400">{translations.beforeLabel}</span>
-        </div>
-        <p className="text-sm text-muted-foreground leading-relaxed">
-          {translations[feature.beforeKey]}
-        </p>
-      </div>
-      
-      {/* Divider */}
-      <div className="h-px w-full bg-border/50 mb-5" />
-      
-      {/* After Section */}
-      <div>
-        <div className="flex items-center gap-2 mb-2">
-          <Check className="w-4 h-4 text-green-400" />
-          <span className="text-sm font-semibold text-green-400">{translations.afterLabel}</span>
-        </div>
-        <p className="text-sm text-foreground/80 leading-relaxed mb-4">
-          {translations[feature.afterKey]}
-        </p>
-        
-        {/* Stat Badge */}
-        <div className="inline-flex items-center gap-1.5 rounded-full bg-hf-teal/10 border border-hf-teal/20 px-3 py-1.5">
-          <Sparkles className="w-3 h-3 text-hf-teal shrink-0" />
-          <span className="text-xs font-medium text-hf-teal leading-none">
-            {translations[feature.statKey]}
-          </span>
-        </div>
-      </div>
+      <p className="text-sm text-muted-foreground leading-relaxed">
+        {translations[feature.shortKey]}
+      </p>
     </motion.div>
   );
 }
@@ -134,6 +90,25 @@ function FeatureCardComponent({ feature, index, translations }: { feature: Featu
 export function BeforeAfterFeatures() {
   const t = useTranslation();
   const hp = t.homepage as unknown as Record<string, string>;
+
+  // 3 cols on lg, 2 on md, 1 on mobile. Use right/bottom hairline borders
+  // and strip them on the last column/row so the grid looks like the reference.
+  const cellBorder = (i: number) => {
+    const classes = ["border-border/40"];
+    // bottom border on all except mobile last
+    classes.push("border-b");
+    if (i === 5) classes.push("md:border-b-0");
+    // remove bottom on the last row of md (last 2) and lg (last 3)
+    if (i >= 4) classes.push("md:border-b-0");
+    if (i >= 3) classes.push("lg:border-b-0");
+    // right borders
+    classes.push("md:border-r");
+    if (i % 2 === 1) classes.push("md:border-r-0");
+    classes.push("lg:border-r");
+    if (i % 3 === 2) classes.push("lg:border-r-0");
+    // restore md right border for items where lg removes it but md needs it
+    return classes.join(" ");
+  };
 
   return (
     <section className="py-16 md:py-24 lg:py-28 bg-muted/50">
@@ -169,10 +144,16 @@ export function BeforeAfterFeatures() {
           </motion.p>
         </div>
         
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        {/* Features Grid — compact, hairline dividers */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto border border-border/40 rounded-2xl overflow-hidden bg-card/30 backdrop-blur-sm">
           {featureKeys.map((feature, index) => (
-            <FeatureCardComponent key={index} feature={feature} index={index} translations={hp} />
+            <FeatureCell
+              key={index}
+              feature={feature}
+              index={index}
+              translations={hp}
+              borderClasses={cellBorder(index)}
+            />
           ))}
         </div>
         
