@@ -208,7 +208,7 @@ export default function Home() {
               
               {/* Secondary CTA */}
               <Link 
-                to="/services" 
+                to="/case-studies" 
                 className="w-full sm:w-auto inline-flex items-center justify-center px-6 md:px-8 py-3.5 md:py-4 text-sm md:text-base font-medium text-foreground bg-transparent border border-hf-teal/50 rounded-full transition-all duration-300 hover:border-hf-teal hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:scale-[1.02]"
               >
                 {t.homepage.heroSecondaryCta}

@@ -1579,11 +1579,11 @@ export const es: TranslationKeys = {
   // New Homepage Sections
   homepage: {
     // Hero Section
-    heroHook: 'Deja de Perder Tiempo en Tareas Repetitivas',
-    heroTitle: 'Automatización IA que Realmente Funciona',
-    heroSubtitle: 'Construimos soluciones de IA personalizadas para negocios de salud, fitness y educación. Sin rodeos. Solo resultados.',
-    heroPrimaryCta: 'Reservar Consulta Gratis →',
-    heroSecondaryCta: 'Explorar Soluciones',
+    heroHook: 'DEJA DE PERDER TIEMPO EN TAREAS REPETITIVAS',
+    heroTitle: 'Agentes de IA que Hacen el Trabajo',
+    heroSubtitle: 'Integramos agentes de IA en cualquier negocio de servicios para encargarse de las tareas que tu equipo no debería hacer. Sin rodeos. Solo resultados.',
+    heroPrimaryCta: 'Empezar',
+    heroSecondaryCta: 'Ver Casos de Éxito',
     
     // Hero Workflow
     workflowYourBusiness: 'Tu Negocio',
