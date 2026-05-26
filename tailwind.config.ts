@@ -200,6 +200,10 @@ export default {
             "background-position": "right center",
           },
         },
+        "ping-slow": {
+          "0%": { transform: "scale(1)", opacity: "0.6" },
+          "75%, 100%": { transform: "scale(1.8)", opacity: "0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
