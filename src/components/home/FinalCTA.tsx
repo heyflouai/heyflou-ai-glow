@@ -7,7 +7,7 @@ import { useTranslation } from "@/i18n";
 
 export function FinalCTA() {
   const t = useTranslation();
-  const hp = t.homepage as Record<string, string>;
+  const hp = t.homepage as unknown as Record<string, string>;
 
   return (
     <section className="relative py-12 md:py-20 lg:py-24 overflow-hidden">
