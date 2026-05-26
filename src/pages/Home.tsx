@@ -154,8 +154,9 @@ export default function Home() {
           }} />
         </div>
         
-        <div className="text-center max-w-4xl mx-auto relative">
-          <div className="relative z-10">
+        <div className="max-w-7xl mx-auto relative">
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[55fr_45fr] gap-10 lg:gap-12 items-center text-center lg:text-left">
+            <div>
             {/* Hook Line */}
             <motion.p
               initial={{ opacity: 0, y: 10 }}
@@ -181,7 +182,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
+              className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed"
             >
               {t.homepage.heroSubtitle}
             </motion.p>
@@ -191,7 +192,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-8 md:mt-10"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mt-8 md:mt-10"
             >
               {/* Primary CTA - Shimmer Button */}
               <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
@@ -222,7 +223,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.35 }}
-              className="group mt-10 mx-4 px-4 py-5 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-3 text-center sm:text-left border-t border-[#e0e0e0] dark:border-[#333] sm:border-t-0 cursor-pointer"
+              className="group mt-10 mx-4 lg:mx-0 px-4 py-5 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-3 text-center sm:text-left border-t border-[#e0e0e0] dark:border-[#333] sm:border-t-0 cursor-pointer"
               aria-label="AWS Founders Club - Trusted by AWS"
             >
               <img
@@ -247,7 +248,7 @@ export default function Home() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex flex-wrap justify-center gap-2 md:gap-4 text-xs md:text-sm mt-8"
+              className="flex flex-wrap justify-center lg:justify-start gap-2 md:gap-4 text-xs md:text-sm mt-8"
             >
               <div className="flex items-center px-2.5 md:px-3 py-1.5 md:py-1 bg-background/40 dark:bg-card/50 rounded-full backdrop-blur-sm border border-border/50">
                 <span className="text-foreground font-medium">{t.home.badge1}</span>
@@ -259,9 +260,12 @@ export default function Home() {
                 <span className="text-foreground font-medium">{t.home.badge3}</span>
               </div>
             </motion.div>
-            
-            {/* Animated Workflow Diagram */}
-            <HeroWorkflow />
+            </div>
+
+            {/* Right column - Animated Workflow Diagram */}
+            <div className="w-full">
+              <HeroWorkflow />
+            </div>
           </div>
         </div>
       </section>
