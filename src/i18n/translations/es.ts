@@ -23,9 +23,9 @@ export const es: TranslationKeys = {
     heroSubtitle: 'Automatiza tu Trabajo — Haz Crecer tu Negocio',
     bookStrategyCall: 'Reservar Llamada Estratégica',
     getAiAudit: 'Obtener Auditoría IA',
-    badge1: 'Supervisión humana',
-    badge2: 'Seguridad integrada',
-    badge3: 'De auditoría a ROI en 90 días',
+    badge1: '✦ Parte del AWS Startup Club',
+    badge2: '✦ 75% de negocios en crecimiento ya usan IA (Salesforce)',
+    badge3: '✦ Resultados en 30–90 días',
     
     // Stats Section
     statsTitle: 'Por Qué los Profesionales Eligen Automatización con IA',
@@ -1577,9 +1577,9 @@ export const es: TranslationKeys = {
   // New Homepage Sections
   homepage: {
     // Hero Section
-    heroHook: 'DEJA DE PERDER TIEMPO EN TAREAS REPETITIVAS',
-    heroTitle: 'Agentes de IA que Hacen el Trabajo',
-    heroSubtitle: 'Integramos agentes de IA en cualquier negocio de servicios para encargarse de las tareas que tu equipo no debería hacer. Sin rodeos. Solo resultados.',
+    heroHook: 'AUTOMATIZACIÓN CON IA PARA NEGOCIOS EN CRECIMIENTO',
+    heroTitle: 'Tu Negocio. Impulsado por Agentes de IA.',
+    heroSubtitle: 'Desplegamos agentes de IA que responden a clientes, agendan citas, envían seguimientos, publican contenido y entregan reportes — mientras tu equipo se enfoca en el trabajo que solo los humanos pueden hacer.',
     heroPrimaryCta: 'Empezar',
     heroSecondaryCta: 'Ver Casos de Éxito',
     
