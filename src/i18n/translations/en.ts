@@ -21,9 +21,9 @@ export const en = {
     heroSubtitle: 'Automate Your Work — Grow Your Business',
     bookStrategyCall: 'Book a Strategy Call',
     getAiAudit: 'Get an AI Audit',
-    badge1: 'Human-in-the-loop',
-    badge2: 'Secure-by-design',
-    badge3: 'From audit to ROI in 90 days',
+    badge1: '✦ Part of AWS Startup Club',
+    badge2: '✦ 75% of growing businesses already use AI (Salesforce)',
+    badge3: '✦ Results in 30–90 days',
     
     // Stats Section
     statsTitle: 'Why Service Professionals Choose AI Automation',

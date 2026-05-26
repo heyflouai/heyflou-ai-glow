@@ -23,9 +23,9 @@ export const es: TranslationKeys = {
     heroSubtitle: 'Automatiza tu Trabajo — Haz Crecer tu Negocio',
     bookStrategyCall: 'Reservar Llamada Estratégica',
     getAiAudit: 'Obtener Auditoría IA',
-    badge1: 'Supervisión humana',
-    badge2: 'Seguridad integrada',
-    badge3: 'De auditoría a ROI en 90 días',
+    badge1: '✦ Parte del AWS Startup Club',
+    badge2: '✦ 75% de negocios en crecimiento ya usan IA (Salesforce)',
+    badge3: '✦ Resultados en 30–90 días',
     
     // Stats Section
     statsTitle: 'Por Qué los Profesionales Eligen Automatización con IA',
