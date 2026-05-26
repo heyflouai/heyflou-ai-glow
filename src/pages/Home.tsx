@@ -217,7 +217,7 @@ export default function Home() {
 
             {/* AWS Founders Club Trust Badge */}
             <motion.a
-              href="https://aws.amazon.com/startups/founders-club/"
+              href="https://aws.amazon.com/startups/"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 10 }}
