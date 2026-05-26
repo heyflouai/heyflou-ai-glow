@@ -1586,11 +1586,13 @@ export const es: TranslationKeys = {
     heroSecondaryCta: 'Ver Casos de Éxito',
     
     // Hero Workflow
-    workflowYourBusiness: 'Tu Negocio',
-    workflowChatbot: 'Asistente IA 24/7',
-    workflowAppointments: 'Agendamiento Inteligente',
-    workflowReminders: 'Recordatorios Automáticos',
-    workflowConfirmations: 'Confirmaciones Instantáneas',
+    workflowYourBusiness: 'Tu Equipo IA',
+    workflowChatbot: 'Responde Clientes',
+    workflowAppointments: 'Agenda Citas',
+    workflowReminders: 'Envía Recordatorios',
+    workflowConfirmations: 'Publica Contenido',
+    workflowLeads: 'Califica Leads',
+    workflowReports: 'Entrega Reportes',
     
     // Before/After Features Section
     featuresTitle: 'Deja de Perder Dinero en Procesos Manuales',

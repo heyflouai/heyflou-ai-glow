@@ -1584,11 +1584,13 @@ export const en = {
     heroSecondaryCta: 'See Case Studies',
     
     // Hero Workflow
-    workflowYourBusiness: 'Your Business',
-    workflowChatbot: '24/7 AI Assistant',
-    workflowAppointments: 'Smart Scheduling',
-    workflowReminders: 'Auto Reminders',
-    workflowConfirmations: 'Instant Confirmations',
+    workflowYourBusiness: 'Your AI Team',
+    workflowChatbot: 'Replies Clients',
+    workflowAppointments: 'Books Appointments',
+    workflowReminders: 'Sends Reminders',
+    workflowConfirmations: 'Publishes Content',
+    workflowLeads: 'Qualifies Leads',
+    workflowReports: 'Delivers Reports',
     
     // Before/After Features Section
     featuresTitle: 'Stop Losing Money to Manual Processes',
