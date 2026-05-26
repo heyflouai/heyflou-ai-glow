@@ -26,7 +26,7 @@ export const en = {
     badge3: '✦ Results in 30–90 days',
     
     // Stats Section
-    statsTitle: 'Why Service Professionals Choose AI Automation',
+    statsTitle: 'Why Service Professionals Choose AI Agents',
     statsSubtitle: 'Real results from therapists and service-based businesses',
     
     // Services Section
@@ -70,7 +70,7 @@ export const en = {
     
     // FAQ Section
     faqTitle: 'Common Questions',
-    faqSubtitle: 'Straight answers from real automation projects',
+    faqSubtitle: 'Straight answers from real AI agent projects',
     faq1Q: 'Will AI replace me or my staff?',
     faq1A: 'No. AI handles the repetitive tasks your team hates — data entry, follow-up messages, reminders, scheduling. Your team focuses on the work that actually requires a human. Most clients tell us their staff morale goes up because they stop doing admin work.',
     faq2Q: 'How do you keep client data secure?',
