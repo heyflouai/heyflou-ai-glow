@@ -16,6 +16,7 @@ import { useTranslation } from '@/i18n';
 import { PAGE_SEO, getCanonicalUrl } from '@/lib/seo-config';
 import { ShimmerButton } from '@/components/ui/shimmer-button';
 import { motion } from 'framer-motion';
+import awsLogo from '@/assets/aws-logo.svg';
 
 export default function Home() {
   const t = useTranslation();
