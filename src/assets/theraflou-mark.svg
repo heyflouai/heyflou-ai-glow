@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 480" fill="none">
+  <defs>
+    <linearGradient id="g-purple" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C198FA"></stop>
+      <stop offset="45%" stop-color="#9966F0"></stop>
+      <stop offset="100%" stop-color="#6D4AE5"></stop>
+    </linearGradient>
+    <linearGradient id="g-blue" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8DD0FB"></stop>
+      <stop offset="50%" stop-color="#4AA8EC"></stop>
+      <stop offset="100%" stop-color="#2E7BC8"></stop>
+    </linearGradient>
+    <linearGradient id="g-dot" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#A855F7"></stop>
+      <stop offset="100%" stop-color="#5A9EE0"></stop>
+    </linearGradient>
+  </defs>
+
+  
+  <path d="&#xA;    M 104 18&#xA;    C 124 32, 140 64, 146 108&#xA;    C 152 156, 144 204, 128 250&#xA;    C 112 296, 90 342, 78 384&#xA;    C 70 412, 66 432, 70 446&#xA;    L 56 442&#xA;    C 50 426, 50 400, 54 370&#xA;    C 60 320, 78 268, 94 218&#xA;    C 110 168, 124 116, 128 76&#xA;    C 130 52, 124 32, 104 18 Z&#xA;  " fill="url(#g-purple)"></path>
+
+  
+  <path d="&#xA;    M 132 158&#xA;    C 150 176, 162 208, 164 244&#xA;    C 166 284, 158 320, 142 354&#xA;    C 124 388, 102 416, 82 438&#xA;    C 76 444, 72 448, 70 446&#xA;    C 78 432, 88 414, 102 392&#xA;    C 122 360, 140 326, 150 290&#xA;    C 158 256, 160 224, 154 196&#xA;    C 150 178, 142 166, 132 158 Z&#xA;  " fill="url(#g-blue)"></path>
+
+  
+  <circle cx="92" cy="20" r="5" fill="url(#g-dot)"></circle>
+  <circle cx="74" cy="56" r="8" fill="url(#g-dot)"></circle>
+  <circle cx="58" cy="100" r="11" fill="url(#g-dot)"></circle>
+  <circle cx="46" cy="152" r="13" fill="url(#g-dot)"></circle>
+  <circle cx="42" cy="210" r="14" fill="url(#g-dot)"></circle>
+  <circle cx="44" cy="270" r="13" fill="url(#g-dot)"></circle>
+  <circle cx="50" cy="328" r="11" fill="url(#g-dot)"></circle>
+  <circle cx="60" cy="382" r="8" fill="url(#g-dot)"></circle>
+  <circle cx="72" cy="426" r="6" fill="url(#g-dot)"></circle>
+</svg>
