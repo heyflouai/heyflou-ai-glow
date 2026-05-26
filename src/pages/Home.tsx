@@ -262,7 +262,7 @@ export default function Home() {
 
       {/* Why AI Now - Stats Grid */}
       <Section>
-        <div className="text-center mb-8 md:mb-12 px-5 md:px-0">
+        <div className="text-center mb-10 md:mb-14 px-5 md:px-0">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold font-display text-foreground mb-3 md:mb-4">
             {t.home.statsTitle}
           </h2>
@@ -270,8 +270,53 @@ export default function Home() {
             {t.home.statsSubtitle}
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 px-5 md:px-0">
-          {keyMetrics.map((metric, index) => <KpiStat key={metric.id} value={metric.value} label={metric.label} description={metric.description} icon={index === 0 ? <TrendingUp size={24} /> : index === 1 ? <ChartBar size={24} /> : index === 2 ? <Users size={24} /> : index === 3 ? <Bot size={24} /> : index === 4 ? <Zap size={24} /> : <Shield size={24} />} />)}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 px-5 md:px-0">
+          {statsData.map((stat, index) => {
+            // Split number into main part and accent suffix
+            const accentParts = ['%', '→', 'B'];
+            let mainNum = stat.number;
+            let accentText = '';
+            for (const part of accentParts) {
+              if (stat.number.includes(part)) {
+                const idx = stat.number.indexOf(part);
+                // For "4% → 88%", keep the whole thing as main and accent the last %
+                if (part === '%' && stat.number.includes('→')) {
+                  mainNum = stat.number.slice(0, stat.number.lastIndexOf('%'));
+                  accentText = '%';
+                  break;
+                }
+                mainNum = stat.number.slice(0, idx);
+                accentText = stat.number.slice(idx);
+                break;
+              }
+            }
+            // For $294B, accent the B
+            if (stat.number.startsWith('$') && stat.number.endsWith('B')) {
+              mainNum = stat.number.slice(0, -1);
+              accentText = 'B';
+            }
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
+                className="text-center"
+              >
+                <div className="text-4xl md:text-5xl lg:text-6xl font-bold font-display text-foreground leading-tight">
+                  {mainNum}
+                  {accentText && <span className="text-hf-teal">{accentText}</span>}
+                </div>
+                <p className="mt-3 text-sm md:text-base text-muted-foreground leading-relaxed max-w-xs mx-auto">
+                  {stat.label}
+                </p>
+                <p className="mt-2 text-xs text-muted-foreground/60">
+                  {stat.source}
+                </p>
+              </motion.div>
+            );
+          })}
         </div>
       </Section>
 
