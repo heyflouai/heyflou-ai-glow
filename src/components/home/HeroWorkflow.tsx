@@ -150,7 +150,7 @@ const CenterNode = forwardRef<HTMLDivElement, { label: string }>(({ label }, ref
         <BrainCircuit className="w-8 h-8 md:w-10 md:h-10 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]" strokeWidth={1.75} />
       </div>
     </div>
-    <span className="text-xs md:text-sm font-semibold text-center leading-tight text-white">
+    <span className="text-xs md:text-sm font-semibold text-center leading-tight text-foreground">
       {label}
     </span>
   </div>
