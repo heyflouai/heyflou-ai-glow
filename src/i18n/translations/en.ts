@@ -26,8 +26,33 @@ export const en = {
     badge3: '✦ Results in 30–90 days',
     
     // Stats Section
-    statsTitle: 'Why Service Professionals Choose AI Agents',
-    statsSubtitle: 'Real results from therapists and service-based businesses',
+    statsTitle: 'Why AI Agents Matter Now',
+    statsSubtitle: 'Real numbers from the businesses already using AI',
+    
+    // Stats Grid — Real Cited Figures
+    stat1Number: '75%',
+    stat1Label: 'of growing businesses have already invested in AI',
+    stat1Source: 'Source: Salesforce SMB Trends Report',
+    
+    stat2Number: '90%',
+    stat2Label: 'of AI users say it saves them significant time every week',
+    stat2Source: 'Source: Microsoft Work Trend Index 2024',
+    
+    stat3Number: '48%',
+    stat3Label: 'of SMBs saw measurable customer experience improvement after deploying AI',
+    stat3Source: 'Source: Salesforce SMB Trends Report',
+    
+    stat4Number: '57%',
+    stat4Label: 'of the average workday is spent on communication — not actual work',
+    stat4Source: 'Source: Microsoft Work Trend Index 2023',
+    
+    stat5Number: '4% → 88%',
+    stat5Label: 'of companies using AI — in just 4 years',
+    stat5Source: 'Source: Goldman Sachs / McKinsey 2024',
+    
+    stat6Number: '$294B',
+    stat6Label: 'projected AI agents market by 2035 — growing 44% per year',
+    stat6Source: 'Source: Precedence Research 2025',
     
     // Services Section
     servicesTitle: 'How HeyFlou Helps You Grow',

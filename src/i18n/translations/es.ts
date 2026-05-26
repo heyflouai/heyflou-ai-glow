@@ -28,8 +28,33 @@ export const es: TranslationKeys = {
     badge3: '✦ Resultados en 30–90 días',
     
     // Stats Section
-    statsTitle: 'Por Qué los Profesionales Eligen Agentes de IA',
-    statsSubtitle: 'Resultados reales de terapeutas y negocios de servicios',
+    statsTitle: 'Por Qué los Agentes de IA Importan Ahora',
+    statsSubtitle: 'Números reales de negocios que ya usan IA',
+    
+    // Stats Grid — Real Cited Figures
+    stat1Number: '75%',
+    stat1Label: 'de negocios en crecimiento ya han invertido en IA',
+    stat1Source: 'Fuente: Salesforce SMB Trends Report',
+    
+    stat2Number: '90%',
+    stat2Label: 'de usuarios de IA dicen que les ahorra tiempo significativo cada semana',
+    stat2Source: 'Fuente: Microsoft Work Trend Index 2024',
+    
+    stat3Number: '48%',
+    stat3Label: 'de PYMEs vieron mejora medible en experiencia del cliente tras desplegar IA',
+    stat3Source: 'Fuente: Salesforce SMB Trends Report',
+    
+    stat4Number: '57%',
+    stat4Label: 'de la jornada laboral promedio se gasta en comunicación — no en trabajo real',
+    stat4Source: 'Fuente: Microsoft Work Trend Index 2023',
+    
+    stat5Number: '4% → 88%',
+    stat5Label: 'de empresas usando IA — en solo 4 años',
+    stat5Source: 'Fuente: Goldman Sachs / McKinsey 2024',
+    
+    stat6Number: '$294B',
+    stat6Label: 'mercado proyectado de agentes de IA para 2035 — creciendo 44% anual',
+    stat6Source: 'Fuente: Precedence Research 2025',
     
     // Services Section
     servicesTitle: 'Cómo HeyFlou Te Ayuda a Crecer',
