@@ -84,9 +84,6 @@ export default function Home() {
   }, {
     question: t.home.faq6Q,
     answer: t.home.faq6A
-  }, {
-    question: t.home.faq7Q,
-    answer: t.home.faq7A
   }];
 
   const keyMetrics = [
@@ -309,22 +306,27 @@ export default function Home() {
             {t.home.faqSubtitle}
           </p>
         </div>
-        <Accordion type="single" collapsible className="max-w-3xl mx-auto space-y-3 md:space-y-4 px-5 md:px-0">
-          {faqItems.map((faq, index) => (
-            <AccordionItem 
-              key={index} 
-              value={`faq-${index}`}
-              className="bg-card rounded-lg hf-shadow border-none"
-            >
-              <AccordionTrigger className="px-4 md:px-6 py-4 md:py-6 hover:bg-muted/50 transition-colors hover:no-underline [&>svg]:text-hf-teal min-h-[48px]">
-                <span className="font-semibold text-foreground text-left text-sm md:text-base">{faq.question}</span>
-              </AccordionTrigger>
-              <AccordionContent className="px-4 md:px-6 pb-4 md:pb-6 text-muted-foreground text-sm md:text-base">
-                {faq.answer}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+        <div className="max-w-6xl mx-auto px-5 md:px-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+            {faqItems.map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
+                className="bg-card rounded-xl border border-border/60 p-5 md:p-6 hf-shadow hover:border-hf-teal/30 transition-colors duration-200"
+              >
+                <h3 className="font-semibold text-foreground text-base md:text-lg leading-snug mb-3">
+                  {faq.question}
+                </h3>
+                <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+                  {faq.answer}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </Section>
 
       {/* Compact Form */}
