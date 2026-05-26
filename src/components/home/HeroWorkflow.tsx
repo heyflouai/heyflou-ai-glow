@@ -198,7 +198,7 @@ export function HeroWorkflow() {
       {/* DESKTOP — Radial command-center layout */}
       <div
         ref={containerRef}
-        className="hidden md:block relative rounded-2xl border border-border/30 bg-gradient-to-br from-slate-950/80 via-slate-900/60 to-slate-950/80 backdrop-blur-sm overflow-hidden"
+        className="hidden md:block relative rounded-2xl overflow-hidden"
         style={{ aspectRatio: "1 / 1" }}
       >
         {/* faint grid backdrop */}
@@ -244,7 +244,7 @@ export function HeroWorkflow() {
       </div>
 
       {/* MOBILE — Center on top + 2x3 grid (no radial / no beams) */}
-      <div className="md:hidden rounded-2xl border border-border/30 bg-gradient-to-br from-slate-950/80 via-slate-900/60 to-slate-950/80 backdrop-blur-sm p-5">
+      <div className="md:hidden rounded-2xl p-5">
         <div className="flex justify-center mb-6">
           <CenterNode label={t.homepage.workflowYourBusiness} />
         </div>
