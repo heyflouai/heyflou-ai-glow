@@ -26,7 +26,7 @@ export const en = {
     badge3: '✦ Results in 30–90 days',
     
     // Stats Section
-    statsTitle: 'Why Service Professionals Choose AI Automation',
+    statsTitle: 'Why Service Professionals Choose AI Agents',
     statsSubtitle: 'Real results from therapists and service-based businesses',
     
     // Services Section
@@ -70,7 +70,7 @@ export const en = {
     
     // FAQ Section
     faqTitle: 'Common Questions',
-    faqSubtitle: 'Straight answers from real automation projects',
+    faqSubtitle: 'Straight answers from real AI agent projects',
     faq1Q: 'Will AI replace me or my staff?',
     faq1A: 'No. AI handles the repetitive tasks your team hates — data entry, follow-up messages, reminders, scheduling. Your team focuses on the work that actually requires a human. Most clients tell us their staff morale goes up because they stop doing admin work.',
     faq2Q: 'How do you keep client data secure?',
@@ -1575,7 +1575,7 @@ export const en = {
   // New Homepage Sections
   homepage: {
     // Hero Section
-    heroHook: 'AI AUTOMATION FOR GROWING BUSINESSES',
+    heroHook: 'AI AGENTS FOR GROWING BUSINESSES',
     heroTitle: 'Your Business. Powered by AI Agents.',
     heroSubtitle: 'We deploy AI agents that reply to clients, book appointments, send follow-ups, publish content, and deliver reports — while your team focuses on the work only humans can do.',
     heroPrimaryCta: 'Get Started',
@@ -1592,7 +1592,7 @@ export const en = {
     
     // Before/After Features Section
     featuresTitle: 'Stop Losing Money to Manual Processes',
-    featuresSubtitle: 'See how automation transforms daily operations',
+    featuresSubtitle: 'See how AI agents transform daily operations',
     featuresReadyCta: 'Ready to Transform Your Operations?',
     featuresExplore: 'Explore Our Solutions →',
     
@@ -1609,7 +1609,7 @@ export const en = {
     feature2After: 'Clients book instantly 24/7. Automatic reminders eliminate no-shows',
     feature2Result: '10 hours saved weekly • 15% more bookings',
     
-    feature3Title: 'Automated Follow-Ups',
+    feature3Title: 'AI Agent Follow-Ups',
     feature3Before: 'Follow-ups fall through the cracks. Clients feel neglected between sessions',
     feature3Impact: '20% churn due to poor communication',
     feature3After: 'Personalized check-ins, wellness tips, and reminders sent automatically',
@@ -1618,7 +1618,7 @@ export const en = {
     feature4Title: 'Smart Billing',
     feature4Before: 'Chasing clients for payments manually. Awkward conversations. Delayed cash flow',
     feature4Impact: 'Average 2-week payment delay',
-    feature4After: 'Automated invoicing, friendly reminders, and instant payment processing',
+    feature4After: 'Invoicing, friendly reminders, and instant payment processing handled by AI agents',
     feature4Result: 'Faster payments • Improved cash flow',
     
     feature5Title: 'Zero Data Entry',
@@ -1638,16 +1638,16 @@ export const en = {
     impactLabel: 'Impact',
     
     // Industry Cards Section
-    industryTitle: 'Automation Solutions for Your Industry',
+    industryTitle: 'AI Agent Solutions for Your Industry',
     industrySubtitle: "Custom AI workflows built specifically for your industry's unique challenges",
     industryNotSeeYours: "Don't see your industry? We build custom solutions for any business.",
     industryLetsTalk: "Let's talk →",
     
     // Industry Card 1 - Healthcare
-    industryHealthcareTitle: 'Healthcare Automation',
+    industryHealthcareTitle: 'Healthcare AI Agents',
     industryHealthcareHook: 'Tired of appointment no-shows costing you thousands?',
     industryHealthcareDesc: 'End-to-end automation for therapists, psychologists, physical therapists, and private clinics.',
-    industryHealthcareLabel: 'What We Automate:',
+    industryHealthcareLabel: 'What Our AI Agents Handle:',
     industryHealthcareFeature1: 'Appointment reminders & confirmations',
     industryHealthcareFeature2: 'Patient intake forms & paperwork',
     industryHealthcareFeature3: 'Post-session follow-up sequences',
@@ -1659,7 +1659,7 @@ export const en = {
     industryFitnessTitle: 'Fitness & Education',
     industryFitnessHook: 'Struggling with class booking chaos and missed renewals?',
     industryFitnessDesc: 'Smart automation for gyms, studios, trainers, tutors, and private schools.',
-    industryFitnessLabel: 'What We Automate:',
+    industryFitnessLabel: 'What Our AI Agents Handle:',
     industryFitnessFeature1: 'Class booking & capacity management',
     industryFitnessFeature2: 'Membership renewal reminders',
     industryFitnessFeature3: 'Trial-to-member conversion sequences',
@@ -1668,23 +1668,23 @@ export const en = {
     industryFitnessCta: 'Explore Fitness Solutions',
     
     // Industry Card 3 - Custom
-    industryCustomTitle: 'Custom Automation',
+    industryCustomTitle: 'Custom AI Agent',
     industryCustomHook: 'Have a unique business challenge?',
-    industryCustomDesc: 'Tailored AI automation for any business, any industry, any workflow.',
+    industryCustomDesc: 'Tailored AI agents for any business, any industry, any workflow.',
     industryCustomLabel: 'What We Build:',
     industryCustomFeature1: 'Customer communication systems',
     industryCustomFeature2: 'Lead management workflows',
-    industryCustomFeature3: 'Internal process automation',
+    industryCustomFeature3: 'Internal process AI agents',
     industryCustomFeature4: 'Multi-platform integrations',
     industryCustomMetric: 'Built for your exact needs',
     industryCustomCta: 'Design Your Solution',
     
     // Industry Card 4 - Travel
-    industryTravelTitle: 'Travel Agency Automation',
+    industryTravelTitle: 'Travel Agency AI Agents',
     industryTravelHook: 'Drowning in booking confirmations and client inquiries?',
     industryTravelDesc: 'AI-powered automation for travel agencies and tour operators.',
     industryTravelLabel: "What We're Building:",
-    industryTravelFeature1: 'Automated booking confirmations',
+    industryTravelFeature1: 'Handles booking confirmations',
     industryTravelFeature2: 'Client inquiry responses 24/7',
     industryTravelFeature3: 'Itinerary management',
     industryTravelFeature4: 'Supplier coordination',
@@ -1714,7 +1714,7 @@ export const en = {
     // Timeline Steps
     timelineWeek1: 'Week 1',
     timelineStep1Title: 'Discovery Call',
-    timelineStep1Desc: 'We understand your business, pain points, current processes, and automation goals. No sales pitch—just listening.',
+    timelineStep1Desc: 'We understand your business, pain points, current processes, and AI goals. No sales pitch—just listening.',
     timelineStep1Label: 'What You Get:',
     timelineStep1Item1: 'Recorded consultation',
     timelineStep1Item2: 'Problem analysis document',
@@ -1722,7 +1722,7 @@ export const en = {
     
     timelineWeek2: 'Week 2',
     timelineStep2Title: 'Custom Design',
-    timelineStep2Desc: 'We map your workflows, design the automation architecture, and create a detailed implementation plan tailored to your business.',
+    timelineStep2Desc: 'We map your workflows, design the AI agent architecture, and create a detailed implementation plan tailored to your business.',
     timelineStep2Label: 'What You Get:',
     timelineStep2Item1: 'Visual workflow diagrams',
     timelineStep2Item2: 'Technical specification document',
@@ -1731,18 +1731,18 @@ export const en = {
     
     timelineWeek3: 'Week 3',
     timelineStep3Title: 'Build & Test',
-    timelineStep3Desc: 'We develop your automation, integrate with your existing tools, and rigorously test every workflow with real scenarios.',
+    timelineStep3Desc: 'We deploy your AI agents, integrate with your existing tools, and rigorously test every workflow with real scenarios.',
     timelineStep3Label: 'What You Get:',
-    timelineStep3Item1: 'Working automation prototype',
+    timelineStep3Item1: 'Working AI agent prototype',
     timelineStep3Item2: 'Integration with your systems',
     timelineStep3Item3: 'Test results documentation',
     timelineStep3Item4: 'Training materials prep',
     
     timelineWeek4: 'Week 4+',
     timelineStep4Title: 'Deploy & Support',
-    timelineStep4Desc: 'We launch your automation with full team training, documentation, and 24/7 monitoring. You start seeing results immediately.',
+    timelineStep4Desc: 'We launch your AI agents with full team training, documentation, and 24/7 monitoring. You start seeing results immediately.',
     timelineStep4Label: 'What You Get:',
-    timelineStep4Item1: 'Live automation deployment',
+    timelineStep4Item1: 'Live AI agent deployment',
     timelineStep4Item2: 'Team training session',
     timelineStep4Item3: 'Complete documentation',
     timelineStep4Item4: '24/7 monitoring & support',
