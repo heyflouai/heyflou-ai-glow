@@ -1577,7 +1577,7 @@ export const es: TranslationKeys = {
   // New Homepage Sections
   homepage: {
     // Hero Section
-    heroHook: 'AUTOMATIZACIÓN CON IA PARA NEGOCIOS EN CRECIMIENTO',
+    heroHook: 'AGENTES DE IA PARA NEGOCIOS EN CRECIMIENTO',
     heroTitle: 'Tu Negocio. Impulsado por Agentes de IA.',
     heroSubtitle: 'Desplegamos agentes de IA que responden a clientes, agendan citas, envían seguimientos, publican contenido y entregan reportes — mientras tu equipo se enfoca en el trabajo que solo los humanos pueden hacer.',
     heroPrimaryCta: 'Empezar',
@@ -1594,7 +1594,7 @@ export const es: TranslationKeys = {
     
     // Before/After Features Section
     featuresTitle: 'Deja de Perder Dinero en Procesos Manuales',
-    featuresSubtitle: 'Mira cómo la automatización transforma las operaciones diarias',
+    featuresSubtitle: 'Mira cómo los agentes de IA transforman las operaciones diarias',
     featuresReadyCta: '¿Listo para Transformar tus Operaciones?',
     featuresExplore: 'Explorar Nuestras Soluciones →',
     
@@ -1611,7 +1611,7 @@ export const es: TranslationKeys = {
     feature2After: 'Los clientes reservan al instante 24/7. Los recordatorios automáticos eliminan las ausencias',
     feature2Result: '10 horas ahorradas semanalmente • 15% más reservas',
     
-    feature3Title: 'Seguimientos Automatizados',
+    feature3Title: 'Seguimientos con Agentes de IA',
     feature3Before: 'Los seguimientos se pierden. Los clientes se sienten descuidados entre sesiones',
     feature3Impact: '20% de rotación por mala comunicación',
     feature3After: 'Check-ins personalizados, consejos de bienestar y recordatorios enviados automáticamente',
@@ -1620,7 +1620,7 @@ export const es: TranslationKeys = {
     feature4Title: 'Facturación Inteligente',
     feature4Before: 'Persiguiendo clientes para pagos manualmente. Conversaciones incómodas. Flujo de caja retrasado',
     feature4Impact: 'Promedio de 2 semanas de retraso en pagos',
-    feature4After: 'Facturación automatizada, recordatorios amigables y procesamiento de pagos instantáneo',
+    feature4After: 'Facturación, recordatorios amigables y procesamiento de pagos instantáneo gestionados por agentes de IA',
     feature4Result: 'Pagos más rápidos • Flujo de caja mejorado',
     
     feature5Title: 'Cero Entrada de Datos',
@@ -1640,16 +1640,16 @@ export const es: TranslationKeys = {
     impactLabel: 'Impacto',
     
     // Industry Cards Section
-    industryTitle: 'Soluciones de Automatización para Tu Industria',
+    industryTitle: 'Soluciones con Agentes de IA para Tu Industria',
     industrySubtitle: 'Flujos de trabajo con IA personalizados específicamente para los desafíos únicos de tu industria',
     industryNotSeeYours: '¿No ves tu industria? Construimos soluciones personalizadas para cualquier negocio.',
     industryLetsTalk: 'Hablemos →',
     
     // Industry Card 1 - Healthcare
-    industryHealthcareTitle: 'Automatización de Salud',
+    industryHealthcareTitle: 'Agentes de IA para Salud',
     industryHealthcareHook: '¿Cansado de que las ausencias a citas te cuesten miles?',
     industryHealthcareDesc: 'Automatización de punta a punta para terapeutas, psicólogos, fisioterapeutas y clínicas privadas.',
-    industryHealthcareLabel: 'Lo que Automatizamos:',
+    industryHealthcareLabel: 'Lo que Manejan Nuestros Agentes de IA:',
     industryHealthcareFeature1: 'Recordatorios y confirmaciones de citas',
     industryHealthcareFeature2: 'Formularios de admisión y papeleo',
     industryHealthcareFeature3: 'Secuencias de seguimiento post-sesión',
@@ -1661,7 +1661,7 @@ export const es: TranslationKeys = {
     industryFitnessTitle: 'Fitness y Educación',
     industryFitnessHook: '¿Luchando con el caos de reservas y renovaciones perdidas?',
     industryFitnessDesc: 'Automatización inteligente para gimnasios, estudios, entrenadores, tutores y escuelas privadas.',
-    industryFitnessLabel: 'Lo que Automatizamos:',
+    industryFitnessLabel: 'Lo que Manejan Nuestros Agentes de IA:',
     industryFitnessFeature1: 'Reservas de clases y gestión de capacidad',
     industryFitnessFeature2: 'Recordatorios de renovación de membresías',
     industryFitnessFeature3: 'Secuencias de conversión de prueba a miembro',
@@ -1670,23 +1670,23 @@ export const es: TranslationKeys = {
     industryFitnessCta: 'Explorar Soluciones de Fitness',
     
     // Industry Card 3 - Custom
-    industryCustomTitle: 'Automatización Personalizada',
+    industryCustomTitle: 'Agente de IA Personalizado',
     industryCustomHook: '¿Tienes un desafío de negocio único?',
-    industryCustomDesc: 'Automatización IA a medida para cualquier negocio, cualquier industria, cualquier flujo de trabajo.',
+    industryCustomDesc: 'Agentes de IA a medida para cualquier negocio, cualquier industria, cualquier flujo de trabajo.',
     industryCustomLabel: 'Lo que Construimos:',
     industryCustomFeature1: 'Sistemas de comunicación con clientes',
     industryCustomFeature2: 'Flujos de gestión de leads',
-    industryCustomFeature3: 'Automatización de procesos internos',
+    industryCustomFeature3: 'Agentes de IA para procesos internos',
     industryCustomFeature4: 'Integraciones multi-plataforma',
     industryCustomMetric: 'Construido para tus necesidades exactas',
     industryCustomCta: 'Diseña Tu Solución',
     
     // Industry Card 4 - Travel
-    industryTravelTitle: 'Automatización para Agencias de Viajes',
+    industryTravelTitle: 'Agentes de IA para Agencias de Viajes',
     industryTravelHook: '¿Ahogándote en confirmaciones de reservas y consultas de clientes?',
     industryTravelDesc: 'Automatización impulsada por IA para agencias de viajes y operadores turísticos.',
     industryTravelLabel: 'Lo que Estamos Construyendo:',
-    industryTravelFeature1: 'Confirmaciones de reservas automatizadas',
+    industryTravelFeature1: 'Maneja confirmaciones de reservas',
     industryTravelFeature2: 'Respuestas a consultas de clientes 24/7',
     industryTravelFeature3: 'Gestión de itinerarios',
     industryTravelFeature4: 'Coordinación con proveedores',
@@ -1716,7 +1716,7 @@ export const es: TranslationKeys = {
     // Timeline Steps
     timelineWeek1: 'Semana 1',
     timelineStep1Title: 'Llamada de Descubrimiento',
-    timelineStep1Desc: 'Entendemos tu negocio, puntos de dolor, procesos actuales y objetivos de automatización. Sin pitch de ventas—solo escuchando.',
+    timelineStep1Desc: 'Entendemos tu negocio, puntos de dolor, procesos actuales y objetivos de IA. Sin pitch de ventas—solo escuchando.',
     timelineStep1Label: 'Lo que Obtienes:',
     timelineStep1Item1: 'Consulta grabada',
     timelineStep1Item2: 'Documento de análisis de problemas',
@@ -1724,7 +1724,7 @@ export const es: TranslationKeys = {
     
     timelineWeek2: 'Semana 2',
     timelineStep2Title: 'Diseño Personalizado',
-    timelineStep2Desc: 'Mapeamos tus flujos de trabajo, diseñamos la arquitectura de automatización y creamos un plan de implementación detallado a tu medida.',
+    timelineStep2Desc: 'Mapeamos tus flujos de trabajo, diseñamos la arquitectura de agentes de IA y creamos un plan de implementación detallado a tu medida.',
     timelineStep2Label: 'Lo que Obtienes:',
     timelineStep2Item1: 'Diagramas visuales de flujos',
     timelineStep2Item2: 'Documento de especificación técnica',
@@ -1733,18 +1733,18 @@ export const es: TranslationKeys = {
     
     timelineWeek3: 'Semana 3',
     timelineStep3Title: 'Construir y Probar',
-    timelineStep3Desc: 'Desarrollamos tu automatización, integramos con tus herramientas existentes y probamos rigurosamente cada flujo con escenarios reales.',
+    timelineStep3Desc: 'Desplegamos tus agentes de IA, integramos con tus herramientas existentes y probamos rigurosamente cada flujo con escenarios reales.',
     timelineStep3Label: 'Lo que Obtienes:',
-    timelineStep3Item1: 'Prototipo de automatización funcionando',
+    timelineStep3Item1: 'Prototipo de agente de IA funcionando',
     timelineStep3Item2: 'Integración con tus sistemas',
     timelineStep3Item3: 'Documentación de resultados de pruebas',
     timelineStep3Item4: 'Preparación de materiales de capacitación',
     
     timelineWeek4: 'Semana 4+',
     timelineStep4Title: 'Implementar y Soportar',
-    timelineStep4Desc: 'Lanzamos tu automatización con capacitación completa del equipo, documentación y monitoreo 24/7. Empiezas a ver resultados inmediatamente.',
+    timelineStep4Desc: 'Lanzamos tus agentes de IA con capacitación completa del equipo, documentación y monitoreo 24/7. Empiezas a ver resultados inmediatamente.',
     timelineStep4Label: 'Lo que Obtienes:',
-    timelineStep4Item1: 'Implementación de automatización en vivo',
+    timelineStep4Item1: 'Despliegue de agentes de IA en vivo',
     timelineStep4Item2: 'Sesión de capacitación del equipo',
     timelineStep4Item3: 'Documentación completa',
     timelineStep4Item4: 'Monitoreo y soporte 24/7',
