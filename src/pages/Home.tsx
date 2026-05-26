@@ -1,4 +1,3 @@
-import { Bot, TrendingUp, Users, Zap, Shield, ChartBar } from 'lucide-react';
 import { SEOHead } from '@/components/ui/seo-head';
 import { Section } from '@/components/ui/section';
 import { GradientButton } from '@/components/ui/gradient-button';
