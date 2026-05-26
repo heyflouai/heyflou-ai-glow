@@ -1,7 +1,6 @@
 import { SEOHead } from '@/components/ui/seo-head';
 import { Section } from '@/components/ui/section';
 import { GradientButton } from '@/components/ui/gradient-button';
-import { KpiStat } from '@/components/ui/kpi-stat';
 import { Link } from 'react-router-dom';
 import { CompactForm } from '@/components/forms/CompactForm';
 import { BeforeAfterFeatures } from '@/components/home/BeforeAfterFeatures';
