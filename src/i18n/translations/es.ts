@@ -1802,5 +1802,15 @@ export const es: TranslationKeys = {
       rightBullet5: 'El 90% de usuarios dicen que los agentes de IA les ahorran tiempo medible cada semana',
       tagline: 'No te entregamos software. Te entregamos un equipo de IA funcionando.',
     },
+
+    // TheraFlou Featured Product
+    theraflouEyebrow: 'PRODUCTO DESTACADO',
+    theraflouTitle: 'No solo integramos IA para salud. Construimos el producto.',
+    theraflouSubtitle: 'TheraFlou es un CRM de pacientes creado específicamente para fisioterapeutas en México — con agentes de IA para agendamiento, recordatorios y documentación clínica desde el día uno.',
+    theraflouFeature1: 'Agente de citas con IA — gestiona confirmaciones, reagendamientos y recordatorios por WhatsApp automáticamente',
+    theraflouFeature2: 'Registros clínicos NOM-004 — expedientes y notas SOAP estructuradas que cumplen el estándar mexicano de documentación en salud',
+    theraflouFeature3: 'Seguimiento de sesiones y facturación — historial del paciente, facturas y seguimientos gestionados por IA, no por personal',
+    theraflouProof: 'Construido para más de 13,000 fisioterapeutas en México que aún gestionan pacientes en WhatsApp y papel.',
+    theraflouCta: 'Conoce más sobre TheraFlou',
   },
 };

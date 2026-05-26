@@ -10,6 +10,7 @@ import { HeroWorkflow } from '@/components/home/HeroWorkflow';
 import { ValuePropositionTimeline } from '@/components/home/ValuePropositionTimeline';
 import { FinalCTA } from '@/components/home/FinalCTA';
 import { ToolsVsAgents } from '@/components/home/ToolsVsAgents';
+import { TheraflouFeature } from '@/components/home/TheraflouFeature';
 
 import { useTranslation } from '@/i18n';
 import { PAGE_SEO, getCanonicalUrl } from '@/lib/seo-config';
@@ -322,6 +323,9 @@ export default function Home() {
 
       {/* Before/After Features - Problem to Solution */}
       <BeforeAfterFeatures />
+
+      {/* Featured Product — TheraFlou */}
+      <TheraflouFeature />
 
       {/* Industry Cards - Service Pages */}
       <IndustryCards />

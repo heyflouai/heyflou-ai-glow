@@ -1800,6 +1800,16 @@ export const en = {
       rightBullet5: '90% of users say AI agents save them measurable time every week',
       tagline: "We don't hand you software. We hand you a working AI team.",
     },
+
+    // TheraFlou Featured Product
+    theraflouEyebrow: 'FEATURED PRODUCT',
+    theraflouTitle: "We didn't just integrate AI for healthcare. We built the product.",
+    theraflouSubtitle: 'TheraFlou is a patient CRM built specifically for physiotherapists in Mexico — with AI agents for scheduling, reminders, and clinical documentation built in from day one.',
+    theraflouFeature1: 'AI appointment agent — handles confirmations, reschedules, and WhatsApp reminders automatically',
+    theraflouFeature2: "NOM-004 compliant clinical records — structured patient files and SOAP notes that meet Mexico's healthcare documentation standard",
+    theraflouFeature3: 'Session tracking & billing — patient history, invoices, and follow-ups managed by AI, not staff',
+    theraflouProof: 'Built for 13,000+ physiotherapists in Mexico who are still managing patients on WhatsApp and paper.',
+    theraflouCta: 'Learn more about TheraFlou',
   },
 };
 
