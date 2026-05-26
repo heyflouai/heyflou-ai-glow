@@ -200,6 +200,10 @@ export default {
             "background-position": "right center",
           },
         },
+        "ping-slow": {
+          "0%": { transform: "scale(1)", opacity: "0.6" },
+          "75%, 100%": { transform: "scale(1.8)", opacity: "0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -210,6 +214,7 @@ export default {
         spotlight: "spotlight 2s ease .75s 1 forwards",
         shimmer: "shimmer 2s linear infinite",
         "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+        "ping-slow": "ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite",
         meteor: "meteor 5s linear infinite",
         blob: "blob 7s infinite",
         "gradient-x": "gradient-x 3s ease infinite",
