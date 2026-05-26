@@ -215,7 +215,7 @@ export default function Home() {
               </Link>
             </motion.div>
 
-            {/* AWS Founders Club Trust Badge */}
+            {/* AWS Startup Club Trust Badge */}
             <motion.a
               href="https://aws.amazon.com/startups/"
               target="_blank"
@@ -224,7 +224,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.35 }}
               className="group mt-10 mx-4 lg:mx-0 px-4 py-5 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-3 text-center sm:text-left border-t border-[#e0e0e0] dark:border-[#333] sm:border-t-0 cursor-pointer"
-              aria-label="AWS Founders Club - Trusted by AWS"
+              aria-label="AWS Startup Club - Backed by AWS"
             >
               <img
                 src={awsLogo}
@@ -233,12 +233,12 @@ export default function Home() {
               />
               <div className="flex flex-col items-center sm:items-start">
                 <span className="text-[15px] sm:text-[16px] font-semibold text-[#1a1a1a] dark:text-[#f0f0f0] leading-tight">
-                  Trusted by AWS
+                  Backed by AWS
                 </span>
                 <span className="text-[13px] sm:text-[14px] font-normal text-[#666] dark:text-[#999] leading-snug mt-0.5">
-                  Part of the AWS Founders Club in Tel Aviv
+                  Part of the AWS Startup Club in Tel Aviv
                   <br />
-                  Backed by Amazon Web Services for innovation and scale
+                  Trusted by Amazon Web Services for innovation and scale
                 </span>
               </div>
             </motion.a>
