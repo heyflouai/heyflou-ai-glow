@@ -28,7 +28,7 @@ export const es: TranslationKeys = {
     badge3: '✦ Resultados en 30–90 días',
     
     // Stats Section
-    statsTitle: 'Por Qué los Profesionales Eligen Automatización con IA',
+    statsTitle: 'Por Qué los Profesionales Eligen Agentes de IA',
     statsSubtitle: 'Resultados reales de terapeutas y negocios de servicios',
     
     // Services Section
@@ -72,7 +72,7 @@ export const es: TranslationKeys = {
     
     // FAQ Section
     faqTitle: 'Preguntas Comunes',
-    faqSubtitle: 'Respuestas directas de proyectos reales de automatización',
+    faqSubtitle: 'Respuestas directas de proyectos reales con agentes de IA',
     faq1Q: '¿La IA me reemplazará a mí o a mi equipo?',
     faq1A: 'No. La IA maneja las tareas repetitivas que tu equipo odia — entrada de datos, mensajes de seguimiento, recordatorios, agendamiento. Tu equipo se enfoca en el trabajo que realmente requiere un humano. La mayoría de nuestros clientes nos dicen que la moral de su equipo mejora porque dejan de hacer trabajo administrativo.',
     faq2Q: '¿Cómo mantienen seguros los datos de los clientes?',
