@@ -183,7 +183,7 @@ function IndustryCardComponent({ card, index, translations }: { card: IndustryCa
 
 export function IndustryCards() {
   const t = useTranslation();
-  const hp = t.homepage as Record<string, string>;
+  const hp = t.homepage as unknown as Record<string, string>;
 
   return (
     <section className="py-16 md:py-24 lg:py-28 bg-background">

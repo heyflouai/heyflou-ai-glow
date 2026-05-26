@@ -11,6 +11,7 @@ import { IntegrationBeams } from '@/components/home/IntegrationBeams';
 import { HeroWorkflow } from '@/components/home/HeroWorkflow';
 import { ValuePropositionTimeline } from '@/components/home/ValuePropositionTimeline';
 import { FinalCTA } from '@/components/home/FinalCTA';
+import { ToolsVsAgents } from '@/components/home/ToolsVsAgents';
 
 import { useTranslation } from '@/i18n';
 import { PAGE_SEO, getCanonicalUrl } from '@/lib/seo-config';
@@ -257,6 +258,9 @@ export default function Home() {
         </div>
       </section>
 
+
+      {/* Tools vs Agents — handles the "I already use AI" objection */}
+      <ToolsVsAgents />
 
       {/* Why AI Now - Stats Grid */}
       <Section>
