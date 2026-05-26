@@ -1577,11 +1577,11 @@ export const en = {
   // New Homepage Sections
   homepage: {
     // Hero Section
-    heroHook: 'Stop Wasting Time on Repetitive Tasks',
-    heroTitle: 'AI Automation That Actually Works',
-    heroSubtitle: 'We build custom AI solutions for healthcare, fitness, and education businesses. No fluff. Just results.',
-    heroPrimaryCta: 'Book Free Consultation →',
-    heroSecondaryCta: 'Explore Solutions',
+    heroHook: 'STOP WASTING TIME ON REPETITIVE TASKS',
+    heroTitle: 'AI Agents That Do The Work',
+    heroSubtitle: "We integrate AI agents into any service-based business to handle tasks your team shouldn't. No fluff. Just results.",
+    heroPrimaryCta: 'Get Started',
+    heroSecondaryCta: 'See Case Studies',
     
     // Hero Workflow
     workflowYourBusiness: 'Your Business',
