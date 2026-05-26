@@ -112,12 +112,12 @@ const OuterNode = forwardRef<
   <div className={cn("flex flex-col items-center gap-1.5 md:gap-2", className)}>
     <div
       ref={ref}
-      className="z-10 flex items-center justify-center rounded-full border-2 bg-slate-900/80 backdrop-blur-sm p-3 md:p-3.5 shadow-[0_0_20px_-6px_rgba(0,180,180,0.4)] transition-transform hover:scale-105"
+      className="z-10 flex items-center justify-center rounded-full border-2 bg-card/80 dark:bg-slate-900/70 backdrop-blur-sm p-3 md:p-3.5 transition-transform hover:scale-105"
       style={{ borderColor: color, boxShadow: `0 0 18px -4px ${color}66` }}
     >
-      <IconCmp className="w-4 h-4 md:w-5 md:h-5 text-white" strokeWidth={2} />
+      <IconCmp className="w-4 h-4 md:w-5 md:h-5 text-foreground dark:text-white" strokeWidth={2} />
     </div>
-    <span className="text-[10px] md:text-xs font-medium text-center leading-tight text-slate-300 max-w-[88px] md:max-w-[100px]">
+    <span className="text-[10px] md:text-xs font-medium text-center leading-tight text-muted-foreground max-w-[88px] md:max-w-[100px]">
       {label}
     </span>
   </div>
@@ -150,7 +150,7 @@ const CenterNode = forwardRef<HTMLDivElement, { label: string }>(({ label }, ref
         <BrainCircuit className="w-8 h-8 md:w-10 md:h-10 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]" strokeWidth={1.75} />
       </div>
     </div>
-    <span className="text-xs md:text-sm font-semibold text-center leading-tight text-white">
+    <span className="text-xs md:text-sm font-semibold text-center leading-tight text-foreground">
       {label}
     </span>
   </div>
@@ -198,7 +198,7 @@ export function HeroWorkflow() {
       {/* DESKTOP — Radial command-center layout */}
       <div
         ref={containerRef}
-        className="hidden md:block relative rounded-2xl border border-border/30 bg-gradient-to-br from-slate-950/80 via-slate-900/60 to-slate-950/80 backdrop-blur-sm overflow-hidden"
+        className="hidden md:block relative rounded-2xl overflow-hidden"
         style={{ aspectRatio: "1 / 1" }}
       >
         {/* faint grid backdrop */}
@@ -244,7 +244,7 @@ export function HeroWorkflow() {
       </div>
 
       {/* MOBILE — Center on top + 2x3 grid (no radial / no beams) */}
-      <div className="md:hidden rounded-2xl border border-border/30 bg-gradient-to-br from-slate-950/80 via-slate-900/60 to-slate-950/80 backdrop-blur-sm p-5">
+      <div className="md:hidden rounded-2xl p-5">
         <div className="flex justify-center mb-6">
           <CenterNode label={t.homepage.workflowYourBusiness} />
         </div>
