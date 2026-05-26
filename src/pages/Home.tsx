@@ -152,29 +152,36 @@ export default function Home() {
         </div>
         
         <div className="max-w-7xl mx-auto relative">
-          {/* Hook + H1 - Full width above grid */}
-          <div className="text-center mb-6 lg:mb-10">
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-base md:text-lg font-semibold uppercase tracking-wide text-hf-teal mb-3"
-            >
-              {t.homepage.heroHook}
-            </motion.p>
-            
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-7xl font-bold text-foreground leading-[1.1] drop-shadow-sm"
-            >
-              {t.homepage.heroTitle}
-            </motion.h1>
-          </div>
-
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[55fr_45fr] gap-10 lg:gap-12 items-center text-center lg:text-left">
             <div>
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="text-base md:text-lg font-semibold uppercase tracking-wide text-hf-teal mb-3"
+              >
+                {t.homepage.heroHook}
+              </motion.p>
+
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.1] drop-shadow-sm mb-6 lg:whitespace-nowrap"
+              >
+                {(() => {
+                  const parts = t.homepage.heroTitle.split(/\.\s+/);
+                  const first = parts[0] + '.';
+                  const second = parts.slice(1).join('. ');
+                  return (
+                    <>
+                      <span className="block">{first}</span>
+                      <span className="block">{second}</span>
+                    </>
+                  );
+                })()}
+              </motion.h1>
+
               {/* Subtitle */}
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
