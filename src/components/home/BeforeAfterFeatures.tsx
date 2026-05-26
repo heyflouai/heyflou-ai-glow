@@ -9,7 +9,8 @@ import {
   Database, 
   TrendingUp,
   X,
-  Check
+  Check,
+  Sparkles
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useTranslation } from "@/i18n";
@@ -18,9 +19,8 @@ interface FeatureCard {
   icon: React.ReactNode;
   titleKey: string;
   beforeKey: string;
-  impactKey: string;
   afterKey: string;
-  resultKey: string;
+  statKey: string;
 }
 
 const featureKeys: FeatureCard[] = [
@@ -28,49 +28,43 @@ const featureKeys: FeatureCard[] = [
     icon: <Smartphone className="w-6 h-6" />,
     titleKey: "feature1Title",
     beforeKey: "feature1Before",
-    impactKey: "feature1Impact",
     afterKey: "feature1After",
-    resultKey: "feature1Result"
+    statKey: "feature1Stat"
   },
   {
     icon: <Calendar className="w-6 h-6" />,
     titleKey: "feature2Title",
     beforeKey: "feature2Before",
-    impactKey: "feature2Impact",
     afterKey: "feature2After",
-    resultKey: "feature2Result"
+    statKey: "feature2Stat"
   },
   {
     icon: <MessageSquare className="w-6 h-6" />,
     titleKey: "feature3Title",
     beforeKey: "feature3Before",
-    impactKey: "feature3Impact",
     afterKey: "feature3After",
-    resultKey: "feature3Result"
+    statKey: "feature3Stat"
   },
   {
     icon: <CreditCard className="w-6 h-6" />,
     titleKey: "feature4Title",
     beforeKey: "feature4Before",
-    impactKey: "feature4Impact",
     afterKey: "feature4After",
-    resultKey: "feature4Result"
+    statKey: "feature4Stat"
   },
   {
     icon: <Database className="w-6 h-6" />,
     titleKey: "feature5Title",
     beforeKey: "feature5Before",
-    impactKey: "feature5Impact",
     afterKey: "feature5After",
-    resultKey: "feature5Result"
+    statKey: "feature5Stat"
   },
   {
     icon: <TrendingUp className="w-6 h-6" />,
     titleKey: "feature6Title",
     beforeKey: "feature6Before",
-    impactKey: "feature6Impact",
     afterKey: "feature6After",
-    resultKey: "feature6Result"
+    statKey: "feature6Stat"
   }
 ];
 
@@ -107,11 +101,8 @@ function FeatureCardComponent({ feature, index, translations }: { feature: Featu
           <X className="w-4 h-4 text-orange-400" />
           <span className="text-sm font-semibold text-orange-400">{translations.beforeLabel}</span>
         </div>
-        <p className="text-sm text-muted-foreground leading-relaxed mb-1">
+        <p className="text-sm text-muted-foreground leading-relaxed">
           {translations[feature.beforeKey]}
-        </p>
-        <p className="text-xs text-muted-foreground/70 italic">
-          {translations.impactLabel}: {translations[feature.impactKey]}
         </p>
       </div>
       
@@ -124,12 +115,17 @@ function FeatureCardComponent({ feature, index, translations }: { feature: Featu
           <Check className="w-4 h-4 text-green-400" />
           <span className="text-sm font-semibold text-green-400">{translations.afterLabel}</span>
         </div>
-        <p className="text-sm text-foreground/80 leading-relaxed mb-1">
+        <p className="text-sm text-foreground/80 leading-relaxed mb-4">
           {translations[feature.afterKey]}
         </p>
-        <p className="text-xs font-semibold text-hf-teal">
-          {translations[feature.resultKey]}
-        </p>
+        
+        {/* Stat Badge */}
+        <div className="inline-flex items-center gap-1.5 rounded-full bg-hf-teal/10 border border-hf-teal/20 px-3 py-1.5">
+          <Sparkles className="w-3 h-3 text-hf-teal shrink-0" />
+          <span className="text-xs font-medium text-hf-teal leading-none">
+            {translations[feature.statKey]}
+          </span>
+        </div>
       </div>
     </motion.div>
   );
@@ -158,9 +154,18 @@ export function BeforeAfterFeatures() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto"
+            className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto"
           >
             {hp.featuresSubtitle}
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+            className="text-xs text-muted-foreground/50 mt-2"
+          >
+            {hp.featuresSource}
           </motion.p>
         </div>
         
