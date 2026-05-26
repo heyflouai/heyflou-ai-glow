@@ -259,6 +259,9 @@ export default function Home() {
       </section>
 
 
+      {/* Tools vs Agents — handles the "I already use AI" objection */}
+      <ToolsVsAgents />
+
       {/* Why AI Now - Stats Grid */}
       <Section>
         <div className="text-center mb-8 md:mb-12 px-5 md:px-0">
