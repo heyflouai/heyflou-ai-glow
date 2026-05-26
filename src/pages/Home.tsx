@@ -85,13 +85,13 @@ export default function Home() {
     answer: t.home.faq6A
   }];
 
-  const keyMetrics = [
-    { id: "revenue_increase", value: "91%", label: t.metrics.revenueIncrease, description: t.metrics.revenueIncreaseDesc },
-    { id: "profit_margins", value: "86%", label: t.metrics.improvedMargins, description: t.metrics.improvedMarginsDesc },
-    { id: "scale_operations", value: "87%", label: t.metrics.scaleOperations, description: t.metrics.scaleOperationsDesc },
-    { id: "ai_usage_growth", value: "55%", label: t.metrics.usSmbAiUsage, description: t.metrics.usSmbAiUsageDesc },
-    { id: "time_savings", value: "20+", label: t.metrics.hoursSaved, description: t.metrics.hoursSavedDesc },
-    { id: "cost_savings", value: "$2K", label: t.metrics.monthlySavings, description: t.metrics.monthlySavingsDesc }
+  const statsData = [
+    { number: t.home.stat1Number, label: t.home.stat1Label, source: t.home.stat1Source },
+    { number: t.home.stat2Number, label: t.home.stat2Label, source: t.home.stat2Source },
+    { number: t.home.stat3Number, label: t.home.stat3Label, source: t.home.stat3Source },
+    { number: t.home.stat4Number, label: t.home.stat4Label, source: t.home.stat4Source },
+    { number: t.home.stat5Number, label: t.home.stat5Label, source: t.home.stat5Source },
+    { number: t.home.stat6Number, label: t.home.stat6Label, source: t.home.stat6Source },
   ];
 
   return <>
