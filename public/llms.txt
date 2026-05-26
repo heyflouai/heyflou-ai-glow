@@ -1,0 +1,23 @@
+# HeyFlou
+
+> AI consulting and custom automation for SMBs — WhatsApp AI bots, lead pipelines, and CRM + email marketing for medical, travel, fitness, and education businesses.
+
+## Pages
+
+- [Home](/): Overview of HeyFlou's AI automation offering.
+- [Services](/services): Full catalog of AI automation services.
+- [Healthcare](/services/healthcare): AI automation for clinics, therapists, and medical practices.
+- [Fitness & Education](/services/fitness-education): Automation for gyms, studios, tutors, and schools.
+- [Travel Agencies](/services/travel-agencies): AI automation for travel agencies and tour operators.
+- [Custom Automation](/services/custom): Tailored AI workflows for any business.
+- [Consulting](/services/consulting): AI strategy, readiness assessments, and implementation planning.
+- [Case Studies](/case-studies): Real results from HeyFlou customers.
+- [Pricing](/pricing): Plans and pricing.
+- [About](/about): Who we are and what we believe.
+- [Contact](/contact): Get in touch or book a strategy call.
+
+## Optional
+
+- [Privacy Policy](/privacy-policy)
+- [Terms of Service](/terms)
+- [Refund Policy](/refund)

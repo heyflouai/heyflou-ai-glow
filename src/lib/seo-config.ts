@@ -15,7 +15,7 @@ export const SITE_CONFIG = {
 
 export const DEFAULT_SEO = {
   title: "HeyFlou | AI Consulting for SMB Workflow Automation",
-  description: "Save 10–20 hours per week with custom AI automation. WhatsApp AI bots, lead management pipelines, and CRM + email marketing for medical, travel agencies, and private education/fitness.",
+  description: "Custom AI automation for SMBs: WhatsApp AI bots, lead pipelines, and CRM + email marketing for medical, travel, fitness, and education businesses.",
 } as const;
 
 /**
@@ -24,12 +24,12 @@ export const DEFAULT_SEO = {
 export const PAGE_SEO = {
   home: {
     title: "HeyFlou | AI Consulting for SMB Workflow Automation",
-    description: "Save 10–20 hours per week with custom AI automation. WhatsApp AI bots, lead management pipelines, and CRM + email marketing for medical, travel agencies, and private education/fitness.",
+    description: "Custom AI automation for SMBs: WhatsApp AI bots, lead pipelines, and CRM + email marketing for medical, travel, fitness, and education businesses.",
     path: "/",
   },
   services: {
-    title: "AI Automation Services | Travel, Healthcare, Fitness & Education | HeyFlou",
-    description: "Industry-specific AI automation solutions for travel agencies, healthcare practices, fitness studios, and education centers. Eliminate manual work and scale operations with intelligent chatbots, scheduling, and workflow automation.",
+    title: "AI Automation Services for SMBs | HeyFlou",
+    description: "AI automation for travel agencies, healthcare practices, fitness studios, and education centers — chatbots, scheduling, and workflow automation.",
     path: "/services",
   },
   caseStudies: {

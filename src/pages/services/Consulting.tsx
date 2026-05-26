@@ -13,8 +13,8 @@ export default function Consulting() {
   return (
     <>
       <SEOHead 
-        title="AI Strategy & Consulting | Expert Guidance for AI Transformation"
-        description="Expert AI consulting services to navigate your business transformation. AI readiness assessments, strategy development, vendor selection, and implementation planning."
+        title="AI Strategy & Consulting | HeyFlou"
+        description="Expert AI consulting to navigate your transformation: readiness assessments, strategy, vendor selection, and implementation planning for SMBs."
         canonical={getCanonicalUrl('/services/consulting')}
       />
       

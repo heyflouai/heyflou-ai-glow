@@ -12,8 +12,8 @@ export default function FitnessEducation() {
   return (
     <>
       <SEOHead 
-        title="HeyFlou for Fitness & Education | AI Automation for Gyms, Studios & Schools"
-        description="AI automation solutions for gyms, studios, personal trainers, tutors & private schools. Automate class bookings, memberships, onboarding and more."
+        title="AI Automation for Fitness & Education | HeyFlou"
+        description="AI automation for gyms, studios, personal trainers, tutors and private schools. Automate class bookings, memberships, onboarding and more."
         canonical={getCanonicalUrl('/services/fitness-education')}
       />
       
