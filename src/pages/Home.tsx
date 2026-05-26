@@ -11,7 +11,7 @@ import { IntegrationBeams } from '@/components/home/IntegrationBeams';
 import { HeroWorkflow } from '@/components/home/HeroWorkflow';
 import { ValuePropositionTimeline } from '@/components/home/ValuePropositionTimeline';
 import { FinalCTA } from '@/components/home/FinalCTA';
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
+
 import { useTranslation } from '@/i18n';
 import { PAGE_SEO, getCanonicalUrl } from '@/lib/seo-config';
 import { ShimmerButton } from '@/components/ui/shimmer-button';
