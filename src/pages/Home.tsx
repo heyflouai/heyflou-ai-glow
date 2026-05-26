@@ -169,8 +169,17 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.1] drop-shadow-sm mb-6 lg:whitespace-nowrap"
               >
-                <span className="block">Your Business.</span>
-                <span className="block">Powered by AI Agents.</span>
+                {(() => {
+                  const parts = t.homepage.heroTitle.split(/\.\s+/);
+                  const first = parts[0] + '.';
+                  const second = parts.slice(1).join('. ');
+                  return (
+                    <>
+                      <span className="block">{first}</span>
+                      <span className="block">{second}</span>
+                    </>
+                  );
+                })()}
               </motion.h1>
 
               {/* Subtitle */}
