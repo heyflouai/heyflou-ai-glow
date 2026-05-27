@@ -1669,6 +1669,7 @@ export const es: TranslationKeys = {
     industrySubtitle: 'Todo negocio de servicios pierde tiempo y dinero con los mismos problemas. Hemos construido agentes de IA que los resuelven — entrenados en tus flujos específicos.',
     industryNotSeeYours: '¿No ves tu industria? Construimos soluciones personalizadas para cualquier negocio.',
     industryLetsTalk: 'Hablemos →',
+    industryFeaturedBadge: 'Destacado',
     
     // Industry Card 1 - Private Healthcare
     industry1Title: 'Salud Privada',
