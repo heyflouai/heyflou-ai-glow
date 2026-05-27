@@ -33,7 +33,7 @@ const project = (lat: number, lng: number) => ({
 export function WorldMap({
   points,
   arcs = [],
-  dotColor = "rgba(148, 163, 184, 0.35)",
+  dotColor = "rgba(71, 85, 105, 0.55)",
   lineColor = "#A15BF1",
   pointColor = "#1FA6C1",
   labelColor = "#0F1729",
@@ -75,7 +75,7 @@ export function WorldMap({
         </defs>
 
         {dots.map((d, i) => (
-          <circle key={i} cx={d.x} cy={d.y} r={1.6} fill={dotColor} />
+          <circle key={i} cx={d.x} cy={d.y} r={2.2} fill={dotColor} />
         ))}
 
         {arcs.map(([i, j], k) => {
