@@ -30,11 +30,9 @@ export const Navbar = () => {
   const t = useTranslation();
 
   const servicesDropdownItems = [
-    { name: t.nav.healthcare, href: '/services/healthcare' },
-    { name: t.nav.fitnessEducation, href: '/services/fitness-education' },
-    { name: t.nav.travelAgencies, href: '/services/travel-agencies', comingSoon: true },
-    { name: t.nav.customAutomations, href: '/services/custom' },
-    { name: t.nav.aiConsulting, href: '/services/consulting' },
+    { name: 'AI Agents', href: '/services/agents' },
+    { name: 'AI Infrastructure', href: '/services/infrastructure' },
+    { name: 'AI Consulting', href: '/services/consulting' },
   ];
 
   const navigationItems = [
@@ -118,11 +116,6 @@ export const Navbar = () => {
                         )}
                       >
                         <span>{item.name}</span>
-                        {item.comingSoon && (
-                          <span className="text-xs px-2 py-0.5 rounded-full bg-muted text-muted-foreground">
-                            {t.nav.comingSoon}
-                          </span>
-                        )}
                       </Link>
                     </DropdownMenuItem>
                   ))}
@@ -223,11 +216,6 @@ export const Navbar = () => {
                       }}
                     >
                       <span>{item.name}</span>
-                      {item.comingSoon && (
-                        <span className="text-xs px-2 py-0.5 rounded-full bg-muted text-muted-foreground">
-                          {t.nav.comingSoon}
-                        </span>
-                      )}
                     </Link>
                   ))}
                 </CollapsibleContent>

@@ -29,11 +29,9 @@ export const Footer = () => {
 
   // Solutions column links
   const solutionsLinks = [
-    { name: t.footer.healthcareAutomation, href: '/services/healthcare' },
-    { name: t.footer.fitnessEducation, href: '/services/fitness-education' },
-    { name: t.footer.customAutomations, href: '/services/custom' },
-    { name: t.footer.aiConsulting, href: '/services/consulting' },
-    { name: `${t.footer.travelAgencies}`, href: '/services/travel-agencies', badge: t.footer.comingSoon },
+    { name: 'AI Agents', href: '/services/agents' },
+    { name: 'AI Infrastructure', href: '/services/infrastructure' },
+    { name: 'AI Consulting', href: '/services/consulting' },
   ];
 
   // Company column links

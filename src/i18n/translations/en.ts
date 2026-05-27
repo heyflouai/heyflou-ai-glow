@@ -1822,72 +1822,26 @@ export const en = {
     beforeLabel: 'Before',
     afterLabel: 'After',
     
-    // Industry Cards Section
-    industryTitle: 'AI Agent Solutions for Your Industry',
-    industrySubtitle: 'Every service business loses time and money to the same problems. We\'ve built AI agents that solve them — trained on your specific workflows.',
-    industryNotSeeYours: "Don't see your industry? We build custom solutions for any business.",
-    industryLetsTalk: "Let's talk →",
-    industryFeaturedBadge: 'Featured',
+    // Three Ways to Work With Us Section
+    threeWaysEyebrow: 'WHAT WE OFFER',
+    threeWaysTitle: 'Three ways to integrate AI into your business.',
+    threeWaysSubtitle: 'Every engagement starts with understanding your business. The right service depends on what you actually need.',
     
-    // Industry Card 1 - Private Healthcare
-    industry1Title: 'Private Healthcare',
-    industry1Hook: 'No-shows and admin work are costing you 10+ hours every week.',
-    industry1Feature1: 'Appointment reminders via WhatsApp',
-    industry1Feature2: 'Patient intake and clinical notes',
-    industry1Feature3: 'Post-session follow-up sequences',
-    industry1Feature4: 'Cancellation and waitlist management',
-    industry1Outcome: 'Save 10+ hours per week',
-    industry1Cta: 'Explore Healthcare Solutions',
+    threeWaysCard1Title: 'AI Agents',
+    threeWaysCard1Desc: 'A team of AI agents deployed into your operations — handling replies, scheduling, billing, and reporting autonomously.',
+    threeWaysCard1Link: 'See how it works →',
     
-    // Industry Card 2 - Fitness & Studios
-    industry2Title: 'Fitness & Studios',
-    industry2Hook: 'Class booking chaos, missed renewals, and payment follow-ups — all manual.',
-    industry2Feature1: 'Class booking and capacity management',
-    industry2Feature2: 'Membership renewal reminders',
-    industry2Feature3: 'Trial-to-member conversion sequences',
-    industry2Feature4: 'Payment and billing notifications',
-    industry2Outcome: '30% increase in bookings',
-    industry2Cta: 'Explore Fitness Solutions',
+    threeWaysCard2Title: 'AI Infrastructure',
+    threeWaysCard2Desc: "Custom AI platforms built for your industry — CRMs, booking engines, compliance layers. Built from scratch when off-the-shelf doesn't fit.",
+    threeWaysCard2Link: 'Explore AI Infrastructure →',
     
-    // Industry Card 3 - Salons & Spas
-    industry3Title: 'Salons & Spas',
-    industry3Hook: 'Empty slots, no-shows, and clients who never come back.',
-    industry3Feature1: '24/7 online booking and confirmations',
-    industry3Feature2: 'Rebooking reminders and follow-ups',
-    industry3Feature3: 'Loyalty and return-visit campaigns',
-    industry3Feature4: 'Product and service upsell messages',
-    industry3Outcome: 'Fill your schedule automatically',
-    industry3Cta: 'Explore Salon Solutions',
+    threeWaysCard3Title: 'AI Consulting',
+    threeWaysCard3Desc: "A paid 3-week engagement that maps where AI fits in your business — what to build first, what to skip, and what gives you ROI fastest.",
+    threeWaysCard3Link: 'Learn about consulting →',
     
-    // Industry Card 4 - Sales Teams
-    industry4Title: 'Sales Teams',
-    industry4Hook: 'Leads go cold while your team is handling admin instead of selling.',
-    industry4Feature1: 'Instant lead response and qualification',
-    industry4Feature2: 'CRM updates and pipeline tracking',
-    industry4Feature3: 'Follow-up sequences at the right intervals',
-    industry4Feature4: 'Meeting scheduling and confirmation',
-    industry4Outcome: '3x faster response time',
-    industry4Cta: 'Explore Sales Solutions',
-    
-    // Industry Card 5 - Academies & Tutoring
-    industry5Title: 'Academies & Tutoring',
-    industry5Hook: 'Enrollment runs on spreadsheets and WhatsApp groups.',
-    industry5Feature1: 'Inquiry capture and nurture sequences',
-    industry5Feature2: 'Enrollment confirmation and document collection',
-    industry5Feature3: 'Payment reminders and receipt delivery',
-    industry5Feature4: 'Re-enrollment campaigns at term end',
-    industry5Outcome: '60% less admin per enrollment cycle',
-    industry5Cta: 'Explore Education Solutions',
-    
-    // Industry Card 6 - Custom AI Agent
-    industry6Title: 'Custom AI Agent',
-    industry6Hook: "Your business doesn't fit a template. Neither does your AI agent.",
-    industry6Feature1: 'Discovery of your specific bottlenecks',
-    industry6Feature2: 'Custom workflow and agent design',
-    industry6Feature3: 'Integration with your existing tools',
-    industry6Feature4: 'Deployment, training, and ongoing support',
-    industry6Outcome: 'Built for your exact operations',
-    industry6Cta: 'Design Your Solution',
+    threeWaysFooterText: "Not sure which fits you?",
+    threeWaysCtaText: 'Talk to us →',
+
     
     // Timeline Section
     timelineTitle: 'From Manual Chaos to AI-Powered Efficiency',
