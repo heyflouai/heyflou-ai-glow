@@ -30,7 +30,7 @@ export default function About() {
   ];
 
   const team = [
-    { name: a.team1Name, role: a.team1Role, bio: a.team1Bio, initials: 'SS' },
+    { name: a.team1Name, role: a.team1Role, bio: a.team1Bio, initials: 'SN' },
     { name: a.team2Name, role: a.team2Role, bio: a.team2Bio, initials: 'SZ' },
   ];
 
