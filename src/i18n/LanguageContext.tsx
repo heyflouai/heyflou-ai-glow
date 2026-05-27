@@ -44,9 +44,13 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguageState] = useState<Language>(() => {
     // Check localStorage first
     if (typeof window !== 'undefined') {
-      const stored = localStorage.getItem(STORAGE_KEY);
-      if (stored === 'en' || stored === 'es') {
-        return stored;
+      try {
+        const stored = window.localStorage.getItem(STORAGE_KEY);
+        if (stored === 'en' || stored === 'es') {
+          return stored;
+        }
+      } catch {
+        // Storage can be unavailable in preview/private contexts; fall back safely.
       }
     }
     return 'en'; // Default to English
@@ -54,7 +58,11 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   const setLanguage = useCallback((lang: Language) => {
     setLanguageState(lang);
-    localStorage.setItem(STORAGE_KEY, lang);
+    try {
+      window.localStorage.setItem(STORAGE_KEY, lang);
+    } catch {
+      // Keep language switching functional even when storage is blocked.
+    }
     // Update document lang attribute for accessibility
     document.documentElement.lang = lang;
   }, []);
