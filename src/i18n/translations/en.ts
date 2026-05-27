@@ -935,6 +935,7 @@ export const en = {
     ctaTitle: 'Ready to talk?',
     ctaSubtitle: 'Tell us where you are stuck. We will tell you, honestly, whether AI is the answer — and if so, which of our three paths fits.',
     ctaButton: 'Book a strategy call',
+    ctaSecondary: 'See our services',
   },
 
   // Forms
