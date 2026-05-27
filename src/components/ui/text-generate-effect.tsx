@@ -20,7 +20,7 @@ export function TextGenerateEffect({
   duration = 0.5,
   stagger = 0.06,
 }: TextGenerateEffectProps) {
-  const tokens = words.split(" ");
+  const tokens = typeof words === "string" ? words.split(" ") : [];
   return (
     <Tag className={cn(className)} style={style}>
       {tokens.map((word, i) => (
