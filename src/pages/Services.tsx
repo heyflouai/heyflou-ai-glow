@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { SEOHead } from '@/components/ui/seo-head';
 import { PAGE_SEO, SERVICE_SCHEMA, getCanonicalUrl } from '@/lib/seo-config';
 import { useTranslation } from '@/i18n';
-import { TracingBeam } from '@/components/ui/tracing-beam';
 import { CursorSpotlight } from '@/components/ui/cursor-spotlight';
 import { GradientMovingButton } from '@/components/ui/gradient-moving-button';
 import { FlipWords } from '@/components/ui/flip-words';
