@@ -9,6 +9,58 @@ import { ShimmerButton } from '@/components/ui/shimmer-button';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Wallet, Target, ArrowRight, Check, AlertCircle, Clock, Percent, Zap } from 'lucide-react';
+import theraflouMark from '@/assets/theraflou-mark.svg';
+
+const JAKARTA = '"Plus Jakarta Sans", sans-serif';
+const INTER = 'Inter, sans-serif';
+const DIRECTED_LOGO =
+  'https://cloud-1de12d.becdn.net/media/original/0475dc58613950ec680c4b6dfacf516a/directed-empresas-negro-1-1.png';
+
+interface FeaturedStat {
+  value: string;
+  label: string;
+  desc: string;
+}
+
+const StatBlock = ({ stat, dark }: { stat: FeaturedStat; dark?: boolean }) => {
+  const { numericValue, prefix, suffix } = parseMetricValue(stat.value);
+  return (
+    <div
+      className={`rounded-xl p-5 border ${
+        dark
+          ? 'bg-white/5 border-white/10'
+          : 'bg-white border-[#E2E8F0]'
+      }`}
+    >
+      <div
+        className="text-[36px] md:text-[40px] leading-none bg-clip-text text-transparent"
+        style={{
+          fontFamily: JAKARTA,
+          fontWeight: 800,
+          backgroundImage: 'linear-gradient(135deg, #1FA6C1, #A15BF1)',
+        }}
+      >
+        <NumberTicker value={numericValue} prefix={prefix} suffix={suffix} />
+      </div>
+      <div
+        className="mt-2 text-[14px]"
+        style={{
+          fontFamily: INTER,
+          fontWeight: 600,
+          color: dark ? '#FFFFFF' : '#0F1729',
+        }}
+      >
+        {stat.label}
+      </div>
+      <div
+        className="mt-1 text-[13px] leading-[1.6]"
+        style={{ fontFamily: INTER, color: dark ? '#B8C5D6' : '#2B3650' }}
+      >
+        {stat.desc}
+      </div>
+    </div>
+  );
+};
 
 interface CaseStudyCardProps {
   icon: React.ReactNode;
@@ -274,6 +326,202 @@ export default function CaseStudies() {
             >
               {t.caseStudies.heroSubtitle}
             </motion.p>
+          </div>
+        </section>
+
+        {/* CLIENT RESULTS — featured cases */}
+        <section className="bg-white py-20 md:py-24">
+          <div className="max-w-[1200px] mx-auto px-6">
+            <div className="text-center max-w-[720px] mx-auto">
+              <p
+                className="uppercase"
+                style={{
+                  fontFamily: INTER,
+                  fontWeight: 600,
+                  fontSize: 13,
+                  letterSpacing: '2px',
+                  color: '#1FA6C1',
+                }}
+              >
+                CLIENT RESULTS
+              </p>
+              <h2
+                className="mt-4 text-[32px] md:text-[44px] leading-[1.1]"
+                style={{ fontFamily: JAKARTA, fontWeight: 800, color: '#0F1729' }}
+              >
+                Real businesses. Measurable outcomes.
+              </h2>
+              <p
+                className="mt-5 mx-auto max-w-[560px] text-[18px] leading-[1.6]"
+                style={{ fontFamily: INTER, color: '#2B3650' }}
+              >
+                Two different problems. Two different solutions. The same commitment to results that actually show up in operations.
+              </p>
+            </div>
+
+            {/* TheraFlou — visual LEFT, text RIGHT */}
+            <motion.article
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.6 }}
+              className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center"
+            >
+              <div className="order-1 relative rounded-2xl overflow-hidden bg-gradient-to-br from-[#0F1729] via-[#16213e] to-[#0F1729] p-10 min-h-[360px] flex items-center justify-center">
+                <div
+                  aria-hidden
+                  className="absolute inset-0 opacity-60"
+                  style={{
+                    background:
+                      'radial-gradient(60% 60% at 50% 50%, rgba(31,166,193,0.25), transparent 70%)',
+                  }}
+                />
+                <img
+                  src={theraflouMark}
+                  alt="TheraFlou"
+                  className="relative h-56 w-auto drop-shadow-[0_0_30px_rgba(161,91,241,0.45)]"
+                />
+              </div>
+              <div className="order-2">
+                <p
+                  className="uppercase"
+                  style={{
+                    fontFamily: INTER,
+                    fontWeight: 600,
+                    fontSize: 12,
+                    letterSpacing: '2px',
+                    color: '#1FA6C1',
+                  }}
+                >
+                  PATIENT CRM · HEALTHCARE
+                </p>
+                <h3
+                  className="mt-3 text-[22px] md:text-[28px] leading-[1.2]"
+                  style={{ fontFamily: JAKARTA, fontWeight: 700, color: '#0F1729' }}
+                >
+                  TheraFlou: a purpose-built patient CRM that replaces 4 disconnected tools for psychology clinics.
+                </h3>
+                <p
+                  className="mt-5 text-[16px] leading-[1.7]"
+                  style={{ fontFamily: INTER, color: '#2B3650' }}
+                >
+                  Mexican psychology clinics were stitching together calendars, spreadsheets, WhatsApp and billing tools — losing hours every week to admin and risking patient data along the way. HeyFlou designed and shipped TheraFlou: one CRM that handles scheduling, clinical notes, billing and reporting with AI agents in the loop.
+                </p>
+                <div className="mt-7 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <StatBlock stat={{ value: '4', label: 'tools replaced', desc: 'with one unified workflow' }} />
+                  <StatBlock stat={{ value: '10+', label: 'hours saved / week', desc: 'per clinician on admin' }} />
+                  <StatBlock stat={{ value: '100%', label: 'patient data', desc: 'in one secure system' }} />
+                </div>
+                <a
+                  href="https://theraflou.heyflou.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-7 inline-flex items-center gap-2 text-[16px]"
+                  style={{ fontFamily: INTER, fontWeight: 600, color: '#1FA6C1' }}
+                >
+                  Visit TheraFlou <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+            </motion.article>
+
+            {/* Directed Empresas — text LEFT, dark panel RIGHT */}
+            <motion.article
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.6 }}
+              className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center"
+            >
+              <div className="order-2 lg:order-1">
+                <p
+                  className="uppercase"
+                  style={{
+                    fontFamily: INTER,
+                    fontWeight: 600,
+                    fontSize: 12,
+                    letterSpacing: '2px',
+                    color: '#1FA6C1',
+                  }}
+                >
+                  AI INFRASTRUCTURE
+                </p>
+                <h3
+                  className="mt-3 text-[22px] md:text-[28px] leading-[1.2]"
+                  style={{ fontFamily: JAKARTA, fontWeight: 700, color: '#0F1729' }}
+                >
+                  HeyFlou AgenticOS: one CEO running 5 companies — without the operational overhead.
+                </h3>
+                <p
+                  className="mt-5 text-[16px] leading-[1.7]"
+                  style={{ fontFamily: INTER, color: '#2B3650' }}
+                >
+                  Directed Empresas is a multi-line operation with 5 sub-companies under one leadership structure. The CEO was managing coordination, reporting, and operational decisions across all five — spending most of his time on work that didn't require his judgment. HeyFlou designed and deployed AgenticOS: a custom infrastructure of AI agents that automates the repetitive layer of every company, grounding each process in practical operations — not theory.
+                </p>
+
+                <div className="mt-7 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <StatBlock stat={{ value: '20+', label: 'hours / week, per user', desc: 'recovered from repetitive work' }} />
+                  <StatBlock stat={{ value: '5', label: 'sub-companies', desc: 'coordinated through one agent infrastructure' }} />
+                  <StatBlock stat={{ value: '0', label: 'headcount increase', desc: 'to scale operations' }} />
+                </div>
+
+                {/* Quote */}
+                <figure
+                  className="mt-8 bg-white rounded-r-xl"
+                  style={{
+                    borderLeft: '4px solid #1FA6C1',
+                    padding: '28px 32px',
+                    boxShadow: '0 4px 24px rgba(15,23,41,0.06)',
+                  }}
+                >
+                  <blockquote
+                    className="italic"
+                    style={{
+                      fontFamily: INTER,
+                      fontSize: 17,
+                      lineHeight: 1.7,
+                      color: '#2B3650',
+                    }}
+                  >
+                    "HeyFlou's Agentic OS solution unlocked 20+ hours per week per user by automating repetitive work and grounding processes in practical operations — not theory. This freed our team to focus on strategy while revealing the path to scale without proportional headcount growth. Their hands-on support made enterprise-grade AI accessible and practical for a multi-line operation like ours. Highly recommended."
+                  </blockquote>
+                  <figcaption
+                    className="mt-5"
+                    style={{ fontFamily: INTER, fontWeight: 600, fontSize: 15, color: '#0F1729' }}
+                  >
+                    Mateo — CEO, Directed Empresas
+                  </figcaption>
+                  <img
+                    src={DIRECTED_LOGO}
+                    alt="Directed Empresas"
+                    className="mt-4"
+                    style={{ width: 120, height: 'auto' }}
+                  />
+                </figure>
+              </div>
+
+              <div className="order-1 lg:order-2 relative rounded-2xl overflow-hidden bg-[#0F1729] p-10 min-h-[360px] flex flex-col justify-center">
+                <div
+                  aria-hidden
+                  className="absolute inset-0 opacity-70"
+                  style={{
+                    background:
+                      'radial-gradient(60% 60% at 50% 30%, rgba(161,91,241,0.25), transparent 70%), radial-gradient(60% 60% at 50% 80%, rgba(31,166,193,0.18), transparent 70%)',
+                  }}
+                />
+                <div className="relative flex items-center justify-center mb-8">
+                  <img
+                    src={DIRECTED_LOGO}
+                    alt="Directed Empresas"
+                    style={{ width: 200, filter: 'brightness(0) invert(1)' }}
+                  />
+                </div>
+                <div className="relative grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <StatBlock dark stat={{ value: '20+', label: 'hrs / week', desc: 'per user recovered' }} />
+                  <StatBlock dark stat={{ value: '5', label: 'companies', desc: 'one infrastructure' }} />
+                  <StatBlock dark stat={{ value: '0', label: 'new headcount', desc: 'to scale ops' }} />
+                </div>
+              </div>
+            </motion.article>
           </div>
         </section>
 
