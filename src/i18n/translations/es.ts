@@ -1824,72 +1824,26 @@ export const es: TranslationKeys = {
     beforeLabel: 'Antes',
     afterLabel: 'Después',
     
-    // Industry Cards Section
-    industryTitle: 'Soluciones con Agentes de IA para Tu Industria',
-    industrySubtitle: 'Todo negocio de servicios pierde tiempo y dinero con los mismos problemas. Hemos construido agentes de IA que los resuelven — entrenados en tus flujos específicos.',
-    industryNotSeeYours: '¿No ves tu industria? Construimos soluciones personalizadas para cualquier negocio.',
-    industryLetsTalk: 'Hablemos →',
-    industryFeaturedBadge: 'Destacado',
+    // Three Ways to Work With Us Section
+    threeWaysEyebrow: 'LO QUE OFRECEMOS',
+    threeWaysTitle: 'Tres formas de integrar IA en tu negocio.',
+    threeWaysSubtitle: 'Cada proyecto empieza con entender tu negocio. El servicio adecuado depende de lo que realmente necesitas.',
     
-    // Industry Card 1 - Private Healthcare
-    industry1Title: 'Salud Privada',
-    industry1Hook: 'Las ausencias y el trabajo administrativo te cuestan 10+ horas cada semana.',
-    industry1Feature1: 'Recordatorios de citas vía WhatsApp',
-    industry1Feature2: 'Admisión de pacientes y notas clínicas',
-    industry1Feature3: 'Secuencias de seguimiento post-sesión',
-    industry1Feature4: 'Gestión de cancelaciones y lista de espera',
-    industry1Outcome: 'Ahorra 10+ horas por semana',
-    industry1Cta: 'Explorar Soluciones de Salud',
+    threeWaysCard1Title: 'Agentes de IA',
+    threeWaysCard1Desc: 'Un equipo de agentes de IA desplegados en tus operaciones — respondiendo mensajes, gestionando agendas, facturando y generando reportes de forma autónoma.',
+    threeWaysCard1Link: 'Ver cómo funciona →',
     
-    // Industry Card 2 - Fitness & Studios
-    industry2Title: 'Fitness y Estudios',
-    industry2Hook: 'Caos de reservas, renovaciones perdidas y seguimientos de pago — todo manual.',
-    industry2Feature1: 'Reservas de clases y gestión de capacidad',
-    industry2Feature2: 'Recordatorios de renovación de membresías',
-    industry2Feature3: 'Secuencias de conversión de prueba a miembro',
-    industry2Feature4: 'Notificaciones de pagos y facturación',
-    industry2Outcome: '30% más reservas',
-    industry2Cta: 'Explorar Soluciones de Fitness',
+    threeWaysCard2Title: 'Infraestructura de IA',
+    threeWaysCard2Desc: 'Plataformas de IA a medida construidas para tu industria — CRMs, motores de reservas, capas de cumplimiento. Construidas desde cero cuando lo existente no encaja.',
+    threeWaysCard2Link: 'Explorar Infraestructura de IA →',
     
-    // Industry Card 3 - Salons & Spas
-    industry3Title: 'Salones y Spas',
-    industry3Hook: 'Espacios vacíos, no-shows y clientes que nunca regresan.',
-    industry3Feature1: 'Reservas online 24/7 y confirmaciones',
-    industry3Feature2: 'Recordatorios de re-reserva y seguimientos',
-    industry3Feature3: 'Campañas de lealtad y visitas de retorno',
-    industry3Feature4: 'Mensajes de upsell de productos y servicios',
-    industry3Outcome: 'Llena tu agenda automáticamente',
-    industry3Cta: 'Explorar Soluciones para Salones',
+    threeWaysCard3Title: 'Consultoría de IA',
+    threeWaysCard3Desc: 'Un proyecto pagado de 3 semanas que mapea dónde encaja la IA en tu negocio — qué construir primero, qué omitir y qué te da ROI más rápido.',
+    threeWaysCard3Link: 'Conocer la consultoría →',
     
-    // Industry Card 4 - Sales Teams
-    industry4Title: 'Equipos de Ventas',
-    industry4Hook: 'Los leads se enfrían mientras tu equipo maneja administración en vez de vender.',
-    industry4Feature1: 'Respuesta instantánea y calificación de leads',
-    industry4Feature2: 'Actualizaciones de CRM y seguimiento de pipeline',
-    industry4Feature3: 'Secuencias de seguimiento en los intervalos correctos',
-    industry4Feature4: 'Agendamiento y confirmación de reuniones',
-    industry4Outcome: '3x más rápido en respuesta',
-    industry4Cta: 'Explorar Soluciones de Ventas',
-    
-    // Industry Card 5 - Academies & Tutoring
-    industry5Title: 'Academias y Tutorías',
-    industry5Hook: 'Las inscripciones corren en hojas de cálculo y grupos de WhatsApp.',
-    industry5Feature1: 'Captura de consultas y secuencias de nurturing',
-    industry5Feature2: 'Confirmación de inscripción y recolección de documentos',
-    industry5Feature3: 'Recordatorios de pago y entrega de recibos',
-    industry5Feature4: 'Campañas de re-inscripción al final del período',
-    industry5Outcome: '60% menos administración por ciclo de inscripción',
-    industry5Cta: 'Explorar Soluciones de Educación',
-    
-    // Industry Card 6 - Custom AI Agent
-    industry6Title: 'Agente de IA Personalizado',
-    industry6Hook: 'Tu negocio no encaja en una plantilla. Tu agente de IA tampoco.',
-    industry6Feature1: 'Descubrimiento de tus cuellos de botella específicos',
-    industry6Feature2: 'Diseño personalizado de workflows y agentes',
-    industry6Feature3: 'Integración con tus herramientas existentes',
-    industry6Feature4: 'Despliegue, capacitación y soporte continuo',
-    industry6Outcome: 'Construido para tus operaciones exactas',
-    industry6Cta: 'Diseña Tu Solución',
+    threeWaysFooterText: '¿No estás seguro cuál encaja contigo?',
+    threeWaysCtaText: 'Hablemos →',
+
     
     // Timeline Section
     timelineTitle: 'De Caos Manual a Eficiencia con IA',
