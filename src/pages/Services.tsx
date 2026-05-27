@@ -2,6 +2,10 @@ import { Link } from 'react-router-dom';
 import { SEOHead } from '@/components/ui/seo-head';
 import { PAGE_SEO, SERVICE_SCHEMA, getCanonicalUrl } from '@/lib/seo-config';
 import { useTranslation } from '@/i18n';
+import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
+import { TracingBeam } from '@/components/ui/tracing-beam';
+import { CursorSpotlight } from '@/components/ui/cursor-spotlight';
+import { GradientMovingButton } from '@/components/ui/gradient-moving-button';
 
 interface CardProps {
   eyebrow: string;
@@ -57,16 +61,12 @@ function ServiceCard({ eyebrow, title, description, whoLabel, who, cta, href, fe
           {who}
         </p>
 
-        <Link
+        <GradientMovingButton
           to={href}
-          className="block w-full text-center text-white font-semibold text-[15px] rounded-lg py-3.5 px-6 transition-transform duration-200 hover:scale-[1.02] min-h-[48px]"
-          style={{
-            background: 'linear-gradient(135deg, #1FA6C1, #A15BF1)',
-            fontFamily: 'Inter, sans-serif',
-          }}
+          className="w-full px-6 py-3.5 text-[15px] font-semibold justify-center"
         >
           {cta} →
-        </Link>
+        </GradientMovingButton>
       </div>
     </div>
   );
@@ -117,15 +117,17 @@ export default function Services() {
       />
 
       <main className="bg-white">
+        <TracingBeam>
         {/* Hero */}
-        <section className="pt-24 pb-12 md:pt-28 md:pb-16 lg:pt-32 lg:pb-20">
+        <section className="relative overflow-hidden pt-24 pb-12 md:pt-28 md:pb-16 lg:pt-32 lg:pb-20">
+          <CursorSpotlight color="rgba(31,166,193,0.18)" size={520} />
           <div className="max-w-[1200px] mx-auto px-6 text-center">
-            <h1
+            <TextGenerateEffect
+              as="h1"
+              words={s.v2HeroTitle}
               className="text-[36px] md:text-[48px] lg:text-[56px] leading-[1.1] tracking-tight text-[#0F1729]"
               style={{ fontFamily: '"Plus Jakarta Sans", sans-serif', fontWeight: 800 }}
-            >
-              {s.v2HeroTitle}
-            </h1>
+            />
             <p
               className="mt-6 text-[17px] md:text-[19px] leading-[1.55] text-[#2B3650] max-w-[680px] mx-auto"
               style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400 }}
@@ -157,6 +159,7 @@ export default function Services() {
             </p>
           </div>
         </section>
+        </TracingBeam>
       </main>
     </>
   );
