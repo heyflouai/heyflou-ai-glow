@@ -10,6 +10,7 @@ import { GradientMovingButton } from '@/components/ui/gradient-moving-button';
 import { AuroraBackground } from '@/components/ui/aurora-background';
 import { WobbleCard } from '@/components/ui/wobble-card';
 import { PinContainer } from '@/components/ui/3d-pin';
+import theraflouMark from '@/assets/theraflou-mark.svg';
 
 const JAKARTA = '"Plus Jakarta Sans", sans-serif';
 const INTER = 'Inter, sans-serif';
@@ -178,7 +179,13 @@ export default function Infrastructure() {
                 <div className="text-xs !m-0 !p-0 font-normal" style={{ fontFamily: INTER }}>
                   <span className="text-slate-300">{s.caseEyebrow}</span>
                 </div>
-                <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-[#1FA6C1] via-[#5CB3E8] to-[#A15BF1]" />
+                <div className="flex flex-1 w-full items-center justify-center rounded-lg mt-4 bg-gradient-to-br from-[#0F1729] via-[#1a2440] to-[#0F1729]">
+                  <img
+                    src={theraflouMark}
+                    alt="TheraFlou"
+                    className="h-40 w-auto drop-shadow-[0_0_20px_rgba(161,91,241,0.35)]"
+                  />
+                </div>
               </div>
             </PinContainer>
           </div>
