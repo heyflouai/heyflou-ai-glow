@@ -1832,14 +1832,14 @@ export const en = {
     threeWaysCard1Link: 'See how it works →',
     
     threeWaysCard2Title: 'AI Infrastructure',
-    threeWaysCard2Desc: 'Custom AI platforms built for your industry — CRMs, booking engines, compliance layers. Built from scratch when off-the-shelf doesn't fit.',
+    threeWaysCard2Desc: "Custom AI platforms built for your industry — CRMs, booking engines, compliance layers. Built from scratch when off-the-shelf doesn't fit.",
     threeWaysCard2Link: 'Explore AI Infrastructure →',
     
     threeWaysCard3Title: 'AI Consulting',
-    threeWaysCard3Desc: 'A paid 3-week engagement that maps where AI fits in your business — what to build first, what to skip, and what gives you ROI fastest.',
+    threeWaysCard3Desc: "A paid 3-week engagement that maps where AI fits in your business — what to build first, what to skip, and what gives you ROI fastest.",
     threeWaysCard3Link: 'Learn about consulting →',
     
-    threeWaysFooterText: 'Not sure which fits you?',
+    threeWaysFooterText: "Not sure which fits you?",
     threeWaysCtaText: 'Talk to us →',
 
     
