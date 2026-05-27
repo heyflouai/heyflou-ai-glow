@@ -424,13 +424,13 @@ export default function CaseStudies() {
               </div>
             </motion.article>
 
-            {/* Directed Empresas — text LEFT, dark panel RIGHT */}
+            {/* Directed Empresas — text+stats LEFT, quote RIGHT */}
             <motion.article
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.6 }}
-              className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center"
+              className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start"
             >
               <div className="order-2 lg:order-1">
                 <p
@@ -463,10 +463,11 @@ export default function CaseStudies() {
                   <StatBlock stat={{ value: '5', label: 'sub-companies', desc: 'coordinated through one agent infrastructure' }} />
                   <StatBlock stat={{ value: '0', label: 'headcount increase', desc: 'to scale operations' }} />
                 </div>
+              </div>
 
-                {/* Quote */}
+              <div className="order-1 lg:order-2">
                 <figure
-                  className="mt-8 bg-white rounded-r-xl"
+                  className="bg-white rounded-r-xl"
                   style={{
                     borderLeft: '4px solid #1FA6C1',
                     padding: '28px 32px',
@@ -493,33 +494,10 @@ export default function CaseStudies() {
                   <img
                     src={DIRECTED_LOGO}
                     alt="Directed Empresas"
-                    className="mt-4"
-                    style={{ width: 120, height: 'auto' }}
+                    className="mt-6"
+                    style={{ width: 240, height: 'auto' }}
                   />
                 </figure>
-              </div>
-
-              <div className="order-1 lg:order-2 relative rounded-2xl overflow-hidden bg-[#0F1729] p-10 min-h-[360px] flex flex-col justify-center">
-                <div
-                  aria-hidden
-                  className="absolute inset-0 opacity-70"
-                  style={{
-                    background:
-                      'radial-gradient(60% 60% at 50% 30%, rgba(161,91,241,0.25), transparent 70%), radial-gradient(60% 60% at 50% 80%, rgba(31,166,193,0.18), transparent 70%)',
-                  }}
-                />
-                <div className="relative flex items-center justify-center mb-8">
-                  <img
-                    src={DIRECTED_LOGO}
-                    alt="Directed Empresas"
-                    style={{ width: 200, filter: 'brightness(0) invert(1)' }}
-                  />
-                </div>
-                <div className="relative grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <StatBlock dark stat={{ value: '20+', label: 'hrs / week', desc: 'per user recovered' }} />
-                  <StatBlock dark stat={{ value: '5', label: 'companies', desc: 'one infrastructure' }} />
-                  <StatBlock dark stat={{ value: '0', label: 'new headcount', desc: 'to scale ops' }} />
-                </div>
               </div>
             </motion.article>
           </div>
