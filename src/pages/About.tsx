@@ -87,7 +87,7 @@ export default function About() {
                 className="inline-flex items-center gap-2 px-7 py-4 rounded-full text-[16px] bg-white/70 backdrop-blur-sm border border-[#1FA6C1]/30 text-[#0F1729] hover:bg-white hover:border-[#1FA6C1] transition-all"
                 style={{ fontFamily: INTER, fontWeight: 600 }}
               >
-                {a.servicesTitle ?? 'See our services'} <ArrowRight className="h-4 w-4" />
+                {a.ctaSecondary} <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
 
