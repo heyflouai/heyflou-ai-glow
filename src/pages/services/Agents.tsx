@@ -114,8 +114,6 @@ export default function Agents() {
 
         {/* PROBLEM */}
         <BackgroundBeamsWithCollision className="bg-[#0F1729] py-20">
-          <Spotlight className="-top-40 left-0 md:-top-20 md:left-60" fill="white" />
-          <CursorSpotlight color="rgba(161,91,241,0.22)" size={520} />
           <div className="relative z-20 max-w-[800px] mx-auto px-6 text-center">
             <h2
               className="text-[28px] md:text-[36px] leading-[1.2] text-white"
