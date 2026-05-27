@@ -2,7 +2,6 @@ import { SEOHead } from '@/components/ui/seo-head';
 import { Section } from '@/components/ui/section';
 import { useTranslation } from '@/i18n';
 import { PAGE_SEO, getCanonicalUrl } from '@/lib/seo-config';
-import { Spotlight } from '@/components/ui/spotlight';
 import { NumberTicker, parseMetricValue } from '@/components/ui/number-ticker';
 import { MovingBorderButton } from '@/components/ui/moving-border';
 import { ShimmerButton } from '@/components/ui/shimmer-button';
