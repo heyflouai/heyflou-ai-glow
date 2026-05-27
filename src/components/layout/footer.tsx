@@ -101,7 +101,7 @@ export const Footer = () => {
         aria-hidden="true"
         className="absolute left-0 right-0 hidden min-[480px]:flex justify-center"
         style={{
-          bottom: -8,
+          bottom: 16,
           zIndex: 0,
           whiteSpace: 'nowrap',
           userSelect: 'none',
@@ -116,7 +116,7 @@ export const Footer = () => {
             fontSize: 'clamp(80px, 15vw, 220px)',
             color: 'rgba(255,255,255,0.05)',
             letterSpacing: '-0.02em',
-            lineHeight: 0.9,
+            lineHeight: 1.1,
             display: 'inline-block',
             padding: '0 0.08em',
           }}
