@@ -1,221 +1,139 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { BrandLockup } from '@/components/BrandLockup';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { supabase } from '@/integrations/supabase/client';
-import { toast } from '@/hooks/use-toast';
-import { Linkedin, Loader2, CheckCircle2, XCircle, Mail, Github, ArrowUpRight, Instagram } from 'lucide-react';
-import { useTranslation } from '@/i18n';
-import { cn } from '@/lib/utils';
-import { motion, AnimatePresence } from 'framer-motion';
-import { sendConfirmationEmail } from '@/lib/send-confirmation-email';
+import logo from '@/assets/heyflou-logo-new.png';
 import { LanguageToggle } from '@/components/ui/language-toggle';
 
-// X (formerly Twitter) logo component
-const XIcon = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden="true">
-    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-  </svg>
-);
-
-type SubscriptionStatus = 'idle' | 'loading' | 'success' | 'error';
+type FooterLinkItem = { name: string; href: string; external?: boolean };
 
 export const Footer = () => {
-  const t = useTranslation();
-  const [email, setEmail] = useState('');
-  const [status, setStatus] = useState<SubscriptionStatus>('idle');
-  const [emailError, setEmailError] = useState('');
+  const pages: FooterLinkItem[] = [
+    { name: 'Home', href: '/' },
+    { name: 'Services', href: '/services' },
+    { name: 'Case Studies', href: '/case-studies' },
+    { name: 'About', href: '/about' },
+    { name: 'Contact', href: '/contact' },
+  ];
 
-  // Solutions column links
-  const solutionsLinks = [
+  const services: FooterLinkItem[] = [
     { name: 'AI Agents', href: '/services/agents' },
     { name: 'AI Infrastructure', href: '/services/infrastructure' },
     { name: 'AI Consulting', href: '/services/consulting' },
   ];
 
-  // Company column links
-  const companyLinks = [
-    { name: t.footer.aboutUs, href: '/about' },
-    { name: t.footer.caseStudies, href: '/case-studies' },
-    { name: t.footer.contactUs, href: '/contact' },
-    { name: 'Pricing', href: '/pricing' },
+  const socials: FooterLinkItem[] = [
+    { name: 'Instagram', href: 'https://instagram.com/heyflou_ai', external: true },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/company/heyflou', external: true },
   ];
 
-  // Resources column links
-  const resourcesLinks = [
-    { name: t.footer.helpCenter, href: '/contact' },
-    { name: t.footer.bookACall, href: 'https://calendly.com/heyflou-ai/30min', external: true },
+  const legal: FooterLinkItem[] = [
+    { name: 'Privacy Policy', href: '/privacy' },
+    { name: 'Terms of Service', href: '/terms' },
   ];
 
-  // Legal column links
-  const legalLinks = [
-    { name: t.footer.privacyPolicy, href: '/privacy' },
-    { name: t.footer.termsOfService, href: '/terms' },
-    { name: 'Refund Policy', href: '/refund' },
-    { name: t.footer.cookiePolicy, href: '#' },
-  ];
+  const linkClass =
+    'text-[14px] leading-[2.2] text-white/60 hover:text-white transition-colors duration-150';
 
-  // Social links
-  const socialLinks = [
-    { 
-      name: 'Instagram', 
-      href: 'https://www.instagram.com/heyflou_ai?igsh=MWl1Z3d0aHRxZjI0eA%3D%3D&utm_source=qr', 
-      icon: Instagram 
-    },
-    { 
-      name: 'LinkedIn', 
-      href: 'https://www.linkedin.com/company/heyflou', 
-      icon: Linkedin 
-    },
-    { 
-      name: 'X', 
-      href: 'https://x.com/Heyflou_', 
-      icon: XIcon 
-    },
-  ];
-
-  const validateEmail = (email: string): boolean => {
-    if (!email.trim()) {
-      setEmailError(t.forms.emailRequired);
-      return false;
-    }
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      setEmailError(t.forms.invalidEmail);
-      return false;
-    }
-    setEmailError('');
-    return true;
-  };
-
-  const handleSubscribe = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!validateEmail(email)) return;
-    
-    setStatus('loading');
-    
-    try {
-      const { data, error } = await supabase.functions.invoke('webhook-subscriber', {
-        body: { email: email.trim() }
-      });
-
-      if (error) throw error;
-
-      if (data.code === 'ALREADY_SUBSCRIBED') {
-        toast({
-          title: t.forms.alreadySubscribed,
-          description: data.message
-        });
-        setStatus('success');
-      } else if (data.code === 'SUCCESS') {
-        toast({
-          title: t.forms.subscribed,
-          description: data.message
-        });
-        setStatus('success');
-        sendConfirmationEmail({
-          name: email.split('@')[0],
-          email: email.trim(),
-          formSource: 'footer-newsletter',
-          message: '',
-          fields: { 'Signup Type': 'Newsletter Subscription' },
-        });
-        setEmail('');
-      } else if (data.error) {
-        throw new Error(data.error);
-      }
-    } catch (error: any) {
-      console.error('Subscription error:', error);
-      setStatus('error');
-      toast({
-        title: t.forms.submissionFailed,
-        description: t.forms.submissionFailedDesc,
-        variant: "destructive"
-      });
-    }
-  };
-
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
-    if (emailError) setEmailError('');
-    if (status !== 'idle') setStatus('idle');
-  };
-
-  const resetForm = () => {
-    setStatus('idle');
-    setEmail('');
-    setEmailError('');
-  };
-
-  const FooterLink = ({ 
-    href, 
-    children, 
-    external = false,
-    badge
-  }: { 
-    href: string; 
-    children: React.ReactNode; 
-    external?: boolean;
-    badge?: string;
-  }) => {
-    const className = cn(
-      "text-muted-foreground hover:text-hf-teal transition-colors duration-200 text-sm",
-      "py-1.5 inline-flex items-center gap-2 group min-h-[44px] md:min-h-0"
-    );
-
-    if (external) {
-      return (
-        <a 
-          href={href} 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className={className}
-        >
-          {children}
-          <ArrowUpRight className="h-3 w-3 opacity-0 -translate-y-0.5 translate-x-0.5 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-200" />
-        </a>
-      );
-    }
-
-    return (
-      <Link to={href} className={className}>
-        {children}
-        {badge && (
-          <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-hf-teal/20 text-hf-teal font-medium">
-            {badge}
-          </span>
-        )}
+  const renderLink = (link: FooterLinkItem) =>
+    link.external ? (
+      <a
+        key={link.name}
+        href={link.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={linkClass}
+      >
+        {link.name}
+      </a>
+    ) : (
+      <Link key={link.name} to={link.href} className={linkClass}>
+        {link.name}
       </Link>
     );
-  };
 
-  const FooterColumn = ({ 
-    title, 
-    links 
-  }: { 
-    title: string; 
-    links: Array<{ name: string; href: string; external?: boolean; badge?: string }>;
-  }) => (
+  const Column = ({ title, links }: { title: string; links: FooterLinkItem[] }) => (
     <div>
-      <h3 className="font-semibold text-sm uppercase tracking-wider text-foreground mb-4">
+      <h3 className="text-[12px] font-semibold uppercase tracking-[1.5px] text-white/50 mb-5">
         {title}
       </h3>
-      <ul className="space-y-1">
-        {links.map((link) => (
-          <li key={link.name}>
-            <FooterLink href={link.href} external={link.external} badge={link.badge}>
-              {link.name}
-            </FooterLink>
-          </li>
+      <ul className="flex flex-col">
+        {links.map((l) => (
+          <li key={l.name}>{renderLink(l)}</li>
         ))}
       </ul>
     </div>
   );
 
   return (
-    <footer className="bg-muted dark:bg-bg-dark border-t border-border dark:border-white/10 safe-bottom">
+    <footer
+      className="relative overflow-hidden border-t border-white/[0.06] safe-bottom"
+      style={{ backgroundColor: '#080E1C', padding: '64px 0 0 0' }}
+    >
+      {/* Inner content */}
+      <div className="relative z-10 mx-auto" style={{ maxWidth: 1200, padding: '0 40px' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-10 lg:gap-8">
+          {/* Brand */}
+          <div>
+            <img
+              src={logo}
+              alt="HeyFlou"
+              style={{ width: 120, height: 'auto', filter: 'brightness(0) invert(1)' }}
+            />
+            <p
+              className="font-normal"
+              style={{ marginTop: 12, color: 'rgba(255,255,255,0.4)', fontSize: 13 }}
+            >
+              Tecnología Israelí, Corazón Mexicano
+            </p>
+            <p
+              className="font-normal"
+              style={{ marginTop: 24, color: 'rgba(255,255,255,0.3)', fontSize: 13 }}
+            >
+              © 2026 HeyFlou. All rights reserved.
+            </p>
+            <div className="mt-5">
+              <LanguageToggle />
+            </div>
+          </div>
+
+          <Column title="PAGES" links={pages} />
+          <Column title="SERVICES" links={services} />
+          <Column title="SOCIALS" links={socials} />
+          <Column title="LEGAL" links={legal} />
+        </div>
+
+        {/* Spacer above watermark */}
+        <div className="h-16 md:h-20" />
+      </div>
+
+      {/* Oversized watermark */}
+      <div
+        aria-hidden="true"
+        className="absolute left-0 right-0 hidden min-[480px]:block"
+        style={{
+          bottom: -20,
+          zIndex: 0,
+          textAlign: 'center',
+          whiteSpace: 'nowrap',
+          userSelect: 'none',
+          pointerEvents: 'none',
+          overflow: 'hidden',
+        }}
+      >
+        <span
+          className="font-display"
+          style={{
+            fontWeight: 800,
+            fontSize: 'clamp(100px, 18vw, 260px)',
+            color: 'rgba(255,255,255,0.04)',
+            letterSpacing: '-4px',
+            lineHeight: 1,
+          }}
+        >
+          HeyFlou
+        </span>
+      </div>
+    </footer>
+  );
+};
       {/* Main Footer Content */}
       <div className="container mx-auto px-5 md:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-8">
