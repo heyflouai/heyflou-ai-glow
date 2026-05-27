@@ -21,12 +21,6 @@ interface WorldMapProps {
   className?: string;
 }
 
-// Equirectangular projection to 1000x500 viewBox.
-const project = (lat: number, lng: number) => ({
-  x: ((lng + 180) * 1000) / 360,
-  y: ((90 - lat) * 500) / 180,
-});
-
 /**
  * Dotted world map with animated arcs between geographic points.
  * Lightweight: pure SVG, no external map libs.
