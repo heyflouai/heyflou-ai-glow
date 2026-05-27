@@ -57,8 +57,14 @@ export default function About() {
 
       <main className="bg-white">
         {/* HERO */}
-        <AuroraBackground className="min-h-[80vh]">
-          <div className="relative z-10 max-w-[1100px] mx-auto px-6 py-24 text-center">
+        <AuroraBackground className="min-h-[78vh] flex items-center">
+          <div className="relative z-10 w-full max-w-[1100px] mx-auto px-6 pt-32 md:pt-36 pb-20 md:pb-24 text-center">
+            <div
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/70 backdrop-blur-sm border border-[#1FA6C1]/20 text-[12px] uppercase mb-6"
+              style={{ fontFamily: INTER, fontWeight: 600, color: '#1FA6C1', letterSpacing: '1.5px' }}
+            >
+              About HeyFlou
+            </div>
             <TextGenerateEffect
               as="h1"
               words={a.heroTitle}
@@ -66,11 +72,33 @@ export default function About() {
               style={{ fontFamily: JAKARTA, fontWeight: 800 }}
             />
             <p
-              className="mt-8 mx-auto max-w-[680px] text-[18px] md:text-[20px] leading-[1.55] text-[#2B3650]"
+              className="mt-8 mx-auto max-w-[720px] text-[18px] md:text-[20px] leading-[1.55] text-[#2B3650]"
               style={{ fontFamily: INTER, fontWeight: 400 }}
             >
               {a.heroSubtitle}
             </p>
+
+            <div className="mt-12 grid grid-cols-3 gap-4 md:gap-8 max-w-[720px] mx-auto">
+              {stats.slice(0, 3).map((s) => (
+                <div
+                  key={s.label}
+                  className="rounded-2xl px-4 py-5 bg-white/60 backdrop-blur-sm border border-white/60 shadow-sm"
+                >
+                  <div
+                    className="text-[28px] md:text-[36px] leading-none bg-clip-text text-transparent"
+                    style={{ fontFamily: JAKARTA, fontWeight: 800, backgroundImage: GRADIENT }}
+                  >
+                    {s.number}
+                  </div>
+                  <div
+                    className="mt-2 text-[12px] md:text-[13px] text-[#0F1729]"
+                    style={{ fontFamily: JAKARTA, fontWeight: 700 }}
+                  >
+                    {s.label}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </AuroraBackground>
 
