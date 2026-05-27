@@ -770,6 +770,35 @@ export const en = {
     ctaSecondary: 'Explore Our Solutions',
     
     viewDetails: 'View Details',
+
+    // Compact anonymous case cards
+    compactSectionEyebrow: 'MORE WORK',
+    compactSectionHeadline: 'Other engagements.',
+    compactSectionSubheadline: "Some clients prefer to stay private. The results don't.",
+    compactAnonymousBadge: 'Anonymous',
+
+    compactCard1TypeBadge: 'AI CONSULTING',
+    compactCard1Industry: 'REAL ESTATE · PROPERTY MANAGEMENT',
+    compactCard1Headline: 'Managing hundreds of listings across markets with a team that was drowning in coordination.',
+    compactCard1ProblemLabel: 'THE PROBLEM',
+    compactCard1ProblemText: 'A high-volume real estate operation was running property acquisition, listing management, and client follow-ups manually. Each deal required coordination across multiple teams with no centralized system — creating delays, missed follow-ups, and lost deals.',
+    compactCard1SolutionLabel: 'THE SOLUTION',
+    compactCard1SolutionText: 'We ran a structured AI Consulting engagement — mapping every workflow, scoring each process for automation potential, and delivering a prioritized roadmap. The client left with a clear implementation brief and vendor recommendations tailored to their existing stack.',
+    compactCard1ImpactLabel: 'IMPACT',
+    compactCard1ImpactPill1: 'Roadmap delivered in 3 weeks',
+    compactCard1ImpactPill2: '12 processes mapped & scored',
+
+    compactCard2TypeBadge: 'AI CONSULTING',
+    compactCard2Industry: 'NONPROFIT · OPERATIONS MANAGEMENT',
+    compactCard2Headline: 'A multilingual nonprofit managing complex family processes across 3 languages — entirely in spreadsheets.',
+    compactCard2ProblemLabel: 'THE PROBLEM',
+    compactCard2ProblemText: 'An organization coordinating immigration and settlement processes for families across Spanish, English, and Portuguese had outgrown its tools. Intake, document tracking, status updates, and team coordination were fragmented across emails, WhatsApp, and manual spreadsheets.',
+    compactCard2SolutionLabel: 'THE SOLUTION',
+    compactCard2SolutionText: "We restructured their entire operations workspace into a 3-pillar architecture and activated Monday.com's native AI suite — AI agents for inbox triage, document checking, multilingual drafts, and weekly digests. Delivered across 3 sessions in 3 weeks.",
+    compactCard2ImpactLabel: 'IMPACT',
+    compactCard2ImpactPill1: '3 languages automated',
+    compactCard2ImpactPill2: '3-week delivery',
+    compactCard2ImpactPill3: 'Zero custom code required',
   },
 
   // About Page
