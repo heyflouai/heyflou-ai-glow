@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import { MessageSquare, Calendar, Send, Receipt, Database, BarChart3, ArrowRight } from 'lucide-react';
 import { SEOHead } from '@/components/ui/seo-head';
 import { getCanonicalUrl } from '@/lib/seo-config';
@@ -8,22 +9,65 @@ import { TracingBeam } from '@/components/ui/tracing-beam';
 import { CursorSpotlight } from '@/components/ui/cursor-spotlight';
 import { GradientMovingButton } from '@/components/ui/gradient-moving-button';
 import { Spotlight } from '@/components/ui/spotlight';
+import { BackgroundBeamsWithCollision } from '@/components/ui/background-beams-collision';
+import { CanvasRevealEffect } from '@/components/ui/canvas-reveal-effect';
 
 const JAKARTA = '"Plus Jakarta Sans", sans-serif';
 const INTER = 'Inter, sans-serif';
 const GRADIENT = 'linear-gradient(135deg, #1FA6C1, #A15BF1)';
 
+function ResultCard({ stat, label, source }: { stat: string; label: string; source?: string }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="group relative overflow-hidden rounded-xl border border-[#E2E8F0] bg-white p-8 text-center transition-all duration-200 hover:-translate-y-1 hover:border-[#1FA6C1] hover:shadow-[0_12px_32px_rgba(31,166,193,0.10)]"
+    >
+      <CanvasRevealEffect active={hovered} dotSize={18} animationSpeed={0.6} />
+      <div className="relative z-10">
+        <div
+          className="text-[48px] md:text-[56px] leading-none bg-clip-text text-transparent"
+          style={{
+            fontFamily: JAKARTA,
+            fontWeight: 800,
+            backgroundImage: GRADIENT,
+            WebkitBackgroundClip: 'text',
+          }}
+        >
+          {stat}
+        </div>
+        <p
+          className="mt-4 text-[15px] leading-[1.55] text-[#2B3650]"
+          style={{ fontFamily: INTER, fontWeight: 500 }}
+        >
+          {label}
+        </p>
+        {source && (
+          <p
+            className="mt-3 text-[13px] italic text-[#2B3650]/70"
+            style={{ fontFamily: INTER, fontWeight: 400 }}
+          >
+            {source}
+          </p>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default function Agents() {
   const t = useTranslation();
   const s = t.servicesAgents as Record<string, string>;
 
+  // Bento: 1 large hero + 2 medium + 3 small (Reply Agent is the hero)
   const agents = [
-    { icon: MessageSquare, name: s.agent1Name, desc: s.agent1Desc },
-    { icon: Calendar, name: s.agent2Name, desc: s.agent2Desc },
-    { icon: Send, name: s.agent3Name, desc: s.agent3Desc },
-    { icon: Receipt, name: s.agent4Name, desc: s.agent4Desc },
-    { icon: Database, name: s.agent5Name, desc: s.agent5Desc },
-    { icon: BarChart3, name: s.agent6Name, desc: s.agent6Desc },
+    { icon: MessageSquare, name: s.agent1Name, desc: s.agent1Desc, size: 'large' as const },
+    { icon: Calendar, name: s.agent2Name, desc: s.agent2Desc, size: 'medium' as const },
+    { icon: Send, name: s.agent3Name, desc: s.agent3Desc, size: 'medium' as const },
+    { icon: Receipt, name: s.agent4Name, desc: s.agent4Desc, size: 'small' as const },
+    { icon: Database, name: s.agent5Name, desc: s.agent5Desc, size: 'small' as const },
+    { icon: BarChart3, name: s.agent6Name, desc: s.agent6Desc, size: 'small' as const },
   ];
 
   const steps = [
@@ -69,10 +113,10 @@ export default function Agents() {
         </section>
 
         {/* PROBLEM */}
-        <section className="relative overflow-hidden py-20 bg-[#0F1729]">
+        <BackgroundBeamsWithCollision className="bg-[#0F1729] py-20">
           <Spotlight className="-top-40 left-0 md:-top-20 md:left-60" fill="white" />
           <CursorSpotlight color="rgba(161,91,241,0.22)" size={520} />
-          <div className="max-w-[800px] mx-auto px-6 text-center">
+          <div className="relative z-20 max-w-[800px] mx-auto px-6 text-center">
             <h2
               className="text-[28px] md:text-[36px] leading-[1.2] text-white"
               style={{ fontFamily: JAKARTA, fontWeight: 700 }}
@@ -118,9 +162,9 @@ export default function Agents() {
               </div>
             </div>
           </div>
-        </section>
+        </BackgroundBeamsWithCollision>
 
-        {/* AGENT GRID */}
+        {/* AGENT BENTO GRID */}
         <section className="py-20 bg-white">
           <div className="max-w-[1200px] mx-auto px-6">
             <h2
@@ -130,32 +174,50 @@ export default function Agents() {
               {s.gridTitle}
             </h2>
 
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {agents.map(({ icon: Icon, name, desc }) => (
-                <div
-                  key={name}
-                  className="rounded-xl border border-[#E2E8F0] bg-white p-7 transition-all duration-200 hover:-translate-y-1 hover:border-[#1FA6C1] hover:shadow-[0_12px_32px_rgba(31,166,193,0.10)]"
-                >
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-6 md:grid-rows-3 gap-5 md:auto-rows-[140px]">
+              {agents.map(({ icon: Icon, name, desc, size }, i) => {
+                const span =
+                  size === 'large'
+                    ? 'md:col-span-3 md:row-span-2'
+                    : size === 'medium'
+                    ? 'md:col-span-3 md:row-span-1'
+                    : 'md:col-span-2 md:row-span-1';
+                const isLarge = size === 'large';
+                return (
                   <div
-                    className="flex h-10 w-10 items-center justify-center rounded-full"
-                    style={{ background: GRADIENT }}
+                    key={name}
+                    className={`${span} group relative overflow-hidden rounded-xl border border-[#E2E8F0] bg-white p-6 md:p-7 transition-all duration-200 hover:-translate-y-1 hover:border-[#1FA6C1] hover:shadow-[0_12px_32px_rgba(31,166,193,0.10)] ${isLarge ? 'flex flex-col justify-between' : ''}`}
                   >
-                    <Icon className="h-5 w-5 text-white" />
+                    {isLarge && (
+                      <div
+                        aria-hidden
+                        className="pointer-events-none absolute inset-0 opacity-[0.05]"
+                        style={{ background: GRADIENT }}
+                      />
+                    )}
+                    <div className="relative z-10">
+                      <div
+                        className={`flex items-center justify-center rounded-full ${isLarge ? 'h-14 w-14' : 'h-10 w-10'}`}
+                        style={{ background: GRADIENT }}
+                      >
+                        <Icon className={`${isLarge ? 'h-7 w-7' : 'h-5 w-5'} text-white`} />
+                      </div>
+                      <h3
+                        className={`mt-5 text-[#0F1729] ${isLarge ? 'text-[24px] md:text-[28px]' : 'text-[18px]'}`}
+                        style={{ fontFamily: JAKARTA, fontWeight: 700 }}
+                      >
+                        {name}
+                      </h3>
+                      <p
+                        className={`mt-2 leading-[1.6] text-[#2B3650] ${isLarge ? 'text-[16px] md:text-[17px]' : 'text-[14px] md:text-[15px]'}`}
+                        style={{ fontFamily: INTER, fontWeight: 400 }}
+                      >
+                        {desc}
+                      </p>
+                    </div>
                   </div>
-                  <h3
-                    className="mt-5 text-[18px] text-[#0F1729]"
-                    style={{ fontFamily: JAKARTA, fontWeight: 700 }}
-                  >
-                    {name}
-                  </h3>
-                  <p
-                    className="mt-2 text-[15px] leading-[1.6] text-[#2B3650]"
-                    style={{ fontFamily: INTER, fontWeight: 400 }}
-                  >
-                    {desc}
-                  </p>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             <p
@@ -230,36 +292,7 @@ export default function Agents() {
 
             <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
               {results.map((r) => (
-                <div
-                  key={r.label}
-                  className="rounded-xl border border-[#E2E8F0] bg-white p-8 text-center"
-                >
-                  <div
-                    className="text-[48px] md:text-[56px] leading-none bg-clip-text text-transparent"
-                    style={{
-                      fontFamily: JAKARTA,
-                      fontWeight: 800,
-                      backgroundImage: GRADIENT,
-                      WebkitBackgroundClip: 'text',
-                    }}
-                  >
-                    {r.stat}
-                  </div>
-                  <p
-                    className="mt-4 text-[15px] leading-[1.55] text-[#2B3650]"
-                    style={{ fontFamily: INTER, fontWeight: 500 }}
-                  >
-                    {r.label}
-                  </p>
-                  {r.source && (
-                    <p
-                      className="mt-3 text-[13px] italic text-[#2B3650]/70"
-                      style={{ fontFamily: INTER, fontWeight: 400 }}
-                    >
-                      {r.source}
-                    </p>
-                  )}
-                </div>
+                <ResultCard key={r.label} stat={r.stat} label={r.label} source={r.source} />
               ))}
             </div>
           </div>
