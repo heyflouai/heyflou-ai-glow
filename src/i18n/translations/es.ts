@@ -513,6 +513,61 @@ export const es: TranslationKeys = {
     v2TrustStrip: 'Respaldado por AWS · Diseño con cumplimiento HIPAA · Resultados en 30–90 días · 3 proyectos nuevos por mes',
   },
 
+  // Services / Agents Page
+  servicesAgents: {
+    heroTitle: 'Tu equipo de IA. Funcionando 24/7.',
+    heroSubtitle: 'Desplegamos un equipo de agentes de IA en tu negocio — cada uno entrenado para una tarea específica. Juntos manejan el trabajo operativo que está frenando a tu equipo.',
+
+    problemTitle: 'Tu equipo pasa la mayor parte del día en trabajo que no debería requerir a un humano.',
+    problemBody: 'El empleado promedio dedica el 57% de su jornada a comunicación y coordinación — no al trabajo que realmente hace crecer tu negocio. Responder a clientes, confirmar citas, perseguir pagos, capturar datos, generar reportes. Todo es necesario. Nada requiere juicio humano.',
+    statPercent: '57%',
+    statLabel: 'de la jornada laboral',
+    statSubLabel: '— comunicación, no creación.',
+    statSource: 'Microsoft Work Trend Index 2023',
+
+    gridTitle: 'Cada agente tiene una sola tarea. La hace perfectamente.',
+    agent1Name: 'Agente de Respuesta',
+    agent1Desc: 'Maneja todos los mensajes entrantes de clientes. Responde al instante, califica la intención y escala cuando se necesita un humano.',
+    agent2Name: 'Agente de Agenda',
+    agent2Desc: 'Gestiona reservas, confirmaciones, reprogramaciones y recordatorios en tu calendario. Sin idas y vueltas.',
+    agent3Name: 'Agente de Seguimiento',
+    agent3Desc: 'Envía check-ins post-sesión, recordatorios de reagendado y mensajes de nurturing en el momento correcto — automáticamente.',
+    agent4Name: 'Agente de Facturación',
+    agent4Desc: 'Emite facturas, envía recordatorios de pago, registra recibos. El flujo de caja funciona sin que nadie tenga que perseguirlo.',
+    agent5Name: 'Agente de Datos',
+    agent5Desc: 'Captura la información del cliente una vez y la sincroniza con todos los sistemas. Sin doble captura, sin registros desactualizados.',
+    agent6Name: 'Agente de Reportes',
+    agent6Desc: 'Entrega dashboards con reservas, ingresos, no-shows y tendencias. Siempre actualizados, nunca compilados a mano.',
+    gridFooter: '¿No ves tu caso de uso? Diseñamos agentes a la medida para tus flujos específicos.',
+
+    processTitle: 'De la primera llamada a agentes en vivo en 30 días.',
+    step1Title: 'Descubrimiento',
+    step1Desc: 'Pasamos una semana mapeando tus procesos actuales, identificando los cuellos de botella más costosos y definiendo exactamente qué agentes desplegar primero.',
+    step2Title: 'Diseño',
+    step2Desc: 'Diseñamos la arquitectura del sistema de agentes — a qué herramientas se conectan, qué decisiones toman de forma autónoma y qué escalan a tu equipo.',
+    step3Title: 'Despliegue',
+    step3Desc: 'Construimos, probamos y lanzamos. Capacitamos a tu equipo. Nosotros nos encargamos de la complejidad.',
+    step4Title: 'Operar y Mejorar',
+    step4Desc: 'Los agentes funcionan de forma continua. Monitoreamos, optimizamos y ampliamos el alcance conforme llegan resultados.',
+    calloutText: 'Tomamos 3 nuevos proyectos de agentes al mes.',
+    calloutLink: 'Revisar disponibilidad',
+
+    resultsTitle: 'Qué cambia cuando los agentes están operando.',
+    result1Stat: '90%',
+    result1Label: 'de los usuarios dice que la IA les ahorra tiempo significativo cada semana',
+    result1Source: 'Microsoft 2024',
+    result2Stat: '48%',
+    result2Label: 'de las PyMEs vio mejora medible en la experiencia del cliente tras desplegar IA',
+    result2Source: 'Salesforce 2024',
+    result3Stat: '12+',
+    result3Label: 'horas recuperadas por empleado al mes en promedio',
+    result3Source: '',
+
+    ctaTitle: '¿Listo para ver qué agentes necesita tu negocio?',
+    ctaSubtext: 'Comenzamos cada proyecto con una auditoría gratuita — 30 minutos, sin compromiso. Saldrás sabiendo exactamente qué puede hacer la IA por tus operaciones.',
+    ctaButton: 'Agenda tu auditoría gratis',
+  },
+
   // Contact Page
   contact: {
     heroTitle: 'Transformemos tu Negocio Juntos',
