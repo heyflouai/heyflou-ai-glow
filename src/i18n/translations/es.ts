@@ -1838,7 +1838,7 @@ export const es: TranslationKeys = {
     threeWaysCard2Link: 'Explorar Infraestructura de IA →',
     
     threeWaysCard3Title: 'Consultoría de IA',
-    threeWaysCard3Desc: 'Un proyecto pagado de 3 semanas que mapea dónde encaja la IA en tu negocio — qué construir primero, qué omitir y qué te da ROI más rápido.',
+    threeWaysCard3Desc: 'Guía para individuos, equipos y organizaciones que navegan el mercado de IA — cómo usar tu stack tecnológico actual con IA, adoptar mejores prácticas y decidir dónde encajan agentes o infraestructura.',
     threeWaysCard3Link: 'Conocer la consultoría →',
     
     threeWaysFooterText: '¿No estás seguro cuál encaja contigo?',

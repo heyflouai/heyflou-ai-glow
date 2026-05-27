@@ -1836,7 +1836,7 @@ export const en = {
     threeWaysCard2Link: 'Explore AI Infrastructure →',
     
     threeWaysCard3Title: 'AI Consulting',
-    threeWaysCard3Desc: "A paid 3-week engagement that maps where AI fits in your business — what to build first, what to skip, and what gives you ROI fastest.",
+    threeWaysCard3Desc: "Guidance for individuals, teams and organizations navigating the AI market — how to use your current tech stack with AI, adopt best practices, and decide where agents or infrastructure fit.",
     threeWaysCard3Link: 'Learn about consulting →',
     
     threeWaysFooterText: "Not sure which fits you?",
