@@ -609,6 +609,50 @@ export const es: TranslationKeys = {
     ctaButton: 'Hablemos',
   },
 
+  // Services / Consulting Page
+  servicesConsulting: {
+    heroTitle: 'Estrategia de IA. Antes de Construir Nada.',
+    heroSubtitle: 'Un proyecto estructurado y pagado que mapea dónde encaja la IA en tu negocio — qué construir primero, qué herramientas usar y qué evitar. Te llevas una hoja de ruta accionable.',
+
+    whoTitle: 'Sabes que la IA importa. No sabes por dónde empezar.',
+    whoBody1: 'La mayoría de los líderes entiende que la IA cambiará cómo operan. Lo difícil no es creerlo — es saber qué hacer primero. ¿Qué procesos realmente vale la pena automatizar? ¿Qué herramientas son hype? ¿Qué adoptará tu equipo de verdad? ¿Qué dará ROI en 90 días vs. 2 años?',
+    whoBody2: 'Nuestro proyecto de consultoría responde esas preguntas con evidencia — no suposiciones.',
+
+    getTitle: 'Qué obtienes de un proyecto de consultoría.',
+    get1Title: 'Evaluación de Preparación para IA',
+    get1Desc: 'Una revisión estructurada de tus operaciones, herramientas y flujos actuales. Identificamos dónde la IA puede aportar valor y dónde no.',
+    get2Title: 'Mapa de Procesos',
+    get2Desc: 'Un mapa visual de tus procesos manuales más costosos — con una puntuación de oportunidad de IA en cada uno.',
+    get3Title: 'Hoja de Ruta de IA',
+    get3Desc: 'Un plan priorizado: qué construir primero, qué posponer, qué evitar por completo. Secuenciado por ROI, no por complejidad.',
+    get4Title: 'Recomendaciones de Herramientas y Proveedores',
+    get4Desc: 'Herramientas, plataformas y agentes específicos para tu caso — evaluados contra tu presupuesto, stack y tamaño de equipo.',
+    get5Title: 'Brief de Implementación',
+    get5Desc: 'Un documento de alcance que tu equipo (o cualquier constructor) puede usar para ejecutar. Escrito para ser accionable, no teórico.',
+
+    formatTitle: 'Cómo se ejecuta el proyecto.',
+    formatStep1Title: 'Llamada de Intake (Semana 1)',
+    formatStep1Desc: 'Sesión estructurada de 90 minutos. Mapeamos tu negocio, procesos, equipo, herramientas y objetivos.',
+    formatStep2Title: 'Análisis e Investigación (Semana 2)',
+    formatStep2Desc: 'Auditamos tus operaciones, hacemos benchmark contra tu industria y redactamos la hoja de ruta.',
+    formatStep3Title: 'Entrega de Estrategia (Semana 3)',
+    formatStep3Desc: 'Presentamos hallazgos, recorremos la hoja de ruta, respondemos cada pregunta. Recibes el paquete escrito completo.',
+    formatCallout: '3 semanas. Un paquete entregable. Sin compromiso continuo requerido.',
+
+    nextTitle: 'Después de la consultoría, la mayoría pasa a agentes o infraestructura.',
+    nextBody: 'La hoja de ruta que entregamos identificará exactamente qué línea de servicio encaja contigo — agentes de IA para trabajo operativo, o infraestructura si necesitas una plataforma construida. Algunos clientes empiezan la construcción de inmediato. Otros toman 6 meses. De cualquier forma, te vas con claridad.',
+    pathALabel: 'CAMINO A',
+    pathATitle: 'Consultoría → Despliegue de Agentes de IA',
+    pathBLabel: 'CAMINO B',
+    pathBTitle: 'Consultoría → Construcción de Infraestructura de IA',
+    pathCLabel: 'CAMINO C',
+    pathCTitle: 'Solo consultoría — implementar con tu equipo interno',
+
+    ctaTitle: 'Empieza con claridad, no con suposiciones.',
+    ctaSubtext: 'Reserva una llamada de scoping para entender qué cubre el proyecto de consultoría y si es el ajuste correcto para tu etapa.',
+    ctaButton: 'Reservar Llamada de Scoping',
+  },
+
   // Contact Page
   contact: {
     heroTitle: 'Transformemos tu Negocio Juntos',
