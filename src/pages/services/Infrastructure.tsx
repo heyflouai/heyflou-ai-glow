@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { Database, ShieldCheck, CalendarClock, BarChart3, ArrowRight } from 'lucide-react';
 import { SEOHead } from '@/components/ui/seo-head';
 import { getCanonicalUrl } from '@/lib/seo-config';
@@ -7,7 +6,6 @@ import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
 import { TracingBeam } from '@/components/ui/tracing-beam';
 import { CursorSpotlight } from '@/components/ui/cursor-spotlight';
 import { GradientMovingButton } from '@/components/ui/gradient-moving-button';
-import { AuroraBackground } from '@/components/ui/aurora-background';
 import { WobbleCard } from '@/components/ui/wobble-card';
 import InfrastructureCaseCarousel from '@/components/services/InfrastructureCaseCarousel';
 
