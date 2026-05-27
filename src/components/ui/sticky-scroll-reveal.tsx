@@ -40,49 +40,35 @@ export const StickyScroll = ({
   }, [content.length]);
 
   return (
-    <div className="relative flex justify-center gap-10 px-4">
-      <div className="max-w-2xl w-full">
+    <div className="relative flex justify-center px-4">
+      <div className="max-w-4xl w-full">
         {content.map((item, index) => (
           <div
             key={item.title + index}
             ref={(el) => (itemRefs.current[index] = el)}
             className="min-h-[60vh] flex flex-col justify-center py-10"
           >
-            <motion.h3
-              animate={{ opacity: activeCard === index ? 1 : 0.3 }}
+            <motion.div
+              animate={{ opacity: activeCard === index ? 1 : 0.35 }}
               transition={{ duration: 0.3 }}
-              className="text-2xl font-bold text-[#0F1729]"
+              className="flex items-start gap-6"
             >
-              {item.title}
-            </motion.h3>
-            <motion.p
-              animate={{ opacity: activeCard === index ? 1 : 0.3 }}
-              transition={{ duration: 0.3 }}
-              className="text-[16px] mt-4 max-w-md text-[#2B3650] leading-[1.6]"
-            >
-              {item.description}
-            </motion.p>
+              {item.icon && (
+                <div className="shrink-0 flex items-center justify-center h-20 w-20 rounded-2xl bg-gradient-to-br from-[#1FA6C1] to-[#A15BF1] text-white">
+                  {item.icon}
+                </div>
+              )}
+              <div className="flex-1">
+                <h3 className="text-[32px] md:text-[44px] leading-[1.15] font-bold text-[#0F1729]">
+                  {item.title}
+                </h3>
+                <p className="text-[20px] md:text-[22px] mt-5 max-w-2xl text-[#2B3650] leading-[1.6]">
+                  {item.description}
+                </p>
+              </div>
+            </motion.div>
           </div>
         ))}
-      </div>
-      <div className="hidden lg:block w-80 shrink-0">
-        <div
-          className={cn(
-            "h-60 w-80 rounded-md bg-gradient-to-br from-[#1FA6C1] to-[#A15BF1] sticky top-1/2 -translate-y-1/2 overflow-hidden flex items-center justify-center text-white",
-            contentClassName,
-          )}
-        >
-          <motion.div
-            key={activeCard}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.3 }}
-          >
-            {content[activeCard]?.icon ?? (
-              <span className="text-5xl font-bold opacity-30">{activeCard + 1}</span>
-            )}
-          </motion.div>
-        </div>
       </div>
     </div>
   );
