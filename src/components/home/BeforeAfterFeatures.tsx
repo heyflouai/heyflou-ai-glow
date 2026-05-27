@@ -138,7 +138,7 @@ export function BeforeAfterFeatures() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.15 }}
-            className="text-xs text-muted-foreground/50 mt-2"
+            className="text-xs text-muted-foreground mt-2"
           >
             {hp.featuresSource}
           </motion.p>
