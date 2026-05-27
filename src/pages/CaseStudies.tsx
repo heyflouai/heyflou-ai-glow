@@ -7,7 +7,7 @@ import { MovingBorderButton } from '@/components/ui/moving-border';
 import { ShimmerButton } from '@/components/ui/shimmer-button';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Clock, Percent, Zap } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import theraflouMark from '@/assets/theraflou-mark.svg';
 
 const JAKARTA = '"Plus Jakarta Sans", sans-serif';
@@ -61,45 +61,6 @@ const StatBlock = ({ stat, dark }: { stat: FeaturedStat; dark?: boolean }) => {
   );
 };
 
-interface MetricCardProps {
-  value: string;
-  label: string;
-  description: string;
-  icon: React.ReactNode;
-  delay?: number;
-}
-
-const MetricCard = ({ value, label, description, icon, delay = 0 }: MetricCardProps) => {
-  const { numericValue, prefix, suffix } = parseMetricValue(value);
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay }}
-      className="bg-card/50 backdrop-blur-sm border border-border rounded-2xl p-6 md:p-8 text-center hover:border-primary/30 transition-colors"
-    >
-      <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br from-hf-teal/10 to-hf-purple/10 flex items-center justify-center mx-auto mb-4 text-primary">
-        {icon}
-      </div>
-      <div className="text-4xl md:text-5xl font-bold font-display bg-gradient-to-r from-hf-teal to-hf-purple bg-clip-text text-transparent mb-2">
-        <NumberTicker
-          value={numericValue}
-          prefix={prefix}
-          suffix={suffix}
-          delay={0.3 + delay}
-        />
-      </div>
-      <div className="text-base md:text-lg font-semibold text-foreground mb-1">
-        {label}
-      </div>
-      <div className="text-sm text-muted-foreground">
-        {description}
-      </div>
-    </motion.div>
-  );
-};
 
 export default function CaseStudies() {
   const t = useTranslation();
@@ -779,44 +740,6 @@ export default function CaseStudies() {
           </div>
         </section>
 
-        {/* Impact Metrics Section */}
-        <Section>
-          <div className="text-center mb-8 md:mb-12">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-2xl md:text-3xl lg:text-4xl font-bold font-display text-foreground"
-            >
-              {t.caseStudies.impactTitle}
-            </motion.h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <MetricCard
-              value={t.caseStudies.metric1Value}
-              label={t.caseStudies.metric1Label}
-              description={t.caseStudies.metric1Desc}
-              icon={<Clock className="w-6 h-6" />}
-              delay={0}
-            />
-            <MetricCard
-              value={t.caseStudies.metric2Value}
-              label={t.caseStudies.metric2Label}
-              description={t.caseStudies.metric2Desc}
-              icon={<Percent className="w-6 h-6" />}
-              delay={0.1}
-            />
-            <MetricCard
-              value={t.caseStudies.metric3Value}
-              label={t.caseStudies.metric3Label}
-              description={t.caseStudies.metric3Desc}
-              icon={<Zap className="w-6 h-6" />}
-              delay={0.2}
-            />
-          </div>
-        </Section>
 
         {/* CTA Section */}
         <Section background="gradient" padding="large">
