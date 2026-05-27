@@ -80,7 +80,7 @@ const industryData: IndustryCardData[] = [
   }
 ];
 
-function IndustryCardComponent({ card, index, translations }: { card: IndustryCardData; index: number; translations: Record<string, string> }) {
+function IndustryCardComponent({ card, index, translations, isFeatured = false }: { card: IndustryCardData; index: number; translations: Record<string, string>; isFeatured?: boolean }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -89,26 +89,39 @@ function IndustryCardComponent({ card, index, translations }: { card: IndustryCa
       transition={{ duration: 0.5, delay: index * 0.08 }}
       className={cn(
         "relative flex flex-col h-full p-6 md:p-8 rounded-3xl",
-        "bg-card/90 backdrop-blur-sm",
-        "border border-border/50",
+        "backdrop-blur-sm",
         "transition-all duration-400 ease-out",
-        "hover:border-hf-teal/40",
-        "hover:shadow-[0_20px_50px_rgba(6,182,212,0.15)]",
         "hover:-translate-y-2",
-        "group"
+        "group",
+        isFeatured
+          ? "bg-hf-teal/[0.06] border-2 border-hf-teal/50 shadow-[0_0_40px_rgba(6,182,212,0.12)] hover:border-hf-teal hover:shadow-[0_20px_60px_rgba(6,182,212,0.25)]"
+          : "bg-card/90 border border-border/50 hover:border-hf-teal/40 hover:shadow-[0_20px_50px_rgba(6,182,212,0.15)]"
       )}
     >
+      {/* Featured badge */}
+      {isFeatured && (
+        <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold text-white hf-gradient shadow-lg shadow-hf-teal/25">
+            <Sparkles className="w-3 h-3" />
+            {translations.industryFeaturedBadge || "Featured"}
+          </span>
+        </div>
+      )}
+
       {/* Icon */}
       <div className={cn(
         "w-12 h-12 rounded-xl flex items-center justify-center text-white mb-5",
         "transition-transform duration-300 group-hover:scale-110",
-        "hf-gradient"
+        isFeatured ? "bg-hf-teal shadow-[0_0_20px_rgba(6,182,212,0.4)]" : "hf-gradient"
       )}>
         {card.icon}
       </div>
       
       {/* Industry Name */}
-      <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">
+      <h3 className={cn(
+        "text-lg md:text-xl font-bold mb-2",
+        isFeatured ? "text-hf-teal" : "text-foreground"
+      )}>
         {translations[card.titleKey]}
       </h3>
       
@@ -130,7 +143,10 @@ function IndustryCardComponent({ card, index, translations }: { card: IndustryCa
       </div>
       
       {/* Divider + Outcome */}
-      <div className="h-px w-full bg-border/50 mt-6 mb-4" />
+      <div className={cn(
+        "h-px w-full mt-6 mb-4",
+        isFeatured ? "bg-hf-teal/20" : "bg-border/50"
+      )} />
       <p className="text-sm font-bold text-hf-teal mb-5">
         {translations[card.outcomeKey]}
       </p>
@@ -142,8 +158,9 @@ function IndustryCardComponent({ card, index, translations }: { card: IndustryCa
           "w-full py-3 px-5 rounded-xl text-center font-semibold text-sm",
           "flex items-center justify-center gap-2",
           "transition-all duration-300",
-          "bg-transparent border border-hf-teal/50 text-foreground",
-          "hover:hf-gradient hover:text-white hover:border-transparent hover:shadow-[0_0_20px_rgba(6,182,212,0.3)]"
+          isFeatured
+            ? "hf-gradient text-white shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_30px_rgba(6,182,212,0.5)] hover:scale-[1.02]"
+            : "bg-transparent border border-hf-teal/50 text-foreground hover:hf-gradient hover:text-white hover:border-transparent hover:shadow-[0_0_20px_rgba(6,182,212,0.3)]"
         )}
       >
         {translations[card.ctaKey]}
