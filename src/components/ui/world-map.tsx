@@ -42,20 +42,31 @@ export function WorldMap({
 }: WorldMapProps) {
   const id = useId();
 
-  // Render a real dotted world map (continents) as an SVG background.
-  const mapSvg = useMemo(() => {
+  // Build a real dotted world map (continents) and use its native projection
+  // so pins land on the right country.
+  const { mapSvg, vbW, vbH, projected } = useMemo(() => {
     const map = new DottedMap({ height: 60, grid: "diagonal" });
-    return map.getSVG({
+    const svg = map.getSVG({
       radius: 0.22,
       color: dotColor,
       shape: "circle",
       backgroundColor: "transparent",
     });
-  }, [dotColor]);
+    const projected = points.map((p) => {
+      const pin = map.getPin({ lat: p.lat, lng: p.lng });
+      return pin ? { x: pin.x, y: pin.y } : { x: 0, y: 0 };
+    });
+    return {
+      mapSvg: svg,
+      vbW: map.image.width,
+      vbH: map.image.height,
+      projected,
+    };
+  }, [dotColor, points]);
 
-  const arcPath = (a: Point, b: Point) => {
-    const pa = project(a.lat, a.lng);
-    const pb = project(b.lat, b.lng);
+  const arcPath = (ai: number, bi: number) => {
+    const pa = projected[ai];
+    const pb = projected[bi];
     const mx = (pa.x + pb.x) / 2;
     const my = (pa.y + pb.y) / 2 - Math.abs(pa.x - pb.x) * 0.35;
     return `M ${pa.x} ${pa.y} Q ${mx} ${my} ${pb.x} ${pb.y}`;
@@ -71,7 +82,7 @@ export function WorldMap({
           className="w-full h-auto pointer-events-none select-none [mask-image:linear-gradient(to_bottom,transparent,black_15%,black_85%,transparent)]"
           draggable={false}
         />
-        <svg viewBox="0 0 1000 500" className="absolute inset-0 w-full h-full">
+        <svg viewBox={`0 0 ${vbW} ${vbH}`} className="absolute inset-0 w-full h-full">
         <defs>
           <linearGradient id={`${id}-line`} x1="0" y1="0" x2="1" y2="0">
             <stop offset="0%" stopColor="#1FA6C1" />
@@ -86,10 +97,10 @@ export function WorldMap({
           return (
             <motion.path
               key={k}
-              d={arcPath(a, b)}
+              d={arcPath(i, j)}
               fill="none"
               stroke={`url(#${id}-line)`}
-              strokeWidth={2}
+              strokeWidth={0.4}
               strokeLinecap="round"
               initial={{ pathLength: 0, opacity: 0 }}
               whileInView={{ pathLength: 1, opacity: 1 }}
@@ -100,17 +111,17 @@ export function WorldMap({
         })}
 
         {points.map((p, i) => {
-          const { x, y } = project(p.lat, p.lng);
+          const { x, y } = projected[i];
           return (
             <g key={i}>
-              <circle cx={x} cy={y} r={6} fill={pointColor} />
+              <circle cx={x} cy={y} r={0.9} fill={pointColor} />
               <motion.circle
                 cx={x}
                 cy={y}
-                r={6}
+                r={0.9}
                 fill="none"
                 stroke={pointColor}
-                strokeWidth={2}
+                strokeWidth={0.3}
                 initial={{ scale: 1, opacity: 0.8 }}
                 animate={{ scale: 3, opacity: 0 }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeOut", delay: i * 0.3 }}
@@ -118,9 +129,9 @@ export function WorldMap({
               />
               {p.label && (
                 <text
-                  x={x + 10}
-                  y={y - 10}
-                  fontSize={14}
+                  x={x + 1.6}
+                  y={y - 1.4}
+                  fontSize={2.4}
                   fontWeight={700}
                   fill={labelColor}
                   style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
