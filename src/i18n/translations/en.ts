@@ -607,6 +607,50 @@ export const en = {
     ctaButton: 'Talk to Us',
   },
 
+  // Services / Consulting Page
+  servicesConsulting: {
+    heroTitle: 'AI Strategy. Before You Build Anything.',
+    heroSubtitle: 'A structured, paid engagement that maps where AI fits in your business — what to build first, what tools to use, and what to avoid. You leave with a roadmap you can act on.',
+
+    whoTitle: "You know AI matters. You don't know where to start.",
+    whoBody1: "Most business leaders understand that AI will change how they operate. The hard part isn't believing that — it's knowing what to do first. Which processes are actually worth automating? Which tools are hype? What will your team actually adopt? What will give you ROI in 90 days vs. 2 years?",
+    whoBody2: 'Our consulting engagement answers those questions with evidence — not guesses.',
+
+    getTitle: 'What you get from a consulting engagement.',
+    get1Title: 'AI Readiness Assessment',
+    get1Desc: "A structured review of your current operations, tools, and workflows. We identify where AI can add value and where it can't.",
+    get2Title: 'Process Map',
+    get2Desc: 'A visual map of your highest-cost manual processes — with an AI opportunity score on each one.',
+    get3Title: 'AI Roadmap',
+    get3Desc: 'A prioritized plan: what to build first, what to defer, what to avoid entirely. Sequenced by ROI, not complexity.',
+    get4Title: 'Tool & Vendor Recommendations',
+    get4Desc: 'Specific tools, platforms, and agents for your use case — evaluated against your budget, stack, and team size.',
+    get5Title: 'Implementation Brief',
+    get5Desc: 'A scoping document your team (or any builder) can use to execute. Written to be actionable, not theoretical.',
+
+    formatTitle: 'How the engagement runs.',
+    formatStep1Title: 'Intake Call (Week 1)',
+    formatStep1Desc: '90-minute structured session. We map your business, processes, team, tools, and goals.',
+    formatStep2Title: 'Analysis & Research (Week 2)',
+    formatStep2Desc: 'We audit your operations, benchmark against your industry, and draft the roadmap.',
+    formatStep3Title: 'Strategy Delivery (Week 3)',
+    formatStep3Desc: 'We present findings, walk through the roadmap, answer every question. You receive the full written package.',
+    formatCallout: '3 weeks. One deliverable package. No ongoing commitment required.',
+
+    nextTitle: 'After consulting, most clients move to agents or infrastructure.',
+    nextBody: 'The roadmap we deliver will identify exactly which service line fits you — AI agents for operational work, or infrastructure if you need a platform built. Some clients start the build immediately. Some take 6 months. Either way, you leave with clarity.',
+    pathALabel: 'PATH A',
+    pathATitle: 'Consulting → AI Agents deployment',
+    pathBLabel: 'PATH B',
+    pathBTitle: 'Consulting → AI Infrastructure build',
+    pathCLabel: 'PATH C',
+    pathCTitle: 'Consulting only — implement with your internal team',
+
+    ctaTitle: 'Start with clarity, not guesswork.',
+    ctaSubtext: "Book a scoping call to understand what the consulting engagement covers and whether it's the right fit for your stage.",
+    ctaButton: 'Book a Scoping Call',
+  },
+
   // Contact Page
   contact: {
     heroTitle: "Let's Transform Your Business Together",
