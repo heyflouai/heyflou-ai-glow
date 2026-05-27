@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { Database, ShieldCheck, CalendarClock, BarChart3, ArrowRight } from 'lucide-react';
 import { SEOHead } from '@/components/ui/seo-head';
 import { getCanonicalUrl } from '@/lib/seo-config';
@@ -7,10 +6,8 @@ import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
 import { TracingBeam } from '@/components/ui/tracing-beam';
 import { CursorSpotlight } from '@/components/ui/cursor-spotlight';
 import { GradientMovingButton } from '@/components/ui/gradient-moving-button';
-import { AuroraBackground } from '@/components/ui/aurora-background';
 import { WobbleCard } from '@/components/ui/wobble-card';
-import { PinContainer } from '@/components/ui/3d-pin';
-import theraflouMark from '@/assets/theraflou-mark.svg';
+import InfrastructureCaseCarousel from '@/components/services/InfrastructureCaseCarousel';
 
 const JAKARTA = '"Plus Jakarta Sans", sans-serif';
 const INTER = 'Inter, sans-serif';
@@ -18,7 +15,7 @@ const GRADIENT = 'linear-gradient(135deg, #1FA6C1, #A15BF1)';
 
 export default function Infrastructure() {
   const t = useTranslation();
-  const s = t.servicesInfrastructure as Record<string, string>;
+  const s = t.servicesInfrastructure as unknown as Record<string, string>;
 
   const builds = [
     { icon: Database, title: s.build1Title, desc: s.build1Desc },
@@ -33,8 +30,7 @@ export default function Infrastructure() {
     { title: s.step3Title, desc: s.step3Desc },
     { title: s.step4Title, desc: s.step4Desc },
   ];
-
-  const bullets = [s.caseBullet1, s.caseBullet2, s.caseBullet3];
+  const cc = (t.servicesInfrastructure as any).caseCarousel;
 
   return (
     <>
@@ -124,76 +120,56 @@ export default function Infrastructure() {
           </div>
         </section>
 
-        {/* THERAFLOU CASE */}
-        <AuroraBackground className="py-20 bg-[#0F1729]">
-          <div className="relative max-w-[1100px] mx-auto px-6 grid md:grid-cols-[1fr_auto] gap-12 items-center z-10">
-          <div>
+        {/* BUILT BY US — CASE CAROUSEL */}
+        <section id="built-by-us" style={{ background: '#0F1729', padding: '96px 0' }}>
+          <div className="max-w-[1200px] mx-auto px-6">
             <div
-              className="text-[12px] uppercase"
-              style={{ fontFamily: INTER, fontWeight: 600, color: '#1FA6C1', letterSpacing: '2px' }}
+              className="text-center uppercase"
+              style={{ fontFamily: INTER, fontWeight: 600, color: '#1FA6C1', fontSize: 13, letterSpacing: '2px' }}
             >
-              {s.caseEyebrow}
+              {cc.eyebrow}
             </div>
             <h2
-              className="mt-4 text-[28px] md:text-[36px] leading-[1.2] text-white"
-              style={{ fontFamily: JAKARTA, fontWeight: 700 }}
+              className="mt-4 text-center text-white"
+              style={{ fontFamily: JAKARTA, fontWeight: 700, fontSize: 'clamp(30px, 4vw, 40px)', lineHeight: 1.15 }}
             >
-              {s.caseTitle}
+              {cc.headline}
             </h2>
-            <p
-              className="mt-6 text-[17px] leading-[1.7] text-[#B8C5D6]"
-              style={{ fontFamily: INTER, fontWeight: 400 }}
-            >
-              {s.caseBody}
-            </p>
 
-            <ul className="mt-8 space-y-3">
-              {bullets.map((b) => (
-                <li
-                  key={b}
-                  className="flex gap-3 text-[16px] leading-[1.6] text-[#B8C5D6]"
-                  style={{ fontFamily: INTER, fontWeight: 400 }}
-                >
-                  <span style={{ color: '#1FA6C1' }}>✦</span>
-                  <span>{b}</span>
-                </li>
-              ))}
-            </ul>
+            <div className="mt-12">
+              <InfrastructureCaseCarousel />
+            </div>
 
-            <div className="mt-8">
-              <Link
-                to="/#theraflou"
-                className="inline-flex items-center text-[16px]"
-                style={{ fontFamily: INTER, fontWeight: 600, color: '#1FA6C1' }}
+            <div className="mt-10 text-center">
+              <p
+                className="mx-auto max-w-[640px]"
+                style={{ fontFamily: INTER, fontWeight: 400, color: '#B8C5D6', fontSize: 15, lineHeight: 1.6 }}
               >
-                {s.caseLink}
-              </Link>
+                {cc.belowText}
+              </p>
+              <button
+                type="button"
+                onClick={() => {
+                  const el = document.getElementById('how-we-work');
+                  el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }}
+                className="group mt-5 inline-flex items-center text-white"
+                style={{ fontFamily: INTER, fontWeight: 600, fontSize: 15 }}
+              >
+                <span className="relative">
+                  {cc.belowCta}
+                  <span
+                    className="absolute left-0 -bottom-1 h-px w-0 transition-all duration-300 group-hover:w-full"
+                    style={{ background: 'linear-gradient(135deg, #1FA6C1, #A15BF1)' }}
+                  />
+                </span>
+              </button>
             </div>
           </div>
-          <div className="hidden md:flex items-center justify-center">
-            <PinContainer title="TheraFlou — Case Study">
-              <div className="flex flex-col p-4 tracking-tight text-slate-100/90 w-[18rem] h-[18rem]">
-                <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base" style={{ fontFamily: JAKARTA }}>
-                  TheraFlou
-                </h3>
-                <div className="text-xs !m-0 !p-0 font-normal" style={{ fontFamily: INTER }}>
-                  <span className="text-slate-300">{s.caseEyebrow}</span>
-                </div>
-                <div className="flex flex-1 w-full items-center justify-center rounded-lg mt-4 bg-gradient-to-br from-[#0F1729] via-[#1a2440] to-[#0F1729]">
-                  <img
-                    src={theraflouMark}
-                    alt="TheraFlou"
-                    className="h-40 w-auto drop-shadow-[0_0_20px_rgba(161,91,241,0.35)]"
-                  />
-                </div>
-              </div>
-            </PinContainer>
-          </div>
-          </div>
-        </AuroraBackground>
+        </section>
 
         {/* HOW WE WORK */}
-        <section className="py-20 bg-[#F8FAFC]">
+        <section id="how-we-work" className="py-20 bg-[#F8FAFC]">
           <div className="max-w-[1200px] mx-auto px-6">
             <h2
               className="text-center text-[28px] md:text-[36px] leading-[1.2] text-[#0F1729]"

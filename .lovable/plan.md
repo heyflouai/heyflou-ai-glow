@@ -1,37 +1,78 @@
-## Rebuild `/services/consulting` service page
+## Goal
 
-Replace the existing consulting page with a new self-contained component following the same inline-token pattern as Agents.tsx and Infrastructure.tsx.
+Replace the single TheraFlou featured block (Section 3) on `/services/infrastructure` with a 2-card auto-rotating carousel featuring TheraFlou and Directed Empresas. Section background stays `#0F1729`.
 
-### Files to change
+## Scope
 
-1. **Replace** `src/pages/services/Consulting.tsx`
-   - Self-contained page with inline `JAKARTA` (`"Plus Jakarta Sans", sans-serif`), `INTER` (`Inter, sans-serif`), `GRADIENT` (`linear-gradient(135deg, #1FA6C1, #A15BF1)`) constants
-   - Uses `useTranslation()` with `t.servicesConsulting` namespace
-   - Sections in exact order from prompt:
-     1. **Hero** — white bg, centered H1 + subheadline (max-w 660px)
-     2. **Who This Is For** — bg `#F8FAFC`, left-aligned headline (max-w 720px) + two body paragraphs
-     3. **What You Get** — white bg, 5 deliverable cards in a `3-top + 2-centered-bottom` grid on desktop (single column mobile). Each card: 40px gradient-circle icon, title, description. Border 1px `#E2E8F0`, border-radius 12px, padding 28px.
-        - AI Readiness Assessment
-        - Process Map
-        - AI Roadmap
-        - Tool & Vendor Recommendations
-        - Implementation Brief
-     4. **Format** — bg `#0F1729`, centered headline, 3 horizontal steps (gradient numbered circles, `56px`, white text) + descriptions (`#B8C5D6`). Callout box below (border 1px `#1FA6C1` at 40% opacity, max-w 480px centered).
-     5. **What Happens Next** — white bg, centered headline + body, 3 path cards in a row (stacked mobile)
-     6. **CTA** — gradient bg, headline + subtext + white button to `/contact`
-   - `SEOHead` with title/description and canonical `/services/consulting`
+- File: `src/pages/services/Infrastructure.tsx` — replace the block starting at line 127 (`{/* THERAFLOU CASE */}` → end of that section, currently wrapped in `AuroraBackground` with `PinContainer`).
+- New component: `src/components/services/InfrastructureCaseCarousel.tsx` — encapsulates the carousel, cards, controls, and auto-advance logic.
+- i18n: add new keys to `src/i18n/translations/en.ts` and `src/i18n/translations/es.ts` for both card copy (eyebrow, headline, body, pills, quote, attribution, learn-more link) and the below-carousel text + CTA.
 
-2. **Edit** `src/i18n/translations/en.ts`
-   - Add `servicesConsulting` namespace after `servicesInfrastructure` (~line 608) with all required keys
+## Section structure (new)
 
-3. **Edit** `src/i18n/translations/es.ts`
-   - Add `servicesConsulting` namespace after `servicesInfrastructure` (~line 610) with Spanish translations for all keys
+```
+<section style={{ background: '#0F1729', padding: '96px 0' }}>
+  Eyebrow:  "BUILT BY US"           — Inter 600, #1FA6C1, 13px, ls 2px, uppercase
+  Headline: "Infrastructure we've shipped."  — Plus Jakarta 700, white, 40/30px
+  <InfrastructureCaseCarousel />
+  Below (mt-10, centered):
+    "Every infrastructure engagement starts with understanding your industry first."
+    CTA: "See how infrastructure engagements work →"  (anchor to Section 4)
+</section>
+```
 
-### No changes needed
-- `src/App.tsx` — route `/services/consulting` already maps to `Consulting`
+## Carousel behavior
 
-### Design tokens
-- Fonts: Plus Jakarta Sans (headlines) + Inter (body)
-- Colors: `#1FA6C1`, `#A15BF1`, `#0F1729`, `#2B3650`, `#B8C5D6`, `#FFFFFF`, `#F8FAFC`
-- Mobile-first, 80px section spacing (`py-20`), `max-w-[1200px] mx-auto px-6`
-- No stock photography
+- Apple Cards Carousel style, built on top of existing `src/components/ui/carousel.tsx` (embla) with custom styling — no new dependency.
+- Desktop: `basis-[66%]` so the next card peeks (~1.5 visible). Mobile (<md): `basis-full`.
+- Auto-advance every 6s using embla's `scrollNext()`; pause on hover/touch; reset on manual navigation.
+- Controls:
+  - Left/right circular arrows (44px, `bg-white/8`, white chevron), positioned at vertical center on card edges.
+  - Dot indicators below, centered. Active: 8px, gradient `#1FA6C1 → #A15BF1`. Inactive: 6px, `rgba(255,255,255,0.2)`.
+- Slide transition: 400ms ease-in-out (embla `duration: 40`).
+
+## Card style (shared)
+
+`bg-[#1A2540] border border-white/8 rounded-[20px] p-[40px_36px] min-h-[420px]` with internal flex column layout.
+
+### Card 1 — TheraFlou
+- Brand badge: teal `#1FA6C1` dot + "TheraFlou" (Plus Jakarta 700, white).
+- Eyebrow: "HEALTHCARE · MEXICO"
+- Headline (26px white): "A patient CRM for 13,000 physiotherapists."
+- Body (15px, `#B8C5D6`).
+- 3 pills (teal tinted): NOM-004 compliant · WhatsApp AI agents · Multi-clinic ready.
+- Bottom link: "Learn more about TheraFlou →" → `/#theraflou` (preserves current target).
+
+### Card 2 — Directed Empresas
+- Logo: remote PNG (https://cloud-1de12d.becdn.net/.../directed-empresas-negro-1-1.png) at 130px width with `filter: brightness(0) invert(1)`.
+- Eyebrow: "MULTI-LINE OPERATIONS · ENTERPRISE"
+- Headline (26px white): "AgenticOS: one CEO, 5 companies, zero operational drag."
+- Body (15px, `#B8C5D6`).
+- 3 pills: 20+ hrs/week recovered · 5 companies unified · Scale without headcount.
+- Quote block (border-top `rgba(255,255,255,0.1)`, pt-5, mt-5): italic body + "— Mateo, CEO" attribution (white 600, 13px).
+
+## Below carousel
+
+- Caption: "Every infrastructure engagement starts with understanding your industry first." (Inter 400, `#B8C5D6`, 15px).
+- CTA button (text link): "See how infrastructure engagements work →" — `onClick` smooth-scrolls to Section 4 (the section directly after the carousel). Hover effect: gradient underline.
+
+## i18n keys (added under `services.infrastructure`)
+
+```
+caseCarousel: {
+  eyebrow, headline,
+  cards: {
+    theraflou: { brand, eyebrow, title, body, pill1, pill2, pill3, link },
+    directed:  { eyebrow, title, body, pill1, pill2, pill3, quote, attribution },
+  },
+  belowText, belowCta,
+}
+```
+
+Existing `s.caseEyebrow / caseTitle / caseBody / caseLink` keys remain (still used by Healthcare/other sections if referenced); we add new keys rather than mutate.
+
+## Out of scope
+
+- No changes to Sections 1, 2, 4+ of Infrastructure.
+- No changes to `/case-studies` (already done previously).
+- No new npm deps — reuse existing `embla-carousel-react` (already used by `carousel.tsx`).
