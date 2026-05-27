@@ -7,7 +7,6 @@ import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
 import { TracingBeam } from '@/components/ui/tracing-beam';
 import { CursorSpotlight } from '@/components/ui/cursor-spotlight';
 import { GradientMovingButton } from '@/components/ui/gradient-moving-button';
-import { Spotlight } from '@/components/ui/spotlight';
 import { AuroraBackground } from '@/components/ui/aurora-background';
 import { WobbleCard } from '@/components/ui/wobble-card';
 import { PinContainer } from '@/components/ui/3d-pin';
