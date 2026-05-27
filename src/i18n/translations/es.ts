@@ -772,6 +772,35 @@ export const es: TranslationKeys = {
     ctaSecondary: 'Explorar Nuestras Soluciones',
     
     viewDetails: 'Ver Detalles',
+
+    // Compact anonymous case cards
+    compactSectionEyebrow: 'MÁS TRABAJO',
+    compactSectionHeadline: 'Otros proyectos.',
+    compactSectionSubheadline: 'Algunos clientes prefieren mantenerse privados. Los resultados no.',
+    compactAnonymousBadge: 'Anónimo',
+
+    compactCard1TypeBadge: 'CONSULTORÍA IA',
+    compactCard1Industry: 'INMOBILIARIA · GESTIÓN DE PROPIEDADES',
+    compactCard1Headline: 'Gestionando cientos de listados en varios mercados con un equipo ahogado en coordinación.',
+    compactCard1ProblemLabel: 'EL PROBLEMA',
+    compactCard1ProblemText: 'Una operación inmobiliaria de alto volumen manejaba la adquisición de propiedades, la gestión de listados y los seguimientos a clientes de forma manual. Cada operación requería coordinación entre múltiples equipos sin un sistema centralizado — generando retrasos, seguimientos perdidos y operaciones caídas.',
+    compactCard1SolutionLabel: 'LA SOLUCIÓN',
+    compactCard1SolutionText: 'Ejecutamos un proyecto estructurado de Consultoría IA — mapeando cada flujo de trabajo, puntuando cada proceso por su potencial de automatización y entregando una hoja de ruta priorizada. El cliente se llevó un brief de implementación claro y recomendaciones de proveedores adaptadas a su stack existente.',
+    compactCard1ImpactLabel: 'IMPACTO',
+    compactCard1ImpactPill1: 'Hoja de ruta entregada en 3 semanas',
+    compactCard1ImpactPill2: '12 procesos mapeados y puntuados',
+
+    compactCard2TypeBadge: 'CONSULTORÍA IA',
+    compactCard2Industry: 'SIN FINES DE LUCRO · GESTIÓN OPERATIVA',
+    compactCard2Headline: 'Una organización multilingüe gestionando procesos familiares complejos en 3 idiomas — completamente en hojas de cálculo.',
+    compactCard2ProblemLabel: 'EL PROBLEMA',
+    compactCard2ProblemText: 'Una organización que coordina procesos de inmigración y asentamiento para familias en español, inglés y portugués había superado sus herramientas. La admisión, el seguimiento de documentos, las actualizaciones de estado y la coordinación del equipo estaban fragmentados entre correos, WhatsApp y hojas de cálculo manuales.',
+    compactCard2SolutionLabel: 'LA SOLUCIÓN',
+    compactCard2SolutionText: 'Reestructuramos todo su espacio de trabajo operativo en una arquitectura de 3 pilares y activamos la suite nativa de IA de Monday.com — agentes de IA para triaje de bandeja, revisión de documentos, borradores multilingües y resúmenes semanales. Entregado en 3 sesiones en 3 semanas.',
+    compactCard2ImpactLabel: 'IMPACTO',
+    compactCard2ImpactPill1: '3 idiomas automatizados',
+    compactCard2ImpactPill2: 'Entrega en 3 semanas',
+    compactCard2ImpactPill3: 'Cero código personalizado',
   },
 
   // About Page

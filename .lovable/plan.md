@@ -1,78 +1,64 @@
-## Goal
+## Add Compact Anonymous Case Cards Section to Case Studies Page
 
-Replace the single TheraFlou featured block (Section 3) on `/services/infrastructure` with a 2-card auto-rotating carousel featuring TheraFlou and Directed Empresas. Section background stays `#0F1729`.
+### Overview
+Add a new "MORE WORK" section below the two featured case studies (TheraFlou + Directed Empresas) and above the existing Case Studies card grid. Two compact, anonymous case cards in a problem → solution → impact format. No company names, no logos, no hover animations.
 
-## Scope
+### Files Changed
+- `src/pages/CaseStudies.tsx`
+- `src/i18n/translations/en.ts`
+- `src/i18n/translations/es.ts`
 
-- File: `src/pages/services/Infrastructure.tsx` — replace the block starting at line 127 (`{/* THERAFLOU CASE */}` → end of that section, currently wrapped in `AuroraBackground` with `PinContainer`).
-- New component: `src/components/services/InfrastructureCaseCarousel.tsx` — encapsulates the carousel, cards, controls, and auto-advance logic.
-- i18n: add new keys to `src/i18n/translations/en.ts` and `src/i18n/translations/es.ts` for both card copy (eyebrow, headline, body, pills, quote, attribution, learn-more link) and the below-carousel text + CTA.
+### Implementation Details
 
-## Section structure (new)
+**1. New i18n keys (`caseStudies` namespace)**
+Add to both `en.ts` and `es.ts`:
+- `compactSection.eyebrow`: "MORE WORK" / "MÁS TRABAJO"
+- `compactSection.headline`: "Other engagements." / "Otros proyectos."
+- `compactSection.subheadline`: "Some clients prefer to stay private. The results don't." / "Algunos clientes prefieren mantenerse privados. Los resultados no."
+- `compactCard1.typeBadge`: "AI CONSULTING" / "CONSULTORÍA IA"
+- `compactCard1.anonymousBadge`: "Anonymous" / "Anónimo"
+- `compactCard1.industry`: "REAL ESTATE · PROPERTY MANAGEMENT" / "INMOBILIARIA · GESTIÓN DE PROPIEDADES"
+- `compactCard1.headline`: "Managing hundreds of listings across markets with a team that was drowning in coordination." / "Gestionando cientos de listados en varios mercados con un equipo ahogado en coordinación."
+- `compactCard1.problemLabel`: "THE PROBLEM" / "EL PROBLEMA"
+- `compactCard1.problemText`: "A high-volume real estate operation was running property acquisition, listing management, and client follow-ups manually. Each deal required coordination across multiple teams with no centralized system — creating delays, missed follow-ups, and lost deals." / ...
+- `compactCard1.solutionLabel`: "THE SOLUTION" / "LA SOLUCIÓN"
+- `compactCard1.solutionText`: "We ran a structured AI Consulting engagement — mapping every workflow, scoring each process for automation potential, and delivering a prioritized roadmap. The client left with a clear implementation brief and vendor recommendations tailored to their existing stack." / ...
+- `compactCard1.impactLabel`: "IMPACT" / "IMPACTO"
+- `compactCard1.impactPill1`: "Roadmap delivered in 3 weeks" / "Hoja de ruta entregada en 3 semanas"
+- `compactCard1.impactPill2`: "12 processes mapped & scored" / "12 procesos mapeados y puntuados"
+- `compactCard2.typeBadge`: "AI CONSULTING" / "CONSULTORÍA IA"
+- `compactCard2.anonymousBadge`: "Anonymous" / "Anónimo"
+- `compactCard2.industry`: "NONPROFIT · OPERATIONS MANAGEMENT" / "SIN FINES DE LUCRO · GESTIÓN OPERATIVA"
+- `compactCard2.headline`: "A multilingual nonprofit managing complex family processes across 3 languages — entirely in spreadsheets." / "..."
+- `compactCard2.problemLabel`, `problemText`, `solutionLabel`, `solutionText`, `impactLabel`, `impactPill1`, `impactPill2`, `impactPill3`: all translated
 
-```
-<section style={{ background: '#0F1729', padding: '96px 0' }}>
-  Eyebrow:  "BUILT BY US"           — Inter 600, #1FA6C1, 13px, ls 2px, uppercase
-  Headline: "Infrastructure we've shipped."  — Plus Jakarta 700, white, 40/30px
-  <InfrastructureCaseCarousel />
-  Below (mt-10, centered):
-    "Every infrastructure engagement starts with understanding your industry first."
-    CTA: "See how infrastructure engagements work →"  (anchor to Section 4)
-</section>
-```
+**2. Section placement in `CaseStudies.tsx`**
+Insert the new section after the closing `</div>` of the "CLIENT RESULTS" featured cases section (`max-w-[1200px]`) and before the `<Section background="muted">` that contains the existing Case Studies grid.
 
-## Carousel behavior
+**3. Section structure**
+- Wrapper: `<section className="bg-[#F8FAFC] py-20 md:py-[80px]">`
+- Container: `max-w-[1200px] mx-auto px-6`
+- Centered eyebrow, headline, subheadline
+- Cards grid: `grid grid-cols-1 md:grid-cols-2 gap-6` (gap 24px)
+- Each card: white bg, `border border-[#E2E8F0] rounded-[16px] p-[32px_28px]`
 
-- Apple Cards Carousel style, built on top of existing `src/components/ui/carousel.tsx` (embla) with custom styling — no new dependency.
-- Desktop: `basis-[66%]` so the next card peeks (~1.5 visible). Mobile (<md): `basis-full`.
-- Auto-advance every 6s using embla's `scrollNext()`; pause on hover/touch; reset on manual navigation.
-- Controls:
-  - Left/right circular arrows (44px, `bg-white/8`, white chevron), positioned at vertical center on card edges.
-  - Dot indicators below, centered. Active: 8px, gradient `#1FA6C1 → #A15BF1`. Inactive: 6px, `rgba(255,255,255,0.2)`.
-- Slide transition: 400ms ease-in-out (embla `duration: 40`).
+**4. Card internal structure (per spec)**
+- Top row (flex, space-between): Type badge + Anonymous badge
+- Industry line (Inter 600, #2B3650, 13px, uppercase, letter-spacing 1px, mt-5)
+- Headline (Jakarta 700, #0F1729, 20px, mt-2)
+- Problem block (mt-4): teal label + text
+- Solution block (mt-4): purple label + text
+- Impact block (mt-5, pt-5, border-t border-[#E2E8F0]): label + flex-wrap metric pills
 
-## Card style (shared)
+**5. Badge styles**
+- Teal type badge: bg `rgba(31,166,193,0.08)`, border `rgba(31,166,193,0.2)`, text #1FA6C1
+- Purple type badge (card 2): bg `rgba(161,91,241,0.08)`, border `rgba(161,91,241,0.2)`, text #A15BF1
+- Anonymous badge: bg #F1F5F9, text #2B3650
+- Metric pills: bg #F8FAFC, border #E2E8F0, border-radius 100px
 
-`bg-[#1A2540] border border-white/8 rounded-[20px] p-[40px_36px] min-h-[420px]` with internal flex column layout.
-
-### Card 1 — TheraFlou
-- Brand badge: teal `#1FA6C1` dot + "TheraFlou" (Plus Jakarta 700, white).
-- Eyebrow: "HEALTHCARE · MEXICO"
-- Headline (26px white): "A patient CRM for 13,000 physiotherapists."
-- Body (15px, `#B8C5D6`).
-- 3 pills (teal tinted): NOM-004 compliant · WhatsApp AI agents · Multi-clinic ready.
-- Bottom link: "Learn more about TheraFlou →" → `/#theraflou` (preserves current target).
-
-### Card 2 — Directed Empresas
-- Logo: remote PNG (https://cloud-1de12d.becdn.net/.../directed-empresas-negro-1-1.png) at 130px width with `filter: brightness(0) invert(1)`.
-- Eyebrow: "MULTI-LINE OPERATIONS · ENTERPRISE"
-- Headline (26px white): "AgenticOS: one CEO, 5 companies, zero operational drag."
-- Body (15px, `#B8C5D6`).
-- 3 pills: 20+ hrs/week recovered · 5 companies unified · Scale without headcount.
-- Quote block (border-top `rgba(255,255,255,0.1)`, pt-5, mt-5): italic body + "— Mateo, CEO" attribution (white 600, 13px).
-
-## Below carousel
-
-- Caption: "Every infrastructure engagement starts with understanding your industry first." (Inter 400, `#B8C5D6`, 15px).
-- CTA button (text link): "See how infrastructure engagements work →" — `onClick` smooth-scrolls to Section 4 (the section directly after the carousel). Hover effect: gradient underline.
-
-## i18n keys (added under `services.infrastructure`)
-
-```
-caseCarousel: {
-  eyebrow, headline,
-  cards: {
-    theraflou: { brand, eyebrow, title, body, pill1, pill2, pill3, link },
-    directed:  { eyebrow, title, body, pill1, pill2, pill3, quote, attribution },
-  },
-  belowText, belowCta,
-}
-```
-
-Existing `s.caseEyebrow / caseTitle / caseBody / caseLink` keys remain (still used by Healthcare/other sections if referenced); we add new keys rather than mutate.
-
-## Out of scope
-
-- No changes to Sections 1, 2, 4+ of Infrastructure.
-- No changes to `/case-studies` (already done previously).
-- No new npm deps — reuse existing `embla-carousel-react` (already used by `carousel.tsx`).
+### Design Constraints
+- Fonts: Plus Jakarta Sans + Inter only
+- Colors: #1FA6C1, #A15BF1, #0F1729, #2B3650, #B8C5D6, #FFFFFF, #F8FAFC, #E2E8F0, #F1F5F9
+- No stock photography
+- No hover animation
+- Mobile-first (single column on mobile)
