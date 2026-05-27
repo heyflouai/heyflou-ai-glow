@@ -15,7 +15,7 @@ const GRADIENT = 'linear-gradient(135deg, #1FA6C1, #A15BF1)';
 
 export default function Infrastructure() {
   const t = useTranslation();
-  const s = t.servicesInfrastructure as Record<string, string>;
+  const s = t.servicesInfrastructure as unknown as Record<string, string>;
 
   const builds = [
     { icon: Database, title: s.build1Title, desc: s.build1Desc },
