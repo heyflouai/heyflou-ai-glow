@@ -476,6 +476,254 @@ export default function CaseStudies() {
           </div>
         </section>
 
+        {/* MORE WORK — compact anonymous case cards */}
+        <section style={{ backgroundColor: '#F8FAFC' }} className="py-20 md:py-[80px]">
+          <div className="max-w-[1200px] mx-auto px-6">
+            <div className="text-center max-w-[720px] mx-auto">
+              <p
+                className="uppercase"
+                style={{
+                  fontFamily: INTER,
+                  fontWeight: 600,
+                  fontSize: 13,
+                  letterSpacing: '2px',
+                  color: '#1FA6C1',
+                }}
+              >
+                {t.caseStudies.compactSectionEyebrow}
+              </p>
+              <h2
+                className="mt-4 text-[28px] md:text-[36px] leading-[1.1]"
+                style={{ fontFamily: JAKARTA, fontWeight: 700, color: '#0F1729' }}
+              >
+                {t.caseStudies.compactSectionHeadline}
+              </h2>
+              <p
+                className="mt-4 mx-auto max-w-[500px] text-[17px] leading-[1.6]"
+                style={{ fontFamily: INTER, fontWeight: 400, color: '#2B3650' }}
+              >
+                {t.caseStudies.compactSectionSubheadline}
+              </p>
+            </div>
+
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+              {[
+                {
+                  accent: '#1FA6C1',
+                  typeBadge: t.caseStudies.compactCard1TypeBadge,
+                  industry: t.caseStudies.compactCard1Industry,
+                  headline: t.caseStudies.compactCard1Headline,
+                  problemLabel: t.caseStudies.compactCard1ProblemLabel,
+                  problemText: t.caseStudies.compactCard1ProblemText,
+                  solutionLabel: t.caseStudies.compactCard1SolutionLabel,
+                  solutionText: t.caseStudies.compactCard1SolutionText,
+                  impactLabel: t.caseStudies.compactCard1ImpactLabel,
+                  impactPills: [
+                    t.caseStudies.compactCard1ImpactPill1,
+                    t.caseStudies.compactCard1ImpactPill2,
+                  ],
+                },
+                {
+                  accent: '#A15BF1',
+                  typeBadge: t.caseStudies.compactCard2TypeBadge,
+                  industry: t.caseStudies.compactCard2Industry,
+                  headline: t.caseStudies.compactCard2Headline,
+                  problemLabel: t.caseStudies.compactCard2ProblemLabel,
+                  problemText: t.caseStudies.compactCard2ProblemText,
+                  solutionLabel: t.caseStudies.compactCard2SolutionLabel,
+                  solutionText: t.caseStudies.compactCard2SolutionText,
+                  impactLabel: t.caseStudies.compactCard2ImpactLabel,
+                  impactPills: [
+                    t.caseStudies.compactCard2ImpactPill1,
+                    t.caseStudies.compactCard2ImpactPill2,
+                    t.caseStudies.compactCard2ImpactPill3,
+                  ],
+                },
+              ].map((card, idx) => {
+                const isTeal = card.accent === '#1FA6C1';
+                return (
+                  <motion.article
+                    key={idx}
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: '-60px' }}
+                    transition={{ duration: 0.5, delay: idx * 0.1 }}
+                    className="bg-white rounded-[16px] flex flex-col"
+                    style={{
+                      border: '1px solid #E2E8F0',
+                      padding: '32px 28px',
+                    }}
+                  >
+                    {/* Top row */}
+                    <div className="flex items-center justify-between gap-3">
+                      <span
+                        className="uppercase"
+                        style={{
+                          fontFamily: INTER,
+                          fontWeight: 600,
+                          fontSize: 11,
+                          letterSpacing: '0.5px',
+                          color: card.accent,
+                          background: isTeal
+                            ? 'rgba(31,166,193,0.08)'
+                            : 'rgba(161,91,241,0.08)',
+                          border: `1px solid ${
+                            isTeal ? 'rgba(31,166,193,0.2)' : 'rgba(161,91,241,0.2)'
+                          }`,
+                          borderRadius: 100,
+                          padding: '4px 12px',
+                        }}
+                      >
+                        {card.typeBadge}
+                      </span>
+                      <span
+                        style={{
+                          fontFamily: INTER,
+                          fontWeight: 400,
+                          fontSize: 11,
+                          color: '#2B3650',
+                          background: '#F1F5F9',
+                          borderRadius: 100,
+                          padding: '4px 12px',
+                        }}
+                      >
+                        {t.caseStudies.compactAnonymousBadge}
+                      </span>
+                    </div>
+
+                    {/* Industry */}
+                    <p
+                      className="uppercase"
+                      style={{
+                        fontFamily: INTER,
+                        fontWeight: 600,
+                        fontSize: 13,
+                        letterSpacing: '1px',
+                        color: '#2B3650',
+                        marginTop: 20,
+                      }}
+                    >
+                      {card.industry}
+                    </p>
+
+                    {/* Headline */}
+                    <h3
+                      style={{
+                        fontFamily: JAKARTA,
+                        fontWeight: 700,
+                        fontSize: 20,
+                        lineHeight: 1.3,
+                        color: '#0F1729',
+                        marginTop: 8,
+                      }}
+                    >
+                      {card.headline}
+                    </h3>
+
+                    {/* Problem */}
+                    <div style={{ marginTop: 16 }}>
+                      <p
+                        className="uppercase"
+                        style={{
+                          fontFamily: INTER,
+                          fontWeight: 600,
+                          fontSize: 12,
+                          color: '#1FA6C1',
+                          letterSpacing: '1px',
+                        }}
+                      >
+                        {card.problemLabel}
+                      </p>
+                      <p
+                        style={{
+                          fontFamily: INTER,
+                          fontWeight: 400,
+                          fontSize: 15,
+                          lineHeight: 1.6,
+                          color: '#2B3650',
+                          marginTop: 6,
+                        }}
+                      >
+                        {card.problemText}
+                      </p>
+                    </div>
+
+                    {/* Solution */}
+                    <div style={{ marginTop: 16 }}>
+                      <p
+                        className="uppercase"
+                        style={{
+                          fontFamily: INTER,
+                          fontWeight: 600,
+                          fontSize: 12,
+                          color: '#A15BF1',
+                          letterSpacing: '1px',
+                        }}
+                      >
+                        {card.solutionLabel}
+                      </p>
+                      <p
+                        style={{
+                          fontFamily: INTER,
+                          fontWeight: 400,
+                          fontSize: 15,
+                          lineHeight: 1.6,
+                          color: '#2B3650',
+                          marginTop: 6,
+                        }}
+                      >
+                        {card.solutionText}
+                      </p>
+                    </div>
+
+                    {/* Impact */}
+                    <div
+                      className="mt-auto"
+                      style={{
+                        marginTop: 20,
+                        paddingTop: 20,
+                        borderTop: '1px solid #E2E8F0',
+                      }}
+                    >
+                      <p
+                        className="uppercase"
+                        style={{
+                          fontFamily: INTER,
+                          fontWeight: 600,
+                          fontSize: 12,
+                          color: '#0F1729',
+                          letterSpacing: '1px',
+                        }}
+                      >
+                        {card.impactLabel}
+                      </p>
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        {card.impactPills.map((pill, pIdx) => (
+                          <span
+                            key={pIdx}
+                            style={{
+                              fontFamily: INTER,
+                              fontWeight: 600,
+                              fontSize: 13,
+                              color: '#0F1729',
+                              background: '#F8FAFC',
+                              border: '1px solid #E2E8F0',
+                              borderRadius: 100,
+                              padding: '6px 14px',
+                            }}
+                          >
+                            {pill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </motion.article>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
         {/* Case Studies Section */}
         <Section background="muted">
           <div className="text-center mb-8 md:mb-12">
