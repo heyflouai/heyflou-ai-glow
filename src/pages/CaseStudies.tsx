@@ -2,7 +2,6 @@ import { SEOHead } from '@/components/ui/seo-head';
 import { Section } from '@/components/ui/section';
 import { useTranslation } from '@/i18n';
 import { PAGE_SEO, getCanonicalUrl } from '@/lib/seo-config';
-import { Spotlight } from '@/components/ui/spotlight';
 import { NumberTicker, parseMetricValue } from '@/components/ui/number-ticker';
 import { MovingBorderButton } from '@/components/ui/moving-border';
 import { ShimmerButton } from '@/components/ui/shimmer-button';
@@ -303,32 +302,6 @@ export default function CaseStudies() {
       />
       
       <main className="pt-16">
-        {/* Hero Section with Spotlight */}
-        <section className="relative min-h-[300px] md:min-h-[400px] flex items-center justify-center overflow-hidden bg-background">
-          <Spotlight
-            className="-top-40 left-0 md:left-60 md:-top-20"
-            fill="hsl(var(--primary))"
-          />
-          <div className="relative z-10 text-center px-5 py-16 md:py-20">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold font-display text-foreground mb-4 md:mb-6"
-            >
-              {t.caseStudies.heroTitle}
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto"
-            >
-              {t.caseStudies.heroSubtitle}
-            </motion.p>
-          </div>
-        </section>
-
         {/* CLIENT RESULTS — featured cases */}
         <section className="bg-white py-20 md:py-24">
           <div className="max-w-[1200px] mx-auto px-6">
