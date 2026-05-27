@@ -5,7 +5,6 @@ import { SEOHead } from '@/components/ui/seo-head';
 import { getCanonicalUrl } from '@/lib/seo-config';
 import { useTranslation } from '@/i18n';
 import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
-import { TracingBeam } from '@/components/ui/tracing-beam';
 import { CursorSpotlight } from '@/components/ui/cursor-spotlight';
 import { GradientMovingButton } from '@/components/ui/gradient-moving-button';
 import { Spotlight } from '@/components/ui/spotlight';
@@ -92,7 +91,6 @@ export default function Agents() {
       />
 
       <main className="bg-white">
-        <TracingBeam>
         {/* HERO */}
         <section className="relative overflow-hidden pt-24 pb-20 md:pt-28 lg:pt-32">
           <CursorSpotlight color="rgba(31,166,193,0.18)" size={520} />
@@ -322,7 +320,6 @@ export default function Agents() {
             </div>
           </div>
         </section>
-        </TracingBeam>
       </main>
     </>
   );
