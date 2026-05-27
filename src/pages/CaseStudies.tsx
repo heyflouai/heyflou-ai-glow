@@ -532,7 +532,7 @@ export default function CaseStudies() {
         </section>
 
         {/* CTA Section */}
-        <Section background="default" padding="large">
+        <Section background="muted" padding="large" className="bg-white">
           <div className="text-center max-w-3xl mx-auto">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
