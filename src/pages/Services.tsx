@@ -142,21 +142,21 @@ export default function Services() {
       />
 
       <main className="bg-white">
-        <TracingBeam>
-        {/* Hero */}
-        <section className="relative overflow-hidden pt-24 pb-12 md:pt-28 md:pb-16 lg:pt-32 lg:pb-20">
-          <CursorSpotlight color="rgba(31,166,193,0.18)" size={520} />
+        {/* Hero + Cards wrapper — shared spotlight */}
+        <div className="relative overflow-hidden">
+          <CursorSpotlight color="rgba(31,166,193,0.18)" size={620} />
+        <section className="relative pt-24 pb-12 md:pt-28 md:pb-16 lg:pt-32 lg:pb-20">
           <div className="max-w-[1200px] mx-auto px-6 text-center">
             <h1
-              className="text-[36px] md:text-[48px] lg:text-[56px] leading-[1.1] tracking-tight text-[#0F1729] flex flex-col items-center"
+              className="text-[36px] md:text-[48px] lg:text-[56px] leading-[1.25] tracking-tight text-[#0F1729] flex flex-col items-center"
               style={{ fontFamily: '"Plus Jakarta Sans", sans-serif', fontWeight: 800 }}
             >
               <span className="block">{s.v2HeroPrefix}</span>
-              <span className="block">
+              <span className="block py-1 overflow-visible">
                 <FlipWords
                   words={[s.v2HeroFlip1, s.v2HeroFlip2, s.v2HeroFlip3]}
                   duration={2000}
-                  className="[background-image:linear-gradient(135deg,#1FA6C1,#A15BF1)]"
+                  className="[background-image:linear-gradient(135deg,#1FA6C1,#A15BF1)] leading-[1.3] pb-2"
                 />
               </span>
               <span className="block">{s.v2HeroSuffix}</span>
@@ -171,7 +171,7 @@ export default function Services() {
         </section>
 
         {/* Cards */}
-        <section className="pb-20 md:pb-24 lg:pb-[100px]">
+        <section className="relative pb-20 md:pb-24 lg:pb-[100px]">
           <div className="max-w-[1200px] mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
               {cards.map((c) => (
@@ -180,6 +180,7 @@ export default function Services() {
             </div>
           </div>
         </section>
+        </div>
 
         {/* Trust Strip */}
         <section className="bg-[#F8FAFC] py-5">
@@ -192,7 +193,6 @@ export default function Services() {
             </p>
           </div>
         </section>
-        </TracingBeam>
       </main>
     </>
   );
