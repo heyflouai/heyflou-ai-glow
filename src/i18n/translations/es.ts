@@ -937,6 +937,7 @@ export const es: TranslationKeys = {
     ctaTitle: '¿Listo para platicar?',
     ctaSubtitle: 'Cuéntanos dónde estás atorado. Te diremos, honestamente, si la IA es la respuesta — y si lo es, cuál de nuestros tres caminos te conviene.',
     ctaButton: 'Agendar llamada de estrategia',
+    ctaSecondary: 'Ver nuestros servicios',
   },
 
   // Forms
