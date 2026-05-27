@@ -11,7 +11,6 @@ import { Sparkles } from '@/components/ui/sparkles';
 import { HoverEffect } from '@/components/ui/card-hover-effect';
 import { BackgroundBeamsWithCollision } from '@/components/ui/background-beams-collision';
 import { GradientMovingButton } from '@/components/ui/gradient-moving-button';
-import { ShimmerButton } from '@/components/ui/shimmer-button';
 import theraflouMark from '@/assets/theraflou-mark.svg';
 
 const JAKARTA = '"Plus Jakarta Sans", sans-serif';
