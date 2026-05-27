@@ -3,6 +3,11 @@ import { MessageSquare, Calendar, Send, Receipt, Database, BarChart3, ArrowRight
 import { SEOHead } from '@/components/ui/seo-head';
 import { getCanonicalUrl } from '@/lib/seo-config';
 import { useTranslation } from '@/i18n';
+import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
+import { TracingBeam } from '@/components/ui/tracing-beam';
+import { CursorSpotlight } from '@/components/ui/cursor-spotlight';
+import { GradientMovingButton } from '@/components/ui/gradient-moving-button';
+import { Spotlight } from '@/components/ui/spotlight';
 
 const JAKARTA = '"Plus Jakarta Sans", sans-serif';
 const INTER = 'Inter, sans-serif';
@@ -43,15 +48,17 @@ export default function Agents() {
       />
 
       <main className="bg-white">
+        <TracingBeam>
         {/* HERO */}
-        <section className="pt-24 pb-20 md:pt-28 lg:pt-32">
+        <section className="relative overflow-hidden pt-24 pb-20 md:pt-28 lg:pt-32">
+          <CursorSpotlight color="rgba(31,166,193,0.18)" size={520} />
           <div className="max-w-[1200px] mx-auto px-6 text-center">
-            <h1
+            <TextGenerateEffect
+              as="h1"
+              words={s.heroTitle}
               className="text-[36px] md:text-[52px] leading-[1.1] tracking-tight text-[#0F1729]"
               style={{ fontFamily: JAKARTA, fontWeight: 800 }}
-            >
-              {s.heroTitle}
-            </h1>
+            />
             <p
               className="mt-6 text-[18px] md:text-[20px] leading-[1.55] text-[#2B3650] max-w-[620px] mx-auto"
               style={{ fontFamily: INTER, fontWeight: 400 }}
@@ -62,7 +69,9 @@ export default function Agents() {
         </section>
 
         {/* PROBLEM */}
-        <section className="py-20 bg-[#0F1729]">
+        <section className="relative overflow-hidden py-20 bg-[#0F1729]">
+          <Spotlight className="-top-40 left-0 md:-top-20 md:left-60" fill="white" />
+          <CursorSpotlight color="rgba(161,91,241,0.22)" size={520} />
           <div className="max-w-[800px] mx-auto px-6 text-center">
             <h2
               className="text-[28px] md:text-[36px] leading-[1.2] text-white"
@@ -272,16 +281,17 @@ export default function Agents() {
               {s.ctaSubtext}
             </p>
             <div className="mt-8">
-              <Link
+              <GradientMovingButton
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-lg bg-white px-8 py-4 text-[#1FA6C1] transition-transform duration-200 hover:scale-[1.03] min-h-[48px]"
-                style={{ fontFamily: INTER, fontWeight: 600 }}
+                background="#ffffff"
+                color="#1FA6C1"
               >
                 {s.ctaButton} <ArrowRight className="h-5 w-5" />
-              </Link>
+              </GradientMovingButton>
             </div>
           </div>
         </section>
+        </TracingBeam>
       </main>
     </>
   );
