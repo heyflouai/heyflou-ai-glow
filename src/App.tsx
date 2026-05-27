@@ -14,6 +14,7 @@ import CustomAutomation from "./pages/services/CustomAutomation";
 import Consulting from "./pages/services/Consulting";
 import TravelAgencies from "./pages/services/TravelAgencies";
 import Agents from "./pages/services/Agents";
+import Infrastructure from "./pages/services/Infrastructure";
 import CaseStudies from "./pages/CaseStudies";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -45,6 +46,7 @@ const App = () => (
                 <Route path="/services/custom" element={<CustomAutomation />} />
                 <Route path="/services/consulting" element={<Consulting />} />
                 <Route path="/services/agents" element={<Agents />} />
+                <Route path="/services/infrastructure" element={<Infrastructure />} />
                 <Route path="/services/travel-agencies" element={<TravelAgencies />} />
                 <Route path="/case-studies" element={<CaseStudies />} />
                 <Route path="/about" element={<About />} />

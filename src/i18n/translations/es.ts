@@ -568,6 +568,47 @@ export const es: TranslationKeys = {
     ctaButton: 'Agenda tu auditoría gratis',
   },
 
+  // Services / Infrastructure Page
+  servicesInfrastructure: {
+    heroTitle: 'Cuando tu industria necesita una plataforma, no solo agentes.',
+    heroSubtitle: 'Algunos negocios no necesitan mejores integraciones — necesitan un producto construido específicamente para cómo funciona su industria. Nosotros lo diseñamos y construimos.',
+
+    problemTitle: 'El software genérico no entiende tu industria. Has construido parches sobre parches.',
+    problemBody: 'Las herramientas estándar están diseñadas para el negocio promedio. Pero tu industria tiene requisitos de cumplimiento específicos, patrones de flujo de trabajo y estructuras de datos que las plataformas genéricas ignoran. Así que tu equipo se adapta — hojas de cálculo, pasos manuales, parches que frenan a todos y se rompen bajo presión.',
+
+    buildTitle: 'Construimos la infraestructura que le falta a tu industria.',
+    build1Title: 'CRMs Verticales',
+    build1Desc: 'Sistemas de gestión de pacientes, portales de clientes, rastreadores de casos. Construidos en torno a tu flujo de trabajo, no a un pipeline de ventas genérico.',
+    build2Title: 'Capas de Cumplimiento',
+    build2Desc: 'Plataformas con requisitos regulatorios integrados desde el día uno — NOM-004, HIPAA, LFPDPPP o marcos personalizados. No agregados después.',
+    build3Title: 'Motores de Reserva y Agenda',
+    build3Desc: 'Infraestructura de agendamiento de punta a punta con agentes de IA integrados — recordatorios automáticos, listas de espera, gestión de capacidad.',
+    build4Title: 'Reportes con IA',
+    build4Desc: 'Dashboards y sistemas de reportes personalizados que dan a los operadores visibilidad en tiempo real sin trabajo manual de datos.',
+
+    caseEyebrow: 'CASO: THERAFLOU',
+    caseTitle: 'Construimos un CRM de pacientes para 13,000 fisioterapeutas en México.',
+    caseBody: 'Los fisioterapeutas en México gestionaban pacientes por WhatsApp y papel — sin software construido para sus requisitos específicos de cumplimiento (NOM-004-SSA3-2012). Diseñamos y construimos TheraFlou: un CRM completo de pacientes con agentes de IA para citas, expediente clínico estructurado, notas SOAP y facturación — hecho a la medida para la práctica privada de fisioterapia en México.',
+    caseBullet1: 'Expediente clínico con cumplimiento NOM-004 — integrado al modelo de datos desde el día uno',
+    caseBullet2: 'Agentes de IA para citas — recordatorios por WhatsApp, reagendados, gestión de listas de espera',
+    caseBullet3: 'Gestión de clínicas multi-terapeuta — desde práctica individual hasta centros de 15 terapeutas',
+    caseLink: 'Conoce más sobre TheraFlou →',
+
+    processTitle: 'Cómo funciona un proyecto de infraestructura.',
+    step1Title: 'Auditoría de Industria',
+    step1Desc: 'Estudiamos tu vertical a profundidad: regulaciones, herramientas existentes, patrones de flujo de trabajo, requisitos de datos.',
+    step2Title: 'Diseño de Arquitectura',
+    step2Desc: 'Diseñamos el sistema completo — modelo de datos, capa de cumplimiento, integraciones de IA, controles de acceso.',
+    step3Title: 'Construcción y Pruebas',
+    step3Desc: 'Construimos sobre infraestructura probada (Next.js, Supabase, Vercel) con pruebas rigurosas antes de que ningún cliente la toque.',
+    step4Title: 'Despliegue y Soporte',
+    step4Desc: 'Lanzamos, capacitamos a tu equipo y damos soporte continuo de ingeniería conforme la plataforma crece.',
+
+    ctaTitle: '¿Estás construyendo algo para tu industria?',
+    ctaSubtext: 'Empieza con una conversación. Te diremos si necesitas infraestructura o agentes — y qué implicaría realmente la construcción.',
+    ctaButton: 'Hablemos',
+  },
+
   // Contact Page
   contact: {
     heroTitle: 'Transformemos tu Negocio Juntos',
