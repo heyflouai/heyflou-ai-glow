@@ -269,79 +269,69 @@ export default function About() {
           </div>
         </section>
 
-        {/* THERAFLOU — 3D card */}
+        {/* THERAFLOU — sub-brand spotlight */}
         <section className="py-24 bg-[#F8FAFC]">
           <div className="max-w-[1100px] mx-auto px-6">
-            <CardContainer containerClassName="py-0 w-full" className="w-full">
-              <CardBody className="relative group/card w-full h-auto rounded-3xl overflow-hidden border border-white/10 bg-[#0F1729]">
-                <div
-                  className="absolute inset-0 opacity-70"
-                  style={{
-                    background:
-                      'radial-gradient(circle at 20% 30%, rgba(31,166,193,0.35), transparent 55%), radial-gradient(circle at 80% 70%, rgba(161,91,241,0.35), transparent 55%)',
-                  }}
-                />
-                <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 p-8 md:p-12 items-center">
-                  {/* Left: visual */}
-                  <CardItem translateZ={60} className="w-full flex justify-center">
-                    <div className="relative w-full max-w-[360px] aspect-square rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-center">
-                      <div
-                        className="absolute -inset-2 rounded-3xl blur-2xl opacity-60"
-                        style={{ background: GRADIENT }}
-                      />
-                      <img
-                        src={theraflouMark}
-                        alt="TheraFlou"
-                        className="relative h-44 w-auto drop-shadow-[0_0_30px_rgba(161,91,241,0.55)]"
-                      />
-                    </div>
-                  </CardItem>
-
-                  {/* Right: copy */}
-                  <div>
-                    <CardItem
-                      translateZ={20}
-                      className="text-[12px] uppercase"
-                      style={{ fontFamily: INTER, fontWeight: 600, color: '#5CB3E8', letterSpacing: '1.5px' }}
-                    >
-                      {a.theraflouEyebrow}
-                    </CardItem>
-                    <CardItem
-                      translateZ={50}
-                      as="h3"
-                      className="mt-3 text-[28px] md:text-[40px] leading-[1.1] text-white"
-                      style={{ fontFamily: JAKARTA, fontWeight: 800 }}
-                    >
-                      {a.theraflouTitle}
-                    </CardItem>
-                    <CardItem
-                      translateZ={40}
-                      className="mt-3 text-[16px] md:text-[17px] text-[#B8C5D6]"
-                      style={{ fontFamily: INTER, fontWeight: 600 }}
-                    >
-                      {a.theraflouTagline}
-                    </CardItem>
-                    <CardItem
-                      translateZ={30}
-                      as="p"
-                      className="mt-5 text-[15px] leading-[1.7] text-[#94A3B8]"
-                      style={{ fontFamily: INTER, fontWeight: 400 }}
-                    >
-                      {a.theraflouDesc}
-                    </CardItem>
-                    <CardItem translateZ={40} as="div" className="mt-8">
-                      <Link
-                        to="/services/agents#theraflou"
-                        className="inline-flex items-center gap-2 text-[15px] text-[#5CB3E8] hover:text-white transition-colors"
-                        style={{ fontFamily: INTER, fontWeight: 600 }}
-                      >
-                        {a.theraflouCta} <ArrowRight className="w-4 h-4" />
-                      </Link>
-                    </CardItem>
+            <div className="relative w-full rounded-3xl overflow-hidden border border-white/10 bg-[#0F1729] shadow-[0_30px_80px_-20px_rgba(15,23,41,0.5)]">
+              <div
+                className="absolute inset-0 opacity-80 pointer-events-none"
+                style={{
+                  background:
+                    'radial-gradient(circle at 18% 25%, rgba(31,166,193,0.35), transparent 55%), radial-gradient(circle at 82% 75%, rgba(161,91,241,0.35), transparent 55%)',
+                }}
+              />
+              <div className="relative grid grid-cols-1 md:grid-cols-5 gap-10 p-8 md:p-14 items-center">
+                {/* Left: visual */}
+                <div className="md:col-span-2 flex justify-center">
+                  <div className="relative w-full max-w-[320px] aspect-square rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center">
+                    <div
+                      className="absolute -inset-3 rounded-[28px] blur-3xl opacity-60"
+                      style={{ background: GRADIENT }}
+                    />
+                    <img
+                      src={theraflouMark}
+                      alt="TheraFlou"
+                      className="relative h-40 w-auto drop-shadow-[0_0_30px_rgba(161,91,241,0.55)]"
+                    />
                   </div>
                 </div>
-              </CardBody>
-            </CardContainer>
+
+                {/* Right: copy */}
+                <div className="md:col-span-3">
+                  <div
+                    className="text-[12px] uppercase"
+                    style={{ fontFamily: INTER, fontWeight: 600, color: '#5CB3E8', letterSpacing: '1.5px' }}
+                  >
+                    {a.theraflouEyebrow}
+                  </div>
+                  <h3
+                    className="mt-3 text-[30px] md:text-[42px] leading-[1.05] text-white"
+                    style={{ fontFamily: JAKARTA, fontWeight: 800 }}
+                  >
+                    {a.theraflouTitle}
+                  </h3>
+                  <div
+                    className="mt-3 text-[16px] md:text-[18px] text-[#B8C5D6]"
+                    style={{ fontFamily: INTER, fontWeight: 600 }}
+                  >
+                    {a.theraflouTagline}
+                  </div>
+                  <p
+                    className="mt-5 text-[15px] leading-[1.7] text-[#94A3B8]"
+                    style={{ fontFamily: INTER, fontWeight: 400 }}
+                  >
+                    {a.theraflouDesc}
+                  </p>
+                  <Link
+                    to="/services/agents#theraflou"
+                    className="mt-8 inline-flex items-center gap-2 text-[15px] text-[#5CB3E8] hover:text-white transition-colors"
+                    style={{ fontFamily: INTER, fontWeight: 600 }}
+                  >
+                    {a.theraflouCta} <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
