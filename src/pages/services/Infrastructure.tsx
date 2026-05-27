@@ -122,7 +122,8 @@ export default function Infrastructure() {
         </section>
 
         {/* BUILT BY US — CASE CAROUSEL */}
-        <AuroraBackground id="built-by-us" className="bg-[#0F1729]" style={{ padding: '96px 0' }}>
+        <section id="built-by-us">
+        <AuroraBackground className="bg-[#0F1729] py-24">
           <div className="relative z-10 max-w-[1200px] mx-auto px-6 w-full">
             <div
               className="text-center uppercase"
@@ -168,6 +169,7 @@ export default function Infrastructure() {
             </div>
           </div>
         </AuroraBackground>
+        </section>
 
         {/* HOW WE WORK */}
         <section id="how-we-work" className="py-20 bg-[#F8FAFC]">
