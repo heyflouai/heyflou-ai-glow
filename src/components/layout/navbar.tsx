@@ -62,9 +62,10 @@ export const Navbar = () => {
       {/* Main Navigation */}
       <nav className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled 
-          ? "bg-background/95 backdrop-blur-md border-b border-border" 
-          : "bg-transparent"
+        "bg-background/90 backdrop-blur-md",
+        isScrolled
+          ? "border-b border-border shadow-sm"
+          : "border-b border-transparent"
       )}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
@@ -161,7 +162,7 @@ export const Navbar = () => {
             {/* Mobile menu button - 48px touch target */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-3 min-h-[48px] min-w-[48px] flex items-center justify-center text-hf-ink hover:text-hf-teal transition-colors"
+              className="md:hidden p-3 min-h-[48px] min-w-[48px] flex items-center justify-center text-foreground hover:text-hf-teal transition-colors"
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
