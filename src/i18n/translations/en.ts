@@ -1808,7 +1808,7 @@ export const en = {
     theraflouFeature1: 'AI appointment agent — handles confirmations, reschedules, and WhatsApp reminders automatically',
     theraflouFeature2: 'Clinical records & SOAP notes — structured patient files managed by AI, not paper charts',
     theraflouFeature3: 'Session tracking & billing — patient history, invoices, and follow-ups managed by AI, not staff',
-    theraflouProof: 'One problem. One solution. Built for 13,000+ physiotherapists in Mexico.',
+    theraflouProof: 'One problem. One solution. Built for 15,000+ physiotherapists in Mexico.',
     theraflouCta: 'Learn more about TheraFlou',
   },
 };
