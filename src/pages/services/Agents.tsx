@@ -16,6 +16,46 @@ const JAKARTA = '"Plus Jakarta Sans", sans-serif';
 const INTER = 'Inter, sans-serif';
 const GRADIENT = 'linear-gradient(135deg, #1FA6C1, #A15BF1)';
 
+function ResultCard({ stat, label, source }: { stat: string; label: string; source?: string }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="group relative overflow-hidden rounded-xl border border-[#E2E8F0] bg-white p-8 text-center transition-all duration-200 hover:-translate-y-1 hover:border-[#1FA6C1] hover:shadow-[0_12px_32px_rgba(31,166,193,0.10)]"
+    >
+      <CanvasRevealEffect active={hovered} dotSize={18} animationSpeed={0.6} />
+      <div className="relative z-10">
+        <div
+          className="text-[48px] md:text-[56px] leading-none bg-clip-text text-transparent"
+          style={{
+            fontFamily: JAKARTA,
+            fontWeight: 800,
+            backgroundImage: GRADIENT,
+            WebkitBackgroundClip: 'text',
+          }}
+        >
+          {stat}
+        </div>
+        <p
+          className="mt-4 text-[15px] leading-[1.55] text-[#2B3650]"
+          style={{ fontFamily: INTER, fontWeight: 500 }}
+        >
+          {label}
+        </p>
+        {source && (
+          <p
+            className="mt-3 text-[13px] italic text-[#2B3650]/70"
+            style={{ fontFamily: INTER, fontWeight: 400 }}
+          >
+            {source}
+          </p>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default function Agents() {
   const t = useTranslation();
   const s = t.servicesAgents as Record<string, string>;
