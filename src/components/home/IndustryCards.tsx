@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import { 
   Stethoscope, 
   Dumbbell, 
-  Settings, 
-  Plane, 
-  Lightbulb,
-  Check,
+  Scissors, 
+  Target, 
+  GraduationCap,
+  Sparkles,
   ArrowRight
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -17,73 +17,66 @@ interface IndustryCardData {
   icon: React.ReactNode;
   titleKey: string;
   hookKey: string;
-  descKey: string;
-  labelKey: string;
   featureKeys: string[];
-  metricKey: string;
+  outcomeKey: string;
   ctaKey: string;
   link: string;
-  comingSoon?: boolean;
-  badgeKey?: string;
 }
 
 const industryData: IndustryCardData[] = [
   {
-    icon: <Stethoscope className="w-7 h-7 md:w-8 md:h-8" />,
-    titleKey: "industryHealthcareTitle",
-    hookKey: "industryHealthcareHook",
-    descKey: "industryHealthcareDesc",
-    labelKey: "industryHealthcareLabel",
-    featureKeys: ["industryHealthcareFeature1", "industryHealthcareFeature2", "industryHealthcareFeature3", "industryHealthcareFeature4"],
-    metricKey: "industryHealthcareMetric",
-    ctaKey: "industryHealthcareCta",
+    icon: <Stethoscope className="w-6 h-6" strokeWidth={1.5} />,
+    titleKey: "industry1Title",
+    hookKey: "industry1Hook",
+    featureKeys: ["industry1Feature1", "industry1Feature2", "industry1Feature3", "industry1Feature4"],
+    outcomeKey: "industry1Outcome",
+    ctaKey: "industry1Cta",
     link: "/services/healthcare"
   },
   {
-    icon: <Dumbbell className="w-7 h-7 md:w-8 md:h-8" />,
-    titleKey: "industryFitnessTitle",
-    hookKey: "industryFitnessHook",
-    descKey: "industryFitnessDesc",
-    labelKey: "industryFitnessLabel",
-    featureKeys: ["industryFitnessFeature1", "industryFitnessFeature2", "industryFitnessFeature3", "industryFitnessFeature4"],
-    metricKey: "industryFitnessMetric",
-    ctaKey: "industryFitnessCta",
+    icon: <Dumbbell className="w-6 h-6" strokeWidth={1.5} />,
+    titleKey: "industry2Title",
+    hookKey: "industry2Hook",
+    featureKeys: ["industry2Feature1", "industry2Feature2", "industry2Feature3", "industry2Feature4"],
+    outcomeKey: "industry2Outcome",
+    ctaKey: "industry2Cta",
     link: "/services/fitness-education"
   },
   {
-    icon: <Settings className="w-7 h-7 md:w-8 md:h-8" />,
-    titleKey: "industryCustomTitle",
-    hookKey: "industryCustomHook",
-    descKey: "industryCustomDesc",
-    labelKey: "industryCustomLabel",
-    featureKeys: ["industryCustomFeature1", "industryCustomFeature2", "industryCustomFeature3", "industryCustomFeature4"],
-    metricKey: "industryCustomMetric",
-    ctaKey: "industryCustomCta",
+    icon: <Scissors className="w-6 h-6" strokeWidth={1.5} />,
+    titleKey: "industry3Title",
+    hookKey: "industry3Hook",
+    featureKeys: ["industry3Feature1", "industry3Feature2", "industry3Feature3", "industry3Feature4"],
+    outcomeKey: "industry3Outcome",
+    ctaKey: "industry3Cta",
     link: "/services/custom-automation"
   },
   {
-    icon: <Plane className="w-7 h-7 md:w-8 md:h-8" />,
-    titleKey: "industryTravelTitle",
-    hookKey: "industryTravelHook",
-    descKey: "industryTravelDesc",
-    labelKey: "industryTravelLabel",
-    featureKeys: ["industryTravelFeature1", "industryTravelFeature2", "industryTravelFeature3", "industryTravelFeature4"],
-    metricKey: "industryTravelMetric",
-    ctaKey: "industryTravelCta",
-    link: "/services/travel-agencies",
-    comingSoon: true,
-    badgeKey: "industryTravelBadge"
+    icon: <Target className="w-6 h-6" strokeWidth={1.5} />,
+    titleKey: "industry4Title",
+    hookKey: "industry4Hook",
+    featureKeys: ["industry4Feature1", "industry4Feature2", "industry4Feature3", "industry4Feature4"],
+    outcomeKey: "industry4Outcome",
+    ctaKey: "industry4Cta",
+    link: "/services/custom-automation"
   },
   {
-    icon: <Lightbulb className="w-7 h-7 md:w-8 md:h-8" />,
-    titleKey: "industryConsultingTitle",
-    hookKey: "industryConsultingHook",
-    descKey: "industryConsultingDesc",
-    labelKey: "industryConsultingLabel",
-    featureKeys: ["industryConsultingFeature1", "industryConsultingFeature2", "industryConsultingFeature3", "industryConsultingFeature4"],
-    metricKey: "industryConsultingMetric",
-    ctaKey: "industryConsultingCta",
-    link: "/services/consulting"
+    icon: <GraduationCap className="w-6 h-6" strokeWidth={1.5} />,
+    titleKey: "industry5Title",
+    hookKey: "industry5Hook",
+    featureKeys: ["industry5Feature1", "industry5Feature2", "industry5Feature3", "industry5Feature4"],
+    outcomeKey: "industry5Outcome",
+    ctaKey: "industry5Cta",
+    link: "/services/custom-automation"
+  },
+  {
+    icon: <Sparkles className="w-6 h-6" strokeWidth={1.5} />,
+    titleKey: "industry6Title",
+    hookKey: "industry6Hook",
+    featureKeys: ["industry6Feature1", "industry6Feature2", "industry6Feature3", "industry6Feature4"],
+    outcomeKey: "industry6Outcome",
+    ctaKey: "industry6Cta",
+    link: "/services/custom-automation"
   }
 ];
 
@@ -93,7 +86,7 @@ function IndustryCardComponent({ card, index, translations }: { card: IndustryCa
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
+      transition={{ duration: 0.5, delay: index * 0.08 }}
       className={cn(
         "relative flex flex-col h-full p-6 md:p-8 rounded-3xl",
         "bg-card/90 backdrop-blur-sm",
@@ -101,77 +94,56 @@ function IndustryCardComponent({ card, index, translations }: { card: IndustryCa
         "transition-all duration-400 ease-out",
         "hover:border-hf-teal/40",
         "hover:shadow-[0_20px_50px_rgba(6,182,212,0.15)]",
-        "hover:-translate-y-3",
-        "group",
-        card.comingSoon && "opacity-90"
+        "hover:-translate-y-2",
+        "group"
       )}
     >
       {/* Icon */}
       <div className={cn(
-        "w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center text-white mb-5 mx-auto",
+        "w-12 h-12 rounded-xl flex items-center justify-center text-white mb-5",
         "transition-transform duration-300 group-hover:scale-110",
-        card.comingSoon ? "bg-gradient-to-br from-muted-foreground/60 to-muted-foreground/40" : "hf-gradient"
+        "hf-gradient"
       )}>
         {card.icon}
       </div>
       
       {/* Industry Name */}
-      <h3 className="text-xl md:text-2xl font-bold text-foreground text-center mb-2">
+      <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">
         {translations[card.titleKey]}
       </h3>
       
-      {/* Coming Soon Badge */}
-      {card.comingSoon && card.badgeKey && (
-        <div className="flex justify-center mb-3">
-          <span className="px-3 py-1 text-xs font-medium text-hf-teal bg-hf-teal/10 border border-hf-teal/30 rounded-full">
-            {translations[card.badgeKey]}
-          </span>
-        </div>
-      )}
-      
-      {/* Hook Question */}
-      <p className="text-base md:text-lg italic text-hf-teal text-center mb-4">
+      {/* Pain Hook */}
+      <p className="text-sm md:text-base italic text-hf-teal mb-5">
         "{translations[card.hookKey]}"
       </p>
       
-      {/* Description */}
-      <p className="text-sm md:text-base text-muted-foreground text-center leading-relaxed mb-5">
-        {translations[card.descKey]}
-      </p>
-      
-      {/* Features List */}
-      <div className="flex-grow mb-5">
-        <span className="text-xs md:text-sm font-semibold text-hf-teal uppercase tracking-wide mb-3 block">
-          {translations[card.labelKey]}
-        </span>
-        <ul className="space-y-2">
+      {/* Capabilities List */}
+      <div className="flex-grow">
+        <ul className="space-y-2.5">
           {card.featureKeys.map((key, i) => (
-            <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-              <Check className="w-4 h-4 text-green-400 shrink-0 mt-0.5" />
+            <li key={i} className="flex items-start gap-2.5 text-sm text-muted-foreground leading-relaxed">
+              <span className="text-hf-teal mt-1 shrink-0">—</span>
               <span>{translations[key]}</span>
             </li>
           ))}
         </ul>
       </div>
       
-      {/* Divider */}
-      <div className="h-px w-full bg-border/50 mb-5" />
-      
-      {/* Key Metric */}
-      <p className="text-sm font-bold text-foreground text-center mb-5">
-        📊 {translations[card.metricKey]}
+      {/* Divider + Outcome */}
+      <div className="h-px w-full bg-border/50 mt-6 mb-4" />
+      <p className="text-sm font-bold text-hf-teal mb-5">
+        {translations[card.outcomeKey]}
       </p>
       
       {/* CTA Button */}
       <Link
         to={card.link}
         className={cn(
-          "w-full py-3.5 px-6 rounded-xl text-center font-semibold text-sm md:text-base",
+          "w-full py-3 px-5 rounded-xl text-center font-semibold text-sm",
           "flex items-center justify-center gap-2",
           "transition-all duration-300",
-          card.comingSoon
-            ? "bg-transparent border border-hf-teal/40 text-foreground hover:bg-hf-teal/10 hover:border-hf-teal/60"
-            : "bg-transparent border border-hf-teal/50 text-foreground hover:hf-gradient hover:text-white hover:border-transparent hover:shadow-[0_0_20px_rgba(6,182,212,0.3)]"
+          "bg-transparent border border-hf-teal/50 text-foreground",
+          "hover:hf-gradient hover:text-white hover:border-transparent hover:shadow-[0_0_20px_rgba(6,182,212,0.3)]"
         )}
       >
         {translations[card.ctaKey]}
@@ -204,23 +176,16 @@ export function IndustryCards() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto"
+            className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto"
           >
             {hp.industrySubtitle}
           </motion.p>
         </div>
         
-        {/* Cards Grid - First Row (3 cards) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto mb-6 md:mb-8">
-          {industryData.slice(0, 3).map((card, index) => (
+        {/* Cards Grid - 3 columns desktop, 2 tablet, 1 mobile */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
+          {industryData.map((card, index) => (
             <IndustryCardComponent key={index} card={card} index={index} translations={hp} />
-          ))}
-        </div>
-        
-        {/* Cards Grid - Second Row (2 cards centered) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
-          {industryData.slice(3).map((card, index) => (
-            <IndustryCardComponent key={index + 3} card={card} index={index + 3} translations={hp} />
           ))}
         </div>
         
@@ -229,7 +194,7 @@ export function IndustryCards() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.6 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
           className="text-center text-sm text-muted-foreground mt-10 md:mt-12"
         >
           {hp.industryNotSeeYours}{" "}
