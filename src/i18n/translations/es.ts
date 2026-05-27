@@ -493,6 +493,11 @@ export const es: TranslationKeys = {
     finalCtaButton: 'Agendar Llamada de Descubrimiento',
     // V2 Rebuild
     v2HeroTitle: 'Tres formas de integrar IA en tu negocio.',
+    v2HeroPrefix: 'Tres formas de integrar',
+    v2HeroSuffix: 'en tu negocio.',
+    v2HeroFlip1: 'agentes de IA',
+    v2HeroFlip2: 'plataformas a medida',
+    v2HeroFlip3: 'estrategia de IA',
     v2HeroSubtitle: 'Ya sea que necesites un equipo de agentes de IA operando tu negocio, una plataforma de IA hecha a medida para tu industria, o una hoja de ruta estratégica para saber por dónde empezar — lo entregamos de principio a fin.',
     v2Card1Eyebrow: 'Más popular',
     v2Card1Title: 'Un equipo de agentes de IA trabajando dentro de tu negocio',

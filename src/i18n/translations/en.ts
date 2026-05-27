@@ -491,6 +491,11 @@ export const en = {
     finalCtaButton: 'Schedule a Discovery Call',
     // V2 Rebuild
     v2HeroTitle: 'Three ways we integrate AI into your business.',
+    v2HeroPrefix: 'Three ways to integrate',
+    v2HeroSuffix: 'into your business.',
+    v2HeroFlip1: 'AI agents',
+    v2HeroFlip2: 'custom platforms',
+    v2HeroFlip3: 'AI strategy',
     v2HeroSubtitle: "Whether you need a team of AI agents running your operations, a custom AI platform built for your industry, or a strategic roadmap to know where to start — we deliver it end-to-end.",
     v2Card1Eyebrow: 'Most popular',
     v2Card1Title: 'A team of AI agents working inside your business',
