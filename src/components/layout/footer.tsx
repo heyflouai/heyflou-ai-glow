@@ -82,7 +82,7 @@ export const Footer = () => {
             <p style={{ marginTop: 24, color: 'rgba(255,255,255,0.3)', fontSize: 13 }}>
               © 2026 HeyFlou. All rights reserved.
             </p>
-            <div className="mt-5">
+            <div className="mt-5 inline-flex">
               <LanguageToggle />
             </div>
           </div>
@@ -93,31 +93,32 @@ export const Footer = () => {
           <Column title="LEGAL" links={legal} />
         </div>
 
-        <div className="h-16 md:h-20" />
+        <div className="h-40 md:h-56 lg:h-64" />
       </div>
 
       {/* Oversized watermark */}
       <div
         aria-hidden="true"
-        className="absolute left-0 right-0 hidden min-[480px]:block"
+        className="absolute left-0 right-0 hidden min-[480px]:flex justify-center"
         style={{
-          bottom: -20,
+          bottom: -8,
           zIndex: 0,
-          textAlign: 'center',
           whiteSpace: 'nowrap',
           userSelect: 'none',
           pointerEvents: 'none',
-          overflow: 'hidden',
+          padding: '0 4vw',
         }}
       >
         <span
           className="font-display"
           style={{
             fontWeight: 800,
-            fontSize: 'clamp(100px, 18vw, 260px)',
-            color: 'rgba(255,255,255,0.04)',
-            letterSpacing: '-4px',
-            lineHeight: 1,
+            fontSize: 'clamp(80px, 15vw, 220px)',
+            color: 'rgba(255,255,255,0.05)',
+            letterSpacing: '-0.02em',
+            lineHeight: 0.9,
+            display: 'inline-block',
+            padding: '0 0.08em',
           }}
         >
           HeyFlou
