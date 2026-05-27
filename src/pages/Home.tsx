@@ -18,6 +18,11 @@ import { ShimmerButton } from '@/components/ui/shimmer-button';
 import { motion } from 'framer-motion';
 import awsLogo from '@/assets/aws-logo.svg';
 
+const JAKARTA = '"Plus Jakarta Sans", sans-serif';
+const INTER = 'Inter, sans-serif';
+const DIRECTED_LOGO =
+  'https://cloud-1de12d.becdn.net/media/original/0475dc58613950ec680c4b6dfacf516a/directed-empresas-negro-1-1.png';
+
 export default function Home() {
   const t = useTranslation();
 
@@ -374,6 +379,147 @@ export default function Home() {
       <Section id="get-started">
         <CompactForm sourcePage="home" />
       </Section>
+
+      {/* Testimonial — Directed Empresas */}
+      <section style={{ backgroundColor: '#0F1729' }} className="py-24">
+        <div className="max-w-[800px] mx-auto px-6 text-center">
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="uppercase"
+            style={{
+              fontFamily: INTER,
+              fontWeight: 600,
+              fontSize: 13,
+              letterSpacing: '2px',
+              color: '#1FA6C1',
+            }}
+          >
+            {t.home.testimonialEyebrow}
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mt-8"
+          >
+            {/* Decorative quote mark */}
+            <div
+              className="select-none"
+              style={{
+                fontFamily: JAKARTA,
+                fontWeight: 800,
+                fontSize: 120,
+                lineHeight: 0.8,
+                marginBottom: -20,
+                backgroundImage: 'linear-gradient(135deg, #1FA6C1, #A15BF1)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                color: 'transparent',
+                opacity: 0.6,
+              }}
+            >
+              &ldquo;
+            </div>
+
+            <blockquote
+              style={{
+                fontFamily: JAKARTA,
+                fontWeight: 500,
+                fontSize: 'clamp(18px, 2vw, 22px)',
+                lineHeight: 1.6,
+                color: '#FFFFFF',
+                textAlign: 'center',
+              }}
+            >
+              {t.home.testimonialQuote}
+            </blockquote>
+
+            {/* Attribution row */}
+            <div className="mt-8 flex items-center justify-center gap-4">
+              <img
+                src={DIRECTED_LOGO}
+                alt="Directed Empresas"
+                className="shrink-0"
+                style={{
+                  width: 100,
+                  height: 'auto',
+                  filter: 'brightness(0) invert(1)',
+                }}
+              />
+              <div
+                className="shrink-0"
+                style={{
+                  width: 1,
+                  height: 40,
+                  backgroundColor: 'rgba(255,255,255,0.2)',
+                }}
+              />
+              <div className="text-left">
+                <p
+                  style={{
+                    fontFamily: INTER,
+                    fontWeight: 700,
+                    fontSize: 15,
+                    color: '#FFFFFF',
+                  }}
+                >
+                  {t.home.testimonialName}
+                </p>
+                <p
+                  style={{
+                    fontFamily: INTER,
+                    fontWeight: 400,
+                    fontSize: 14,
+                    color: '#B8C5D6',
+                  }}
+                >
+                  {t.home.testimonialTitle}
+                </p>
+              </div>
+            </div>
+
+            {/* Stat pills */}
+            <div className="mt-10 flex flex-wrap justify-center gap-3">
+              {[t.home.testimonialStat1, t.home.testimonialStat2, t.home.testimonialStat3].map((stat, i) => (
+                <span
+                  key={i}
+                  style={{
+                    fontFamily: INTER,
+                    fontWeight: 500,
+                    fontSize: 14,
+                    color: '#FFFFFF',
+                    background: 'rgba(255,255,255,0.06)',
+                    border: '1px solid rgba(255,255,255,0.12)',
+                    borderRadius: 100,
+                    padding: '8px 18px',
+                  }}
+                >
+                  {stat}
+                </span>
+              ))}
+            </div>
+
+            {/* CTA Link */}
+            <Link
+              to="/case-studies"
+              className="mt-6 inline-block"
+              style={{
+                fontFamily: INTER,
+                fontWeight: 600,
+                fontSize: 14,
+                color: '#1FA6C1',
+              }}
+            >
+              {t.home.testimonialCta}
+            </Link>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Final CTA with Multiple Options */}
       <FinalCTA />
