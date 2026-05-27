@@ -149,16 +149,18 @@ export default function Services() {
           <CursorSpotlight color="rgba(31,166,193,0.18)" size={520} />
           <div className="max-w-[1200px] mx-auto px-6 text-center">
             <h1
-              className="text-[36px] md:text-[48px] lg:text-[56px] leading-[1.1] tracking-tight text-[#0F1729]"
+              className="text-[36px] md:text-[48px] lg:text-[56px] leading-[1.1] tracking-tight text-[#0F1729] flex flex-col items-center"
               style={{ fontFamily: '"Plus Jakarta Sans", sans-serif', fontWeight: 800 }}
             >
-              {s.v2HeroPrefix}{' '}
-              <FlipWords
-                words={[s.v2HeroFlip1, s.v2HeroFlip2, s.v2HeroFlip3]}
-                duration={2000}
-                className="[background-image:linear-gradient(135deg,#1FA6C1,#A15BF1)]"
-              />{' '}
-              {s.v2HeroSuffix}
+              <span className="block">{s.v2HeroPrefix}</span>
+              <span className="block">
+                <FlipWords
+                  words={[s.v2HeroFlip1, s.v2HeroFlip2, s.v2HeroFlip3]}
+                  duration={2000}
+                  className="[background-image:linear-gradient(135deg,#1FA6C1,#A15BF1)]"
+                />
+              </span>
+              <span className="block">{s.v2HeroSuffix}</span>
             </h1>
             <p
               className="mt-6 text-[17px] md:text-[19px] leading-[1.55] text-[#2B3650] max-w-[680px] mx-auto"
