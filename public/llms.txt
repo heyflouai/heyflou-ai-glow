@@ -11,8 +11,11 @@
 - [Travel Agencies](/services/travel-agencies): AI automation for travel agencies and tour operators.
 - [Custom Automation](/services/custom): Tailored AI workflows for any business.
 - [Consulting](/services/consulting): AI strategy, readiness assessments, and implementation planning.
+- [AI Agents](/services/agents): Reply, scheduling, follow-up, billing, data, and reporting agents running 24/7.
+- [AI Infrastructure](/services/infrastructure): AgenticOS-style infrastructure that coordinates AI agents across multiple business lines.
 - [Case Studies](/case-studies): Real results from HeyFlou customers.
 - [Pricing](/pricing): Plans and pricing.
+- [Pricing Calculator](/calculator): Build a custom quote for your automation stack.
 - [About](/about): Who we are and what we believe.
 - [Contact](/contact): Get in touch or book a strategy call.
 

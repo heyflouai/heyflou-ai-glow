@@ -551,7 +551,7 @@ export const en = {
     agent5Desc: 'Captures client information once, syncs it to every system. No double-entry, no outdated records.',
     agent6Name: 'Reporting Agent',
     agent6Desc: 'Delivers dashboards showing bookings, revenue, no-shows, and trends. Always current, never compiled manually.',
-    gridFooter: "Don't see your use case? We design custom agents for your specific workflows.",
+    gridFooter: "...and much more. We design custom agents for your specific workflows.",
 
     processTitle: 'From first call to live agents in 30 days.',
     step1Title: 'Discovery',

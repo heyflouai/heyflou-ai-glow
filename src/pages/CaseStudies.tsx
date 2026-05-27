@@ -69,7 +69,6 @@ export default function CaseStudies() {
     {
       accent: '#1FA6C1',
       typeBadge: t.caseStudies.case1Tag1,
-      clientBadge: t.caseStudies.case1ClientType,
       industry: t.caseStudies.case1Tag2,
       headline: t.caseStudies.case1Title,
       problemLabel: t.caseStudies.case1ChallengeTitle,
@@ -91,7 +90,6 @@ export default function CaseStudies() {
     {
       accent: '#A15BF1',
       typeBadge: t.caseStudies.case2Tag1,
-      clientBadge: t.caseStudies.case2ClientType,
       industry: `${t.caseStudies.case2Tag2} · ${t.caseStudies.case2Tag3}`,
       headline: t.caseStudies.case2Title,
       problemLabel: t.caseStudies.case2ChallengeTitle,
@@ -329,6 +327,7 @@ export default function CaseStudies() {
 
             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
+                ...customSolutionCards,
                 {
                   accent: '#1FA6C1',
                   typeBadge: t.caseStudies.compactCard1TypeBadge,
@@ -376,7 +375,7 @@ export default function CaseStudies() {
                     }}
                   >
                     {/* Top row */}
-                    <div className="flex items-center justify-between gap-3">
+                    <div className="flex items-center gap-3">
                       <span
                         className="uppercase"
                         style={{
@@ -396,19 +395,6 @@ export default function CaseStudies() {
                         }}
                       >
                         {card.typeBadge}
-                      </span>
-                      <span
-                        style={{
-                          fontFamily: INTER,
-                          fontWeight: 400,
-                          fontSize: 11,
-                          color: '#2B3650',
-                          background: '#F1F5F9',
-                          borderRadius: 100,
-                          padding: '4px 12px',
-                        }}
-                      >
-                        {t.caseStudies.compactAnonymousBadge}
                       </span>
                     </div>
 
@@ -545,211 +531,15 @@ export default function CaseStudies() {
           </div>
         </section>
 
-        {/* Case Studies Section */}
-        <section style={{ backgroundColor: '#F8FAFC' }} className="py-20 md:py-[80px]">
-          <div className="max-w-[1200px] mx-auto px-6">
-            <div className="text-center max-w-[720px] mx-auto">
-              <p
-                className="uppercase"
-                style={{
-                  fontFamily: INTER,
-                  fontWeight: 600,
-                  fontSize: 13,
-                  letterSpacing: '2px',
-                  color: '#1FA6C1',
-                }}
-              >
-                {t.caseStudies.sectionTitle}
-              </p>
-            </div>
-
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
-              {customSolutionCards.map((card, idx) => {
-                const isTeal = card.accent === '#1FA6C1';
-                return (
-                  <motion.article
-                    key={idx}
-                    initial={{ opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: '-60px' }}
-                    transition={{ duration: 0.5, delay: idx * 0.1 }}
-                    className="bg-white rounded-[16px] flex flex-col"
-                    style={{ border: '1px solid #E2E8F0', padding: '32px 28px' }}
-                  >
-                    <div className="flex items-center justify-between gap-3">
-                      <span
-                        className="uppercase"
-                        style={{
-                          fontFamily: INTER,
-                          fontWeight: 600,
-                          fontSize: 11,
-                          letterSpacing: '0.5px',
-                          color: card.accent,
-                          background: isTeal
-                            ? 'rgba(31,166,193,0.08)'
-                            : 'rgba(161,91,241,0.08)',
-                          border: `1px solid ${
-                            isTeal ? 'rgba(31,166,193,0.2)' : 'rgba(161,91,241,0.2)'
-                          }`,
-                          borderRadius: 100,
-                          padding: '4px 12px',
-                        }}
-                      >
-                        {card.typeBadge}
-                      </span>
-                      <span
-                        style={{
-                          fontFamily: INTER,
-                          fontWeight: 400,
-                          fontSize: 11,
-                          color: '#2B3650',
-                          background: '#F1F5F9',
-                          borderRadius: 100,
-                          padding: '4px 12px',
-                        }}
-                      >
-                        {card.clientBadge}
-                      </span>
-                    </div>
-
-                    <p
-                      className="uppercase"
-                      style={{
-                        fontFamily: INTER,
-                        fontWeight: 600,
-                        fontSize: 13,
-                        letterSpacing: '1px',
-                        color: '#2B3650',
-                        marginTop: 20,
-                      }}
-                    >
-                      {card.industry}
-                    </p>
-
-                    <h3
-                      style={{
-                        fontFamily: JAKARTA,
-                        fontWeight: 700,
-                        fontSize: 20,
-                        lineHeight: 1.3,
-                        color: '#0F1729',
-                        marginTop: 8,
-                      }}
-                    >
-                      {card.headline}
-                    </h3>
-
-                    <div style={{ marginTop: 16 }}>
-                      <p
-                        className="uppercase"
-                        style={{
-                          fontFamily: INTER,
-                          fontWeight: 600,
-                          fontSize: 12,
-                          color: '#1FA6C1',
-                          letterSpacing: '1px',
-                        }}
-                      >
-                        {card.problemLabel}
-                      </p>
-                      <p
-                        style={{
-                          fontFamily: INTER,
-                          fontWeight: 400,
-                          fontSize: 15,
-                          lineHeight: 1.6,
-                          color: '#2B3650',
-                          marginTop: 6,
-                        }}
-                      >
-                        {card.problemText}
-                      </p>
-                    </div>
-
-                    <div style={{ marginTop: 16 }}>
-                      <p
-                        className="uppercase"
-                        style={{
-                          fontFamily: INTER,
-                          fontWeight: 600,
-                          fontSize: 12,
-                          color: '#A15BF1',
-                          letterSpacing: '1px',
-                        }}
-                      >
-                        {card.solutionLabel}
-                      </p>
-                      <p
-                        style={{
-                          fontFamily: INTER,
-                          fontWeight: 400,
-                          fontSize: 15,
-                          lineHeight: 1.6,
-                          color: '#2B3650',
-                          marginTop: 6,
-                        }}
-                      >
-                        {card.solutionText}
-                      </p>
-                    </div>
-
-                    <div
-                      className="mt-auto"
-                      style={{
-                        marginTop: 20,
-                        paddingTop: 20,
-                        borderTop: '1px solid #E2E8F0',
-                      }}
-                    >
-                      <p
-                        className="uppercase"
-                        style={{
-                          fontFamily: INTER,
-                          fontWeight: 600,
-                          fontSize: 12,
-                          color: '#0F1729',
-                          letterSpacing: '1px',
-                        }}
-                      >
-                        {card.impactLabel}
-                      </p>
-                      <div className="mt-3 flex flex-wrap gap-2">
-                        {card.impactPills.map((pill, pIdx) => (
-                          <span
-                            key={pIdx}
-                            style={{
-                              fontFamily: INTER,
-                              fontWeight: 600,
-                              fontSize: 13,
-                              color: '#0F1729',
-                              background: '#F8FAFC',
-                              border: '1px solid #E2E8F0',
-                              borderRadius: 100,
-                              padding: '6px 14px',
-                            }}
-                          >
-                            {pill}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </motion.article>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-
         {/* CTA Section */}
-        <Section background="gradient" padding="large">
+        <Section background="default" padding="large">
           <div className="text-center max-w-3xl mx-auto">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="text-2xl md:text-3xl lg:text-4xl font-bold font-display text-foreground mb-4 md:mb-6"
+              className="text-2xl md:text-3xl lg:text-4xl font-bold font-display text-[#0F1729] mb-4 md:mb-6"
             >
               {t.caseStudies.ctaTitle}
             </motion.h2>
@@ -758,15 +548,19 @@ export default function CaseStudies() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-base md:text-lg text-foreground/90 mb-8"
+              className="text-base md:text-lg text-[#2B3650] mb-8"
             >
               {t.caseStudies.ctaSubtitle}
             </motion.p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link to="/contact" className="w-full sm:w-auto">
-                <ShimmerButton className="w-full sm:w-auto h-12 md:h-14 px-6 md:px-8">
-                  <span className="flex items-center gap-2">
+                <ShimmerButton
+                  className="w-full sm:w-auto h-12 md:h-14 px-6 md:px-8"
+                  background="#ffffff"
+                  shimmerColor="#1FA6C1"
+                >
+                  <span className="flex items-center gap-2 text-[#0F1729] font-semibold">
                     {t.caseStudies.ctaPrimary}
                     <ArrowRight className="w-4 h-4" />
                   </span>
@@ -775,7 +569,7 @@ export default function CaseStudies() {
               <Link to="/services/custom" className="w-full sm:w-auto">
                 <MovingBorderButton
                   containerClassName="w-full sm:w-auto"
-                  className="h-12 md:h-14 px-6 md:px-8"
+                  className="h-12 md:h-14 px-6 md:px-8 bg-white text-[#0F1729]"
                 >
                   {t.caseStudies.ctaSecondary}
                 </MovingBorderButton>
