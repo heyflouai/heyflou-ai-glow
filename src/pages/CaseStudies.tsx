@@ -7,7 +7,7 @@ import { MovingBorderButton } from '@/components/ui/moving-border';
 import { ShimmerButton } from '@/components/ui/shimmer-button';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Wallet, Target, ArrowRight, Check, AlertCircle, Clock, Percent, Zap } from 'lucide-react';
+import { ArrowRight, Clock, Percent, Zap } from 'lucide-react';
 import theraflouMark from '@/assets/theraflou-mark.svg';
 
 const JAKARTA = '"Plus Jakarta Sans", sans-serif';
@@ -231,67 +231,54 @@ const MetricCard = ({ value, label, description, icon, delay = 0 }: MetricCardPr
 export default function CaseStudies() {
   const t = useTranslation();
 
-  const caseStudy1 = {
-    icon: <Wallet className="w-6 h-6 md:w-8 md:h-8" />,
-    title: t.caseStudies.case1Title,
-    clientType: t.caseStudies.case1ClientType,
-    description: t.caseStudies.case1Description,
-    challengeTitle: t.caseStudies.case1ChallengeTitle,
-    challenges: [
-      t.caseStudies.case1Challenge1,
-      t.caseStudies.case1Challenge2,
-      t.caseStudies.case1Challenge3,
-    ],
-    solutionTitle: t.caseStudies.case1SolutionTitle,
-    solutions: [
-      t.caseStudies.case1Solution1,
-      t.caseStudies.case1Solution2,
-      t.caseStudies.case1Solution3,
-      t.caseStudies.case1Solution4,
-      t.caseStudies.case1Solution5,
-    ],
-    resultsTitle: t.caseStudies.case1ResultsTitle,
-    results: [
-      { emoji: '📊', text: t.caseStudies.case1Result1 },
-      { emoji: '⏰', text: t.caseStudies.case1Result2 },
-      { emoji: '✅', text: t.caseStudies.case1Result3 },
-      { emoji: '💡', text: t.caseStudies.case1Result4 },
-    ],
-    tags: [t.caseStudies.case1Tag1, t.caseStudies.case1Tag2],
-    viewDetails: t.caseStudies.viewDetails,
-  };
-
-  const caseStudy2 = {
-    icon: <Target className="w-6 h-6 md:w-8 md:h-8" />,
-    title: t.caseStudies.case2Title,
-    clientType: t.caseStudies.case2ClientType,
-    description: t.caseStudies.case2Description,
-    challengeTitle: t.caseStudies.case2ChallengeTitle,
-    challenges: [
-      t.caseStudies.case2Challenge1,
-      t.caseStudies.case2Challenge2,
-      t.caseStudies.case2Challenge3,
-      t.caseStudies.case2Challenge4,
-    ],
-    solutionTitle: t.caseStudies.case2SolutionTitle,
-    solutions: [
-      t.caseStudies.case2Solution1,
-      t.caseStudies.case2Solution2,
-      t.caseStudies.case2Solution3,
-      t.caseStudies.case2Solution4,
-      t.caseStudies.case2Solution5,
-    ],
-    resultsTitle: t.caseStudies.case2ResultsTitle,
-    results: [
-      { emoji: '📊', text: t.caseStudies.case2Result1 },
-      { emoji: '⏰', text: t.caseStudies.case2Result2 },
-      { emoji: '⭐', text: t.caseStudies.case2Result3 },
-      { emoji: '📈', text: t.caseStudies.case2Result4 },
-      { emoji: '🚀', text: t.caseStudies.case2Result5 },
-    ],
-    tags: [t.caseStudies.case2Tag1, t.caseStudies.case2Tag2, t.caseStudies.case2Tag3],
-    viewDetails: t.caseStudies.viewDetails,
-  };
+  const customSolutionCards = [
+    {
+      accent: '#1FA6C1',
+      typeBadge: t.caseStudies.case1Tag1,
+      clientBadge: t.caseStudies.case1ClientType,
+      industry: t.caseStudies.case1Tag2,
+      headline: t.caseStudies.case1Title,
+      problemLabel: t.caseStudies.case1ChallengeTitle,
+      problemText: [
+        t.caseStudies.case1Challenge1,
+        t.caseStudies.case1Challenge2,
+        t.caseStudies.case1Challenge3,
+      ].join('. ') + '.',
+      solutionLabel: t.caseStudies.case1SolutionTitle,
+      solutionText: t.caseStudies.case1Description,
+      impactLabel: t.caseStudies.case1ResultsTitle,
+      impactPills: [
+        t.caseStudies.case1Result1,
+        t.caseStudies.case1Result2,
+        t.caseStudies.case1Result3,
+        t.caseStudies.case1Result4,
+      ],
+    },
+    {
+      accent: '#A15BF1',
+      typeBadge: t.caseStudies.case2Tag1,
+      clientBadge: t.caseStudies.case2ClientType,
+      industry: `${t.caseStudies.case2Tag2} · ${t.caseStudies.case2Tag3}`,
+      headline: t.caseStudies.case2Title,
+      problemLabel: t.caseStudies.case2ChallengeTitle,
+      problemText: [
+        t.caseStudies.case2Challenge1,
+        t.caseStudies.case2Challenge2,
+        t.caseStudies.case2Challenge3,
+        t.caseStudies.case2Challenge4,
+      ].join('. ') + '.',
+      solutionLabel: t.caseStudies.case2SolutionTitle,
+      solutionText: t.caseStudies.case2Description,
+      impactLabel: t.caseStudies.case2ResultsTitle,
+      impactPills: [
+        t.caseStudies.case2Result1,
+        t.caseStudies.case2Result2,
+        t.caseStudies.case2Result3,
+        t.caseStudies.case2Result4,
+        t.caseStudies.case2Result5,
+      ],
+    },
+  ];
 
   return (
     <>
@@ -725,25 +712,199 @@ export default function CaseStudies() {
         </section>
 
         {/* Case Studies Section */}
-        <Section background="muted">
-          <div className="text-center mb-8 md:mb-12">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-2xl md:text-3xl lg:text-4xl font-bold font-display text-foreground"
-            >
-              {t.caseStudies.sectionTitle}
-            </motion.h2>
-          </div>
+        <section style={{ backgroundColor: '#F8FAFC' }} className="py-20 md:py-[80px]">
+          <div className="max-w-[1200px] mx-auto px-6">
+            <div className="text-center max-w-[720px] mx-auto">
+              <p
+                className="uppercase"
+                style={{
+                  fontFamily: INTER,
+                  fontWeight: 600,
+                  fontSize: 13,
+                  letterSpacing: '2px',
+                  color: '#1FA6C1',
+                }}
+              >
+                {t.caseStudies.sectionTitle}
+              </p>
+            </div>
 
-          {/* Fixed Grid - no overlap, proper gaps */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 max-w-7xl mx-auto">
-            <CaseStudyCard {...caseStudy1} />
-            <CaseStudyCard {...caseStudy2} />
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+              {customSolutionCards.map((card, idx) => {
+                const isTeal = card.accent === '#1FA6C1';
+                return (
+                  <motion.article
+                    key={idx}
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: '-60px' }}
+                    transition={{ duration: 0.5, delay: idx * 0.1 }}
+                    className="bg-white rounded-[16px] flex flex-col"
+                    style={{ border: '1px solid #E2E8F0', padding: '32px 28px' }}
+                  >
+                    <div className="flex items-center justify-between gap-3">
+                      <span
+                        className="uppercase"
+                        style={{
+                          fontFamily: INTER,
+                          fontWeight: 600,
+                          fontSize: 11,
+                          letterSpacing: '0.5px',
+                          color: card.accent,
+                          background: isTeal
+                            ? 'rgba(31,166,193,0.08)'
+                            : 'rgba(161,91,241,0.08)',
+                          border: `1px solid ${
+                            isTeal ? 'rgba(31,166,193,0.2)' : 'rgba(161,91,241,0.2)'
+                          }`,
+                          borderRadius: 100,
+                          padding: '4px 12px',
+                        }}
+                      >
+                        {card.typeBadge}
+                      </span>
+                      <span
+                        style={{
+                          fontFamily: INTER,
+                          fontWeight: 400,
+                          fontSize: 11,
+                          color: '#2B3650',
+                          background: '#F1F5F9',
+                          borderRadius: 100,
+                          padding: '4px 12px',
+                        }}
+                      >
+                        {card.clientBadge}
+                      </span>
+                    </div>
+
+                    <p
+                      className="uppercase"
+                      style={{
+                        fontFamily: INTER,
+                        fontWeight: 600,
+                        fontSize: 13,
+                        letterSpacing: '1px',
+                        color: '#2B3650',
+                        marginTop: 20,
+                      }}
+                    >
+                      {card.industry}
+                    </p>
+
+                    <h3
+                      style={{
+                        fontFamily: JAKARTA,
+                        fontWeight: 700,
+                        fontSize: 20,
+                        lineHeight: 1.3,
+                        color: '#0F1729',
+                        marginTop: 8,
+                      }}
+                    >
+                      {card.headline}
+                    </h3>
+
+                    <div style={{ marginTop: 16 }}>
+                      <p
+                        className="uppercase"
+                        style={{
+                          fontFamily: INTER,
+                          fontWeight: 600,
+                          fontSize: 12,
+                          color: '#1FA6C1',
+                          letterSpacing: '1px',
+                        }}
+                      >
+                        {card.problemLabel}
+                      </p>
+                      <p
+                        style={{
+                          fontFamily: INTER,
+                          fontWeight: 400,
+                          fontSize: 15,
+                          lineHeight: 1.6,
+                          color: '#2B3650',
+                          marginTop: 6,
+                        }}
+                      >
+                        {card.problemText}
+                      </p>
+                    </div>
+
+                    <div style={{ marginTop: 16 }}>
+                      <p
+                        className="uppercase"
+                        style={{
+                          fontFamily: INTER,
+                          fontWeight: 600,
+                          fontSize: 12,
+                          color: '#A15BF1',
+                          letterSpacing: '1px',
+                        }}
+                      >
+                        {card.solutionLabel}
+                      </p>
+                      <p
+                        style={{
+                          fontFamily: INTER,
+                          fontWeight: 400,
+                          fontSize: 15,
+                          lineHeight: 1.6,
+                          color: '#2B3650',
+                          marginTop: 6,
+                        }}
+                      >
+                        {card.solutionText}
+                      </p>
+                    </div>
+
+                    <div
+                      className="mt-auto"
+                      style={{
+                        marginTop: 20,
+                        paddingTop: 20,
+                        borderTop: '1px solid #E2E8F0',
+                      }}
+                    >
+                      <p
+                        className="uppercase"
+                        style={{
+                          fontFamily: INTER,
+                          fontWeight: 600,
+                          fontSize: 12,
+                          color: '#0F1729',
+                          letterSpacing: '1px',
+                        }}
+                      >
+                        {card.impactLabel}
+                      </p>
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        {card.impactPills.map((pill, pIdx) => (
+                          <span
+                            key={pIdx}
+                            style={{
+                              fontFamily: INTER,
+                              fontWeight: 600,
+                              fontSize: 13,
+                              color: '#0F1729',
+                              background: '#F8FAFC',
+                              border: '1px solid #E2E8F0',
+                              borderRadius: 100,
+                              padding: '6px 14px',
+                            }}
+                          >
+                            {pill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </motion.article>
+                );
+              })}
+            </div>
           </div>
-        </Section>
+        </section>
 
         {/* Impact Metrics Section */}
         <Section>
