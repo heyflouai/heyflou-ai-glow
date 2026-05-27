@@ -1667,6 +1667,7 @@ export const en = {
     industrySubtitle: 'Every service business loses time and money to the same problems. We\'ve built AI agents that solve them — trained on your specific workflows.',
     industryNotSeeYours: "Don't see your industry? We build custom solutions for any business.",
     industryLetsTalk: "Let's talk →",
+    industryFeaturedBadge: 'Featured',
     
     // Industry Card 1 - Private Healthcare
     industry1Title: 'Private Healthcare',
