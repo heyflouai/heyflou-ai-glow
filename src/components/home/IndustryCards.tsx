@@ -80,7 +80,6 @@ function ServiceCard({ card, index, translations }: { card: ServiceCardData; ind
         style={{ fontFamily: INTER, fontWeight: 600 }}
       >
         {translations[card.linkKey]}
-        <span aria-hidden>→</span>
       </Link>
     </motion.div>
   );
@@ -160,7 +159,6 @@ export function IndustryCards() {
             }}
           >
             {hp.threeWaysCtaText}
-            <span aria-hidden>→</span>
           </Link>
         </motion.div>
       </div>
