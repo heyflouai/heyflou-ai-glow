@@ -1805,12 +1805,12 @@ export const es: TranslationKeys = {
 
     // TheraFlou Featured Product
     theraflouEyebrow: 'PRODUCTO DESTACADO',
-    theraflouTitle: 'No solo integramos IA para salud. Construimos el producto.',
-    theraflouSubtitle: 'TheraFlou es un CRM de pacientes creado específicamente para fisioterapeutas en México — con agentes de IA para agendamiento, recordatorios y documentación clínica desde el día uno.',
+    theraflouTitle: 'Hablamos con fisioterapeutas en todo México. Ninguno tenía una herramienta hecha para ellos.',
+    theraflouSubtitle: 'Entrevistamos a docenas de PTs con sus propias clínicas. Todos gestionaban pacientes en WhatsApp, hojas de cálculo o papel. No existía un CRM de pacientes para fisioterapia en México. Así que lo construimos — con agentes de IA desde el día uno.',
     theraflouFeature1: 'Agente de citas con IA — gestiona confirmaciones, reagendamientos y recordatorios por WhatsApp automáticamente',
-    theraflouFeature2: 'Registros clínicos NOM-004 — expedientes y notas SOAP estructuradas que cumplen el estándar mexicano de documentación en salud',
+    theraflouFeature2: 'Registros clínicos y notas SOAP — expedientes estructurados gestionados por IA, no en papel',
     theraflouFeature3: 'Seguimiento de sesiones y facturación — historial del paciente, facturas y seguimientos gestionados por IA, no por personal',
-    theraflouProof: 'Construido para más de 13,000 fisioterapeutas en México que aún gestionan pacientes en WhatsApp y papel.',
+    theraflouProof: 'Un problema. Una solución. Construido para más de 13,000 fisioterapeutas en México.',
     theraflouCta: 'Conoce más sobre TheraFlou',
   },
 };

@@ -1803,12 +1803,12 @@ export const en = {
 
     // TheraFlou Featured Product
     theraflouEyebrow: 'FEATURED PRODUCT',
-    theraflouTitle: "We didn't just integrate AI for healthcare. We built the product.",
-    theraflouSubtitle: 'TheraFlou is a patient CRM built specifically for physiotherapists in Mexico — with AI agents for scheduling, reminders, and clinical documentation built in from day one.',
+    theraflouTitle: 'We spoke with physical therapists across Mexico. None had a tool built for them.',
+    theraflouSubtitle: 'We interviewed dozens of PTs running their own clinics. Every single one was managing patients on WhatsApp, spreadsheets, or paper. No patient CRM existed for physiotherapy in Mexico. So we built one — with AI agents built in from day one.',
     theraflouFeature1: 'AI appointment agent — handles confirmations, reschedules, and WhatsApp reminders automatically',
-    theraflouFeature2: "NOM-004 compliant clinical records — structured patient files and SOAP notes that meet Mexico's healthcare documentation standard",
+    theraflouFeature2: 'Clinical records & SOAP notes — structured patient files managed by AI, not paper charts',
     theraflouFeature3: 'Session tracking & billing — patient history, invoices, and follow-ups managed by AI, not staff',
-    theraflouProof: 'Built for 13,000+ physiotherapists in Mexico who are still managing patients on WhatsApp and paper.',
+    theraflouProof: 'One problem. One solution. Built for 13,000+ physiotherapists in Mexico.',
     theraflouCta: 'Learn more about TheraFlou',
   },
 };
