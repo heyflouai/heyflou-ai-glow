@@ -597,6 +597,34 @@ export const en = {
     caseBullet3: 'Multi-therapist clinic management — from solo practice to 15-therapist centers',
     caseLink: 'Learn more about TheraFlou →',
 
+    caseCarousel: {
+      eyebrow: 'BUILT BY US',
+      headline: "Infrastructure we've shipped.",
+      cards: {
+        theraflou: {
+          eyebrow: 'HEALTHCARE · MEXICO',
+          title: 'A patient CRM for 13,000 physiotherapists.',
+          body: 'Physiotherapists in Mexico were managing patients on WhatsApp and paper. We built TheraFlou — a full patient CRM with AI agents, NOM-004 compliant clinical records, and billing — purpose-built for private PT practice.',
+          pill1: 'NOM-004 compliant',
+          pill2: 'WhatsApp AI agents',
+          pill3: 'Multi-clinic ready',
+          link: 'Learn more about TheraFlou →',
+        },
+        directed: {
+          eyebrow: 'MULTI-LINE OPERATIONS · ENTERPRISE',
+          title: 'AgenticOS: one CEO, 5 companies, zero operational drag.',
+          body: 'We deployed HeyFlou AgenticOS across Directed Empresas — a custom agent infrastructure that automates the repetitive operational layer of all 5 sub-companies, freeing leadership to focus on strategy and scale.',
+          pill1: '20+ hrs/week recovered',
+          pill2: '5 companies unified',
+          pill3: 'Scale without headcount',
+          quote: 'Enterprise-grade AI, accessible and practical for a multi-line operation like ours.',
+          attribution: '— Mateo, CEO',
+        },
+      },
+      belowText: 'Every infrastructure engagement starts with understanding your industry first.',
+      belowCta: 'See how infrastructure engagements work →',
+    },
+
     processTitle: 'How an infrastructure engagement works.',
     step1Title: 'Industry Audit',
     step1Desc: 'We study your vertical deeply: regulations, existing tools, workflow patterns, data requirements.',
