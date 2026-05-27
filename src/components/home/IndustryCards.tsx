@@ -202,7 +202,7 @@ export function IndustryCards() {
         {/* Cards Grid - 3 columns desktop, 2 tablet, 1 mobile */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
           {industryData.map((card, index) => (
-            <IndustryCardComponent key={index} card={card} index={index} translations={hp} />
+            <IndustryCardComponent key={index} card={card} index={index} translations={hp} isFeatured={index === 5} />
           ))}
         </div>
         
