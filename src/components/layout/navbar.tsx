@@ -116,11 +116,6 @@ export const Navbar = () => {
                         )}
                       >
                         <span>{item.name}</span>
-                        {item.comingSoon && (
-                          <span className="text-xs px-2 py-0.5 rounded-full bg-muted text-muted-foreground">
-                            {t.nav.comingSoon}
-                          </span>
-                        )}
                       </Link>
                     </DropdownMenuItem>
                   ))}
@@ -221,11 +216,6 @@ export const Navbar = () => {
                       }}
                     >
                       <span>{item.name}</span>
-                      {item.comingSoon && (
-                        <span className="text-xs px-2 py-0.5 rounded-full bg-muted text-muted-foreground">
-                          {t.nav.comingSoon}
-                        </span>
-                      )}
                     </Link>
                   ))}
                 </CollapsibleContent>
