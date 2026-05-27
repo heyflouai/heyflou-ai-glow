@@ -69,7 +69,6 @@ export default function CaseStudies() {
     {
       accent: '#1FA6C1',
       typeBadge: t.caseStudies.case1Tag1,
-      clientBadge: t.caseStudies.case1ClientType,
       industry: t.caseStudies.case1Tag2,
       headline: t.caseStudies.case1Title,
       problemLabel: t.caseStudies.case1ChallengeTitle,
@@ -91,7 +90,6 @@ export default function CaseStudies() {
     {
       accent: '#A15BF1',
       typeBadge: t.caseStudies.case2Tag1,
-      clientBadge: t.caseStudies.case2ClientType,
       industry: `${t.caseStudies.case2Tag2} · ${t.caseStudies.case2Tag3}`,
       headline: t.caseStudies.case2Title,
       problemLabel: t.caseStudies.case2ChallengeTitle,
