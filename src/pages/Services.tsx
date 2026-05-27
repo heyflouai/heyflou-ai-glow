@@ -156,7 +156,7 @@ export default function Services() {
               <FlipWords
                 words={[s.v2HeroFlip1, s.v2HeroFlip2, s.v2HeroFlip3]}
                 duration={2000}
-                className="!bg-none [-webkit-text-fill-color:initial]"
+                className="[background-image:linear-gradient(135deg,#1FA6C1,#A15BF1)]"
               />{' '}
               {s.v2HeroSuffix}
             </h1>
