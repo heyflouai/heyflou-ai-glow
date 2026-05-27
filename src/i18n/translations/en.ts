@@ -566,6 +566,47 @@ export const en = {
     ctaButton: 'Book Your Free Audit',
   },
 
+  // Services / Infrastructure Page
+  servicesInfrastructure: {
+    heroTitle: 'When your industry needs a platform, not just agents.',
+    heroSubtitle: "Some businesses don't need better integrations — they need a product built specifically for how their industry works. We design and build it.",
+
+    problemTitle: "Generic software doesn't understand your industry. You've built workarounds on top of workarounds.",
+    problemBody: 'Off-the-shelf tools are designed for the average business. But your industry has specific compliance requirements, workflow patterns, and data structures that generic platforms ignore. So your team adapts — spreadsheets, manual steps, workarounds that slow everyone down and break under pressure.',
+
+    buildTitle: 'We build the infrastructure your industry is missing.',
+    build1Title: 'Vertical CRMs',
+    build1Desc: 'Patient management systems, client portals, case trackers. Built around your workflow, not a generic sales pipeline.',
+    build2Title: 'Compliance Layers',
+    build2Desc: 'Platforms with regulatory requirements built in from day one — NOM-004, HIPAA, LFPDPPP, or custom frameworks. Not bolted on later.',
+    build3Title: 'Booking & Scheduling Engines',
+    build3Desc: 'End-to-end scheduling infrastructure with AI agents embedded — automated reminders, waitlists, capacity management.',
+    build4Title: 'AI-Powered Reporting',
+    build4Desc: 'Custom dashboards and reporting systems that give operators real-time visibility without manual data work.',
+
+    caseEyebrow: 'CASE: THERAFLOU',
+    caseTitle: 'We built a patient CRM for 13,000 physiotherapists in Mexico.',
+    caseBody: 'Physiotherapists in Mexico were managing patients on WhatsApp and paper — with no software built for their specific compliance requirements (NOM-004-SSA3-2012). We designed and built TheraFlou: a full patient CRM with AI appointment agents, structured clinical records, SOAP note documentation, and billing — purpose-built for private PT practice in Mexico.',
+    caseBullet1: 'NOM-004 compliant clinical records — built into the data model from day one',
+    caseBullet2: 'AI appointment agents — WhatsApp reminders, reschedules, waitlist management',
+    caseBullet3: 'Multi-therapist clinic management — from solo practice to 15-therapist centers',
+    caseLink: 'Learn more about TheraFlou →',
+
+    processTitle: 'How an infrastructure engagement works.',
+    step1Title: 'Industry Audit',
+    step1Desc: 'We study your vertical deeply: regulations, existing tools, workflow patterns, data requirements.',
+    step2Title: 'Architecture Design',
+    step2Desc: 'We design the full system — data model, compliance layer, AI integrations, access controls.',
+    step3Title: 'Build & Test',
+    step3Desc: 'We build on proven infrastructure (Next.js, Supabase, Vercel) with rigorous testing before any client touches it.',
+    step4Title: 'Deploy & Support',
+    step4Desc: 'We launch, train your team, and provide ongoing engineering support as the platform grows.',
+
+    ctaTitle: 'Building something for your industry?',
+    ctaSubtext: "Start with a conversation. We'll tell you whether you need infrastructure or agents — and what the build would actually involve.",
+    ctaButton: 'Talk to Us',
+  },
+
   // Contact Page
   contact: {
     heroTitle: "Let's Transform Your Business Together",
