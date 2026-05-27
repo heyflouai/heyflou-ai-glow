@@ -2,10 +2,11 @@ import { Link } from 'react-router-dom';
 import { SEOHead } from '@/components/ui/seo-head';
 import { PAGE_SEO, SERVICE_SCHEMA, getCanonicalUrl } from '@/lib/seo-config';
 import { useTranslation } from '@/i18n';
-import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
 import { TracingBeam } from '@/components/ui/tracing-beam';
 import { CursorSpotlight } from '@/components/ui/cursor-spotlight';
 import { GradientMovingButton } from '@/components/ui/gradient-moving-button';
+import { FlipWords } from '@/components/ui/flip-words';
+import { useRef, useState } from 'react';
 
 interface CardProps {
   eyebrow: string;
@@ -19,10 +20,34 @@ interface CardProps {
 }
 
 function ServiceCard({ eyebrow, title, description, whoLabel, who, cta, href, featured }: CardProps) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [pos, setPos] = useState({ x: -200, y: -200 });
+  const [opacity, setOpacity] = useState(0);
+
+  const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = cardRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    setPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+  };
+
   return (
     <div
-      className="group relative flex flex-col h-full rounded-2xl bg-white border border-[#E2E8F0] p-8 md:p-10 shadow-[0_1px_2px_rgba(15,23,41,0.04),0_8px_24px_rgba(15,23,41,0.04)] transition-all duration-200 hover:-translate-y-1 hover:border-[#1FA6C1] hover:shadow-[0_12px_32px_rgba(31,166,193,0.12)]"
+      ref={cardRef}
+      onMouseMove={onMove}
+      onMouseEnter={() => setOpacity(1)}
+      onMouseLeave={() => setOpacity(0)}
+      className="group relative flex flex-col h-full overflow-hidden rounded-2xl bg-white border border-[#E2E8F0] p-8 md:p-10 shadow-[0_1px_2px_rgba(15,23,41,0.04),0_8px_24px_rgba(15,23,41,0.04)] transition-all duration-200 hover:-translate-y-1 hover:border-[#1FA6C1] hover:shadow-[0_12px_32px_rgba(31,166,193,0.12)]"
     >
+      {/* Card spotlight */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 transition-opacity duration-300"
+        style={{
+          opacity,
+          background: `radial-gradient(420px circle at ${pos.x}px ${pos.y}px, rgba(31,166,193,0.18), rgba(161,91,241,0.10) 35%, transparent 70%)`,
+        }}
+      />
+      <div className="relative z-10 flex flex-col h-full">
       <span
         className="inline-flex self-start items-center px-3 py-1 text-[12px] font-semibold text-white rounded-full mb-5"
         style={{
@@ -67,6 +92,7 @@ function ServiceCard({ eyebrow, title, description, whoLabel, who, cta, href, fe
         >
           {cta} →
         </GradientMovingButton>
+      </div>
       </div>
     </div>
   );
@@ -122,12 +148,18 @@ export default function Services() {
         <section className="relative overflow-hidden pt-24 pb-12 md:pt-28 md:pb-16 lg:pt-32 lg:pb-20">
           <CursorSpotlight color="rgba(31,166,193,0.18)" size={520} />
           <div className="max-w-[1200px] mx-auto px-6 text-center">
-            <TextGenerateEffect
-              as="h1"
-              words={s.v2HeroTitle}
+            <h1
               className="text-[36px] md:text-[48px] lg:text-[56px] leading-[1.1] tracking-tight text-[#0F1729]"
               style={{ fontFamily: '"Plus Jakarta Sans", sans-serif', fontWeight: 800 }}
-            />
+            >
+              {s.v2HeroPrefix}{' '}
+              <FlipWords
+                words={[s.v2HeroFlip1, s.v2HeroFlip2, s.v2HeroFlip3]}
+                duration={2000}
+                className="!bg-none [-webkit-text-fill-color:initial]"
+              />{' '}
+              {s.v2HeroSuffix}
+            </h1>
             <p
               className="mt-6 text-[17px] md:text-[19px] leading-[1.55] text-[#2B3650] max-w-[680px] mx-auto"
               style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400 }}
