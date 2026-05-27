@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
-import { useId } from "react";
+import { useId, useMemo } from "react";
+import DottedMap from "dotted-map";
 import { cn } from "@/lib/utils";
 
 interface Point {
@@ -33,7 +34,7 @@ const project = (lat: number, lng: number) => ({
 export function WorldMap({
   points,
   arcs = [],
-  dotColor = "rgba(71, 85, 105, 0.55)",
+  dotColor = "#94A3B8",
   lineColor = "#A15BF1",
   pointColor = "#1FA6C1",
   labelColor = "#0F1729",
@@ -41,20 +42,16 @@ export function WorldMap({
 }: WorldMapProps) {
   const id = useId();
 
-  // Generate a dot grid that loosely outlines continents using a noise mask.
-  const cols = 80;
-  const rows = 40;
-  const dots: { x: number; y: number }[] = [];
-  for (let r = 0; r < rows; r++) {
-    for (let c = 0; c < cols; c++) {
-      const x = (c + 0.5) * (1000 / cols);
-      const y = (r + 0.5) * (500 / rows);
-      // Deterministic pseudo-random visibility to mimic land masses.
-      const seed = Math.sin(c * 12.9898 + r * 78.233) * 43758.5453;
-      const n = seed - Math.floor(seed);
-      if (n > 0.55) dots.push({ x, y });
-    }
-  }
+  // Render a real dotted world map (continents) as an SVG background.
+  const mapSvg = useMemo(() => {
+    const map = new DottedMap({ height: 60, grid: "diagonal" });
+    return map.getSVG({
+      radius: 0.22,
+      color: dotColor,
+      shape: "circle",
+      backgroundColor: "transparent",
+    });
+  }, [dotColor]);
 
   const arcPath = (a: Point, b: Point) => {
     const pa = project(a.lat, a.lng);
@@ -66,17 +63,21 @@ export function WorldMap({
 
   return (
     <div className={cn("w-full", className)}>
-      <svg viewBox="0 0 1000 500" className="w-full h-auto">
+      <div className="relative w-full">
+        <img
+          src={`data:image/svg+xml;utf8,${encodeURIComponent(mapSvg)}`}
+          alt=""
+          aria-hidden
+          className="w-full h-auto pointer-events-none select-none [mask-image:linear-gradient(to_bottom,transparent,black_15%,black_85%,transparent)]"
+          draggable={false}
+        />
+        <svg viewBox="0 0 1000 500" className="absolute inset-0 w-full h-full">
         <defs>
           <linearGradient id={`${id}-line`} x1="0" y1="0" x2="1" y2="0">
             <stop offset="0%" stopColor="#1FA6C1" />
             <stop offset="100%" stopColor="#A15BF1" />
           </linearGradient>
         </defs>
-
-        {dots.map((d, i) => (
-          <circle key={i} cx={d.x} cy={d.y} r={2.2} fill={dotColor} />
-        ))}
 
         {arcs.map(([i, j], k) => {
           const a = points[i];
@@ -130,7 +131,8 @@ export function WorldMap({
             </g>
           );
         })}
-      </svg>
+        </svg>
+      </div>
     </div>
   );
 }

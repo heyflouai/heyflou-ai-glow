@@ -30,7 +30,7 @@ export default function About() {
   ];
 
   const team = [
-    { name: a.team1Name, role: a.team1Role, bio: a.team1Bio, initials: 'SS' },
+    { name: a.team1Name, role: a.team1Role, bio: a.team1Bio, initials: 'SN' },
     { name: a.team2Name, role: a.team2Role, bio: a.team2Bio, initials: 'SZ' },
   ];
 
@@ -257,61 +257,83 @@ export default function About() {
 
         {/* THERAFLOU — 3D card */}
         <section className="py-24 bg-[#F8FAFC]">
-          <div className="max-w-[1100px] mx-auto px-6 flex justify-center">
-            <CardContainer containerClassName="py-0">
-              <CardBody className="bg-[#0F1729] relative group/card border border-white/10 w-[90vw] sm:w-[34rem] h-auto rounded-2xl p-8 md:p-10">
-                <CardItem
-                  translateZ={20}
-                  className="text-[12px] uppercase"
-                  style={{ fontFamily: INTER, fontWeight: 600, color: '#5CB3E8', letterSpacing: '1.5px' }}
-                >
-                  {a.theraflouEyebrow}
-                </CardItem>
-                <CardItem
-                  translateZ={50}
-                  className="mt-3 text-[30px] md:text-[36px] text-white"
-                  style={{ fontFamily: JAKARTA, fontWeight: 800 }}
-                >
-                  {a.theraflouTitle}
-                </CardItem>
-                <CardItem
-                  translateZ={40}
-                  className="mt-2 text-[16px] text-[#B8C5D6]"
-                  style={{ fontFamily: INTER, fontWeight: 600 }}
-                >
-                  {a.theraflouTagline}
-                </CardItem>
-                <CardItem translateZ={60} className="mt-6 flex justify-center">
-                  <img
-                    src={theraflouMark}
-                    alt="TheraFlou"
-                    className="h-40 w-auto drop-shadow-[0_0_25px_rgba(161,91,241,0.4)]"
-                  />
-                </CardItem>
-                <CardItem
-                  translateZ={30}
-                  className="mt-6 text-[15px] leading-[1.65] text-[#94A3B8]"
-                  style={{ fontFamily: INTER, fontWeight: 400 }}
-                >
-                  {a.theraflouDesc}
-                </CardItem>
-                <CardItem translateZ={40} as="div" className="mt-8">
-                  <Link
-                    to="/services/agents#theraflou"
-                    className="inline-flex items-center gap-2 text-[15px] text-[#5CB3E8]"
-                    style={{ fontFamily: INTER, fontWeight: 600 }}
-                  >
-                    {a.theraflouCta} <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </CardItem>
+          <div className="max-w-[1100px] mx-auto px-6">
+            <CardContainer containerClassName="py-0 w-full" className="w-full">
+              <CardBody className="relative group/card w-full h-auto rounded-3xl overflow-hidden border border-white/10 bg-[#0F1729]">
+                <div
+                  className="absolute inset-0 opacity-70"
+                  style={{
+                    background:
+                      'radial-gradient(circle at 20% 30%, rgba(31,166,193,0.35), transparent 55%), radial-gradient(circle at 80% 70%, rgba(161,91,241,0.35), transparent 55%)',
+                  }}
+                />
+                <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 p-8 md:p-12 items-center">
+                  {/* Left: visual */}
+                  <CardItem translateZ={60} className="w-full flex justify-center">
+                    <div className="relative w-full max-w-[360px] aspect-square rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-center">
+                      <div
+                        className="absolute -inset-2 rounded-3xl blur-2xl opacity-60"
+                        style={{ background: GRADIENT }}
+                      />
+                      <img
+                        src={theraflouMark}
+                        alt="TheraFlou"
+                        className="relative h-44 w-auto drop-shadow-[0_0_30px_rgba(161,91,241,0.55)]"
+                      />
+                    </div>
+                  </CardItem>
+
+                  {/* Right: copy */}
+                  <div>
+                    <CardItem
+                      translateZ={20}
+                      className="text-[12px] uppercase"
+                      style={{ fontFamily: INTER, fontWeight: 600, color: '#5CB3E8', letterSpacing: '1.5px' }}
+                    >
+                      {a.theraflouEyebrow}
+                    </CardItem>
+                    <CardItem
+                      translateZ={50}
+                      as="h3"
+                      className="mt-3 text-[28px] md:text-[40px] leading-[1.1] text-white"
+                      style={{ fontFamily: JAKARTA, fontWeight: 800 }}
+                    >
+                      {a.theraflouTitle}
+                    </CardItem>
+                    <CardItem
+                      translateZ={40}
+                      className="mt-3 text-[16px] md:text-[17px] text-[#B8C5D6]"
+                      style={{ fontFamily: INTER, fontWeight: 600 }}
+                    >
+                      {a.theraflouTagline}
+                    </CardItem>
+                    <CardItem
+                      translateZ={30}
+                      as="p"
+                      className="mt-5 text-[15px] leading-[1.7] text-[#94A3B8]"
+                      style={{ fontFamily: INTER, fontWeight: 400 }}
+                    >
+                      {a.theraflouDesc}
+                    </CardItem>
+                    <CardItem translateZ={40} as="div" className="mt-8">
+                      <Link
+                        to="/services/agents#theraflou"
+                        className="inline-flex items-center gap-2 text-[15px] text-[#5CB3E8] hover:text-white transition-colors"
+                        style={{ fontFamily: INTER, fontWeight: 600 }}
+                      >
+                        {a.theraflouCta} <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </CardItem>
+                  </div>
+                </div>
               </CardBody>
             </CardContainer>
           </div>
         </section>
 
         {/* CTA — background beams collision */}
-        <BackgroundBeamsWithCollision className="bg-[#0F1729] min-h-[60vh]">
-          <div className="relative z-10 max-w-[900px] mx-auto px-6 py-24 text-center">
+        <BackgroundBeamsWithCollision className="bg-[#0F1729] min-h-0 h-auto">
+          <div className="relative z-10 max-w-[900px] mx-auto px-6 py-20 md:py-24 text-center">
             <h2
               className="text-[32px] md:text-[48px] leading-[1.1] text-white"
               style={{ fontFamily: JAKARTA, fontWeight: 800 }}

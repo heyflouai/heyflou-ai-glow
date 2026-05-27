@@ -896,7 +896,7 @@ export const en = {
     mapMexico: 'Mexico City',
     teamTitle: 'The team behind HeyFlou',
     teamSubtitle: 'Two founders, complementary skills, one obsession: AI that actually ships and actually works.',
-    team1Name: 'Samy Saad',
+    team1Name: 'Samy Nakach',
     team1Role: 'Co-Founder · CEO & Product',
     team1Bio: 'Leads product strategy, client engagements and the consulting practice. Spends his days translating messy business problems into AI systems business owners actually want to use.',
     team2Name: 'Salomon Zayat',

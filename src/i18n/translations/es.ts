@@ -898,7 +898,7 @@ export const es: TranslationKeys = {
     mapMexico: 'Ciudad de México',
     teamTitle: 'El equipo detrás de HeyFlou',
     teamSubtitle: 'Dos fundadores, habilidades complementarias, una obsesión: IA que de verdad sale a producción y de verdad funciona.',
-    team1Name: 'Samy Saad',
+    team1Name: 'Samy Nakach',
     team1Role: 'Co-Fundador · CEO & Producto',
     team1Bio: 'Lidera estrategia de producto, relaciones con clientes y la práctica de consultoría. Pasa el día traduciendo problemas de negocio en sistemas de IA que los dueños realmente quieren usar.',
     team2Name: 'Salomon Zayat',
