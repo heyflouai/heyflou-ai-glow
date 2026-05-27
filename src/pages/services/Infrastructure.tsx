@@ -7,7 +7,9 @@ import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
 import { TracingBeam } from '@/components/ui/tracing-beam';
 import { CursorSpotlight } from '@/components/ui/cursor-spotlight';
 import { GradientMovingButton } from '@/components/ui/gradient-moving-button';
-import { Spotlight } from '@/components/ui/spotlight';
+import { AuroraBackground } from '@/components/ui/aurora-background';
+import { WobbleCard } from '@/components/ui/wobble-card';
+import { PinContainer } from '@/components/ui/3d-pin';
 
 const JAKARTA = '"Plus Jakarta Sans", sans-serif';
 const INTER = 'Inter, sans-serif';
@@ -92,7 +94,11 @@ export default function Infrastructure() {
 
             <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-12">
               {builds.map(({ icon: Icon, title, desc }) => (
-                <div key={title} className="flex flex-col">
+                <WobbleCard
+                  key={title}
+                  containerClassName="bg-white border border-[#E2E8F0] hover:border-[#1FA6C1]/40 hover:shadow-xl hover:shadow-[#1FA6C1]/5 transition-all"
+                  className="flex flex-col p-7"
+                >
                   <div
                     className="flex h-10 w-10 items-center justify-center rounded-md"
                     style={{ border: '2px solid #1FA6C1' }}
@@ -111,17 +117,16 @@ export default function Infrastructure() {
                   >
                     {desc}
                   </p>
-                </div>
+                </WobbleCard>
               ))}
             </div>
           </div>
         </section>
 
         {/* THERAFLOU CASE */}
-        <section className="relative overflow-hidden py-20 bg-[#0F1729]">
-          <Spotlight className="-top-40 left-0 md:-top-20 md:left-60" fill="white" />
-          <CursorSpotlight color="rgba(161,91,241,0.22)" size={520} />
-          <div className="max-w-[800px] mx-auto px-6">
+        <AuroraBackground className="py-20 bg-[#0F1729]">
+          <div className="relative max-w-[1100px] mx-auto px-6 grid md:grid-cols-[1fr_auto] gap-12 items-center z-10">
+          <div>
             <div
               className="text-[12px] uppercase"
               style={{ fontFamily: INTER, fontWeight: 600, color: '#1FA6C1', letterSpacing: '2px' }}
@@ -164,7 +169,21 @@ export default function Infrastructure() {
               </Link>
             </div>
           </div>
-        </section>
+          <div className="hidden md:flex items-center justify-center">
+            <PinContainer title="TheraFlou — Case Study">
+              <div className="flex flex-col p-4 tracking-tight text-slate-100/90 w-[18rem] h-[18rem]">
+                <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base" style={{ fontFamily: JAKARTA }}>
+                  TheraFlou
+                </h3>
+                <div className="text-xs !m-0 !p-0 font-normal" style={{ fontFamily: INTER }}>
+                  <span className="text-slate-300">{s.caseEyebrow}</span>
+                </div>
+                <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-[#1FA6C1] via-[#5CB3E8] to-[#A15BF1]" />
+              </div>
+            </PinContainer>
+          </div>
+          </div>
+        </AuroraBackground>
 
         {/* HOW WE WORK */}
         <section className="py-20 bg-[#F8FAFC]">
