@@ -9,9 +9,9 @@ import { StickyScroll } from '@/components/ui/sticky-scroll-reveal';
 import { WorldMap } from '@/components/ui/world-map';
 import { Sparkles } from '@/components/ui/sparkles';
 import { HoverEffect } from '@/components/ui/card-hover-effect';
-import { CardContainer, CardBody, CardItem } from '@/components/ui/3d-card';
 import { BackgroundBeamsWithCollision } from '@/components/ui/background-beams-collision';
 import { GradientMovingButton } from '@/components/ui/gradient-moving-button';
+import { ShimmerButton } from '@/components/ui/shimmer-button';
 import theraflouMark from '@/assets/theraflou-mark.svg';
 
 const JAKARTA = '"Plus Jakarta Sans", sans-serif';
@@ -77,6 +77,20 @@ export default function About() {
             >
               {a.heroSubtitle}
             </p>
+
+            {/* Hero CTAs */}
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <GradientMovingButton to="/contact" className="text-[17px] px-8 py-4">
+                {a.ctaButton} <ArrowRight className="h-5 w-5" />
+              </GradientMovingButton>
+              <Link
+                to="/services"
+                className="inline-flex items-center gap-2 px-7 py-4 rounded-full text-[16px] bg-white/70 backdrop-blur-sm border border-[#1FA6C1]/30 text-[#0F1729] hover:bg-white hover:border-[#1FA6C1] transition-all"
+                style={{ fontFamily: INTER, fontWeight: 600 }}
+              >
+                {a.servicesTitle ?? 'See our services'} <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
 
             <div className="mt-12 grid grid-cols-3 gap-4 md:gap-8 max-w-[720px] mx-auto">
               {stats.slice(0, 3).map((s) => (
