@@ -8,6 +8,9 @@ import { TracingBeam } from '@/components/ui/tracing-beam';
 import { CursorSpotlight } from '@/components/ui/cursor-spotlight';
 import { GradientMovingButton } from '@/components/ui/gradient-moving-button';
 import { Spotlight } from '@/components/ui/spotlight';
+import { StickyScroll } from '@/components/ui/sticky-scroll-reveal';
+import { Timeline } from '@/components/ui/timeline';
+import { GlowingEffect } from '@/components/ui/glowing-effect';
 
 const JAKARTA = '"Plus Jakarta Sans", sans-serif';
 const INTER = 'Inter, sans-serif';
@@ -100,37 +103,14 @@ export default function Consulting() {
               {s.getTitle}
             </h2>
 
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {deliverables.map(({ icon: Icon, title, desc }, i) => {
-                // Center the last two cards on desktop (3-top + 2-centered-bottom)
-                const isFourth = i === 3;
-                const extra = isFourth ? 'lg:col-start-2' : '';
-                return (
-                  <div
-                    key={title}
-                    className={`rounded-xl border border-[#E2E8F0] bg-white p-7 transition-all duration-200 hover:-translate-y-1 hover:border-[#1FA6C1] hover:shadow-[0_12px_32px_rgba(31,166,193,0.10)] ${extra}`}
-                  >
-                    <div
-                      className="flex h-10 w-10 items-center justify-center rounded-full"
-                      style={{ background: GRADIENT }}
-                    >
-                      <Icon className="h-5 w-5 text-white" />
-                    </div>
-                    <h3
-                      className="mt-5 text-[18px] text-[#0F1729]"
-                      style={{ fontFamily: JAKARTA, fontWeight: 700 }}
-                    >
-                      {title}
-                    </h3>
-                    <p
-                      className="mt-2 text-[15px] leading-[1.6] text-[#2B3650]"
-                      style={{ fontFamily: INTER, fontWeight: 400 }}
-                    >
-                      {desc}
-                    </p>
-                  </div>
-                );
-              })}
+            <div className="mt-8">
+              <StickyScroll
+                content={deliverables.map(({ icon: Icon, title, desc }) => ({
+                  title,
+                  description: desc,
+                  icon: <Icon className="h-16 w-16 text-white" />,
+                }))}
+              />
             </div>
           </div>
         </section>
@@ -147,34 +127,21 @@ export default function Consulting() {
               {s.formatTitle}
             </h2>
 
-            <div className="relative mt-12 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
-              <div
-                className="hidden md:block absolute top-7 left-[16.67%] right-[16.67%] h-px"
-                style={{ backgroundColor: 'rgba(184,197,214,0.2)' }}
-                aria-hidden
+            <div className="mt-6">
+              <Timeline
+                titleClassName="!text-white"
+                data={steps.map((step) => ({
+                  title: step.title,
+                  content: (
+                    <p
+                      className="text-[16px] leading-[1.7] text-[#B8C5D6] max-w-xl"
+                      style={{ fontFamily: INTER, fontWeight: 400 }}
+                    >
+                      {step.desc}
+                    </p>
+                  ),
+                }))}
               />
-              {steps.map((step, i) => (
-                <div key={step.title} className="relative flex flex-col items-center text-center">
-                  <div
-                    className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full text-white text-[20px]"
-                    style={{ background: GRADIENT, fontFamily: JAKARTA, fontWeight: 700 }}
-                  >
-                    {i + 1}
-                  </div>
-                  <h3
-                    className="mt-5 text-[18px] text-white"
-                    style={{ fontFamily: JAKARTA, fontWeight: 700 }}
-                  >
-                    {step.title}
-                  </h3>
-                  <p
-                    className="mt-2 text-[15px] leading-[1.6] text-[#B8C5D6]"
-                    style={{ fontFamily: INTER, fontWeight: 400 }}
-                  >
-                    {step.desc}
-                  </p>
-                </div>
-              ))}
             </div>
 
             <div
@@ -211,16 +178,24 @@ export default function Consulting() {
               {paths.map((p) => (
                 <div
                   key={p.label}
-                  className="rounded-xl border border-[#E2E8F0] bg-white p-7 text-center transition-all duration-200 hover:-translate-y-1 hover:border-[#1FA6C1] hover:shadow-[0_12px_32px_rgba(31,166,193,0.10)]"
+                  className="relative rounded-xl border border-[#E2E8F0] bg-white p-7 text-center transition-all duration-200 hover:-translate-y-1"
                 >
+                  <GlowingEffect
+                    spread={40}
+                    glow
+                    disabled={false}
+                    proximity={64}
+                    inactiveZone={0.01}
+                    borderWidth={2}
+                  />
                   <div
-                    className="text-[13px] uppercase"
+                    className="relative text-[13px] uppercase"
                     style={{ fontFamily: INTER, fontWeight: 600, color: '#1FA6C1', letterSpacing: '1.5px' }}
                   >
                     {p.label}
                   </div>
                   <h3
-                    className="mt-3 text-[17px] leading-[1.4] text-[#0F1729]"
+                    className="relative mt-3 text-[17px] leading-[1.4] text-[#0F1729]"
                     style={{ fontFamily: JAKARTA, fontWeight: 700 }}
                   >
                     {p.title}
