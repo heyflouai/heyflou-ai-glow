@@ -553,7 +553,7 @@ export const es: TranslationKeys = {
     agent5Desc: 'Captura la información del cliente una vez y la sincroniza con todos los sistemas. Sin doble captura, sin registros desactualizados.',
     agent6Name: 'Agente de Reportes',
     agent6Desc: 'Entrega dashboards con reservas, ingresos, no-shows y tendencias. Siempre actualizados, nunca compilados a mano.',
-    gridFooter: '¿No ves tu caso de uso? Diseñamos agentes a la medida para tus flujos específicos.',
+    gridFooter: '...y mucho más. Diseñamos agentes a la medida para tus flujos específicos.',
 
     processTitle: 'De la primera llamada a agentes en vivo en 30 días.',
     step1Title: 'Descubrimiento',
