@@ -1,4 +1,5 @@
 import { Database, ShieldCheck, CalendarClock, BarChart3, ArrowRight } from 'lucide-react';
+import { AuroraBackground } from '@/components/ui/aurora-background';
 import { SEOHead } from '@/components/ui/seo-head';
 import { getCanonicalUrl } from '@/lib/seo-config';
 import { useTranslation } from '@/i18n';
@@ -121,8 +122,8 @@ export default function Infrastructure() {
         </section>
 
         {/* BUILT BY US — CASE CAROUSEL */}
-        <section id="built-by-us" style={{ background: '#0F1729', padding: '96px 0' }}>
-          <div className="max-w-[1200px] mx-auto px-6">
+        <AuroraBackground id="built-by-us" className="bg-[#0F1729]" style={{ padding: '96px 0' }}>
+          <div className="relative z-10 max-w-[1200px] mx-auto px-6 w-full">
             <div
               className="text-center uppercase"
               style={{ fontFamily: INTER, fontWeight: 600, color: '#1FA6C1', fontSize: 13, letterSpacing: '2px' }}
@@ -166,7 +167,7 @@ export default function Infrastructure() {
               </button>
             </div>
           </div>
-        </section>
+        </AuroraBackground>
 
         {/* HOW WE WORK */}
         <section id="how-we-work" className="py-20 bg-[#F8FAFC]">
