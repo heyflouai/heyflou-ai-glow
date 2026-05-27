@@ -1720,7 +1720,7 @@ export const en = {
     
     // Industry Card 6 - Custom AI Agent
     industry6Title: 'Custom AI Agent',
-    industry6Hook: 'Your business doesn't fit a template. Neither does your AI agent.',
+    industry6Hook: "Your business doesn't fit a template. Neither does your AI agent.",
     industry6Feature1: 'Discovery of your specific bottlenecks',
     industry6Feature2: 'Custom workflow and agent design',
     industry6Feature3: 'Integration with your existing tools',
