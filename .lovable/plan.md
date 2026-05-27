@@ -1,54 +1,41 @@
-## Rebuild `/services` Page
+## Build `/services/agents` page
 
-Replace the current `/services` page entirely with a focused 3-card layout presenting the three engagement models: AI Agents, AI Infrastructure, AI Consulting.
-
-### Scope
-
-- Remove old sections (industry cards, process steps, "Not sure" CTA, Spotlight hero) from `src/pages/Services.tsx`.
-- Build a new minimal page: Hero → 3 Service Cards → Trust Strip.
-- Add EN + ES translations under a new `servicesPageV2` namespace (keep old keys untouched for now in case other pages use them).
-- No backend, no routing changes beyond linking to existing `/services/agents`, `/services/infrastructure`, `/services/consulting` (note: only `/services/consulting` and `/services/custom` exist today — see Open Questions).
-
-### New page structure
-
-```
-<main>
-  Hero
-    H1: "Three ways we integrate AI into your business."
-    Sub: "Whether you need a team of AI agents..."
-  
-  ServiceCards (3-col desktop, 1-col mobile, gap 24px)
-    Card 1 — AI Agents       → /services/agents
-    Card 2 — AI Infrastructure → /services/infrastructure
-    Card 3 — AI Consulting    → /services/consulting
-  
-  TrustStrip (full-width #F8FAFC band)
-</main>
-```
-
-### Card anatomy
-
-- White bg, 1px border `#E2E8F0`, radius 16px, subtle shadow, padding 40px.
-- Hover: border → `#1FA6C1`, `translateY(-4px)`, shadow lift, transition 200ms.
-- Gradient eyebrow pill (`linear-gradient(135deg,#1FA6C1,#A15BF1)`).
-- Headline (Plus Jakarta 700, 24px) → Description (Inter 16px) → "WHO IT'S FOR" label + text → full-width gradient CTA button.
+Create a new route that matches Card 1 ("AI Agents") on the /services hub, using the exact copy, colors, and typography from your spec.
 
 ### Files
 
-- **Edit** `src/pages/Services.tsx` — strip current sections, render new Hero + Cards + TrustStrip inline (or split into small subcomponents in the same file).
-- **Edit** `src/i18n/translations/en.ts` and `es.ts` — add new keys for hero, 3 cards (eyebrow, headline, desc, whoLabel, whoText, cta), trust strip.
-- **Keep** existing `src/components/services/*` files untouched (still used elsewhere or harmless dead code — flag for cleanup if desired).
+- **Create** `src/pages/services/Agents.tsx` — single self-contained page with 6 sections rendered inline.
+- **Edit** `src/App.tsx` — register `/services/agents` route.
+- **Edit** `src/i18n/translations/en.ts` and `src/i18n/translations/es.ts` — add `servicesAgents` keys for every headline, body, agent card, step, stat, and CTA (per project i18n Core rule).
 
-### Design tokens
+### Page structure
 
-- Fonts already loaded (Plus Jakarta Sans + Inter via existing `font-display` / default).
-- Hardcoded hex values per spec (`#0F1729`, `#2B3650`, `#1FA6C1`, `#A15BF1`, `#F8FAFC`, `#E2E8F0`) — used inline for this page only since the request specifies exact colors. Will use Tailwind arbitrary values (e.g. `text-[#0F1729]`).
-- Section vertical padding: `py-20 lg:py-[100px]`. Page container `max-w-[1200px]`.
+```text
+<main>
+  Hero            (white bg, centered, max-w 620px sub)
+  Problem         (#0F1729 bg, white text, 57% gradient stat)
+  Agent Grid      (white bg, 6 cards, 3/2/1 cols)
+  How We Work     (#F8FAFC bg, 4 numbered steps + callout)
+  Results         (white bg, 3 stat cards)
+  CTA             (teal→purple gradient bg, white button)
+</main>
+```
 
-### Open Questions
+### Design implementation
 
-1. **Card CTAs link to `/services/agents` and `/services/infrastructure`** — these routes don't exist today (only `/services/consulting`, `/services/custom`, `/services/healthcare`, etc.). Should I:
-   - (a) link them anyway (will 404), 
-   - (b) point Card 1 → `/services/custom` and Card 2 → a new placeholder, or
-   - (c) leave them as `#` until those pages exist?
-2. Keep the page i18n-driven (EN/ES) per project Core rule — confirmed yes unless you say otherwise.
+- Inline hex values (`#0F1729`, `#2B3650`, `#1FA6C1`, `#A15BF1`, `#B8C5D6`, `#F8FAFC`) and inline `fontFamily` for Plus Jakarta Sans (headlines) / Inter (body), matching the pattern already used in the rebuilt `/services` page.
+- Section wrapper: `py-20` (80px) on all sections, `max-w-[1200px] mx-auto px-6` container.
+- Agent card icons: 40px circle with `linear-gradient(135deg,#1FA6C1,#A15BF1)`, white Lucide icon inside. Icon mapping: Reply→MessageSquare, Scheduling→Calendar, Follow-Up→Send, Billing→Receipt, Data→Database, Reporting→BarChart3.
+- Process step connector: pseudo-line between numbered circles on `md+` (absolute positioned `h-px bg-[#E2E8F0]`).
+- Gradient stat numbers: `bg-clip-text text-transparent` with the teal→purple gradient.
+- CTA button links to `/contact`. "Check availability" link inside callout also points to `/contact`.
+
+### SEO
+
+- `SEOHead` with title `"AI Agents for Your Business | HeyFlou"`, canonical via `getCanonicalUrl('/services/agents')`.
+
+### Out of scope
+
+- No changes to the existing `/services` hub or other sector pages.
+- No new shared components — page is self-contained to keep the spec exact and avoid coupling.
+- No backend, no form (CTA links to existing `/contact`).

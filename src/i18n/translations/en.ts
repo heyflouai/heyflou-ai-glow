@@ -511,6 +511,61 @@ export const en = {
     v2TrustStrip: 'Backed by AWS · HIPAA-compliant design · Results in 30–90 days · 3 new projects per month',
   },
 
+  // Services / Agents Page
+  servicesAgents: {
+    heroTitle: 'Your AI Team. Running 24/7.',
+    heroSubtitle: "We deploy a team of AI agents into your business — each one trained on a specific job. Together they handle the operational work that's slowing your team down.",
+
+    problemTitle: "Your team is spending most of their day on work that shouldn't require a human.",
+    problemBody: 'The average employee spends 57% of their workday on communication and coordination — not the work that actually grows your business. Responding to clients, confirming appointments, chasing payments, entering data, pulling reports. All of it is necessary. None of it requires human judgment.',
+    statPercent: '57%',
+    statLabel: 'of the workday',
+    statSubLabel: '— communication, not creation.',
+    statSource: 'Microsoft Work Trend Index 2023',
+
+    gridTitle: 'Each agent has one job. It does it perfectly.',
+    agent1Name: 'Reply Agent',
+    agent1Desc: 'Handles all incoming client messages. Responds instantly, qualifies intent, escalates when a human is needed.',
+    agent2Name: 'Scheduling Agent',
+    agent2Desc: 'Manages bookings, confirmations, reschedules, and reminders across your calendar. No back-and-forth.',
+    agent3Name: 'Follow-Up Agent',
+    agent3Desc: 'Sends post-session check-ins, rebooking prompts, and nurture messages at the right time — automatically.',
+    agent4Name: 'Billing Agent',
+    agent4Desc: 'Issues invoices, sends payment reminders, logs receipts. Cash flow runs without anyone chasing it.',
+    agent5Name: 'Data Agent',
+    agent5Desc: 'Captures client information once, syncs it to every system. No double-entry, no outdated records.',
+    agent6Name: 'Reporting Agent',
+    agent6Desc: 'Delivers dashboards showing bookings, revenue, no-shows, and trends. Always current, never compiled manually.',
+    gridFooter: "Don't see your use case? We design custom agents for your specific workflows.",
+
+    processTitle: 'From first call to live agents in 30 days.',
+    step1Title: 'Discovery',
+    step1Desc: 'We spend a week mapping your current processes, identifying the highest-cost bottlenecks, and defining exactly which agents to deploy first.',
+    step2Title: 'Design',
+    step2Desc: 'We architect the agent system — which tools they connect to, what decisions they make autonomously, what they escalate to your team.',
+    step3Title: 'Deploy',
+    step3Desc: 'We build, test, and go live. Your team gets trained. We handle the complexity.',
+    step4Title: 'Run & Improve',
+    step4Desc: 'Agents run continuously. We monitor, optimize, and expand scope as results come in.',
+    calloutText: 'We take on 3 new agent projects per month.',
+    calloutLink: 'Check availability',
+
+    resultsTitle: 'What changes when agents are running.',
+    result1Stat: '90%',
+    result1Label: 'of users say AI saves them significant time weekly',
+    result1Source: 'Microsoft 2024',
+    result2Stat: '48%',
+    result2Label: 'of SMBs saw measurable improvement in customer experience after AI deployment',
+    result2Source: 'Salesforce 2024',
+    result3Stat: '12+',
+    result3Label: 'hours recovered per employee per month on average',
+    result3Source: '',
+
+    ctaTitle: 'Ready to see which agents your business needs?',
+    ctaSubtext: "We start every engagement with a free audit — 30 minutes, no commitment. You'll leave knowing exactly what AI can do for your operations.",
+    ctaButton: 'Book Your Free Audit',
+  },
+
   // Contact Page
   contact: {
     heroTitle: "Let's Transform Your Business Together",
