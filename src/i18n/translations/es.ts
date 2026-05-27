@@ -1810,7 +1810,7 @@ export const es: TranslationKeys = {
     theraflouFeature1: 'Agente de citas con IA — gestiona confirmaciones, reagendamientos y recordatorios por WhatsApp automáticamente',
     theraflouFeature2: 'Registros clínicos y notas SOAP — expedientes estructurados gestionados por IA, no en papel',
     theraflouFeature3: 'Seguimiento de sesiones y facturación — historial del paciente, facturas y seguimientos gestionados por IA, no por personal',
-    theraflouProof: 'Un problema. Una solución. Construido para más de 13,000 fisioterapeutas en México.',
+    theraflouProof: 'Un problema. Una solución. Construido para más de 15,000 fisioterapeutas en México.',
     theraflouCta: 'Conoce más sobre TheraFlou',
   },
 };
