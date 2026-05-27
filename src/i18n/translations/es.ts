@@ -599,6 +599,34 @@ export const es: TranslationKeys = {
     caseBullet3: 'Gestión de clínicas multi-terapeuta — desde práctica individual hasta centros de 15 terapeutas',
     caseLink: 'Conoce más sobre TheraFlou →',
 
+    caseCarousel: {
+      eyebrow: 'CONSTRUIDO POR NOSOTROS',
+      headline: 'Infraestructura que hemos lanzado.',
+      cards: {
+        theraflou: {
+          eyebrow: 'SALUD · MÉXICO',
+          title: 'Un CRM de pacientes para 13,000 fisioterapeutas.',
+          body: 'Los fisioterapeutas en México gestionaban pacientes por WhatsApp y papel. Construimos TheraFlou — un CRM completo de pacientes con agentes de IA, expediente clínico con cumplimiento NOM-004 y facturación — hecho a la medida para la práctica privada de fisioterapia.',
+          pill1: 'Cumple NOM-004',
+          pill2: 'Agentes IA en WhatsApp',
+          pill3: 'Listo para multi-clínica',
+          link: 'Conoce más sobre TheraFlou →',
+        },
+        directed: {
+          eyebrow: 'OPERACIONES MULTI-LÍNEA · ENTERPRISE',
+          title: 'AgenticOS: un CEO, 5 empresas, cero fricción operativa.',
+          body: 'Desplegamos HeyFlou AgenticOS en Directed Empresas — una infraestructura de agentes a medida que automatiza la capa operativa repetitiva de las 5 sub-empresas, liberando al liderazgo para enfocarse en estrategia y escala.',
+          pill1: '20+ hrs/semana recuperadas',
+          pill2: '5 empresas unificadas',
+          pill3: 'Escala sin contratar',
+          quote: 'IA de nivel enterprise, accesible y práctica para una operación multi-línea como la nuestra.',
+          attribution: '— Mateo, CEO',
+        },
+      },
+      belowText: 'Todo proyecto de infraestructura empieza por entender primero tu industria.',
+      belowCta: 'Ver cómo funciona un proyecto de infraestructura →',
+    },
+
     processTitle: 'Cómo funciona un proyecto de infraestructura.',
     step1Title: 'Auditoría de Industria',
     step1Desc: 'Estudiamos tu vertical a profundidad: regulaciones, herramientas existentes, patrones de flujo de trabajo, requisitos de datos.',
