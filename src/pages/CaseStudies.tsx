@@ -327,6 +327,7 @@ export default function CaseStudies() {
 
             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
+                ...customSolutionCards,
                 {
                   accent: '#1FA6C1',
                   typeBadge: t.caseStudies.compactCard1TypeBadge,
@@ -374,7 +375,7 @@ export default function CaseStudies() {
                     }}
                   >
                     {/* Top row */}
-                    <div className="flex items-center justify-between gap-3">
+                    <div className="flex items-center gap-3">
                       <span
                         className="uppercase"
                         style={{
@@ -394,19 +395,6 @@ export default function CaseStudies() {
                         }}
                       >
                         {card.typeBadge}
-                      </span>
-                      <span
-                        style={{
-                          fontFamily: INTER,
-                          fontWeight: 400,
-                          fontSize: 11,
-                          color: '#2B3650',
-                          background: '#F1F5F9',
-                          borderRadius: 100,
-                          padding: '4px 12px',
-                        }}
-                      >
-                        {t.caseStudies.compactAnonymousBadge}
                       </span>
                     </div>
 
