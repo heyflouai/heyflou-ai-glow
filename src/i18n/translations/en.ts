@@ -366,7 +366,7 @@ export const en = {
 
     // Legacy keys (keeping for backward compatibility)
     heroCta: 'Book a Free Consultation',
-    learnMore: 'Learn More',
+    learnMore: 'Book a strategy call about',
 
     // Travel Agency Section
     travelSectionTitle: 'Travel Agency Automation',

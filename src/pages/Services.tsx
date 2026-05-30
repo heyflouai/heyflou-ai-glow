@@ -57,12 +57,12 @@ function ServiceCard({ eyebrow, title, description, whoLabel, who, cta, href, fe
         {eyebrow}
       </span>
 
-      <h3
+      <h2
         className="text-[24px] leading-[1.25] font-bold text-[#0F1729] mb-4"
         style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
       >
         {title}
-      </h3>
+      </h2>
 
       <p
         className="text-[16px] leading-[1.6] text-[#2B3650] mb-8"

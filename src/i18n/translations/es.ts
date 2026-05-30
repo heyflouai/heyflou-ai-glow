@@ -368,7 +368,7 @@ export const es: TranslationKeys = {
 
     // Legacy keys (keeping for backward compatibility)
     heroCta: 'Reservar Consulta Gratis',
-    learnMore: 'Saber Más',
+    learnMore: 'Reservar llamada sobre',
 
     // Travel Agency Section
     travelSectionTitle: 'Automatización para Agencias de Viajes',
