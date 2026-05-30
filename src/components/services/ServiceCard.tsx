@@ -53,13 +53,24 @@ export function ServiceCard({ service, index = 0 }: ServiceCardProps) {
             ))}
           </ul>
 
-          <div className="pt-2">
-            <GradientButton variant="secondary" size="sm" className="w-full" asChild>
-              <a href="https://calendly.com/heyflou-ai/30min" target="_blank" rel="noopener noreferrer">
-                {servicesT.learnMore || 'Learn More'}
-              </a>
-            </GradientButton>
-          </div>
+          {(() => {
+            const serviceTitle = servicesT[service.titleKey] || service.titleKey;
+            const ctaLabel = `${servicesT.learnMore || 'Book a strategy call'} — ${serviceTitle}`;
+            return (
+              <div className="pt-2">
+                <GradientButton variant="secondary" size="sm" className="w-full" asChild>
+                  <a
+                    href="https://calendly.com/heyflou-ai/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={ctaLabel}
+                  >
+                    {ctaLabel}
+                  </a>
+                </GradientButton>
+              </div>
+            );
+          })()}
         </CardContent>
       </Card>
     </motion.div>
