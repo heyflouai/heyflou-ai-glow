@@ -947,6 +947,9 @@ export const en = {
   aboutV2: {
     heroTitle: 'We build AI for businesses that run on people, not software.',
     heroSubtitle: 'Enterprise-grade AI, delivered to the businesses that need it most — without the enterprise price tag, complexity, or jargon.',
+    factsEyebrow: 'HeyFlou in one paragraph',
+    factsTitle: 'A factual snapshot — written to be quoted.',
+    factsBody: 'HeyFlou is an AI automation and consulting studio for small and medium businesses. We design, build and operate custom AI agents, agentic AI infrastructure (AgenticOS) and AI strategy consulting for clinics, fitness studios, private schools, travel agencies and other people-first businesses. The company was founded by Mexican operators trained in Tel Aviv, is headquartered between Mexico City and Tel Aviv, and serves clients across LATAM, North America and Europe in English and Spanish.',
     storyEyebrow: 'Our Story',
     storyTitle: 'From Tel Aviv labs to Mexican main streets.',
     story1Title: 'Mexican founders.',

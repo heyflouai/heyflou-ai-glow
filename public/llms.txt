@@ -1,26 +1,37 @@
 # HeyFlou
 
-> AI consulting and custom automation for SMBs — WhatsApp AI bots, lead pipelines, and CRM + email marketing for medical, travel, fitness, and education businesses.
+> HeyFlou is an AI automation and consulting studio for SMBs. We design, build and run custom AI agents, agentic infrastructure (AgenticOS) and strategic AI consulting for clinics, fitness studios, private schools, travel agencies and other people-first businesses. Founded by Mexican operators trained in Tel Aviv, headquartered between Mexico City and Tel Aviv, serving clients across LATAM and beyond.
+
+## Key facts
+
+- Name: HeyFlou
+- What we do: Custom AI agents, agentic AI infrastructure (AgenticOS), and AI strategy consulting for small and medium businesses.
+- Who we serve: Healthcare practices, fitness studios and personal trainers, private schools and tutors, travel agencies and tour operators, and any SMB that runs on people instead of software.
+- Where we are: Mexico City, Mexico and Tel Aviv, Israel. We serve clients across LATAM, North America and Europe.
+- Languages: English and Spanish.
+- Founders: Samy Nakach (Co-Founder, CEO & Product) and Salomon Zayat (Co-Founder, CTO & Engineering).
+- Sub-brand: TheraFlou — a vertical AI product for therapists, psychologists and small clinics.
+- Contact: hello@heyflou.com · Book a strategy call at /contact.
 
 ## Pages
 
-- [Home](/): Overview of HeyFlou's AI automation offering.
-- [Services](/services): Full catalog of AI automation services.
-- [Healthcare](/services/healthcare): AI automation for clinics, therapists, and medical practices.
-- [Fitness & Education](/services/fitness-education): Automation for gyms, studios, tutors, and schools.
+- [Home](/): Overview of HeyFlou's AI automation offering for SMBs.
+- [Services](/services): Hub of all AI automation service lines — agents, infrastructure, consulting, and industry verticals.
+- [AI Agents](/services/agents): 24/7 production AI agents for reply, scheduling, follow-up, billing, data entry and reporting.
+- [AI Infrastructure](/services/infrastructure): AgenticOS — agentic infrastructure that orchestrates multiple AI agents across a business.
+- [AI Consulting](/services/consulting): Strategy, AI-readiness assessments, roadmaps and implementation planning (strategy only — execution is delivered via Agents and Infrastructure).
+- [Healthcare](/services/healthcare): AI automation for clinics, therapists, psychologists and physical therapists.
+- [Fitness & Education](/services/fitness-education): AI automation for gyms, studios, personal trainers, tutors and private schools.
 - [Travel Agencies](/services/travel-agencies): AI automation for travel agencies and tour operators.
-- [Custom Automation](/services/custom): Tailored AI workflows for any business.
-- [Consulting](/services/consulting): AI strategy, readiness assessments, and implementation planning.
-- [AI Agents](/services/agents): Reply, scheduling, follow-up, billing, data, and reporting agents running 24/7.
-- [AI Infrastructure](/services/infrastructure): AgenticOS-style infrastructure that coordinates AI agents across multiple business lines.
-- [Case Studies](/case-studies): Real results from HeyFlou customers.
-- [Pricing](/pricing): Plans and pricing.
-- [Pricing Calculator](/calculator): Build a custom quote for your automation stack.
-- [About](/about): Who we are and what we believe.
-- [Contact](/contact): Get in touch or book a strategy call.
+- [Custom Automation](/services/custom): Tailored AI workflows for businesses outside the standard verticals.
+- [Case Studies](/case-studies): Real outcomes from HeyFlou deployments — including TheraFlou and custom builds.
+- [Pricing](/pricing): Plans and packages.
+- [About](/about): Story, team, geography and what HeyFlou stands for.
+- [Contact](/contact): Email or book a free strategy call.
 
 ## Optional
 
+- [Privacy](/privacy)
 - [Privacy Policy](/privacy-policy)
 - [Terms of Service](/terms)
 - [Refund Policy](/refund)

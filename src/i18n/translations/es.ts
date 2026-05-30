@@ -949,6 +949,9 @@ export const es: TranslationKeys = {
   aboutV2: {
     heroTitle: 'Construimos IA para negocios que funcionan con personas, no con software.',
     heroSubtitle: 'IA de nivel empresarial, entregada a los negocios que más la necesitan — sin el precio, la complejidad ni el lenguaje corporativo.',
+    factsEyebrow: 'HeyFlou en un párrafo',
+    factsTitle: 'Una ficha factual — escrita para ser citada.',
+    factsBody: 'HeyFlou es un estudio de automatización y consultoría en IA para pequeñas y medianas empresas. Diseñamos, construimos y operamos agentes de IA personalizados, infraestructura de IA agéntica (AgenticOS) y consultoría estratégica de IA para clínicas, estudios de fitness, escuelas privadas, agencias de viajes y otros negocios que funcionan con personas. La compañía fue fundada por operadores mexicanos formados en Tel Aviv, tiene sede entre la Ciudad de México y Tel Aviv, y atiende clientes en LATAM, Norteamérica y Europa en inglés y español.',
     storyEyebrow: 'Nuestra historia',
     storyTitle: 'De los laboratorios de Tel Aviv a las calles de México.',
     story1Title: 'Fundadores mexicanos.',
