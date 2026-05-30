@@ -99,9 +99,9 @@ export function AboutHero() {
               return (
                 <span
                   key={bubble.key}
-                  className="relative inline-flex items-center gap-2 rounded-full px-5 py-2.5 md:px-6 md:py-3 text-sm md:text-[15px] font-semibold border-2 border-border/30 text-muted-foreground/50 transition-transform duration-200 hover:scale-105"
+                  className="relative inline-flex items-center gap-2 rounded-full px-5 py-2.5 md:px-6 md:py-3 text-sm md:text-[15px] font-semibold border-2 border-border/30 text-muted-foreground transition-transform duration-200 hover:scale-105"
                 >
-                  <Icon size={18} className="md:w-5 md:h-5 shrink-0 opacity-50" />
+                  <Icon size={18} className="md:w-5 md:h-5 shrink-0 opacity-80" />
                   {label}
                   {bubble.soon && (
                     <span className="absolute -top-2 -right-2 hf-gradient text-white text-[11px] px-2 py-0.5 rounded-full font-semibold">

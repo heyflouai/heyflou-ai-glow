@@ -108,7 +108,7 @@ export function AIGapSection() {
             <ul className="space-y-3">
               {smbItems.map((item, i) => (
                 <li key={i} className="flex items-start gap-2 text-[14px] md:text-[15px] leading-[1.8] text-foreground/70">
-                  <span className="mt-1 text-muted-foreground/50">•</span>
+                  <span className="mt-1 text-muted-foreground">•</span>
                   {item}
                 </li>
               ))}

@@ -51,7 +51,7 @@ export const Footer = () => {
 
   const Column = ({ title, links }: { title: string; links: FooterLinkItem[] }) => (
     <div>
-      <h3 className="text-[12px] font-semibold uppercase tracking-[1.5px] text-white/50 mb-5">
+      <h3 className="text-[12px] font-semibold uppercase tracking-[1.5px] text-white/70 mb-5">
         {title}
       </h3>
       <ul className="flex flex-col">
