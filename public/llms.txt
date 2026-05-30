@@ -24,8 +24,7 @@
 - [Fitness & Education](/services/fitness-education): AI automation for gyms, studios, personal trainers, tutors and private schools.
 - [Travel Agencies](/services/travel-agencies): AI automation for travel agencies and tour operators.
 - [Custom Automation](/services/custom): Tailored AI workflows for businesses outside the standard verticals.
-- [Case Studies](/case-studies): Real outcomes from HeyFlou deployments — including TheraFlou and custom builds.
-- [Pricing](/pricing): Plans and packages.
+- [Case Studies](/case-studies): Real outcomes from HeyFlou deployments — including TheraFlou and custom builds..
 - [About](/about): Story, team, geography and what HeyFlou stands for.
 - [Contact](/contact): Email or book a free strategy call.
 
