@@ -46,12 +46,63 @@ export default function About() {
     { title: a.svc3Title, description: a.svc3Desc, link: '/services/consulting', icon: <Compass className="w-6 h-6 text-primary" /> },
   ];
 
+  // GEO-friendly structured data: declarative, entity-rich, quotable.
+  const aboutJsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'AboutPage',
+      'url': 'https://heyflou.com/about',
+      'name': 'About HeyFlou',
+      'description': a.factsBody,
+      'inLanguage': ['en', 'es'],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ProfessionalService',
+      'name': 'HeyFlou',
+      'url': 'https://heyflou.com',
+      'logo': 'https://heyflou.com/logo.png',
+      'description': a.factsBody,
+      'serviceType': [
+        'AI automation',
+        'AI agents',
+        'Agentic AI infrastructure',
+        'AI consulting',
+      ],
+      'areaServed': [
+        { '@type': 'Place', 'name': 'Mexico' },
+        { '@type': 'Place', 'name': 'Latin America' },
+        { '@type': 'Place', 'name': 'United States' },
+        { '@type': 'Place', 'name': 'Europe' },
+      ],
+      'availableLanguage': ['English', 'Spanish'],
+      'founder': [
+        { '@type': 'Person', 'name': 'Samy Nakach', 'jobTitle': 'Co-Founder, CEO & Product' },
+        { '@type': 'Person', 'name': 'Salomon Zayat', 'jobTitle': 'Co-Founder, CTO & Engineering' },
+      ],
+      'address': [
+        { '@type': 'PostalAddress', 'addressLocality': 'Mexico City', 'addressCountry': 'MX' },
+        { '@type': 'PostalAddress', 'addressLocality': 'Tel Aviv', 'addressCountry': 'IL' },
+      ],
+      'knowsAbout': [
+        'WhatsApp AI chatbots',
+        'Lead management automation',
+        'CRM and email marketing automation',
+        'Healthcare practice automation',
+        'Fitness and education business automation',
+        'Travel agency automation',
+        'Agentic AI infrastructure (AgenticOS)',
+      ],
+    },
+  ];
+
   return (
     <>
       <SEOHead
         title={PAGE_SEO.about.title}
         description={PAGE_SEO.about.description}
         canonical={getCanonicalUrl(PAGE_SEO.about.path)}
+        jsonLd={aboutJsonLd}
       />
 
       <main className="bg-white">
