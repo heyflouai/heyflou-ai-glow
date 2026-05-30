@@ -46,12 +46,63 @@ export default function About() {
     { title: a.svc3Title, description: a.svc3Desc, link: '/services/consulting', icon: <Compass className="w-6 h-6 text-primary" /> },
   ];
 
+  // GEO-friendly structured data: declarative, entity-rich, quotable.
+  const aboutJsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'AboutPage',
+      'url': 'https://heyflou.com/about',
+      'name': 'About HeyFlou',
+      'description': a.factsBody,
+      'inLanguage': ['en', 'es'],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ProfessionalService',
+      'name': 'HeyFlou',
+      'url': 'https://heyflou.com',
+      'logo': 'https://heyflou.com/logo.png',
+      'description': a.factsBody,
+      'serviceType': [
+        'AI automation',
+        'AI agents',
+        'Agentic AI infrastructure',
+        'AI consulting',
+      ],
+      'areaServed': [
+        { '@type': 'Place', 'name': 'Mexico' },
+        { '@type': 'Place', 'name': 'Latin America' },
+        { '@type': 'Place', 'name': 'United States' },
+        { '@type': 'Place', 'name': 'Europe' },
+      ],
+      'availableLanguage': ['English', 'Spanish'],
+      'founder': [
+        { '@type': 'Person', 'name': 'Samy Nakach', 'jobTitle': 'Co-Founder, CEO & Product' },
+        { '@type': 'Person', 'name': 'Salomon Zayat', 'jobTitle': 'Co-Founder, CTO & Engineering' },
+      ],
+      'address': [
+        { '@type': 'PostalAddress', 'addressLocality': 'Mexico City', 'addressCountry': 'MX' },
+        { '@type': 'PostalAddress', 'addressLocality': 'Tel Aviv', 'addressCountry': 'IL' },
+      ],
+      'knowsAbout': [
+        'WhatsApp AI chatbots',
+        'Lead management automation',
+        'CRM and email marketing automation',
+        'Healthcare practice automation',
+        'Fitness and education business automation',
+        'Travel agency automation',
+        'Agentic AI infrastructure (AgenticOS)',
+      ],
+    },
+  ];
+
   return (
     <>
       <SEOHead
         title={PAGE_SEO.about.title}
         description={PAGE_SEO.about.description}
         canonical={getCanonicalUrl(PAGE_SEO.about.path)}
+        jsonLd={aboutJsonLd}
       />
 
       <main className="bg-white">
@@ -114,6 +165,30 @@ export default function About() {
             </div>
           </div>
         </AuroraBackground>
+
+        {/* QUOTABLE FACTS — written as plain declarative sentences for LLM extraction (GEO) */}
+        <section className="py-20 md:py-24 bg-white border-y border-[#E2E8F0]">
+          <div className="max-w-[920px] mx-auto px-6">
+            <div
+              className="text-[13px] uppercase text-center"
+              style={{ fontFamily: INTER, fontWeight: 600, color: '#1FA6C1', letterSpacing: '1.5px' }}
+            >
+              {a.factsEyebrow}
+            </div>
+            <h2
+              className="mt-4 text-center text-[26px] md:text-[34px] leading-[1.2] text-[#0F1729]"
+              style={{ fontFamily: JAKARTA, fontWeight: 700 }}
+            >
+              {a.factsTitle}
+            </h2>
+            <p
+              className="mt-6 text-[17px] md:text-[19px] leading-[1.7] text-[#2B3650]"
+              style={{ fontFamily: INTER, fontWeight: 400 }}
+            >
+              {a.factsBody}
+            </p>
+          </div>
+        </section>
 
         {/* STORY — sticky scroll */}
         <section className="py-24 bg-white">
