@@ -166,6 +166,30 @@ export default function About() {
           </div>
         </AuroraBackground>
 
+        {/* QUOTABLE FACTS — written as plain declarative sentences for LLM extraction (GEO) */}
+        <section className="py-20 md:py-24 bg-white border-y border-[#E2E8F0]">
+          <div className="max-w-[920px] mx-auto px-6">
+            <div
+              className="text-[13px] uppercase text-center"
+              style={{ fontFamily: INTER, fontWeight: 600, color: '#1FA6C1', letterSpacing: '1.5px' }}
+            >
+              {a.factsEyebrow}
+            </div>
+            <h2
+              className="mt-4 text-center text-[26px] md:text-[34px] leading-[1.2] text-[#0F1729]"
+              style={{ fontFamily: JAKARTA, fontWeight: 700 }}
+            >
+              {a.factsTitle}
+            </h2>
+            <p
+              className="mt-6 text-[17px] md:text-[19px] leading-[1.7] text-[#2B3650]"
+              style={{ fontFamily: INTER, fontWeight: 400 }}
+            >
+              {a.factsBody}
+            </p>
+          </div>
+        </section>
+
         {/* STORY — sticky scroll */}
         <section className="py-24 bg-white">
           <div className="max-w-[1200px] mx-auto px-6">
