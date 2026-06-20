@@ -168,6 +168,16 @@ export function HeroWorkflow() {
   const n4 = useRef<HTMLDivElement>(null);
   const n5 = useRef<HTMLDivElement>(null);
 
+  // Separate refs for the mobile layout (a ref can only attach to one DOM node)
+  const mContainerRef = useRef<HTMLDivElement>(null);
+  const mCenterRef = useRef<HTMLDivElement>(null);
+  const m0 = useRef<HTMLDivElement>(null);
+  const m1 = useRef<HTMLDivElement>(null);
+  const m2 = useRef<HTMLDivElement>(null);
+  const m3 = useRef<HTMLDivElement>(null);
+  const m4 = useRef<HTMLDivElement>(null);
+  const m5 = useRef<HTMLDivElement>(null);
+
   const nodes = [
     { ref: n0, icon: MessageSquare, label: t.homepage.workflowChatbot, color: TEAL },
     { ref: n1, icon: CalendarCheck, label: t.homepage.workflowAppointments, color: PURPLE },
@@ -175,6 +185,15 @@ export function HeroWorkflow() {
     { ref: n3, icon: Megaphone, label: t.homepage.workflowConfirmations, color: PURPLE },
     { ref: n4, icon: Target, label: (t.homepage as any).workflowLeads ?? "Qualifies Leads", color: TEAL },
     { ref: n5, icon: BarChart3, label: (t.homepage as any).workflowReports ?? "Delivers Reports", color: PURPLE },
+  ];
+
+  const mobileNodes = [
+    { ref: m0, icon: MessageSquare, label: t.homepage.workflowChatbot, color: TEAL },
+    { ref: m1, icon: CalendarCheck, label: t.homepage.workflowAppointments, color: PURPLE },
+    { ref: m2, icon: BellRing, label: t.homepage.workflowReminders, color: TEAL },
+    { ref: m3, icon: Megaphone, label: t.homepage.workflowConfirmations, color: PURPLE },
+    { ref: m4, icon: Target, label: (t.homepage as any).workflowLeads ?? "Qualifies Leads", color: TEAL },
+    { ref: m5, icon: BarChart3, label: (t.homepage as any).workflowReports ?? "Delivers Reports", color: PURPLE },
   ];
 
   // Radial positions (desktop): 6 evenly spaced around the center
@@ -244,15 +263,40 @@ export function HeroWorkflow() {
       </div>
 
       {/* MOBILE — Center on top + 2x3 grid (no radial / no beams) */}
-      <div className="md:hidden rounded-2xl p-5">
-        <div className="flex justify-center mb-6">
-          <CenterNode label={t.homepage.workflowYourBusiness} />
+      {/* MOBILE — Center on top + 2x3 grid with dispatch beams */}
+      <div ref={mContainerRef} className="md:hidden relative rounded-2xl p-5">
+        {/* faint grid backdrop */}
+        <div
+          aria-hidden
+          className="absolute inset-0 opacity-[0.07] pointer-events-none"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 1px 1px, rgba(0,180,180,0.6) 1px, transparent 0)",
+            backgroundSize: "22px 22px",
+          }}
+        />
+        <div className="relative flex justify-center mb-8">
+          <CenterNode ref={mCenterRef} label={t.homepage.workflowYourBusiness} />
         </div>
-        <div className="grid grid-cols-2 gap-x-3 gap-y-5 place-items-center">
-          {nodes.map((n, i) => (
-            <OuterNode key={i} icon={n.icon} label={n.label} color={n.color} />
+        <div className="relative grid grid-cols-2 gap-x-3 gap-y-6 place-items-center">
+          {mobileNodes.map((n, i) => (
+            <OuterNode key={i} ref={n.ref} icon={n.icon} label={n.label} color={n.color} />
           ))}
         </div>
+
+        {/* Dispatch beams: center → each outer node */}
+        {mobileNodes.map((n, i) => (
+          <DispatchBeam
+            key={`m-beam-${i}`}
+            containerRef={mContainerRef}
+            fromRef={mCenterRef}
+            toRef={n.ref}
+            curvature={i % 2 === 0 ? 24 : -24}
+            color={n.color}
+            delay={i * 0.45}
+            duration={3.2}
+          />
+        ))}
       </div>
     </motion.div>
   );
