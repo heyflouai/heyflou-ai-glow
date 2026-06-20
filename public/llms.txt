@@ -28,6 +28,10 @@
 - [About](/about): Story, team, geography and what HeyFlou stands for.
 - [Contact](/contact): Email or book a free strategy call.
 
+## Guides
+
+- [How to Implement Agentic AI for Business Growth](/blog/agentic-ai-implementation-guide): Practical SMB playbook covering the difference between chatbots and AI agents, a 6-step implementation roadmap, ROI metrics, and common mistakes to avoid.
+
 ## Optional
 
 - [Privacy](/privacy)
