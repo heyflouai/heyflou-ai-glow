@@ -304,7 +304,7 @@ export const en = {
     landingFeature6: 'Fast-loading performance',
     
     // Therapists Section
-    therapistsTitle: 'Also for Physiotherapists & Therapists',
+    therapistsTitle: 'Also for Physical Therapists & Therapists',
     therapistsSubtitle: 'Streamline your practice with AI-powered patient management and automation.',
     intakeChatbot: 'AI Intake Chatbot',
     intakeChatbotDesc: 'Collect patient information and screen inquiries automatically before appointments.',
@@ -514,7 +514,7 @@ export const en = {
     v2Card1Cta: 'See how it works',
     v2Card2Eyebrow: 'For industry builders',
     v2Card2Title: 'A custom AI platform built for your vertical',
-    v2Card2Desc: 'When your industry needs more than integrations — we design and build the entire system. CRMs, patient management platforms, booking engines, compliance layers. We built TheraFlou for physiotherapists in Mexico. We can do the same for yours.',
+    v2Card2Desc: 'When your industry needs more than integrations — we design and build the entire system. CRMs, patient management platforms, booking engines, compliance layers. We built TheraFlou for physical therapists in Mexico. We can do the same for yours.',
     v2Card2Who: 'Businesses or operators who need a purpose-built product, not off-the-shelf software',
     v2Card2Cta: 'Explore AI Infrastructure',
     v2Card3Eyebrow: "Start here if you're not sure",
@@ -600,8 +600,8 @@ export const en = {
     build4Desc: 'Custom dashboards and reporting systems that give operators real-time visibility without manual data work.',
 
     caseEyebrow: 'CASE: THERAFLOU',
-    caseTitle: 'We built a patient CRM for 13,000 physiotherapists in Mexico.',
-    caseBody: 'Physiotherapists in Mexico were managing patients on WhatsApp and paper — with no software built for their specific compliance requirements (NOM-004-SSA3-2012). We designed and built TheraFlou: a full patient CRM with AI appointment agents, structured clinical records, SOAP note documentation, and billing — purpose-built for private PT practice in Mexico.',
+    caseTitle: 'We built a patient CRM for 13,000 physical therapists in Mexico.',
+    caseBody: 'Physical Therapists in Mexico were managing patients on WhatsApp and paper — with no software built for their specific compliance requirements (NOM-004-SSA3-2012). We designed and built TheraFlou: a full patient CRM with AI appointment agents, structured clinical records, SOAP note documentation, and billing — purpose-built for private PT practice in Mexico.',
     caseBullet1: 'NOM-004 compliant clinical records — built into the data model from day one',
     caseBullet2: 'AI appointment agents — WhatsApp reminders, reschedules, waitlist management',
     caseBullet3: 'Multi-therapist clinic management — from solo practice to 15-therapist centers',
@@ -613,8 +613,8 @@ export const en = {
       cards: {
         theraflou: {
           eyebrow: 'HEALTHCARE · MEXICO',
-          title: 'A patient CRM for 13,000 physiotherapists.',
-          body: 'Physiotherapists in Mexico were managing patients on WhatsApp and paper. We built TheraFlou — a full patient CRM with AI agents, NOM-004 compliant clinical records, and billing — purpose-built for private PT practice.',
+          title: 'A patient CRM for 13,000 physical therapists.',
+          body: 'Physical Therapists in Mexico were managing patients on WhatsApp and paper. We built TheraFlou — a full patient CRM with AI agents, NOM-004 compliant clinical records, and billing — purpose-built for private PT practice.',
           pill1: 'NOM-004 compliant',
           pill2: 'WhatsApp AI agents',
           pill3: 'Multi-clinic ready',
@@ -2058,7 +2058,7 @@ export const en = {
     theraflouFeature1: 'AI appointment agent — handles confirmations, reschedules, and WhatsApp reminders automatically',
     theraflouFeature2: 'Clinical records & SOAP notes — structured patient files managed by AI, not paper charts',
     theraflouFeature3: 'Session tracking & billing — patient history, invoices, and follow-ups managed by AI, not staff',
-    theraflouProof: 'One problem. One solution. Built for 15,000+ physiotherapists in Mexico.',
+    theraflouProof: 'One problem. One solution. Built for 15,000+ physical therapists in Mexico.',
     theraflouCta: 'Learn more about TheraFlou',
   },
 };

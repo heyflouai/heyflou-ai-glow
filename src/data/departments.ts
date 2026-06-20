@@ -58,7 +58,7 @@ export const departments: Dept[] = [
   },
   {
     id: "therapists",
-    name: "Physiotherapists & Therapists",
+    name: "Physical Therapists & Therapists",
     problem: "Therapists lose clients due to slow responses, manual intake, and inconsistent follow-ups.",
     solutions: [
       "AI intake chatbot",
