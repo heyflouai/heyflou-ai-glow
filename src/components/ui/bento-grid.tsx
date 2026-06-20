@@ -178,7 +178,7 @@ export const BentoGridItem = ({
 
       {/* Content area */}
       <motion.div 
-        className="relative z-10"
+        className="relative z-10 min-w-0"
         style={{ transform: "translateZ(30px)" }}
       >
         {/* Animated icon container */}
@@ -219,7 +219,7 @@ export const BentoGridItem = ({
 
         {/* Title with staggered entrance */}
         <motion.div 
-          className="font-sans font-bold text-foreground mb-2 mt-2"
+          className="font-sans font-bold text-foreground mb-2 mt-2 break-words [overflow-wrap:anywhere]"
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.1, duration: 0.3 }}
@@ -229,7 +229,7 @@ export const BentoGridItem = ({
 
         {/* Description with staggered entrance */}
         <motion.div 
-          className="font-sans font-normal text-muted-foreground text-sm"
+          className="font-sans font-normal text-muted-foreground text-sm break-words"
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2, duration: 0.3 }}
