@@ -26,6 +26,7 @@ import Refund from "./pages/Refund";
 import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import AgenticAiImplementationGuide from "./pages/blog/AgenticAiImplementationGuide";
 
 const queryClient = new QueryClient();
 
@@ -69,6 +70,7 @@ const App = () => (
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="/terms" element={<Terms />} />
                 <Route path="/refund" element={<Refund />} />
+                <Route path="/blog/agentic-ai-implementation-guide" element={<AgenticAiImplementationGuide />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
