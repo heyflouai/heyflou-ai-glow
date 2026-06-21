@@ -82,12 +82,22 @@ export default function Agents() {
     { stat: s.result3Stat, label: s.result3Label, source: s.result3Source },
   ];
 
+  const serviceSchema = buildServiceSchema({
+    name: 'AI Agents for Business',
+    description:
+      'Deploy a team of AI agents trained on your specific workflows — reply, scheduling, follow-up, billing, data, and reporting agents running 24/7.',
+    path: '/services/agents',
+    serviceType: 'AI Agents Deployment',
+    audienceType: 'Small and medium businesses',
+  });
+
   return (
     <>
       <SEOHead
         title="AI Agents for Your Business | HeyFlou"
         description="Deploy a team of AI agents trained on your specific workflows. Reply, scheduling, follow-up, billing, data, and reporting agents — running 24/7."
         canonical={getCanonicalUrl('/services/agents')}
+        jsonLd={serviceSchema}
       />
 
       <main className="bg-white">
