@@ -1,7 +1,7 @@
 import { Database, ShieldCheck, CalendarClock, BarChart3, ArrowRight } from 'lucide-react';
 import { AuroraBackground } from '@/components/ui/aurora-background';
 import { SEOHead } from '@/components/ui/seo-head';
-import { getCanonicalUrl } from '@/lib/seo-config';
+import { getCanonicalUrl, buildServiceSchema } from '@/lib/seo-config';
 import { useTranslation } from '@/i18n';
 import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
 import { CursorSpotlight } from '@/components/ui/cursor-spotlight';
@@ -38,6 +38,14 @@ export default function Infrastructure() {
         title="Custom AI Infrastructure for Your Industry | HeyFlou"
         description="We design and build vertical platforms — CRMs, compliance layers, scheduling engines, and AI-powered reporting — for industries underserved by generic software."
         canonical={getCanonicalUrl('/services/infrastructure')}
+        jsonLd={buildServiceSchema({
+          name: 'Custom AI Infrastructure',
+          description:
+            'Design and build of vertical platforms — CRMs, compliance layers, scheduling engines, and AI-powered reporting — for industries underserved by generic software.',
+          path: '/services/infrastructure',
+          serviceType: 'Custom AI Infrastructure & Platform Build',
+          audienceType: 'Operators of vertical SMBs needing custom platforms',
+        })}
       />
 
       <main className="bg-white">

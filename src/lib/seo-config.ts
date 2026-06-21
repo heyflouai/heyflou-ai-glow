@@ -138,3 +138,34 @@ export function getCanonicalUrl(path: string): string {
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
   return `${SITE_CONFIG.domain}${cleanPath === '/' ? '' : cleanPath}`;
 }
+
+/**
+ * Build a Service schema for a specific service/industry route.
+ */
+export function buildServiceSchema(opts: {
+  name: string;
+  description: string;
+  path: string;
+  serviceType: string;
+  areaServed?: string;
+  audienceType?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: opts.name,
+    description: opts.description,
+    serviceType: opts.serviceType,
+    url: getCanonicalUrl(opts.path),
+    provider: {
+      "@type": "Organization",
+      name: "HeyFlou",
+      url: SITE_CONFIG.domain,
+      logo: SITE_CONFIG.logo,
+    },
+    areaServed: opts.areaServed ?? "Worldwide",
+    audience: opts.audienceType
+      ? { "@type": "Audience", audienceType: opts.audienceType }
+      : undefined,
+  };
+}

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ClipboardCheck, Map, Route, Wrench, FileText, ArrowRight } from 'lucide-react';
 import { SEOHead } from '@/components/ui/seo-head';
-import { getCanonicalUrl } from '@/lib/seo-config';
+import { getCanonicalUrl, buildServiceSchema } from '@/lib/seo-config';
 import { useTranslation } from '@/i18n';
 import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
 import { CursorSpotlight } from '@/components/ui/cursor-spotlight';
@@ -45,6 +45,14 @@ export default function Consulting() {
         title="AI Strategy & Consulting | HeyFlou"
         description="A structured 3-week paid consulting engagement that maps where AI fits in your business — readiness assessment, process map, AI roadmap, vendor selection, and implementation brief."
         canonical={getCanonicalUrl('/services/consulting')}
+        jsonLd={buildServiceSchema({
+          name: 'AI Strategy & Consulting',
+          description:
+            'A structured 3-week paid consulting engagement: readiness assessment, process map, AI roadmap, vendor selection, and implementation brief.',
+          path: '/services/consulting',
+          serviceType: 'AI Strategy Consulting',
+          audienceType: 'SMB leaders evaluating AI adoption',
+        })}
       />
 
       <main className="bg-white">
