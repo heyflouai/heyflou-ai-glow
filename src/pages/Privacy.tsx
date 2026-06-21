@@ -66,6 +66,7 @@ const Privacy = () => {
       <SEOHead
         title="Privacy Policy | HeyFlou"
         description="HeyFlou's Privacy Policy — how we collect, use, and protect your personal information."
+        canonical="https://heyflou.com/privacy"
       />
       <section className="bg-background py-16 md:py-24 lg:py-32 min-h-screen">
         <div className="mx-auto max-w-[780px] px-5 md:px-6">
