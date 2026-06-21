@@ -6,15 +6,24 @@ import { FitnessSolution } from '@/components/fitness-education/FitnessSolution'
 import { FitnessIntegrations } from '@/components/fitness-education/FitnessIntegrations';
 import { FitnessCTA } from '@/components/fitness-education/FitnessCTA';
 import { FitnessContactForm } from '@/components/fitness-education/FitnessContactForm';
-import { getCanonicalUrl } from '@/lib/seo-config';
+import { getCanonicalUrl, buildServiceSchema } from '@/lib/seo-config';
 
 export default function FitnessEducation() {
+  const serviceSchema = buildServiceSchema({
+    name: 'HeyFlou for Fitness & Education',
+    description:
+      'AI automation for gyms, studios, personal trainers, tutors and private schools — class bookings, memberships, onboarding, and reminders.',
+    path: '/services/fitness-education',
+    serviceType: 'AI Automation for Fitness & Education',
+    audienceType: 'Gyms, studios, personal trainers, tutors, private schools',
+  });
   return (
     <>
       <SEOHead 
         title="AI Automation for Fitness & Education | HeyFlou"
         description="AI automation for gyms, studios, personal trainers, tutors and private schools. Automate class bookings, memberships, onboarding and more."
         canonical={getCanonicalUrl('/services/fitness-education')}
+        jsonLd={serviceSchema}
       />
       
       <main>
