@@ -98,7 +98,7 @@ export function CustomSolutionsCTA() {
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-3">
                 {t.customCta?.buildCustomDesc || 'AI can adapt to your exact process. We design tailored workflows that fit your tools, your team, and your clients.'}
               </p>
-              <p className="text-xs text-muted-foreground/70 italic">
+              <p className="text-xs text-muted-foreground italic">
                 {t.customCta?.buildCustomExamples || 'Examples: financial processes • social media campaigns • lead generators'}
               </p>
             </div>

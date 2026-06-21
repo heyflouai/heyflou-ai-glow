@@ -303,7 +303,7 @@ export default function Home() {
                 <p className="mt-3 text-sm md:text-base text-muted-foreground leading-relaxed max-w-xs mx-auto">
                   {stat.label}
                 </p>
-                <p className="mt-2 text-xs text-muted-foreground/60">
+                <p className="mt-2 text-xs text-muted-foreground">
                   {stat.source}
                 </p>
               </motion.div>
