@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { MessageSquare, Calendar, Send, Receipt, Database, BarChart3, ArrowRight } from 'lucide-react';
 import { SEOHead } from '@/components/ui/seo-head';
-import { getCanonicalUrl } from '@/lib/seo-config';
+import { getCanonicalUrl, buildServiceSchema } from '@/lib/seo-config';
 import { useTranslation } from '@/i18n';
 import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
 import { CursorSpotlight } from '@/components/ui/cursor-spotlight';
