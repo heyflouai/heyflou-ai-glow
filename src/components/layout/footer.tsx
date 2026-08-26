@@ -1,28 +1,32 @@
 import { Link } from 'react-router-dom';
 import logo from '@/assets/heyflou-logo-new.png';
 import { LanguageToggle } from '@/components/ui/language-toggle';
-import { useTranslation } from '@/i18n';
+import { useLanguage } from '@/i18n';
+import { localizePath } from '@/lib/i18n-routes';
 
 type FooterLinkItem = { name: string; href: string; external?: boolean };
 
 export const Footer = () => {
-  const t = useTranslation();
+  const { t, language } = useLanguage();
+  const lp = (p: string) => localizePath(p, language);
+
 
   const pages: FooterLinkItem[] = [
-    { name: t.nav.home, href: '/' },
-    { name: t.nav.services, href: '/services' },
-    { name: t.nav.caseStudies, href: '/case-studies' },
-    { name: t.nav.about, href: '/about' },
-    { name: t.nav.contact, href: '/contact' },
+    { name: t.nav.home, href: lp('/') },
+    { name: t.nav.services, href: lp('/services') },
+    { name: t.nav.caseStudies, href: lp('/case-studies') },
+    { name: t.nav.about, href: lp('/about') },
+    { name: t.nav.contact, href: lp('/contact') },
     { name: t.footer.blog, href: '/blog/agentic-ai-implementation-guide' },
   ];
 
   const services: FooterLinkItem[] = [
-    { name: t.nav.aiConsulting, href: '/services/consulting' },
-    { name: 'AI Agents', href: '/services/agents' },
-    { name: 'AI Infrastructure', href: '/services/infrastructure' },
-    { name: t.nav.customAutomations, href: '/services/custom' },
+    { name: t.nav.aiConsulting, href: lp('/services/consulting') },
+    { name: 'AI Agents', href: lp('/services/agents') },
+    { name: 'AI Infrastructure', href: lp('/services/infrastructure') },
+    { name: t.nav.customAutomations, href: lp('/services/custom') },
   ];
+
 
   const socials: FooterLinkItem[] = [
     { name: 'Instagram', href: 'https://instagram.com/heyflou_ai', external: true },

@@ -1,6 +1,8 @@
-import React, { createContext, useContext, useState, useEffect, useCallback, useMemo } from 'react';
+import React, { createContext, useContext, useEffect, useCallback, useMemo } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { en, TranslationKeys } from './translations/en';
 import { es } from './translations/es';
+import { isSpanishPath, getCounterpartPath } from '@/lib/i18n-routes';
 
 export type Language = 'en' | 'es';
 
@@ -15,7 +17,6 @@ const translations: Record<Language, TranslationKeys> = {
   es,
 };
 
-const STORAGE_KEY = 'heyflou-language';
 
 // Create a proxy to log missing translation keys
 function createTranslationProxy<T extends object>(obj: T, path: string[] = []): T {
@@ -41,36 +42,26 @@ function createTranslationProxy<T extends object>(obj: T, path: string[] = []): 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguageState] = useState<Language>(() => {
-    // Check localStorage first
-    if (typeof window !== 'undefined') {
-      try {
-        const stored = window.localStorage.getItem(STORAGE_KEY);
-        if (stored === 'en' || stored === 'es') {
-          return stored;
-        }
-      } catch {
-        // Storage can be unavailable in preview/private contexts; fall back safely.
-      }
-    }
-    return 'en'; // Default to English
-  });
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
 
-  const setLanguage = useCallback((lang: Language) => {
-    setLanguageState(lang);
-    try {
-      window.localStorage.setItem(STORAGE_KEY, lang);
-    } catch {
-      // Keep language switching functional even when storage is blocked.
-    }
-    // Update document lang attribute for accessibility
-    document.documentElement.lang = lang;
-  }, []);
+  // Locale comes from the ROUTE, so it resolves synchronously during
+  // static pre-rendering (Spanish HTML is emitted at build time).
+  const language: Language = isSpanishPath(pathname) ? 'es' : 'en';
 
-  // Set initial document lang
+  // Switching language navigates to the counterpart URL of the current page.
+  const setLanguage = useCallback(
+    (lang: Language) => {
+      if (lang === language) return;
+      navigate(getCounterpartPath(pathname, lang));
+    },
+    [language, navigate, pathname]
+  );
+
   useEffect(() => {
-    document.documentElement.lang = language;
+    document.documentElement.lang = language === 'es' ? 'es-MX' : 'en';
   }, [language]);
+
 
   // Wrap translations in proxy for development debugging
   const t = useMemo(() => {

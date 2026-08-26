@@ -1,25 +1,11 @@
 import type { RouteRecord } from "vite-react-ssg";
 import { Navigate } from "react-router-dom";
 import Layout from "./Layout";
-import { SpanishRoute } from "@/components/i18n/SpanishRoute";
 
 /** Wrap a default-exporting page module into a react-router lazy result. */
 const page = (loader: () => Promise<{ default: React.ComponentType }>) => async () => {
   const mod = await loader();
   return { Component: mod.default };
-};
-
-/** Same, but forces the page into Spanish (es-MX). */
-const spanishPage = (loader: () => Promise<{ default: React.ComponentType }>) => async () => {
-  const mod = await loader();
-  const Page = mod.default;
-  return {
-    Component: () => (
-      <SpanishRoute>
-        <Page />
-      </SpanishRoute>
-    ),
-  };
 };
 
 export const routes: RouteRecord[] = [
@@ -50,14 +36,41 @@ export const routes: RouteRecord[] = [
         path: "blog/agentic-ai-implementation-guide",
         lazy: page(() => import("./pages/blog/AgenticAiImplementationGuide")),
       },
-      // Spanish (es-MX) versions
-      { path: "es", lazy: spanishPage(() => import("./pages/Home")) },
-      { path: "es/servicios", lazy: spanishPage(() => import("./pages/Services")) },
+      // Spanish (es-MX) versions — locale is part of the route, so translations
+      // resolve at build time and the pre-rendered HTML is Spanish.
+      { path: "es", lazy: page(() => import("./pages/Home")) },
+      { path: "es/servicios", lazy: page(() => import("./pages/Services")) },
+      { path: "es/servicios/agentes", lazy: page(() => import("./pages/services/Agents")) },
+      {
+        path: "es/servicios/infraestructura",
+        lazy: page(() => import("./pages/services/Infrastructure")),
+      },
+      { path: "es/servicios/consultoria", lazy: page(() => import("./pages/services/Consulting")) },
+      {
+        path: "es/servicios/personalizado",
+        lazy: page(() => import("./pages/services/CustomAutomation")),
+      },
+      { path: "es/nosotros", lazy: page(() => import("./pages/About")) },
+      { path: "es/casos-de-exito", lazy: page(() => import("./pages/CaseStudies")) },
+      { path: "es/contacto", lazy: page(() => import("./pages/Contact")) },
       { path: "es/precios", element: <Navigate to="/es/servicios" replace /> },
-      { path: "es/contacto", lazy: spanishPage(() => import("./pages/Contact")) },
       // English-slug aliases under /es
       { path: "es/services", element: <Navigate to="/es/servicios" replace /> },
+      { path: "es/services/agents", element: <Navigate to="/es/servicios/agentes" replace /> },
+      {
+        path: "es/services/infrastructure",
+        element: <Navigate to="/es/servicios/infraestructura" replace />,
+      },
+      {
+        path: "es/services/consulting",
+        element: <Navigate to="/es/servicios/consultoria" replace />,
+      },
+      { path: "es/services/custom", element: <Navigate to="/es/servicios/personalizado" replace /> },
+      { path: "es/about", element: <Navigate to="/es/nosotros" replace /> },
+      { path: "es/case-studies", element: <Navigate to="/es/casos-de-exito" replace /> },
       { path: "es/contact", element: <Navigate to="/es/contacto" replace /> },
+      // Pre-rendered 404 document used by static hosting for unknown paths
+      { path: "404", lazy: page(() => import("./pages/NotFound")) },
       // ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE
       { path: "*", lazy: page(() => import("./pages/NotFound")) },
     ],

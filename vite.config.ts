@@ -34,7 +34,15 @@ export default defineConfig(({ mode }) => ({
       "/blog/agentic-ai-implementation-guide",
       "/es",
       "/es/servicios",
+      "/es/servicios/agentes",
+      "/es/servicios/infraestructura",
+      "/es/servicios/consultoria",
+      "/es/servicios/personalizado",
+      "/es/nosotros",
+      "/es/casos-de-exito",
       "/es/contacto",
+      "/404",
+
     ],
   },
   build: {
