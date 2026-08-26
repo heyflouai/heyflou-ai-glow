@@ -2,34 +2,9 @@ import { useRef, useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import { 
-  Stethoscope, 
-  Dumbbell, 
-  Plane, 
-  Cog, 
-  Sparkles 
-} from 'lucide-react';
+import { Cog, Sparkles } from 'lucide-react';
 
 const industries = [
-  {
-    id: 'healthcare',
-    label: 'Healthcare',
-    href: '/services/healthcare',
-    icon: Stethoscope,
-  },
-  {
-    id: 'fitness-education',
-    label: 'Fitness & Education',
-    href: '/services/fitness-education',
-    icon: Dumbbell,
-  },
-  {
-    id: 'travel-agencies',
-    label: 'Travel Agencies',
-    href: '/services/travel-agencies',
-    icon: Plane,
-    badge: 'Soon',
-  },
   {
     id: 'custom',
     label: 'Custom Solutions',
