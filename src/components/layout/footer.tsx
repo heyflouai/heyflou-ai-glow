@@ -82,6 +82,12 @@ export const Footer = () => {
             <p style={{ marginTop: 24, color: 'rgba(255,255,255,0.3)', fontSize: 13 }}>
               © 2026 HeyFlou. All rights reserved.
             </p>
+            <a
+              href="mailto:hello@heyflou.com"
+              className="text-[14px] leading-[2.2] text-white/60 hover:text-white transition-colors duration-150 block mt-1"
+            >
+              hello@heyflou.com
+            </a>
             <div className="mt-5 inline-flex">
               <LanguageToggle />
             </div>
