@@ -15,7 +15,7 @@ const PrivacyPolicy = () => {
       <SEOHead
         title="Privacy Policy (Full) | HeyFlou"
         description="Full HeyFlou Privacy Policy — detailed disclosures on how we collect, store, share, and protect your personal data."
-        canonical="https://heyflou.com/privacy"
+        canonical="https://heyflou.com/privacy-policy"
         noIndex={false}
       />
 
