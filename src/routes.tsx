@@ -33,7 +33,7 @@ export const routes: RouteRecord[] = [
       { path: "services/consulting", lazy: page(() => import("./pages/services/Consulting")) },
       { path: "services/agents", lazy: page(() => import("./pages/services/Agents")) },
       { path: "services/infrastructure", lazy: page(() => import("./pages/services/Infrastructure")) },
-      {/* Retired industry pages — redirect to the services hub */}
+      // Retired industry pages — redirect to the services hub
       { path: "services/healthcare", element: <Navigate to="/services" replace /> },
       { path: "services/fitness-education", element: <Navigate to="/services" replace /> },
       { path: "services/travel-agencies", element: <Navigate to="/services" replace /> },
