@@ -29,7 +29,7 @@ export const PAGE_SEO = {
   },
   services: {
     title: "AI Automation Services for SMBs | HeyFlou",
-    description: "AI automation for travel agencies, healthcare practices, fitness studios, and education centers — chatbots, scheduling, and workflow automation.",
+    description: "AI automation for finance, operations, customer service and marketing — AI agents, custom platforms and strategy for Mexican SMBs.",
     path: "/services",
   },
   caseStudies: {
