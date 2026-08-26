@@ -15,6 +15,30 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  ssgOptions: {
+    dirStyle: "nested",
+    beastiesOptions: false,
+    includedRoutes: () => [
+      "/",
+      "/services",
+      "/services/custom",
+      "/services/consulting",
+      "/services/agents",
+      "/services/infrastructure",
+      "/pricing",
+      "/about",
+      "/case-studies",
+      "/contact",
+      "/privacy-policy",
+      "/terms",
+      "/refund",
+      "/blog/agentic-ai-implementation-guide",
+      "/es",
+      "/es/servicios",
+      "/es/precios",
+      "/es/contacto",
+    ],
+  },
   build: {
     rollupOptions: {
       output: {
