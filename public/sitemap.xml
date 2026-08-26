@@ -80,7 +80,6 @@
   </url>
   <url>
     <loc>https://heyflou.com/es</loc>
-    <lastmod>2026-08-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://heyflou.com/"/>
@@ -89,7 +88,6 @@
   </url>
   <url>
     <loc>https://heyflou.com/es/servicios</loc>
-    <lastmod>2026-08-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://heyflou.com/services"/>
@@ -97,10 +95,57 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://heyflou.com/services"/>
   </url>
   <url>
-    <loc>https://heyflou.com/es/contacto</loc>
-    <lastmod>2026-08-26</lastmod>
+    <loc>https://heyflou.com/es/servicios/agentes</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://heyflou.com/services/agents"/>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://heyflou.com/es/servicios/agentes"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://heyflou.com/services/agents"/>
+  </url>
+  <url>
+    <loc>https://heyflou.com/es/servicios/infraestructura</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://heyflou.com/services/infrastructure"/>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://heyflou.com/es/servicios/infraestructura"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://heyflou.com/services/infrastructure"/>
+  </url>
+  <url>
+    <loc>https://heyflou.com/es/servicios/consultoria</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://heyflou.com/services/consulting"/>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://heyflou.com/es/servicios/consultoria"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://heyflou.com/services/consulting"/>
+  </url>
+  <url>
+    <loc>https://heyflou.com/es/servicios/personalizado</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://heyflou.com/services/custom"/>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://heyflou.com/es/servicios/personalizado"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://heyflou.com/services/custom"/>
+  </url>
+  <url>
+    <loc>https://heyflou.com/es/nosotros</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://heyflou.com/about"/>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://heyflou.com/es/nosotros"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://heyflou.com/about"/>
+  </url>
+  <url>
+    <loc>https://heyflou.com/es/casos-de-exito</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://heyflou.com/case-studies"/>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://heyflou.com/es/casos-de-exito"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://heyflou.com/case-studies"/>
+  </url>
+  <url>
+    <loc>https://heyflou.com/es/contacto</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://heyflou.com/contact"/>
     <xhtml:link rel="alternate" hreflang="es-MX" href="https://heyflou.com/es/contacto"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://heyflou.com/contact"/>
