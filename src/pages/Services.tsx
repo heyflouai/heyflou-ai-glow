@@ -130,6 +130,15 @@ export default function Services() {
       cta: s.v2Card3Cta,
       href: '/services/consulting',
     },
+    {
+      eyebrow: s.v2Card4Eyebrow,
+      title: s.v2Card4Title,
+      description: s.v2Card4Desc,
+      whoLabel: s.v2WhoLabel,
+      who: s.v2Card4Who,
+      cta: s.v2Card4Cta,
+      href: '/services/custom',
+    },
   ];
 
   return (
@@ -173,7 +182,7 @@ export default function Services() {
         {/* Cards */}
         <section className="relative pb-20 md:pb-24 lg:pb-[100px]">
           <div className="max-w-[1200px] mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 items-stretch">
               {cards.map((c) => (
                 <ServiceCard key={c.href} {...c} />
               ))}
