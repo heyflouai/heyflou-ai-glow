@@ -1188,8 +1188,8 @@ export const es: TranslationKeys = {
   // Footer
   footer: {
     // Brand section
-    tagline: 'Automatización de IA y Consultoría para PyMEs',
-    description: 'Ayudamos a pequeñas y medianas empresas a integrar IA en sus operaciones a través de automatización inteligente y consultoría estratégica. Ahorra tiempo, reduce costos y escala de manera más inteligente con HeyFlou.',
+    tagline: 'Tecnología Israelí, Corazón Mexicano',
+    description: 'Ayudamos a pequeñas y medianas empresas a integrar IA en sus operaciones a través de automatización inteligente y consultoría estratégica. Ahorra tiempo, reduce costos y escala de manera más inteligente con HeyFlou.'
     trustLine: 'Diseñado para Médicos, Agencias de Viajes y Educación/Fitness.',
     
     // Column headers
