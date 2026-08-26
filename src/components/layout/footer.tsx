@@ -13,15 +13,15 @@ export const Footer = () => {
     { name: t.nav.services, href: '/services' },
     { name: t.nav.caseStudies, href: '/case-studies' },
     { name: t.nav.about, href: '/about' },
-    { name: t.nav.contact || 'Contact', href: '/contact' },
+    { name: t.nav.contact, href: '/contact' },
     { name: t.footer.blog, href: '/blog/agentic-ai-implementation-guide' },
   ];
 
   const services: FooterLinkItem[] = [
-    { name: t.nav.aiConsulting || 'AI Consulting', href: '/services/consulting' },
+    { name: t.nav.aiConsulting, href: '/services/consulting' },
     { name: 'AI Agents', href: '/services/agents' },
     { name: 'AI Infrastructure', href: '/services/infrastructure' },
-    { name: t.nav.customAutomations || 'Custom Automations', href: '/services/custom' },
+    { name: t.nav.customAutomations, href: '/services/custom' },
   ];
 
   const socials: FooterLinkItem[] = [
