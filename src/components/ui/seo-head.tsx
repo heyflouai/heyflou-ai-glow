@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { SITE_CONFIG, DEFAULT_SEO, ORGANIZATION_SCHEMA, getCanonicalUrl } from '@/lib/seo-config';
+import { findRouteByPath, getAlternates, isSpanishPath } from '@/lib/i18n-routes';
 
 interface SEOHeadProps {
   title?: string;
@@ -30,9 +32,20 @@ export const SEOHead = ({
   jsonLd,
   noIndex = false,
 }: SEOHeadProps) => {
+  const { pathname } = useLocation();
+
+  // Spanish routes get native es-MX metadata and their own canonical URL.
+  const localized = findRouteByPath(pathname);
+  const spanish = isSpanishPath(pathname);
+  const resolvedTitle = spanish && localized ? localized.esTitle : title;
+  const resolvedDescription = spanish && localized ? localized.esDescription : description;
+  const resolvedCanonical = spanish && localized
+    ? `${SITE_CONFIG.domain}${localized.es}`
+    : canonical;
+
   useEffect(() => {
     // Update document title
-    document.title = title;
+    document.title = resolvedTitle;
     
     // Helper to update/create meta tags
     const updateMeta = (name: string, content: string, property = false) => {
@@ -47,7 +60,7 @@ export const SEOHead = ({
     };
 
     // Basic meta tags
-    updateMeta('description', description);
+    updateMeta('description', resolvedDescription);
     updateMeta('author', SITE_CONFIG.name);
     
     // Robots
@@ -58,8 +71,8 @@ export const SEOHead = ({
     }
 
     // Open Graph tags
-    updateMeta('og:title', title, true);
-    updateMeta('og:description', description, true);
+    updateMeta('og:title', resolvedTitle, true);
+    updateMeta('og:description', resolvedDescription, true);
     updateMeta('og:type', type, true);
     updateMeta('og:image', image, true);
     updateMeta('og:site_name', SITE_CONFIG.name, true);
@@ -67,12 +80,13 @@ export const SEOHead = ({
     // Twitter Card tags
     updateMeta('twitter:card', 'summary_large_image');
     updateMeta('twitter:site', SITE_CONFIG.twitterHandle);
-    updateMeta('twitter:title', title);
-    updateMeta('twitter:description', description);
+    updateMeta('twitter:title', resolvedTitle);
+    updateMeta('twitter:description', resolvedDescription);
     updateMeta('twitter:image', image);
 
     // Canonical URL
-    const canonicalUrl = canonical || getCanonicalUrl(window.location.pathname);
+    const canonicalUrl = resolvedCanonical || getCanonicalUrl(pathname);
+    updateMeta('og:locale', spanish ? 'es_MX' : 'en_US', true);
     updateMeta('og:url', canonicalUrl, true);
     
     let link = document.querySelector('link[rel="canonical"]');
@@ -82,6 +96,22 @@ export const SEOHead = ({
       document.head.appendChild(link);
     }
     link.setAttribute('href', canonicalUrl);
+
+    // hreflang alternates (es-MX / en / x-default)
+    document
+      .querySelectorAll('link[rel="alternate"][data-i18n-alt="true"]')
+      .forEach((el) => el.remove());
+    const alternates = getAlternates(pathname);
+    if (alternates) {
+      alternates.forEach(({ hreflang, href }) => {
+        const alt = document.createElement('link');
+        alt.setAttribute('rel', 'alternate');
+        alt.setAttribute('hreflang', hreflang);
+        alt.setAttribute('href', href);
+        alt.setAttribute('data-i18n-alt', 'true');
+        document.head.appendChild(alt);
+      });
+    }
 
     // JSON-LD structured data
     // Always include Organization schema, plus any page-specific schemas
@@ -123,7 +153,7 @@ export const SEOHead = ({
       });
     }
 
-  }, [title, description, canonical, image, type, jsonLd, noIndex]);
+  }, [resolvedTitle, resolvedDescription, resolvedCanonical, pathname, spanish, image, type, jsonLd, noIndex]);
 
   return null;
 };
