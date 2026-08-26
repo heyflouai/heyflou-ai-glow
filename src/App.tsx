@@ -23,6 +23,7 @@ import Refund from "./pages/Refund";
 import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import AgenticAiImplementationGuide from "./pages/blog/AgenticAiImplementationGuide";
+import { SpanishRoute } from "@/components/i18n/SpanishRoute";
 
 const queryClient = new QueryClient();
 
@@ -68,6 +69,15 @@ const App = () => (
                 <Route path="/terms" element={<Terms />} />
                 <Route path="/refund" element={<Refund />} />
                 <Route path="/blog/agentic-ai-implementation-guide" element={<AgenticAiImplementationGuide />} />
+                {/* Spanish (es-MX) versions */}
+                <Route path="/es" element={<SpanishRoute><Home /></SpanishRoute>} />
+                <Route path="/es/servicios" element={<SpanishRoute><Services /></SpanishRoute>} />
+                <Route path="/es/precios" element={<SpanishRoute><Pricing /></SpanishRoute>} />
+                <Route path="/es/contacto" element={<SpanishRoute><Contact /></SpanishRoute>} />
+                {/* English-slug aliases under /es */}
+                <Route path="/es/services" element={<Navigate to="/es/servicios" replace />} />
+                <Route path="/es/pricing" element={<Navigate to="/es/precios" replace />} />
+                <Route path="/es/contact" element={<Navigate to="/es/contacto" replace />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
