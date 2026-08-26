@@ -146,7 +146,7 @@ export const SERVICE_SCHEMA = {
  */
 export function getCanonicalUrl(path: string): string {
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
-  return `${SITE_CONFIG.domain}${cleanPath === '/' ? '' : cleanPath}`;
+  return `${SITE_CONFIG.domain}${cleanPath === '/' ? '/' : cleanPath}`;
 }
 
 /**
