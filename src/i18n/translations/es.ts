@@ -589,6 +589,7 @@ export const es: TranslationKeys = {
     ctaTitle: '¿Listo para ver qué agentes necesita tu negocio?',
     ctaSubtext: 'Comenzamos cada proyecto con una auditoría gratuita — 30 minutos, sin compromiso. Saldrás sabiendo exactamente qué puede hacer la IA por tus operaciones.',
     ctaButton: 'Agenda tu auditoría gratis',
+    blogGuideLink: 'Lee la Guía de Implementación de IA Agentic →',
   },
 
   // Services / Infrastructure Page
