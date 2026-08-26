@@ -981,7 +981,7 @@ export const es: TranslationKeys = {
     team1Name: 'Samy Nakach',
     team1Role: 'Co-Fundador · CEO & Producto',
     team1Bio: 'Lidera estrategia de producto, relaciones con clientes y la práctica de consultoría. Pasa el día traduciendo problemas de negocio en sistemas de IA que los dueños realmente quieren usar.',
-    team2Name: 'Salomon Zayat',
+    team2Name: 'Salo Zayat',
     team2Role: 'Co-Fundador · CTO & Ingeniería',
     team2Bio: 'Dueño del stack técnico — agentes, integraciones, infraestructura. Formado entre Tel Aviv y la Ciudad de México; pone en producción sistemas de IA que mueven negocios 24/7.',
     impactTitle: 'Equipo chico, impacto real.',
