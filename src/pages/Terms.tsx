@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 
 const sections = [
-  { title: 'Services Overview', body: 'HeyFlou provides AI-powered SaaS products, consulting, and automation solutions for businesses, including lead generation, AI chatbots, workflow automation, and tax compliance platforms. Services are offered through subscriptions or one-time engagements.' },
+  { title: 'Services Overview', body: 'HeyFlou provides AI-powered SaaS products, consulting, and automation solutions for businesses, including lead generation, AI chatbots, workflow automation, and AI infrastructure. Services are offered through subscriptions or one-time engagements.' },
   { title: 'Eligibility', body: 'You must be at least 18 years old and have legal capacity to enter into a binding agreement. If using on behalf of a business, you represent authority to bind that entity.' },
   { title: 'Account Registration', body: 'You agree to provide accurate information, keep credentials secure, and notify us of unauthorized use.' },
   { title: 'Subscriptions and Payments', body: 'Fees are billed in advance (monthly or annually). Payments are processed via Paddle. We may adjust pricing with 30 days\' notice. All fees are exclusive of taxes.' },

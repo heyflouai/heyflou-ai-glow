@@ -9,7 +9,7 @@ export const ConsentNote: React.FC = () => {
     <p className="text-xs text-muted-foreground mt-4">
       {t.forms.consentText}{' '}
       <Link 
-        to="/privacy" 
+        to="/privacy-policy" 
         className="text-hf-teal hover:underline"
         target="_blank"
         rel="noopener noreferrer"
