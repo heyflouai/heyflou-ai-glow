@@ -1187,7 +1187,7 @@ export const en = {
   footer: {
     // Brand section
     tagline: 'Tecnología Israelí, Corazón Mexicano',
-    description: 'We help small and medium businesses integrate AI into their operations through intelligent automation and strategic consulting. Save time, reduce costs, and scale smarter with HeyFlou.'
+    description: 'We help small and medium businesses integrate AI into their operations through intelligent automation and strategic consulting. Save time, reduce costs, and scale smarter with HeyFlou.',
     trustLine: 'Built for Medical, Travel Agencies, and Private Ed/Fitness.',
     
     // Column headers
