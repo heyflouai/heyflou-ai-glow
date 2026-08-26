@@ -115,6 +115,9 @@ export const es: TranslationKeys = {
     finalCtaTitle: '¿Listo para transformar tu negocio?',
     finalCtaBtn: 'Reservar Llamada Estratégica Gratis',
 
+    // Blog guide link
+    blogGuideLink: 'Lee la Guía de Implementación de IA Agentic →',
+
     // Testimonial
     testimonialEyebrow: 'RESULTADO DE CLIENTE',
     testimonialQuote: "La solución Agentic OS de HeyFlou liberó más de 20 horas por semana por usuario al automatizar el trabajo repetitivo y anclar los procesos en operaciones prácticas, no en teoría. Esto liberó a nuestro equipo para enfocarse en la estrategia mientras revelaba el camino para escalar sin crecimiento proporcional de personal. Su soporte práctico hizo que la IA empresarial fuera accesible y práctica para una operación multi-línea como la nuestra.",
