@@ -358,6 +358,15 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+
+          <div className="mt-10 text-center">
+            <Link
+              to="/blog/agentic-ai-implementation-guide"
+              className="inline-flex items-center gap-2 text-hf-teal font-semibold hover:underline transition-colors"
+            >
+              {t.home.blogGuideLink}
+            </Link>
+          </div>
         </div>
       </Section>
 
