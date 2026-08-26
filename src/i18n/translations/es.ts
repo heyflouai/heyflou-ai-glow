@@ -1193,11 +1193,15 @@ export const es: TranslationKeys = {
     trustLine: 'Diseñado para Médicos, Agencias de Viajes y Educación/Fitness.',
     
     // Column headers
+    pages: 'Páginas',
+    services: 'Servicios',
+    socials: 'Redes',
     solutions: 'Soluciones',
     company: 'Empresa',
     resources: 'Recursos',
     legal: 'Legal',
     connect: 'Conectar',
+    refundPolicy: 'Política de Reembolso',
     
     // Solutions links
     healthcareAutomation: 'Automatización de Salud',
