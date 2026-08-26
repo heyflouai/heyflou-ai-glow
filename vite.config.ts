@@ -16,7 +16,6 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    sourcemap: true,
     rollupOptions: {
       output: {
         manualChunks(id: string) {
@@ -24,6 +23,7 @@ export default defineConfig(({ mode }) => ({
           if (id.includes("react-router")) return "router";
           if (id.includes("framer-motion") || id.includes("motion-dom") || id.includes("motion-utils")) return "motion";
           if (id.includes("@supabase")) return "supabase";
+          if (id.includes("dotted-map") || id.includes("proj4") || id.includes("mgrs") || id.includes("wkt-parser")) return "worldmap";
           if (id.includes("three") || id.includes("cobe") || id.includes("ogl")) return "three";
           if (id.includes("recharts") || id.includes("d3-")) return "charts";
           if (id.includes("@radix-ui")) return "radix";
