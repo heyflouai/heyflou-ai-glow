@@ -425,7 +425,7 @@ export const es: TranslationKeys = {
     healthIntegrationDesc: 'Tu hub inteligente de datos de pacientes. Sincroniza automáticamente información de pacientes, historial de tratamientos y comunicaciones con tu sistema de gestión, email, plataformas de facturación y verificación de seguros.',
     healthIntegrationBenefit1: 'Registros unificados de pacientes en todos los sistemas',
     healthIntegrationBenefit2: 'Flujos automatizados de facturación y seguros',
-    healthIntegrationBenefit3: 'Manejo de datos compatible con HIPAA y seguro',
+    healthIntegrationBenefit3: 'Manejo de datos cifrado con accesos por rol',
     healthIntegrationBenefit4: 'Historial completo de interacciones y tratamientos',
 
     // Fitness & Education Section
@@ -534,7 +534,7 @@ export const es: TranslationKeys = {
     v2Card4Who: 'Cualquier negocio con un proceso específico y repetitivo que debería correr solo',
     v2Card4Cta: 'Explorar automatizaciones a medida',
     v2WhoLabel: 'PARA QUIÉN ES',
-    v2TrustStrip: 'Respaldado por AWS · Diseño con cumplimiento HIPAA · Resultados en 30–90 días · 3 proyectos nuevos por mes',
+    v2TrustStrip: 'Respaldado por AWS · Cifrado y accesos por rol por diseño · Resultados en 30–90 días · 3 proyectos nuevos por mes',
   },
 
   // Services / Agents Page
@@ -605,7 +605,7 @@ export const es: TranslationKeys = {
     build1Title: 'CRMs Verticales',
     build1Desc: 'Sistemas de gestión de pacientes, portales de clientes, rastreadores de casos. Construidos en torno a tu flujo de trabajo, no a un pipeline de ventas genérico.',
     build2Title: 'Capas de Cumplimiento',
-    build2Desc: 'Plataformas con requisitos regulatorios integrados desde el día uno — NOM-004, HIPAA, LFPDPPP o marcos personalizados. No agregados después.',
+    build2Desc: 'Plataformas con requisitos regulatorios integrados desde el día uno — NOM-004, LFPDPPP o marcos personalizados. No agregados después.',
     build3Title: 'Motores de Reserva y Agenda',
     build3Desc: 'Infraestructura de agendamiento de punta a punta con agentes de IA integrados — recordatorios automáticos, listas de espera, gestión de capacidad.',
     build4Title: 'Reportes con IA',
@@ -918,7 +918,7 @@ export const es: TranslationKeys = {
       title: 'Privacidad de tus Clientes, Garantizada',
       subtitle: 'La información sensible de los clientes merece protección. Manejamos tus datos con seguridad de nivel empresarial—porque la confianza de tus clientes no es negociable.',
       card1Title: 'Infraestructura Lista para Cumplimiento',
-      card1Desc: 'Nuestros sistemas cumplen con estándares de protección de datos de la industria, incluyendo infraestructura lista para HIPAA para negocios que manejan información sensible.',
+      card1Desc: 'Nuestros sistemas cumplen con estándares de protección de datos de la industria, incluyendo conexiones cifradas, accesos por rol y minimización de datos para negocios que manejan información sensible.',
       card2Title: 'Encriptación de Extremo a Extremo',
       card2Desc: 'Cada mensaje, cada reserva, cada dato del cliente está encriptado. No podemos leerlo. Los hackers no pueden robarlo. La información de tus clientes permanece segura.',
       card3Title: 'Solo Socios Certificados SOC 2',
@@ -1012,7 +1012,7 @@ export const es: TranslationKeys = {
     theraflouEyebrow: 'Spotlight de submarca',
     theraflouTitle: 'TheraFlou',
     theraflouTagline: 'Nuestra plataforma de IA nativa para salud.',
-    theraflouDesc: 'Construida específicamente para clínicas y consultorios privados. Intake por WhatsApp, agenda inteligente, recuperación de no-shows y seguimiento de pacientes — sobre un stack listo para HIPAA.',
+    theraflouDesc: 'Construida específicamente para clínicas y consultorios privados. Intake por WhatsApp, agenda inteligente, recuperación de no-shows y seguimiento de pacientes — sobre un stack seguro y con accesos controlados.',
     theraflouCta: 'Conocer TheraFlou',
     ctaTitle: '¿Listo para platicar?',
     ctaSubtitle: 'Cuéntanos dónde estás atorado. Te diremos, honestamente, si la IA es la respuesta — y si lo es, cuál de nuestros tres caminos te conviene.',
@@ -1048,7 +1048,7 @@ export const es: TranslationKeys = {
     getStartedTitle: 'Comienza con Automatización IA',
     getStartedSubtitle: 'Cuéntanos sobre tu práctica y te mostraremos cómo ahorrar tiempo y conseguir más clientes.',
     promo1: 'Ahorra 10-20 horas por semana',
-    promo2: 'Compatible con HIPAA y seguro',
+    promo2: 'Cifrado y seguro',
     promo3: 'Resultados en 60-90 días',
     
     // Toast
