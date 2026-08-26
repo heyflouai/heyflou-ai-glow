@@ -113,6 +113,9 @@ export const en = {
     finalCtaTitle: 'Ready to transform your business?',
     finalCtaBtn: 'Book a Free Strategy Call',
 
+    // Blog guide link
+    blogGuideLink: 'Read the Agentic AI Implementation Guide →',
+
     // Testimonial
     testimonialEyebrow: 'CLIENT RESULT',
     testimonialQuote: "HeyFlou's Agentic OS solution unlocked 20+ hours per week per user by automating repetitive work and grounding processes in practical operations — not theory. This freed our team to focus on strategy while revealing the path to scale without proportional headcount growth. Their hands-on support made enterprise-grade AI accessible and practical for a multi-line operation like ours.",
