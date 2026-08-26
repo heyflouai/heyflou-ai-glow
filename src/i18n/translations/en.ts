@@ -15,6 +15,18 @@ export const en = {
     comingSoon: 'Coming Soon',
   },
 
+  // Footer
+  footer: {
+    pages: 'Pages',
+    services: 'Services',
+    socials: 'Socials',
+    legal: 'Legal',
+    blog: 'Blog',
+    refundPolicy: 'Refund Policy',
+    tagline: 'Tecnología Israelí, Corazón Mexicano',
+    copyright: '© 2026 HeyFlou. All rights reserved.',
+  },
+
   // Home Page
   home: {
     heroTitle: 'HeyFlou: AI Consulting',
