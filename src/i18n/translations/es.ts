@@ -17,6 +17,18 @@ export const es: TranslationKeys = {
     comingSoon: 'Próximamente',
   },
 
+  // Footer
+  footer: {
+    pages: 'Páginas',
+    services: 'Servicios',
+    socials: 'Redes',
+    legal: 'Legal',
+    blog: 'Blog',
+    refundPolicy: 'Política de Reembolso',
+    tagline: 'Tecnología Israelí, Corazón Mexicano',
+    copyright: '© 2026 HeyFlou. Todos los derechos reservados.',
+  },
+
   // Home Page
   home: {
     heroTitle: 'HeyFlou: Consultoría IA',
