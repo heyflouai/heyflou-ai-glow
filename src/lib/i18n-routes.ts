@@ -34,13 +34,6 @@ export const LOCALIZED_ROUTES: LocalizedRoute[] = [
       'Agentes de IA, plataformas a la medida y asesoría. Mejoramos finanzas, operaciones, atención a clientes y marketing sin cambiar todo tu sistema.',
   },
   {
-    en: '/pricing',
-    es: '/es/precios',
-    esTitle: 'Precios claros de automatización con IA | HeyFlou',
-    esDescription:
-      'Conoce cuánto cuesta automatizar tu negocio. Precios claros, sin letras chiquitas y con una llamada gratis para saber qué te conviene.',
-  },
-  {
     en: '/contact',
     es: '/es/contacto',
     esTitle: 'Contacto | Agenda una llamada gratis | HeyFlou',

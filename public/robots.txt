@@ -59,7 +59,6 @@ Allow: /
 Disallow: /admin/
 Disallow: /dashboard/
 Disallow: /api/
-Disallow: /calculator
 
 # Sitemap location
 Sitemap: https://heyflou.com/sitemap.xml

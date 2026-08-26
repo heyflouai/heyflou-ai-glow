@@ -40,8 +40,8 @@ export const routes: RouteRecord[] = [
       { path: "case-studies", lazy: page(() => import("./pages/CaseStudies")) },
       { path: "about", lazy: page(() => import("./pages/About")) },
       { path: "contact", lazy: page(() => import("./pages/Contact")) },
-      { path: "pricing", lazy: page(() => import("./pages/Pricing")) },
-      { path: "calculator", lazy: page(() => import("./pages/Calculator")) },
+      { path: "pricing", element: <Navigate to="/services" replace /> },
+      { path: "calculator", element: <Navigate to="/services" replace /> },
       { path: "privacy-policy", lazy: page(() => import("./pages/PrivacyPolicy")) },
       { path: "privacy", element: <Navigate to="/privacy-policy" replace /> },
       { path: "terms", lazy: page(() => import("./pages/Terms")) },
@@ -53,11 +53,10 @@ export const routes: RouteRecord[] = [
       // Spanish (es-MX) versions
       { path: "es", lazy: spanishPage(() => import("./pages/Home")) },
       { path: "es/servicios", lazy: spanishPage(() => import("./pages/Services")) },
-      { path: "es/precios", lazy: spanishPage(() => import("./pages/Pricing")) },
+      { path: "es/precios", element: <Navigate to="/es/servicios" replace /> },
       { path: "es/contacto", lazy: spanishPage(() => import("./pages/Contact")) },
       // English-slug aliases under /es
       { path: "es/services", element: <Navigate to="/es/servicios" replace /> },
-      { path: "es/pricing", element: <Navigate to="/es/precios" replace /> },
       { path: "es/contact", element: <Navigate to="/es/contacto" replace /> },
       // ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE
       { path: "*", lazy: page(() => import("./pages/NotFound")) },
