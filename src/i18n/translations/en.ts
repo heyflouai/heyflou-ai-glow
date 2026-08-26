@@ -5,6 +5,7 @@ export const en = {
     services: 'Services',
     caseStudies: 'Case Studies',
     about: 'About',
+    contact: 'Contact',
     bookFreeCall: 'Book Free Call',
     // Services dropdown items
     healthcare: 'Healthcare',
