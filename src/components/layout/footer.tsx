@@ -86,7 +86,7 @@ export const Footer = () => {
               {t.footer.tagline}
             </p>
             <p style={{ marginTop: 24, color: 'rgba(255,255,255,0.3)', fontSize: 13 }}>
-              {t.footer.copyright}
+              {t.footer.allRightsReserved}
             </p>
             <a
               href="mailto:hello@heyflou.com"
