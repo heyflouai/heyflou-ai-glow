@@ -33,7 +33,6 @@
 
 - [Home](/): Overview of HeyFlou's AI automation offering for SMBs.
 - [Case Studies](/case-studies): Real outcomes from HeyFlou deployments, including the Directed Empresas Agentic OS rollout and TheraFlou.
-- [Pricing](/pricing): How engagements are priced and what a first project looks like.
 - [About](/about): Story, founders, how we work and what we stand for.
 - [Contact](/contact): Email us or book a free strategy call.
 
