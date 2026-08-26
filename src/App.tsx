@@ -48,7 +48,9 @@ const App = () => (
           <div className="flex flex-col min-h-screen overflow-x-hidden">
             <Navbar />
             <main className="flex-1 overflow-x-hidden">
+              <Suspense fallback={<div className="min-h-screen" />}>
               <Routes>
+
                 <Route path="/" element={<Home />} />
                 <Route path="/services" element={<Services />} />
                 <Route path="/services/custom" element={<CustomAutomation />} />
