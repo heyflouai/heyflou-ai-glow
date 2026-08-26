@@ -9,7 +9,7 @@
 - Who we serve: Healthcare practices, fitness studios and personal trainers, private schools and tutors, travel agencies and tour operators, and any SMB that runs on people instead of software.
 - Where we are: Mexico City, Mexico and Tel Aviv, Israel. We serve clients across LATAM, North America and Europe.
 - Languages: English and Spanish.
-- Founders: Samy Nakach (Co-Founder, CEO & Product) and Salomon Zayat (Co-Founder, CTO & Engineering).
+- Founders: Samy Nakach (Co-Founder, CEO & Product) and Salo Zayat (Co-Founder, CTO & Engineering).
 - Sub-brand: TheraFlou — a vertical AI product for therapists, psychologists and small clinics.
 - Contact: hello@heyflou.com · Book a strategy call at /contact.
 

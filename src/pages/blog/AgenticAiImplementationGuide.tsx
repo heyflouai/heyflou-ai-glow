@@ -21,7 +21,13 @@ export default function AgenticAiImplementationGuide() {
       dateModified: PUBLISHED,
       inLanguage: 'en',
       mainEntityOfPage: canonical,
-      author: { '@type': 'Organization', name: 'HeyFlou', url: 'https://heyflou.com' },
+      author: {
+        '@type': 'Person',
+        name: 'Samy Nakach',
+        jobTitle: 'Co-Founder & CEO, HeyFlou',
+        url: 'https://heyflou.com/about',
+        worksFor: { '@type': 'Organization', name: 'HeyFlou', url: 'https://heyflou.com' },
+      },
       publisher: {
         '@type': 'Organization',
         name: 'HeyFlou',

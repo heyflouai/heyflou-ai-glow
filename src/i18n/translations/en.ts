@@ -979,7 +979,7 @@ export const en = {
     team1Name: 'Samy Nakach',
     team1Role: 'Co-Founder · CEO & Product',
     team1Bio: 'Leads product strategy, client engagements and the consulting practice. Spends his days translating messy business problems into AI systems business owners actually want to use.',
-    team2Name: 'Salomon Zayat',
+    team2Name: 'Salo Zayat',
     team2Role: 'Co-Founder · CTO & Engineering',
     team2Bio: 'Owns the technology stack — agents, integrations, infrastructure. Trained between Tel Aviv and Mexico City; ships production AI systems that quietly run businesses 24/7.',
     impactTitle: 'A small team, real impact.',

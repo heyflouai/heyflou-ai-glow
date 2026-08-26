@@ -11,7 +11,7 @@ export function TeamSnapshot() {
       linkedin: 'https://www.linkedin.com/in/samuel-nakach/'
     },
     {
-      name: 'Salomon Zayat',
+      name: 'Salo Zayat',
       role: t.about.coFounder, 
       linkedin: 'https://www.linkedin.com/in/salomon-zayat-32284b189'
     }

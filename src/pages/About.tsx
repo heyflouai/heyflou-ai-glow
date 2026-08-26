@@ -78,21 +78,21 @@ export default function About() {
       'availableLanguage': ['English', 'Spanish'],
       'founder': [
         { '@type': 'Person', 'name': 'Samy Nakach', 'jobTitle': 'Co-Founder, CEO & Product' },
-        { '@type': 'Person', 'name': 'Salomon Zayat', 'jobTitle': 'Co-Founder, CTO & Engineering' },
+        { '@type': 'Person', 'name': 'Salo Zayat', 'jobTitle': 'Co-Founder, CTO & Engineering' },
       ],
       'address': [
         { '@type': 'PostalAddress', 'addressLocality': 'Mexico City', 'addressCountry': 'MX' },
         { '@type': 'PostalAddress', 'addressLocality': 'Tel Aviv', 'addressCountry': 'IL' },
       ],
       'knowsAbout': [
-        'WhatsApp AI chatbots',
-        'Lead management automation',
+        'Finance and back-office automation',
+        'Operations workflow automation',
+        'Customer service automation',
+        'Marketing and lead management automation',
         'CRM and email marketing automation',
-        'Healthcare practice automation',
-        'Fitness and education business automation',
-        'Travel agency automation',
         'Agentic AI infrastructure (AgenticOS)',
       ],
+
     },
   ];
 

@@ -62,9 +62,19 @@ export const ORGANIZATION_SCHEMA = {
   "@type": "Organization",
   "name": "HeyFlou",
   "url": SITE_CONFIG.domain,
-  "logo": SITE_CONFIG.logo,
-  "description": "AI Consulting for SMB Workflow Automation",
+  "logo": {
+    "@type": "ImageObject",
+    "url": `${SITE_CONFIG.domain}/logo.png`,
+    "width": 512,
+    "height": 512
+  },
+  "image": `${SITE_CONFIG.domain}/logo.png`,
+  "description": "HeyFlou builds AI agents, custom automation platforms and AI strategy for business functions — finance, operations, customer service and marketing.",
   "email": SITE_CONFIG.email,
+  "founder": [
+    { "@type": "Person", "name": "Samy Nakach", "jobTitle": "Co-Founder, CEO & Product" },
+    { "@type": "Person", "name": "Salo Zayat", "jobTitle": "Co-Founder, CTO & Engineering" }
+  ],
   "sameAs": [
     SITE_CONFIG.linkedIn,
     "https://x.com/Heyflou_"
