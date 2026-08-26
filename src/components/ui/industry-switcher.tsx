@@ -80,11 +80,6 @@ export function IndustrySwitcher() {
                   <Icon className="h-4 w-4" />
                   <span className="whitespace-nowrap">{industry.label}</span>
                   
-                  {industry.badge && (
-                    <span className="ml-1 px-1.5 py-0.5 text-[10px] font-semibold rounded-full bg-hf-purple/20 text-hf-purple animate-pulse">
-                      {industry.badge}
-                    </span>
-                  )}
                 </motion.div>
               </Link>
             );
