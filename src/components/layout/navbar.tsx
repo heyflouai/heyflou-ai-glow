@@ -7,7 +7,8 @@ import { cn } from '@/lib/utils';
 import { useTheme } from '@/hooks/use-theme';
 import { AnimatedThemeToggler } from '@/components/ui/animated-theme-toggler';
 import { LanguageToggle } from '@/components/ui/language-toggle';
-import { useTranslation } from '@/i18n';
+import { useLanguage } from '@/i18n';
+import { localizePath } from '@/lib/i18n-routes';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -27,18 +28,19 @@ export const Navbar = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const location = useLocation();
   const { theme, toggleTheme } = useTheme();
-  const t = useTranslation();
+  const { t, language } = useLanguage();
+  const lp = (path: string) => localizePath(path, language);
 
   const servicesDropdownItems = [
-    { name: 'AI Agents', href: '/services/agents' },
-    { name: 'AI Infrastructure', href: '/services/infrastructure' },
-    { name: 'AI Consulting', href: '/services/consulting' },
+    { name: 'AI Agents', href: lp('/services/agents') },
+    { name: 'AI Infrastructure', href: lp('/services/infrastructure') },
+    { name: 'AI Consulting', href: lp('/services/consulting') },
   ];
 
   const navigationItems = [
-    { name: t.nav.home, href: '/' },
-    { name: t.nav.caseStudies, href: '/case-studies' },
-    { name: t.nav.about, href: '/about' }
+    { name: t.nav.home, href: lp('/') },
+    { name: t.nav.caseStudies, href: lp('/case-studies') },
+    { name: t.nav.about, href: lp('/about') }
   ];
 
   useEffect(() => {
@@ -55,7 +57,7 @@ export const Navbar = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const isServicesActive = location.pathname.startsWith('/services');
+  const isServicesActive = /^\/(es\/servicios|services)/.test(location.pathname);
 
   return (
     <>
@@ -76,10 +78,10 @@ export const Navbar = () => {
             <div className="hidden md:flex items-center space-x-8">
               {/* Home Link */}
               <Link
-                to="/"
+                to={lp("/")}
                 className={cn(
                   "text-sm font-medium transition-colors hover:text-hf-teal",
-                  location.pathname === '/' 
+                  location.pathname === lp('/') 
                     ? "text-hf-teal" 
                     : "text-foreground"
                 )}
@@ -175,10 +177,10 @@ export const Navbar = () => {
             <div className="px-5 py-6 space-y-3">
               {/* Home */}
               <Link
-                to="/"
+                to={lp("/")}
                 className={cn(
                   "block text-base font-medium transition-colors hover:text-hf-teal py-2 min-h-[48px] flex items-center",
-                  location.pathname === '/' 
+                  location.pathname === lp('/') 
                     ? "text-hf-teal" 
                     : "text-foreground"
                 )}
