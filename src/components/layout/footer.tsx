@@ -1,12 +1,15 @@
 import { Link } from 'react-router-dom';
 import logo from '@/assets/heyflou-logo-new.png';
 import { LanguageToggle } from '@/components/ui/language-toggle';
-import { useTranslation } from '@/i18n';
+import { useLanguage } from '@/i18n';
+import { localizePath } from '@/lib/i18n-routes';
 
 type FooterLinkItem = { name: string; href: string; external?: boolean };
 
 export const Footer = () => {
-  const t = useTranslation();
+  const { t, language } = useLanguage();
+  const lp = (p: string) => localizePath(p, language);
+
 
   const pages: FooterLinkItem[] = [
     { name: t.nav.home, href: '/' },
