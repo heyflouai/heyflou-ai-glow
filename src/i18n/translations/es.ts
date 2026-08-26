@@ -7,6 +7,7 @@ export const es: TranslationKeys = {
     services: 'Servicios',
     caseStudies: 'Casos de Éxito',
     about: 'Nosotros',
+    contact: 'Contacto',
     bookFreeCall: 'Reservar Llamada',
     // Services dropdown items
     healthcare: 'Salud',
@@ -114,6 +115,9 @@ export const es: TranslationKeys = {
     // Final CTA
     finalCtaTitle: '¿Listo para transformar tu negocio?',
     finalCtaBtn: 'Reservar Llamada Estratégica Gratis',
+
+    // Blog guide link
+    blogGuideLink: 'Lee la Guía de Implementación de IA Agentic →',
 
     // Testimonial
     testimonialEyebrow: 'RESULTADO DE CLIENTE',
@@ -586,6 +590,7 @@ export const es: TranslationKeys = {
     ctaTitle: '¿Listo para ver qué agentes necesita tu negocio?',
     ctaSubtext: 'Comenzamos cada proyecto con una auditoría gratuita — 30 minutos, sin compromiso. Saldrás sabiendo exactamente qué puede hacer la IA por tus operaciones.',
     ctaButton: 'Agenda tu auditoría gratis',
+    blogGuideLink: 'Lee la Guía de Implementación de IA Agentic →',
   },
 
   // Services / Infrastructure Page
@@ -1183,16 +1188,20 @@ export const es: TranslationKeys = {
   // Footer
   footer: {
     // Brand section
-    tagline: 'Automatización de IA y Consultoría para PyMEs',
+    tagline: 'Tecnología Israelí, Corazón Mexicano',
     description: 'Ayudamos a pequeñas y medianas empresas a integrar IA en sus operaciones a través de automatización inteligente y consultoría estratégica. Ahorra tiempo, reduce costos y escala de manera más inteligente con HeyFlou.',
     trustLine: 'Diseñado para Médicos, Agencias de Viajes y Educación/Fitness.',
     
     // Column headers
+    pages: 'Páginas',
+    services: 'Servicios',
+    socials: 'Redes',
     solutions: 'Soluciones',
     company: 'Empresa',
     resources: 'Recursos',
     legal: 'Legal',
     connect: 'Conectar',
+    refundPolicy: 'Política de Reembolso',
     
     // Solutions links
     healthcareAutomation: 'Automatización de Salud',

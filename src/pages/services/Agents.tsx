@@ -328,6 +328,15 @@ export default function Agents() {
                 {s.ctaButton} <ArrowRight className="h-5 w-5" />
               </GradientMovingButton>
             </div>
+            <div className="mt-6">
+              <Link
+                to="/blog/agentic-ai-implementation-guide"
+                className="inline-flex items-center gap-2 text-white font-semibold hover:underline transition-colors"
+                style={{ fontFamily: INTER, fontWeight: 600 }}
+              >
+                {s.blogGuideLink}
+              </Link>
+            </div>
           </div>
         </section>
       </main>

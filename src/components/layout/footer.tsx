@@ -1,22 +1,27 @@
 import { Link } from 'react-router-dom';
 import logo from '@/assets/heyflou-logo-new.png';
 import { LanguageToggle } from '@/components/ui/language-toggle';
+import { useTranslation } from '@/i18n';
 
 type FooterLinkItem = { name: string; href: string; external?: boolean };
 
 export const Footer = () => {
+  const t = useTranslation();
+
   const pages: FooterLinkItem[] = [
-    { name: 'Home', href: '/' },
-    { name: 'Services', href: '/services' },
-    { name: 'Case Studies', href: '/case-studies' },
-    { name: 'About', href: '/about' },
-    { name: 'Contact', href: '/contact' },
+    { name: t.nav.home, href: '/' },
+    { name: t.nav.services, href: '/services' },
+    { name: t.nav.caseStudies, href: '/case-studies' },
+    { name: t.nav.about, href: '/about' },
+    { name: t.nav.contact, href: '/contact' },
+    { name: t.footer.blog, href: '/blog/agentic-ai-implementation-guide' },
   ];
 
   const services: FooterLinkItem[] = [
+    { name: t.nav.aiConsulting, href: '/services/consulting' },
     { name: 'AI Agents', href: '/services/agents' },
     { name: 'AI Infrastructure', href: '/services/infrastructure' },
-    { name: 'AI Consulting', href: '/services/consulting' },
+    { name: t.nav.customAutomations, href: '/services/custom' },
   ];
 
   const socials: FooterLinkItem[] = [
@@ -27,6 +32,7 @@ export const Footer = () => {
   const legal: FooterLinkItem[] = [
     { name: 'Privacy Policy', href: '/privacy' },
     { name: 'Terms of Service', href: '/terms' },
+    { name: t.footer.refundPolicy, href: '/refund' },
   ];
 
   const linkClass =
@@ -77,10 +83,10 @@ export const Footer = () => {
               style={{ width: 120, height: 'auto', filter: 'brightness(0) invert(1)' }}
             />
             <p style={{ marginTop: 12, color: 'rgba(255,255,255,0.4)', fontSize: 13 }}>
-              Tecnología Israelí, Corazón Mexicano
+              {t.footer.tagline}
             </p>
             <p style={{ marginTop: 24, color: 'rgba(255,255,255,0.3)', fontSize: 13 }}>
-              © 2026 HeyFlou. All rights reserved.
+              {t.footer.allRightsReserved}
             </p>
             <a
               href="mailto:hello@heyflou.com"
@@ -93,10 +99,10 @@ export const Footer = () => {
             </div>
           </div>
 
-          <Column title="PAGES" links={pages} />
-          <Column title="SERVICES" links={services} />
-          <Column title="SOCIALS" links={socials} />
-          <Column title="LEGAL" links={legal} />
+          <Column title={t.footer.pages} links={pages} />
+          <Column title={t.footer.services} links={services} />
+          <Column title={t.footer.socials} links={socials} />
+          <Column title={t.footer.legal} links={legal} />
         </div>
 
         <div className="h-40 md:h-56 lg:h-64" />

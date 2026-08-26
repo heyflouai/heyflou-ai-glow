@@ -5,6 +5,7 @@ export const en = {
     services: 'Services',
     caseStudies: 'Case Studies',
     about: 'About',
+    contact: 'Contact',
     bookFreeCall: 'Book Free Call',
     // Services dropdown items
     healthcare: 'Healthcare',
@@ -112,6 +113,9 @@ export const en = {
     // Final CTA
     finalCtaTitle: 'Ready to transform your business?',
     finalCtaBtn: 'Book a Free Strategy Call',
+
+    // Blog guide link
+    blogGuideLink: 'Read the Agentic AI Implementation Guide →',
 
     // Testimonial
     testimonialEyebrow: 'CLIENT RESULT',
@@ -584,6 +588,7 @@ export const en = {
     ctaTitle: 'Ready to see which agents your business needs?',
     ctaSubtext: "We start every engagement with a free audit — 30 minutes, no commitment. You'll leave knowing exactly what AI can do for your operations.",
     ctaButton: 'Book Your Free Audit',
+    blogGuideLink: 'Read the Agentic AI Implementation Guide →',
   },
 
   // Services / Infrastructure Page
@@ -1181,16 +1186,20 @@ export const en = {
   // Footer
   footer: {
     // Brand section
-    tagline: 'AI Automation & Consulting for SMBs',
+    tagline: 'Tecnología Israelí, Corazón Mexicano',
     description: 'We help small and medium businesses integrate AI into their operations through intelligent automation and strategic consulting. Save time, reduce costs, and scale smarter with HeyFlou.',
     trustLine: 'Built for Medical, Travel Agencies, and Private Ed/Fitness.',
     
     // Column headers
+    pages: 'Pages',
+    services: 'Services',
+    socials: 'Socials',
     solutions: 'Solutions',
     company: 'Company',
     resources: 'Resources',
     legal: 'Legal',
     connect: 'Connect',
+    refundPolicy: 'Refund Policy',
     
     // Solutions links
     healthcareAutomation: 'Healthcare Automation',
