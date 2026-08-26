@@ -1,6 +1,8 @@
-import React, { createContext, useContext, useState, useEffect, useCallback, useMemo } from 'react';
+import React, { createContext, useContext, useEffect, useCallback, useMemo } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { en, TranslationKeys } from './translations/en';
 import { es } from './translations/es';
+import { isSpanishPath, getCounterpartPath } from '@/lib/i18n-routes';
 
 export type Language = 'en' | 'es';
 
@@ -15,7 +17,6 @@ const translations: Record<Language, TranslationKeys> = {
   es,
 };
 
-const STORAGE_KEY = 'heyflou-language';
 
 // Create a proxy to log missing translation keys
 function createTranslationProxy<T extends object>(obj: T, path: string[] = []): T {
