@@ -1191,11 +1191,15 @@ export const en = {
     trustLine: 'Built for Medical, Travel Agencies, and Private Ed/Fitness.',
     
     // Column headers
+    pages: 'Pages',
+    services: 'Services',
+    socials: 'Socials',
     solutions: 'Solutions',
     company: 'Company',
     resources: 'Resources',
     legal: 'Legal',
     connect: 'Connect',
+    refundPolicy: 'Refund Policy',
     
     // Solutions links
     healthcareAutomation: 'Healthcare Automation',
