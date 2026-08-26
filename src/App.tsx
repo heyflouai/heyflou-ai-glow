@@ -7,7 +7,7 @@ import { useEffect, lazy, Suspense } from "react";
 import { LanguageProvider } from "@/i18n";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
-import Home from "./pages/Home";
+const Home = lazy(() => import("./pages/Home"));
 const Services = lazy(() => import("./pages/Services"));
 const CustomAutomation = lazy(() => import("./pages/services/CustomAutomation"));
 const Consulting = lazy(() => import("./pages/services/Consulting"));
