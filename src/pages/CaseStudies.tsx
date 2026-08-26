@@ -137,12 +137,12 @@ export default function CaseStudies() {
               >
                 CLIENT RESULTS
               </p>
-              <h2
+              <h1
                 className="mt-4 text-[32px] md:text-[44px] leading-[1.1]"
                 style={{ fontFamily: JAKARTA, fontWeight: 800, color: '#0F1729' }}
               >
                 Real businesses. Measurable outcomes.
-              </h2>
+              </h1>
               <p
                 className="mt-5 mx-auto max-w-[560px] text-[18px] leading-[1.6]"
                 style={{ fontFamily: INTER, color: '#2B3650' }}
