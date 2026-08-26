@@ -2,34 +2,9 @@ import { useRef, useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import { 
-  Stethoscope, 
-  Dumbbell, 
-  Plane, 
-  Cog, 
-  Sparkles 
-} from 'lucide-react';
+import { Cog, Sparkles } from 'lucide-react';
 
 const industries = [
-  {
-    id: 'healthcare',
-    label: 'Healthcare',
-    href: '/services/healthcare',
-    icon: Stethoscope,
-  },
-  {
-    id: 'fitness-education',
-    label: 'Fitness & Education',
-    href: '/services/fitness-education',
-    icon: Dumbbell,
-  },
-  {
-    id: 'travel-agencies',
-    label: 'Travel Agencies',
-    href: '/services/travel-agencies',
-    icon: Plane,
-    badge: 'Soon',
-  },
   {
     id: 'custom',
     label: 'Custom Solutions',
@@ -105,11 +80,6 @@ export function IndustrySwitcher() {
                   <Icon className="h-4 w-4" />
                   <span className="whitespace-nowrap">{industry.label}</span>
                   
-                  {industry.badge && (
-                    <span className="ml-1 px-1.5 py-0.5 text-[10px] font-semibold rounded-full bg-hf-purple/20 text-hf-purple animate-pulse">
-                      {industry.badge}
-                    </span>
-                  )}
                 </motion.div>
               </Link>
             );

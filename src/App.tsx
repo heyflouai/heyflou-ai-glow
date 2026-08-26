@@ -2,18 +2,15 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
 import { useEffect } from "react";
 import { LanguageProvider } from "@/i18n";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
-import Healthcare from "./pages/services/Healthcare";
-import FitnessEducation from "./pages/services/FitnessEducation";
 import CustomAutomation from "./pages/services/CustomAutomation";
 import Consulting from "./pages/services/Consulting";
-import TravelAgencies from "./pages/services/TravelAgencies";
 import Agents from "./pages/services/Agents";
 import Infrastructure from "./pages/services/Infrastructure";
 import CaseStudies from "./pages/CaseStudies";
@@ -53,13 +50,14 @@ const App = () => (
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/services" element={<Services />} />
-                <Route path="/services/healthcare" element={<Healthcare />} />
-                <Route path="/services/fitness-education" element={<FitnessEducation />} />
                 <Route path="/services/custom" element={<CustomAutomation />} />
                 <Route path="/services/consulting" element={<Consulting />} />
                 <Route path="/services/agents" element={<Agents />} />
                 <Route path="/services/infrastructure" element={<Infrastructure />} />
-                <Route path="/services/travel-agencies" element={<TravelAgencies />} />
+                {/* Retired industry pages — redirect to the services hub */}
+                <Route path="/services/healthcare" element={<Navigate to="/services" replace />} />
+                <Route path="/services/fitness-education" element={<Navigate to="/services" replace />} />
+                <Route path="/services/travel-agencies" element={<Navigate to="/services" replace />} />
                 <Route path="/case-studies" element={<CaseStudies />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />

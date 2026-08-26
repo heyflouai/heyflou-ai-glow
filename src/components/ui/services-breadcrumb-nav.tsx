@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight, ChevronDown, Heart, Dumbbell, Plane, Cog, Lightbulb } from 'lucide-react';
+import { ChevronRight, ChevronDown, Cog, Lightbulb } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { useTranslation } from '@/i18n';
@@ -17,9 +17,6 @@ interface ServicesBreadcrumbNavProps {
 }
 
 const serviceLinks = [
-  { key: 'healthcare', href: '/services/healthcare', icon: Heart },
-  { key: 'fitnessEducation', href: '/services/fitness-education', icon: Dumbbell },
-  { key: 'travelAgencies', href: '/services/travel-agencies', icon: Plane, badge: 'comingSoon' },
   { key: 'customAutomations', href: '/services/custom', icon: Cog },
   { key: 'aiConsulting', href: '/services/consulting', icon: Lightbulb },
 ];
@@ -92,11 +89,6 @@ export function ServicesBreadcrumbNav({ currentPage, className, centered = false
                     >
                       <Icon className="w-4 h-4 text-primary shrink-0" />
                       <span className="flex-1">{t.nav[service.key as keyof typeof t.nav]}</span>
-                      {service.badge && (
-                        <span className="text-[10px] px-1.5 py-0.5 rounded bg-primary/10 text-primary animate-pulse">
-                          {t.nav[service.badge as keyof typeof t.nav]}
-                        </span>
-                      )}
                     </Link>
                   );
                 })}

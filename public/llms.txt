@@ -20,9 +20,6 @@
 - [AI Agents](/services/agents): 24/7 production AI agents for reply, scheduling, follow-up, billing, data entry and reporting.
 - [AI Infrastructure](/services/infrastructure): AgenticOS — agentic infrastructure that orchestrates multiple AI agents across a business.
 - [AI Consulting](/services/consulting): Strategy, AI-readiness assessments, roadmaps and implementation planning (strategy only — execution is delivered via Agents and Infrastructure).
-- [Healthcare](/services/healthcare): AI automation for clinics, therapists, psychologists and physical therapists.
-- [Fitness & Education](/services/fitness-education): AI automation for gyms, studios, personal trainers, tutors and private schools.
-- [Travel Agencies](/services/travel-agencies): AI automation for travel agencies and tour operators.
 - [Custom Automation](/services/custom): Tailored AI workflows for businesses outside the standard verticals.
 - [Case Studies](/case-studies): Real outcomes from HeyFlou deployments — including TheraFlou and custom builds..
 - [About](/about): Story, team, geography and what HeyFlou stands for.
