@@ -7,6 +7,7 @@ export const es: TranslationKeys = {
     services: 'Servicios',
     caseStudies: 'Casos de Éxito',
     about: 'Nosotros',
+    contact: 'Contacto',
     bookFreeCall: 'Reservar Llamada',
     // Services dropdown items
     healthcare: 'Salud',
