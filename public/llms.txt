@@ -31,7 +31,6 @@
 
 ## Optional
 
-- [Privacy](/privacy)
 - [Privacy Policy](/privacy-policy)
 - [Terms of Service](/terms)
 - [Refund Policy](/refund)

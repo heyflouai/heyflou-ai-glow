@@ -20,7 +20,6 @@ import Pricing from "./pages/Pricing";
 import Calculator from "./pages/Calculator";
 import Terms from "./pages/Terms";
 import Refund from "./pages/Refund";
-import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import AgenticAiImplementationGuide from "./pages/blog/AgenticAiImplementationGuide";
@@ -65,7 +64,7 @@ const App = () => (
                 <Route path="/pricing" element={<Pricing />} />
                 <Route path="/calculator" element={<Calculator />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                <Route path="/privacy" element={<Privacy />} />
+                <Route path="/privacy" element={<Navigate to="/privacy-policy" replace />} />
                 <Route path="/terms" element={<Terms />} />
                 <Route path="/refund" element={<Refund />} />
                 <Route path="/blog/agentic-ai-implementation-guide" element={<AgenticAiImplementationGuide />} />
