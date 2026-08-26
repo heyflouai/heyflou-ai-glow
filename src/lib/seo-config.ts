@@ -47,11 +47,6 @@ export const PAGE_SEO = {
     description: "Get in touch with HeyFlou to discuss AI automation for your business. Book a free strategy call or send us a message.",
     path: "/contact",
   },
-  roiCalculator: {
-    title: "ROI Calculator | HeyFlou",
-    description: "Calculate your potential savings with AI automation. See how WhatsApp AI bots and lead management can impact your bottom line.",
-    path: "/roi-calculator",
-  },
 } as const;
 
 /**
