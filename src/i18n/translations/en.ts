@@ -587,6 +587,7 @@ export const en = {
     ctaTitle: 'Ready to see which agents your business needs?',
     ctaSubtext: "We start every engagement with a free audit — 30 minutes, no commitment. You'll leave knowing exactly what AI can do for your operations.",
     ctaButton: 'Book Your Free Audit',
+    blogGuideLink: 'Read the Agentic AI Implementation Guide →',
   },
 
   // Services / Infrastructure Page
