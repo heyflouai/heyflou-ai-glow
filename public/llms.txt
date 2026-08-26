@@ -1,29 +1,41 @@
 # HeyFlou
 
-> HeyFlou is an AI automation and consulting studio for SMBs. We design, build and run custom AI agents, agentic infrastructure (AgenticOS) and strategic AI consulting for clinics, fitness studios, private schools, travel agencies and other people-first businesses. Founded by Mexican operators trained in Tel Aviv, headquartered between Mexico City and Tel Aviv, serving clients across LATAM and beyond.
+> HeyFlou is an industry-agnostic AI automation and consulting agency for small and medium businesses. We design, build and run custom AI agents, agentic AI infrastructure (AgenticOS) and AI strategy consulting organized around business functions — finance, operations, customer service and marketing — not around industries. Founded by Mexican operators trained in Tel Aviv, headquartered between Mexico City and Tel Aviv, serving clients across LATAM, North America and Europe.
 
 ## Key facts
 
 - Name: HeyFlou
-- What we do: Custom AI agents, agentic AI infrastructure (AgenticOS), and AI strategy consulting for small and medium businesses.
-- Who we serve: Healthcare practices, fitness studios and personal trainers, private schools and tutors, travel agencies and tour operators, and any SMB that runs on people instead of software.
+- What we do: Custom AI agents, agentic AI infrastructure (AgenticOS), and AI strategy consulting for SMBs.
+- How we organize the work: By business function — finance, operations, customer service, and marketing.
+- Who we serve: Any small or medium business with repetitive, people-dependent workflows. We are industry-agnostic: the same function-based approach applies regardless of sector.
 - Where we are: Mexico City, Mexico and Tel Aviv, Israel. We serve clients across LATAM, North America and Europe.
-- Languages: English and Spanish.
+- Site language: English only.
 - Founders: Samy Nakach (Co-Founder, CEO & Product) and Salo Zayat (Co-Founder, CTO & Engineering).
-- Sub-brand: TheraFlou — a vertical AI product for therapists, psychologists and small clinics.
-- Contact: hello@heyflou.com · Book a strategy call at /contact.
+- Sub-brand: TheraFlou — an AI product built for physical therapists and small practices, delivered on the same agent infrastructure.
+- Contact: hello@heyflou.com · Book a free strategy call at /contact.
+
+## Business functions we automate
+
+- Finance: invoicing, payment follow-up, reconciliation support, recurring reporting.
+- Operations: scheduling, intake, data entry, internal handoffs, document processing.
+- Customer service: 24/7 first response, qualification, appointment booking, reminders, follow-up.
+- Marketing: lead capture and routing, nurture sequences, content publishing, campaign reporting.
+
+## Services
+
+- [Services](/services): Hub for every service line — AI agents, AI infrastructure, AI consulting and custom automation.
+- [AI Agents](/services/agents): Production AI agents that run continuously — replying to customers, booking appointments, chasing follow-ups, handling billing tasks, entering data, generating reports and much more.
+- [AI Infrastructure](/services/infrastructure): AgenticOS — agentic infrastructure that orchestrates multiple AI agents, tools and data sources across a whole business.
+- [AI Consulting](/services/consulting): AI-readiness assessment, strategy, roadmap and implementation planning. Strategy only — execution is delivered through Agents and Infrastructure.
+- [Custom Automation](/services/custom): Tailored AI workflows built from scratch for a specific business process, any function, any sector.
 
 ## Pages
 
 - [Home](/): Overview of HeyFlou's AI automation offering for SMBs.
-- [Services](/services): Hub of all AI automation service lines — agents, infrastructure, consulting, and industry verticals.
-- [AI Agents](/services/agents): 24/7 production AI agents for reply, scheduling, follow-up, billing, data entry and reporting.
-- [AI Infrastructure](/services/infrastructure): AgenticOS — agentic infrastructure that orchestrates multiple AI agents across a business.
-- [AI Consulting](/services/consulting): Strategy, AI-readiness assessments, roadmaps and implementation planning (strategy only — execution is delivered via Agents and Infrastructure).
-- [Custom Automation](/services/custom): Tailored AI workflows for businesses outside the standard verticals.
-- [Case Studies](/case-studies): Real outcomes from HeyFlou deployments — including TheraFlou and custom builds..
-- [About](/about): Story, team, geography and what HeyFlou stands for.
-- [Contact](/contact): Email or book a free strategy call.
+- [Case Studies](/case-studies): Real outcomes from HeyFlou deployments, including the Directed Empresas Agentic OS rollout and TheraFlou.
+- [Pricing](/pricing): How engagements are priced and what a first project looks like.
+- [About](/about): Story, founders, how we work and what we stand for.
+- [Contact](/contact): Email us or book a free strategy call.
 
 ## Guides
 
