@@ -103,6 +103,7 @@ export const Footer = () => {
           <Column title={t.footer.services} links={services} />
           <Column title={t.footer.socials} links={socials} />
           <Column title={t.footer.legal} links={legal} />
+        </div>
 
         <div className="h-40 md:h-56 lg:h-64" />
       </div>
