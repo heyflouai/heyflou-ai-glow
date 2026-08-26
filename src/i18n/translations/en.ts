@@ -423,7 +423,7 @@ export const en = {
     healthIntegrationDesc: 'Your intelligent patient data hub. Automatically syncs patient information, treatment history, and communications across your practice management system, email, billing platforms, and insurance verification tools.',
     healthIntegrationBenefit1: 'Unified patient records across all systems',
     healthIntegrationBenefit2: 'Automated billing and insurance workflows',
-    healthIntegrationBenefit3: 'HIPAA-compliant data handling and security',
+    healthIntegrationBenefit3: 'Encrypted data handling with role-based access',
     healthIntegrationBenefit4: 'Complete patient interaction and treatment history',
 
     // Fitness & Education Section
@@ -532,7 +532,7 @@ export const en = {
     v2Card4Who: 'Any business with a specific, repetitive process that should run on its own',
     v2Card4Cta: 'Explore custom automations',
     v2WhoLabel: "WHO IT'S FOR",
-    v2TrustStrip: 'Backed by AWS · HIPAA-compliant design · Results in 30–90 days · 3 new projects per month',
+    v2TrustStrip: 'Backed by AWS · Encrypted, role-based access by design · Results in 30–90 days · 3 new projects per month',
   },
 
   // Services / Agents Page
@@ -603,7 +603,7 @@ export const en = {
     build1Title: 'Vertical CRMs',
     build1Desc: 'Patient management systems, client portals, case trackers. Built around your workflow, not a generic sales pipeline.',
     build2Title: 'Compliance Layers',
-    build2Desc: 'Platforms with regulatory requirements built in from day one — NOM-004, HIPAA, LFPDPPP, or custom frameworks. Not bolted on later.',
+    build2Desc: 'Platforms with regulatory requirements built in from day one — NOM-004, LFPDPPP, or custom frameworks. Not bolted on later.',
     build3Title: 'Booking & Scheduling Engines',
     build3Desc: 'End-to-end scheduling infrastructure with AI agents embedded — automated reminders, waitlists, capacity management.',
     build4Title: 'AI-Powered Reporting',
@@ -916,7 +916,7 @@ export const en = {
       title: "Your Clients' Privacy, Guaranteed",
       subtitle: "Sensitive client information deserves protection. We handle your data with enterprise-grade security—because your clients' trust is non-negotiable.",
       card1Title: 'Compliance-Ready Infrastructure',
-      card1Desc: 'Our systems meet industry data protection standards, including HIPAA-ready infrastructure for businesses handling sensitive information.',
+      card1Desc: 'Our systems meet industry data protection standards, including encrypted connections, role-based access and data minimization for businesses handling sensitive information.',
       card2Title: 'End-to-End Encryption',
       card2Desc: "Every message, every booking, every piece of client data is encrypted. We can't read it. Hackers can't steal it. Your clients' information stays safe.",
       card3Title: 'SOC 2 Certified Partners Only',
@@ -1010,7 +1010,7 @@ export const en = {
     theraflouEyebrow: 'Sub-brand spotlight',
     theraflouTitle: 'TheraFlou',
     theraflouTagline: 'Our healthcare-native AI platform.',
-    theraflouDesc: 'Built specifically for private clinics and therapy practices. WhatsApp intake, smart scheduling, no-show recovery and patient follow-ups — wrapped in a HIPAA-ready stack.',
+    theraflouDesc: 'Built specifically for private clinics and therapy practices. WhatsApp intake, smart scheduling, no-show recovery and patient follow-ups — on a secure, access-controlled stack.',
     theraflouCta: 'See TheraFlou',
     ctaTitle: 'Ready to talk?',
     ctaSubtitle: 'Tell us where you are stuck. We will tell you, honestly, whether AI is the answer — and if so, which of our three paths fits.',
@@ -1046,7 +1046,7 @@ export const en = {
     getStartedTitle: 'Get Started with AI Automation',
     getStartedSubtitle: 'Tell us about your practice and we\'ll show you how to save time and get more clients.',
     promo1: 'Save 10-20 hours per week',
-    promo2: 'HIPAA-compliant & secure',
+    promo2: 'Encrypted & secure',
     promo3: 'Results in 60-90 days',
     
     // Toast
