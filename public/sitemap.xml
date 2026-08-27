@@ -73,12 +73,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://heyflou.com/blog/agentic-ai-implementation-guide</loc>
-    <lastmod>2026-06-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://heyflou.com/es</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -150,7 +144,7 @@
     <xhtml:link rel="alternate" hreflang="es-MX" href="https://heyflou.com/es/contacto"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://heyflou.com/contact"/>
   </url>
-  <!-- BLOG:START (generated from src/content/blog — do not edit by hand) -->
+  <!-- BLOG:START (generated from src/content/blog, do not edit by hand) -->
   <url>
     <loc>https://heyflou.com/blog</loc>
     <lastmod>2026-08-20</lastmod>

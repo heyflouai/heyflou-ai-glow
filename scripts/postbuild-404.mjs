@@ -8,7 +8,7 @@ await copyFile('dist/404/index.html', 'dist/404.html');
 console.log('postbuild: wrote dist/404.html');
 
 const DOMAIN = 'https://heyflou.com';
-const START = '  <!-- BLOG:START (generated from src/content/blog — do not edit by hand) -->';
+const START = '  <!-- BLOG:START (generated from src/content/blog, do not edit by hand) -->';
 const END = '  <!-- BLOG:END -->';
 
 const entry = (loc, lastmod, priority) =>
