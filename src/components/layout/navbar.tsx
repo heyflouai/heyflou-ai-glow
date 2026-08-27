@@ -40,7 +40,8 @@ export const Navbar = () => {
   const navigationItems = [
     { name: t.nav.home, href: lp('/') },
     { name: t.nav.caseStudies, href: lp('/case-studies') },
-    { name: t.nav.about, href: lp('/about') }
+    { name: t.nav.about, href: lp('/about') },
+    { name: 'Blog', href: lp('/blog') }
   ];
 
   useEffect(() => {

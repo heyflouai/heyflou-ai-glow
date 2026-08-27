@@ -88,6 +88,13 @@ export const LOCALIZED_ROUTES: LocalizedRoute[] = [
       'Resultados reales de empresas que ya trabajan con nosotros: horas recuperadas, procesos ordenados y equipos con más tiempo para vender.',
   },
   {
+    en: '/blog',
+    es: '/es/blog',
+    esTitle: 'Blog | Notas prácticas de automatización con IA | HeyFlou',
+    esDescription:
+      'Apuntes sobre agentes de IA, automatización y operación para empresas medianas y pequeñas, escritos por el equipo de HeyFlou.',
+  },
+  {
     en: '/contact',
     es: '/es/contacto',
     esTitle: 'Contacto | Agenda una llamada gratis | HeyFlou',
@@ -95,6 +102,7 @@ export const LOCALIZED_ROUTES: LocalizedRoute[] = [
       'Cuéntanos qué te quita tiempo hoy. Te respondemos rápido y agendamos una llamada gratis para ver si podemos ayudarte.',
   },
 ];
+
 
 const stripSlash = (p: string) => (p.length > 1 ? p.replace(/\/+$/, '') : p);
 

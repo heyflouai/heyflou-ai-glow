@@ -32,10 +32,12 @@ export const routes: RouteRecord[] = [
       { path: "privacy", element: <Navigate to="/privacy-policy" replace /> },
       { path: "terms", lazy: page(() => import("./pages/Terms")) },
       { path: "refund", lazy: page(() => import("./pages/Refund")) },
+      { path: "blog", lazy: page(() => import("./pages/blog/BlogIndex")) },
       {
         path: "blog/agentic-ai-implementation-guide",
         lazy: page(() => import("./pages/blog/AgenticAiImplementationGuide")),
       },
+      { path: "blog/:slug", lazy: page(() => import("./pages/blog/BlogPost")) },
       // Spanish (es-MX) versions — locale is part of the route, so translations
       // resolve at build time and the pre-rendered HTML is Spanish.
       { path: "es", lazy: page(() => import("./pages/Home")) },
@@ -53,6 +55,8 @@ export const routes: RouteRecord[] = [
       { path: "es/nosotros", lazy: page(() => import("./pages/About")) },
       { path: "es/casos-de-exito", lazy: page(() => import("./pages/CaseStudies")) },
       { path: "es/contacto", lazy: page(() => import("./pages/Contact")) },
+      { path: "es/blog", lazy: page(() => import("./pages/blog/BlogIndex")) },
+      { path: "es/blog/:slug", lazy: page(() => import("./pages/blog/BlogPost")) },
       { path: "es/precios", element: <Navigate to="/es/servicios" replace /> },
       // English-slug aliases under /es
       { path: "es/services", element: <Navigate to="/es/servicios" replace /> },

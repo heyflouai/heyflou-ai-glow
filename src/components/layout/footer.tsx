@@ -17,7 +17,7 @@ export const Footer = () => {
     { name: t.nav.caseStudies, href: lp('/case-studies') },
     { name: t.nav.about, href: lp('/about') },
     { name: t.nav.contact, href: lp('/contact') },
-    { name: t.footer.blog, href: '/blog/agentic-ai-implementation-guide' },
+    { name: t.footer.blog, href: '/blog' },
   ];
 
   const services: FooterLinkItem[] = [
