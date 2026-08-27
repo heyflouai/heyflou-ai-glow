@@ -39,9 +39,13 @@ for (const file of ['public/sitemap.xml', 'dist/sitemap.xml']) {
   } catch {
     continue;
   }
-  xml = xml.includes(START)
-    ? xml.replace(new RegExp(`${START}[\\s\\S]*?${END}`), block)
-    : xml.replace('</urlset>', `${block}\n</urlset>`);
+  if (xml.includes(START) && xml.includes(END)) {
+    const before = xml.slice(0, xml.indexOf(START));
+    const after = xml.slice(xml.indexOf(END) + END.length);
+    xml = `${before}${block}${after}`;
+  } else {
+    xml = xml.replace('</urlset>', `${block}\n</urlset>`);
+  }
   await writeFile(file, xml);
   console.log(`postbuild: synced ${posts.length} blog posts into ${file}`);
 }
