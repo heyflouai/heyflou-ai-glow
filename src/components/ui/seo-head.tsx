@@ -37,6 +37,7 @@ export const SEOHead = ({
   type = "website",
   jsonLd,
   noIndex = false,
+  alternates: alternatesOverride,
 }: SEOHeadProps) => {
   const { pathname } = useLocation();
 
@@ -50,7 +51,7 @@ export const SEOHead = ({
     : canonical;
 
   const canonicalUrl = resolvedCanonical || getCanonicalUrl(pathname);
-  const alternates = getAlternates(pathname);
+  const alternates = alternatesOverride ?? getAlternates(pathname);
 
   // Always include Organization schema, plus any page-specific schemas
   const schemas: object[] = [ORGANIZATION_SCHEMA];
