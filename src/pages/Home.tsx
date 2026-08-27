@@ -159,7 +159,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.1] drop-shadow-sm mb-6 lg:whitespace-nowrap"
+                className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.1] drop-shadow-sm mb-6 lg:whitespace-nowrap [&>span]:lg:overflow-hidden [&>span]:lg:text-ellipsis"
               >
                 {(() => {
                   const parts = t.homepage.heroTitle.split(/\.\s+/);
