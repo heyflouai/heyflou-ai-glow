@@ -12,7 +12,7 @@ import { FinalCTA } from '@/components/home/FinalCTA';
 import { ToolsVsAgents } from '@/components/home/ToolsVsAgents';
 import { TheraflouFeature } from '@/components/home/TheraflouFeature';
 
-import { useTranslation } from '@/i18n';
+import { useTranslation, useLanguage } from '@/i18n';
 import { PAGE_SEO, getCanonicalUrl } from '@/lib/seo-config';
 import { ShimmerButton } from '@/components/ui/shimmer-button';
 import { motion } from 'framer-motion';
@@ -25,6 +25,7 @@ const DIRECTED_LOGO =
 
 export default function Home() {
   const t = useTranslation();
+  const { language } = useLanguage();
 
   const faqJsonLd = {
     "@context": "https://schema.org",
