@@ -4,7 +4,7 @@
  * Posts live in `src/content/blog/en` and `src/content/blog/es` and are read
  * with `import.meta.glob(..., { eager: true })`, so every post is bundled and
  * fully resolved during static pre-rendering (the HTML that ships already
- * contains the post body — nothing is fetched in the browser).
+ * contains the post body, nothing is fetched in the browser).
  */
 
 import { marked } from 'marked';
@@ -62,7 +62,7 @@ const parseFrontmatter = (raw: string): { data: Record<string, string | string[]
 const str = (v: string | string[] | undefined, fallback = ''): string =>
   typeof v === 'string' ? v : fallback;
 
-/** Never let post content emit an H1 — the frontmatter title owns the H1. */
+/** Never let post content emit an H1. The frontmatter title owns the H1. */
 const demoteContentH1 = (md: string) => md.replace(/^#\s+(?!#)/gm, '## ');
 
 const modules = import.meta.glob('/src/content/blog/**/*.md', {

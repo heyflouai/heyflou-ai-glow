@@ -33,10 +33,6 @@ export const routes: RouteRecord[] = [
       { path: "terms", lazy: page(() => import("./pages/Terms")) },
       { path: "refund", lazy: page(() => import("./pages/Refund")) },
       { path: "blog", lazy: page(() => import("./pages/blog/BlogIndex")) },
-      {
-        path: "blog/agentic-ai-implementation-guide",
-        lazy: page(() => import("./pages/blog/AgenticAiImplementationGuide")),
-      },
       { path: "blog/:slug", lazy: page(() => import("./pages/blog/BlogPost")) },
       // Spanish (es-MX) versions — locale is part of the route, so translations
       // resolve at build time and the pre-rendered HTML is Spanish.
