@@ -144,7 +144,8 @@ export default function Home() {
         
         <div className="max-w-7xl mx-auto relative">
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[55fr_45fr] gap-10 lg:gap-12 items-center text-center lg:text-left">
-            <div>
+            <div className="min-w-0">
+
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
