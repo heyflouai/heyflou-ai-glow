@@ -1,4 +1,4 @@
-# Decap CMS — edits the markdown blog posts in this repository.
+# Decap CMS: edits the markdown blog posts in this repository.
 # GitHub is the source of truth; Lovable hosts this admin UI at /admin.
 backend:
   name: github
@@ -45,7 +45,7 @@ collections:
       - { name: canonical, label: Canonical URL, widget: string, hint: 'Full URL, e.g. https://heyflou.com/blog/my-post' }
       - { name: hreflangCounterpart, label: Counterpart slug in the other language, widget: string, required: false }
       - { name: tags, label: Tags, widget: list, required: false }
-      - { name: body, label: Content, widget: markdown, hint: 'Start sections at H2 — the H1 comes from the title.' }
+      - { name: body, label: Content, widget: markdown, hint: 'Start sections at H2. The H1 comes from the title.' }
 
   - name: blog_es
     label: Blog posts (Español)
