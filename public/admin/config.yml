@@ -1,0 +1,62 @@
+# Decap CMS — edits the markdown blog posts in this repository.
+# GitHub is the source of truth; Lovable hosts this admin UI at /admin.
+backend:
+  name: github
+  repo: heyflouai/heyflou-ai-glow
+  branch: main
+  base_url: https://syflufvohjamjngttugh.supabase.co
+  auth_endpoint: functions/v1/decap-oauth/auth
+  commit_messages:
+    create: 'cms: create {{collection}} "{{slug}}"'
+    update: 'cms: update {{collection}} "{{slug}}"'
+    delete: 'cms: delete {{collection}} "{{slug}}"'
+    uploadMedia: 'cms: upload "{{path}}"'
+    deleteMedia: 'cms: delete "{{path}}"'
+    openAuthoring: 'cms: {{message}}'
+
+# Draft -> In review -> Ready (published) via pull requests on GitHub.
+publish_mode: editorial_workflow
+
+media_folder: public/blog-images
+public_folder: /blog-images
+
+collections:
+  - name: blog_en
+    label: Blog posts (English)
+    label_singular: English post
+    folder: src/content/blog/en
+    create: true
+    slug: '{{fields.slug}}'
+    extension: md
+    format: yaml-frontmatter
+    media_folder: /public/blog-images
+    public_folder: /blog-images
+    summary: '{{title}} — {{date}}'
+    sortable_fields: [date, title]
+    fields: &post_fields
+      - { name: title, label: Title, widget: string }
+      - { name: description, label: Meta description, widget: text, hint: 'Under 160 characters.' }
+      - { name: slug, label: URL slug, widget: string, pattern: ['^[a-z0-9-]+$', 'Lowercase letters, numbers and hyphens only'] }
+      - { name: date, label: Published date, widget: datetime, date_format: 'YYYY-MM-DD', time_format: false, picker_utc: true }
+      - { name: dateModified, label: Last updated, widget: datetime, date_format: 'YYYY-MM-DD', time_format: false, picker_utc: true }
+      - { name: author, label: Author, widget: string, default: Samy Nakach }
+      - { name: authorBio, label: Author bio, widget: text }
+      - { name: heroImage, label: Hero image, widget: image, media_folder: /public/blog-images, public_folder: /blog-images }
+      - { name: canonical, label: Canonical URL, widget: string, hint: 'Full URL, e.g. https://heyflou.com/blog/my-post' }
+      - { name: hreflangCounterpart, label: Counterpart slug in the other language, widget: string, required: false }
+      - { name: tags, label: Tags, widget: list, required: false }
+      - { name: body, label: Content, widget: markdown, hint: 'Start sections at H2 — the H1 comes from the title.' }
+
+  - name: blog_es
+    label: Blog posts (Español)
+    label_singular: Entrada en español
+    folder: src/content/blog/es
+    create: true
+    slug: '{{fields.slug}}'
+    extension: md
+    format: yaml-frontmatter
+    media_folder: /public/blog-images
+    public_folder: /blog-images
+    summary: '{{title}} — {{date}}'
+    sortable_fields: [date, title]
+    fields: *post_fields
