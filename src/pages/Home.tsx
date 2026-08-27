@@ -12,7 +12,7 @@ import { FinalCTA } from '@/components/home/FinalCTA';
 import { ToolsVsAgents } from '@/components/home/ToolsVsAgents';
 import { TheraflouFeature } from '@/components/home/TheraflouFeature';
 
-import { useTranslation } from '@/i18n';
+import { useTranslation, useLanguage } from '@/i18n';
 import { PAGE_SEO, getCanonicalUrl } from '@/lib/seo-config';
 import { ShimmerButton } from '@/components/ui/shimmer-button';
 import { motion } from 'framer-motion';
@@ -25,6 +25,7 @@ const DIRECTED_LOGO =
 
 export default function Home() {
   const t = useTranslation();
+  const { language } = useLanguage();
 
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -144,7 +145,8 @@ export default function Home() {
         
         <div className="max-w-7xl mx-auto relative">
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[55fr_45fr] gap-10 lg:gap-12 items-center text-center lg:text-left">
-            <div>
+            <div className="min-w-0">
+
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -158,7 +160,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.1] drop-shadow-sm mb-6 lg:whitespace-nowrap"
+                className={`text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.1] drop-shadow-sm mb-6 ${language === 'en' ? 'lg:whitespace-nowrap' : 'lg:text-5xl xl:text-6xl'}`}
               >
                 {(() => {
                   const parts = t.homepage.heroTitle.split(/\.\s+/);
