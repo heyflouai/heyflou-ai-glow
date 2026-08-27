@@ -135,7 +135,7 @@ export default function BlogPost() {
           {post.heroImage && (
             <img
               src={post.heroImage}
-              alt={`${post.title} — HeyFlou`}
+              alt={`${post.title} (HeyFlou)`}
               className="w-full rounded-2xl border border-border mb-10 object-cover"
             />
           )}
@@ -151,7 +151,7 @@ export default function BlogPost() {
                 {copy.about}
               </h2>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                <span className="text-foreground font-medium">{post.author}</span> — {post.authorBio}
+                <span className="text-foreground font-medium">{post.author}</span>: {post.authorBio}
               </p>
             </div>
           )}

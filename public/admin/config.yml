@@ -31,7 +31,7 @@ collections:
     format: yaml-frontmatter
     media_folder: /public/blog-images
     public_folder: /blog-images
-    summary: '{{title}} — {{date}}'
+    summary: '{{title}} ({{date}})'
     sortable_fields: [date, title]
     fields: &post_fields
       - { name: title, label: Title, widget: string }
@@ -57,6 +57,6 @@ collections:
     format: yaml-frontmatter
     media_folder: /public/blog-images
     public_folder: /blog-images
-    summary: '{{title}} — {{date}}'
+    summary: '{{title}} ({{date}})'
     sortable_fields: [date, title]
     fields: *post_fields

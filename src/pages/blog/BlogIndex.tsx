@@ -10,10 +10,10 @@ const COPY = {
     eyebrow: 'BLOG',
     title: 'Practical AI notes for growing businesses',
     subtitle:
-      'Field notes on AI agents, automation and operations — written for the teams that have to run the business tomorrow morning.',
+      'Field notes on AI agents, automation and operations, written for the teams that have to run the business tomorrow morning.',
     seoTitle: 'Blog | Practical AI automation notes | HeyFlou',
     seoDescription:
-      'Field notes on AI agents, automation, and operations for small and mid-sized businesses — written by the HeyFlou team.',
+      'Field notes on AI agents, automation, and operations for small and mid-sized businesses, written by the HeyFlou team.',
     empty: 'New posts are on the way.',
     read: 'Read the post',
   },
@@ -21,7 +21,7 @@ const COPY = {
     eyebrow: 'BLOG',
     title: 'Notas prácticas de IA para negocios en crecimiento',
     subtitle:
-      'Apuntes reales sobre agentes de IA, automatización y operación — escritos para los equipos que tienen que sacar el negocio mañana por la mañana.',
+      'Apuntes reales sobre agentes de IA, automatización y operación, escritos para los equipos que tienen que sacar el negocio mañana por la mañana.',
     seoTitle: 'Blog | Notas prácticas de automatización con IA | HeyFlou',
     seoDescription:
       'Apuntes sobre agentes de IA, automatización y operación para empresas medianas y pequeñas, escritos por el equipo de HeyFlou.',

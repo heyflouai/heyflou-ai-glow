@@ -32,7 +32,6 @@ export default defineConfig(({ mode }) => ({
       "/privacy-policy",
       "/terms",
       "/refund",
-      "/blog/agentic-ai-implementation-guide",
       "/es",
       "/es/servicios",
       "/es/servicios/agentes",
