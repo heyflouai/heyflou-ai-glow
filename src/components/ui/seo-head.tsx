@@ -11,7 +11,10 @@ interface SEOHeadProps {
   type?: string;
   jsonLd?: object | object[];
   noIndex?: boolean;
+  /** Override the route-derived hreflang alternates (used by markdown blog posts). */
+  alternates?: { hreflang: string; href: string }[];
 }
+
 
 /**
  * SEOHead Component - Manages all SEO meta tags
