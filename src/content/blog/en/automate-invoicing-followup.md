@@ -6,7 +6,7 @@ date: 2026-09-02
 dateModified: 2026-09-02
 author: Samy Nakach
 authorBio: Co-founder and CEO of HeyFlou. Works with SMB teams on AI automation across finance, operations, customer service and marketing.
-heroImage: /og-image.jpg
+heroImage: /blog-images/invoicing-followup.png
 canonical: https://heyflou.com/blog/automate-invoicing-followup
 hreflangCounterpart: automatizar-facturacion-y-cobranza
 tags: [Finance, Business automation, Cash flow]

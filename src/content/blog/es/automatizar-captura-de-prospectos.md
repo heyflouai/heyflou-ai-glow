@@ -6,7 +6,7 @@ date: 2026-09-02
 dateModified: 2026-09-02
 author: Samy Nakach
 authorBio: Cofundador y CEO de HeyFlou. Trabaja con equipos de PyMEs en automatización con IA para finanzas, operaciones, atención a clientes y marketing.
-heroImage: /og-image.jpg
+heroImage: /blog-images/lead-capture.jpg
 canonical: https://heyflou.com/es/blog/automatizar-captura-de-prospectos
 hreflangCounterpart: lead-capture-automation
 tags: [Marketing, Prospección, Automatización]

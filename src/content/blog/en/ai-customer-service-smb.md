@@ -6,7 +6,7 @@ date: 2026-09-02
 dateModified: 2026-09-02
 author: Samy Nakach
 authorBio: Co-founder and CEO of HeyFlou. Works with SMB teams on AI automation across finance, operations, customer service and marketing.
-heroImage: /og-image.jpg
+heroImage: /blog-images/ai-customer-service.png
 canonical: https://heyflou.com/blog/ai-customer-service-smb
 hreflangCounterpart: ia-atencion-clientes-pymes
 tags: [Customer service, AI agents, Business automation]

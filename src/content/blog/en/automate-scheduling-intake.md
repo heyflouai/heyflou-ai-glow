@@ -6,7 +6,7 @@ date: 2026-09-02
 dateModified: 2026-09-02
 author: Samy Nakach
 authorBio: Co-founder and CEO of HeyFlou. Works with SMB teams on AI automation across finance, operations, customer service and marketing.
-heroImage: /og-image.jpg
+heroImage: /blog-images/scheduling-intake.jpg
 canonical: https://heyflou.com/blog/automate-scheduling-intake
 hreflangCounterpart: automatizar-agenda-y-alta-de-clientes
 tags: [Operations, Business automation, Scheduling]
