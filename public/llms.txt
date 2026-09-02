@@ -9,10 +9,10 @@
 - How we organize the work: By business function — finance, operations, customer service, and marketing.
 - Who we serve: Any small or medium business with repetitive, people-dependent workflows. We are industry-agnostic: the same function-based approach applies regardless of sector.
 - Where we are: Mexico City, Mexico and Tel Aviv, Israel. We serve clients across LATAM, North America and Europe.
-- Site language: English only.
+- Site languages: English (heyflou.com) and Spanish, es-MX (heyflou.com/es). Both versions are complete and cross-linked with hreflang.
 - Founders: Samy Nakach (Co-Founder, CEO & Product) and Salo Zayat (Co-Founder, CTO & Engineering).
 - Sub-brand: TheraFlou — an AI product built for physical therapists and small practices, delivered on the same agent infrastructure.
-- Contact: hello@heyflou.com · Book a free strategy call at /contact.
+- Contact: hello@heyflou.com · Book a free strategy call at /contact (Spanish: /es/contacto).
 
 ## Business functions we automate
 
