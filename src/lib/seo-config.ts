@@ -95,13 +95,13 @@ export const SERVICE_SCHEMA = {
     "url": SITE_CONFIG.domain
   },
   "name": "AI Workflow Automation for SMBs",
-  "description": "WhatsApp AI bots, lead management pipelines, and CRM + email marketing automation for small and medium businesses.",
+  "description": "AI agents, custom automation platforms and AI strategy for SMBs, organized by business function — finance, operations, customer service and marketing.",
   "audience": {
     "@type": "Audience",
     "audienceType": "Small and Medium Businesses",
     "geographicArea": {
       "@type": "AdministrativeArea",
-      "name": "United States"
+      "name": "Worldwide"
     }
   },
   "hasOfferCatalog": {
@@ -112,24 +112,32 @@ export const SERVICE_SCHEMA = {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "WhatsApp AI Bot",
-          "description": "24/7 lead capture and customer engagement via WhatsApp"
+          "name": "AI Agents",
+          "description": "Autonomous agents that answer, qualify, book and follow up across your existing channels"
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Lead Management Pipeline",
-          "description": "Automated lead tracking and follow-up system"
+          "name": "Custom AI Automation",
+          "description": "Bespoke automation built around a specific workflow in finance, operations, customer service or marketing"
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "CRM + Email Marketing",
-          "description": "Client organization and automated email sequences"
+          "name": "AI Infrastructure",
+          "description": "Agentic AI platforms and the infrastructure to run them in production"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "AI Strategy Consulting",
+          "description": "Assessment and roadmap for where AI actually pays back in your business"
         }
       }
     ]
@@ -174,3 +182,88 @@ export function buildServiceSchema(opts: {
       : undefined,
   };
 }
+
+/**
+ * WebSite schema - emitted on every page alongside Organization.
+ * Declares the site itself and its two language versions.
+ */
+export const WEBSITE_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": SITE_CONFIG.name,
+  "url": SITE_CONFIG.domain,
+  "inLanguage": ["en", "es-MX"],
+  "publisher": { "@type": "Organization", "name": SITE_CONFIG.name, "url": SITE_CONFIG.domain },
+} as const;
+
+/**
+ * Build a BreadcrumbList for a nested route.
+ * Pass crumbs excluding the site root - the root is prepended automatically.
+ */
+export function buildBreadcrumbSchema(
+  crumbs: { name: string; path: string }[],
+  lang: 'en' | 'es' = 'en',
+) {
+  const root = { name: "HeyFlou", path: lang === 'es' ? '/es' : '/' };
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [root, ...crumbs].map((c, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: c.name,
+      item: getCanonicalUrl(c.path),
+    })),
+  };
+}
+
+/**
+ * Build a CollectionPage wrapping an ItemList - for index pages such as
+ * /case-studies that list entities but are not themselves an article.
+ */
+export function buildCollectionPageSchema(opts: {
+  name: string;
+  description: string;
+  path: string;
+  lang?: 'en' | 'es';
+  items: { name: string; description?: string }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: opts.name,
+    description: opts.description,
+    url: getCanonicalUrl(opts.path),
+    inLanguage: opts.lang === 'es' ? 'es-MX' : 'en',
+    isPartOf: { "@type": "WebSite", name: SITE_CONFIG.name, url: SITE_CONFIG.domain },
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: opts.items.length,
+      itemListElement: opts.items.map((it, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: it.name,
+        ...(it.description ? { description: it.description } : {}),
+      })),
+    },
+  };
+}
+
+/**
+ * Human labels for breadcrumb trails, keyed by English path.
+ * Used to auto-build a BreadcrumbList for any nested route.
+ */
+export const BREADCRUMB_LABELS: Record<string, { en: string; es: string }> = {
+  '/services': { en: 'Services', es: 'Servicios' },
+  '/services/agents': { en: 'AI Agents', es: 'Agentes de IA' },
+  '/services/infrastructure': { en: 'AI Infrastructure', es: 'Infraestructura de IA' },
+  '/services/consulting': { en: 'AI Consulting', es: 'Asesoría en IA' },
+  '/services/custom': { en: 'Custom Automation', es: 'Automatización personalizada' },
+  '/case-studies': { en: 'Case Studies', es: 'Casos de éxito' },
+  '/about': { en: 'About', es: 'Quiénes somos' },
+  '/contact': { en: 'Contact', es: 'Contacto' },
+  '/blog': { en: 'Blog', es: 'Blog' },
+  '/privacy-policy': { en: 'Privacy Policy', es: 'Aviso de privacidad' },
+  '/terms': { en: 'Terms of Service', es: 'Términos del servicio' },
+  '/refund': { en: 'Refund Policy', es: 'Política de reembolso' },
+};

@@ -1,7 +1,15 @@
 import { useLocation } from 'react-router-dom';
 import { Head } from 'vite-react-ssg';
-import { SITE_CONFIG, DEFAULT_SEO, ORGANIZATION_SCHEMA, getCanonicalUrl } from '@/lib/seo-config';
-import { findRouteByPath, getAlternates, isSpanishPath } from '@/lib/i18n-routes';
+import {
+  SITE_CONFIG,
+  DEFAULT_SEO,
+  ORGANIZATION_SCHEMA,
+  WEBSITE_SCHEMA,
+  BREADCRUMB_LABELS,
+  buildBreadcrumbSchema,
+  getCanonicalUrl,
+} from '@/lib/seo-config';
+import { findRouteByPath, getAlternates, isSpanishPath, localizePath } from '@/lib/i18n-routes';
 
 interface SEOHeadProps {
   title?: string;
@@ -53,13 +61,29 @@ export const SEOHead = ({
   const canonicalUrl = resolvedCanonical || getCanonicalUrl(pathname);
   const alternates = alternatesOverride ?? getAlternates(pathname);
 
-  // Always include Organization schema, plus any page-specific schemas
-  const schemas: object[] = [ORGANIZATION_SCHEMA];
-  if (jsonLd) {
-    if (Array.isArray(jsonLd)) {
-      schemas.push(...jsonLd.filter((schema: any) => schema['@type'] !== 'Organization'));
-    } else if ((jsonLd as any)['@type'] !== 'Organization') {
-      schemas.push(jsonLd);
+  // Always include Organization + WebSite schema, plus any page-specific schemas
+  const BASE_TYPES = ['Organization', 'WebSite'];
+  const schemas: object[] = [ORGANIZATION_SCHEMA, WEBSITE_SCHEMA];
+  const incoming = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+  schemas.push(...incoming.filter((schema: any) => !BASE_TYPES.includes(schema['@type'])));
+
+  // Auto-derive a BreadcrumbList for nested routes, unless the page supplies its own
+  // (blog posts build a 3-level trail themselves).
+  const suppliesBreadcrumb = incoming.some((s: any) => s['@type'] === 'BreadcrumbList');
+  if (!suppliesBreadcrumb) {
+    const lang: 'en' | 'es' = spanish ? 'es' : 'en';
+    // Canonical English path for the current route, so labels resolve in both languages.
+    const enPath = spanish && localized ? localized.en : pathname.replace(/\/$/, '') || '/';
+    if (enPath !== '/') {
+      const segments = enPath.split('/').filter(Boolean);
+      const crumbs = segments
+        .map((_, i) => `/${segments.slice(0, i + 1).join('/')}`)
+        .filter((ancestor) => BREADCRUMB_LABELS[ancestor])
+        .map((ancestor) => ({
+          name: BREADCRUMB_LABELS[ancestor][lang],
+          path: localizePath(ancestor, lang),
+        }));
+      if (crumbs.length) schemas.push(buildBreadcrumbSchema(crumbs, lang));
     }
   }
 

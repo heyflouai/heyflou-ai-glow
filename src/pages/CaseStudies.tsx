@@ -1,7 +1,7 @@
 import { SEOHead } from '@/components/ui/seo-head';
 import { Section } from '@/components/ui/section';
 import { useTranslation } from '@/i18n';
-import { PAGE_SEO, getCanonicalUrl } from '@/lib/seo-config';
+import { PAGE_SEO, getCanonicalUrl, buildCollectionPageSchema } from '@/lib/seo-config';
 import { NumberTicker, parseMetricValue } from '@/components/ui/number-ticker';
 import { MovingBorderButton } from '@/components/ui/moving-border';
 import { ShimmerButton } from '@/components/ui/shimmer-button';
@@ -112,12 +112,25 @@ export default function CaseStudies() {
     },
   ];
 
+  // /case-studies is "Crawled - currently not indexed" in GSC; give Google an
+  // explicit entity list so the page reads as a collection, not a landing page.
+  const collectionSchema = buildCollectionPageSchema({
+    name: PAGE_SEO.caseStudies.title,
+    description: PAGE_SEO.caseStudies.description,
+    path: PAGE_SEO.caseStudies.path,
+    items: customSolutionCards.map((c) => ({
+      name: c.headline,
+      description: c.solutionText,
+    })),
+  });
+
   return (
     <>
       <SEOHead 
         title={PAGE_SEO.caseStudies.title}
         description={PAGE_SEO.caseStudies.description}
         canonical={getCanonicalUrl(PAGE_SEO.caseStudies.path)}
+        jsonLd={collectionSchema}
       />
       
       <main className="pt-16">
