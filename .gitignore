@@ -22,3 +22,17 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Environment files
+#
+# NOTE: .env itself is deliberately left TRACKED. Lovable Cloud generates it and
+# it holds only public VITE_* values (project URL + anon publishable key), which
+# Vite inlines into the client bundle anyway. Untracking it risks breaking the
+# Lovable build, so it stays.
+#
+# These rules exist so that any OTHER env file - a local override, a scratch
+# copy, anything holding a service_role or third-party key - can never reach
+# this repo, which is public.
+.env
+.env.*
+!.env.example
