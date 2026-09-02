@@ -53,7 +53,7 @@ const PrivacyPolicy = () => {
                 HeyFlou is an AI automation and consulting firm that helps small and medium-sized businesses (SMBs) streamline operations through intelligent automation. Our services include business process automation, AI-powered communication tools, CRM integrations, scheduling systems, and custom AI solutions.
               </p>
               <p className="mb-3">
-                We operate primarily in Mexico and serve clients across healthcare, fitness, education, and other service-based industries.
+                We operate primarily in Mexico and serve small and medium businesses across any industry, working along business functions such as finance, operations, customer service and marketing.
               </p>
               <p>
                 <strong className="text-foreground">Contact:</strong>{' '}

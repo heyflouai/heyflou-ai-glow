@@ -10,9 +10,6 @@ export const es: TranslationKeys = {
     contact: 'Contacto',
     bookFreeCall: 'Reservar Llamada',
     // Services dropdown items
-    healthcare: 'Salud',
-    fitnessEducation: 'Fitness y Educación',
-    travelAgencies: 'Agencias de Viajes',
     customAutomations: 'Automatizaciones Personalizadas',
     aiConsulting: 'Consultoría IA',
     comingSoon: 'Próximamente',
@@ -131,94 +128,6 @@ export const es: TranslationKeys = {
   },
 
   // Industries & Workflows Section
-  industries: {
-    title: 'Industrias que Atendemos y Lo que Automatizamos',
-    subtitle: 'Soluciones de IA personalizadas para negocios de salud, fitness y viajes. Elige tu industria para ver cómo podemos ayudarte.',
-    
-    // Verticals
-    healthcareTitle: 'Prácticas de Salud',
-    healthcareDesc: 'Consultorios médicos, terapeutas, clínicas de fisioterapia',
-    fitnessTitle: 'Fitness y Educación',
-    fitnessDesc: 'Estudios de yoga, pilates, gimnasios, tutores, escuelas de idiomas',
-    travelTitle: 'Agencias de Viajes',
-    travelDesc: 'Agencias de viajes, operadores turísticos, servicios de reserva',
-    
-    // Workflows Section
-    workflowsTitle: 'Nuestras Automatizaciones Principales',
-    keyFeatures: 'Características Clave',
-    useCases: 'Casos de Uso',
-    getThisAutomation: 'Obtener Esta Automatización',
-    learnMore: 'Saber más',
-    
-    // WhatsApp Chatbot
-    whatsappTitle: 'Chatbot IA para WhatsApp',
-    whatsappDesc: 'Responde preguntas de clientes 24/7, califica leads y agenda citas al instante',
-    whatsappTag: 'Todas las Industrias',
-    whatsappFeature1: 'Respuestas automatizadas 24/7',
-    whatsappFeature2: 'Preguntas de calificación de leads',
-    whatsappFeature3: 'Reserva de citas instantánea',
-    whatsappFeature4: 'Integración con tu calendario',
-    whatsappUseCase1: 'Responder preguntas comunes sobre servicios y precios',
-    whatsappUseCase2: 'Calificar nuevos leads antes de que lleguen a tu equipo',
-    whatsappUseCase3: 'Agendar citas directamente desde WhatsApp',
-    whatsappTimeline: '2-3 semanas para lanzar',
-    
-    // Lead Management
-    leadsTitle: 'Sistema de Gestión de Leads',
-    leadsDesc: 'Rastrea cada contacto y seguimiento automáticamente. Nunca pierdas una oportunidad.',
-    leadsTag: 'Todas las Industrias',
-    leadsFeature1: 'Seguimiento automático de contactos',
-    leadsFeature2: 'Recordatorios de seguimiento',
-    leadsFeature3: 'Puntuación y priorización de leads',
-    leadsFeature4: 'Visualización del pipeline',
-    leadsUseCase1: 'Nunca pierdas un seguimiento con recordatorios automáticos',
-    leadsUseCase2: 'Ve todo tu pipeline de un vistazo',
-    leadsUseCase3: 'Rastrea la fuente de leads y tasas de conversión',
-    leadsTimeline: '3-4 semanas para lanzar',
-    
-    // Appointment Scheduling
-    schedulingTitle: 'Agendamiento de Citas',
-    schedulingDesc: 'Reservas de calendario automatizadas con sincronización Google/Outlook y recordatorios de no-shows',
-    schedulingTag: 'Salud, Fitness',
-    schedulingFeature1: 'Sincronización con Google/Outlook',
-    schedulingFeature2: 'Confirmaciones de reserva automáticas',
-    schedulingFeature3: 'Recordatorios por SMS/email',
-    schedulingFeature4: 'Herramientas de reducción de no-shows',
-    schedulingUseCase1: 'Deja que los clientes reserven 24/7 sin llamadas telefónicas',
-    schedulingUseCase2: 'Reduce no-shows en 40% con recordatorios automáticos',
-    schedulingUseCase3: 'Sincroniza todos los calendarios de tu equipo',
-    schedulingTimeline: '2-3 semanas para lanzar',
-    
-    // CRM Integration
-    crmTitle: 'Integración de CRM',
-    crmDesc: 'Conecta tus herramientas existentes y sincroniza datos automáticamente a un sistema centralizado',
-    crmTag: 'Todas las Industrias',
-    crmFeature1: 'Conecta herramientas existentes (HubSpot, Salesforce, etc.)',
-    crmFeature2: 'Sincronización automática de datos',
-    crmFeature3: 'Base de datos centralizada de clientes',
-    crmFeature4: 'Automatización de flujos personalizados',
-    crmUseCase1: 'Deja de ingresar datos manualmente entre sistemas',
-    crmUseCase2: 'Mantén a todo tu equipo en la misma página',
-    crmUseCase3: 'Activa flujos automatizados basados en acciones de clientes',
-    crmTimeline: '3-5 semanas para lanzar',
-    
-    // Email & SMS
-    emailSmsTitle: 'Automatización de Email y SMS',
-    emailSmsDesc: 'Secuencias de seguimiento personalizadas, campañas de re-engagement y confirmaciones de reserva',
-    emailSmsTag: 'Todas las Industrias',
-    emailSmsFeature1: 'Secuencias de mensajes personalizados',
-    emailSmsFeature2: 'Campañas activadas por comportamiento',
-    emailSmsFeature3: 'Automatización de re-engagement',
-    emailSmsFeature4: 'Mensajes de confirmación de reserva',
-    emailSmsUseCase1: 'Da la bienvenida a nuevos clientes automáticamente',
-    emailSmsUseCase2: 'Re-engancha leads fríos con campañas segmentadas',
-    emailSmsUseCase3: 'Envía recordatorios y confirmaciones de citas',
-    emailSmsTimeline: '2-3 semanas para lanzar',
-    
-    // CTA
-    customWorkflowText: '¿Necesitas un flujo personalizado? Hablemos.',
-    getCustomSolution: 'Obtener Solución Personalizada',
-  },
 
   // Problem Solution Section
   problemSolution: {
@@ -252,85 +161,6 @@ export const es: TranslationKeys = {
   },
 
   // Services Page
-  services: {
-    heroTitle: 'Marketing con IA y Automatización para Agencias de Viajes',
-    heroSubtitle: 'Genera más reservas con embudos automatizados, chatbots de IA y campañas de WhatsApp—todo en una plataforma.',
-    
-    // Marketing Engine
-    marketingEngineTitle: 'Motor de Marketing Completo para Agencias de Viajes',
-    marketingEngineDesc: 'Un sistema de marketing todo-en-uno que genera más reservas a través de embudos automatizados, segmentación y secuencias de seguimiento. Incluye landing pages, campañas de WhatsApp y analíticas.',
-    keyFeatures: 'Características Clave:',
-    marketingFeature1: 'Embudos de marketing automatizados',
-    marketingFeature2: 'Segmentación y targeting de leads',
-    marketingFeature3: 'Gestión de campañas de WhatsApp',
-    marketingFeature4: 'Automatización de secuencias de email',
-    marketingFeature5: 'Dashboard de analíticas de rendimiento',
-    marketingFeature6: 'Seguimiento de campañas multicanal',
-    
-    // AI Chatbot
-    chatbotTitle: 'Chatbot de IA para Viajes que Vende tus Paquetes',
-    chatbotDesc: 'Tu asistente de marketing 24/7. Promociona paquetes, responde preguntas de viajeros al instante, califica leads y los envía a tu CRM. Transforma consultas en viajeros listos para reservar.',
-    coreFeatures: 'Características Principales:',
-    chatbotFeature1: 'Promoción de paquetes 24/7',
-    chatbotFeature2: 'Q&A instantáneo para viajeros',
-    chatbotFeature3: 'Calificación y puntuación de leads',
-    chatbotFeature4: 'Integración fluida con CRM',
-    chatbotFeature5: 'Recomendaciones de viajes personalizadas',
-    chatbotFeature6: 'Detección de intención de reserva',
-    
-    // WhatsApp
-    whatsappTitle: 'Marketing Automatizado de WhatsApp y Seguimientos',
-    whatsappDesc: 'Recupera consultas abandonadas, promociona ofertas de temporada y mantén a los leads enganchados automáticamente. Maximiza conversiones sin trabajo manual extra.',
-    whatsIncluded: 'Qué Incluye:',
-    whatsappFeature1: 'Recuperación de consultas abandonadas',
-    whatsappFeature2: 'Promociones de ofertas de temporada',
-    whatsappFeature3: 'Secuencias de seguimiento automatizadas',
-    whatsappFeature4: 'Campañas de broadcast',
-    whatsappFeature5: 'Flujos de re-engagement de leads',
-    whatsappFeature6: 'Seguimiento y analíticas de respuestas',
-    
-    // CRM
-    crmTitle: 'CRM de Marketing de Viajes y Dashboard de Analíticas',
-    crmDesc: 'Rastrea leads, mide el rendimiento de campañas y ve exactamente qué acciones de marketing generan reservas. Insights simples → decisiones más inteligentes.',
-    crmFeature1: 'Seguimiento del pipeline de leads',
-    crmFeature2: 'Métricas de rendimiento de campañas',
-    crmFeature3: 'Insights de atribución de reservas',
-    crmFeature4: 'Pronóstico de ingresos',
-    crmFeature5: 'Dashboards de reportes personalizados',
-    crmFeature6: 'Seguimiento de ROI por canal',
-    
-    // Landing Pages
-    landingTitle: 'Landing Pages de Alta Conversión para Viajes',
-    landingDesc: 'Páginas optimizadas diseñadas específicamente para paquetes de viaje, tours grupales y experiencias premium. Diseñadas para convertir tráfico en clientes.',
-    landingFeature1: 'Diseños optimizados para móvil',
-    landingFeature2: 'Capacidades de pruebas A/B',
-    landingFeature3: 'Formularios de reserva integrados',
-    landingFeature4: 'Layouts de exhibición de paquetes',
-    landingFeature5: 'Elementos de prueba social',
-    landingFeature6: 'Rendimiento de carga rápida',
-    
-    // Therapists Section
-    therapistsTitle: 'También para Fisioterapeutas y Terapeutas',
-    therapistsSubtitle: 'Optimiza tu práctica con gestión de pacientes impulsada por IA y automatización.',
-    intakeChatbot: 'Chatbot de Admisión IA',
-    intakeChatbotDesc: 'Recopila información de pacientes y filtra consultas automáticamente antes de las citas.',
-    appointmentAutomation: 'Automatización de Citas',
-    appointmentAutomationDesc: 'Reservas 24/7, reprogramación y sincronización de calendario con tu sistema de gestión de práctica.',
-    noShowReduction: 'Reducción de No-Shows',
-    noShowReductionDesc: 'Flujos de recordatorios inteligentes que reducen citas perdidas hasta en 60%.',
-    patientCrm: 'CRM de Seguimiento de Pacientes',
-    patientCrmDesc: 'Rastrea recorridos de pacientes, progreso de tratamiento y cuidado de seguimiento en un solo lugar.',
-    whatsappReminders: 'Recordatorios de WhatsApp',
-    whatsappRemindersDesc: 'Confirmaciones y recordatorios de citas automatizados vía WhatsApp y email.',
-    emailAutomation: 'Automatización de Email',
-    emailAutomationDesc: 'Seguimientos post-tratamiento, campañas de re-engagement y nurturing de pacientes.',
-    
-    // CTA
-    ctaTitle: '¿Listo para Aumentar tus Reservas?',
-    ctaSubtitle: 'Reserva una llamada estratégica gratis para ver cómo la automatización de marketing con IA puede transformar tu negocio.',
-    bookFreeStrategyCall: 'Reservar Llamada Estratégica Gratis',
-    getQuote: 'Obtener Cotización',
-  },
 
   // Services Page (Hub)
   servicesPage: {
@@ -339,20 +169,8 @@ export const es: TranslationKeys = {
     heroSubtitle: 'Elige tu industria para ver cómo HeyFlou puede transformar tus operaciones',
     
     // Industry Cards Section
-    industryCardsTitle: 'Explora Soluciones para Tu Industria',
     
     // Card content
-    cardHealthcareTitle: 'Salud',
-    cardHealthcareDesc: 'Para terapeutas, clínicas y prácticas de salud',
-    cardFitnessTitle: 'Fitness y Educación',
-    cardFitnessDesc: 'Para gimnasios, estudios, entrenadores y escuelas privadas',
-    cardTravelTitle: 'Agencias de Viajes',
-    cardTravelDesc: 'Para profesionales del turismo',
-    cardTravelBadge: 'Próximamente',
-    cardCustomTitle: 'Automatizaciones Personalizadas',
-    cardCustomDesc: 'Para cualquier negocio, cualquier industria',
-    cardConsultingTitle: 'Consultoría IA',
-    cardConsultingDesc: 'Orientación estratégica y planificación de IA',
     
     // Process Section
     processTitle: 'Nuestro Proceso',
@@ -365,9 +183,6 @@ export const es: TranslationKeys = {
     step3Desc: 'Optimización, mantenimiento y soporte continuo para asegurar que tu automatización evolucione con tu negocio.',
     
     // CTA Section
-    notSureTitle: '¿No Sabes Por Dónde Empezar?',
-    notSureSubtitle: 'Déjanos ayudarte a encontrar la solución correcta para las necesidades de tu negocio.',
-    exploreCustom: 'Explorar Automatizaciones Personalizadas',
     bookStrategyCall: 'Reservar Llamada Estratégica',
 
     // Legacy keys (keeping for backward compatibility)
@@ -375,85 +190,22 @@ export const es: TranslationKeys = {
     learnMore: 'Reservar llamada sobre',
 
     // Travel Agency Section
-    travelSectionTitle: 'Automatización para Agencias de Viajes',
-    travelSectionIntro: 'Transforma cómo vendes viajes con automatización de IA que engancha leads 24/7, gestiona reservas y maneja solicitudes complejas de itinerarios mientras tú te enfocas en crear vacaciones de ensueño.',
-    travelCta: 'Automatiza Tu Agencia de Viajes',
 
     // Travel Services
-    travelChatbotTitle: 'Chatbot de Ventas de Viajes con IA',
-    travelChatbotDesc: 'Tu agente de ventas de IA 24/7 que vende sueños y reserva aventuras. Este chatbot inteligente engancha visitantes web, responde preguntas sobre destinos, paquetes y precios, califica leads por presupuesto y preferencias, y captura reservas—incluso mientras duermes.',
-    travelChatbotBenefit1: 'Engancha viajeros al instante 24/7',
-    travelChatbotBenefit2: 'Responde preguntas de destinos y paquetes automáticamente',
-    travelChatbotBenefit3: 'Califica leads por presupuesto, fechas y estilo de viaje',
-    travelChatbotBenefit4: 'Captura reservas y solicitudes de consulta fuera de horario',
 
-    travelSchedulerTitle: 'Agendador Inteligente de Consultas',
-    travelSchedulerDesc: 'Tu motor de reservas de llamadas de descubrimiento impulsado por IA. Agenda automáticamente llamadas de consulta con leads calificados, envía recordatorios, maneja reprogramaciones y sincroniza con tu calendario. Más consultas de vacaciones de ensueño, cero intercambio de emails.',
-    travelSchedulerBenefit1: 'Reserva de consultas autoservicio 24/7',
-    travelSchedulerBenefit2: 'Recordatorios automatizados multicanal (email, SMS, WhatsApp)',
-    travelSchedulerBenefit3: 'Calificación inteligente de leads antes de reservar',
-    travelSchedulerBenefit4: 'Sincronización de calendarios de equipo para agencias multiagente',
 
-    travelCrmTitle: 'CRM de Viajes y Seguimiento de Cotizaciones',
-    travelCrmDesc: 'Tu sistema inteligente de seguimiento de cotizaciones y leads. Sincroniza automáticamente consultas de viaje, cotizaciones y datos de clientes en tu CRM, email y plataformas de reservas. Cada lead rastreado, cada cotización registrada—ninguna reserva se escapa.',
-    travelCrmBenefit1: 'Seguimiento unificado de leads de todas las fuentes',
-    travelCrmBenefit2: 'Registro automático de cotizaciones e itinerarios',
-    travelCrmBenefit3: 'Visibilidad del pipeline en tiempo real y recordatorios de seguimiento',
-    travelCrmBenefit4: 'Integración con plataformas de reservas y sistemas GDS',
 
     // Healthcare Section
-    healthcareSectionTitle: 'Automatización para Salud y Medicina',
-    healthcareSectionIntro: 'Reduce la carga administrativa y mejora la experiencia del paciente con automatización inteligente diseñada para terapeutas, clínicas de fisioterapia, consejeros y consultorios médicos privados.',
-    healthcareCta: 'Transforma Tu Práctica',
 
     // Healthcare Services
-    healthChatbotTitle: 'Asistente de Engagement de Pacientes con IA',
-    healthChatbotDesc: 'Tu asistente de engagement de pacientes 24/7 con IA. Responde preguntas comunes sobre servicios, precios, seguros y disponibilidad. Pre-filtra pacientes, recopila información de admisión y los guía a reservar citas—reduciendo la carga de recepción hasta en 70%.',
-    healthChatbotBenefit1: 'Respuestas instantáneas a consultas de pacientes 24/7',
-    healthChatbotBenefit2: 'Recopilación automatizada de formularios y verificación de seguros',
-    healthChatbotBenefit3: 'Pre-filtro de pacientes antes de citas',
-    healthChatbotBenefit4: 'Reducción de llamadas y carga administrativa en recepción',
 
-    healthSchedulerTitle: 'Sistema de Citas para Pacientes',
-    healthSchedulerDesc: 'Tu sistema de reservas de citas impulsado por IA. Los pacientes pueden auto-agendar, reprogramar o cancelar citas 24/7. Los recordatorios automáticos reducen no-shows hasta en 70%, y la programación inteligente optimiza el calendario de tu proveedor.',
-    healthSchedulerBenefit1: 'Portal de auto-agendamiento 24/7',
-    healthSchedulerBenefit2: 'Secuencias de recordatorios automatizados (email, SMS, WhatsApp)',
-    healthSchedulerBenefit3: 'Reducción de no-shows hasta 70%',
-    healthSchedulerBenefit4: 'Soporte para citas presenciales y telemedicina',
 
-    healthIntegrationTitle: 'Integración de Gestión de Práctica',
-    healthIntegrationDesc: 'Tu hub inteligente de datos de pacientes. Sincroniza automáticamente información de pacientes, historial de tratamientos y comunicaciones con tu sistema de gestión, email, plataformas de facturación y verificación de seguros.',
-    healthIntegrationBenefit1: 'Registros unificados de pacientes en todos los sistemas',
-    healthIntegrationBenefit2: 'Flujos automatizados de facturación y seguros',
-    healthIntegrationBenefit3: 'Manejo de datos cifrado con accesos por rol',
-    healthIntegrationBenefit4: 'Historial completo de interacciones y tratamientos',
 
     // Fitness & Education Section
-    fitnessSectionTitle: 'Automatización para Fitness y Educación Privada',
-    fitnessSectionIntro: 'Escala tu gimnasio, estudio de fitness, servicio de tutorías o centro educativo con automatización que maneja reservas, engagement de miembros y tareas administrativas.',
-    fitnessCta: 'Escala Tu Estudio/Academia',
 
     // Fitness Services
-    fitnessChatbotTitle: 'Asistente de Miembros y Estudiantes con IA',
-    fitnessChatbotDesc: 'Chatbot inteligente que responde preguntas sobre clases, membresías, horarios, cursos y precios. Califica leads, maneja reservas de clases de prueba o lecciones, y gestiona consultas de miembros o estudiantes 24/7—para que tú te enfoques en crear experiencias increíbles.',
-    fitnessChatbotBenefit1: 'Respuestas instantáneas sobre clases, membresías y cursos',
-    fitnessChatbotBenefit2: 'Automatización de reservas de clases de prueba y consultas',
-    fitnessChatbotBenefit3: 'Soporte multilingüe para comunidades diversas',
-    fitnessChatbotBenefit4: 'Manejo automatizado de FAQs para miembros y estudiantes',
 
-    fitnessSchedulerTitle: 'Agendador de Clases y Sesiones',
-    fitnessSchedulerDesc: 'Miembros y estudiantes pueden reservar clases, sesiones de entrenamiento personal o lecciones 24/7. Recordatorios automatizados, gestión de lista de espera y seguimiento de capacidad. Optimiza horarios de instructores y uso de instalaciones automáticamente.',
-    fitnessSchedulerBenefit1: 'Reserva autoservicio de clases, sesiones y lecciones',
-    fitnessSchedulerBenefit2: 'Gestión automatizada de lista de espera y capacidad',
-    fitnessSchedulerBenefit3: 'Optimización de calendario de instructores/tutores',
-    fitnessSchedulerBenefit4: 'Seguimiento de asistencia y engagement de miembros/estudiantes',
 
-    fitnessManagementTitle: 'Gestión de Miembros y Estudiantes',
-    fitnessManagementDesc: 'Sincroniza datos de miembros y estudiantes en sistemas de reservas, procesadores de pago, email marketing y plataformas de comunicación. Automatiza secuencias de onboarding, recordatorios de renovación, seguimiento de progreso y campañas de re-engagement.',
-    fitnessManagementBenefit1: 'Base de datos unificada de miembros/estudiantes en todas las plataformas',
-    fitnessManagementBenefit2: 'Recordatorios automatizados de renovación y pagos',
-    fitnessManagementBenefit3: 'Automatización de campañas de engagement y retención',
-    fitnessManagementBenefit4: 'Seguimiento de progreso y comunicación con padres (para educación)',
 
     // Custom Automation Section
     customSectionTitle: 'Automatización Empresarial Personalizada',
@@ -506,7 +258,6 @@ export const es: TranslationKeys = {
     finalCtaSubtitle: 'Agenda una llamada de descubrimiento para discutir tus necesidades de automatización y ver cómo podemos ayudarte a ahorrar tiempo y escalar operaciones.',
     finalCtaButton: 'Agendar Llamada de Descubrimiento',
     // V2 Rebuild
-    v2HeroTitle: 'Tres formas de integrar IA en tu negocio.',
     v2HeroPrefix: 'Tres formas de integrar',
     v2HeroSuffix: 'en tu negocio.',
     v2HeroFlip1: 'agentes de IA',
@@ -961,7 +712,7 @@ export const es: TranslationKeys = {
     heroSubtitle: 'IA de nivel empresarial, entregada a los negocios que más la necesitan — sin el precio, la complejidad ni el lenguaje corporativo.',
     factsEyebrow: 'HeyFlou en un párrafo',
     factsTitle: 'Una ficha factual — escrita para ser citada.',
-    factsBody: 'HeyFlou es un estudio de automatización y consultoría en IA para pequeñas y medianas empresas. Diseñamos, construimos y operamos agentes de IA personalizados, infraestructura de IA agéntica (AgenticOS) y consultoría estratégica de IA para clínicas, estudios de fitness, escuelas privadas, agencias de viajes y otros negocios que funcionan con personas. La compañía fue fundada por operadores mexicanos formados en Tel Aviv, tiene sede entre la Ciudad de México y Tel Aviv, y atiende clientes en LATAM, Norteamérica y Europa en inglés y español.',
+    factsBody: 'HeyFlou es un estudio de automatización y consultoría en IA para pequeñas y medianas empresas. Diseñamos, construimos y operamos agentes de IA personalizados, infraestructura de IA agéntica (AgenticOS) y consultoría estratégica de IA para pequeñas y medianas empresas de cualquier industria, organizadas por función de negocio — finanzas, operaciones, atención a clientes y marketing. La compañía fue fundada por operadores mexicanos formados en Tel Aviv, tiene sede entre la Ciudad de México y Tel Aviv, y atiende clientes en LATAM, Norteamérica y Europa en inglés y español.',
     storyEyebrow: 'Nuestra historia',
     storyTitle: 'De los laboratorios de Tel Aviv a las calles de México.',
     story1Title: 'Fundadores mexicanos.',
@@ -1308,81 +1059,6 @@ export const es: TranslationKeys = {
   },
 
   // Industry Systems Section (Homepage)
-  industrySystems: {
-    title: 'Cómo HeyFlou Te Ayuda a Crecer',
-    subtitle: 'Elige tu industria. Mira el sistema exacto que implementamos para ahorrar tiempo y ganar más clientes.',
-    
-    // Industry tabs
-    medical: 'Médico',
-    travel: 'Agencias de Viajes',
-    education: 'Educación / Fitness',
-    
-    // Card 1: WhatsApp AI Bot
-    card1Tag: 'Captura de Leads 24/7',
-    card1Title: 'Bot de WhatsApp con IA',
-    card1Desc: 'Responde al instante, captura leads y gestiona reservas—24/7.',
-    card1Bullet1: 'Respuestas instantáneas + FAQ',
-    card1Bullet2Medical: 'Preguntas de admisión + pre-filtro',
-    card1Bullet2Travel: 'Captura detalles del viaje (fechas, presupuesto, destino)',
-    card1Bullet2Education: 'Matching de programa (nivel, metas, horario)',
-    card1Bullet3: 'Link de reserva + transferencia humana',
-    card1ExMedical: 'Preguntas de síntomas/servicios → recopilar datos → reservar consulta.',
-    card1ExTravel: 'Consulta de viaje → capturar detalles → enviar a un agente.',
-    card1ExEducation: 'Preguntas del programa → clase de prueba / llamada intro.',
-    card1Auto1: 'Puntos de entrada WhatsApp + web chat',
-    card1Auto2: 'Respuestas FAQ / conocimiento',
-    card1Auto3: 'Preguntas de calificación',
-    card1Auto4: 'Captura de contacto (nombre/teléfono/email)',
-    card1Auto5: 'Reglas de enrutamiento (equipo / agente)',
-    card1Auto6: 'Idioma (EN/ES)',
-    card1Auto7: 'Respaldo de transferencia humana',
-    
-    // Card 2: Lead Management Pipeline
-    card2Tag: 'Nunca Pierdas un Lead',
-    card2Title: 'Pipeline de Gestión de Leads',
-    card2Desc: 'Del primer contacto al seguimiento—cada lead rastreado automáticamente.',
-    card2Bullet1: 'Seguimientos + recordatorios automáticos',
-    card2Bullet2Medical: 'Referencias + etapas de consulta de pacientes',
-    card2Bullet2Travel: 'Etapas: consulta → cotización → reservado → pagado',
-    card2Bullet2Education: 'Etapas: lead → prueba → inscrito → activo',
-    card2Bullet3: 'Seguimiento de fuente + notas',
-    card2ExMedical: 'Rastrea consultas, referencias y próximos pasos por paciente.',
-    card2ExTravel: 'Rastrea por destino, estado y agente asignado.',
-    card2ExEducation: 'Rastrea pruebas, inscripciones, membresías y renovaciones.',
-    card2Auto1: 'Configuración de etapas del pipeline',
-    card2Auto2: 'Tareas de seguimiento automáticas',
-    card2Auto3: 'Recordatorios (WhatsApp/email)',
-    card2Auto4: 'Seguimiento de fuente de leads',
-    card2Auto5: 'Notas + historial de conversaciones',
-    card2Auto6: 'Dashboard de pipeline simple',
-    card2Auto7: 'Integraciones (Sheets/CRM)',
-    
-    // Card 3: CRM + Email Marketing
-    card3Tag: 'Convierte y Retiene',
-    card3Title: 'CRM + Email Marketing',
-    card3Desc: 'Organiza clientes y automatiza emails que convierten y retienen.',
-    card3Bullet1: 'Organización CRM + historial de clientes',
-    card3Bullet2Medical: 'Secuencias de no-show + post-visita',
-    card3Bullet2Travel: 'Seguimiento de cotizaciones + nudges de reservas abandonadas',
-    card3Bullet2Education: 'Renovaciones + recuperar clientes inactivos',
-    card3Bullet3: 'Reportes simples (leads, reservas, conversiones)',
-    card3ExMedical: 'Recordatorios + seguimientos post-visita reducen no-shows.',
-    card3ExTravel: 'Seguimientos automatizados para cotizaciones + recordatorios de reserva.',
-    card3ExEducation: 'Nudges de retención + reactivación para clientes inactivos.',
-    card3Auto1: 'Campos CRM + segmentación',
-    card3Auto2: 'Secuencias de email (nurturing)',
-    card3Auto3: 'Campañas de reactivación',
-    card3Auto4: 'Recordatorios de reserva',
-    card3Auto5: 'Solicitudes de reseña (opcional)',
-    card3Auto6: 'Snapshot de reportes',
-    card3Auto7: 'Integraciones (herramientas de mail)',
-    
-    // Other UI
-    exampleFor: 'Ejemplo para',
-    coreAutomations: 'Automatizaciones incluidas',
-    bookCall: 'Reservar Llamada Gratis',
-    seeCases: 'Ver Casos de Éxito',
-  },
 
   // Custom Solutions CTA
   customCta: {
@@ -1506,172 +1182,8 @@ export const es: TranslationKeys = {
   },
 
   // Healthcare Page
-  healthcare: {
-    // Hero Section
-    heroTitle: 'HeyFlou para Prácticas de Salud',
-    heroSubtitle: 'Automatización con IA para Terapeutas, Clínicas y Proveedores de Salud',
-    getStarted: 'Comenzar',
-    bookStrategyCall: 'Reservar Llamada Estratégica',
-
-    // Problem Section
-    problemTitle: 'El Desafío que Enfrentan las Prácticas de Salud',
-    problemSubtitle: 'Estos desafíos le cuestan tiempo y dinero a tu práctica todos los días.',
-    painNoShows: 'Citas No Asistidas',
-    painNoShowsDesc: 'Las cancelaciones de último momento y las inasistencias interrumpen tu agenda, desperdician horarios valiosos y reducen los ingresos. Las llamadas de recordatorio manuales consumen tiempo y a menudo son ineficaces.',
-    painIntake: 'Admisión Manual y Papeleo',
-    painIntakeDesc: 'Los pacientes completan la misma información repetidamente. Los formularios de papel crean trabajo de entrada de datos, errores y desafíos de almacenamiento. La admisión digital está fragmentada en múltiples sistemas.',
-    painFollowUps: 'Seguimientos Inconsistentes',
-    painFollowUpsDesc: 'Los seguimientos post-sesión, recordatorios de citas y consejos de bienestar se pierden cuando tu equipo está ocupado. Los pacientes se sienten desconectados entre visitas.',
-    painScheduling: 'Complejidad de Agendamiento',
-    painSchedulingDesc: 'Gestionar múltiples profesionales, disponibilidad de salas y preferencias de pacientes manualmente lleva a dobles reservas, conflictos y pacientes frustrados intentando encontrar horarios.',
-    painCommunication: 'Comunicación con Pacientes que Consume Tiempo',
-    painCommunicationDesc: 'Responder las mismas preguntas repetidamente sobre horarios, servicios, seguros y políticas. El juego del teléfono con pacientes aleja al personal de la atención presencial.',
-    painAdmin: 'Carga Administrativa',
-    painAdminDesc: 'Tu equipo pasa más tiempo en llamadas, papeleo y agendamiento que en atención al paciente. Las tareas administrativas te impiden hacer crecer tu práctica.',
-
-    // Solution Section
-    solutionTitle: 'Cómo HeyFlou Automatiza la Salud',
-    solutionIntro: 'Construimos flujos de trabajo de IA personalizados que reducen inasistencias, agilizan la admisión y automatizan las comunicaciones con pacientes para que puedas enfocarte en la atención.',
-    solutionChatbotTitle: 'Bot de Admisión de Pacientes con IA',
-    solutionChatbotDesc: 'Recopila información del paciente vía WhatsApp, web o SMS antes de las citas. Sincronización automática con tu sistema de gestión de práctica o EHR.',
-    solutionSchedulingTitle: 'Agendamiento Inteligente de Citas',
-    solutionSchedulingDesc: 'Los pacientes reservan y gestionan citas 24/7. Resolución automática de conflictos, gestión de lista de espera y sincronización de calendario.',
-    solutionRemindersTitle: 'Recordatorios Automatizados y Reducción de Inasistencias',
-    solutionRemindersDesc: 'Recordatorios multicanal vía SMS, email y WhatsApp. Reduce las inasistencias hasta un 60% con secuencias de recordatorios inteligentes.',
-    solutionFollowUpsTitle: 'Automatización de Seguimiento Post-Visita',
-    solutionFollowUpsDesc: 'Seguimientos automatizados, instrucciones de cuidado y encuestas de satisfacción enviadas en el momento correcto después de las citas.',
-    solutionPaymentsTitle: 'Recordatorios de Pago y Seguros',
-    solutionPaymentsDesc: 'Recordatorios de facturación automatizados, enlaces de pago y flujos de verificación de seguros.',
-    solutionReportsTitle: 'Reportes de Engagement de Pacientes',
-    solutionReportsDesc: 'Rastrea tasas de respuesta, tendencias de inasistencias y efectividad de comunicación con dashboards simples.',
-    demoVideoPlaceholder: 'Video Demo Próximamente',
-
-    // Integrations Section
-    integrationsTitle: 'Se Conecta Perfectamente con tus Herramientas',
-    integrationsSubtitle: 'HeyFlou se integra con las plataformas que ya usas para crear un flujo de trabajo unificado.',
-
-    // CTA Section
-    ctaTitle: '¿Listo para Automatizar tu Práctica?',
-    ctaSubtitle: 'Únete a cientos de prácticas de salud que ahorran más de 15 horas por semana con automatización inteligente.',
-    startAutomation: 'Comenzar tu Automatización',
-    scheduleDemo: 'Agendar una Demo',
-
-    // Contact Form
-    formTitle: 'Cuéntanos Sobre tu Práctica',
-    formSubtitle: 'Completa el formulario y te contactaremos en 24 horas.',
-    formName: 'Nombre',
-    formNamePlaceholder: 'Dr. Juan Pérez',
-    formEmail: 'Correo Electrónico',
-    formEmailPlaceholder: 'juan@mipractica.com',
-    formPhone: 'Teléfono (opcional)',
-    formPhonePlaceholder: '+52 55 1234 5678',
-    formPracticeType: 'Tipo de Práctica',
-    formPracticeTypePlaceholder: 'Selecciona tu tipo de práctica',
-    practiceTypeTherapist: 'Terapeuta / Consejero',
-    practiceTypePhysio: 'Fisioterapia / Terapia Física',
-    practiceTypeDental: 'Práctica Dental',
-    practiceTypeMedicalClinic: 'Clínica Médica',
-    practiceTypeChiropractic: 'Quiropráctica',
-    practiceTypeOther: 'Otro Tipo de Salud',
-    formPracticeSize: 'Tamaño de la Práctica',
-    formPracticeSizePlaceholder: 'Selecciona el tamaño de tu práctica',
-    practiceSizeSolo: 'Práctica Individual',
-    practiceSize2to5: '2-5 Empleados',
-    practiceSize6to10: '6-10 Empleados',
-    practiceSize10plus: '10+ Empleados',
-    formChallenge: 'Mayor Desafío',
-    formChallengePlaceholder: 'Describe el mayor desafío administrativo en tu práctica...',
-    formReferral: '¿Cómo nos conociste?',
-    formReferralPlaceholder: 'ej., Google, LinkedIn, Referencia',
-    formSubmit: 'Enviar Consulta',
-    formSending: 'Enviando...',
-    formSuccessTitle: '¡Gracias!',
-    formSuccessMessage: 'Nos pondremos en contacto en 24 horas para hablar sobre tus necesidades de automatización.',
-  },
 
   // Fitness & Education Page
-  fitnessEducation: {
-    // Hero Section
-    heroTitle: 'HeyFlou para Fitness y Educación Privada',
-    heroSubtitle: 'Automatización con IA para Gimnasios, Estudios, Entrenadores Personales, Tutores y Escuelas Privadas',
-    getStarted: 'Comenzar',
-    bookStrategyCall: 'Reservar Llamada Estratégica',
-
-    // Problem Section
-    problemTitle: 'El Desafío que Enfrentan los Negocios de Fitness y Educación',
-    problemSubtitle: 'Estos desafíos están frenando el crecimiento y la excelencia de tu negocio.',
-    painBooking: 'Caos en Reservas de Clases',
-    painBookingDesc: 'Gestionar capacidades de clases, listas de espera y reservas de último momento manualmente lleva a sobrerreservas, confusión y clientes frustrados que no pueden asegurar su lugar.',
-    painRenewal: 'Oportunidades de Renovación Perdidas',
-    painRenewalDesc: 'Los recordatorios manuales de renovación se pierden. Los miembros caducan sin aviso y pierdes ingresos. Perseguir membresías vencidas desperdicia tiempo valioso.',
-    painTrial: 'Brecha en Conversión Prueba-a-Miembro',
-    painTrialDesc: 'Los clientes de prueba asisten una vez y desaparecen. Sin seguimiento sistemático, pierdes potenciales miembros a largo plazo. El contacto manual es inconsistente y consume tiempo.',
-    painOnboarding: 'Onboarding de Clientes Inconsistente',
-    painOnboardingDesc: 'Los nuevos miembros necesitan exenciones, orientación, definición de metas y recomendaciones de programa. El onboarding manual lleva a información incompleta y menor valor inicial.',
-    painScheduleChanges: 'Cambios de Horario de Último Momento',
-    painScheduleChangesDesc: 'Las cancelaciones de clases, sustituciones de instructores y cambios de horario requieren notificaciones manuales. Los clientes llegan a clases canceladas o pierden actualizaciones importantes.',
-    painPayment: 'Dolores de Cabeza de Pago y Facturación',
-    painPaymentDesc: 'Rastrear pagos de membresías, transacciones fallidas y actualizaciones de métodos de pago manualmente crea pesadillas contables y conversaciones incómodas con clientes.',
-
-    // Solution Section
-    solutionTitle: 'Cómo HeyFlou Automatiza tu Negocio',
-    solutionIntro: 'Construimos flujos de trabajo de IA personalizados que manejan horarios, membresías y comunicaciones para que puedas enfocarte en tus clientes y estudiantes.',
-    solutionBookingTitle: 'Asistente de Reservas con IA',
-    solutionBookingDesc: 'Los clientes reservan clases, sesiones de entrenamiento o tutorías 24/7 vía WhatsApp, web o SMS. Gestión automática de lista de espera incluida.',
-    solutionRenewalTitle: 'Automatización de Renovación de Membresías',
-    solutionRenewalDesc: 'Recordatorios automáticos antes del vencimiento, enlaces fáciles de renovación y campañas de recuperación para miembros inactivos.',
-    solutionTrialTitle: 'Sistema de Conversión Prueba-a-Miembro',
-    solutionTrialDesc: 'Seguimientos automáticos después de clases de prueba con ofertas personalizadas para convertir prospectos en miembros de pago.',
-    solutionOnboardingTitle: 'Flujo de Onboarding de Estudiantes/Clientes',
-    solutionOnboardingDesc: 'Formularios digitales, secuencias de bienvenida y materiales de orientación enviados automáticamente. Los nuevos clientes se sienten bienvenidos desde el primer día.',
-    solutionPaymentTitle: 'Recordatorios de Pago y Facturación',
-    solutionPaymentDesc: 'Recordatorios automáticos de pago, recuperación de pagos fallidos y entrega de facturas.',
-    solutionScheduleTitle: 'Gestor de Cambios de Horario',
-    solutionScheduleDesc: 'Notificaciones instantáneas cuando las clases cambian, se cancelan o tienen aperturas. Los clientes se mantienen informados automáticamente.',
-    demoVideoPlaceholder: 'Video Demo Próximamente',
-
-    // Integrations Section
-    integrationsTitle: 'Se Conecta Perfectamente con tus Herramientas',
-    integrationsSubtitle: 'HeyFlou se integra con las plataformas que ya usas para crear un flujo de trabajo unificado.',
-
-    // CTA Section
-    ctaTitle: '¿Listo para Automatizar tus Operaciones?',
-    ctaSubtitle: 'Únete a cientos de negocios de fitness y educación que ahorran más de 15 horas por semana con automatización inteligente.',
-    startAutomation: 'Comenzar tu Automatización',
-    scheduleDemo: 'Agendar una Demo',
-
-    // Contact Form
-    formTitle: 'Cuéntanos Sobre tu Negocio',
-    formSubtitle: 'Completa el formulario y te contactaremos en 24 horas.',
-    formName: 'Nombre',
-    formNamePlaceholder: 'Juan Pérez',
-    formEmail: 'Correo Electrónico',
-    formEmailPlaceholder: 'juan@minegocio.com',
-    formPhone: 'Teléfono (opcional)',
-    formPhonePlaceholder: '+52 55 1234 5678',
-    formBusinessType: 'Tipo de Negocio',
-    formBusinessTypePlaceholder: 'Selecciona tu tipo de negocio',
-    businessTypePersonalTrainer: 'Entrenador Personal',
-    businessTypeGymStudio: 'Gimnasio / Estudio',
-    businessTypeTutoring: 'Servicio de Tutorías',
-    businessTypePrivateSchool: 'Escuela Privada',
-    businessTypeLanguageAcademy: 'Academia de Idiomas',
-    businessTypeOther: 'Otro',
-    formBusinessSize: 'Tamaño del Negocio',
-    formBusinessSizePlaceholder: 'Selecciona el tamaño de tu negocio',
-    businessSizeSolo: 'Solo',
-    businessSize2to5: '2-5 Empleados',
-    businessSize6to15: '6-15 Empleados',
-    businessSize15plus: '15+ Empleados',
-    formChallenge: 'Mayor Desafío',
-    formChallengePlaceholder: 'Describe el mayor desafío operativo en tu negocio...',
-    formReferral: '¿Cómo nos conociste?',
-    formReferralPlaceholder: 'ej., Google, LinkedIn, Referencia',
-    formSubmit: 'Enviar Consulta',
-    formSending: 'Enviando...',
-    formSuccessTitle: '¡Gracias!',
-    formSuccessMessage: 'Nos pondremos en contacto en 24 horas para hablar sobre tus necesidades de automatización.',
-  },
 
   // Custom Automation Page
   customAutomation: {
@@ -1863,51 +1375,6 @@ export const es: TranslationKeys = {
   },
 
   // Travel Agencies Page (Coming Soon)
-  travelAgencies: {
-    // Hero
-    heroTitle: 'HeyFlou para Agencias de Viajes',
-    heroSubtitle: 'Soluciones de Automatización con IA para Profesionales del Turismo — Próximamente',
-    comingSoonBadge: 'Próximamente',
-
-    // Coming Soon Section
-    comingSoonTitle: 'Estamos Construyendo Algo Especial para Profesionales del Turismo',
-    comingSoonText: 'Estamos diseñando automatización con IA específica para agencias de viajes, operadores turísticos y consultores de viajes. Desde asistentes de reservas impulsados por IA hasta gestión inteligente de itinerarios, estamos creando soluciones que entienden los desafíos únicos de la industria turística. Sé de los primeros en transformar cómo vendes viajes.',
-    expectedLaunch: '🗓️ Lanzamiento Esperado: Q3 2025',
-    getEarlyAccess: 'Obtener Acceso Anticipado',
-
-    // Early Access Form
-    formTitle: 'Obtén Acceso Anticipado y Ayuda a Moldear Este Producto',
-    formSubtitle: 'Únete a la lista de espera y ayúdanos a construir la solución perfecta para tu agencia.',
-    formName: 'Nombre',
-    formNamePlaceholder: 'Tu nombre',
-    formEmail: 'Correo Electrónico',
-    formEmailPlaceholder: 'tu@agencia.com',
-    formAgency: 'Nombre de la Agencia (opcional)',
-    formAgencyPlaceholder: 'El nombre de tu agencia de viajes',
-    formChallenge: 'Mayor Desafío Operativo',
-    formChallengePlaceholder: '¿Qué te consume más tiempo que desearías automatizar?',
-    formSubmit: 'Notificarme Cuando Lancemos',
-    formSending: 'Enviando...',
-    formSuccessTitle: '¡Estás en la lista!',
-    formSuccessMessage: 'Te notificaremos tan pronto como lancemos y podemos contactarte para obtener retroalimentación temprana.',
-
-    // Preview Section
-    previewTitle: 'Lo Que Estamos Construyendo',
-    previewSubtitle: 'Un vistazo a las funciones de automatización en desarrollo.',
-    previewBookingTitle: 'Asistente de Reservas con IA',
-    previewBookingDesc: 'Responde consultas de viajeros 24/7, califica leads y captura intención de reserva automáticamente.',
-    previewInquiryTitle: 'Automatización de Consultas de Clientes',
-    previewInquiryDesc: 'Dirige y responde consultas a través de email, WhatsApp y chat web al instante.',
-    previewItineraryTitle: 'Gestión de Itinerarios de Viaje',
-    previewItineraryDesc: 'Genera, envía y rastrea itinerarios personalizados con secuencias de seguimiento inteligentes.',
-    previewMultiPlatformTitle: 'Soporte Multi-Plataforma',
-    previewMultiPlatformDesc: 'Conéctate con sistemas de reservas, CRMs y herramientas de comunicación que ya usas.',
-
-    // CTA Section
-    ctaTitle: '¿Necesitas Automatización Ahora?',
-    ctaSubtitle: '¿No puedes esperar a nuestra solución específica para viajes? Construimos automatizaciones personalizadas para cualquier negocio.',
-    ctaButton: 'Explorar Automatizaciones Personalizadas',
-  },
 
   // New Homepage Sections
   homepage: {

@@ -8,9 +8,6 @@ export const en = {
     contact: 'Contact',
     bookFreeCall: 'Book Free Call',
     // Services dropdown items
-    healthcare: 'Healthcare',
-    fitnessEducation: 'Fitness & Education',
-    travelAgencies: 'Travel Agencies',
     customAutomations: 'Custom Automations',
     aiConsulting: 'AI Consulting',
     comingSoon: 'Coming Soon',
@@ -129,94 +126,6 @@ export const en = {
   },
 
   // Industries & Workflows Section
-  industries: {
-    title: 'Industries We Serve & What We Automate',
-    subtitle: 'Custom AI solutions for healthcare, fitness, and travel businesses. Choose your industry to see how we can help.',
-    
-    // Verticals
-    healthcareTitle: 'Healthcare Practices',
-    healthcareDesc: 'Medical practices, therapists, physical therapy clinics',
-    fitnessTitle: 'Fitness & Education',
-    fitnessDesc: 'Yoga studios, pilates, gyms, tutors, language schools',
-    travelTitle: 'Travel Agencies',
-    travelDesc: 'Travel agencies, tour operators, booking services',
-    
-    // Workflows Section
-    workflowsTitle: 'Our Core Automations',
-    keyFeatures: 'Key Features',
-    useCases: 'Use Cases',
-    getThisAutomation: 'Get This Automation',
-    learnMore: 'Learn more',
-    
-    // WhatsApp Chatbot
-    whatsappTitle: 'WhatsApp AI Chatbot',
-    whatsappDesc: 'Answer client questions 24/7, qualify leads, and book appointments instantly',
-    whatsappTag: 'All Industries',
-    whatsappFeature1: '24/7 automated responses',
-    whatsappFeature2: 'Lead qualification questions',
-    whatsappFeature3: 'Instant appointment booking',
-    whatsappFeature4: 'Integration with your calendar',
-    whatsappUseCase1: 'Answer common questions about services and pricing',
-    whatsappUseCase2: 'Qualify new leads before they reach your team',
-    whatsappUseCase3: 'Book appointments directly from WhatsApp',
-    whatsappTimeline: '2-3 weeks to launch',
-    
-    // Lead Management
-    leadsTitle: 'Lead Management System',
-    leadsDesc: 'Track every contact and follow-up automatically. Never miss an opportunity.',
-    leadsTag: 'All Industries',
-    leadsFeature1: 'Automated contact tracking',
-    leadsFeature2: 'Follow-up reminders',
-    leadsFeature3: 'Lead scoring and prioritization',
-    leadsFeature4: 'Pipeline visualization',
-    leadsUseCase1: 'Never miss a follow-up with automated reminders',
-    leadsUseCase2: 'See your entire pipeline at a glance',
-    leadsUseCase3: 'Track lead source and conversion rates',
-    leadsTimeline: '3-4 weeks to launch',
-    
-    // Appointment Scheduling
-    schedulingTitle: 'Appointment Scheduling',
-    schedulingDesc: 'Automated calendar booking with Google/Outlook sync and no-show reminders',
-    schedulingTag: 'Healthcare, Fitness',
-    schedulingFeature1: 'Google/Outlook calendar sync',
-    schedulingFeature2: 'Automated booking confirmations',
-    schedulingFeature3: 'SMS/email reminders',
-    schedulingFeature4: 'No-show reduction tools',
-    schedulingUseCase1: 'Let clients book 24/7 without phone calls',
-    schedulingUseCase2: 'Reduce no-shows by 40% with automated reminders',
-    schedulingUseCase3: 'Sync across all your team calendars',
-    schedulingTimeline: '2-3 weeks to launch',
-    
-    // CRM Integration
-    crmTitle: 'CRM Integration',
-    crmDesc: 'Connect your existing tools and sync data automatically to one centralized system',
-    crmTag: 'All Industries',
-    crmFeature1: 'Connect existing tools (HubSpot, Salesforce, etc.)',
-    crmFeature2: 'Automatic data sync',
-    crmFeature3: 'Centralized client database',
-    crmFeature4: 'Custom workflow automation',
-    crmUseCase1: 'Stop manually entering data across systems',
-    crmUseCase2: 'Keep your entire team on the same page',
-    crmUseCase3: 'Trigger automated workflows based on client actions',
-    crmTimeline: '3-5 weeks to launch',
-    
-    // Email & SMS
-    emailSmsTitle: 'Email & SMS Automation',
-    emailSmsDesc: 'Personalized follow-up sequences, re-engagement campaigns, and booking confirmations',
-    emailSmsTag: 'All Industries',
-    emailSmsFeature1: 'Personalized message sequences',
-    emailSmsFeature2: 'Behavior-triggered campaigns',
-    emailSmsFeature3: 'Re-engagement automation',
-    emailSmsFeature4: 'Booking confirmation messages',
-    emailSmsUseCase1: 'Welcome new clients automatically',
-    emailSmsUseCase2: 'Re-engage cold leads with targeted campaigns',
-    emailSmsUseCase3: 'Send appointment reminders and confirmations',
-    emailSmsTimeline: '2-3 weeks to launch',
-    
-    // CTA
-    customWorkflowText: 'Need a custom workflow? Let\'s talk.',
-    getCustomSolution: 'Get Custom Solution',
-  },
 
   // Problem Solution Section
   problemSolution: {
@@ -250,85 +159,6 @@ export const en = {
   },
 
   // Services Page
-  services: {
-    heroTitle: 'AI Marketing & Automation for Travel Agencies',
-    heroSubtitle: 'Generate more bookings with automated funnels, AI chatbots, and WhatsApp campaigns—all in one platform.',
-    
-    // Marketing Engine
-    marketingEngineTitle: 'Full Marketing Engine for Travel Agencies',
-    marketingEngineDesc: 'An all-in-one marketing system that generates more bookings through automated funnels, segmentation, and follow-up sequences. Includes landing pages, WhatsApp campaigns, and analytics.',
-    keyFeatures: 'Key Features:',
-    marketingFeature1: 'Automated marketing funnels',
-    marketingFeature2: 'Lead segmentation & targeting',
-    marketingFeature3: 'WhatsApp campaign management',
-    marketingFeature4: 'Email sequence automation',
-    marketingFeature5: 'Performance analytics dashboard',
-    marketingFeature6: 'Multi-channel campaign tracking',
-    
-    // AI Chatbot
-    chatbotTitle: 'AI Travel Chatbot That Sells Your Packages',
-    chatbotDesc: 'Your 24/7 marketing assistant. Promotes packages, answers traveler questions instantly, qualifies leads, and sends them into your CRM. Transforms inquiries into ready-to-book travelers.',
-    coreFeatures: 'Core Features:',
-    chatbotFeature1: '24/7 package promotion',
-    chatbotFeature2: 'Instant traveler Q&A',
-    chatbotFeature3: 'Lead qualification & scoring',
-    chatbotFeature4: 'Seamless CRM integration',
-    chatbotFeature5: 'Personalized trip recommendations',
-    chatbotFeature6: 'Booking intent detection',
-    
-    // WhatsApp
-    whatsappTitle: 'Automated WhatsApp Marketing & Follow-Ups',
-    whatsappDesc: 'Recover abandoned inquiries, promote seasonal deals, and keep leads engaged automatically. Maximize conversions without extra manual work.',
-    whatsIncluded: "What's Included:",
-    whatsappFeature1: 'Abandoned inquiry recovery',
-    whatsappFeature2: 'Seasonal deal promotions',
-    whatsappFeature3: 'Automated follow-up sequences',
-    whatsappFeature4: 'Broadcast campaigns',
-    whatsappFeature5: 'Lead re-engagement workflows',
-    whatsappFeature6: 'Response tracking & analytics',
-    
-    // CRM
-    crmTitle: 'Travel Marketing CRM & Analytics Dashboard',
-    crmDesc: 'Track leads, measure campaign performance, and see exactly which marketing actions drive bookings. Simple insights → smarter decisions.',
-    crmFeature1: 'Lead pipeline tracking',
-    crmFeature2: 'Campaign performance metrics',
-    crmFeature3: 'Booking attribution insights',
-    crmFeature4: 'Revenue forecasting',
-    crmFeature5: 'Custom reporting dashboards',
-    crmFeature6: 'ROI tracking by channel',
-    
-    // Landing Pages
-    landingTitle: 'High-Conversion Landing Pages for Trips',
-    landingDesc: 'Optimized pages designed specifically for travel packages, group tours, and premium experiences. Engineered to turn traffic into paying clients.',
-    landingFeature1: 'Mobile-optimized designs',
-    landingFeature2: 'A/B testing capabilities',
-    landingFeature3: 'Integrated booking forms',
-    landingFeature4: 'Package showcase layouts',
-    landingFeature5: 'Social proof elements',
-    landingFeature6: 'Fast-loading performance',
-    
-    // Therapists Section
-    therapistsTitle: 'Also for Physical Therapists & Therapists',
-    therapistsSubtitle: 'Streamline your practice with AI-powered patient management and automation.',
-    intakeChatbot: 'AI Intake Chatbot',
-    intakeChatbotDesc: 'Collect patient information and screen inquiries automatically before appointments.',
-    appointmentAutomation: 'Appointment Automation',
-    appointmentAutomationDesc: '24/7 booking, rescheduling, and calendar sync with your practice management system.',
-    noShowReduction: 'No-Show Reduction',
-    noShowReductionDesc: 'Smart reminder workflows that reduce missed appointments by up to 60%.',
-    patientCrm: 'Patient Tracking CRM',
-    patientCrmDesc: 'Track patient journeys, treatment progress, and follow-up care in one place.',
-    whatsappReminders: 'WhatsApp Reminders',
-    whatsappRemindersDesc: 'Automated appointment confirmations and reminders via WhatsApp and email.',
-    emailAutomation: 'Email Automation',
-    emailAutomationDesc: 'Post-treatment follow-ups, re-engagement campaigns, and patient nurturing.',
-    
-    // CTA
-    ctaTitle: 'Ready to Grow Your Bookings?',
-    ctaSubtitle: 'Book a free strategy call to see how AI marketing automation can transform your business.',
-    bookFreeStrategyCall: 'Book Free Strategy Call',
-    getQuote: 'Get Quote',
-  },
 
   // Services Page (Hub)
   servicesPage: {
@@ -337,20 +167,8 @@ export const en = {
     heroSubtitle: 'Choose your industry to see how HeyFlou can transform your operations',
     
     // Industry Cards Section
-    industryCardsTitle: 'Explore Solutions for Your Industry',
     
     // Card content
-    cardHealthcareTitle: 'Healthcare',
-    cardHealthcareDesc: 'For therapists, clinics & healthcare practices',
-    cardFitnessTitle: 'Fitness & Education',
-    cardFitnessDesc: 'For gyms, studios, trainers & private schools',
-    cardTravelTitle: 'Travel Agencies',
-    cardTravelDesc: 'For travel professionals',
-    cardTravelBadge: 'Coming Soon',
-    cardCustomTitle: 'Custom Automations',
-    cardCustomDesc: 'For any business, any industry',
-    cardConsultingTitle: 'AI Consulting',
-    cardConsultingDesc: 'Strategic AI guidance & planning',
     
     // Process Section
     processTitle: 'Our Process',
@@ -363,9 +181,6 @@ export const en = {
     step3Desc: 'Ongoing optimization, maintenance, and support to ensure your automation evolves with your business.',
     
     // CTA Section
-    notSureTitle: 'Not Sure Where to Start?',
-    notSureSubtitle: "Let us help you find the right solution for your business needs.",
-    exploreCustom: 'Explore Custom Automations',
     bookStrategyCall: 'Book a Strategy Call',
 
     // Legacy keys (keeping for backward compatibility)
@@ -373,85 +188,22 @@ export const en = {
     learnMore: 'Book a strategy call about',
 
     // Travel Agency Section
-    travelSectionTitle: 'Travel Agency Automation',
-    travelSectionIntro: 'Transform how you sell travel with AI automation that engages leads 24/7, manages bookings, and handles complex itinerary requests while you focus on creating dream vacations.',
-    travelCta: 'Automate Your Travel Agency',
 
     // Travel Services
-    travelChatbotTitle: 'AI Travel Sales Chatbot',
-    travelChatbotDesc: 'Your 24/7 AI sales agent that sells dreams and books adventures. This intelligent chatbot engages website visitors, answers questions about destinations, packages, and pricing, qualifies leads based on budget and travel preferences, and captures bookings—even while you sleep.',
-    travelChatbotBenefit1: 'Engage travel shoppers instantly 24/7',
-    travelChatbotBenefit2: 'Answer destination and package questions automatically',
-    travelChatbotBenefit3: 'Qualify leads by budget, dates, and travel style',
-    travelChatbotBenefit4: 'Capture bookings and consultation requests after hours',
 
-    travelSchedulerTitle: 'Smart Consultation Scheduler',
-    travelSchedulerDesc: 'Your AI-powered discovery call booking engine. Automatically schedules consultation calls with qualified leads, sends reminders, handles rescheduling, and syncs with your calendar. More dream vacation consultations, zero email back-and-forth.',
-    travelSchedulerBenefit1: 'Self-service consultation booking 24/7',
-    travelSchedulerBenefit2: 'Automated multi-channel reminders (email, SMS, WhatsApp)',
-    travelSchedulerBenefit3: 'Intelligent lead qualification before booking',
-    travelSchedulerBenefit4: 'Team calendar synchronization for multi-agent agencies',
 
-    travelCrmTitle: 'Travel CRM & Quote Tracking',
-    travelCrmDesc: 'Your intelligent quote and lead tracking system. Automatically syncs travel inquiries, quotes, and client data across your CRM, email, and booking platforms. Every lead tracked, every quote logged—no booking falls through the cracks.',
-    travelCrmBenefit1: 'Unified lead tracking from all inquiry sources',
-    travelCrmBenefit2: 'Automatic quote and itinerary logging',
-    travelCrmBenefit3: 'Real-time pipeline visibility and follow-up reminders',
-    travelCrmBenefit4: 'Integration with booking platforms and GDS systems',
 
     // Healthcare Section
-    healthcareSectionTitle: 'Healthcare & Medical Automation',
-    healthcareSectionIntro: 'Reduce administrative burden and improve patient experience with intelligent automation designed for therapists, physical therapy clinics, counselors, and private medical practices.',
-    healthcareCta: 'Transform Your Practice',
 
     // Healthcare Services
-    healthChatbotTitle: 'AI Patient Engagement Assistant',
-    healthChatbotDesc: 'Your 24/7 AI patient engagement assistant. Answers common questions about services, pricing, insurance, and availability. Pre-screens patients, collects intake information, and guides them to book appointments—reducing front desk workload by up to 70%.',
-    healthChatbotBenefit1: 'Instant responses to patient inquiries 24/7',
-    healthChatbotBenefit2: 'Automated intake form collection and insurance verification',
-    healthChatbotBenefit3: 'Patient pre-screening before appointments',
-    healthChatbotBenefit4: 'Reduced front desk call volume and administrative burden',
 
-    healthSchedulerTitle: 'Patient Appointment System',
-    healthSchedulerDesc: 'Your AI-powered appointment booking system. Patients can self-schedule, reschedule, or cancel appointments 24/7. Automatic reminders reduce no-shows by up to 70%, and smart scheduling optimizes your provider\'s calendar for maximum efficiency.',
-    healthSchedulerBenefit1: '24/7 patient self-scheduling portal',
-    healthSchedulerBenefit2: 'Automated reminder sequences (email, SMS, WhatsApp)',
-    healthSchedulerBenefit3: 'No-show reduction up to 70%',
-    healthSchedulerBenefit4: 'Telehealth and in-person appointment support',
 
-    healthIntegrationTitle: 'Practice Management Integration',
-    healthIntegrationDesc: 'Your intelligent patient data hub. Automatically syncs patient information, treatment history, and communications across your practice management system, email, billing platforms, and insurance verification tools.',
-    healthIntegrationBenefit1: 'Unified patient records across all systems',
-    healthIntegrationBenefit2: 'Automated billing and insurance workflows',
-    healthIntegrationBenefit3: 'Encrypted data handling with role-based access',
-    healthIntegrationBenefit4: 'Complete patient interaction and treatment history',
 
     // Fitness & Education Section
-    fitnessSectionTitle: 'Fitness & Private Education Automation',
-    fitnessSectionIntro: 'Scale your gym, fitness studio, tutoring service, or education center with automation that handles bookings, member engagement, and administrative tasks.',
-    fitnessCta: 'Scale Your Studio/Academy',
 
     // Fitness Services
-    fitnessChatbotTitle: 'AI Member & Student Assistant',
-    fitnessChatbotDesc: 'Intelligent chatbot that answers questions about classes, memberships, schedules, courses, and pricing. Qualifies leads, handles trial class or lesson bookings, and manages member or student inquiries 24/7—so you can focus on delivering great experiences.',
-    fitnessChatbotBenefit1: 'Instant answers about classes, memberships, and courses',
-    fitnessChatbotBenefit2: 'Trial class and consultation booking automation',
-    fitnessChatbotBenefit3: 'Multi-language support for diverse communities',
-    fitnessChatbotBenefit4: 'Automated FAQ handling for members and students',
 
-    fitnessSchedulerTitle: 'Class & Session Scheduler',
-    fitnessSchedulerDesc: 'Members and students can book classes, personal training sessions, or lessons 24/7. Automated reminders, waitlist management, and capacity tracking. Optimizes instructor schedules and facility utilization automatically.',
-    fitnessSchedulerBenefit1: 'Self-service class, session, and lesson booking',
-    fitnessSchedulerBenefit2: 'Automated waitlist and capacity management',
-    fitnessSchedulerBenefit3: 'Instructor/tutor calendar optimization',
-    fitnessSchedulerBenefit4: 'Attendance tracking and member/student engagement',
 
-    fitnessManagementTitle: 'Member & Student Management',
-    fitnessManagementDesc: 'Sync member and student data across booking systems, payment processors, email marketing, and communication platforms. Automate onboarding sequences, renewal reminders, progress tracking, and re-engagement campaigns without manual effort.',
-    fitnessManagementBenefit1: 'Unified member/student database across platforms',
-    fitnessManagementBenefit2: 'Automated renewal and payment reminders',
-    fitnessManagementBenefit3: 'Engagement and retention campaign automation',
-    fitnessManagementBenefit4: 'Progress tracking and parent communication (for education)',
 
     // Custom Automation Section
     customSectionTitle: 'Custom Business Automation',
@@ -504,7 +256,6 @@ export const en = {
     finalCtaSubtitle: 'Schedule a discovery call to discuss your automation needs and see how we can help you save time and scale operations.',
     finalCtaButton: 'Schedule a Discovery Call',
     // V2 Rebuild
-    v2HeroTitle: 'Three ways we integrate AI into your business.',
     v2HeroPrefix: 'Three ways to integrate',
     v2HeroSuffix: 'into your business.',
     v2HeroFlip1: 'AI agents',
@@ -959,7 +710,7 @@ export const en = {
     heroSubtitle: 'Enterprise-grade AI, delivered to the businesses that need it most — without the enterprise price tag, complexity, or jargon.',
     factsEyebrow: 'HeyFlou in one paragraph',
     factsTitle: 'A factual snapshot — written to be quoted.',
-    factsBody: 'HeyFlou is an AI automation and consulting studio for small and medium businesses. We design, build and operate custom AI agents, agentic AI infrastructure (AgenticOS) and AI strategy consulting for clinics, fitness studios, private schools, travel agencies and other people-first businesses. The company was founded by Mexican operators trained in Tel Aviv, is headquartered between Mexico City and Tel Aviv, and serves clients across LATAM, North America and Europe in English and Spanish.',
+    factsBody: 'HeyFlou is an AI automation and consulting studio for small and medium businesses. We design, build and operate custom AI agents, agentic AI infrastructure (AgenticOS) and AI strategy consulting for small and medium businesses in any industry, organized by business function — finance, operations, customer service and marketing. The company was founded by Mexican operators trained in Tel Aviv, is headquartered between Mexico City and Tel Aviv, and serves clients across LATAM, North America and Europe in English and Spanish.',
     storyEyebrow: 'Our Story',
     storyTitle: 'From Tel Aviv labs to Mexican main streets.',
     story1Title: 'Mexican founders.',
@@ -1306,81 +1057,6 @@ export const en = {
   },
 
   // Industry Systems Section (Homepage)
-  industrySystems: {
-    title: 'How HeyFlou Helps You Grow',
-    subtitle: 'Choose your industry. See the exact system we implement to save time and win more clients.',
-    
-    // Industry tabs
-    medical: 'Medical',
-    travel: 'Travel Agencies',
-    education: 'Private Ed / Fitness',
-    
-    // Card 1: WhatsApp AI Bot
-    card1Tag: '24/7 Lead Capture',
-    card1Title: 'WhatsApp AI Bot',
-    card1Desc: 'Answers instantly, captures leads, and routes/bookings—24/7.',
-    card1Bullet1: 'Instant replies + FAQ',
-    card1Bullet2Medical: 'Patient intake questions + pre-screen',
-    card1Bullet2Travel: 'Capture trip details (dates, budget, destination)',
-    card1Bullet2Education: 'Program matching (level, goals, schedule)',
-    card1Bullet3: 'Booking link + human handoff',
-    card1ExMedical: 'Symptoms/service questions → collect details → book consult.',
-    card1ExTravel: 'Trip inquiry → capture details → route to an agent.',
-    card1ExEducation: 'Program questions → trial class / intro call booking.',
-    card1Auto1: 'WhatsApp + website chat entry points',
-    card1Auto2: 'FAQ / knowledge replies',
-    card1Auto3: 'Qualification questions',
-    card1Auto4: 'Contact capture (name/phone/email)',
-    card1Auto5: 'Routing rules (team / agent)',
-    card1Auto6: 'Language (EN/ES)',
-    card1Auto7: 'Human handoff fallback',
-    
-    // Card 2: Lead Management Pipeline
-    card2Tag: 'Never Lose a Lead',
-    card2Title: 'Lead Management Pipeline',
-    card2Desc: 'From first contact to follow-up—every lead tracked automatically.',
-    card2Bullet1: 'Auto follow-ups + reminders',
-    card2Bullet2Medical: 'Referrals + patient inquiry stages',
-    card2Bullet2Travel: 'Stages: inquiry → quote → booked → paid',
-    card2Bullet2Education: 'Stages: lead → trial → enrolled → active',
-    card2Bullet3: 'Source tracking + notes',
-    card2ExMedical: 'Track inquiries, referrals, and next steps per patient.',
-    card2ExTravel: 'Track by destination, status, and assigned agent.',
-    card2ExEducation: 'Track trials, enrollments, memberships, and renewals.',
-    card2Auto1: 'Pipeline stages setup',
-    card2Auto2: 'Auto follow-up tasks',
-    card2Auto3: 'Reminders (WhatsApp/email)',
-    card2Auto4: 'Lead source tracking',
-    card2Auto5: 'Notes + conversation history',
-    card2Auto6: 'Simple pipeline dashboard',
-    card2Auto7: 'Integrations (Sheets/CRM)',
-    
-    // Card 3: CRM + Email Marketing
-    card3Tag: 'Convert & Retain',
-    card3Title: 'CRM + Email Marketing',
-    card3Desc: 'Organize clients and automate emails that convert and retain.',
-    card3Bullet1: 'CRM organization + client history',
-    card3Bullet2Medical: 'No-show + post-visit sequences',
-    card3Bullet2Travel: 'Quote follow-ups + abandoned booking nudges',
-    card3Bullet2Education: 'Renewals + win-back inactive clients',
-    card3Bullet3: 'Simple reporting (leads, bookings, conversions)',
-    card3ExMedical: 'Reminders + post-visit follow-ups reduce no-shows.',
-    card3ExTravel: 'Automated follow-ups for quotes + booking reminders.',
-    card3ExEducation: 'Retention nudges + reactivation for inactive clients.',
-    card3Auto1: 'CRM fields + segmentation',
-    card3Auto2: 'Email sequences (nurture)',
-    card3Auto3: 'Reactivation campaigns',
-    card3Auto4: 'Booking reminders',
-    card3Auto5: 'Review requests (optional)',
-    card3Auto6: 'Reporting snapshot',
-    card3Auto7: 'Integrations (Mail tools)',
-    
-    // Other UI
-    exampleFor: 'Example for',
-    coreAutomations: 'Core automations included',
-    bookCall: 'Book Free Call',
-    seeCases: 'See Case Studies',
-  },
 
   // Custom Solutions CTA
   customCta: {
@@ -1504,172 +1180,8 @@ export const en = {
   },
 
   // Healthcare Page
-  healthcare: {
-    // Hero Section
-    heroTitle: 'HeyFlou for Healthcare Practices',
-    heroSubtitle: 'AI Automation for Therapists, Clinics & Healthcare Providers',
-    getStarted: 'Get Started',
-    bookStrategyCall: 'Book a Strategy Call',
-
-    // Problem Section
-    problemTitle: 'The Challenge Healthcare Practices Face',
-    problemSubtitle: 'These challenges are costing your practice time and money every single day.',
-    painNoShows: 'Appointment No-Shows',
-    painNoShowsDesc: 'Last-minute cancellations and no-shows disrupt your schedule, waste valuable time slots, and reduce revenue. Manual reminder calls are time-consuming and often ineffective.',
-    painIntake: 'Manual Intake & Paperwork',
-    painIntakeDesc: 'Patients fill out the same information repeatedly. Paper forms create data entry work, errors, and storage challenges. Digital intake is fragmented across multiple systems.',
-    painFollowUps: 'Inconsistent Follow-Ups',
-    painFollowUpsDesc: 'Post-session check-ins, appointment reminders, and wellness tips fall through the cracks when your team is busy. Patients feel disconnected between visits.',
-    painScheduling: 'Scheduling Complexity',
-    painSchedulingDesc: 'Managing multiple practitioners, room availability, and patient preferences manually leads to double-bookings, conflicts, and frustrated patients trying to find appointment times.',
-    painCommunication: 'Time-Consuming Patient Communication',
-    painCommunicationDesc: 'Answering the same questions repeatedly about hours, services, insurance, and policies. Phone tag with patients takes staff away from in-person care.',
-    painAdmin: 'Administrative Burden',
-    painAdminDesc: 'Your team spends more time on phone calls, paperwork, and scheduling than on patient care. Administrative tasks prevent you from growing your practice.',
-
-    // Solution Section
-    solutionTitle: 'How HeyFlou Automates Healthcare',
-    solutionIntro: 'We build custom AI workflows that reduce no-shows, streamline intake, and automate patient communications so you can focus on care.',
-    solutionChatbotTitle: 'AI Patient Intake Bot',
-    solutionChatbotDesc: 'Collect patient information via WhatsApp, web, or SMS before appointments. Auto-sync with your EHR or practice management system.',
-    solutionSchedulingTitle: 'Smart Appointment Scheduling',
-    solutionSchedulingDesc: 'Patients book and manage appointments 24/7. Automatic conflict resolution, waitlist management, and calendar sync.',
-    solutionRemindersTitle: 'Automated Reminders & No-Show Reduction',
-    solutionRemindersDesc: 'Multi-channel reminders via SMS, email, and WhatsApp. Reduce no-shows by up to 60% with smart reminder sequences.',
-    solutionFollowUpsTitle: 'Post-Visit Follow-Up Automation',
-    solutionFollowUpsDesc: 'Automated check-ins, care instructions, and satisfaction surveys sent at the right time after appointments.',
-    solutionPaymentsTitle: 'Payment & Insurance Reminders',
-    solutionPaymentsDesc: 'Automated billing reminders, payment links, and insurance verification workflows.',
-    solutionReportsTitle: 'Patient Engagement Reporting',
-    solutionReportsDesc: 'Track response rates, no-show trends, and communication effectiveness with simple dashboards.',
-    demoVideoPlaceholder: 'Demo Video Coming Soon',
-
-    // Integrations Section
-    integrationsTitle: 'Seamlessly Connects With Your Tools',
-    integrationsSubtitle: 'HeyFlou integrates with the platforms you already use to create a unified workflow.',
-
-    // CTA Section
-    ctaTitle: 'Ready to Automate Your Practice?',
-    ctaSubtitle: 'Join hundreds of healthcare practices saving 15+ hours per week with intelligent automation.',
-    startAutomation: 'Start Your Automation',
-    scheduleDemo: 'Schedule a Demo',
-
-    // Contact Form
-    formTitle: 'Tell Us About Your Practice',
-    formSubtitle: 'Fill out the form below and we\'ll get back to you within 24 hours.',
-    formName: 'Name',
-    formNamePlaceholder: 'Dr. John Smith',
-    formEmail: 'Email',
-    formEmailPlaceholder: 'john@mypractice.com',
-    formPhone: 'Phone (optional)',
-    formPhonePlaceholder: '+1 (555) 123-4567',
-    formPracticeType: 'Practice Type',
-    formPracticeTypePlaceholder: 'Select your practice type',
-    practiceTypeTherapist: 'Therapist / Counselor',
-    practiceTypePhysio: 'Physiotherapy / Physical Therapy',
-    practiceTypeDental: 'Dental Practice',
-    practiceTypeMedicalClinic: 'Medical Clinic',
-    practiceTypeChiropractic: 'Chiropractic',
-    practiceTypeOther: 'Other Healthcare',
-    formPracticeSize: 'Practice Size',
-    formPracticeSizePlaceholder: 'Select your practice size',
-    practiceSizeSolo: 'Solo Practice',
-    practiceSize2to5: '2-5 Staff',
-    practiceSize6to10: '6-10 Staff',
-    practiceSize10plus: '10+ Staff',
-    formChallenge: 'Biggest Challenge',
-    formChallengePlaceholder: 'Describe the biggest administrative challenge in your practice...',
-    formReferral: 'How did you hear about us?',
-    formReferralPlaceholder: 'e.g., Google, LinkedIn, Referral',
-    formSubmit: 'Send Inquiry',
-    formSending: 'Sending...',
-    formSuccessTitle: 'Thank you!',
-    formSuccessMessage: 'We\'ll be in touch within 24 hours to discuss your automation needs.',
-  },
 
   // Fitness & Education Page
-  fitnessEducation: {
-    // Hero Section
-    heroTitle: 'HeyFlou for Fitness & Private Education',
-    heroSubtitle: 'AI Automation for Gyms, Studios, Personal Trainers, Tutors & Private Schools',
-    getStarted: 'Get Started',
-    bookStrategyCall: 'Book a Strategy Call',
-
-    // Problem Section
-    problemTitle: 'The Challenge Fitness & Education Businesses Face',
-    problemSubtitle: 'These challenges are holding your business back from growth and excellence.',
-    painBooking: 'Class Booking Chaos',
-    painBookingDesc: 'Managing class capacities, waitlists, and last-minute bookings manually leads to overbooking, confusion, and frustrated clients unable to secure their spot.',
-    painRenewal: 'Missed Renewal Opportunities',
-    painRenewalDesc: 'Manual renewal reminders fall through the cracks. Members lapse without warning, and you lose revenue. Chasing down expired memberships wastes valuable time.',
-    painTrial: 'Trial-to-Member Conversion Gap',
-    painTrialDesc: 'Trial clients attend once and disappear. Without systematic follow-up, you lose potential long-term members. Manual outreach is inconsistent and time-consuming.',
-    painOnboarding: 'Inconsistent Client Onboarding',
-    painOnboardingDesc: 'New members need waivers, orientation, goal-setting, and program recommendations. Manual onboarding leads to incomplete information and slower time-to-value.',
-    painScheduleChanges: 'Last-Minute Schedule Changes',
-    painScheduleChangesDesc: 'Class cancellations, instructor substitutions, and time changes require manual notifications. Clients show up to cancelled classes or miss important updates.',
-    painPayment: 'Payment & Billing Headaches',
-    painPaymentDesc: 'Tracking membership payments, failed transactions, and payment method updates manually creates accounting nightmares and awkward conversations with clients.',
-
-    // Solution Section
-    solutionTitle: 'How HeyFlou Automates Your Business',
-    solutionIntro: 'We build custom AI workflows that handle scheduling, memberships, and communications so you can focus on your clients and students.',
-    solutionBookingTitle: 'AI Class Booking Assistant',
-    solutionBookingDesc: 'Clients book classes, personal training sessions, or tutoring slots 24/7 via WhatsApp, web, or SMS. Automatic waitlist management included.',
-    solutionRenewalTitle: 'Membership Renewal Automation',
-    solutionRenewalDesc: 'Automated reminders before expiry, easy renewal links, and win-back campaigns for lapsed members.',
-    solutionTrialTitle: 'Trial-to-Member Conversion System',
-    solutionTrialDesc: 'Automated follow-ups after trial classes with personalized offers to convert prospects into paying members.',
-    solutionOnboardingTitle: 'Student/Client Onboarding Flow',
-    solutionOnboardingDesc: 'Digital forms, welcome sequences, and orientation materials sent automatically. New clients feel welcomed from day one.',
-    solutionPaymentTitle: 'Payment & Billing Reminders',
-    solutionPaymentDesc: 'Automated payment reminders, failed payment recovery, and invoice delivery.',
-    solutionScheduleTitle: 'Schedule Change Manager',
-    solutionScheduleDesc: 'Instant notifications when classes change, cancel, or have openings. Clients stay informed automatically.',
-    demoVideoPlaceholder: 'Demo Video Coming Soon',
-
-    // Integrations Section
-    integrationsTitle: 'Seamlessly Connects With Your Tools',
-    integrationsSubtitle: 'HeyFlou integrates with the platforms you already use to create a unified workflow.',
-
-    // CTA Section
-    ctaTitle: 'Ready to Automate Your Operations?',
-    ctaSubtitle: 'Join hundreds of fitness and education businesses saving 15+ hours per week with intelligent automation.',
-    startAutomation: 'Start Your Automation',
-    scheduleDemo: 'Schedule a Demo',
-
-    // Contact Form
-    formTitle: 'Tell Us About Your Business',
-    formSubtitle: 'Fill out the form below and we\'ll get back to you within 24 hours.',
-    formName: 'Name',
-    formNamePlaceholder: 'John Smith',
-    formEmail: 'Email',
-    formEmailPlaceholder: 'john@mybusiness.com',
-    formPhone: 'Phone (optional)',
-    formPhonePlaceholder: '+1 (555) 123-4567',
-    formBusinessType: 'Business Type',
-    formBusinessTypePlaceholder: 'Select your business type',
-    businessTypePersonalTrainer: 'Personal Trainer',
-    businessTypeGymStudio: 'Gym / Studio',
-    businessTypeTutoring: 'Tutoring Service',
-    businessTypePrivateSchool: 'Private School',
-    businessTypeLanguageAcademy: 'Language Academy',
-    businessTypeOther: 'Other',
-    formBusinessSize: 'Business Size',
-    formBusinessSizePlaceholder: 'Select your business size',
-    businessSizeSolo: 'Solo',
-    businessSize2to5: '2-5 Staff',
-    businessSize6to15: '6-15 Staff',
-    businessSize15plus: '15+ Staff',
-    formChallenge: 'Biggest Challenge',
-    formChallengePlaceholder: 'Describe the biggest operational challenge in your business...',
-    formReferral: 'How did you hear about us?',
-    formReferralPlaceholder: 'e.g., Google, LinkedIn, Referral',
-    formSubmit: 'Send Inquiry',
-    formSending: 'Sending...',
-    formSuccessTitle: 'Thank you!',
-    formSuccessMessage: 'We\'ll be in touch within 24 hours to discuss your automation needs.',
-  },
 
   // Custom Automation Page
   customAutomation: {
@@ -1861,51 +1373,6 @@ export const en = {
   },
 
   // Travel Agencies Page (Coming Soon)
-  travelAgencies: {
-    // Hero
-    heroTitle: 'HeyFlou for Travel Agencies',
-    heroSubtitle: 'AI Automation Solutions for Travel Professionals — Launching Soon',
-    comingSoonBadge: 'Coming Soon',
-
-    // Coming Soon Section
-    comingSoonTitle: "We're Building Something Special for Travel Pros",
-    comingSoonText: 'We\'re crafting purpose-built AI automation for travel agencies, tour operators, and travel consultants. From AI-powered booking assistants to intelligent itinerary management, we\'re designing solutions that understand the unique challenges of the travel industry. Be among the first to transform how you sell travel.',
-    expectedLaunch: '🗓️ Expected Launch: Q3 2025',
-    getEarlyAccess: 'Get Early Access',
-
-    // Early Access Form
-    formTitle: 'Get Early Access & Shape This Product',
-    formSubtitle: 'Join the waitlist and help us build the perfect solution for your agency.',
-    formName: 'Name',
-    formNamePlaceholder: 'Your name',
-    formEmail: 'Email',
-    formEmailPlaceholder: 'you@agency.com',
-    formAgency: 'Agency Name (optional)',
-    formAgencyPlaceholder: 'Your travel agency name',
-    formChallenge: 'Biggest Operational Challenge',
-    formChallengePlaceholder: 'What takes up most of your time that you wish was automated?',
-    formSubmit: 'Notify Me When We Launch',
-    formSending: 'Submitting...',
-    formSuccessTitle: "You're on the list!",
-    formSuccessMessage: "We'll notify you as soon as we launch and may reach out for early feedback.",
-
-    // Preview Section
-    previewTitle: "What We're Building",
-    previewSubtitle: 'Sneak peek at the automation features in development.',
-    previewBookingTitle: 'AI Booking Assistant',
-    previewBookingDesc: 'Answer traveler inquiries 24/7, qualify leads, and capture booking intent automatically.',
-    previewInquiryTitle: 'Client Inquiry Automation',
-    previewInquiryDesc: 'Route and respond to inquiries across email, WhatsApp, and web chat instantly.',
-    previewItineraryTitle: 'Travel Itinerary Management',
-    previewItineraryDesc: 'Generate, send, and track custom itineraries with smart follow-up sequences.',
-    previewMultiPlatformTitle: 'Multi-Platform Support',
-    previewMultiPlatformDesc: 'Connect with booking systems, CRMs, and communication tools you already use.',
-
-    // CTA Section
-    ctaTitle: 'Need Automation Now?',
-    ctaSubtitle: "Can't wait for our travel-specific solution? We build custom automations for any business.",
-    ctaButton: 'Explore Custom Automations',
-  },
 
   // New Homepage Sections
   homepage: {
