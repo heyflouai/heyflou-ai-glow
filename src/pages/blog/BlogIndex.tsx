@@ -16,17 +16,49 @@ const COPY = {
       'Field notes on AI agents, automation, and operations for small and mid-sized businesses, written by the HeyFlou team.',
     empty: 'New posts are on the way.',
     read: 'Read the post',
+    introHeading: 'What you will find here',
+    introBody:
+      'We build and run AI automation for small and mid-sized businesses, and this is where we write down what we learn doing it. Not predictions about where AI is going. What actually happened when we mapped twelve processes for a real-estate brokerage, rebuilt a trilingual nonprofit\u2019s operations, or shipped a patient CRM used by physical therapists in Mexico.',
+    introBody2:
+      'Everything here is organized the way we sell: by business function, not by industry. A bakery and a law firm have almost nothing in common as businesses, but their invoicing follow-up problem is close to identical. Function is the useful axis.',
+    topicsHeading: 'The four functions we write about',
+    topics: [
+      { name: 'Finance', desc: 'Invoicing, payment follow-up, reconciliation support, recurring reporting.' },
+      { name: 'Operations', desc: 'Scheduling, intake, data entry, internal handoffs, document processing.' },
+      { name: 'Customer service', desc: 'First response, qualification, booking, reminders, follow-up.' },
+      { name: 'Marketing', desc: 'Lead capture and routing, nurture sequences, campaign reporting.' },
+    ],
+    sourcingHeading: 'On the numbers',
+    sourcingBody:
+      'Any figure in these posts comes from work we did or a source we link to. We do not publish industry statistics we cannot trace, and we do not describe results we did not measure. Where an outcome depended on something specific to that client, we say so.',
+    latestHeading: 'Latest posts',
   },
   es: {
     eyebrow: 'BLOG',
-    title: 'Notas prácticas de IA para negocios en crecimiento',
+    title: 'Notas pr\u00e1cticas de IA para negocios en crecimiento',
     subtitle:
-      'Apuntes reales sobre agentes de IA, automatización y operación, escritos para los equipos que tienen que sacar el negocio mañana por la mañana.',
-    seoTitle: 'Blog | Notas prácticas de automatización con IA | HeyFlou',
+      'Apuntes reales sobre agentes de IA, automatizaci\u00f3n y operaci\u00f3n, escritos para los equipos que tienen que sacar el negocio ma\u00f1ana por la ma\u00f1ana.',
+    seoTitle: 'Blog | Notas pr\u00e1cticas de automatizaci\u00f3n con IA | HeyFlou',
     seoDescription:
-      'Apuntes sobre agentes de IA, automatización y operación para empresas medianas y pequeñas, escritos por el equipo de HeyFlou.',
-    empty: 'Pronto publicamos nuevos artículos.',
-    read: 'Leer el artículo',
+      'Apuntes sobre agentes de IA, automatizaci\u00f3n y operaci\u00f3n para empresas medianas y peque\u00f1as, escritos por el equipo de HeyFlou.',
+    empty: 'Pronto publicamos nuevos art\u00edculos.',
+    read: 'Leer el art\u00edculo',
+    introHeading: 'Qu\u00e9 vas a encontrar aqu\u00ed',
+    introBody:
+      'Construimos y operamos automatizaci\u00f3n con IA para peque\u00f1as y medianas empresas, y aqu\u00ed escribimos lo que aprendemos haci\u00e9ndolo. No predicciones sobre el futuro de la IA. Lo que pas\u00f3 de verdad cuando mapeamos doce procesos de una inmobiliaria, reconstruimos la operaci\u00f3n de una organizaci\u00f3n en tres idiomas, o lanzamos un CRM de pacientes que usan fisioterapeutas en M\u00e9xico.',
+    introBody2:
+      'Todo est\u00e1 organizado como vendemos: por funci\u00f3n de negocio, no por industria. Una panader\u00eda y un despacho de abogados no se parecen en nada como negocios, pero su problema de cobranza es pr\u00e1cticamente el mismo. La funci\u00f3n es el eje \u00fatil.',
+    topicsHeading: 'Las cuatro funciones sobre las que escribimos',
+    topics: [
+      { name: 'Finanzas', desc: 'Facturaci\u00f3n, seguimiento de cobranza, apoyo en conciliaci\u00f3n, reportes recurrentes.' },
+      { name: 'Operaciones', desc: 'Agenda, captura de datos, altas de clientes, entregas internas, procesamiento de documentos.' },
+      { name: 'Atenci\u00f3n a clientes', desc: 'Primera respuesta, calificaci\u00f3n, agendado, recordatorios, seguimiento.' },
+      { name: 'Marketing', desc: 'Captura y ruteo de prospectos, secuencias de seguimiento, reportes de campa\u00f1a.' },
+    ],
+    sourcingHeading: 'Sobre las cifras',
+    sourcingBody:
+      'Cualquier n\u00famero en estos art\u00edculos sale de trabajo que hicimos o de una fuente que enlazamos. No publicamos estad\u00edsticas de industria que no podamos rastrear, ni describimos resultados que no medimos. Cuando un resultado depend\u00eda de algo particular de ese cliente, lo decimos.',
+    latestHeading: '\u00daltimos art\u00edculos',
   },
 } as const;
 
@@ -72,7 +104,40 @@ export default function BlogIndex() {
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">{copy.subtitle}</p>
 
-          <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="mt-12 md:mt-14 max-w-3xl">
+            <h2 className="text-2xl font-bold text-foreground font-heading mb-4">
+              {copy.introHeading}
+            </h2>
+            <p className="text-base text-muted-foreground leading-relaxed mb-4">{copy.introBody}</p>
+            <p className="text-base text-muted-foreground leading-relaxed">{copy.introBody2}</p>
+          </div>
+
+          <div className="mt-12 md:mt-14">
+            <h2 className="text-2xl font-bold text-foreground font-heading mb-6">
+              {copy.topicsHeading}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {copy.topics.map((topic) => (
+                <div key={topic.name} className="rounded-xl border border-border bg-card p-5">
+                  <h3 className="text-base font-semibold text-foreground mb-1.5">{topic.name}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{topic.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-12 md:mt-14 max-w-3xl border-l-2 border-hf-teal/40 pl-5">
+            <h2 className="text-lg font-semibold text-foreground font-heading mb-2">
+              {copy.sourcingHeading}
+            </h2>
+            <p className="text-base text-muted-foreground leading-relaxed">{copy.sourcingBody}</p>
+          </div>
+
+          <h2 className="mt-14 md:mt-16 text-2xl font-bold text-foreground font-heading">
+            {copy.latestHeading}
+          </h2>
+
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
             {posts.length === 0 && <p className="text-muted-foreground">{copy.empty}</p>}
 
             {posts.map((post) => (
