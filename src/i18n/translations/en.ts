@@ -1027,7 +1027,7 @@ export const en = {
     website: 'Website',
     optional: 'Optional',
     industry: 'Industry',
-    industryPlaceholder: 'e.g., Healthcare, Fitness Studio, Travel Agency',
+    industryPlaceholder: 'e.g., Design Studio, Real Estate, Bakery, Logistics',
     teamSize: 'Team Size',
     selectTeamSize: 'Select team size',
     message: 'Message',

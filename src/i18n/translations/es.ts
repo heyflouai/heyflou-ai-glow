@@ -1029,7 +1029,7 @@ export const es: TranslationKeys = {
     website: 'Sitio Web',
     optional: 'Opcional',
     industry: 'Industria',
-    industryPlaceholder: 'ej., Salud, Estudio de Fitness, Agencia de Viajes',
+    industryPlaceholder: 'ej., Estudio de diseño, Inmobiliaria, Panadería, Logística',
     teamSize: 'Tamaño del Equipo',
     selectTeamSize: 'Seleccionar tamaño del equipo',
     message: 'Mensaje',
