@@ -15,7 +15,7 @@ export const SITE_CONFIG = {
 
 export const DEFAULT_SEO = {
   title: "HeyFlou | AI Consulting for SMB Workflow Automation",
-  description: "Custom AI automation for SMBs: WhatsApp AI bots, lead pipelines, and CRM + email marketing for medical, travel, fitness, and education businesses.",
+  description: "AI agents and custom automation for SMBs — built around your finance, operations, customer service and marketing workflows. Industry-agnostic.",
 } as const;
 
 /**
@@ -24,7 +24,7 @@ export const DEFAULT_SEO = {
 export const PAGE_SEO = {
   home: {
     title: "HeyFlou | AI Consulting for SMB Workflow Automation",
-    description: "Custom AI automation for SMBs: WhatsApp AI bots, lead pipelines, and CRM + email marketing for medical, travel, fitness, and education businesses.",
+    description: "AI agents and custom automation for SMBs — built around your finance, operations, customer service and marketing workflows. Industry-agnostic.",
     path: "/",
   },
   services: {
@@ -34,12 +34,12 @@ export const PAGE_SEO = {
   },
   caseStudies: {
     title: "Case Studies | HeyFlou",
-    description: "See how HeyFlou automations reduce no-shows, improve response time, and increase booked clients across medical, travel, and private education/fitness businesses.",
+    description: "Real HeyFlou builds: how SMBs cut response time, recovered hours per week, and automated finance, operations, customer service and marketing workflows.",
     path: "/case-studies",
   },
   about: {
     title: "About | HeyFlou",
-    description: "HeyFlou builds practical AI automation systems for SMBs—WhatsApp bots, lead pipelines, and CRM + email marketing—designed to save time and drive growth.",
+    description: "HeyFlou builds AI agents and automation infrastructure for SMBs, organized by business function — finance, operations, customer service and marketing.",
     path: "/about",
   },
   contact: {
