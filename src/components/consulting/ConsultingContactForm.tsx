@@ -16,7 +16,7 @@ import {
 } from '@/components/ui/select';
 import { useTranslation } from '@/i18n';
 import { useToast } from '@/hooks/use-toast';
-import { supabase } from '@/integrations/supabase/client';
+import { getSupabase } from '@/integrations/supabase/lazy';
 import { sendConfirmationEmail } from '@/lib/send-confirmation-email';
 
 export function ConsultingContactForm() {
@@ -64,6 +64,7 @@ export function ConsultingContactForm() {
         phone ? `Phone: ${phone}` : '',
       ].filter(Boolean).join('\n');
 
+      const supabase = await getSupabase();
       const { error } = await supabase
         .from('contacts')
         .insert({

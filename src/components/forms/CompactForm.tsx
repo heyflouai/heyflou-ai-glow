@@ -8,7 +8,7 @@ import { ConsentNote } from './ConsentNote';
 import { GradientButton } from '@/components/ui/gradient-button';
 import { SubmitButton } from '@/components/ui/submit-button';
 import { FormAlert } from '@/components/ui/form-alert';
-import { supabase } from '@/integrations/supabase/client';
+import { getSupabase } from '@/integrations/supabase/lazy';
 import { useToast } from '@/hooks/use-toast';
 import { useTranslation } from '@/i18n';
 import { sendConfirmationEmail } from '@/lib/send-confirmation-email';
@@ -92,6 +92,7 @@ export const CompactForm: React.FC<CompactFormProps> = ({ sourcePage, hidePromoT
     try {
       const trackingData = getTrackingData();
 
+      const supabase = await getSupabase();
       const { error } = await supabase
         .from('contacts')
         .insert({

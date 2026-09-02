@@ -1,4 +1,4 @@
-import { supabase } from '@/integrations/supabase/client';
+import { getSupabase } from '@/integrations/supabase/lazy';
 
 interface SendEmailParams {
   name: string;
@@ -13,8 +13,8 @@ interface SendEmailParams {
  * Failures are logged but never block the form submission flow.
  */
 export function sendConfirmationEmail(params: SendEmailParams): void {
-  supabase.functions
-    .invoke('send-email', { body: params })
+  getSupabase()
+    .then((supabase) => supabase.functions.invoke('send-email', { body: params }))
     .then(({ error }) => {
       if (error) console.error('send-email edge function error:', error);
     })

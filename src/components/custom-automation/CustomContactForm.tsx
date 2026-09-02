@@ -25,7 +25,7 @@ import {
 import { useToast } from '@/hooks/use-toast';
 import { useTranslation } from '@/i18n';
 import { CheckCircle, Loader2 } from 'lucide-react';
-import { supabase } from '@/integrations/supabase/client';
+import { getSupabase } from '@/integrations/supabase/lazy';
 import { sendConfirmationEmail } from '@/lib/send-confirmation-email';
 
 const formSchema = z.object({
@@ -87,6 +87,7 @@ export function CustomContactForm() {
         data.phone ? `Phone: ${data.phone}` : '',
       ].filter(Boolean).join('\n');
 
+      const supabase = await getSupabase();
       const { error } = await supabase
         .from('contacts')
         .insert({
