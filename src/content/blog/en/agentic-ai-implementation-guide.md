@@ -3,11 +3,12 @@ title: How to Implement Agentic AI for Business Growth
 description: A practical guide to agentic AI for business growth: how agents differ from chatbots, where they fit, and how to scale operations without headcount.
 slug: agentic-ai-implementation-guide
 date: 2026-06-20
-dateModified: 2026-06-20
+dateModified: 2026-09-02
 author: Samy Nakach
 authorBio: Co-founder and CEO of HeyFlou. Works with SMB teams on AI automation across finance, operations, customer service and marketing.
 heroImage: /blog-images/agentic-ai.png
 canonical: https://heyflou.com/blog/agentic-ai-implementation-guide
+hreflangCounterpart: implementar-ia-agentica
 tags: [Agentic AI, AI agents, Business automation]
 ---
 
