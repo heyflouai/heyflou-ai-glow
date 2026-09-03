@@ -8,6 +8,7 @@ import { CursorSpotlight } from '@/components/ui/cursor-spotlight';
 import { GradientMovingButton } from '@/components/ui/gradient-moving-button';
 import { WobbleCard } from '@/components/ui/wobble-card';
 import InfrastructureCaseCarousel from '@/components/services/InfrastructureCaseCarousel';
+import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 const JAKARTA = '"Plus Jakarta Sans", sans-serif';
 const INTER = 'Inter, sans-serif';
@@ -242,6 +243,8 @@ export default function Infrastructure() {
           </div>
         </section>
       </main>
+      <RelatedPosts slugs={['automate-scheduling-intake', 'agentic-ai-implementation-guide']} />
+    
     </>
   );
 }

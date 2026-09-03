@@ -6,6 +6,7 @@ import { CursorSpotlight } from '@/components/ui/cursor-spotlight';
 import { GradientMovingButton } from '@/components/ui/gradient-moving-button';
 import { FlipWords } from '@/components/ui/flip-words';
 import { useRef, useState } from 'react';
+import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 interface CardProps {
   eyebrow: string;
@@ -203,6 +204,8 @@ export default function Services() {
           </div>
         </section>
       </main>
+      <RelatedPosts slugs={['what-to-automate-first', 'ai-customer-service-smb']} />
+    
     </>
   );
 }

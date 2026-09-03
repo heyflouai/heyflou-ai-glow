@@ -20,7 +20,7 @@ const parseFrontmatter = (raw) => {
   return data;
 };
 
-/** All markdown posts: { lang, slug, route, date, dateModified }. */
+/** All markdown posts: { lang, slug, route, title, description, date, dateModified }. */
 export function getBlogPosts() {
   const posts = [];
   for (const lang of ['en', 'es']) {
@@ -33,6 +33,8 @@ export function getBlogPosts() {
         lang,
         slug,
         route: lang === 'es' ? `/es/blog/${slug}` : `/blog/${slug}`,
+        title: fm.title || '',
+        description: fm.description || '',
         date: fm.date || '',
         dateModified: fm.dateModified || fm.date || '',
       });

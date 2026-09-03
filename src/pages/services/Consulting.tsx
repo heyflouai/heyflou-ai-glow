@@ -10,6 +10,7 @@ import { Spotlight } from '@/components/ui/spotlight';
 import { StickyScroll } from '@/components/ui/sticky-scroll-reveal';
 import { Timeline } from '@/components/ui/timeline';
 import { GlowingEffect } from '@/components/ui/glowing-effect';
+import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 const JAKARTA = '"Plus Jakarta Sans", sans-serif';
 const INTER = 'Inter, sans-serif';
@@ -239,6 +240,8 @@ export default function Consulting() {
           </div>
         </section>
       </main>
+      <RelatedPosts slugs={['what-to-automate-first', 'agentic-ai-implementation-guide']} />
+    
     </>
   );
 }

@@ -2,7 +2,7 @@ import { Link, useLocation, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { SEOHead } from '@/components/ui/seo-head';
-import { SITE_CONFIG, ORGANIZATION_SCHEMA } from '@/lib/seo-config';
+import { SITE_CONFIG, ORGANIZATION_SCHEMA , AUTHOR_PROFILES } from '@/lib/seo-config';
 import { isSpanishPath } from '@/lib/i18n-routes';
 import {
   getPost,
@@ -44,10 +44,16 @@ export default function BlogPost() {
     ...(enUrl ? [{ hreflang: 'x-default', href: enUrl }] : []),
   ];
 
+  // A resolvable author entity is an E-E-A-T signal. `url` points at the team
+  // page; `sameAs` carries only profiles we can actually verify — see
+  // AUTHOR_PROFILES in seo-config.ts.
+  const profiles = AUTHOR_PROFILES[post.author] ?? [];
   const author = {
     '@type': 'Person',
     name: post.author,
     description: post.authorBio,
+    url: `${SITE_CONFIG.domain}/about`,
+    ...(profiles.length ? { sameAs: profiles } : {}),
     worksFor: { '@type': 'Organization', name: SITE_CONFIG.name, url: SITE_CONFIG.domain },
   };
 

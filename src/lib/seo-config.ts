@@ -267,3 +267,15 @@ export const BREADCRUMB_LABELS: Record<string, { en: string; es: string }> = {
   '/terms': { en: 'Terms of Service', es: 'Términos del servicio' },
   '/refund': { en: 'Refund Policy', es: 'Política de reembolso' },
 };
+
+/**
+ * Verified public profiles per author, emitted as Person.sameAs on blog posts.
+ *
+ * Only add a URL that actually resolves to that person. An unverifiable or
+ * wrong sameAs is worse than none: it asks Google to reconcile the author with
+ * an entity that is not them.
+ */
+export const AUTHOR_PROFILES: Record<string, string[]> = {
+  // TODO(samy): add personal LinkedIn / X once confirmed, e.g.
+  // 'Samy Nakach': ['https://www.linkedin.com/in/<handle>'],
+};

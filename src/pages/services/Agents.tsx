@@ -10,6 +10,7 @@ import { GradientMovingButton } from '@/components/ui/gradient-moving-button';
 import { Spotlight } from '@/components/ui/spotlight';
 import { BackgroundBeamsWithCollision } from '@/components/ui/background-beams-collision';
 import { CanvasRevealEffect } from '@/components/ui/canvas-reveal-effect';
+import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 const JAKARTA = '"Plus Jakarta Sans", sans-serif';
 const INTER = 'Inter, sans-serif';
@@ -340,6 +341,8 @@ export default function Agents() {
           </div>
         </section>
       </main>
+      <RelatedPosts slugs={['ai-customer-service-smb', 'agentic-ai-implementation-guide']} />
+    
     </>
   );
 }

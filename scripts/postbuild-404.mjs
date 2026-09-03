@@ -1,8 +1,10 @@
 // Postbuild steps:
 // 1. Static hosts serve /404.html for unknown paths; vite-react-ssg emits 404/index.html.
 // 2. Sync blog URLs into sitemap.xml (public + dist) from the markdown files present.
-// 3. Drop modulepreload hints for chunks that are only reached via dynamic import().
-import { copyFile, readdir, readFile, writeFile } from 'node:fs/promises';
+// 3. Emit an RSS feed per language.
+// 4. Drop modulepreload hints for chunks that are only reached via dynamic import().
+import { copyFile, mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
+import { dirname } from 'node:path';
 import { getBlogPosts } from './blog-routes.mjs';
 
 await copyFile('dist/404/index.html', 'dist/404.html');
@@ -51,7 +53,65 @@ for (const file of ['public/sitemap.xml', 'dist/sitemap.xml']) {
   console.log(`postbuild: synced ${posts.length} blog posts into ${file}`);
 }
 
-// --- 3. Strip modulepreload hints for async-only chunks -----------------------
+// --- 3. RSS feeds ------------------------------------------------------------
+//
+// sitemap.xml tells crawlers a URL exists; a feed lets readers, aggregators and
+// newsletter tools pull the posts. One per language, linked from each index.
+const FEEDS = {
+  en: {
+    path: 'dist/rss.xml',
+    url: `${DOMAIN}/rss.xml`,
+    link: `${DOMAIN}/blog`,
+    lang: 'en',
+    title: 'HeyFlou Blog',
+    desc: 'Practical AI automation notes for small and mid-sized businesses.',
+  },
+  es: {
+    path: 'dist/es/rss.xml',
+    url: `${DOMAIN}/es/rss.xml`,
+    link: `${DOMAIN}/es/blog`,
+    lang: 'es-MX',
+    title: 'Blog de HeyFlou',
+    desc: 'Notas prácticas de automatización con IA para pequeñas y medianas empresas.',
+  },
+};
+
+const xmlEscape = (s = '') =>
+  s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+const rfc822 = (iso) => (iso ? new Date(`${iso}T00:00:00Z`).toUTCString() : '');
+
+for (const [lang, feed] of Object.entries(FEEDS)) {
+  const items = posts.filter((p) => p.lang === lang);
+  if (!items.length) continue;
+  const xml = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">',
+    '  <channel>',
+    `    <title>${xmlEscape(feed.title)}</title>`,
+    `    <link>${feed.link}</link>`,
+    `    <description>${xmlEscape(feed.desc)}</description>`,
+    `    <language>${feed.lang}</language>`,
+    `    <lastBuildDate>${rfc822(items[0].dateModified || items[0].date)}</lastBuildDate>`,
+    `    <atom:link href="${feed.url}" rel="self" type="application/rss+xml" />`,
+    ...items.flatMap((p) => [
+      '    <item>',
+      `      <title>${xmlEscape(p.title)}</title>`,
+      `      <link>${DOMAIN}${p.route}</link>`,
+      `      <guid isPermaLink="true">${DOMAIN}${p.route}</guid>`,
+      `      <description>${xmlEscape(p.description)}</description>`,
+      `      <pubDate>${rfc822(p.date)}</pubDate>`,
+      '    </item>',
+    ]),
+    '  </channel>',
+    '</rss>',
+  ].join('\n');
+  await mkdir(dirname(feed.path), { recursive: true });
+  await writeFile(feed.path, xml);
+  console.log(`postbuild: wrote ${feed.path} (${items.length} items)`);
+}
+
+// --- 4. Strip modulepreload hints for async-only chunks -----------------------
 //
 // vite-react-ssg emits a <link rel="modulepreload"> for every chunk it walks,
 // including ones only reachable through a dynamic import(). That put the

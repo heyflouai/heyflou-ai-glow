@@ -121,6 +121,16 @@ export const SEOHead = ({
 
       <link rel="canonical" href={canonicalUrl} />
 
+      {/* Feed discovery — advertised on the blog surfaces only. */}
+      {pathname.includes('/blog') && (
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title={spanish ? 'Blog de HeyFlou' : 'HeyFlou Blog'}
+          href={`${SITE_CONFIG.domain}${spanish ? '/es/rss.xml' : '/rss.xml'}`}
+        />
+      )}
+
       {(alternates ?? []).map(({ hreflang, href }) => (
         <link key={hreflang} rel="alternate" hrefLang={hreflang} href={href} data-i18n-alt="true" />
       ))}

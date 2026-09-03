@@ -8,6 +8,7 @@ import { CustomProcess } from '@/components/custom-automation/CustomProcess';
 import { CustomCTA } from '@/components/custom-automation/CustomCTA';
 import { CustomContactForm } from '@/components/custom-automation/CustomContactForm';
 import { getCanonicalUrl, buildServiceSchema } from '@/lib/seo-config';
+import { RelatedPosts } from '@/components/blog/RelatedPosts';
 
 export default function CustomAutomation() {
   const serviceSchema = buildServiceSchema({
@@ -37,6 +38,8 @@ export default function CustomAutomation() {
         <CustomCTA />
         <CustomContactForm />
       </main>
+      <RelatedPosts slugs={['automate-invoicing-followup', 'lead-capture-automation']} />
+    
     </>
   );
 }
