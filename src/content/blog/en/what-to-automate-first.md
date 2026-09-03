@@ -9,6 +9,7 @@ authorBio: Co-founder and CEO of HeyFlou. Works with SMB teams on AI automation 
 heroImage: /blog-images/what-to-automate-first.png
 canonical: https://heyflou.com/blog/what-to-automate-first
 hreflangCounterpart: que-automatizar-primero
+featured: true
 tags: [Business automation, AI strategy, Operations]
 ---
 

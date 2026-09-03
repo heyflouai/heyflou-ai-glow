@@ -26,6 +26,8 @@ export interface BlogPost {
   canonical: string;
   /** Slug of the counterpart post in the other language, if any */
   hreflangCounterpart?: string;
+  /** Pin to the top of the index regardless of date - used for the cluster hub. */
+  featured: boolean;
   tags: string[];
   /** Raw markdown body (frontmatter stripped) */
   markdown: string;
@@ -96,6 +98,7 @@ const buildPost = (path: string, raw: string): BlogPost => {
     heroImage: str(data.heroImage),
     canonical: str(data.canonical, `${SITE_CONFIG.domain}${blogPostPath(lang, slug)}`),
     hreflangCounterpart: str(data.hreflangCounterpart) || undefined,
+    featured: str(data.featured) === 'true',
     tags: Array.isArray(data.tags) ? data.tags : [],
     markdown,
     html: marked.parse(markdown) as string,
@@ -104,7 +107,11 @@ const buildPost = (path: string, raw: string): BlogPost => {
 
 const allPosts: BlogPost[] = Object.entries(modules)
   .map(([path, raw]) => buildPost(path, raw))
-  .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+  // Featured (the cluster hub) first, then newest first.
+  .sort((a, b) => {
+    if (a.featured !== b.featured) return a.featured ? -1 : 1;
+    return a.date < b.date ? 1 : a.date > b.date ? -1 : 0;
+  });
 
 /** Posts for a language, newest first. */
 export const getPosts = (lang: BlogLang) => allPosts.filter((p) => p.lang === lang);
