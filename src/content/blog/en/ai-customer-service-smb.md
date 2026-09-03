@@ -1,6 +1,6 @@
 ---
-title: AI for Customer Service: What SMBs Can Actually Automate
-description: Where AI agents genuinely replace human work in customer service, where they must not, and how to place the handoff so the automation helps instead of trapping people.
+title: AI for Customer Service: What SMBs Can Automate
+description: Where AI agents replace human work in customer service, where they must not, and how to place the handoff so it helps rather than traps people.
 slug: ai-customer-service-smb
 date: 2026-09-02
 dateModified: 2026-09-02

@@ -1,6 +1,6 @@
 ---
-title: Automatizar agenda y alta de clientes en equipos pequeños
-description: La agenda y el alta de clientes son donde las operaciones de una PyME pierden horas en silencio. Qué se automatiza limpio, qué se rompe, y por qué escribir el proceso es la mayor parte del trabajo.
+title: Automatizar agenda y alta de clientes
+description: La agenda y el alta de clientes son donde una PyME pierde horas en silencio. Qué se automatiza limpio, qué se rompe y por dónde empezar.
 slug: automatizar-agenda-y-alta-de-clientes
 date: 2026-09-02
 dateModified: 2026-09-02

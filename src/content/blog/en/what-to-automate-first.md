@@ -1,6 +1,6 @@
 ---
 title: What to Automate First in a Small Business
-description: Most SMB automation projects fail because they start in the wrong place. A function-by-function method for picking the first workflow, based on scoring twelve processes for a real client.
+description: Most SMB automation projects start in the wrong place. A function-by-function method for picking the first workflow, from scoring 12 real processes.
 slug: what-to-automate-first
 date: 2026-09-02
 dateModified: 2026-09-02

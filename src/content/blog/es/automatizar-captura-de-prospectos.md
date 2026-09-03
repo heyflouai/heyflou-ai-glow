@@ -1,6 +1,6 @@
 ---
-title: Automatizar la captura y el seguimiento de prospectos
-description: La mayoría de las PyMEs pierde prospectos por tiempo de respuesta y seguimiento inconsistente, no por falta de prospectos. Lo que aprendimos construyendo un sistema que generó más de 300 prospectos calificados al mes.
+title: Automatizar la captura de prospectos
+description: La mayoría de las PyMEs pierde prospectos por tiempo de respuesta y seguimiento, no por falta de prospectos. Lo que aprendimos construyendo el sistema.
 slug: automatizar-captura-de-prospectos
 date: 2026-09-02
 dateModified: 2026-09-02

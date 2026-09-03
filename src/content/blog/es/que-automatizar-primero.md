@@ -1,6 +1,6 @@
 ---
 title: Qué automatizar primero en una empresa pequeña
-description: La mayoría de los proyectos de automatización en PyMEs fallan porque empiezan en el lugar equivocado. Un método por función de negocio, basado en calificar doce procesos de un cliente real.
+description: La mayoría de los proyectos de automatización en PyMEs empieza en el lugar equivocado. Un método por función, basado en calificar 12 procesos reales.
 slug: que-automatizar-primero
 date: 2026-09-02
 dateModified: 2026-09-02

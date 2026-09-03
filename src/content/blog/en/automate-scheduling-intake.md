@@ -1,6 +1,6 @@
 ---
 title: Scheduling and Intake Automation for Small Teams
-description: Scheduling and client intake are where SMB operations quietly lose hours. What automates cleanly, what breaks, and why writing the process down is most of the work.
+description: Scheduling and client intake are where SMB operations quietly lose hours. What automates cleanly, what breaks, and why documenting it comes first.
 slug: automate-scheduling-intake
 date: 2026-09-02
 dateModified: 2026-09-02

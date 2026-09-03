@@ -1,6 +1,6 @@
 ---
-title: IA en atención a clientes: qué puede automatizar una PyME
-description: Dónde los agentes de IA sí reemplazan trabajo humano en atención a clientes, dónde no deben hacerlo, y cómo colocar el pase a humano para que la automatización ayude en vez de atrapar gente.
+title: IA en atención a clientes para PyMEs
+description: Dónde los agentes de IA sí reemplazan trabajo humano en atención a clientes, dónde no deben, y cómo colocar el pase a una persona.
 slug: ia-atencion-clientes-pymes
 date: 2026-09-02
 dateModified: 2026-09-02

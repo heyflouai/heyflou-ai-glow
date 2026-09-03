@@ -1,6 +1,6 @@
 ---
-title: Automatizar facturación y cobranza sin romper la relación
-description: La cobranza es la automatización de mayor retorno en la mayoría de las empresas pequeñas y la que los dueños evitan. Dónde trazar la línea entre el seguimiento automático y el criterio humano.
+title: Automatizar facturación y cobranza
+description: La cobranza es la automatización de mayor retorno en una PyME y la que los dueños evitan. Dónde termina el seguimiento automático y empieza el criterio.
 slug: automatizar-facturacion-y-cobranza
 date: 2026-09-02
 dateModified: 2026-09-02

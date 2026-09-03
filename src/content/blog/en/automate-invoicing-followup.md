@@ -1,6 +1,6 @@
 ---
 title: Automating Invoicing and Payment Follow-Up
-description: Payment follow-up is the highest-return automation in most small businesses and the one owners avoid. Where to draw the line between automated chasing and human judgement.
+description: Payment follow-up is the highest-return automation in most small businesses. Where to draw the line between automated chasing and human judgement.
 slug: automate-invoicing-followup
 date: 2026-09-02
 dateModified: 2026-09-02

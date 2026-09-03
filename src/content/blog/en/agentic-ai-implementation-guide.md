@@ -1,6 +1,6 @@
 ---
 title: How to Implement Agentic AI for Business Growth
-description: A practical guide to implementing agentic AI for business growth: ROI vs. chatbots, where autonomous agents fit, and how to scale operations without adding headcount.
+description: A practical guide to agentic AI for business growth: how agents differ from chatbots, where they fit, and how to scale operations without headcount.
 slug: agentic-ai-implementation-guide
 date: 2026-06-20
 dateModified: 2026-06-20

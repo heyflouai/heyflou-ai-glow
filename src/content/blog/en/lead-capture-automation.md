@@ -1,6 +1,6 @@
 ---
 title: Lead Capture and Follow-Up Automation That Works
-description: Most SMBs lose leads to response time and inconsistent follow-up, not to a shortage of leads. What we learned building a system that produced 300+ qualified leads a month.
+description: Most SMBs lose leads to slow response and inconsistent follow-up, not to a shortage of leads. What we learned building a 300-leads-a-month system.
 slug: lead-capture-automation
 date: 2026-09-02
 dateModified: 2026-09-02
