@@ -6,7 +6,7 @@ date: 2026-06-20
 dateModified: 2026-06-20
 author: Samy Nakach
 authorBio: Co-founder and CEO of HeyFlou. Works with SMB teams on AI automation across finance, operations, customer service and marketing.
-heroImage: /og-image.jpg
+heroImage: /blog-images/agentic-ai.png
 canonical: https://heyflou.com/blog/agentic-ai-implementation-guide
 tags: [Agentic AI, AI agents, Business automation]
 ---
